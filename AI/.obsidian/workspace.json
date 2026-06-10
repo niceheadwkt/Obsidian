@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5221e8e87b485c7c",
+            "id": "0e755175181df8a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "claude 如何加入vs code中.md",
+                "file": "Gemma 4 MCP 開發：本地與雲端計費.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "claude 如何加入vs code中"
+              "title": "Gemma 4 MCP 開發：本地與雲端計費"
             }
           }
         ],
@@ -205,10 +205,31 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "5221e8e87b485c7c",
+  "active": "0e755175181df8a1",
   "lastOpenFiles": [
-    "Git 新手入門指南.md",
+    "Pasted image 20260610160439.png",
+    "Pasted image 20260610160029.png",
+    "Pasted image 20260610155623.png",
+    "Pasted image 20260610155406.png",
+    "Pasted image 20260610155313.png",
+    "Pasted image 20260610155303.png",
+    "Pasted image 20260610155217.png",
+    "Pasted image 20260610155038.png",
+    "Pasted image 20260610155023.png",
+    "Pasted image 20260610154953.png",
+    "Pasted image 20260610154740.png",
+    "LLM 到 Agent 的工程解析.md",
+    "Gemma 4 MCP 開發：本地與雲端計費.md",
+    "DPMS.md",
+    "CDN.md",
+    "AI CLI 工具比較與選擇.md",
+    "Claude 操作模式與功能介紹.md",
+    "Cursor：AI 程式碼編輯器介紹.md",
+    "Slack.md",
+    "如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
+    "IP 位址取得 MAC 位址方法.md",
     "claude 如何加入vs code中.md",
+    "Git 新手入門指南.md",
     "Obsidian.md",
     "NotebookLM大更新！模型升級Gemini 3.5，還內建雲端電腦幫你跑分析：4大升級亮點一次看.md",
     "NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md",
@@ -222,24 +243,13 @@
     "工作專案雙向連結.md",
     "程式學習雙向連結.md",
     "App 開發雙向連結.md",
-    "NotebookLM怎麼用？2026最新實測，9大功能＋10種圖表風格，零基礎也能一次上手.md",
-    "Snippets.md",
-    "Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看.md",
     "template/daily.txt",
     "template/YouTube Videos.txt",
     "template/新增 文字文件.txt",
     "template",
     "新增資料夾",
-    "Groq.md",
-    "Grok 與 Groq 差異解析.md",
-    "DeepSearch.md",
-    "Grok.md",
     "未命名.base",
     "未命名 1.base",
-    "xAI.md",
-    "Grok.md",
-    "Roam Research.md",
-    "Shebang.md",
     "未命名 1",
     "未命名"
   ]
