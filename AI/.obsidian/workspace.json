@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9c0a9f0999bce925",
+            "id": "5221e8e87b485c7c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git 新手入門指南.md",
+                "file": "claude 如何加入vs code中.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Git 新手入門指南"
+              "title": "claude 如何加入vs code中"
             }
           }
         ],
@@ -205,8 +205,10 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "9c0a9f0999bce925",
+  "active": "5221e8e87b485c7c",
   "lastOpenFiles": [
+    "Git 新手入門指南.md",
+    "claude 如何加入vs code中.md",
     "Obsidian.md",
     "NotebookLM大更新！模型升級Gemini 3.5，還內建雲端電腦幫你跑分析：4大升級亮點一次看.md",
     "NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md",
@@ -237,9 +239,7 @@
     "xAI.md",
     "Grok.md",
     "Roam Research.md",
-    "Git 新手入門指南.md",
     "Shebang.md",
-    "利用LLM建構個人知識庫的模式。.md",
     "未命名 1",
     "未命名"
   ]
