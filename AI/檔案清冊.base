@@ -1,0 +1,15 @@
+views:
+  - type: table
+    name: 表格
+    order:
+      - file.folder
+      - file.name
+      - file.backlinks
+      - file.tags
+      - file.mtime
+      - file.size
+    sort:
+      - property: file.size
+        direction: DESC
+      - property: file.folder
+        direction: ASC

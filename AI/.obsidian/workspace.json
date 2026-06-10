@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ce98d89e7f072b76",
+        "id": "b69739b1946bcbb3",
         "type": "tabs",
         "children": [
           {
-            "id": "0e755175181df8a1",
+            "id": "262f0dd2e31e7020",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gemma 4 MCP 開發：本地與雲端計費.md",
+                "file": "05_Tech_Development/Git 新手入門指南.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Gemma 4 MCP 開發：本地與雲端計費"
+              "title": "Git 新手入門指南"
             }
           }
         ],
@@ -64,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "file:git",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -105,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Roam Research.md",
+                "file": "Shebang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Roam Research 的反向連結"
+              "title": "Shebang 的反向連結"
             }
           },
           {
@@ -124,12 +125,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Roam Research.md",
+                "file": "Shebang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Roam Research 的對外連結"
+              "title": "Shebang 的對外連結"
             }
           },
           {
@@ -167,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Roam Research.md",
+                "file": "05_Tech_Development/Git 新手入門指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Roam Research 的大綱"
+              "title": "Git 新手入門指南 的大綱"
             }
           },
           {
@@ -187,12 +188,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +205,42 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "0e755175181df8a1",
+  "active": "262f0dd2e31e7020",
   "lastOpenFiles": [
+    "檔案清冊.base",
+    "未命名.md",
+    "07_Daily_Notes/2026-06-09.md",
+    "未命名 1.base",
+    "07_Daily_Notes",
+    "06_Networking_Systems/如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
+    "06_Networking_Systems/IP 位址取得 MAC 位址方法.md",
+    "06_Networking_Systems/DPMS.md",
+    "06_Networking_Systems",
+    "03_AI_Concepts/RAG.md",
+    "03_AI_Concepts/LLM 到 Agent 的工程解析.md",
+    "03_AI_Concepts/Gemma 4 MCP 開發：本地與雲端計費.md",
+    "03_AI_Concepts/DeepSearch.md",
+    "03_AI_Concepts",
+    "01_AI_Tools/OPENCODE如何加QWEN3？.md",
+    "01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md",
+    "01_AI_Tools/xAI.md",
+    "01_AI_Tools/在 Ollama 中使用 Qwen 是完全免費的.md",
+    "01_AI_Tools/Ollama 可以針對LOCAL設專案目錄來運作？.md",
+    "01_AI_Tools/Groq.md",
+    "01_AI_Tools/Ollama 中Launch 選項codex app與codex 之差異為何.md",
+    "01_AI_Tools/Grok.md",
+    "01_AI_Tools/Grok 與 Groq 差異解析.md",
+    "01_AI_Tools/Dify.md",
+    "01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md",
+    "01_AI_Tools/Claude 操作模式與功能介紹.md",
+    "01_AI_Tools/claude 如何加入vs code中.md",
+    "01_AI_Tools/AI CLI 工具比較與選擇.md",
+    "01_AI_Tools",
+    "Electron.md",
+    "App 開發雙向連結.md",
+    "template/YouTube Videos.txt",
+    "template/daily.txt",
+    "template",
     "Pasted image 20260610160439.png",
     "Pasted image 20260610160029.png",
     "Pasted image 20260610155623.png",
@@ -217,40 +251,6 @@
     "Pasted image 20260610155038.png",
     "Pasted image 20260610155023.png",
     "Pasted image 20260610154953.png",
-    "Pasted image 20260610154740.png",
-    "LLM 到 Agent 的工程解析.md",
-    "Gemma 4 MCP 開發：本地與雲端計費.md",
-    "DPMS.md",
-    "CDN.md",
-    "AI CLI 工具比較與選擇.md",
-    "Claude 操作模式與功能介紹.md",
-    "Cursor：AI 程式碼編輯器介紹.md",
-    "Slack.md",
-    "如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
-    "IP 位址取得 MAC 位址方法.md",
-    "claude 如何加入vs code中.md",
-    "Git 新手入門指南.md",
-    "Obsidian.md",
-    "NotebookLM大更新！模型升級Gemini 3.5，還內建雲端電腦幫你跑分析：4大升級亮點一次看.md",
-    "NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md",
-    "Ollama 可以針對LOCAL設專案目錄來運作？.md",
-    "Electron.md",
-    "目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md",
-    "OPENCODE如何加QWEN3？.md",
-    "RAG.md",
-    "雙向連結（Backlinks）.md",
-    "讀書筆記雙向連結.md",
-    "工作專案雙向連結.md",
-    "程式學習雙向連結.md",
-    "App 開發雙向連結.md",
-    "template/daily.txt",
-    "template/YouTube Videos.txt",
-    "template/新增 文字文件.txt",
-    "template",
-    "新增資料夾",
-    "未命名.base",
-    "未命名 1.base",
-    "未命名 1",
-    "未命名"
+    "Obsidian/AI/template/YouTube Videos.txt"
   ]
 }
