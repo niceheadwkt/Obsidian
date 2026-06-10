@@ -69,7 +69,9 @@ Electron 採用了多進程架構，主要分為兩大角色：
 - **Obsidian**（筆記軟體）
     
 - **Postman**（API 測試工具）
-    
+　
+- Microsoft Teams
+
 
 ## 簡單範例：建立一個視窗
 
@@ -98,3 +100,23 @@ function createWindow () {
 // 當 Electron 準備就緒時，啟動視窗
 app.whenReady().then(createWindow)
 ```
+
+### Electron 與 Tauri 比較
+
+|項目|Electron|Tauri|
+|---|---|---|
+|核心技術|Chromium + Node.js|系統 WebView + Rust|
+|應用大小|較大|較小|
+|記憶體占用|較高|較低|
+|學習成本|低|較高|
+|生態系|非常成熟|成長中|
+|開發速度|快|中等|
+
+如果你是要開發桌面 App，我也可以示範：
+
+- 使用 React + Electron 建立專案
+- Electron 與後端 API 整合
+- IPC（主程序與渲染程序通訊）
+- 打包成 `.exe`、`.dmg` 或 Linux 安裝檔
+- Electron 安全性最佳實踐
+- Electron + TypeScript 完整範例專案架構

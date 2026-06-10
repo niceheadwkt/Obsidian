@@ -20,3 +20,4 @@ Groq 雲端平台主要運行頂級的開源模型，包括但不限於：
 - **Mistral / Mixtral** 系列
     
 - **Google Gemma** 系列
+
