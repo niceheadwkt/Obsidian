@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_Tech_Development/Git 新手入門指南.md",
+                "file": "sources/05_Tech_Development/Git 新手入門指南.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -30,8 +30,57 @@
               "icon": "lucide-file",
               "title": "Git 新手入門指南"
             }
+          },
+          {
+            "id": "d2f6f9299b3172ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/README.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "e316d52aa0b5c6bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant）.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant）"
+            }
           }
         ],
+        "currentTab": 2,
         "stacked": true
       }
     ],
@@ -85,8 +134,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -168,13 +216,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05_Tech_Development/Git 新手入門指南.md",
+                "file": "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Git 新手入門指南 的大綱"
+              "title": "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant） 的大綱"
             }
           },
           {
@@ -205,42 +253,44 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "262f0dd2e31e7020",
+  "active": "e316d52aa0b5c6bf",
   "lastOpenFiles": [
+    "wiki/README.md",
+    "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant）.md",
+    "raw/2026-06-11T212115+0800-从0搭建AI第二大脑：Obsidian + Claude Code 保姆级全流程教程（非技术人也能做）.md",
+    "raw",
+    "wiki/RAG 與 DeepSearch 概念綜述.md",
+    "wiki/Ollama.md",
+    "wiki/NotebookLM 綜合指南.md",
+    "wiki/log.md",
+    "wiki/LLM 到 Agent 的工程解析.md",
+    "wiki/index.md",
+    "wiki/Claude.md",
+    "wiki/AI CLI 工具比較與選擇_摘要.md",
+    "wiki/AI 工具與框架概覽.md",
+    "sources/01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md",
+    "wiki/網路系統基礎.md",
+    "wiki/個人知識管理系統構築.md",
+    "wiki/前端與系統開發常用技術.md",
+    "sources/05_Tech_Development/Repo.md",
+    "Andrej Karpathy 方法的 LLM Wiki 知識庫.md",
     "檔案清冊.base",
-    "未命名.md",
+    "schema.md",
+    "wiki",
+    "sources/README.md",
+    "sources",
+    "sources/05_Tech_Development/Git 新手入門指南.md",
     "07_Daily_Notes/2026-06-09.md",
     "未命名 1.base",
-    "07_Daily_Notes",
-    "06_Networking_Systems/如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
-    "06_Networking_Systems/IP 位址取得 MAC 位址方法.md",
-    "06_Networking_Systems/DPMS.md",
-    "06_Networking_Systems",
-    "03_AI_Concepts/RAG.md",
-    "03_AI_Concepts/LLM 到 Agent 的工程解析.md",
-    "03_AI_Concepts/Gemma 4 MCP 開發：本地與雲端計費.md",
-    "03_AI_Concepts/DeepSearch.md",
-    "03_AI_Concepts",
-    "01_AI_Tools/OPENCODE如何加QWEN3？.md",
-    "01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md",
-    "01_AI_Tools/xAI.md",
-    "01_AI_Tools/在 Ollama 中使用 Qwen 是完全免費的.md",
-    "01_AI_Tools/Ollama 可以針對LOCAL設專案目錄來運作？.md",
-    "01_AI_Tools/Groq.md",
-    "01_AI_Tools/Ollama 中Launch 選項codex app與codex 之差異為何.md",
-    "01_AI_Tools/Grok.md",
-    "01_AI_Tools/Grok 與 Groq 差異解析.md",
-    "01_AI_Tools/Dify.md",
-    "01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md",
-    "01_AI_Tools/Claude 操作模式與功能介紹.md",
-    "01_AI_Tools/claude 如何加入vs code中.md",
-    "01_AI_Tools/AI CLI 工具比較與選擇.md",
-    "01_AI_Tools",
-    "Electron.md",
-    "App 開發雙向連結.md",
+    "sources/07_Daily_Notes",
+    "sources/06_Networking_Systems/如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
+    "sources/06_Networking_Systems/IP 位址取得 MAC 位址方法.md",
+    "sources/06_Networking_Systems/DPMS.md",
+    "sources/06_Networking_Systems",
+    "sources/03_AI_Concepts/RAG.md",
+    "sources/03_AI_Concepts",
+    "sources/01_AI_Tools",
     "template/YouTube Videos.txt",
-    "template/daily.txt",
-    "template",
     "Pasted image 20260610160439.png",
     "Pasted image 20260610160029.png",
     "Pasted image 20260610155623.png",
@@ -250,7 +300,6 @@
     "Pasted image 20260610155217.png",
     "Pasted image 20260610155038.png",
     "Pasted image 20260610155023.png",
-    "Pasted image 20260610154953.png",
-    "Obsidian/AI/template/YouTube Videos.txt"
+    "Pasted image 20260610154953.png"
   ]
 }
