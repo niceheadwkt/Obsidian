@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ce98d89e7f072b76",
+        "id": "b69739b1946bcbb3",
         "type": "tabs",
         "children": [
           {
-            "id": "0e755175181df8a1",
+            "id": "9328781b092820a3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gemma 4 MCP 開發：本地與雲端計費.md",
+                "file": "施昇輝是「樂活投資」或「理財達人」.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Gemma 4 MCP 開發：本地與雲端計費"
+              "title": "施昇輝是「樂活投資」或「理財達人」"
+            }
+          },
+          {
+            "id": "a0947bd24c78ed62",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sources/05_Tech_Development/Git 新手入門指南.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Git 新手入門指南"
             }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -64,7 +89,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "GIT",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +110,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -105,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Roam Research.md",
+                "file": "Shebang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +141,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Roam Research 的反向連結"
+              "title": "Shebang 的反向連結"
             }
           },
           {
@@ -124,12 +150,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Roam Research.md",
+                "file": "Shebang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Roam Research 的對外連結"
+              "title": "Shebang 的對外連結"
             }
           },
           {
@@ -167,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Roam Research.md",
+                "file": "sources/05_Tech_Development/Git 新手入門指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Roam Research 的大綱"
+              "title": "Git 新手入門指南 的大綱"
             }
           },
           {
@@ -187,12 +213,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +230,44 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "0e755175181df8a1",
+  "active": "a0947bd24c78ed62",
   "lastOpenFiles": [
+    "wiki/Ollama.md",
+    "raw/2026-06-12T084627+0800-Claude Cowork自動發日報教學！排程設好幫團隊篩AI新聞，順手避開3個坑.md",
+    "謝金河是財經專家、新聞工作者與投資評論家.md",
+    "陳重銘 人稱「不敗投資理財達人」.md",
+    "施昇輝是「樂活投資」或「理財達人」.md",
+    "孫宇晨 (Sun Yuchen)創立了區塊鏈平台「波場TRON (TRX)」.md",
+    "人物視角.md",
+    "查理·芒格（Charlie Munger)之「以合理的價格買進卓越的公司」.md",
+    "創業家與投資人 納瓦爾·拉維康特（Naval Ravikant）.md",
+    "raw/2026-06-12T091325+0800-ChatGPT指令大全！70組提示詞一次整理，LINE貼圖、簡報封面、插畫菜單全搞定.md",
+    "wiki/README.md",
+    "raw/2026-06-11T212115+0800-从0搭建AI第二大脑：Obsidian + Claude Code 保姆级全流程教程（非技术人也能做）.md",
+    "raw",
+    "wiki/RAG 與 DeepSearch 概念綜述.md",
+    "wiki/NotebookLM 綜合指南.md",
+    "wiki/log.md",
+    "wiki/LLM 到 Agent 的工程解析.md",
+    "wiki/index.md",
+    "wiki/Claude.md",
+    "wiki/AI CLI 工具比較與選擇_摘要.md",
+    "wiki/AI 工具與框架概覽.md",
+    "sources/01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md",
+    "wiki/網路系統基礎.md",
+    "wiki/個人知識管理系統構築.md",
+    "wiki/前端與系統開發常用技術.md",
+    "sources/05_Tech_Development/Repo.md",
+    "Andrej Karpathy 方法的 LLM Wiki 知識庫.md",
+    "檔案清冊.base",
+    "wiki",
+    "sources",
+    "未命名 1.base",
+    "sources/07_Daily_Notes",
+    "sources/06_Networking_Systems",
+    "sources/03_AI_Concepts",
+    "sources/01_AI_Tools",
+    "template/YouTube Videos.txt",
     "Pasted image 20260610160439.png",
     "Pasted image 20260610160029.png",
     "Pasted image 20260610155623.png",
@@ -216,41 +277,6 @@
     "Pasted image 20260610155217.png",
     "Pasted image 20260610155038.png",
     "Pasted image 20260610155023.png",
-    "Pasted image 20260610154953.png",
-    "Pasted image 20260610154740.png",
-    "LLM 到 Agent 的工程解析.md",
-    "Gemma 4 MCP 開發：本地與雲端計費.md",
-    "DPMS.md",
-    "CDN.md",
-    "AI CLI 工具比較與選擇.md",
-    "Claude 操作模式與功能介紹.md",
-    "Cursor：AI 程式碼編輯器介紹.md",
-    "Slack.md",
-    "如果我知道ip=＂211.78.6.68＂、mac=＂00：0E：53：36：3B：B3＂，我如何取得此監視器之畫面.md",
-    "IP 位址取得 MAC 位址方法.md",
-    "claude 如何加入vs code中.md",
-    "Git 新手入門指南.md",
-    "Obsidian.md",
-    "NotebookLM大更新！模型升級Gemini 3.5，還內建雲端電腦幫你跑分析：4大升級亮點一次看.md",
-    "NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md",
-    "Ollama 可以針對LOCAL設專案目錄來運作？.md",
-    "Electron.md",
-    "目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md",
-    "OPENCODE如何加QWEN3？.md",
-    "RAG.md",
-    "雙向連結（Backlinks）.md",
-    "讀書筆記雙向連結.md",
-    "工作專案雙向連結.md",
-    "程式學習雙向連結.md",
-    "App 開發雙向連結.md",
-    "template/daily.txt",
-    "template/YouTube Videos.txt",
-    "template/新增 文字文件.txt",
-    "template",
-    "新增資料夾",
-    "未命名.base",
-    "未命名 1.base",
-    "未命名 1",
-    "未命名"
+    "Pasted image 20260610154953.png"
   ]
 }
