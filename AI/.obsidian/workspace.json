@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b69739b1946bcbb3",
+        "id": "68f328153362c71d",
         "type": "tabs",
         "children": [
           {
-            "id": "9328781b092820a3",
+            "id": "f1857d44441feedb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "施昇輝是「樂活投資」或「理財達人」.md",
+                "file": "人物視角.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,35 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "施昇輝是「樂活投資」或「理財達人」"
-            }
-          },
-          {
-            "id": "a0947bd24c78ed62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sources/05_Tech_Development/Git 新手入門指南.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Git 新手入門指南"
+              "title": "人物視角"
             }
           }
         ],
-        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -110,8 +85,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -193,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sources/05_Tech_Development/Git 新手入門指南.md",
+                "file": "人物視角.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Git 新手入門指南 的大綱"
+              "title": "人物視角 的大綱"
             }
           },
           {
@@ -230,13 +204,14 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "a0947bd24c78ed62",
+  "active": "8dd55338281850c5",
   "lastOpenFiles": [
-    "wiki/Ollama.md",
-    "raw/2026-06-12T084627+0800-Claude Cowork自動發日報教學！排程設好幫團隊篩AI新聞，順手避開3個坑.md",
-    "謝金河是財經專家、新聞工作者與投資評論家.md",
     "陳重銘 人稱「不敗投資理財達人」.md",
     "施昇輝是「樂活投資」或「理財達人」.md",
+    "謝金河是財經專家、新聞工作者與投資評論家.md",
+    "sources/05_Tech_Development/Git 新手入門指南.md",
+    "wiki/Ollama.md",
+    "raw/2026-06-12T084627+0800-Claude Cowork自動發日報教學！排程設好幫團隊篩AI新聞，順手避開3個坑.md",
     "孫宇晨 (Sun Yuchen)創立了區塊鏈平台「波場TRON (TRX)」.md",
     "人物視角.md",
     "查理·芒格（Charlie Munger)之「以合理的價格買進卓越的公司」.md",
@@ -258,7 +233,6 @@
     "wiki/個人知識管理系統構築.md",
     "wiki/前端與系統開發常用技術.md",
     "sources/05_Tech_Development/Repo.md",
-    "Andrej Karpathy 方法的 LLM Wiki 知識庫.md",
     "檔案清冊.base",
     "wiki",
     "sources",
