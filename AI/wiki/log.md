@@ -46,3 +46,22 @@
   - `[[網路系統基礎]]` (綜合概念頁面)
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，整理所有 41 篇文獻目錄。
 - **執行人**：Antigravity Agent
+
+## [2026-06-13] ingest | 批次匯入第六批：自動化、提示詞、Git 同步與商業思維
+
+- **來源文獻**：`SRC-042` 至 `SRC-054` 共 13 篇原始文章（位於 `AI/raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[AI 第二大腦與 Claude Cowork 自動化]]`
+  - `[[ChatGPT 影像生成提示詞指南]]`
+  - `[[Git GUI 與 GitHub 雙向同步實務]]`
+  - `[[商業案例與投資思維專題]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加這 4 個新 Wiki 頁面與 13 筆文獻來源。
+- **執行人**：Antigravity Agent
+
+## [2026-06-13] ingest | 批次匯入第七批：Claude 一桌三櫃專案管理工作流 (EP10)
+
+- **來源文獻**：`SRC-055` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[Claude 專案管理一桌三櫃工作流]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
+- **執行人**：Antigravity Agent
