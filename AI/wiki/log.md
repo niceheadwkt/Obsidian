@@ -65,3 +65,19 @@
   - `[[Claude 專案管理一桌三櫃工作流]]`
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
 - **執行人**：Antigravity Agent
+
+## [2026-06-14] ingest | 批次匯入第八批：母語式英文聽力與外語習得法 (KevinFeng)
+
+- **來源文獻**：`SRC-056` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[母語式英文聽力與外語習得法]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
+- **執行人**：Antigravity Agent
+
+## [2026-06-14] ingest | 批次匯入第九批：國外旅遊實用英語情境與求助指南
+
+- **來源文獻**：`SRC-057` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[國外旅遊實用英語情境]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
+- **執行人**：Antigravity Agent
