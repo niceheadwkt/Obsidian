@@ -11,13 +11,64 @@
             "id": "fd5f502285394023",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "關聯圖檢視"
+              "type": "markdown",
+              "state": {
+                "file": "raw/2026-06-15T110021+0800-Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2026-06-15T110021+0800-Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看"
+            }
+          },
+          {
+            "id": "d693b8acf816d773",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板"
+            }
+          },
+          {
+            "id": "9c0a44207a38675a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "raw/Git_GUI_GitHub_Comprehensive_Guide.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Git_GUI_GitHub_Comprehensive_Guide"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,7 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 997.4999961853027
   },
   "right": {
     "id": "dc2dd18f20567428",
@@ -186,8 +237,39 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "fd5f502285394023",
+  "active": "d693b8acf816d773",
   "lastOpenFiles": [
+    "raw/2026-06-15T160337+0800-AI提示詞範例看這篇！17組初階Prompt一次收藏，寫作、研究、溝通、時間管理都適用.md",
+    "raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md",
+    "raw/2026-06-15T160309+0800-Claude Code快捷鍵+指令大全！13大類速查不用背，從Ctrl+C到多Agent協作一次整理.md",
+    "raw/2026-06-15T160238+0800-CLAUDE.md這樣寫才對！12條規則一次整理，讓Claude Code錯誤率從41%降至3%.md",
+    "raw/2026-06-15T160222+0800-Claude Code安裝教學｜Desktop App、終端機2種方式怎麼裝？不懂程式也能秒上手.md",
+    "raw/2026-06-15T160156+0800-Token燒太快？官方給出4條Claude Code建議，這樣做降低額度消耗.md",
+    "raw/2026-06-15T160137+0800-Claude用量爆掉先別急著買！工程師5招「省token」大法，光PDF處理就差22倍.md",
+    "raw/2026-06-15T160120+0800-Claude老是達到用量上限？4個情境、9個技巧，教你有效縮減token.md",
+    "raw/2026-06-15T160047+0800-Claude推「互動視覺」新功能，可以直接在對話框裡畫圖表.md",
+    "raw/2026-06-15T160025+0800-不用Obsidian也能建AI知識庫！Karpathy同款「說明書」設定，4.1萬人超人氣方法完整拆解.md",
+    "raw/2026-06-15T160006+0800-Claude變身「史丹佛博士生」助理：研究生如何用9個提示，把40多篇論文變成研究報告？.md",
+    "raw/2026-06-15T155949+0800-「麥肯錫風」簡報怎麼做？一段 Prompt 生成可編輯 PPT：皇家藍質感、關鍵圖表一次到位.md",
+    "raw/2026-06-15T155933+0800-Anthropic推Claude for Word！AI直接住進側邊欄，幫你改稿、檢查文件.md",
+    "raw/2026-06-15T155909+0800-Claude in Excel官方教學！如何在Excel安裝Claude？查帳、除錯公式、建立財務模型…好用提示詞一次看.md",
+    "raw/2026-06-15T155845+0800-Claude Design簡報教學｜搭Refero做出世界級品牌簡報，還能大省token.md",
+    "raw/2026-06-15T155828+0800-Claude Design怎麼用？簡報教學：XML prompt、Slider微調、Comment修改一次學.md",
+    "raw/2026-06-15T155712+0800-Claude Design是什麼？AI簡報教學：提示詞、修改方式一次看.md",
+    "raw/2026-06-15T155655+0800-不會Claude Code也能上手！用Projects打造AI工作流，5步驟養成長期記憶助理.md",
+    "raw/2026-06-15T155632+0800-X上爆紅的26個Skill！賈伯斯、卡帕西的思維都能「蒸餾」、還能算命，完整清單一次收.md",
+    "raw/2026-06-15T155546+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md",
+    "raw/2026-06-15T155345+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md",
+    "raw/2026-06-15T155239+0800-Claude Skills是什麼、怎麼用？新手零基礎入門教學，不用每次重貼提示詞.md",
+    "raw/2026-06-15T155211+0800-Agent skill 是什麼？Agent skill教學，6步驟打造你的第一個Skill.md",
+    "raw/2026-06-15T155155+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md",
+    "raw/2026-06-15T155042+0800-如何用Claude Cowork做Excel？教學：一段提示詞從零生成700條公式.md",
+    "raw/2026-06-15T154950+0800-Claude Cowork實測：20分鐘產出100頁PPT！也可以修改.md",
+    "檔案清冊.base",
+    "raw/Git_GUI_GitHub_Comprehensive_Guide.pdf",
+    "raw/deep_blue_blueprint_style.yaml",
+    "raw/presentation_design_spec_retro_collage.yaml",
+    "raw/presentation_design_spec_minimal_silk.yaml",
     "未命名.canvas"
   ]
 }
