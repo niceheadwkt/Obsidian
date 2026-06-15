@@ -81,3 +81,15 @@
   - `[[國外旅遊實用英語情境]]`
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
 - **執行人**：Antigravity Agent
+
+## [2026-06-15] ingest | 批次匯入第十批：NotebookLM 與 Claude 深度專題 (65篇)
+
+- **來源文獻**：`SRC-058` 至 `SRC-122` 共 65 篇原始資料（含 62 篇 Markdown 文章及 3 篇 YAML 簡報樣式範本，位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[NotebookLM 進階應用與實戰指引]]`
+  - `[[Claude 系統優化與 Token 節省指南]]`
+  - `[[Claude Cowork 與 Agent Skill 實務]]`
+  - `[[Claude Design 與前端美化實務]]`
+  - `[[Claude 高階提示詞與應用場景]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加這 5 個新 Wiki 頁面與 65 筆文獻來源。
+- **執行人**：Antigravity Agent
