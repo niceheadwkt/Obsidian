@@ -8,60 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fd5f502285394023",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/2026-06-15T110021+0800-Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-15T110021+0800-Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看"
-            }
-          },
-          {
-            "id": "d693b8acf816d773",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板"
-            }
-          },
-          {
             "id": "880952b03208c964",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md",
+                "file": "wiki/Antigravity 核心概念與五層記憶系統.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,71 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!"
-            }
-          },
-          {
-            "id": "9c0a44207a38675a",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "raw/Git_GUI_GitHub_Comprehensive_Guide.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Git_GUI_GitHub_Comprehensive_Guide"
-            }
-          },
-          {
-            "id": "e00865f5ae293f73",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南"
-            }
-          },
-          {
-            "id": "3ef5639a81c51f3b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/2026-06-17T143022+0800-99%的人没用好Antigravity：22个核心概念一次讲透，从记忆系统到MCP协议全解析【2026最新保姆实操】.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-17T143022+0800-99%的人没用好Antigravity：22个核心概念一次讲透，从记忆系统到MCP协议全解析【2026最新保姆实操】"
+              "title": "Antigravity 核心概念與五層記憶系統"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -172,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Google AI Studio",
+                "query": "Deep",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -309,35 +200,38 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "3ef5639a81c51f3b",
+  "active": "880952b03208c964",
   "lastOpenFiles": [
+    "raw/2026-06-18T160201+0800-刷了那么多AI内容还是一头雾水？16个AI Agent核心术语一次全讲清楚：Skills、RAG、MCP、CLI...零基础彻底搞懂【2026最新】.md",
+    "raw/孫宇晨 (Sun Yuchen)創立了區塊鏈平臺「波場TRON (TRX)」.md",
+    "raw/2026-06-18T160201+0800-刷了那麼多AI內容還是一頭霧水？16個AI Agent核心術語一次全講清楚：Skills、RAG、MCP、CLI...零基礎徹底搞懂【2026最新】.md",
+    "raw/2026-06-15T143915+0800-股票分析提示詞｜用NotebookLM分析臺股及美股財報，AI prompt一次收.md",
+    "raw/2026-06-11T212115+0800-從0搭建AI第二大腦：Obsidian + Claude Code 保姆級全流程教程（非技術人也能做）.md",
+    "convert_s2t.js",
+    "wiki/Antigravity 核心概念與五層記憶系統.md",
+    "wiki/測試自動同步概念頁面.md",
+    "update_dashboard.js",
+    "raw/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md",
+    "wiki/Antigravity 與 Remotion 影片生成實務.md",
+    "dashboard.html",
+    "raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md",
+    "raw/2026-06-15T110021+0800-Google發布8種NotebookLM簡報範本，零散筆記變專業簡報！中英文提示詞一次看.md",
+    "raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md",
+    "sources/01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md",
+    "wiki/AI 工具與框架概覽.md",
+    "wiki/Claude 系統優化與 Token 節省指南.md",
     "raw/Fork.md",
     "raw/2026-06-17T143022+0800-99%的人没用好Antigravity：22个核心概念一次讲透，从记忆系统到MCP协议全解析【2026最新保姆实操】.md",
     "raw/Google AI Studio.md",
     "未命名.md",
     "跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南.md",
     "raw/Git_GUI_GitHub_Comprehensive_Guide.pdf",
-    "raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md",
-    "raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md",
     "raw/2026-06-15T160337+0800-AI提示詞範例看這篇！17組初階Prompt一次收藏，寫作、研究、溝通、時間管理都適用.md",
     "raw/2026-06-15T160309+0800-Claude Code快捷鍵+指令大全！13大類速查不用背，從Ctrl+C到多Agent協作一次整理.md",
     "raw/2026-06-15T160238+0800-CLAUDE.md這樣寫才對！12條規則一次整理，讓Claude Code錯誤率從41%降至3%.md",
     "raw/2026-06-15T160222+0800-Claude Code安裝教學｜Desktop App、終端機2種方式怎麼裝？不懂程式也能秒上手.md",
     "raw/2026-06-15T160156+0800-Token燒太快？官方給出4條Claude Code建議，這樣做降低額度消耗.md",
     "raw/2026-06-15T160137+0800-Claude用量爆掉先別急著買！工程師5招「省token」大法，光PDF處理就差22倍.md",
-    "raw/2026-06-15T160120+0800-Claude老是達到用量上限？4個情境、9個技巧，教你有效縮減token.md",
-    "raw/2026-06-15T160047+0800-Claude推「互動視覺」新功能，可以直接在對話框裡畫圖表.md",
-    "raw/2026-06-15T160025+0800-不用Obsidian也能建AI知識庫！Karpathy同款「說明書」設定，4.1萬人超人氣方法完整拆解.md",
-    "raw/2026-06-15T160006+0800-Claude變身「史丹佛博士生」助理：研究生如何用9個提示，把40多篇論文變成研究報告？.md",
-    "raw/2026-06-15T155949+0800-「麥肯錫風」簡報怎麼做？一段 Prompt 生成可編輯 PPT：皇家藍質感、關鍵圖表一次到位.md",
-    "raw/2026-06-15T155933+0800-Anthropic推Claude for Word！AI直接住進側邊欄，幫你改稿、檢查文件.md",
-    "raw/2026-06-15T155909+0800-Claude in Excel官方教學！如何在Excel安裝Claude？查帳、除錯公式、建立財務模型…好用提示詞一次看.md",
-    "raw/2026-06-15T155845+0800-Claude Design簡報教學｜搭Refero做出世界級品牌簡報，還能大省token.md",
-    "raw/2026-06-15T155828+0800-Claude Design怎麼用？簡報教學：XML prompt、Slider微調、Comment修改一次學.md",
-    "raw/2026-06-15T155712+0800-Claude Design是什麼？AI簡報教學：提示詞、修改方式一次看.md",
-    "raw/2026-06-15T155655+0800-不會Claude Code也能上手！用Projects打造AI工作流，5步驟養成長期記憶助理.md",
-    "raw/2026-06-15T155632+0800-X上爆紅的26個Skill！賈伯斯、卡帕西的思維都能「蒸餾」、還能算命，完整清單一次收.md",
-    "raw/2026-06-15T155546+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md",
     "檔案清冊.base",
     "raw/deep_blue_blueprint_style.yaml",
     "raw/presentation_design_spec_retro_collage.yaml",

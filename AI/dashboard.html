@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人 AI 工作流 Dashboard｜LLM Wiki 知識庫</title>
+  <meta name="description" content="可視化呈現個人 Obsidian LLM Wiki 知識庫狀態、匯入進度與活動日誌">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #0f1628;
+      --bg-card: rgba(255,255,255,0.04);
+      --bg-card-hover: rgba(255,255,255,0.07);
+      --bg-glass: rgba(15, 22, 40, 0.8);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.15);
+      --text-primary: #e8edf7;
+      --text-secondary: #8b9ab8;
+      --text-muted: #4a5a7a;
+      --accent-blue: #4f8ef7;
+      --accent-purple: #8b5cf6;
+      --accent-cyan: #22d3ee;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --gradient-main: linear-gradient(135deg, #4f8ef7 0%, #8b5cf6 100%);
+      --gradient-cyan: linear-gradient(135deg, #22d3ee 0%, #4f8ef7 100%);
+      --gradient-emerald: linear-gradient(135deg, #10b981 0%, #22d3ee 100%);
+      --gradient-amber: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-glow-blue: 0 0 40px rgba(79,142,247,0.15);
+      --shadow-glow-purple: 0 0 40px rgba(139,92,246,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ambient orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 20s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(79,142,247,0.12), transparent 70%);
+      top: -200px; left: -200px;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(139,92,246,0.10), transparent 70%);
+      bottom: -150px; right: -150px;
+      animation-delay: -10s;
+    }
+    .orb-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(34,211,238,0.08), transparent 70%);
+      top: 50%; left: 50%;
+      animation-delay: -5s;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.05); }
+      66% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    /* Layout */
+    .app-wrapper { position: relative; z-index: 1; }
+
+    /* Header / Nav */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .navbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--gradient-main);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 0 20px rgba(79,142,247,0.4);
+    }
+    .logo-text {
+      font-size: 1rem;
+      font-weight: 700;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    .logo-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+    .nav-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+      box-shadow: 0 0 8px rgba(16,185,129,0.6);
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    /* Main container */
+    .main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    /* Page header */
+    .page-header {
+      margin-bottom: 2.5rem;
+    }
+    .page-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #e8edf7 0%, #8b9ab8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .page-subtitle span {
+      color: var(--accent-blue);
+      font-weight: 500;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-main);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+    }
+    .stat-card:hover::before { opacity: 0.04; }
+
+    .stat-icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 1rem;
+    }
+    .stat-icon.blue { background: rgba(79,142,247,0.15); box-shadow: 0 0 20px rgba(79,142,247,0.2); }
+    .stat-icon.purple { background: rgba(139,92,246,0.15); box-shadow: 0 0 20px rgba(139,92,246,0.2); }
+    .stat-icon.emerald { background: rgba(16,185,129,0.15); box-shadow: 0 0 20px rgba(16,185,129,0.2); }
+    .stat-icon.amber { background: rgba(245,158,11,0.15); box-shadow: 0 0 20px rgba(245,158,11,0.2); }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-value.blue { color: var(--accent-blue); }
+    .stat-value.purple { color: var(--accent-purple); }
+    .stat-value.emerald { color: var(--accent-emerald); }
+    .stat-value.amber { color: var(--accent-amber); }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .stat-change {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Section header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .icon {
+      font-size: 1rem;
+    }
+    .section-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(79,142,247,0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(79,142,247,0.2);
+    }
+    .section-badge.warning {
+      background: rgba(245,158,11,0.12);
+      color: var(--accent-amber);
+      border-color: rgba(245,158,11,0.2);
+    }
+
+    /* Main content grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 1100px) {
+      .content-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Wiki pages table */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-body { padding: 0; }
+
+    .wiki-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .wiki-table th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--border);
+    }
+    .wiki-table td {
+      padding: 0.85rem 1.5rem;
+      font-size: 0.875rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+    .wiki-table tr:last-child td { border-bottom: none; }
+    .wiki-table tr { transition: background 0.2s ease; }
+    .wiki-table tr:hover td { background: rgba(255,255,255,0.025); }
+
+    .wiki-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .wiki-name-icon { font-size: 0.9rem; }
+    .wiki-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-ai { background: rgba(79,142,247,0.12); color: var(--accent-blue); }
+    .tag-claude { background: rgba(139,92,246,0.12); color: var(--accent-purple); }
+    .tag-notebook { background: rgba(34,211,238,0.12); color: var(--accent-cyan); }
+    .tag-business { background: rgba(245,158,11,0.12); color: var(--accent-amber); }
+    .tag-tech { background: rgba(16,185,129,0.12); color: var(--accent-emerald); }
+    .tag-life { background: rgba(244,63,94,0.12); color: var(--accent-rose); }
+
+    .source-count {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .source-bar {
+      width: 60px;
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .source-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--gradient-main);
+    }
+    .date-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Right sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Pending ingest */
+    .pending-list { padding: 0.75rem; }
+    .pending-item {
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.15);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pending-item:last-child { margin-bottom: 0; }
+    .pending-item:hover {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      transform: translateX(2px);
+    }
+    .pending-item-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .pending-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+    .pending-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      background: rgba(245,158,11,0.15);
+      color: var(--accent-amber);
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    /* Topic distribution */
+    .topic-list { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .topic-item { display: flex; flex-direction: column; gap: 6px; }
+    .topic-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+    .topic-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .topic-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .topic-count { color: var(--text-muted); font-size: 0.78rem; }
+    .topic-progress {
+      height: 5px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .topic-progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Activity log */
+    .log-list { padding: 1rem 1.5rem 1.5rem; }
+    .log-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+    }
+    .log-item:last-child { border-bottom: none; }
+    .log-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      min-width: 32px;
+    }
+    .log-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .log-line {
+      width: 2px;
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      margin-top: 4px;
+    }
+    .log-item:last-child .log-line { display: none; }
+    .log-content { flex: 1; }
+    .log-action {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+    .log-detail {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .log-date {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 0.3rem;
+    }
+
+    /* Bottom row */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .bottom-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Quick actions */
+    .quick-actions { padding: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .action-btn:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+    .action-icon {
+      font-size: 1.3rem;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+    .action-icon.blue { background: rgba(79,142,247,0.12); }
+    .action-icon.purple { background: rgba(139,92,246,0.12); }
+    .action-icon.emerald { background: rgba(16,185,129,0.12); }
+    .action-icon.amber { background: rgba(245,158,11,0.12); }
+    .action-icon.rose { background: rgba(244,63,94,0.12); }
+    .action-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .action-desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Heatmap / source catalog summary */
+    .catalog-summary { padding: 1.25rem 1.5rem; }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .catalog-cell {
+      aspect-ratio: 1;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .catalog-cell:hover { transform: scale(1.3); opacity: 0.9; }
+    .catalog-legend {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+    .catalog-total {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .catalog-total strong { color: var(--text-primary); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    .delay-6 { animation-delay: 0.6s; }
+
+    /* Counter animation */
+    .count-up { display: inline-block; }
+
+    /* Updated badge */
+    .updated-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: var(--accent-emerald);
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Tooltip */
+    [title] { position: relative; }
+  </style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="app-wrapper">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <div class="logo-icon">🧠</div>
+        <div>
+          <div class="logo-text">LLM Wiki Dashboard</div>
+          <span class="logo-sub">個人 AI 知識庫控制中心</span>
+        </div>
+      </div>
+      <div class="nav-status">
+        <div class="status-dot"></div>
+        <span id="currentTime">正在載入...</span>
+        <span style="color: var(--border); margin: 0 4px;">|</span>
+        <span>Obsidian Vault 已連線</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <!-- Page header -->
+    <div class="page-header animate-in">
+      <h1 class="page-title">個人 AI 工作流 Dashboard</h1>
+      <p class="page-subtitle">
+        你的 LLM Wiki 知識庫建立於 <span>2026-06-11</span>，已持續運行
+        <span id="dayCount">—</span> 天。
+        本儀表板即時呈現知識庫狀態、待匯入資料與活動記錄。
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card animate-in delay-1">
+        <div class="stat-icon blue">📚</div>
+        <div class="stat-value blue count-up" data-target="24">0</div>
+        <div class="stat-label">Wiki 知識頁面</div>
+        <div class="stat-change">概念頁 · 實體頁 · 分析頁</div>
+      </div>
+      <div class="stat-card animate-in delay-2">
+        <div class="stat-icon purple">📄</div>
+        <div class="stat-value purple count-up" data-target="124">0</div>
+        <div class="stat-label">已編目原始資料</div>
+        <div class="stat-change">SRC-001 至 SRC-124</div>
+      </div>
+      <div class="stat-card animate-in delay-3">
+        <div class="stat-icon emerald">✅</div>
+        <div class="stat-value emerald count-up" data-target="11">0</div>
+        <div class="stat-label">完成批次匯入</div>
+        <div class="stat-change">最後更新：2026-06-18</div>
+      </div>
+      <div class="stat-card animate-in delay-4">
+        <div class="stat-icon amber">⏳</div>
+        <div class="stat-value amber count-up" data-target="0">0</div>
+        <div class="stat-label">待匯入 Raw 檔案</div>
+        <div class="stat-change">所有資料已完成匯入</div>
+      </div>
+    </div>
+
+    <!-- Main grid: wiki table + sidebar -->
+    <div class="content-grid">
+
+      <!-- Wiki pages table -->
+      <div class="card animate-in delay-2">
+        <div class="card-header">
+          <div class="section-title">
+            <span class="icon">🗂️</span>
+            Wiki 知識頁面總覽
+          </div>
+          <span class="section-badge">24 頁面</span>
+        </div>
+        <div class="card-body">
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>頁面名稱</th>
+                <th>分類</th>
+                <th>來源數</th>
+                <th>最後更新</th>
+              </tr>
+            </thead>
+            <tbody id="wikiTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <!-- Pending ingest -->
+        <div class="card animate-in delay-3">
+          <div class="card-header">
+            <div class="section-title">
+              <span class="icon">🟢</span>
+              待匯入 Raw 檔案
+            </div>
+            <span class="section-badge" style="background:rgba(16,185,129,0.12); color:var(--accent-emerald); border-color:rgba(16,185,129,0.2);">0 待處理</span>
+          </div>
+          <div class="pending-list">
+            <div style="padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+              🎉 所有 Raw 檔案均已匯入完成！
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic distribution -->
+        <div class="card animate-in delay-4">
+          <div class="card-header">
+            <div class="section-title">
+              <span class="icon">📊</span>
+              主題分布
+            </div>
+          </div>
+          <div class="topic-list" id="topicList"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="bottom-grid">
+
+      <!-- Activity log -->
+      <div class="card animate-in delay-4">
+        <div class="card-header">
+          <div class="section-title">
+            <span class="icon">📋</span>
+            操作歷史日誌
+          </div>
+          <span class="updated-now">
+            <span>●</span>
+            最新：2026-06-18
+          </span>
+        </div>
+        <div class="log-list" id="logList"></div>
+      </div>
+
+      <!-- Source heatmap + Quick actions -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+        <!-- Source heatmap -->
+        <div class="card animate-in delay-5">
+          <div class="card-header">
+            <div class="section-title">
+              <span class="icon">🗺️</span>
+              原始資料來源圖
+            </div>
+          </div>
+          <div class="catalog-summary">
+            <div class="catalog-grid" id="heatmapGrid"></div>
+            <div class="catalog-legend">
+              <div class="legend-item">
+                <div class="legend-dot" style="background: rgba(79,142,247,0.6);"></div>
+                AI 工具
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background: rgba(139,92,246,0.6);"></div>
+                Claude 系列
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background: rgba(34,211,238,0.6);"></div>
+                NotebookLM
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background: rgba(245,158,11,0.6);"></div>
+                其他
+              </div>
+            </div>
+            <div class="catalog-total">
+              共 <strong>124</strong> 份已編目文件，涵蓋 <strong>6</strong> 大主題領域
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="card animate-in delay-6">
+          <div class="card-header">
+            <div class="section-title">
+              <span class="icon">⚡</span>
+              快速工作流指令
+            </div>
+          </div>
+          <div class="quick-actions">
+            <div class="action-btn" onclick="copyCommand('ingest')" title="複製 Ingest 指令">
+              <div class="action-icon blue">📥</div>
+              <div>
+                <div class="action-label">匯入 Raw 資料</div>
+                <div class="action-desc">Ingest Workflow</div>
+              </div>
+            </div>
+            <div class="action-btn" onclick="copyCommand('query')" title="複製 Query 指令">
+              <div class="action-icon purple">🔍</div>
+              <div>
+                <div class="action-label">查詢知識庫</div>
+                <div class="action-desc">Query Workflow</div>
+              </div>
+            </div>
+            <div class="action-btn" onclick="copyCommand('lint')" title="複製 Lint 指令">
+              <div class="action-icon emerald">🩺</div>
+              <div>
+                <div class="action-label">健康檢查</div>
+                <div class="action-desc">Lint Workflow</div>
+              </div>
+            </div>
+            <div class="action-btn" onclick="copyCommand('s2t')" title="複製簡繁轉換指令">
+              <div class="action-icon rose">🔄</div>
+              <div>
+                <div class="action-label">簡繁檔案轉換</div>
+                <div class="action-desc">S2T Converter</div>
+              </div>
+            </div>
+            <div class="action-btn" onclick="openObsidian()" title="開啟 Obsidian">
+              <div class="action-icon amber">🗃️</div>
+              <div>
+                <div class="action-label">開啟 Wiki</div>
+                <div class="action-desc">Obsidian Vault</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Toast notification -->
+<div id="toast" style="
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(16,185,129,0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.3);
+">✅ 已複製到剪貼簿！</div>
+
+<script>
+// ─── Data ───────────────────────────────────────────────────────────────────
+
+// <!--WIKI_DATA_START-->
+const wikiPages = [
+  {
+    "name": "Antigravity 核心概念與五層記憶系統",
+    "icon": "🧠",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-18"
+  },
+  {
+    "name": "Antigravity 與 Remotion 影片生成實務",
+    "icon": "🧠",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-18"
+  },
+  {
+    "name": "Claude Cowork 與 Agent Skill 實務",
+    "icon": "⚙️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-15"
+  },
+  {
+    "name": "Claude Design 與前端美化實務",
+    "icon": "🎨",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-15"
+  },
+  {
+    "name": "Claude 系統優化與 Token 節省指南",
+    "icon": "💰",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-15"
+  },
+  {
+    "name": "Claude 高階提示詞與應用場景",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-15"
+  },
+  {
+    "name": "NotebookLM 進階應用與實戰指引",
+    "icon": "📓",
+    "tag": "notebook",
+    "tagLabel": "NotebookLM",
+    "sources": 0,
+    "date": "2026-06-15"
+  },
+  {
+    "name": "國外旅遊實用英語情境",
+    "icon": "🎧",
+    "tag": "life",
+    "tagLabel": "語言學習",
+    "sources": 0,
+    "date": "2026-06-14"
+  },
+  {
+    "name": "母語式英文聽力與外語習得法",
+    "icon": "🎧",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-14"
+  },
+  {
+    "name": "AI 第二大腦與 Claude Cowork 自動化",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-13"
+  },
+  {
+    "name": "ChatGPT 影像生成提示詞指南",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-13"
+  },
+  {
+    "name": "Claude 專案管理一桌三櫃工作流",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-13"
+  },
+  {
+    "name": "Git GUI 與 GitHub 雙向同步實務",
+    "icon": "🔧",
+    "tag": "tech",
+    "tagLabel": "開發技術",
+    "sources": 0,
+    "date": "2026-06-13"
+  },
+  {
+    "name": "商業案例與投資思維專題",
+    "icon": "💼",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-13"
+  },
+  {
+    "name": "AI CLI 工具比較與選擇_摘要",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 1,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "AI 工具與框架概覽",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "Claude",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "LLM 到 Agent 的工程解析",
+    "icon": "🦙",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "NotebookLM 綜合指南",
+    "icon": "📓",
+    "tag": "notebook",
+    "tagLabel": "NotebookLM",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "Ollama",
+    "icon": "🦙",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "RAG 與 DeepSearch 概念綜述",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "個人知識管理系統構築",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "前端與系統開發常用技術",
+    "icon": "🔧",
+    "tag": "tech",
+    "tagLabel": "開發技術",
+    "sources": 0,
+    "date": "2026-06-11"
+  },
+  {
+    "name": "網路系統基礎",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-11"
+  }
+];
+
+const topics = [
+  {
+    "name": "Claude 系列",
+    "color": "#8b5cf6",
+    "count": 45,
+    "max": 50
+  },
+  {
+    "name": "NotebookLM",
+    "color": "#22d3ee",
+    "count": 29,
+    "max": 50
+  },
+  {
+    "name": "AI 工具 & 概念",
+    "color": "#4f8ef7",
+    "count": 30,
+    "max": 50
+  },
+  {
+    "name": "商業投資思維",
+    "color": "#f59e0b",
+    "count": 7,
+    "max": 50
+  },
+  {
+    "name": "開發技術",
+    "color": "#10b981",
+    "count": 11,
+    "max": 50
+  },
+  {
+    "name": "語言學習",
+    "color": "#f43f5e",
+    "count": 2,
+    "max": 50
+  }
+];
+
+const logs = [
+  {
+    "type": "ingest",
+    "title": "批次匯入第十一批：Antigravity 核心概念與 Remotion 影片工程",
+    "detail": "`SRC-123` 與 `SRC-124` 共 2 篇原始資料（位於 `raw/` 唯讀目錄下）。",
+    "date": "2026-06-18"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第十批：NotebookLM 與 Claude 深度專題 (65篇)",
+    "detail": "`SRC-058` 至 `SRC-122` 共 65 篇原始資料（含 62 篇 Markdown 文章及 3 篇 YAML 簡報樣式範本，位於 `raw/` 唯讀目錄下）。",
+    "date": "2026-06-15"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第九批：國外旅遊實用英語情境與求助指南",
+    "detail": "`SRC-057` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
+    "date": "2026-06-14"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第八批：母語式英文聽力與外語習得法 (KevinFeng)",
+    "detail": "`SRC-056` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
+    "date": "2026-06-14"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第七批：Claude 一桌三櫃專案管理工作流 (EP10)",
+    "detail": "`SRC-055` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
+    "date": "2026-06-13"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第六批：自動化、提示詞、Git 同步與商業思維",
+    "detail": "`SRC-042` 至 `SRC-054` 共 13 篇原始文章（位於 `AI/raw/` 唯讀目錄下）。",
+    "date": "2026-06-13"
+  }
+];
+
+const srcColors = [
+  "#4f8ef7",
+  "#4f8ef7",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#4f8ef7",
+  "#10b981",
+  "#10b981",
+  "#10b981",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#8b5cf6",
+  "#f43f5e",
+  "#f43f5e",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#8b5cf6",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#22d3ee",
+  "#4f8ef7",
+  "#4f8ef7"
+];
+// <!--WIKI_DATA_END-->
+
+// ─── Render functions ────────────────────────────────────────────────────────
+
+function renderWikiTable() {
+  const tbody = document.getElementById('wikiTableBody');
+  const maxSources = Math.max(...wikiPages.map(p => p.sources));
+  
+  tbody.innerHTML = wikiPages.map(page => {
+    const fillWidth = Math.round((page.sources / maxSources) * 100);
+    const isPending = page.pending;
+    return `
+      <tr>
+        <td>
+          <div class="wiki-name">
+            <span class="wiki-name-icon">${page.icon}</span>
+            ${page.name}
+            ${isPending ? '<span style="font-size:0.65rem;background:rgba(244,63,94,0.12);color:#f43f5e;padding:2px 6px;border-radius:4px;font-weight:600;margin-left:4px;">NEW</span>' : ''}
+          </div>
+        </td>
+        <td><span class="wiki-tag tag-${page.tag}">${page.tagLabel}</span></td>
+        <td>
+          <div class="source-count">
+            <div class="source-bar">
+              <div class="source-bar-fill" style="width:${fillWidth}%"></div>
+            </div>
+            <span>${page.sources}</span>
+          </div>
+        </td>
+        <td><span class="date-text">${page.date}</span></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function renderTopics() {
+  const container = document.getElementById('topicList');
+  const maxCount = Math.max(...topics.map(t => t.count));
+  
+  container.innerHTML = topics.map(t => {
+    const pct = Math.round((t.count / maxCount) * 100);
+    return `
+      <div class="topic-item">
+        <div class="topic-header">
+          <div class="topic-name">
+            <div class="topic-dot" style="background:${t.color}; box-shadow: 0 0 8px ${t.color}60;"></div>
+            ${t.name}
+          </div>
+          <div class="topic-count">${t.count} 份來源</div>
+        </div>
+        <div class="topic-progress">
+          <div class="topic-progress-fill" style="width:0%; background:${t.color}; box-shadow: 0 0 8px ${t.color}40;"
+               data-target="${pct}"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.topic-progress-fill').forEach(el => {
+      el.style.width = el.dataset.target + '%';
+    });
+  }, 600);
+}
+
+function renderLogs() {
+  const container = document.getElementById('logList');
+  const typeColors = {
+    ingest: '#4f8ef7',
+    setup: '#10b981',
+    lint: '#f59e0b',
+    query: '#8b5cf6',
+  };
+  
+  container.innerHTML = logs.map((log, i) => `
+    <div class="log-item">
+      <div class="log-timeline">
+        <div class="log-dot" style="background:${typeColors[log.type]}; box-shadow: 0 0 8px ${typeColors[log.type]}80;"></div>
+        ${i < logs.length - 1 ? '<div class="log-line"></div>' : ''}
+      </div>
+      <div class="log-content">
+        <div class="log-action">${log.title}</div>
+        <div class="log-detail">${log.detail}</div>
+        <div class="log-date">${log.date}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderHeatmap() {
+  const grid = document.getElementById('heatmapGrid');
+  grid.innerHTML = srcColors.map((color, i) => `
+    <div class="catalog-cell"
+         style="background:${color}; opacity:${0.3 + (i / srcColors.length) * 0.5};"
+         title="SRC-${String(i+1).padStart(3,'0')}">
+    </div>
+  `).join('');
+}
+
+// ─── Counter animation ───────────────────────────────────────────────────────
+
+function animateCounters() {
+  document.querySelectorAll('.count-up').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const duration = 1200;
+    const step = duration / target;
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += Math.ceil(target / 60);
+      if (current >= target) {
+        el.textContent = target;
+        clearInterval(timer);
+      } else {
+        el.textContent = current;
+      }
+    }, step > 16 ? step : 16);
+  });
+}
+
+// ─── Clock ────────────────────────────────────────────────────────────────────
+
+function updateClock() {
+  const now = new Date();
+  const options = {
+    timeZone: 'Asia/Taipei',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: false
+  };
+  document.getElementById('currentTime').textContent =
+    now.toLocaleString('zh-TW', options).replace(/\//g, '-');
+}
+
+function updateDayCount() {
+  const start = new Date('2026-06-11');
+  const now = new Date();
+  const days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+  document.getElementById('dayCount').textContent = days;
+}
+
+// ─── Actions ────────────────────────────────────────────────────────────────
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg || '✅ 已複製到剪貼簿！';
+  toast.style.transform = 'translateY(0)';
+  toast.style.opacity = '1';
+  setTimeout(() => {
+    toast.style.transform = 'translateY(100px)';
+    toast.style.opacity = '0';
+  }, 2500);
+}
+
+function copyCommand(type) {
+  const commands = {
+    ingest: '請依照 AI/schema.md 的 Ingest Workflow，將 AI/raw/ 目錄下所有尚未匯入的檔案編譯進 AI/wiki/，並更新 index.md 與 log.md。',
+    query: '請先讀取 AI/wiki/index.md，再依據以下問題查詢知識庫並給出有引用來源的回答：[在此輸入你的問題]',
+    lint: '請依照 AI/schema.md 的 Lint Workflow，對 AI/wiki/ 進行完整健康檢查：包含斷鏈偵測、孤立頁面掃描、矛盾標記，並推薦知識缺口補充建議。',
+    s2t: 'node AI/convert_s2t.js',
+  };
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(commands[type]).then(() => showToast('✅ 已複製指令到剪貼簿！'));
+  }
+}
+
+function copyIngestCommand(el) {
+  const title = el.querySelector('.pending-item-title').textContent;
+  const cmd = `請依照 AI/schema.md 的 Ingest Workflow，匯入並編譯 raw/ 目錄下的新資料（包含「${title}」），建立對應的 Wiki 頁面並更新 index.md 與 log.md。`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(cmd).then(() => showToast('✅ Ingest 指令已複製！'));
+  }
+}
+
+function openObsidian() {
+  window.location.href = 'obsidian://open?vault=Obsidian&file=AI/wiki/index';
+}
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderWikiTable();
+  renderTopics();
+  renderLogs();
+  renderHeatmap();
+  updateClock();
+  updateDayCount();
+  setInterval(updateClock, 1000);
+
+  // Start counter animations after a short delay
+  setTimeout(animateCounters, 300);
+});
+</script>
+</body>
+</html>

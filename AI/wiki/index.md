@@ -27,6 +27,8 @@
 | `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理 | 15 | 2026-06-15 |
 | `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 5 | 2026-06-15 |
 | `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查 | 12 | 2026-06-15 |
+| `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 1 | 2026-06-18 |
+| `[[Antigravity 與 Remotion 影片生成實務]]` | 「影片即程式碼」影片工程實務，比較畫家模式與工程師模式，解構 4 大應用場景與限制、3 大質感提升秘訣與自動化影片生產線實操 | 1 | 2026-06-18 |
 
 ## 實體與工具專頁 (Entities & Tools)
 
@@ -161,6 +163,8 @@
 | `SRC-120` | `deep_blue_blueprint_style.yaml` | 樣式 / 範本 | 2026-06-15 | [[NotebookLM 進階應用與實戰指引]] |
 | `SRC-121` | `presentation_design_spec_minimal_silk.yaml` | 樣式 / 範本 | 2026-06-15 | [[NotebookLM 進階應用與實戰指引]] |
 | `SRC-122` | `presentation_design_spec_retro_collage.yaml` | 樣式 / 範本 | 2026-06-15 | [[NotebookLM 進階應用與實戰指引]] |
+| `SRC-123` | `2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md` | 影片 / 自動 | 2026-06-18 | `[[Antigravity 與 Remotion 影片生成實務]]` |
+| `SRC-124` | `2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md` | 影片 / 教學 | 2026-06-18 | `[[Antigravity 核心概念與五層記憶系統]]` |
 
 ---
 

@@ -93,3 +93,13 @@
   - `[[Claude 高階提示詞與應用場景]]`
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加這 5 個新 Wiki 頁面與 65 筆文獻來源。
 - **執行人**：Antigravity Agent
+
+## [2026-06-18] ingest | 批次匯入第十一批：Antigravity 核心概念與 Remotion 影片工程
+
+- **來源文獻**：`SRC-123` 與 `SRC-124` 共 2 篇原始資料（位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - `[[Antigravity 核心概念與五層記憶系統]]`
+  - `[[Antigravity 與 Remotion 影片生成實務]]`
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加這 2 個新 Wiki 頁面與 2 筆文獻來源。
+- **執行人**：Antigravity Agent
+

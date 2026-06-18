@@ -9,7 +9,7 @@ description: "Anthropic 推出對話式設計工具 Claude Design，能以自然
 tags:
   - "clippings"
 ---
-Anthropic 4 月 17 日發布 [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs) ，同日 Figma 股價一度下跌 7%、Adobe 跌 2.7%、Wix 跌 4.7%；不到 24 小時內， [Canva 宣布與 Anthropic 合作](https://www.canva.com/newsroom/news/canva-claude-design/) ，強調使用者在 Claude Design 產出初稿後可無縫切到 Canva 完稿。
+Anthropic 4 月 17 日發布 [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs) ，同日 Figma 股價一度下跌 7%、Adobe 跌 2.7%、Wix 跌 4.7%；不到 24 小時內， [Canva 宣佈與 Anthropic 合作](https://www.canva.com/newsroom/news/canva-claude-design/) ，強調使用者在 Claude Design 產出初稿後可無縫切到 Canva 完稿。
 
 股價是市場的直覺反應，但更重要的問題是：Claude Design 到底在做什麼，為什麼設計工具三強（Figma、Adobe、Canva）同時緊張？
 
@@ -35,7 +35,7 @@ Anthropic 4 月 17 日發布 [Claude Design](https://www.anthropic.com/news/clau
 
 **對 Figma 的威脅** ：它跳過 Figma 的核心動作（拉元件、排版、對齊），讓你用自然語言直接生成 UI 原型，還能讀你 Git repo 裡的 CSS 變數（品牌色、字體設定），自動套用到設計。Figma 目前只能「畫畫」，沒辦法把設計跟程式碼雙向同步。
 
-**對 Canva 的威脅** ：Canva 強在模板多、社群協作順。Claude Design 不跟你比模板，直接用 Opus 4.7 的視覺能力生成「不是模板」的內容。Canva 的反應是 24 小時內宣布整合合作，代表它看清這不是競爭，是改朝換代。
+**對 Canva 的威脅** ：Canva 強在模板多、社群協作順。Claude Design 不跟你比模板，直接用 Opus 4.7 的視覺能力生成「不是模板」的內容。Canva 的反應是 24 小時內宣佈整合合作，代表它看清這不是競爭，是改朝換代。
 
 **對 Adobe 的威脅** ：Adobe 系列工具學習曲線最陡。Claude Design 的目標就是 **讓不會用 Photoshop 的人也能做出能看的設計** 。Adobe 的護城河正在被繞開。
 
@@ -166,7 +166,7 @@ Anthropic 4 月 17 日發布 [Claude Design](https://www.anthropic.com/news/clau
 - 對時間軸某節點：「這個節點放大，加 badge 凸顯」
 - 對比較表某一欄：「這一欄換成品牌色系，其他欄用灰階」
 
-每條 comment 都只影響它指的那個元素，其他部分不動。
+每條 comment 都隻影響它指的那個元素，其他部分不動。
 
 ![圖七：透過comment局部修改](https://image-cdn.learnin.tw/bnextmedia/image/album/2026-04/3b6i-1776670519.png?w=1200&output=webp)
 
@@ -199,7 +199,7 @@ Anthropic 4 月 17 日發布 [Claude Design](https://www.anthropic.com/news/clau
 **建議檢視的三個地方** ：
 
 - **封面標題** ：AI 生成的標題通常偏「平敘」，人工改寫成有衝突感或具體度更高的版本往往更抓眼球
-- **品牌 logo** ：若 Claude 用生成式 icon，可能看起來太「AI 味」。手動換成官方品牌 logo，專業感立刻拉升
+- **品牌 logo** ：若 Claude 用生成式 icon，可能看起來太「AI 味」。手動換成官方品牌 logo，專業感立刻拉昇
 - **結論句** ：AI 產出的結論常是類比型通用語，值得用記者本身的觀點改寫得更精準
 
 **重點** ：交給 AI 做的事，跟 **該自己定案的事** ，分開。標題的 hook、品牌辨識的 logo、結論的精準度，這三類就是該自己動手的。辨認出這條界線，就是從「Claude Design 新手」走向「熟手」的關鍵。

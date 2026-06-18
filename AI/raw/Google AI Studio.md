@@ -26,7 +26,7 @@
     
 - **生態系整合與行動端支援：**
     
-    支援直接存取 Google Workspace（如 Sheets、Drive）的資料來建立儀表板，並推出了行動版 App，讓開發者在手機上也能隨時調整 Prompt、瀏覽 App 畫廊並進行 Remix（複製並修改他人專案）。
+    支援直接存取 Google Workspace（如 Sheets、Drive）的資料來建立儀錶板，並推出了行動版 App，讓開發者在手機上也能隨時調整 Prompt、瀏覽 App 畫廊並進行 Remix（複製並修改他人專案）。
     
 
 ## Google AI Studio 與 Gemini App（一般消費者版）的差別

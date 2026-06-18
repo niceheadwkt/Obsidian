@@ -310,14 +310,14 @@ GUI 最友善。
 
 ## 2026 年較推薦的組合
 
-|用途|推薦模型|部署方式|
-|---|---|---|
-|中文聊天|Qwen3 8B|Ollama|
-|程式開發|DeepSeek-R1 Distill 14B|Ollama / LM Studio|
-|文件分析|Qwen3 32B|vLLM|
-|AI Agent|Qwen3 32B|vLLM|
-|筆電本機|Gemma 3 4B|LM Studio|
-|高階工作站|DeepSeek-R1 32B|vLLM|
-|家用 NAS|Phi-4|Ollama|
+| 用途       | 推薦模型                    | 部署方式               |
+| -------- | ----------------------- | ------------------ |
+| 中文聊天     | Qwen3 8B                | Ollama             |
+| 程式開發     | DeepSeek-R1 Distill 14B | Ollama / LM Studio |
+| 文件分析     | Qwen3 32B               | vLLM               |
+| AI Agent | Qwen3 32B               | vLLM               |
+| 筆電本機     | Gemma 3 4B              | LM Studio          |
+| 高階工作站    | DeepSeek-R1 32B         | vLLM               |
+| 家用 NAS   | Phi-4                   | Ollama             |
 
 如果你能提供你的硬體規格（CPU、RAM、顯卡型號與 VRAM），我可以直接幫你列出「能順跑哪些模型、預估 Tokens/s、以及最佳量化版本（Q4/Q5/Q8）」的建議清單。

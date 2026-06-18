@@ -105,7 +105,7 @@ Haiku 4.5 模型適合的任務包括：
 高難度邏輯任務交給 Opus 4.7、日常產出交給 Sonnet 4.6、規模化自動處理交給 Haiku 4.5。如果你還不確定從哪裡開始，不妨先用 Haiku 4.5 跑遍你的日常任務，確認哪些環節覺得「不夠用」，再針對性升級到 Sonnet 或 Opus。如此，也能避免因「選錯模型」而帶來的高成本及低效率。
 
 > 延伸閱讀：  
-> [每次換AI就得狂改prompt？Prompt Master免費安裝教學：2分鐘讓提示詞跨平台通用](https://www.bnext.com.tw/article/90592/prompt-master)
+> [每次換AI就得狂改prompt？Prompt Master免費安裝教學：2分鐘讓提示詞跨平臺通用](https://www.bnext.com.tw/article/90592/prompt-master)
 > 
 > [Claude Code只發揮1成實力？7個設定目錄完整教學，讓AI每次都按你的規則工作](https://www.bnext.com.tw/article/90642/claude-code-folder-config-guide)
 
