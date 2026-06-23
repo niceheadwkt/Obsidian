@@ -70,6 +70,6 @@ Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、
 ---
 
 ## 關聯概念與頁面
-- **知識庫規範**：[[schema]]
+- **知識庫規範**：[運作規範](../schema.md)
 - **專案管理工作流**：`[[Claude 專案管理一桌三櫃工作流]]`
 - **影片工程自動化**：`[[Antigravity 與 Remotion 影片生成實務]]`

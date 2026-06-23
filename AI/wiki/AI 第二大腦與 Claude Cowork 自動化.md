@@ -2,8 +2,8 @@
 type: concept
 tags: [AI第二大腦, ClaudeCowork, Obsidian, 自動化, Gmail]
 sources: [
-  "[[2026-06-11T212115+0800-从0搭建AI第二大脑：Obsidian + Claude Code 保姆级全流程教程（非技术人也能做）.md]]",
-  "[[2026-06-12T084627+0800-Claude Cowork自動發日報教學！排程設好幫團隊篩AI新聞，順手避開3個坑.md]]"
+  "[[raw/2026-06-11T212115+0800-從0搭建AI第二大腦：Obsidian + Claude Code 保姆級全流程教程（非技術人也能做）.md]]",
+  "[[raw/2026-06-12T084627+0800-Claude Cowork自動發日報教學！排程設好幫團隊篩AI新聞，順手避開3個坑.md]]"
 ]
 created: 2026-06-13
 updated: 2026-06-13

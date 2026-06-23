@@ -40,7 +40,7 @@
 - **新增 Wiki 頁面**：
   - `[[NotebookLM 綜合指南]]` (綜合概念頁面)
   - `[[RAG 與 DeepSearch 概念綜述]]` (綜合概念頁面)
-  - `[[從 LLM 到 Agent 的工程解析]]` (綜合概念頁面)
+  - `[[LLM 到 Agent 的工程解析]]` (綜合概念頁面)
   - `[[個人知識管理系統構築]]` (綜合概念頁面)
   - `[[前端與系統開發常用技術]]` (綜合概念頁面)
   - `[[網路系統基礎]]` (綜合概念頁面)
@@ -101,5 +101,40 @@
   - `[[Antigravity 核心概念與五層記憶系統]]`
   - `[[Antigravity 與 Remotion 影片生成實務]]`
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，追加這 2 個新 Wiki 頁面與 2 筆文獻來源。
+- **執行人**：Antigravity Agent
+
+## [2026-06-18] lint | 知識庫完整健康檢查
+
+- **描述**：執行了 `AI/wiki/` 知識庫的完整健康檢查與規範審查。
+- **檢查範圍**：27 個 Wiki 頁面及對應之 124 篇原始文獻。
+- **主要發現**：
+  - 偵測到 7 處 Wiki 內部失效連結（包含 `從 LLM 到 Agent` 的名稱不符）。
+  - 偵測到 6 處真正損壞的原始文獻連結（簡繁不一致、時間戳格式錯誤、結尾多餘單引號）。
+  - 偵測到 64 處 sources 缺少 `raw/` 或 `sources/` 前綴。
+  - 發現 13 個知識孤立頁面與 23 個未引用的原始文獻（代表知識庫缺口）。
+  - 識別了 2 處潛在版本或指令矛盾。
+- **報告產出**：已產出完整健康檢查報告 [health_check_report.md](file:///C:/Users/niceh/.gemini/antigravity-ide/brain/125d6655-6b58-4e6e-bbcc-e7c75c995c7a/health_check_report.md)。
+- **執行人**：Antigravity Agent
+
+## [2026-06-18] ingest | 批次匯入第十二批：Dify、辦公自動化、Agent術語與三大模型對比
+
+- **來源文獻**：`SRC-010` (Dify.md)、`SRC-084` (三大工具付費版對比)、`SRC-106` (Claude in Excel)、`SRC-107` (Claude for Word) 以及 `SRC-125` (16個AI Agent術語)。
+- **新增 Wiki 頁面**：
+  - `[[Dify]]` (實體專頁)
+  - `[[Claude 辦公自動化 (Excel & Word)]]` (概念專頁)
+  - `[[AI 時代的 Agent 術語與核心概念]]` (概念專頁)
+  - `[[三大 AI 付費版選用與效能橫向對比]]` (分析專頁)
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，整理關聯並新增 4 個 Wiki 頁面與 1 筆文獻來源（SRC-125）。
+- **執行人**：Antigravity Agent
+## [2026-06-20] lint | 修復知識庫失效連結與路徑格式問題
+
+- **描述**：全面修復並清理了 Wiki 知識庫中的所有失效連結與路徑前綴問題，確保知識鏈完整與健康。
+- **修復內容**：
+  - 修復 6 處完全損壞的原始文獻連結（如時間戳冒號 typo、檔名簡繁不一致、結尾多餘反單引號等）。
+  - 修復 64 處 sources 前綴缺失問題，全部補齊 `raw/` 或 `sources/` 前綴。
+  - 將未引用的文獻 `raw/投資理財專題報告：通膨與債券型基金投資分析.md` 作為 `SRC-130` 關聯至 `[[商業案例與投資思維專題]]`。
+  - 修正了 `index.md` 中 `SRC-050`、`SRC-056`、`SRC-076`、`SRC-125` 的檔名與簡繁字元不一致問題。
+- **結果**：最新 Advanced Lint 檢查結果為：失效連結 0，未引用來源 0。
+- **儀表板更新**：重新執行並更新了 HTML 儀表板 [dashboard.html](file:///c:/Obsidian/AI/dashboard.html)。
 - **執行人**：Antigravity Agent
 

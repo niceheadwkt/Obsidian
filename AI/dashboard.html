@@ -704,21 +704,21 @@
     <div class="stats-grid">
       <div class="stat-card animate-in delay-1">
         <div class="stat-icon blue">📚</div>
-        <div class="stat-value blue count-up" data-target="24">0</div>
+        <div class="stat-value blue count-up" data-target="28">0</div>
         <div class="stat-label">Wiki 知識頁面</div>
         <div class="stat-change">概念頁 · 實體頁 · 分析頁</div>
       </div>
       <div class="stat-card animate-in delay-2">
         <div class="stat-icon purple">📄</div>
-        <div class="stat-value purple count-up" data-target="124">0</div>
+        <div class="stat-value purple count-up" data-target="130">0</div>
         <div class="stat-label">已編目原始資料</div>
         <div class="stat-change">SRC-001 至 SRC-124</div>
       </div>
       <div class="stat-card animate-in delay-3">
         <div class="stat-icon emerald">✅</div>
-        <div class="stat-value emerald count-up" data-target="11">0</div>
+        <div class="stat-value emerald count-up" data-target="12">0</div>
         <div class="stat-label">完成批次匯入</div>
-        <div class="stat-change">最後更新：2026-06-18</div>
+        <div class="stat-change">最後更新：2026-06-20</div>
       </div>
       <div class="stat-card animate-in delay-4">
         <div class="stat-icon amber">⏳</div>
@@ -738,7 +738,7 @@
             <span class="icon">🗂️</span>
             Wiki 知識頁面總覽
           </div>
-          <span class="section-badge">24 頁面</span>
+          <span class="section-badge">28 頁面</span>
         </div>
         <div class="card-body">
           <table class="wiki-table">
@@ -800,7 +800,7 @@
           </div>
           <span class="updated-now">
             <span>●</span>
-            最新：2026-06-18
+            最新：2026-06-20
           </span>
         </div>
         <div class="log-list" id="logList"></div>
@@ -838,7 +838,7 @@
               </div>
             </div>
             <div class="catalog-total">
-              共 <strong>124</strong> 份已編目文件，涵蓋 <strong>6</strong> 大主題領域
+              共 <strong>130</strong> 份已編目文件，涵蓋 <strong>6</strong> 大主題領域
             </div>
           </div>
         </div>
@@ -921,6 +921,22 @@
 // <!--WIKI_DATA_START-->
 const wikiPages = [
   {
+    "name": "商業案例與投資思維專題",
+    "icon": "💼",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-20"
+  },
+  {
+    "name": "AI 時代的 Agent 術語與核心概念",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-18"
+  },
+  {
     "name": "Antigravity 核心概念與五層記憶系統",
     "icon": "🧠",
     "tag": "ai",
@@ -933,6 +949,30 @@ const wikiPages = [
     "icon": "🧠",
     "tag": "ai",
     "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-18"
+  },
+  {
+    "name": "Claude 辦公自動化 (Excel & Word)",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
+    "sources": 0,
+    "date": "2026-06-18"
+  },
+  {
+    "name": "Dify",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-18"
+  },
+  {
+    "name": "三大 AI 付費版選用與效能橫向對比",
+    "icon": "✍️",
+    "tag": "claude",
+    "tagLabel": "Claude",
     "sources": 1,
     "date": "2026-06-18"
   },
@@ -1021,14 +1061,6 @@ const wikiPages = [
     "icon": "🔧",
     "tag": "tech",
     "tagLabel": "開發技術",
-    "sources": 0,
-    "date": "2026-06-13"
-  },
-  {
-    "name": "商業案例與投資思維專題",
-    "icon": "💼",
-    "tag": "ai",
-    "tagLabel": "AI 工具",
     "sources": 0,
     "date": "2026-06-13"
   },
@@ -1124,19 +1156,19 @@ const topics = [
   {
     "name": "NotebookLM",
     "color": "#22d3ee",
-    "count": 29,
+    "count": 30,
     "max": 50
   },
   {
     "name": "AI 工具 & 概念",
     "color": "#4f8ef7",
-    "count": 30,
+    "count": 34,
     "max": 50
   },
   {
     "name": "商業投資思維",
     "color": "#f59e0b",
-    "count": 7,
+    "count": 8,
     "max": 50
   },
   {
@@ -1155,6 +1187,24 @@ const topics = [
 
 const logs = [
   {
+    "type": "lint",
+    "title": "修復知識庫失效連結與路徑格式問題",
+    "detail": "全面修復並清理了 Wiki 知識庫中的所有失效連結與路徑前綴問題，確保知識鏈完整與健康。",
+    "date": "2026-06-20"
+  },
+  {
+    "type": "ingest",
+    "title": "批次匯入第十二批：Dify、辦公自動化、Agent術語與三大模型對比",
+    "detail": "`SRC-010` (Dify.md)、`SRC-084` (三大工具付費版對比)、`SRC-106` (Claude in Excel)、`SRC-107` (Claude for Word) 以及 `SRC-125` (16個AI Agent術語)。",
+    "date": "2026-06-18"
+  },
+  {
+    "type": "lint",
+    "title": "知識庫完整健康檢查",
+    "detail": "執行了 `AI/wiki/` 知識庫的完整健康檢查與規範審查。",
+    "date": "2026-06-18"
+  },
+  {
     "type": "ingest",
     "title": "批次匯入第十一批：Antigravity 核心概念與 Remotion 影片工程",
     "detail": "`SRC-123` 與 `SRC-124` 共 2 篇原始資料（位於 `raw/` 唯讀目錄下）。",
@@ -1171,24 +1221,6 @@ const logs = [
     "title": "批次匯入第九批：國外旅遊實用英語情境與求助指南",
     "detail": "`SRC-057` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
     "date": "2026-06-14"
-  },
-  {
-    "type": "ingest",
-    "title": "批次匯入第八批：母語式英文聽力與外語習得法 (KevinFeng)",
-    "detail": "`SRC-056` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
-    "date": "2026-06-14"
-  },
-  {
-    "type": "ingest",
-    "title": "批次匯入第七批：Claude 一桌三櫃專案管理工作流 (EP10)",
-    "detail": "`SRC-055` 共 1 篇原始文章（位於 `raw/` 唯讀目錄下）。",
-    "date": "2026-06-13"
-  },
-  {
-    "type": "ingest",
-    "title": "批次匯入第六批：自動化、提示詞、Git 同步與商業思維",
-    "detail": "`SRC-042` 至 `SRC-054` 共 13 篇原始文章（位於 `AI/raw/` 唯讀目錄下）。",
-    "date": "2026-06-13"
   }
 ];
 
@@ -1316,6 +1348,12 @@ const srcColors = [
   "#22d3ee",
   "#22d3ee",
   "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#22d3ee",
   "#4f8ef7"
 ];
 // <!--WIKI_DATA_END-->

@@ -4,7 +4,8 @@ tags: [AI工具, Claude, VSCode, CLI, Anthropic]
 sources: [
   "[[sources/01_AI_Tools/Claude 操作模式與功能介紹.md]]",
   "[[sources/01_AI_Tools/claude 如何加入vs code中.md]]",
-  "[[sources/01_AI_Tools/AI CLI 工具比較與選擇.md]]"
+  "[[sources/01_AI_Tools/AI CLI 工具比較與選擇.md]]",
+  "[[raw/2026-06-15T152121+0800-Claude是什麼？claude ai教學：38篇Cowork、Skills、省Token秘訣全打包.md]]"
 ]
 created: 2026-06-11
 updated: 2026-06-11
@@ -31,7 +32,7 @@ Claude 的使用介面可依您的工作場景進行選擇：
 
 ### 技術開發與 API
 - **API Console (Workbench)**：供開發者測試參數（Temperature 等）、調用不同模型版本（Opus, Sonnet, Haiku）。
-- **Model Context Protocol (MCP)**：開放式協議，讓 Claude 可以安全地讀取本地數據源（如本地資料庫、[[Slack]]、Google Drive）。
+- **Model Context Protocol (MCP)**：開放式協議，讓 Claude 可以安全地讀取本地數據源（如本地資料庫、[[sources/05_Tech_Development/Slack.md|Slack]]、Google Drive）。
 
 ---
 
@@ -81,3 +82,12 @@ Claude 的使用介面可依您的工作場景進行選擇：
 - **Claude 3.5 Sonnet**：最推薦的黃金平衡版本，推理速度快，代碼能力最強。
 - **Claude 3 Opus**：最強推理，適合邏輯極度複雜之任務，但速度慢、成本高。
 - **Claude 3 Haiku**：極速輕量，適用於翻譯、簡單歸類與低延遲對話。
+
+---
+
+## 5. 辦公自動化與橫向對比
+
+- **辦公軟體整合**：Claude 可以透過官方外掛直接整合至 Microsoft Excel 與 Microsoft Word，協助進行自動化數據處理與文件修訂，詳見 [[Claude 辦公自動化 (Excel & Word)]]。
+- **主流模型評估**：關於 Claude 與 ChatGPT、Gemini 在付費版功能與代理執行力上的橫向對比，請參閱 [[三大 AI 付費版選用與效能橫向對比]]。
+- **系統化學習資源**：針對 Claude 的入門與高階教學，包含 38 篇 Cowork、Skills 與省 Token 的實踐秘訣，請參閱 [[raw/2026-06-15T152121+0800-Claude是什麼？claude ai教學：38篇Cowork、Skills、省Token秘訣全打包.md|Claude 38篇精華教學打包]]。
+
