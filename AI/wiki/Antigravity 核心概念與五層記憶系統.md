@@ -1,14 +1,17 @@
 ---
 type: concept
 tags: [Antigravity, AI-Agent, 記憶系統, MCP, IDE]
-sources: ["[[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md]]"]
+sources: [
+  "[[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md]]",
+  "[[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md]]"
+]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-23
 ---
 
 # Antigravity 核心概念與五層記憶系統
 
-本頁面整理並分析了 Google Antigravity IDE 代理程式（AI Agent）的核心運作機制，內容提煉自 [[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md|Automate with Bonnie 的 22 個核心概念解析]]。
+本頁面整理並分析了 Google Antigravity IDE 代理程式（AI Agent）的核心運作機制，內容提煉自 [[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md|Automate with Bonnie 的 22 個核心概念解析]]，並引入最新 [[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md|Antigravity 自動化實戰與 n8n 終極對比]]。
 
 ---
 
@@ -66,6 +69,30 @@ Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、
 ### 連接萬物的 MCP 協議
 - **MCP 協議 (Model Context Protocol)**：由 Anthropic 提出的統一標準，用於將外部資料源和工具（如 Notion、Airtable、GitHub、YouTube 等）以 API 或 MCP Server 的形式接入 AI Agent。
 - **技能與工作流 (Skills & Workflows)**：技能（Skills）是打包好的外部工具或 SOP 腳本（例如 edge TTS、remotion 影片生成等）。將技能放入指定目錄後，Agent 即可手動或自動調用，實現更為複雜的個人自動化工作流。
+
+---
+
+## 6. AI 自動化工作流之範式轉移：n8n 與 Antigravity 終極對比
+依據 [[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md|Automate with Bonnie 的 Antigravity 實戰分析]]，2026 年自動化領域正在經歷一場從「手動連線」到「Vibe Coding」的範式轉移：
+
+### ▍ n8n / Make 的侷限
+*   **痛點**：節點成百上千、邏輯分支極其複雜、除錯過程繁瑣。一旦外部網站結構微調或 API 變更，常導致整個流程崩潰且難以修復。
+
+### ▍ Antigravity 帶來的變革 (Vibe Coding)
+*   **意圖導向 (Vibe Coding)**：使用者只需以自然語言描述終端意圖，Agent 即能自主進行邏輯推演、撰寫 Python/Node 腳本，甚至能控制無頭瀏覽器模擬真實人類操作。
+*   **自我修復能力 (Self-annealing)**：當工作流在背景執行出錯或遭到目標網站阻擋時，Agent 能自我捕捉錯誤日誌，即時改寫代碼或重新規劃路徑，無須人工干預。
+
+### ▍ 實戰應用：DOE 框架引導與智能獲客引擎
+在自動化工作流中，可以使用 **DOE 框架** 作為給 Agent 的行為約束，實現高度穩定的業務執行：
+*   **D (Directive, 指令)**：清晰定義 Agent 的目標任務與輸入格式（如：`.env`、`credentials.json` 與 Google Sheet 位置）。
+*   **O (Observation, 觀察)**：要求 Agent 對抓取的資料進行高頻狀態確認，檢查格式與遺漏。
+*   **E (Experiment, 實驗)**：Agent 自主進行 API 測試、模擬瀏覽與數據富化。
+*   **業務場景落地（自動化金融獲客）**：
+    1.  **GMB 數據抓取**：Agent 自主分析並抓取 Google 地圖上特定地區（如多倫多）金融機構的原始名冊。
+    2.  **深度數據富化**：Agent 啟動瀏覽器深入各金融機構官網，自動提取官方 Email 與 LinkedIn、Twitter 等社群帳號。
+    3.  **AI 智慧評分**：利用 LLM 分析機構網站內容，自動對其潛在價值進行 1-5 分的評分。
+    4.  **個性化冷啟動郵件生成**：AI 自動檢測其官網 SEO 漏洞，隨機生成極具吸引力的專屬開發信開頭。
+    5.  **持久化同步**：自動將所有富化後的資料寫入雲端 Google Sheets。
 
 ---
 

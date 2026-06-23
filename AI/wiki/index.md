@@ -17,21 +17,22 @@
 | `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、低代碼 Dify Canvas BaaS 平台、Grok 與 Groq 對比，及 LM Studio、vLLM 推理框架 | 9 | 2026-06-20 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-06-20 |
 | `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，70 組品牌社群、工作、生活、靈感與風格轉換範本 | 1 | 2026-06-20 |
-| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 3 | 2026-06-20 |
-| `[[商業案例與投資思維專題]]` | 查理·芒格、納瓦爾、謝金河、施昇輝、陳重銘與孫宇晨等 6 位人物思維，與 Computex 跨境出海數據驅動品牌案例 | 8 | 2026-06-20 |
+| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 4 | 2026-06-23 |
+| `[[商業案例與投資思維專題]]` | 查理·芒格、納瓦爾、謝金河、施昇輝、陳重銘與孫宇晨等 6 位人物思維，與 Computex 跨境出海數據驅動品牌案例 | 9 | 2026-06-23 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-06-13 |
 | `[[母語式英文聽力與外語習得法]]` | 馮凱文的英文聽力核心秘訣與 Oio 外語習得系統底層邏輯，包括去心譯聲音直接聯結、直譯口說練習與低阻力微習慣系統 | 1 | 2026-06-20 |
 | `[[國外旅遊實用英語情境]]` | 實用國外旅遊英文求助與購物句型對話（問路、餐廳點餐與拆帳、服飾尺寸庫存、設備故障行李寄存、藥局成藥詢問），結合語感圖像化反射訓練 | 1 | 2026-06-20 |
-| `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、心智圖與教學影片生成，YT / Grabbit 整合，10 個進階提示詞，8 大實務應用場景（報價單、簡報、財報、會議紀錄），以及 Lovart / Canva 簡報修改與 YAML 視覺美化 | 26 | 2026-06-20 |
+| `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、心智圖與教學影片生成，YT / Grabbit 整合，10 個進階提示詞，8 大實務應用場景（報價單、簡報、財報、會議紀錄），以及 Lovart / Canva 簡報修改與 YAML 視覺美化 | 27 | 2026-06-23 |
 | `[[Claude 系統優化與 Token 節省指南]]` | 解決 Claude 額度超限與成本控制，涵蓋 Token 暴漲原因、4 大用量超限技巧、PDF 處理優化、Claude Code CLI 官方 4 條節流建議、三種模型定價選用對照，以及 `CLAUDE.md` 自我審查與 12 條優化規則 | 9 | 2026-06-20 |
 | `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理 | 16 | 2026-06-20 |
-| `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 6 | 2026-06-20 |
+| `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 7 | 2026-06-23 |
 | `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查 | 13 | 2026-06-20 |
-| `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 1 | 2026-06-18 |
+| `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 2 | 2026-06-23 |
 | `[[Antigravity 與 Remotion 影片生成實務]]` | 「影片即程式碼」影片工程實務，比較畫家模式與工程師模式，解構 4 大應用場景與限制、3 大質感提升秘訣與自動化影片生產線實操 | 1 | 2026-06-18 |
 | `[[Claude 辦公自動化 (Excel & Word)]]` | Microsoft Excel 與 Word 的官方增益集深度整合，包含 DCF 模型、自動偵錯與修訂追蹤等多項辦公自動化實務 | 2 | 2026-06-18 |
 | `[[AI 時代的 Agent 術語與核心概念]]` | 以「公司部門與人員架構」的現實生活比喻，系統化解讀大語言模型 (LLM)、API、MCP、RAG 等 16 個核心技術術語 | 1 | 2026-06-18 |
 | `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢 | 1 | 2026-06-18 |
+| `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-06-23 |
 
 ## 實體與工具專頁 (Entities & Tools)
 
@@ -40,6 +41,7 @@
 | `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline) 及 Claude Code CLI | `[[Claude]]` |
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
+| `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
 
 ## 原始文獻目錄 (Sources Catalog)
 
@@ -175,6 +177,13 @@
 | `SRC-128` | `Fork.md` | 術語 / 定義 | 2026-06-20 | `[[AI 工具與框架概覽]]` |
 | `SRC-129` | `Lovart.md` | 介紹 / 設計 | 2026-06-20 | `[[NotebookLM 進階應用與實戰指引]]` |
 | `SRC-130` | `投資理財專題報告：通膨與債券型基金投資分析.md` | 報告 / 投資 | 2026-06-20 | `[[商業案例與投資思維專題]]` |
+| `SRC-131` | `2026-06-19T102114+0800-87-決定你的字體美醜的關鍵，三招寫出絕美字跡。這三個心法不懂，別說你想寫好字。會一個厲害一點，會三個讓你變得超級厲害。.md` | 視頻 / 書法 | 2026-06-23 | `[[硬筆書法與美字練習心法]]` |
+| `SRC-132` | `2026-06-20T133502+0800-通膨對個人有何影響，請針對財富、投資、生活等方面來說明其關聯性.md` | 問答 / 投資 | 2026-06-23 | `[[商業案例與投資思維專題]]` |
+| `SRC-133` | `2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md` | 影片 / 自動 | 2026-06-23 | `[[Antigravity 核心概念與五層記憶系統]]` |
+| `SRC-134` | `2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md` | 影片 / 簡報 | 2026-06-23 | `[[NotebookLM 進階應用與實戰指引]]` |
+| `SRC-135` | `Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md` | 排障 / 同步 | 2026-06-23 | `[[Git GUI 與 GitHub 雙向同步實務]]` |
+| `SRC-136` | `Claude Design.md` | 介紹 / 設計 | 2026-06-23 | `[[Claude Design 與前端美化實務]]` |
+| `SRC-137` | `Warp Terminal.md` | 說明 / 工具 | 2026-06-23 | `[[Warp 現代化終端機工具]]` |
 
 
 ---

@@ -138,3 +138,19 @@
 - **儀表板更新**：重新執行並更新了 HTML 儀表板 [dashboard.html](file:///c:/Obsidian/AI/dashboard.html)。
 - **執行人**：Antigravity Agent
 
+## [2026-06-23] ingest | 批次匯入第十三批：美字心法、通膨與債券、Antigravity (n8n對比)、NotebookLM (RED模組)、雲端硬碟同步與 Git Gui、Warp 現代化終端機
+
+- **來源文獻**：`SRC-131` 至 `SRC-137` 共 7 份原始文獻（包含 5 份 `raw/` 目錄下的文件，與從根目錄移入 `raw/` 的 `Claude Design.md` 及 `Warp Terminal.md`）。
+- **新增 Wiki 頁面**：
+  - `[[硬筆書法與美字練習心法]]` (新概念頁面)
+  - `[[Warp 現代化終端機工具]]` (新實體頁面)
+- **更新 Wiki 頁面**：
+  - `[[商業案例與投資思維專題]]` (追加通膨對資產/投資/生活衝擊傳導及 AGG 基金特性)
+  - `[[Antigravity 核心概念與五層記憶系統]]` (追加 n8n vs Antigravity、Vibe Coding 範式與 DOE 框架)
+  - `[[NotebookLM 進階應用與實戰指引]]` (追加 RED AI 簡報模組、Canva 後製與 NanoBanana Pro 改圖流程)
+  - `[[Git GUI 與 GitHub 雙向同步實務]]` (追加 Google 雲端硬碟同步模式建議與 Git GUI 私有庫 Token 驗證排障)
+  - `[[Claude Design 與前端美化實務]]` (追加品牌自適應、工程交接及與 Figma / Canva 定位對比)
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，關聯並整理這 7 筆新文獻來源。
+- **執行人**：Antigravity Agent
+
+
