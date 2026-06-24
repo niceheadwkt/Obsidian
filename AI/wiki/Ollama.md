@@ -5,7 +5,8 @@ sources: [
   "[[sources/01_AI_Tools/Ollama 中Launch 選項codex app與codex 之差異為何.md]]",
   "[[sources/01_AI_Tools/Ollama 可以針對LOCAL設專案目錄來運作？.md]]",
   "[[sources/01_AI_Tools/在 Ollama 中使用 Qwen 是完全免費的.md]]",
-  "[[sources/01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md]]"
+  "[[sources/01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md]]",
+  "[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md]]"
 ]
 created: 2026-06-11
 updated: 2026-06-11
@@ -60,7 +61,7 @@ ollama run qwen2.5-coder:7b
 
 ## 4. `ollama launch` 功能詳解：整合 Codex
 
-Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類：
+Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類（另外關於 OpenCode 整合 Qwen3 的設定細節可參考 [[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md|OPENCODE如何加QWEN3？]]）：
 
 ### A. `ollama launch codex-app` (桌面 App 模式)
 - **載體**：啟動 Codex 桌面獨立應用程式（圖形介面 GUI）。

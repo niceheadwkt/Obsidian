@@ -2,7 +2,7 @@
 type: concept
 tags: [ClaudeCode, 專案管理, Obsidian, GitHub, Firebase, 上下文管理]
 sources: [
-  "[[2026-06-13T211849+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md]]"
+  "[[raw/2026-06-13T211849+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md]]"
 ]
 created: 2026-06-13
 updated: 2026-06-13

@@ -2,7 +2,7 @@
 type: concept
 tags: [ChatGPT, 提示詞, 影像生成, DALL-E3, 視覺設計]
 sources: [
-  "[[2026-06-12T091325+0800-ChatGPT指令大全！70組提示詞一次整理，LINE貼圖、簡報封面、插畫菜單全搞定.md]]"
+  "[[raw/2026-06-12T091325+0800-ChatGPT指令大全！70組提示詞一次整理，LINE貼圖、簡報封面、插畫菜單全搞定.md]]"
 ]
 created: 2026-06-13
 updated: 2026-06-13
