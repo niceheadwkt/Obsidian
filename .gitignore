@@ -4,3 +4,5 @@
 # 忽略 Google 雲端硬碟的同步暫存檔
 .tmp.driveupload/
 .tmp.drivedownload/
+# 忽略任何子目錄下的隱藏 .git 資料夾，防止巢狀儲存庫衝突
+**/.git/
