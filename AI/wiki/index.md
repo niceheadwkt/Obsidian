@@ -11,13 +11,13 @@
 | `[[NotebookLM 綜合指南]]` | Google NotebookLM 知識庫功能、Gemini 3.5 與 Antigravity 推理引擎升級、自定義圖表、簡報與 Podcast 語音生成 | 4 | 2026-06-11 |
 | `[[RAG 與 DeepSearch 概念綜述]]` | 比較 Semantic search（語意搜尋）與 RAG 檢索增強生成架構，解決大模型幻覺與私有資料限制之方案 | 2 | 2026-06-11 |
 | `[[LLM 到 Agent 的工程解析]]` | 剖析大模型生態系技術棧（Tokenizer、Context、Tool 呼叫、MCP 統一標準、Agent 規劃與 Agent Skill）及本地 MCP 開發實務 | 2 | 2026-06-11 |
-| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景 | 8 | 2026-06-11 |
+| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景 | 9 | 2026-06-24 |
 | `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發 | 8 | 2026-06-11 |
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-06-11 |
 | `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、低代碼 Dify Canvas BaaS 平台、Grok 與 Groq 對比，及 LM Studio、vLLM 推理框架 | 9 | 2026-06-20 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-06-20 |
 | `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，70 組品牌社群、工作、生活、靈感與風格轉換範本 | 1 | 2026-06-20 |
-| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 4 | 2026-06-23 |
+| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 5 | 2026-06-24 |
 | `[[商業案例與投資思維專題]]` | 查理·芒格、納瓦爾、謝金河、施昇輝、陳重銘與孫宇晨等 6 位人物思維，與 Computex 跨境出海數據驅動品牌案例 | 9 | 2026-06-23 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-06-13 |
 | `[[母語式英文聽力與外語習得法]]` | 馮凱文的英文聽力核心秘訣與 Oio 外語習得系統底層邏輯，包括去心譯聲音直接聯結、直譯口說練習與低阻力微習慣系統 | 1 | 2026-06-20 |
@@ -33,6 +33,7 @@
 | `[[AI 時代的 Agent 術語與核心概念]]` | 以「公司部門與人員架構」的現實生活比喻，系統化解讀大語言模型 (LLM)、API、MCP、RAG 等 16 個核心技術術語 | 1 | 2026-06-18 |
 | `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢 | 1 | 2026-06-18 |
 | `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-06-23 |
+| `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-06-24 |
 
 ## 實體與工具專頁 (Entities & Tools)
 
@@ -184,7 +185,9 @@
 | `SRC-135` | `Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md` | 排障 / 同步 | 2026-06-23 | `[[Git GUI 與 GitHub 雙向同步實務]]` |
 | `SRC-136` | `Claude Design.md` | 介紹 / 設計 | 2026-06-23 | `[[Claude Design 與前端美化實務]]` |
 | `SRC-137` | `Warp Terminal.md` | 說明 / 工具 | 2026-06-23 | `[[Warp 現代化終端機工具]]` |
-
+| `SRC-138` | `Andrej Karpathy 方法的 LLM Wiki 知識庫.md` | 概念 / 知識庫 | 2026-06-24 | `[[個人知識管理系統構築]]` |
+| `SRC-139` | `跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南.md` | 指南 / 辨識 | 2026-06-24 | `[[跨平台螢幕擷取與智慧辨識實務]]` |
+| `SRC-140` | `VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md` | 指南 / 同步 | 2026-06-24 | `[[Git GUI 與 GitHub 雙向同步實務]]` |
 
 ---
 

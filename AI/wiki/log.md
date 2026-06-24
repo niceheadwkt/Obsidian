@@ -153,4 +153,13 @@
 - **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，關聯並整理這 7 筆新文獻來源。
 - **執行人**：Antigravity Agent
 
+## [2026-06-24] ingest | 批次匯入第十四批：Karpathy LLM Wiki 實務、跨平台螢幕擷取與 OCR、VS Code 巢狀 Git 衝突防範與排障
 
+- **來源文獻**：`SRC-138` (Andrej Karpathy 方法的 LLM Wiki 知識庫.md)、`SRC-139` (跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南.md) 以及 `SRC-140` (VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md)。
+- **新增 Wiki 頁面**：
+  - `[[跨平台螢幕擷取與智慧辨識實務]]` (新概念頁面)
+- **更新 Wiki 頁面**：
+  - `[[個人知識管理系統構築]]` (整合 Karpathy 方法 LLM Wiki 的本地環境準備、Schema 定義、Agent 配置與運作維護)
+  - `[[Git GUI 與 GitHub 雙向同步實務]]` (整合巢狀 Git / VS Code 誤判、外層 `.gitignore` 阻斷與 cache 刷新命令、命令列 rebase 合併與 Google Drive gc 鎖定排障、GitHub 網頁對比及 Hunk Header 解讀)
+- **更新索引**：[index.md](file:///c:/Obsidian/AI/wiki/index.md) 已同步更新，新增 1 個 Wiki 頁面與 3 筆文獻來源。
+- **執行人**：Antigravity Agent

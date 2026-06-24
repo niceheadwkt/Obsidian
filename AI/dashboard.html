@@ -704,21 +704,21 @@
     <div class="stats-grid">
       <div class="stat-card animate-in delay-1">
         <div class="stat-icon blue">📚</div>
-        <div class="stat-value blue count-up" data-target="30">0</div>
+        <div class="stat-value blue count-up" data-target="31">0</div>
         <div class="stat-label">Wiki 知識頁面</div>
         <div class="stat-change">概念頁 · 實體頁 · 分析頁</div>
       </div>
       <div class="stat-card animate-in delay-2">
         <div class="stat-icon purple">📄</div>
-        <div class="stat-value purple count-up" data-target="137">0</div>
+        <div class="stat-value purple count-up" data-target="140">0</div>
         <div class="stat-label">已編目原始資料</div>
         <div class="stat-change">SRC-001 至 SRC-124</div>
       </div>
       <div class="stat-card animate-in delay-3">
         <div class="stat-icon emerald">✅</div>
-        <div class="stat-value emerald count-up" data-target="13">0</div>
+        <div class="stat-value emerald count-up" data-target="14">0</div>
         <div class="stat-label">完成批次匯入</div>
-        <div class="stat-change">最後更新：2026-06-23</div>
+        <div class="stat-change">最後更新：2026-06-24</div>
       </div>
       <div class="stat-card animate-in delay-4">
         <div class="stat-icon amber">⏳</div>
@@ -738,7 +738,7 @@
             <span class="icon">🗂️</span>
             Wiki 知識頁面總覽
           </div>
-          <span class="section-badge">30 頁面</span>
+          <span class="section-badge">31 頁面</span>
         </div>
         <div class="card-body">
           <table class="wiki-table">
@@ -800,7 +800,7 @@
           </div>
           <span class="updated-now">
             <span>●</span>
-            最新：2026-06-23
+            最新：2026-06-24
           </span>
         </div>
         <div class="log-list" id="logList"></div>
@@ -838,7 +838,7 @@
               </div>
             </div>
             <div class="catalog-total">
-              共 <strong>137</strong> 份已編目文件，涵蓋 <strong>6</strong> 大主題領域
+              共 <strong>140</strong> 份已編目文件，涵蓋 <strong>6</strong> 大主題領域
             </div>
           </div>
         </div>
@@ -921,6 +921,30 @@
 // <!--WIKI_DATA_START-->
 const wikiPages = [
   {
+    "name": "Git GUI 與 GitHub 雙向同步實務",
+    "icon": "🔧",
+    "tag": "tech",
+    "tagLabel": "開發技術",
+    "sources": 0,
+    "date": "2026-06-24"
+  },
+  {
+    "name": "個人知識管理系統構築",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 0,
+    "date": "2026-06-24"
+  },
+  {
+    "name": "跨平台螢幕擷取與智慧辨識實務",
+    "icon": "📝",
+    "tag": "ai",
+    "tagLabel": "AI 工具",
+    "sources": 1,
+    "date": "2026-06-24"
+  },
+  {
     "name": "Antigravity 核心概念與五層記憶系統",
     "icon": "🧠",
     "tag": "ai",
@@ -933,14 +957,6 @@ const wikiPages = [
     "icon": "🎨",
     "tag": "claude",
     "tagLabel": "Claude",
-    "sources": 0,
-    "date": "2026-06-23"
-  },
-  {
-    "name": "Git GUI 與 GitHub 雙向同步實務",
-    "icon": "🔧",
-    "tag": "tech",
-    "tagLabel": "開發技術",
     "sources": 0,
     "date": "2026-06-23"
   },
@@ -1137,14 +1153,6 @@ const wikiPages = [
     "date": "2026-06-11"
   },
   {
-    "name": "個人知識管理系統構築",
-    "icon": "📝",
-    "tag": "ai",
-    "tagLabel": "AI 工具",
-    "sources": 0,
-    "date": "2026-06-11"
-  },
-  {
     "name": "前端與系統開發常用技術",
     "icon": "🔧",
     "tag": "tech",
@@ -1178,7 +1186,7 @@ const topics = [
   {
     "name": "AI 工具 & 概念",
     "color": "#4f8ef7",
-    "count": 37,
+    "count": 39,
     "max": 50
   },
   {
@@ -1190,7 +1198,7 @@ const topics = [
   {
     "name": "開發技術",
     "color": "#10b981",
-    "count": 12,
+    "count": 13,
     "max": 50
   },
   {
@@ -1202,6 +1210,12 @@ const topics = [
 ];
 
 const logs = [
+  {
+    "type": "ingest",
+    "title": "批次匯入第十四批：Karpathy LLM Wiki 實務、跨平台螢幕擷取與 OCR、VS Code 巢狀 Git 衝突防範與排障",
+    "detail": "`SRC-138` (Andrej Karpathy 方法的 LLM Wiki 知識庫.md)、`SRC-139` (跨平台螢幕擷取與智慧辨識（OCR／翻譯）操作全指南.md) 以及 `SRC-140` (VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md)。",
+    "date": "2026-06-24"
+  },
   {
     "type": "ingest",
     "title": "批次匯入第十三批：美字心法、通膨與債券、Antigravity (n8n對比)、NotebookLM (RED模組)、雲端硬碟同步與 Git Gui、Warp 現代化終端機",
@@ -1231,12 +1245,6 @@ const logs = [
     "title": "批次匯入第十一批：Antigravity 核心概念與 Remotion 影片工程",
     "detail": "`SRC-123` 與 `SRC-124` 共 2 篇原始資料（位於 `raw/` 唯讀目錄下）。",
     "date": "2026-06-18"
-  },
-  {
-    "type": "ingest",
-    "title": "批次匯入第十批：NotebookLM 與 Claude 深度專題 (65篇)",
-    "detail": "`SRC-058` 至 `SRC-122` 共 65 篇原始資料（含 62 篇 Markdown 文章及 3 篇 YAML 簡報樣式範本，位於 `raw/` 唯讀目錄下）。",
-    "date": "2026-06-15"
   }
 ];
 
@@ -1377,7 +1385,10 @@ const srcColors = [
   "#22d3ee",
   "#10b981",
   "#8b5cf6",
-  "#4f8ef7"
+  "#4f8ef7",
+  "#4f8ef7",
+  "#4f8ef7",
+  "#10b981"
 ];
 // <!--WIKI_DATA_END-->
 
