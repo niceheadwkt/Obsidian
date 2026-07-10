@@ -8,8 +8,8 @@
 - **寫入權限**：**此目錄下的內容主要由 AI 寫入與維護**。雖然您隨時可以閱讀、點擊連結與查看 Obsidian 關係圖譜，但建議避免手動大範圍修改此處的結構，以免與 AI 代理的維護邏輯產生衝突。
 
 ## 目錄關鍵檔案
-- [`index.md`](file:///c:/Obsidian/AI/wiki/index.md)：內容大綱與索引。AI 在每次導入新資料後會自動更新此索引。
-- [`log.md`](file:///c:/Obsidian/AI/wiki/log.md)：編譯與查詢的 chronological 歷史日誌。
+- [`index.md`](index.md)：內容大綱與索引。AI 在每次導入新資料後會自動更新此索引。
+- [`log.md`](log.md)：編譯與查詢的 chronological 歷史日誌。
 
 ## 頁面命名與格式
 - AI 會在每篇 Wiki 頁面頂部加上 YAML Frontmatter（包含建立日期、關聯原始文獻、標籤等）。

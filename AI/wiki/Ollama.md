@@ -9,7 +9,7 @@ sources: [
   "[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md]]"
 ]
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-09
 ---
 
 # Ollama (本地 AI 模型執行引擎)
@@ -21,15 +21,15 @@ updated: 2026-06-11
 ## 1. 系統定位與架構
 
 - **純本地推論**：模型完全下載至本地硬碟，利用本機 CPU 或 GPU 進行運算，完全離線且無須帳號，具備極高的資安隱私。
-- **無訂閱/API 費**：不限制使用次數與生成字數，唯一的成本是本機電費與硬體配備。
+- **無訂閱與 API 費**：不限制使用次數與生成字數，唯一的成本是本機電費與硬體配備。
 - **API 服務端**：Ollama 啟動後會在背景開啟 API 服務（預設埠為 `http://localhost:11434`），可直接與 **Cursor、vLLM、[[Dify]]、Aider** 等前端客戶端無縫對接。
-- **專案管理**：Ollama 本身不具備「專案目錄」的概念，它專注於模型服務；專案的管理與文件讀取需透過客戶端（如 Aider、Continue.dev、Open WebUI）掃描後，再呼叫 Ollama 進行推理。
+- **專案管理定位**：Ollama 本身不具備「專案目錄」的概念，它專注於模型服務；專案的管理與文件讀取需透過客戶端（如 Aider、Continue.dev、Open WebUI）掃描後，再呼叫 Ollama 進行推理。
 
 ---
 
 ## 2. 核心模型與運行指南
 
-### Qwen (通義千問) 系列
+### 🇨🇳 Qwen (通義千問) 系列
 中文理解與 Tool Calling 能力最強的本地模型之一。目前最熱門的是 **Qwen 2.5**：
 ```bash
 # 輕度測試、一般筆電可用（約需 4GB 記憶體）
@@ -42,7 +42,7 @@ ollama run qwen2.5:7b
 ollama run qwen2.5-coder:7b
 ```
 
-### 其他推薦本地模型
+### 🧠 其他推薦本地開源模型
 - **DeepSeek-R1**：當前推理邏輯與數學最強的開源模型（例如 `DeepSeek-R1 Distill 8B / 14B`）。
 - **Llama 3.3 (70B)**：Meta 的旗艦開源模型，綜合英文能力極佳，但硬體資源要求高。
 - **Gemma 3 (4B / 12B)**：Google 的輕量小模型，適合個人筆電或邊緣端順暢執行。
@@ -61,7 +61,7 @@ ollama run qwen2.5-coder:7b
 
 ## 4. `ollama launch` 功能詳解：整合 Codex
 
-Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類（另外關於 OpenCode 整合 Qwen3 的設定細節可參考 [[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md|OPENCODE如何加QWEN3？]]）：
+Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類（另外關於 OpenCode 整合 Qwen3 的設定細節可參考 `[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md|OPENCODE如何加QWEN3？]]`）：
 
 ### A. `ollama launch codex-app` (桌面 App 模式)
 - **載體**：啟動 Codex 桌面獨立應用程式（圖形介面 GUI）。

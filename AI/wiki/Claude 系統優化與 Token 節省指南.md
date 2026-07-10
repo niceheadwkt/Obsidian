@@ -11,7 +11,7 @@ sources: [
   "[[raw/2026-06-15T153635+0800-Claude 2026最新訂閱方案｜Claude ai免費版功能有什麼？Agent SDK費用怎麼算？.md]]"
 ]
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-07-09
 ---
 
 # Claude 系統優化與 Token 節省指南

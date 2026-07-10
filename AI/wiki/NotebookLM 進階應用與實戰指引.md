@@ -31,7 +31,7 @@ sources: [
   "[[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md]]"
 ]
 created: 2026-06-15
-updated: 2026-06-23
+updated: 2026-07-09
 ---
 
 # NotebookLM 進階應用與實戰指引
@@ -114,7 +114,7 @@ NotebookLM 生成簡報時，為避免產出具有廉價的「AI 味」，可透
 *   **操作**：在 Canva 內直接拆解背景、文字、插圖等圖層。您可以直接用滑鼠微調 Slider 修改背景色、替換局部中文字體或微調字型大小，保留 AI 的排版大綱，僅修改細部瑕疵，使效率提升數倍。
 
 ### 🚀 RED AI 極速簡報模組與 NanoBanana Pro 局部修正工作流
-根據三師爸在 [[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專專屬簡報風格_AI極速視覺化簡報 notebookLM.md|用Gemini+NotebookLM打造專屬簡報之實戰實測]] 所分享的成果，目前業界已發展出高度自動化的 **RED 簡報製作與微調工作流**：
+根據三師爸在 [[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md|用Gemini+NotebookLM打造專屬簡報之實戰實測]] 所分享的成果，目前業界已發展出高度自動化的 **RED 簡報製作與微調工作流**：
 
 1.  **🔎 R (Research) 搜索與研究**：
     *   於 Google Gemini 啟動 **Deep Research** 功能（設定資料來源為網絡），對目標主題進行深度文獻搜索，完成後將產出的高信度研究報告「匯出至 Google 文件」。

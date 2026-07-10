@@ -9,18 +9,18 @@ sources: [
   "[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md]]"
 ]
 created: 2026-06-13
-updated: 2026-06-24
+updated: 2026-07-09
 ---
 
 # Git GUI 與 GitHub 雙向同步實務
 
-**Git GUI 與 GitHub 雙向同步實務** 旨在提供利用圖形介面與命令行進行 Git 雙向同步的標準作業流程（SOP）、底層運作邏輯，以及針對常見同步衝突（特別是 Obsidian 產生的介面暫存檔衝突）的防禦與修復技術。
+**Git GUI 與 GitHub 雙向同步實務** 旨在提供利用圖形介面與命令列進行 Git 雙向同步的標準作業流程（SOP）、底層運作邏輯，以及針對常見同步衝突（特別是 Obsidian 產生的介面暫存檔衝突與嵌套倉庫）的防禦與修復技術。
 
 ---
 
 ## 1. 上傳流程：本地端 $\rightarrow$ GitHub 雲端
 
-當您在本地端完成筆記撰寫或代碼修改後，請遵循以下四步驟將變更備份至雲端：
+當您在本地端完成筆記撰寫或代碼修改後，請遵循以下四步驟將變更推送並備份至雲端：
 
 1.  **掃描變更 (Rescan)**：
     *   開啟 Git GUI，點擊左下角的 **`Rescan`**（快捷鍵 `F5`）。
@@ -29,7 +29,7 @@ updated: 2026-06-24
     *   點擊左下角的 **`Stage Changed`**（快捷鍵 `Ctrl + T`）。
     *   檔案會移動至左下角綠色區域 **`Staged Changes (Will Commit)`**，代表已進入準備打包的名單中。
 3.  **打包存檔 (Commit)**：
-    *   在右下角 **`Commit Message`** 輸入本次修改的備註（例如：`v2 整理投資思維`）。
+    *   在右下角 **`Commit Message`** 輸入本次修改的說明備忘（例如：`v2 整理投資思維`）。
     *   點擊 **`Commit`**。此時綠色區域清空，代表修改已成功存入**您電腦本地的歷史紀錄**中。
 4.  **推上雲端 (Push)**：
     *   點擊右下角 **`Push`** 按鈕。
@@ -127,7 +127,7 @@ Git 擁有嚴格的保護機制，在同步雙向變動時，常因以下痛點�
 ### 🛠️ 防嵌套 `.gitignore` 配置與快取整理
 為了根除並防止未來下載外部專案或 MCP 伺服器時，再度產生 `.git` 干擾主倉庫，應在最外層（`/Obsidian/` 根目錄）的 `.gitignore` 中加入以下阻斷規則：
 ```text
-# 強制忽略任何子資料夾底下的隱藏 .git 資料夾，防止本地偵測機制錯亂
+# 強制忽略任何子資料夾底下的隱藏 .git 資料夾，防止本地偵測機制錯錯
 **/.git/
 ```
 若子倉庫的 `.git` 狀態已被主倉庫誤當成檔案追蹤，請執行以下命令刷清 Git 快取：
@@ -143,7 +143,7 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
 
 ## 7. Google 雲端硬碟同步、推送遭拒與清理排障
 
-根據 [[raw/Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md|Google雲端與Git遠端綁定排障指南]] 與 [[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md|VS Code與GitHub雙向同步排障指南]]，當將本地倉庫存放於雲端硬碟時，需特別防範同步與清理衝突：
+根據 `[[raw/Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md|Google雲端與Git遠端綁定排障指南]]` 與 `[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md|VS Code與GitHub雙向同步排障指南]]`，將本地倉庫存放於雲端硬碟時，需特別防範同步與清理衝突：
 
 ### ▍ 1. Google 雲端硬碟電腦版同步模式調整
 *   **「串流檔案」的潛在風險**：實體存於雲端，本地僅顯示虛擬投影。Git 頻繁讀寫微小索引時會引發大量網路 I/O 衝突，並在背景產生 `.tmp.driveupload` 暫存檔，造成 Git 誤判變更，甚至引發 Git 索引損壞。
@@ -169,14 +169,14 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
     4.  完成後點選 **「恢復同步 (Resume Syncing)」**。
 
 ### ▍ 4. Git Gui 綁定私有庫失敗與首次 Push 驗證
-*   **綁定失敗解決**：在 `Remote -> Add...` 填入名稱與網址時，將 Further Action 改勾選為 **`Do Nothing Else Now`（現在什麼都不做）**，即可繞過私有庫即時檢查順利新增。若名稱重複，先至 `Remote -> Remove...` 刪除 `origin`。
-*   **首次 Push 憑證綁定**：在 GitHub 上生成個人訪問 Token (`Personal access tokens (classic)`) 並勾選 `repo` 權限。在首次 Push 驗證時，**Username 輸入帳號名稱，Password 貼上該 Token 金鑰**（勿輸入 GitHub 密碼）。
+*   **遠端 Add 失敗解決**：在 `Remote -> Add...` 填入名稱與遠端網址時，將 Further Action 改勾選為 **`Do Nothing Else Now`（現在什麼都不做）**，即可繞過私有庫即時檢查順利新增。若名稱重複，先至 `Remote -> Remove...` 刪除 `origin` 遠端。
+*   **首次 Push 憑證與密鑰綁定**：在 GitHub 上生成個人訪問 Token (`Personal access tokens (classic)`) 並勾選 `repo` 權限。在首次 Push 驗證時，**Username 輸入 GitHub 帳號名稱，Password 貼上該 Token 金鑰**（勿輸入 GitHub 登入密碼）。
 
 ---
 
 ## 8. GitHub 網頁端跨版本比對與 Diff 介面解讀
 
-當本地端正在調整環境時，GitHub 網頁端提供了極度穩定的跨版本對比功能與進階差異檢視工具。
+當本地端正在調整環境時，GitHub 網頁端提供了極度穩定的跨版本對比功能與差異檢視工具。
 
 ### ▍ 1. 跨版本對比操作
 *   **手動拼湊網址對比法**：GitHub 支援直接在網址後方使用 `compare/舊版本SHA...新版本SHA`。例如：
@@ -190,7 +190,7 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
     4.  在比對控制列的 `compare: main` 下拉選單中貼上複製的第 1 版 SHA 並回車，系統會自動比對渲染。
 
 ### ▍ 2. GitHub 差異檢視介面進階解讀
-*   **Split View（左右分欄）模式**：在差異檢視畫面正上方，點擊 **`齒輪圖示 (Settings)`** $\rightarrow$ 將 Diff view 從 Unified 改為 **`Split`**。左側顯示舊版（紅色刪除），右側顯示新版（綠色新增），更利於 Markdown 長文閱讀。
+*   **Split View（左右分欄）模式**：在差異檢視畫面正上方，點擊 **`齒輪圖示 (Settings)`** $\rightarrow$ 將 Diff view 從 Unified 改為 **`Split`**。左側顯示舊版（紅色刪除），右側顯示新版（綠色新增），更利於 Markdown 長文差異閱讀。
 *   **Hunk Header（代碼區塊標頭）解讀**：
     差異畫面上出現的藍色橫條（例如 `@@ -4,10 +4,11 @@ tags: [...]`）代表：
     *   `-4,10`：舊版（`-`）從第 4 行開始，顯示了 10 行。
@@ -198,4 +198,9 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
     *   背景文字：Git 自動抓取的最鄰近標題或 Front Matter 欄位。
     *   雙向小箭頭：點擊可展開被自動收折的未修改內容。
 
-*(相關基礎命令與環境配置可交叉檢索：[[前端與系統開發常用技術]])*
+---
+
+> [!NOTE]
+> **延伸閱讀與交叉連結**：
+> - 關於基礎的 Git 指令、分支管理及 Shebang 規範，請參閱 [[前端與系統開發常用技術]]。
+> - 關於團隊管理多個專案時的 Git 子模組 (Git Submodule) 整合與文件目錄防呆規範，請參閱 [[多專案文件管理與 Git 子模組規範]]。

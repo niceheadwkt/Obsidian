@@ -6,7 +6,7 @@ sources: [
   "[[raw/2026-06-15T155933+0800-Anthropic推Claude for Word！AI直接住進側邊欄，幫你改稿、檢查文件.md]]"
 ]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-09
 ---
 
 # Claude 辦公自動化 (Excel & Word)

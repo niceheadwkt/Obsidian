@@ -3,7 +3,7 @@ type: analysis
 tags: [AI工具, 對比分析, 付費訂閱, 華頓商學院, ChatGPT, Claude, Gemini]
 sources: ["[[raw/2026-06-15T153819+0800-Claude、Gemini、ChatGPT三大工具差在哪？華頓商學院教授教你「付費版」選用指南.md]]"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-09
 ---
 
 # 三大 AI 付費版選用與效能橫向對比

@@ -2,16 +2,16 @@
 type: concept
 tags: [Antigravity, AI-Agent, 記憶系統, MCP, IDE]
 sources: [
-  "[[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md]]",
+  "[[raw/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md]]",
   "[[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md]]"
 ]
 created: 2026-06-18
-updated: 2026-06-23
+updated: 2026-07-09
 ---
 
 # Antigravity 核心概念與五層記憶系統
 
-本頁面整理並分析了 Google Antigravity IDE 代理程式（AI Agent）的核心運作機制，內容提煉自 [[sources/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md|Automate with Bonnie 的 22 個核心概念解析]]，並引入最新 [[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md|Antigravity 自動化實戰與 n8n 終極對比]]。
+本頁面整理並分析了 Google Antigravity IDE 代理程式（AI Agent）的核心運作機制，內容提煉自 [[raw/2026-06-17T143022+0800-99%的人沒用好Antigravity：22個核心概念一次講透，從記憶系統到MCP協議全解析【2026最新保姆實操】.md|Automate with Bonnie 的 22 個核心概念解析]]，並引入最新 [[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md|Antigravity 自動化實戰與 n8n 終極對比]]。
 
 ---
 

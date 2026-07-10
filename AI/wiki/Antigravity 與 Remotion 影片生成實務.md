@@ -1,9 +1,9 @@
 ---
 type: analysis
 tags: [Remotion, Antigravity, 影片工程, 自動化, React]
-sources: ["[[sources/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md]]"]
+sources: ["[[raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md]]"]
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-09
 ---
 
 # Antigravity 與 Remotion 影片生成實務
@@ -86,6 +86,8 @@ graph TD
 ---
 
 ## 關聯概念與頁面
-- **Antigravity 系統原理**：`[[Antigravity 核心概念與五層記憶系統]]`
-- **前端常用技術**：`[[前端與系統開發常用技術]]`
+- **Antigravity 系統原理**：[[Antigravity 核心概念與五層記憶系統]]
+- **前端常用技術**：[[前端與系統開發常用技術]]
+- **影片配音與角色克隆**：[[AI 語音複製與 VoxCPM2 本地部署]]
+- **畫面與提示詞設計**：[[ChatGPT 影像生成提示詞指南]]
 - **知識庫首頁**：[[index]]

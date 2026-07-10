@@ -8,7 +8,7 @@ sources: [
   "[[sources/02_NotebookLM_Special/NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md]]"
 ]
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-09
 ---
 
 # NotebookLM 知識庫與應用綜合指南

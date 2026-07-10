@@ -9,7 +9,14 @@ views:
       - file.mtime
       - file.size
     sort:
+      - property: file.mtime
+        direction: ASC
       - property: file.size
         direction: DESC
       - property: file.folder
         direction: ASC
+    columnSize:
+      file.folder: 167
+      file.name: 395
+      file.backlinks: 522
+      file.tags: 687

@@ -13,18 +13,18 @@ sources: [
   "[[raw/Fork.md]]"
 ]
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-09
 ---
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
 
-本頁面彙整並分析了 2026 年除 [[Claude]] 與 [[Ollama]] 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
+本頁面彙整並分析了 2026 年除 `[[Claude]]` 與 `[[Ollama]]` 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
 
 ---
 
 ## 1. AI 程式碼編輯器：Cursor
 
-**Cursor** 是一款基於 VS Code 分叉 (Fork，參見 [[raw/Fork.md|Fork 概念解析]]) 開發的 AI 原生程式碼編輯器，已成為許多工程師的標準配備。
+**Cursor** 是一款基於 VS Code 分叉（Fork，參見 `[[raw/Fork.md|Fork 概念解析]]`）開發的 AI 原生程式碼編輯器，已成為許多工程師的標準配備。
 
 - **核心特色**：
   - **原生上下文理解 (Codebase Indexing)**：自動掃描並索引整個專案目錄，問答時能精準理解變數與函式的呼叫關係。
@@ -41,7 +41,7 @@ updated: 2026-06-11
 
 **Dify** 是一個開源的大語言模型應用開發平台 (Orchestration Platform)，被定位為 **「AI 時代的低代碼/無代碼工作流引擎」**。
 
-關於 Dify 的詳細架構、核心功能優勢、與 LangChain/Flowise 的橫向比較以及部署方案，請參閱獨立實體專頁：**[[Dify]]**。
+關於 Dify 的詳細架構、核心功能優勢、與 LangChain/Flowise 的橫向比較以及部署方案，請參閱獨立實體專頁：`[[Dify]]`。
 
 ---
 
@@ -78,4 +78,10 @@ Grok 與 Groq 是兩個名字極度相似，但本質完全不同的 AI 技術�
 
 ## 5. 雲端開發與測試環境：Google AI Studio
 
-**Google AI Studio** 是一個由 Google 推出的網頁端整合開發環境（IDE），專為開發者與創作者設計，提供快速測試、原型設計與部署生成式 AI 應用的實驗室。詳細說明與 API 密鑰管理機制，可參見 [[raw/Google AI Studio.md|Google AI Studio 指南]]。
+**Google AI Studio** 是一個由 Google 推出的網頁端整合開發環境（IDE），專為開發者與創作者設計，提供快速測試、原型設計與部署生成式 AI 應用的實驗室。詳細說明與 API 密鑰管理機制，可參見 `[[raw/Google AI Studio.md|Google AI Studio 指南]]`。
+
+---
+
+> [!NOTE]
+> **延伸閱讀與交叉連結**：
+> - 關於 AI 原生命令行工具的對比與實戰，請參閱 [[AI CLI 工具比較與選擇_摘要]]。

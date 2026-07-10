@@ -6,7 +6,7 @@ sources: [
   "[[sources/03_AI_Concepts/DeepSearch.md]]"
 ]
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-09
 ---
 
 # RAG 與 DeepSearch 概念綜述 (Semantic Search & RAG Overview)

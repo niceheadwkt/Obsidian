@@ -6,7 +6,7 @@ sources: [
   "[[sources/03_AI_Concepts/Gemma 4 MCP 開發：本地與雲端計費.md]]"
 ]
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-09
 ---
 
 # 從 LLM 到 Agent Skill 的底層工程解析
@@ -75,3 +75,9 @@ updated: 2026-06-11
    )
    ```
 3. **優化建議**：與其在程式碼中寫死路徑，更好的做法是編寫讀取 `%APPDATA%\Claude\claude_desktop_config.json` 的邏輯，直接共用 Claude Desktop 的設定檔來啟動 MCP。
+
+---
+
+> [!NOTE]
+> **延伸閱讀與交叉連結**：
+> - 關於 Antigravity 的具体架構、安裝與 Agent 記憶、權限管理實務，請參閱 [[AI Agent 與 AntiGravity 2.0 基礎入門]]。
