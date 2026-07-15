@@ -248,6 +248,15 @@
 - **更新索引與交叉連結**：[index.md](index.md) 索引已全量更新，所有頁面的最後更新日期同步更新為今日。透過細緻調整雙向連結結構，成功消除了全知識庫所有的孤立頁面，雙向連結健康度達到 100%。
 - **執行人**：Antigravity Agent
 
+## [2026-07-15] ingest | 建立 Google Tasks 與 Obsidian MCP 安裝與驗收指南
+
+- **說明**：建立了 Google Tasks 與 Obsidian MCP 伺服器的完整建立、配置與功能驗收指南文檔。
+- **新增 Wiki 頁面**：
+  - `[[AI/raw/2026-07-15-Obsidian_MCP_安裝建立與功能驗收指南.md|Obsidian MCP 安裝建立與功能驗收指南]]`
+  - `[[AI/raw/2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md|Google Tasks MCP 安裝建立與功能驗收指南]]`
+- **執行人**：Antigravity Agent
+
+
 
 
 
