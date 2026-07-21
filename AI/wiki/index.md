@@ -19,15 +19,15 @@
 | `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景 | 9 | 2026-07-09 |
 | `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發 | 8 | 2026-07-09 |
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-07-09 |
-| `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、低代碼 Dify Canvas BaaS 平台、Grok 與 Groq 對比，及 LM Studio、vLLM 推理框架 | 9 | 2026-07-09 |
+| `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt，以及 6 大免費線上課程地圖 | 15 | 2026-07-20 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-07-09 |
 | `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，70 組品牌社群、工作、生活、靈感與風格轉換範本 | 1 | 2026-07-09 |
 | `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 5 | 2026-07-09 |
-| `[[商業案例與投資思維專題]]` | 查理·芒格、納瓦爾、謝金河、施昇輝、陳重銘與孫宇晨等 6 位人物思維，與 Computex 跨境出海數據驅動品牌案例 | 9 | 2026-07-09 |
+| `[[商業案例與投資思維專題]]` | 芒格、納瓦爾、老謝、施昇輝、陳重銘與孫宇晨等人物思維，Computex 跨境出海數據驅動品牌案例，通膨對個人資產傳導，以及買 ETF 必懂九大術語（含收益平準金） | 10 | 2026-07-20 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-07-09 |
 | `[[母語式英文聽力與外語習得法]]` | 馮凱文的英文聽力核心秘訣與 Oio 外語習得系統底層邏輯，包括去心譯聲音直接聯結、直譯口說練習與低阻力微習慣系統 | 1 | 2026-07-09 |
 | `[[國外旅遊實用英語情境]]` | 實用國外旅遊英文求助與購物句型對話（問路、餐廳點餐與拆帳、服飾尺寸庫存、設備故障行李寄存、藥局成藥詢問），結合語感圖像化反射訓練 | 1 | 2026-07-09 |
-| `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、心智圖與教學影片生成，YT / Grabbit 整合，10 個進階提示詞，8 大實務應用場景（報價單、簡報、財報、會議紀錄），以及 Lovart / Canva 簡報修改與 YAML 視覺美化 | 27 | 2026-07-09 |
+| `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、影片生成，YT/Grabbit 整合，8 大商務學術場景，YAML 全域視覺 DNA 框架與系統架構大師雙框架、Canva 轉場後製與 NanoBanana Pro 局部改圖 | 31 | 2026-07-20 |
 | `[[Claude 系統優化與 Token 節省指南]]` | 解決 Claude 額度超限與成本控制，涵蓋 Token 暴漲原因、4 大用量超限技巧、PDF 處理優化、Claude Code CLI 官方 4 條節流建議、三種模型定價選用對照，以及 `CLAUDE.md` 自我審查與 12 條優化規則 | 9 | 2026-07-09 |
 | `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理 | 16 | 2026-07-09 |
 | `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 7 | 2026-07-09 |
@@ -39,10 +39,16 @@
 | `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢 | 1 | 2026-07-09 |
 | `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-07-09 |
 | `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-07-09 |
-| `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` | 解構生成式 AI 與 AI Agent 根本差異、初始化 Git 與 .gitignore 設定、全域與專案記憶 (.md)，權限管理 (1-5 級/Bypass 模式)、Token 節約經濟學，以及 Google AntiGravity 2.0 一鍵安裝與 Gems 轉 Skills 工具組 (gem-to-agent-kit) | 4 | 2026-07-09 |
+| `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` | 解構生成式 AI 與 AI Agent 根本差異、初始化 Git 與 .gitignore 設定、全域與專案記憶 (.md)，權限管理 (1-5 級/Bypass 模式)、Token 節約經濟學，以及 Google AntiGravity 2.0 一鍵安裝、Gems 轉 Skills，與備課及 GAS 開發實戰 | 10 | 2026-07-20 |
 | `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務，以及 AI 防詐資訊素養教材 | 2 | 2026-07-09 |
 | `[[AI 工具與任務場景橫向評比]]` | 對比 ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok 六大工具在腦力激盪、文案、簡報、資料表、資料搜集等五大場景之優劣，4 步驟 AI 輔助建立 HTML Dashboard 工作流，以及老牌零售良興 3C 與 Data-DI 合作的 AI 落地變革案例 | 2 | 2026-07-09 |
 | `[[多專案文件管理與 Git 子模組規範]]` | 基於 Git Submodule 機制管理多專案共通規範，實施專案首頁導覽分流、防呆命名與相對路徑跳脫防斷鏈實務 | 1 | 2026-07-09 |
+| `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件詳解 | 12 | 2026-07-20 |
+| `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
+| `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
+| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析 | 4 | 2026-07-20 |
+| `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
+| `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧 | 3 | 2026-07-20 |
 
 ## 實體與工具專頁 (Entities & Tools)
 
@@ -206,6 +212,54 @@
 | `SRC-147` | `2026-06-26T190950+0800-AntiGravity 基本功 EP01Claude Code 與 Codex 的強敵？Google AntiGravity 2.0 實測評價.md` | 視頻 / 實測 | 2026-07-09 | `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` |
 | `SRC-148` | `5 大任務情境：AI 工具橫向評比.md` | 文件 / 評比 | 2026-07-09 | `[[AI 工具與任務場景橫向評比]]` |
 | `SRC-149` | `多專案共通規範與文件管理結構指南.md` | 指南 / 規範 | 2026-07-09 | `[[多專案文件管理與 Git 子模組規範]]` |
+| `SRC-150` | `2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md` | 指南 / MCP | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-151` | `2026-07-15-Obsidian_MCP_安裝建立與功能驗收指南.md` | 指南 / MCP | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-152` | `2026-07-20T203320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md` | 影片 / 同步 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-153` | `2026-07-13T102604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md` | 影片 / 架構 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-154` | `2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md` | 影片 / 升級 | 2026-07-20 | [[AI Agent 與 AntiGravity 2.0 基礎入門]] |
+| `SRC-155` | `2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md` | 影片 / 自動 | 2026-07-20 | [[AI Agent 與 AntiGravity 2.0 基礎入門]] |
+| `SRC-156` | `2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md` | 影片 / 備課 | 2026-07-20 | [[AI Agent 與 AntiGravity 2.0 基礎入門]] |
+| `SRC-157` | `2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md` | 指南 / 格式 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-158` | `2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md` | 分析 / 實戰 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-159` | `ava_sandbox Python 套件功能詳解.md` | 說明 / 套件 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-160` | `ava_sandbox有哪些功能.md` | 說明 / 功能 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-161` | `dry_architecture_ai_agent_guide.md` | 指南 / 架構 | 2026-07-20 | [[AI Agent 實戰與 MCP 伺服器整合]] |
+| `SRC-162` | `2026 Chrome Skills 自動化指令軍火庫 (封裝版).md` | 指令 / 範本 | 2026-07-20 | [[Chrome Skills 與瀏覽器自動化實務]] |
+| `SRC-163` | `2026 Chrome Skills：職場生產力自動化實戰(環境設定).md` | 指南 / 設定 | 2026-07-20 | [[Chrome Skills 與瀏覽器自動化實務]] |
+| `SRC-164` | `2026-07-03T135051+0800-別再手動貼 Prompt 了！2026 Chrome 隱藏神功能「Skills」全攻略，一鍵 AI 自動化.md` | 影片 / 指南 | 2026-07-20 | [[Chrome Skills 與瀏覽器自動化實務]] |
+| `SRC-165` | `上網功能,Playwright 是什麼功能，它可以做什麼.md` | 對比 / 自動 | 2026-07-20 | [[Chrome Skills 與瀏覽器自動化實務]] |
+| `SRC-166` | `2026-07-02T155713+0800-GoogleAI基本功EP06_使用Notebook LM的五大場景_Gemini 還是 Notebook LM？你其實一直選錯了.md` | 影片 / 對比 | 2026-07-20 | [[NotebookLM 進階應用與實戰指引]] |
+| `SRC-167` | `2026-07-02T202241+0800-Notebook教學簡報終極完全體_學會 YAML 框架：100% 掌握 NotebookLM 視覺風格.md` | 影片 / 簡報 | 2026-07-20 | [[NotebookLM 進階應用與實戰指引]] |
+| `SRC-168` | `2026-07-02T213657+0800-NotebookLM 隱藏神技：用「系統架構大師」一鍵打造你的專屬教學 AI！.md` | 影片 / 指令 | 2026-07-20 | [[NotebookLM 進階應用與實戰指引]] |
+| `SRC-169` | `NotebookLM 系統架構大師.md` | 說明 / 框架 | 2026-07-20 | [[NotebookLM 進階應用與實戰指引]] |
+| `SRC-170` | `2026-07-08T160415+0800-Claude Code提示詞懶人包！52組指令一次整理，工程師、PM、設計師都適用.md` | 指令 / 範本 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-171` | `2026-07-20T150840+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md` | 影片 / 專案 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-172` | `Claude_Workspace_Mode_使用說明.md` | 說明 / 模式 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-173` | `Claude_Workspace_Pro_設計指南.md` | 指南 / 架構 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-174` | `Software_Architect_v1.0_繁體中文.md` | 指南 / 架構 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-175` | `Software Architect Workspace Pro v2.0製作方式.md` | 指南 / 架構 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
+| `SRC-176` | `2026 年生成式 AI 企業端應用趨勢報告.md` | 報告 / 趨勢 | 2026-07-20 | [[生成式 AI 企業應用與成本經濟學]] |
+| `SRC-177` | `2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md` | 報告 / 趨勢 | 2026-07-20 | [[生成式 AI 企業應用與成本經濟學]] |
+| `SRC-178` | `AI_Cost_and_Token_Economics.md` | 分析 / 成本 | 2026-07-20 | [[生成式 AI 企業應用與成本經濟學]] |
+| `SRC-179` | `Creao_AI_Comprehensive_Report.md` | 報告 / 對比 | 2026-07-20 | [[生成式 AI 企業應用與成本經濟學]] |
+| `SRC-180` | `2026-06-28T213648+0800-OpenCode 基本功 EP05：免費 Big Pickle 與最強 GLM 5 2.md` | 影片 / 研習 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-181` | `2026-07-04T124354+0800-Codex 保姆級完整教學：從 0 到 1 打造 AI 內容創作系統，選題、腳本、貼文一次跑完！.md` | 影片 / 教學 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-182` | `2026-07-06T095236+0800-別再只用Gemini摘要！教你Chrome右上角「問問」高階用法，卡住直接變即時助教！.md` | 影片 / 教學 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-183` | `2026-07-06T110758+0800-問問 Gemini 被低估了：邊看影片，邊把知識問懂.md` | 自學 / 提示 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-184` | `2026-07-06T110931+0800-iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理.md` | 自學 / 備考 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-185` | `2026-07-08T160237+0800-免費AI課程大全！AI、程式、設計6大平台推薦，完成可拿證書.md` | 自學 / 認證 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-186` | `2026-07-11T210528+0800-ChatGPT APP 基本功第六集全新改版！教師教學神器改版大解析，一次看懂.md` | 影片 / 軟體 | 2026-07-20 | [[AI 工具與框架概覽]] |
+| `SRC-187` | `如影片中無原生字幕，要如何能讓他自動產生.md` | 指南 / 字幕 | 2026-07-20 | [[智慧裝置與日常應用技巧]] |
+| `SRC-188` | `2026-06-29T114451+0800-收益平準金是什麼？買ETF前必懂的9個術語：溢價、除權息、殖利率一次看懂.md` | 術語 / 投資 | 2026-07-20 | [[商業案例與投資思維專題]] |
+| `SRC-189` | `CI／CD.md` | 術語 / 開發 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-190` | `Netlify.md` | 工具 / 託管 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-191` | `omml格式.md` | 規格 / 公式 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-192` | `Padlet.md` | 平台 / 協作 | 2026-07-20 | [[智慧裝置與日常應用技巧]] |
+| `SRC-193` | `PinClipboard_Guide.md` | 指南 / 同步 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-194` | `Ramageddon.md` | 術語 / 防護 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-195` | `README.md` | 專案 / 首頁 | 2026-07-20 | [[軟體架構與發布自動化]] |
+| `SRC-196` | `iPhone_Navigation_Guide.md` | 手勢 / 導航 | 2026-07-20 | [[智慧裝置與日常應用技巧]] |
+| `SRC-197` | `Software_Architect_v1.0_繁體中文.md` | 指南 / 冗餘 | 2026-07-20 | [[Claude Code 與 Workspace Pro 實戰]] |
 
 ---
 

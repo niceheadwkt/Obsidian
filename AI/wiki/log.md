@@ -256,12 +256,31 @@
   - `[[AI/raw/2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md|Google Tasks MCP 安裝建立與功能驗收指南]]`
 - **執行人**：Antigravity Agent
 
+## [2026-07-20] ingest | 全量匯入第十七批：AI Agent與企業AI經濟學等48份原始文獻
 
+- **說明**：完成 48 份未歸檔原始文獻的全量 Ingest。
+- **新增 Wiki 頁面**：
+  - `[[AI Agent 實戰與 MCP 伺服器整合]]`
+  - `[[Chrome Skills 與瀏覽器自動化實務]]`
+  - `[[Claude Code 與 Workspace Pro 實戰]]`
+  - `[[生成式 AI 企業應用與成本經濟學]]`
+  - `[[軟體架構與發布自動化]]`
+  - `[[智慧裝置與日常應用技巧]]`
+- **更新 Wiki 頁面**：
+  - `[[AI Agent 與 AntiGravity 2.0 基礎入門]]`
+  - `[[NotebookLM 進階應用與實戰指引]]`
+  - `[[商業案例與投資思維專題]]`
+  - `[[AI 工具與框架概覽]]`
+- **更新索引**：[index.md](index.md) 索引已同步更新，錄入 SRC-150 至 SRC-197。
+- **執行人**：Antigravity Agent
 
+## [2026-07-21] lint | 收工維護與 .gitignore 優化
 
-
-
-
-
-
+- **說明**：執行今日收工檢查，優化 Git 排除清單配置，並檢查今日變更。
+- **更新檔案**：
+  - 修改 `[[.gitignore]]`：排除 `node_modules/` 以解決 Google Drive 雲端環境中 Git status 掃描過慢的問題。
+- **偵測到今日新增原始素材**：
+  - `[[AI/raw/Google AI Studio 1.md|Google AI Studio 1.md]]`
+  - `[[AI/raw/Google_Drive_Cross_PC_Setup_Guide.md|Google_Drive_Cross_PC_Setup_Guide.md]]`
+- **執行人**：Antigravity Agent
 

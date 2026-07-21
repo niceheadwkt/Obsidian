@@ -2,13 +2,19 @@
 type: concept
 tags: [AIAgent, AntiGravity, 專案管理, 權限設定, Token優化]
 sources: [
-  "[[raw/2026-06-24T214648+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]",
+  "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]",
   "[[raw/2026-06-25T134848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent.md]]",
   "[[raw/2026-06-25T210734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定.md]]",
-  "[[raw/2026-06-26T190950+0800-AntiGravity 基本功 EP01Claude Code 與 Codex 的強敵？Google AntiGravity 2.0 實測評價.md]]"
+  "[[raw/2026-06-26T190950+0800-AntiGravity 基本功 EP01Claude Code 與 Codex 的強敵？Google AntiGravity 2.0 實測評價.md]]",
+  "[[raw/2026-07-13T102604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]",
+  "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]",
+  "[[raw/2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md]]",
+  "[[raw/2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md]]",
+  "[[raw/2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md]]",
+  "[[raw/2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]"
 ]
 created: 2026-06-26
-updated: 2026-07-09
+updated: 2026-07-20
 ---
 
 # AI Agent 與 AntiGravity 2.0 基礎入門
@@ -93,8 +99,13 @@ AntiGravity 2.0 支援透過 MCP 協議與 [[Git GUI 與 GitHub 雙向同步實�
 ### 🎨 實務示範：跨工具工作流 (Nano Banana Pro)
 轉換後的 Skills 可支援複雜的跨工具連動。例如：給出一個故事大綱，Skill 自動呼叫生圖工具 **Nano Banana Pro**（會扣除對應生圖額度）生成三頁一致性角色的語音漫畫網頁，將文字、圖像與語音無縫融合成一個可執行的 HTML 工件。
 
+此外，AI Agent 已被廣泛應用於實戰教學與自動化：
+*   **備課自動化 (EP02)**：Agent 能夠上網自動下載最近五年的國中會考數學試題，結合 OCR 技術進行圖片公式識別，呼叫 Python 生成包含 OMML 標準方程式的 Word 考卷，並自動填寫與整理檔案夾。
+*   **GAS 開發免複製貼上 (EP03)**：透過與 Google Workspace API 深度串接，AI 寫 Google Apps Script 程式碼可直接寫入並部署至雲端，免去手動複製貼上。
+
 ---
 
 > [!NOTE]
 > **延伸閱讀與交叉連結**：
-> - 關於 Antigravity 記憶系統的五層架構（工作記憶、情境記憶、專案記憶、全域記憶、語意記憶），請參閱 [[Antigravity 核心概念與五層記憶系統]]。
+> - 關於 MCP 伺服器配置、跨裝置工作區同步與進階沙箱，請參閱新建立之概念頁面：`[[AI Agent 實戰與 MCP 伺服器整合]]`。
+> - 關於 Antigravity 記憶系統的五層架構（工作記憶、情境記憶、專案記憶、全域記憶、語意記憶），請參閱 `[[Antigravity 核心概念與五層記憶系統]]`。

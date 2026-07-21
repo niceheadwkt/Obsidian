@@ -6,3 +6,5 @@
 .tmp.drivedownload/
 # 忽略任何子目錄下的隱藏 .git 資料夾，防止巢狀儲存庫衝突
 **/.git/
+node_modules/
+

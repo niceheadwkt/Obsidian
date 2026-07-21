@@ -1,0 +1,637 @@
+[
+  {
+    "fileName": "2026 年生成式 AI 企業端應用趨勢報告.md",
+    "relDir": "raw",
+    "title": "2026 年生成式 AI 企業端應用趨勢報告.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 2026 年生成式 AI 企業端應用趨勢報告",
+      "## 核心趨勢摘要",
+      "## 四大關鍵趨勢解析",
+      "### 1. 代理式 AI（Agentic AI）成為工作流核心",
+      "### 2. 企業競爭力取決於「工作流重塑」，而非單點提效",
+      "### 3. 人力結構沙漏化與「AI 通才」崛起",
+      "### 4. 負責任 AI（RAI）與科技治理工具化",
+      "# 簡報 HTML 原始碼（採用內建 Reveal.js 樣式架構）"
+    ],
+    "snippet": "text 分析 2026 年生成式 AI 在企業端的應用趨勢，整理成報告並生成簡報 HTML 這是一份為您整理的 2026 年生成式 AI 企業端應用趨勢報告，隨後附帶一份可直接複製使用的 HTML 簡報（Slide）原始碼。 2026 年是企業 AI 應用的關鍵分水嶺，企業已從早期的「探索性嘗試」全面邁向「由上而下的商轉落地與工作流重塑」。 2026 年生成式 AI 企業端應用趨勢報告 核心趨勢摘要 根據 PwC、Deloitte、McKinsey 及工研院等國內外機構的最新調研，2026 年企業導入生成式 AI 的焦點已從「提升個人生產力（如寫信、摘要）」轉向「重塑企業核心工作流」。全球預..."
+  },
+  {
+    "fileName": "2026 Chrome Skills 自動化指令軍火庫 (封裝版).md",
+    "relDir": "raw",
+    "title": "2026 Chrome Skills 自動化指令軍火庫 (封裝版).md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 職能小真 | 2026 Chrome Skills 自動化指令軍火庫 (封裝版)",
+      "## 第一部分：職場高效模組",
+      "### 1. 快速會議行動清單 (Meeting to Action)",
+      "### 2. 競品數據對比大師 (Competitor Analysis)",
+      "### 3. 長篇研究深度摘要 (Deep Research Summary)",
+      "### 4. 法律條款風險審核 (Legal Risk Review)",
+      "## 第二部分：自媒體創作模組",
+      "### 5. 回・粉絲留言 (Fan Interaction)"
+    ],
+    "snippet": "職能小真 2026 Chrome Skills 自動化指令軍火庫 (封裝版) 這份指令包採用「封裝架構」。請進入 chrome://skills/ 點擊「+新增」，將【Skill 提示詞】內容填入「指令」欄位；實際使用時，請在側邊欄參考【實戰應用】的輸入方式。 第二部分：自媒體創作模組 5. 回・粉絲留言 (Fan Interaction) 【Skill 提示詞】 角色：你是一位親切、幽默且具社群洞察力的創作者。 格式：語氣溫暖、口語化，必須附上 3 個相關 Emoji，結尾要帶一個反問句。 核心指令：根據參考資料中的留言內容，產出一份能引導互動的回覆草稿。 【實戰應用】 指令混合：優先參考 ..."
+  },
+  {
+    "fileName": "2026 Chrome Skills：職場生產力自動化實戰(環境設定).md",
+    "relDir": "raw",
+    "title": "2026 Chrome Skills：職場生產力自動化實戰(環境設定).md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 2026 Chrome Skills：職場生產力自動化實戰(環境設定)",
+      "## 第一部分：環境開啟與暴力解法 (Setup)",
+      "### 1. 暴力解法：強制啟動「問問 Gemini」",
+      "### 2. 實驗功能設定 (Flags)",
+      "### 3. 技能管理中心 (Skills Center) 與新增步驟",
+      "## 第二部分：Skill 後端封裝設定 (Backend)",
+      "## 第三部分：側邊欄實戰聯動 (Ask Gemini)",
+      "## 小真老師的應用筆記"
+    ],
+    "snippet": "2026 Chrome Skills：職場生產力自動化實戰(環境設定) 本指南展示如何利用 Chrome Skills 的跨分頁與生態系聯動能力，將繁雜的專業資訊快速轉化為「上班族」需要的專業報告、會議紀要與行動計畫。 第二部分：Skill 後端封裝設定 (Backend) 在 chrome://skills/ 點擊「+新增」，建立符合職場邏輯的自動化指令。 技能名稱：專業文件轉化、週報生成、會議紀要 封裝提示詞內容： 角色：你是一位極致高效的職場生產力顧問，擅長「邏輯建模」與「專業文案格式化」。 任務：請分析參考資料，並針對「商務應用」場景執行以下自動化流程。 格式要求：必須使用「Markd..."
+  },
+  {
+    "fileName": "2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md",
+    "relDir": "raw",
+    "title": "AntiGravity基本功EP02:備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾",
+    "description": "出數學考卷還在為打方程式、畫幾何圖形搞到深夜嗎？今天我們要來極速實測 AI 助理 Antigravity 處理教學檔案的超狂速度，看看它如何顛覆老師們的備課日常！自動下載與精準解題：實測上網撈出最近五年國中會考數學試題，不僅秒速下載完成，還能啟動 OCR 直接看懂圖形並完美寫出解答。神級 Word 文書技能：導入「出題審題專家」技能，呼叫 Python 自動產出包含 OMML 標準數學方程",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=U4C0dGbQtQA) 出數學考卷還在為打方程式、畫幾何圖形搞到深夜嗎？今天我們要來極速實測 AI 助理 Antigravity 處理教學檔案的超狂速度，看看它如何顛覆老師們的備課日常！ 自動下載與精準解題：實測上網撈出最近五年國中會考數學試題，不僅秒速下載完成，還能啟動 OCR 直接看懂圖形並完美寫出解答。 神級 Word 文書技能：導入「出題審題專家」技能，呼叫 Python 自動產出包含 OMML 標準數學方程式、生活化非選題以及自動插入 Python 繪製的幾何圖形考卷。 辦公室庶務自動化：教你如何讓 AI 連動 O..."
+  },
+  {
+    "fileName": "2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md",
+    "relDir": "raw",
+    "title": "AntiGravity基本功EP03:最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.",
+    "description": "影片中的Padlethttps://padlet.com/mathruffian/0531-jyjw7n8vu4eob7a6",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "寫程式、管班級還要搞懂複雜的資料庫設定，讓你一個頭兩個大嗎？今天這支影片將為你徹底解放 Google 最新 AI Agent —— Antigravity 的強大潛能，帶你體驗快到超乎想像的開發速度 ！ 影片三大核心精華：Turbo Mode 密技：如何在\" tags: \"clippings\" !(https://www.youtube.com/watch?v=oBHrpEsJs8) 影片中的Padlet https://padlet.com/mathruffian/0531jyjw7n8vu4eob7a6 \\ 寫程式、管班級還要搞懂複雜的資料庫設定，讓你一個頭兩個大嗎？ 今天這支影片將為你徹..."
+  },
+  {
+    "fileName": "2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md",
+    "relDir": "raw",
+    "title": "AntiGravity 基本功 EP04:一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送",
+    "description": "懶人包連結在這裡https://github.com/mathruffian-dot/gem-to-agent-kit",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "【驚人升級】你還在用一次隻能做一件事的 Gemini Gems 嗎？它已經落伍了！今天這支影片將手把手帶你將原有的券（Gems）全面升級為進階版的超級券（Skill），解鎖 AI Agent 的真正實力！ 本影片你將學到：Gems 的六大限制 vs Agent\" tags: \"clippings\" !(https://www.youtube.com/watch?v=kmmYXntln_E) 懶人包連結在這裡 https://github.com/mathruffiandot/gemtoagentkit \\ 【驚人升級】你還在用一次隻能做一件事的 Gemini Gems 嗎？ 它已經落伍了！ 今..."
+  },
+  {
+    "fileName": "2026-06-28T213648+0800-OpenCode 基本功 EP05：免費 Big Pickle 與最強 GLM 5 2.md",
+    "relDir": "raw",
+    "title": "OpenCode 基本功 EP05：免費 Big Pickle 與最強 GLM 5 2",
+    "description": "上手Agent的最佳組合幫你的opencode裝上免費的生圖技能https://github.com/mathruffian-dot/opencode-draw-free如果你要訂閱opencode的話使用我的折扣碼https://opencode.ai/go?ref=FRXJTN1HFP",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "要教別人上手 AI Agent，最大的痛點就是大家沒有付費訂閱、額度也撐不過一場研習。這集給\" tags: \"clippings\" !(https://www.youtube.com/watch?v=F_eMaWlxAtU) 上手Agent的最佳組合 幫你的opencode裝上免費的生圖技能 https://github.com/mathruffiandot/opencodedrawfree 如果你要訂閱opencode的話使用我的折扣碼 https://opencode.ai/go?ref=FRXJTN1HFP \\ 要教別人上手 AI Agent，最大的痛點就是大家沒有付費訂閱、額度也撐不過..."
+  },
+  {
+    "fileName": "2026-06-29T114451+0800-收益平準金是什麼？買ETF前必懂的9個術語：溢價、除權息、殖利率一次看懂.md",
+    "relDir": "raw",
+    "title": "收益平準金是什麼？買ETF前必懂的9個術語：溢價、除權息、殖利率一次看懂",
+    "description": "主動式ETF、累積型、收益平準金、除權息⋯這些字在財經新聞天天出現，但真正搞懂的人不多。本文用白話拆解9個關鍵術語，讀完再看ETF懶人包不再卡關。",
+    "headers": [
+      "## 買ETF前先搞懂：溢價、收益平準金、除權息⋯這9組關鍵字怎麼影響你的報酬？",
+      "## 買 ETF 前必看的關鍵字〉",
+      "## 一、主動式ETF是什麼？和被動式ETF差在哪裡？",
+      "## 二、ETF溢價是什麼？為什麼掛牌首日買進會買貴？",
+      "## 三、內扣費用率是什麼？怎麼影響ETF長期報酬？",
+      "## 四、配息型和累積型ETF差在哪？怎麼選？",
+      "## 配息相關術語，除息季前必讀〉",
+      "## 五、除權和除息是什麼？為什麼配息後股價反而跌？"
+    ],
+    "snippet": "!2026未來經理人年會(https://pearls.s3.hicloud.net.tw/d180/material/202606/f33wb1782657417.gif)(https://edm.managertoday.com.tw/futuremanager/?utm_campaign=2026FM&utm_source=web_bn&utm_medium=logo_banner&utm_content=164731&utm_term=channel_all) 2026.06.26 金融科技(https://www.bnext.com.tw/categories/fintech) 買E..."
+  },
+  {
+    "fileName": "2026-07-02T155713+0800-GoogleAI基本功EP06_使用Notebook LM的五大場景_Gemini 還是 Notebook LM？你其實一直選錯了.md",
+    "relDir": "raw",
+    "title": "GoogleAI基本功EP06_使用Notebook LM的五大場景_Gemini 還是 Notebook LM？你其實一直選錯了",
+    "description": "總是覺得 AI 給的答案太發散、甚至會「幻想」出課綱以外的內容嗎？那是因為你選錯工具了！本集「Google AI 基本功」將深入剖析通用助理 Gemini 與資料專家 Notebook LM 的核心差異。雖然兩者都搭載 Gemini 3 核心，但在處理教學資料的邏輯上卻大不相同。我將分享為什麼在教學現場，Notebook LM 的使用比例遠大於 Gemini。本集影片精華摘要：核心差異",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=CcS5YUmZPWk) 總是覺得 AI 給的答案太發散、甚至會「幻想」出課綱以外的內容嗎？那是因為你選錯工具了！ 本集「Google AI 基本功」將深入剖析通用助理 Gemini 與資料專家 Notebook LM 的核心差異。雖然兩者都搭載 Gemini 3 核心，但在處理教學資料的邏輯上卻大不相同。我將分享為什麼在教學現場，Notebook LM 的使用比例遠大於 Gemini。 本集影片精華摘要： 核心差異解析：了解 Gemini 的「發散創意」與 Notebook LM 的「精準封閉」如何分工。 5 大教學場景實測..."
+  },
+  {
+    "fileName": "2026-07-02T202241+0800-Notebook教學簡報終極完全體_學會 YAML 框架：100% 掌握 NotebookLM 視覺風格.md",
+    "relDir": "raw",
+    "title": "Notebook教學簡報終極完全體_學會 YAML 框架：100% 掌握 NotebookLM 視覺風格",
+    "description": "notebook LM簡報實在太好用了重點摘要：YAML 全域規範： 透過定義背景色碼、字體、色標，徹底控制簡報的視覺 DNA。 逆向工程拆解： 將現有的 PDF 簡報丟入 NotebookLM，一秒解析出背後的設計逻辑與提示詞。 多元應用實測： 示範將內容轉化為單字學習卡、考古題庫及連環漫畫等多種形式。 如果你覺得這套 YAML 框架對你有幫助，歡迎訂閱頻道並在下方留言「我想領",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=d8qL2I0Eas) notebook LM簡報實在太好用了 重點摘要： YAML 全域規範： 透過定義背景色碼、字體、色標，徹底控制簡報的視覺 DNA。 逆向工程拆解： 將現有的 PDF 簡報丟入 NotebookLM，一秒解析出背後的設計逻辑與提示詞。 多元應用實測： 示範將內容轉化為單字學習卡、考古題庫及連環漫畫等多種形式。 如果你覺得這套 YAML 框架對你有幫助，歡迎訂閱頻道並在下方留言「我想領取靈魂框架，讓我們一起玩轉 AI 教學！」 Transcript 0:02 · hello大家晚安 明天就要開學啦 大家寒..."
+  },
+  {
+    "fileName": "2026-07-02T213657+0800-NotebookLM 隱藏神技：用「系統架構大師」一鍵打造你的專屬教學 AI！.md",
+    "relDir": "raw",
+    "title": "NotebookLM 隱藏神技：用「系統架構大師」一鍵打造你的專屬教學 AI！",
+    "description": "這部影片將帶領老師們掌握 NotebookLM 與 Gemini 的深度整合應用。核心重點在於建立「Notebook 系統架構大師」，這是一種將 AI 的行為指令「檔案化」的創新技術，讓老師能透過勾選左側來源，精準控制輸出的品質與格式。影片精彩內容包含：• 兩大核心框架：介紹如何設定「靈魂框架」來定義 AI 的角色與邏輯，以及「結構格式框架」來規範排版與輸出樣式。• 實戰教學場景：展示如何從",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=rLHbROdryH4) 這部影片將帶領老師們掌握 NotebookLM 與 Gemini 的深度整合應用。核心重點在於建立「Notebook 系統架構大師」，這是一種將 AI 的行為指令「檔案化」的創新技術，讓老師能透過勾選左側來源，精準控制輸出的品質與格式。 影片精彩內容包含： • 兩大核心框架：介紹如何設定「靈魂框架」來定義 AI 的角色與邏輯，以及「結構格式框架」來規範排版與輸出樣式。 • 實戰教學場景：展示如何從龐大題庫中自動生成符合規範的斷考試題，以及如何結合 Deep Research 撰寫專業的「經進計畫」。 ..."
+  },
+  {
+    "fileName": "2026-07-03T135051+0800-別再手動貼 Prompt 了！2026 Chrome 隱藏神功能「Skills」全攻略，一鍵 AI 自動化.md",
+    "relDir": "raw",
+    "title": "別再手動貼 Prompt 了！2026 Chrome 隱藏神功能「Skills」全攻略，一鍵 AI 自動化",
+    "description": "螢幕前的你，是不是還在手動複製貼上指令？每次用到 AI 都要打開筆記本複製一長串的 Prompt？ 告訴你一個殘酷的真相：2026 年 Google 釋出的隱藏神功能「Chrome Skills」已經將 AI 變成瀏覽器的原生按鈕，準備徹底淘汰傳統打字員！ 這支影片小真將帶你從零開始，解鎖 99% 人都不知道的隱藏實驗開關，學會封裝專屬的自動化技能，讓你每天至少省下一個小時的無效勞動！🔗",
+    "headers": [
+      "## Transcript",
+      "### 告別手動複製！2026 Chrome 隱藏神功能登場",
+      "### 思維大翻轉：打字員 vs 架構師，你還在做苦力嗎？",
+      "### 步驟一：開啟「問問 Gemini」側邊欄與釘選技巧",
+      "### 內行秘辛：瀏覽器找不到功能？一招暴力破解法",
+      "### 步驟二：解鎖 99% 人不知道的 Skills 隱藏實驗開關",
+      "### 底層邏輯解析：什麼是 Skills？AI 幫你實現「零輸入」",
+      "### 碾壓傳統外掛的三大優勢：原生性、隱私性、學習性"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=uQQBhSqY2lE) 螢幕前的你，是不是還在手動複製貼上指令？每次用到 AI 都要打開筆記本複製一長串的 Prompt？ 告訴你一個殘酷的真相：2026 年 Google 釋出的隱藏神功能「Chrome Skills」已經將 AI 變成瀏覽器的原生按鈕，準備徹底淘汰傳統打字員！ 這支影片小真將帶你從零開始，解鎖 99% 人都不知道的隱藏實驗開關，學會封裝專屬的自動化技能，讓你每天至少省下一個小時的無效勞動！ 🔗 影片中提到的必備連結與指令： 2\\. 實驗功能設定 (Flags) 進入實驗功能頁面手動開啟核心權限，請依照以..."
+  },
+  {
+    "fileName": "2026-07-04T124354+0800-Codex 保姆級完整教學：從 0 到 1 打造 AI 內容創作系統，選題、腳本、貼文一次跑完！.md",
+    "relDir": "raw",
+    "title": "Codex 保姆級完整教學：從 0 到 1 打造 AI 內容創作系統，選題、腳本、貼文一次跑完！",
+    "description": "這 Codex 這款產品，它最大的優勢就是介面非常的乾淨跟清晰。它是一個真正能夠從理解、實做到驗證，陪你把想法變成可執行成果的 AI agent。我把自己用了快半年的 Codex 工作流，從安裝到實際應用，完整拆給你看。這集你會學到：✦ AI agent 跟聊天機器人的本質差在哪（Sam Altman 的 AI 五等級框架）✦ Codex 6 大核心功能一次看懂✦ 安裝下載、登入方",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=AZA8OYGlEnE) 這 Codex 這款產品，它最大的優勢就是介面非常的乾淨跟清晰。 它是一個真正能夠從理解、實做到驗證，陪你把想法變成可執行成果的 AI agent。 我把自己用了快半年的 Codex 工作流，從安裝到實際應用，完整拆給你看。 這集你會學到： ✦ AI agent 跟聊天機器人的本質差在哪（Sam Altman 的 AI 五等級框架） ✦ Codex 6 大核心功能一次看懂 ✦ 安裝下載、登入方式、介面完整導覽 ✦ 規劃模式 vs 追求目標模式，什麼時候用哪個 ✦ 重要設定調整：日常工作模式、沙盒權限、..."
+  },
+  {
+    "fileName": "2026-07-06T095236+0800-別再只用Gemini摘要！教你Chrome右上角「問問」高階用法，卡住直接變即時助教！.md",
+    "relDir": "raw",
+    "title": "別再只用Gemini摘要！教你Chrome右上角「問問」高階用法，卡住直接變即時助教！",
+    "description": "邊看影片邊拆解複雜架構圖，用這 40 個提示詞打破自學盲點。https://vocus.cc/article/6a217ee0fd89780001c389a9如果你正在準備 iPAS AI 應用規劃師，但還不確定該先考初級，還是直接準備中級，我整理了一篇自學路線：👉 iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理  https://vocus.cc/article",
+    "headers": [],
+    "snippet": "!(https://www.youtube.com/watch?v=_5iGJnMSKFw) 邊看影片邊拆解複雜架構圖，用這 40 個提示詞打破自學盲點。 https://vocus.cc/article/6a217ee0fd89780001c389a9 如果你正在準備 iPAS AI 應用規劃師，但還不確定該先考初級，還是直接準備中級，我整理了一篇自學路線： 👉 iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理 https://vocus.cc/article/6a411a7afd89780001b25f8e 這篇會整理： \\ 初級／中級怎麼選 \\ 非資訊本科怎麼準備 \\..."
+  },
+  {
+    "fileName": "2026-07-06T110758+0800-問問 Gemini 被低估了：邊看影片，邊把知識問懂.md",
+    "relDir": "raw",
+    "title": "問問 Gemini 被低估了：邊看影片，邊把知識問懂",
+    "description": "很多人看到 Chrome 右上角的「問問 Gemini」，第一個反應是：「這不就跟 Gemini 一樣嗎？」我一開始也這樣想。後來發現，真正差別在「位置」。一般 Gemini 是你另外開網頁，把問題整理好再問。「問問 Gemini」是直接出現在你正在看的頁面旁邊。",
+    "headers": [
+      "## 我的用法",
+      "## 40 個問問 Gemini 學習提示詞",
+      "### 一、最核心的 5 句",
+      "### 二、看 YouTube 教學影片時",
+      "### 三、看架構圖時",
+      "### 四、讀長文章或網頁時",
+      "### 五、看數據表或模型比較時",
+      "### 六、考試或證照學習時"
+    ],
+    "snippet": "很多人看到 Chrome 右上角的「問問 Gemini」，第一個反應是： 「這不就跟 Gemini 一樣嗎？」 我一開始也這樣想。後來發現，真正差別在「位置」。 一般 Gemini 是你另外開網頁，把問題整理好再問。 「問問 Gemini」是直接出現在你正在看的頁面旁邊。 你在看 YouTube，它就在 YouTube 旁邊。 你在讀長文章，它就在文章旁邊。你在看技術簡報，它就在簡報畫面旁邊。 這很適合解決一個常見問題： 影片明明看完了，但要自己講一次，講不出來。 我把完整操作錄成影片，建議先看影片，再收藏下面這份提示詞清單。 影片連結： 問問 Gemini 你不知道的用法：40 個提示詞，邊..."
+  },
+  {
+    "fileName": "2026-07-06T110931+0800-iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理.md",
+    "relDir": "raw",
+    "title": "iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理",
+    "description": "想準備 iPAS AI 應用規劃師，但不知道該先考初級還是直接準備中級？這篇整理官方資訊、自學路線、免費資源、備考筆記與模擬題使用方式，適合非資訊本科、上班族與想考前收斂重點的人參考。",
+    "headers": [
+      "### iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理",
+      "### 先講結論：不知道怎麼選，可以先這樣判斷",
+      "### 這篇文章適合誰？",
+      "### 先看官方範圍，再決定怎麼準備",
+      "### 初級適合怎麼準備？",
+      "### 中級適合怎麼準備？",
+      "### 我的備考判斷：真正需要的是收斂",
+      "### 免費資源可以怎麼用？"
+    ],
+    "snippet": "想準備 iPAS AI 應用規劃師，但不知道該先考初級還是直接準備中級？這篇整理官方資訊、自學路線、免費資源、備考筆記與模擬題使用方式，適合非資訊本科、上班族與想考前收斂重點的人參考。 iPAS AI 應用規劃師怎麼準備？初級、中級怎麼選與自學資源整理 如果你正在查 iPAS AI 應用規劃師，最先卡住的通常不是「有沒有資料」，而是三個選擇： 1. 我該先考初級，還是直接準備中級？ 2. 非資訊本科可不可以準備？ 3. 官方資料、YouTube、備考筆記和模擬題，到底要怎麼搭配？ 這篇整理的是一條我自己走過的 「自學準備路線」 。你可以先判斷自己適合初級或中級，再決定要先看免費影片、官方資源，..."
+  },
+  {
+    "fileName": "2026-07-08T160237+0800-免費AI課程大全！AI、程式、設計6大平台推薦，完成可拿證書.md",
+    "relDir": "raw",
+    "title": "免費AI課程大全！AI、程式、設計6大平台推薦，完成可拿證書",
+    "description": "本整理6大免費線上課程平台，涵蓋Claude、Gemini、微軟、Canva與哈佛，包含AI、程式、設計課，適合零基礎與上班族進修，部分完成可拿證書。",
+    "headers": [
+      "## AI課程學習地圖！Claude、Google、微軟⋯免費線上課一次收，完成還能拿證書",
+      "## 6大免費線上課程平台快速比較",
+      "## Anthropic / Claude 免費課程：課程最多、可拿官方認證",
+      "## Google：Gemini CLI 與 AI 代理開發",
+      "## 微軟：1 小時搞懂 AI 代理底層邏輯",
+      "## Hugging Face：LLM、AI 代理、MCP 開源生態一次學",
+      "## Canva：8 門設計課，時間短、證書好拿",
+      "## 哈佛大學：85 門免費課程，跨領域補強"
+    ],
+    "snippet": "!2026 未來經理人年會‼️重磅講者公開(https://bnextmedia.s3.hicloud.net.tw/pumpkin/image/photo/202607/img178323522173379.gif)(https://edm.managertoday.com.tw/futuremanager/?utm_campaign=2026FM&utm_source=web_bn&utm_medium=logo_banner&utm_content=164730&utm_term=channel_all) 2026.07.06 職場/工作術(https://www.bnext.com.t..."
+  },
+  {
+    "fileName": "2026-07-08T160415+0800-Claude Code提示詞懶人包！52組指令一次整理，工程師、PM、設計師都適用.md",
+    "relDir": "raw",
+    "title": "Claude Code提示詞懶人包！52組指令一次整理，工程師、PM、設計師都適用",
+    "description": "Anthropic官方Prompt Library收錄52組Claude Code提示詞，按開發、規劃、部署等5大階段分類，並提供直接可用的指令格式。",
+    "headers": [
+      "## Claude Code 提示詞懶人包！官方52組指令一次整理，工程師、PM、設計師都適用",
+      "## 5 大階段、52 組提示詞一次整理",
+      "### 階段一、Discover：探索代碼庫",
+      "### 階段二、Design：設計與原型",
+      "### 階段三、Build：實作、測試、重構、審查、修正",
+      "### 階段四、Ship：Git 與版本發佈",
+      "### 階段五、Operate：除錯、事件處理、資料分析、自動化",
+      "## 哪些職能角色特別適合？"
+    ],
+    "snippet": "!2026 未來經理人年會‼️重磅講者公開(https://bnextmedia.s3.hicloud.net.tw/pumpkin/image/photo/202607/img178323522173379.gif)(https://edm.managertoday.com.tw/futuremanager/?utm_campaign=2026FM&utm_source=web_bn&utm_medium=logo_banner&utm_content=164730&utm_term=channel_all) 2026.07.06 職場/工作術(https://www.bnext.com.t..."
+  },
+  {
+    "fileName": "2026-07-11T210528+0800-ChatGPT APP 基本功第六集全新改版！教師教學神器改版大解析，一次看懂.md",
+    "relDir": "raw",
+    "title": "ChatGPT APP 基本功第六集:全新改版！教師教學神器改版大解析，一次看懂",
+    "description": "Codex 正式更名 ChatGPT APP，這次大改版我整天用下來，直接把第一名頒給它。三個新模型用太陽、地球、月球命名：SOL 最強負責思考規劃、Terra 日常任務、Luna 輕量快速，對標 Claude Code 的三階模型。內建網站託管做好直接發布，不用再掛 Netlify 或 Vercel；手機 Remote Control 掃個 QR Code 就能遙控家裡的電腦；語音背後換成會思",
+    "headers": [],
+    "snippet": "!(https://www.youtube.com/watch?v=RJ50khVFCRk) Codex 正式更名 ChatGPT APP，這次大改版我整天用下來，直接把第一名頒給它。 三個新模型用太陽、地球、月球命名：SOL 最強負責思考規劃、Terra 日常任務、Luna 輕量快速，對標 Claude Code 的三階模型。內建網站託管做好直接發布，不用再掛 Netlify 或 Vercel；手機 Remote Control 掃個 QR Code 就能遙控家裡的電腦；語音背後換成會思考的模型，還內建生圖。 我實演了一句話生出 3D 賽車遊戲、直接發布到網路上給大家玩。 如果你觀望很久不知..."
+  },
+  {
+    "fileName": "2026-07-13T102604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md",
+    "relDir": "raw",
+    "title": "AI Agent基本功 EP05:三層一次講清楚 搞定 技能/全域/專案",
+    "description": "技能、全域、專案——AI Agent 的三層架構，這一集一次講清楚。▸ 技能＝一份使用說明書：把你電腦能做的事（內部程式＋外部工具）組合成工作流，寫成 Markdown 文件。所有 Agent 通用，但「你長出來的技能才是你的技能」——別人的技能是在他的環境建置的，拿來要先改成適合你的工作流。▸ 全域設定＝每次對話都載入的使用習慣。本集送兩個福利：「用語音回答我」（做完事用 Edge TTS",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "!(https://www.youtube.com/watch?v=b4gIauc_hxo) 技能、全域、專案——AI Agent 的三層架構，這一集一次講清楚。 ▸ 技能＝一份使用說明書：把你電腦能做的事（內部程式＋外部工具）組合成工作流，寫成 Markdown 文件。所有 Agent 通用，但「你長出來的技能才是你的技能」——別人的技能是在他的環境建置的，拿來要先改成適合你的工作流。 ▸ 全域設定＝每次對話都載入的使用習慣。本集送兩個福利：「用語音回答我」（做完事用 Edge TTS 串流唸結論，不用盯螢幕）與「語音輸入文字正規化」（依上下文自動修錯字，全語音輸入不用改字，幾乎不耗 Tok..."
+  },
+  {
+    "fileName": "2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md",
+    "relDir": "raw",
+    "title": "2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Google Tasks MCP 伺服器安裝建立與功能驗收指南",
+      "## 1. 核心決策與授權路徑",
+      "## 2. 建立與配置步驟",
+      "### 步驟 A：Google Cloud Platform (GCP) 控制台設定",
+      "### 步驟 B：本地 MCP 伺服器部署 (`gtasks-mcp`)",
+      "### 步驟 C：執行 OAuth 授權流程",
+      "### 步驟 D：編輯 IDE MCP 設定檔",
+      "## 3. 功能工具清單 (Exposed Tools)"
+    ],
+    "snippet": "Google Tasks MCP 伺服器安裝建立與功能驗收指南 本文件詳細記錄了如何從零開始建立、配置與授權 Google Tasks MCP 伺服器 (Model Context Protocol)，使其能安全地與您的 Google 工作表 (Google Tasks) 進行資料串接，並包含功能工具說明與日常使用 Prompt 範例。 2. 建立與配置步驟 步驟 A：Google Cloud Platform (GCP) 控制台設定 1. 建立專案：前往 Google Cloud Console(https://console.cloud.google.com/)，建立一個全新的專案（例如 ..."
+  },
+  {
+    "fileName": "2026-07-15-Obsidian_MCP_安裝建立與功能驗收指南.md",
+    "relDir": "raw",
+    "title": "2026-07-15-Obsidian_MCP_安裝建立與功能驗收指南.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Obsidian MCP 伺服器安裝建立與功能驗收指南",
+      "## 1. 核心運作原理",
+      "## 2. 建立與配置步驟",
+      "### 步驟 A：環境準備",
+      "### 步驟 B：取得與安裝 MCP 伺服器",
+      "### 步驟 C：編輯 IDE MCP 設定檔",
+      "## 3. 功能工具清單 (Exposed Tools)",
+      "## 4. 如何使用此 MCP：日常功能情境與 Prompt 範例"
+    ],
+    "snippet": "Obsidian MCP 伺服器安裝建立與功能驗收指南 本文件詳細記錄了如何建立與配置 Obsidian MCP 伺服器 (Model Context Protocol)，使其能安全、穩定地與本地的 Obsidian 庫進行資料串接，並包含詳細的功能驗收測試流程，以及日常使用此 MCP 的功能情境與 Prompt 範例。 2. 建立與配置步驟 步驟 A：環境準備 1. Node.js：確保本地已安裝 Node.js 執行環境（建議 v18 以上版本）。 2. 本地 Vault 目錄：確認您的 Obsidian 本地庫路徑： 本地路徑：c:/Users/ch26788/我的雲端硬碟 (anton..."
+  },
+  {
+    "fileName": "2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md",
+    "relDir": "raw",
+    "title": "Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？",
+    "description": "Agent Skills是你幫AI預設好的一套「遇到這類任務，你該這樣做」的指令包。不用每次重新說明背景、格式、注意事項，AI看到任務就知道怎麼跑。",
+    "headers": [],
+    "snippet": "Agent Skills是什麼..."
+  },
+  {
+    "fileName": "2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md",
+    "relDir": "raw",
+    "title": "實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！",
+    "description": "要讓 AI 幫上忙，最好先拆解自己的思考路徑，把操作步驟、欄位對照表、業務邏輯、以及回報格式全部「結構化」，再整理成 AI 能懂的 Skill。",
+    "headers": [
+      "## 把「大腦判斷公式」結構化，AI 才能變成專家",
+      "## 你的第一個 Skill 該怎麼做？",
+      "## 自建一個技能！惱人的「報帳明細」一秒搞定"
+    ],
+    "snippet": "我在 X 上看到一個分享(https://x.com/zstmfhy/status/2030308215767089269?sort_replies=recency&utm_source=1day1ai&utm_medium=email&utm_campaign=03172026&bx_heid=0068656866) ，這位在 HSBC 工作的人，他靠 AI 整理文件，成功讓本來要做兩天的工作，變成 10 分鐘搞定。 主角做的是跨境支付，其中一個任務是把各國 HSBC 厚達 50100 頁的官方 PDF 說明書看懂，然後把規則整理成一份標準化的 Excel 檢查表，交給工程師開發。 這件事實..."
+  },
+  {
+    "fileName": "2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md",
+    "relDir": "raw",
+    "title": "再見！便宜AI - 商業周刊第2018期 - 商周線上讀",
+    "description": "1.常收到AI額度用盡通知、覺得AI變貴了？一場牽動企業錢包、台廠商機、中美AI競賽的Token性價比之戰來了。\\r",
+    "headers": [
+      "## 美中AI新決勝點：性價比",
+      "## 「天天用也不心疼」占優勢",
+      "## AI回地端，企業伺服器再起",
+      "## Token價值最大化成新顯學",
+      "## 企業 AI 成本控管與 Token 經濟學分析"
+    ],
+    "snippet": "「你已經達到階段額度，請等到下午一點零三分之後，重新計算。」你是否也在AI對話框看過相似的句子，而且出現的次數越來越頻繁？ 這句話，不只是對個人AI用量的提醒，背後更藏著一套牽動著企業競爭力、AI硬體新商機、乃至中美AI模型大戰的「Token經濟學」。 Token，是AI模型運作的最小計價單位，你對AI說的每一句話、它回覆的每一個字，都會被拆解成一個又一個的Token來計費。訂閱制的AI模型多數都設有Token使用上限。 如今，這個大小約只有○．七五個英文單字的單位，竟然成了可以撬動全球科技版圖、地緣政治的新槓桿。 先來看看過去半年，國內外企業「失控的AI帳單」。 首先是美國叫車巨頭Uber，..."
+  },
+  {
+    "fileName": "2026-07-20T150840+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md",
+    "relDir": "raw",
+    "title": "Claude基本功EP10:新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法",
+    "description": "專案的懶人包在這裡下載https://github.com/mathruffian-dot/claude-code-lazy-packs下載07-初始化班級工具工作模式.md給你的claude code去讀",
+    "headers": [
+      "## Transcript"
+    ],
+    "snippet": "你的 AI 是不是越用越累，最後開始胡言亂語？那是因為你還沒學會正確的「專案管理」。本集影片是【Claude 基本功】系列的核心進階篇，我將分享這段時間研發出的「專案駕駛艙」\" tags: \"clippings\" !(https://www.youtube.com/watch?v=wb0QKHcyds) 專案的懶人包在這裡下載 https://github.com/mathruffiandot/claudecodelazypacks 下載07初始化班級工具工作模式.md 給你的claude code去讀 \\ 你的 AI 是不是越用越累，最後開始胡言亂語？那是因為你還沒學會正確的「專案管理」。 ..."
+  },
+  {
+    "fileName": "2026-07-20T203320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md",
+    "relDir": "raw",
+    "title": "AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位",
+    "description": "https://github.com/mathruffian-dot/cross-device-agent-skills 「我有好幾個 Agent、好幾台電腦，怎麼一起做同一個專案？」這集一次把觀念拆解清楚。三個你會帶走的重點：・用雲端硬碟「應用程式」（不是瀏覽器版）把專案建在雲端，任何電腦、任何 Agent 都能讀寫同一個專案資料夾・用 chezmoi 把你的技能與全域設定在多台電腦之",
+    "headers": [],
+    "snippet": "0:00 0 秒 AI Agent基本功第6集, 很多人問我,我有好幾個 Agent在同一台電腦裡面, 我要怎麼樣在好幾個 Agent之間去做同一個專案呢? 0:13 13 秒 很多人問我,我有兩三台的電腦來去工作, 那我怎麼使用不同的電腦去做同一個專案呢? 0:21 21 秒 今天這一集,我一次拆解, 給大家看要怎麼做。 0:25 25 秒 好,所以今天的內容就是要教大家, 如果你的電腦 裡面有個專案,你會做同一個專案。 0:30 30 秒 有好幾個 Agent,比如說OpenCode, 你有Claude、GPT、 AntiGravity,你有不同的agent。 0:39 39 秒 那我在工..."
+  },
+  {
+    "fileName": "上網功能,Playwright 是什麼功能，它可以做什麼.md",
+    "relDir": "raw",
+    "title": "上網功能,Playwright 是什麼功能，它可以做什麼.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "## 1. 我的「上網功能」是什麼？",
+      "## 2. Playwright 是什麼功能？",
+      "### 核心功能：它可以做什麼？",
+      "## 總結：兩者有何不同？"
+    ],
+    "snippet": "1. 我的「上網功能」是什麼？ 當你問我一些需要最新資訊、即時新聞、天氣、或是特定網站的內容時，我會使用上網功能（Web Search）。 它是怎麼運作的： 就像我幫你跑一趟 Google 搜尋。我會把你的問題轉化為關鍵字，丟給搜尋引擎，然後快速閱讀搜尋出來的網頁摘要（Snippets），最後把這些最新資訊整合、消化，再用流暢的文字回答你。 主要用途： 補足我訓練資料的時間限制（例如查 2026 年最新的股票配息、科技新聞、或是即時地方活動）。 局限： 我只是「閱讀」搜尋引擎給我的文字結果，我無法真正去「操控」那個網頁（例如幫你點擊按鈕、登入帳號或填寫表格）。 2. Playwright 是什..."
+  },
+  {
+    "fileName": "AI_Cost_and_Token_Economics.md",
+    "relDir": "raw",
+    "title": "AI_Cost_and_Token_Economics.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 企業 AI 成本控管與 Token 經濟學全解析",
+      "## 一、 Token 經濟學：企業 AI 成本的五大核心觀測點",
+      "### 1. 企業 AI 成本控管與 Token 經濟學分析表",
+      "## 二、 語意路由 (Semantic Routing) 與模型自動分流機制",
+      "### 1. 運作原理架構",
+      "### 2. 任務分流實例對照表",
+      "## 三、 Python 實作：雙階段 AI 語意路由器",
+      "# 初始化 Gemini 客戶端 (需先設定好環境變數 GEMINI_API_KEY)"
+    ],
+    "snippet": "企業 AI 成本控管與 Token 經濟學全解析 隨著生成式 AI (Generative AI) 深入企業核心工作流，企業面臨的挑戰已從「如何導入 AI」轉變為「如何控管高昂的 AI 營運成本」。本文深度剖析「Token 經濟學」的五大核心觀測點，並提供語意路由 (Semantic Routing) 實作指南與 Chrome 自訂 Skills 的應用實戰，協助企業在智慧化轉型中實現效益最大化。 : : : : 美中 AI 模型性價比大戰 企業開始將預設模型從美國頂尖模型（如 GPT4o、Claude 3.5）轉向性價比極高的中國模型（如智譜 GLM、月之暗面 Kimi、DeepSeek），..."
+  },
+  {
+    "fileName": "ava_sandbox Python 套件功能詳解.md",
+    "relDir": "raw",
+    "title": "ava_sandbox Python 套件功能詳解.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# ava_sandbox Python 套件功能詳解",
+      "## 1. 檔案處理與格式轉換 (File I/O & Data Formats)",
+      "## 2. 網路與通訊 (Web & Networking)",
+      "## 3. 數據科學與數值計算 (Data Science & Numerical Computing)",
+      "## 4. 影像處理與光學字元辨識 (Image Processing & OCR)",
+      "## 5. 加密與安全性 (Cryptography & Security)",
+      "## 6. 文字與標記語言處理 (Text & Markup Processing)",
+      "## 7. 區塊鏈與以太坊 (Blockchain & Ethereum)"
+    ],
+    "snippet": "!NOTE 列出ava_sandbox所有套件，說明其個別之功能與用途 ava_sandbox Python 套件功能詳解 ava_sandbox 提供了一個功能豐富且安全的 Python 執行環境。其中預先安裝了大量常用套件，涵蓋了從檔案處理、數據分析、網路通訊到機器學習和區塊鏈等多個領域。本文件將這些套件分類整理，並提供詳細的功能說明，幫助使用者充分利用此環境。 2. 網路與通訊 (Web & Networking) 這些套件負責與外部世界進行通訊，是呼叫 API、爬取網頁資料的基礎。 requests: Python 中最流行、最簡單易用的 HTTP 函式庫。可以輕鬆發送 GET、POS..."
+  },
+  {
+    "fileName": "ava_sandbox有哪些功能.md",
+    "relDir": "raw",
+    "title": "ava_sandbox有哪些功能.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 1. `sandbox_io` (檔案存取核心)",
+      "### 2. `sandbox_excel` (智慧型 Excel 處理)",
+      "### 3. Kroki (圖表與視覺化引擎)",
+      "### 4. `pandas` 和 `openpyxl` (標準數據分析工具)",
+      "### 內部客製化元件",
+      "### 標準 Python 函式庫"
+    ],
+    "snippet": "好的，\"ava_sandbox\"（您可能指的是 execute_python_code_mcp_ava_sandbox）提供了一個安全的 Python 程式碼執行環境，主要具備以下幾大功能： 1. 執行 Python 程式碼： 在一個安全、隔離的沙箱環境中執行任意 Python 程式碼。 這個環境是離線的，無法存取外部網路。 2. 數據分析與計算： 適用於執行精確的數學運算、統計分析和科學計算。 可以用來分析處理 CSV、Excel 等格式的數據文件。 3. 檔案處理： 提供專用的 sandbox_io 模組來讀取和儲存檔案。 能夠在對話中暫存檔案，方便在後續的步驟中繼續使用。 4. Offi..."
+  },
+  {
+    "fileName": "CI／CD.md",
+    "relDir": "raw",
+    "title": "CI／CD.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 1. CI：Continuous Integration（持續整合）",
+      "### 2. CD：Continuous Delivery / Deployment（持續交付 / 持續部署）",
+      "### 💡 總結：CI/CD 的完整管線（Pipeline）",
+      "### 🛠️ 常見的 CI/CD 工具"
+    ],
+    "snippet": "CI/CD 是現代軟體開發（特別是 DevOps 架構）中非常核心的自動化流程，它是 Continuous Integration（持續整合） 與 Continuous Delivery / Continuous Deployment（持續交付 / 持續部署） 的縮寫。 簡單來說，CI/CD 的核心目標就是：透過「自動化」工具，把工程師寫好的程式碼，經過自動化測試、建置，最後安全且快速地送到生產環境（Production）讓使用者使用。 以下為您詳細拆解這兩個概念： 1. CI：Continuous Integration（持續整合） 「持續整合」專注於程式碼提交到合併的階段。當多位工程師同時..."
+  },
+  {
+    "fileName": "Claude_Workspace_Mode_使用說明.md",
+    "relDir": "raw",
+    "title": "Claude_Workspace_Mode_使用說明.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Claude Workspace Mode（GPT-5.5）使用說明",
+      "## 目的",
+      "## 核心理念",
+      "### 1. Workspace Mode（工作區模式）",
+      "### 2. 專案記憶",
+      "### 3. 增量修改",
+      "### 4. 先分析再修改",
+      "### 5. 建議輸出格式"
+    ],
+    "snippet": "Claude Workspace Mode（GPT5.5）使用說明 目的 這套 Prompt 的目標不是模仿 Claude 的所有功能，而是讓 ChatGPT 在長期專案中，更接近 Claude 的工作模式，例如： 維持上下文一致性 採用漸進式修改（Incremental Editing） 避免重寫整份文件 保持 Markdown、UTF8 與程式碼格式 提供分析、修改與影響評估 核心理念 1. Workspace Mode（工作區模式） 將整個對話視為同一個專案，而不是彼此獨立的問題。模型應根據先前已做出的決策持續工作，避免前後矛盾。 2. 專案記憶 模型在內部持續維護： 專案目標 已完成事..."
+  },
+  {
+    "fileName": "Claude_Workspace_Pro_設計指南.md",
+    "relDir": "raw",
+    "title": "Claude_Workspace_Pro_設計指南.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Claude Workspace Pro（接近 Claude Code / Artifacts）設計指南",
+      "## 核心原則",
+      "### 1. Workspace（工作區）",
+      "### 2. Artifact 思維",
+      "### 3. 專案狀態",
+      "### 4. 文件編輯規範",
+      "### 5. 程式碼規範",
+      "### 6. 回覆格式"
+    ],
+    "snippet": "Claude Workspace Pro（接近 Claude Code / Artifacts）設計指南 目標：建立一套讓 ChatGPT 在大型專案中維持一致性、漸進式修改與長期協作的工作模式。 核心原則 1. Workspace（工作區） 將整個對話視為同一個專案，而不是單次問答。 持續維護： 專案目標 已完成事項 待辦事項 已確認決策 已知風險 檔案關聯 名詞與命名規則 2. Artifact 思維 不要每次重寫全文。 預設只輸出： 修改區塊 Diff 新增內容 影響分析 只有使用者要求時才輸出完整文件。 3. 專案狀態 每次回覆前在內部更新： Goal Context Decision..."
+  },
+  {
+    "fileName": "Creao_AI_Comprehensive_Report.md",
+    "relDir": "raw",
+    "title": "Creao_AI_Comprehensive_Report.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Creao AI 完整研究與對比報告",
+      "## 一、 什麼是 Creao AI？",
+      "### 核心功能與亮點",
+      "## 二、 開發團隊與背景",
+      "## 三、 收費模式（Pricing）",
+      "## 四、 橫向對比：Creao AI vs. Claude Code vs. OpenAI Codex",
+      "### 綜合對比表格",
+      "### 產品本質深入解析"
+    ],
+    "snippet": "Creao AI 完整研究與對比報告 本報告詳細整理了關於 Creao AI 的平台定位、核心技術、創辦團隊背景、收費模式，以及其與市場上主流開發工具（Claude Code、OpenAI Codex）的深度對比。 二、 開發團隊與背景 Creao AI 由一家總部位於美國加州庫比蒂諾（Cupertino）的 AI 新創公司於 2024 年 創立，並於 2025 年 9 月正式推出產品。其核心創辦團隊擁有深厚的科技巨頭背景： Kai Cheng（程凱） 創辦人兼執行長 (CEO)： 擁有超過 10 年為 250 家以上跨國企業建構生產環境 AI 系統的豐富經驗。 Peter Pang 共同創辦..."
+  },
+  {
+    "fileName": "dry_architecture_ai_agent_guide.md",
+    "relDir": "raw",
+    "title": "dry_architecture_ai_agent_guide.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 多專案 AI Agent 規範讀取與套用架構指南 (做法 B - DRY 最佳實踐)",
+      "## 🏗️ 1. 規範讀取與套用架構圖 (Approach B Recreated Diagram)",
+      "### 📊 2. 補充：Mermaid 動態向量圖 (支援 Cursor / GitHub 直接渲染)",
+      "## 📂 2. 做法 B 精準檔案目錄布局",
+      "## ✍️ 3. 做法 B 各分層設定檔案程式碼範例",
+      "### 📄 【專案配置層 - 單一事實來源】`Project_A/project_rules.md`",
+      "# Project A 核心運行權限與防呆規範",
+      "## 🗃️ 1. 專案特定存取權限"
+    ],
+    "snippet": "多專案 AI Agent 規範讀取與套用架構指南 (做法 B DRY 最佳實踐) 本文件依據「設定與規範分層」藍圖進行重構，採用做法 B (抽離專案私有核心規則檔)。此設計嚴格遵循軟體工程的 DRY (Don't Repeat Yourself) 原則，將特定的業務權限（如 Firebase）與完工條件（如 Lint 檢查）收攏於單一檔案中，供不同 AI 代理（Google Antigravity、Claude Code CLI、Codex）共同參考，徹底解決多個 Agent 設定檔內容同步率不一的維護痛點。 📊 2. 補充：Mermaid 動態向量圖 (支援 Cursor / GitHub..."
+  },
+  {
+    "fileName": "iPhone_Navigation_Guide.md",
+    "relDir": "raw",
+    "title": "iPhone_Navigation_Guide.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# iPhone 全螢幕手勢修改與經典導航替代方案指南",
+      "## 🛠️ 第一步：開啟「小白點」替代方案",
+      "### 設定步驟：",
+      "## ⚙️ 第二步：優化自訂動作（打造專屬 Home 鍵）",
+      "## 💡 補充：全螢幕手勢快速上手口訣"
+    ],
+    "snippet": "iPhone 全螢幕手勢修改與經典導航替代方案指南 iPhone（iOS 系統）自 iPhone X 之後的機型（移除實體 Home 鍵的全螢幕機型，如 iPhone 11、12、13、14、15、16 等），在系統底層已完全移除傳統的「三鍵式」經典導航鍵。官方並未提供直接切換回導航鍵的開關。 如果您不習慣手勢操作，可以透過 iOS 內建的「輔助觸控」（俗稱：小白點）來完美模擬經典按鍵的操作體驗。 ⚙️ 第二步：優化自訂動作（打造專屬 Home 鍵） 預設的小白點點開會跳出九宮格選單。為了讓它用起來最像以前的經典按鍵，建議在「輔助觸控」設定頁面中的「自訂動作」進行以下修改： 動作 推薦設定值 ..."
+  },
+  {
+    "fileName": "KV Cache.md",
+    "relDir": "raw",
+    "title": "KV Cache.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "## 為什麼需要 KV Cache？（背景與痛點）",
+      "## KV Cache 的工作原理",
+      "### 運算流程對比",
+      "## KV Cache 的優缺點",
+      "### 優點",
+      "### 缺點與代價（顯存殺手）",
+      "## 常見的 KV Cache 優化技術"
+    ],
+    "snippet": "KV Cache（鍵值快取） 是大型語言模型（LLM）在進行文字生成（推論/Inference）時，用來提升速度與節省運算資源的核心技術。 如果沒有 KV Cache，LLM 在生成長文本時會越變越慢，且消耗極大的算力。 為什麼需要 KV Cache？（背景與痛點） LLM（如 GPT、Llama）在生成文字時，是採用自迴歸（Autoregressive）的方式——也就是「一次只生一個字（Token）」。 當模型要生成下一個字時，它需要看過之前所有的字。 第 1 步：輸入「今天天氣」，模型生成「很」。 第 2 步：模型需要輸入「今天天氣很」，才能生成「好」。 第 3 步：模型需要輸入「今天天氣..."
+  },
+  {
+    "fileName": "Netlify.md",
+    "relDir": "raw",
+    "title": "Netlify.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "## 核心功能與優勢",
+      "## 適合用 Netlify 部署什麼？",
+      "## 基本運作流程"
+    ],
+    "snippet": "Netlify 是一個非常受歡迎的雲端網頁代管與自動化部署平台，專門為現代網頁開發（特別是 Jamstack 架構、靜態網站以及前端框架）而設計。它讓開發者可以非常輕鬆地將程式碼從 GitHub、GitLab 等平台，直接變成線上的網站。 簡單來說，它可以幫你處理網站「從寫好程式碼到讓全世界看到」之間的所有繁雜步驟。 核心功能與優勢 Git 自動化部署 (Continuous Deployment): 只要你將程式碼推（Push）到 GitHub、GitLab 或 Bitbucket，Netlify 就會自動偵測、抓取最新程式碼、進行建置（Build），並在幾秒鐘內更新線上網站。 免費的 SS..."
+  },
+  {
+    "fileName": "NotebookLM 系統架構大師.md",
+    "relDir": "raw",
+    "title": "NotebookLM 系統架構大師.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 1. 靈魂框架 (Soul Framework) —— 決定「思考邏輯」",
+      "### 2. 結構格式框架 (Body Framework) —— 決定「輸出樣式」"
+    ],
+    "snippet": "角色定位 你是一位 NotebookLM 系統架構大師。你的任務是將所有配置「檔案化」，協助老師產出可勾選、可隨時抽換的「靈魂框架 (Soul Framework)」與「結構格式框架 (Body Framework)」。 輸出邏輯判斷 請根據使用者的「勾選來源」特性或「對話要求」，產出以下兩種類型的框架檔案內容： 1. 靈魂框架 (Soul Framework) —— 決定「思考邏輯」 啟動條件： 使用者要求設定 AI 的角色、口氣、思考方式或教學法。 標籤宣告： 最開頭務必加上：「此為 名稱 靈魂框架, 勾選此資料則決定 AI 的角色定位與思考邏輯。」 內容核心： 包含 身分設定、邏輯約束、..."
+  },
+  {
+    "fileName": "omml格式.md",
+    "relDir": "raw",
+    "title": "omml格式.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 1. OMML 的核心特性",
+      "### 2. 常見公式格式對比",
+      "### 3. OMML 的程式碼範例",
+      "### 4. 實用技巧：OMML 與其他格式的轉換"
+    ],
+    "snippet": "OMML（Office Math Markup Language）是微軟（Microsoft）專門為 Office 軟體（如 Word、Excel、PowerPoint）開發的數學公式標記語言。 從 Word 2007 開始，微軟引入了全新的公式編輯器（即我們現在常用的「插入 公式」功能），其背後的核心儲存格式就是 OMML。它是基於 XML 的架構，並且整合在 Office Open XML（即 .docx、.xlsx 等檔案的底層結構）規範中。 以下為您整理 OMML 的關鍵特性、與 LaTeX / MathML 的比較，以及常見的轉換方法： 1. OMML 的核心特性 Office 原生..."
+  },
+  {
+    "fileName": "Padlet.md",
+    "relDir": "raw",
+    "title": "Padlet.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 核心特色",
+      "### 常見應用場景",
+      "### 方案說明"
+    ],
+    "snippet": "Padlet 是一個非常受歡迎的線上虛擬看板工具（也被許多人稱為數位佈告欄或電子白板），它允許使用者在同一個畫面上輕鬆投放文字、圖片、影片、連結、檔案等各種內容，非常適合用來進行團隊協作、教學互動、腦力激盪或個人資料收集。 以下為您整理 Padlet 的核心特色與常見應用場景： 核心特色 直覺的多媒體呈現： 支援拖放操作，可以輕鬆插入 YouTube 影片、Google 雲端檔案、Spotify 音樂、網頁連結、手繪圖形，甚至是錄音或錄影。 多種版面配置（Formats）： 提供多種牆面樣式，滿足不同邏輯的排版需求： _牆面（Wall）_：磚塊狀的緊湊排版。 _畫布（Canvas）_：自由擺放..."
+  },
+  {
+    "fileName": "PinClipboard_Guide.md",
+    "relDir": "raw",
+    "title": "PinClipboard_Guide.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# PinClipboard 全方位使用指南與功能操作整理",
+      "## 📋 第一部分：核心需求情境與解決方案回顧",
+      "### 1.1 您的核心需求",
+      "### 1.2 為什麼選擇 PinClipboard 的網頁同步模式？",
+      "## 🛠️ 第二部分：PinClipboard 所有核心功能與詳細操作",
+      "### 功能一：History（歷史紀錄自動收集）",
+      "### 功能二：Pin Board（釘選板 / 常用語選單）",
+      "### 功能三：Pin Folder（常用資料夾快速捷徑）"
+    ],
+    "snippet": "PinClipboard 全方位使用指南與功能操作整理 本指南系統性地整理了我們先前的對答精華，並全面補充 PinClipboard 的所有核心功能、進階應用與完整操作步驟，幫助您將這 4 句萬用 AI 提問（及未來的常用語、程式碼片段）轉化為隨手可得的「一鍵選項」，大幅提升在電腦與手機間的跨平台工作效率。 🛠️ 第二部分：PinClipboard 所有核心功能與詳細操作 PinClipboard 是一款功能強大且介面直覺的本機剪貼簿管理工具，其核心介面主要由三大頁籤（History、Pin Board、Pin Folder）與底層的側邊同步服務所組成。 功能一：History（歷史紀錄自動..."
+  },
+  {
+    "fileName": "Ramageddon.md",
+    "relDir": "raw",
+    "title": "Ramageddon.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "### 為什麼會發生？",
+      "### 帶來的直接衝擊"
+    ],
+    "snippet": "\"Ramageddon\"（也有人稱它為 RAMmageddon 或 RAMpocalypse）是目前 2026 年席捲全球的記憶體（DRAM 與 NAND Flash）嚴重缺貨與價格飆漲危機。 簡單來說，這場災難的罪魁禍首就是人工智慧（AI）的瘋狂爆發。 為什麼會發生？ AI 數據中心需要海量的高頻寬記憶體（HBM）與企業級超高速固態硬碟（SSD）。為了賺取 AI 帶來的暴利，三星、SK 海力士、美光等半導體巨頭紛紛將產能轉去生產 AI 專用晶片，進而大幅排擠、削減了市面上常規 PC、筆電和智慧型手機所使用的常規 DRAM 和 SSD 產能。 帶來的直接衝擊 價格暴漲： 根據市調機構（如 Tr..."
+  },
+  {
+    "fileName": "README.md",
+    "relDir": "sources",
+    "title": "README.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# 原始資料庫 (Raw Sources)",
+      "## 放置規範",
+      "## 快速導入工具推薦"
+    ],
+    "snippet": "原始資料庫 (Raw Sources) 此資料夾是您的個人知識庫之 「不可變資料源 (Immutable Source of Truth)」。 放置規範 用途：放置所有您希望 AI 讀取、彙整、總結的原始文件。包括： 網頁剪輯文檔（推薦使用 Obsidian Web Clipper 轉換為 Markdown） 論文與報告（PDF、TXT） 會議或 Podcast 逐字稿 (Transcripts) 數據檔案與圖像 唯讀原則：AI 代理在讀取此資料夾內的文件時，絕對不會對其內容進行任何修改或刪除。所有編譯與更新均會寫入至 wiki/ 目錄。 命名建議：使用清晰且具描述性的英文或中文檔名，例如 2..."
+  },
+  {
+    "fileName": "Software Architect Workspace Pro v2.0製作方式.md",
+    "relDir": "raw",
+    "title": "Software Architect Workspace Pro v2.0製作方式.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "## 我希望做到的品質",
+      "## 建議分階段完成",
+      "### 我建議的目標"
+    ],
+    "snippet": "將它拆分成一套完整專案，每個檔案都能獨立維護、版本控制與擴充。 SoftwareArchitectWorkspacePro/ │ ├── README.md ├── CHANGELOG.md ├── LICENSE │ ├── docs/ │ ├── 01_設計理念.md │ ├── 02_工作流程.md │ ├── 03_架構原則.md │ ├── 04_程式設計規範.md │ ├── 05_程式碼審查.md │ ├── 06_技術決策(ADR).md │ ├── 07_文件規範.md │ ├── 08_Git_Workflow.md │ ├── 09_AI_Agent_Workflow.m..."
+  },
+  {
+    "fileName": "Software_Architect_v1.0_繁體中文.md",
+    "relDir": "raw",
+    "title": "Software_Architect_v1.0_繁體中文.md",
+    "description": "無 YAML 描述",
+    "headers": [
+      "# Software Architect Workspace v1.0",
+      "## 軟體架構師（Software Architect）工作模板",
+      "# 角色定位（Role）",
+      "# 核心使命（Mission）",
+      "# 核心原則（Core Principles）",
+      "## 1. Architecture First",
+      "## 2. Minimal Diff",
+      "## 3. Global Consistency"
+    ],
+    "snippet": "Software Architect Workspace v1.0 軟體架構師（Software Architect）工作模板 版本：v1.0 核心使命（Mission） 你的主要目標是： 理解需求 設計架構 控制技術債 維持一致性 評估風險 提供最佳方案 協助團隊做技術決策 而不是： 直接開始寫程式 任意增加功能 修改無關內容 核心原則（Core Principles） 1. Architecture First 永遠先理解整體架構。 不要只修局部問題。 任何修改都應考慮： 模組 API Database Security Performance Maintainability 2. Min..."
+  }
+]

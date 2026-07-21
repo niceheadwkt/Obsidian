@@ -28,10 +28,14 @@ sources: [
   "[[raw/presentation_design_spec_minimal_silk.yaml]]",
   "[[raw/presentation_design_spec_retro_collage.yaml]]",
   "[[raw/Lovart.md]]",
-  "[[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md]]"
+  "[[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md]]",
+  "[[raw/2026-07-02T155713+0800-GoogleAI基本功EP06_使用Notebook LM的五大場景_Gemini 還是 Notebook LM？你其實一直選錯了.md]]",
+  "[[raw/2026-07-02T202241+0800-Notebook教學簡報終極完全體_學會 YAML 框架：100% 掌握 NotebookLM 視覺風格.md]]",
+  "[[raw/2026-07-02T213657+0800-NotebookLM 隱藏神技：用「系統架構大師」一鍵打造你的專屬教學 AI！.md]]",
+  "[[raw/NotebookLM 系統架構大師.md]]"
 ]
 created: 2026-06-15
-updated: 2026-07-09
+updated: 2026-07-20
 ---
 
 # NotebookLM 進階應用與實戰指引
@@ -100,13 +104,21 @@ NotebookLM 已全面支援 Google Sheets（試算表）、PDF、Word 及網頁�
 
 NotebookLM 生成簡報時，為避免產出具有廉價的「AI 味」，可透過 YAML 指令進行高度客製化，並在生成後利用第三方工具進行無痛修改。
 
-### 🎨 YAML 簡報提示詞三大技巧
-1.  **原則一：結構清晰**（限制每頁字數，留白大於 40%）。
-2.  **原則二：拒絕模板**（在指令中加入字體、邊框與間距宣告）。
-3.  **YAML 模板導入**：在 NotebookLM 簡報生成器的設定中，貼入以下 Spec 配置，可直接產出高端商務質感：
+### 🎨 YAML 全域視覺 DNA 框架
+*   **全域規範控制**：透過在 prompt 中定義 YAML 背景色碼、字體、色標與排版常數，能徹底控制簡報的視覺 DNA，讓 AI 生成格式高度統一。
+*   **設計逆向工程**：可將現有的優質 PDF 簡報丟入 NotebookLM 中，讓 AI 自動解析其背後的視覺設計邏輯與提示詞架構，並將其提取為 YAML Spec 以供後續重複使用。
+*   **YAML 模板導入**：在 NotebookLM 簡報生成器的設定中，貼入以下 Spec 配置，可直接產出高端商務質感：
     *   `presentation_design_spec_minimal_silk.yaml` (極簡絲綢風，適合科技提案)。
     *   `presentation_design_spec_retro_collage.yaml` (復古拼貼風，適合文創與設計)。
     *   `deep_blue_blueprint_style.yaml` (深藍藍圖風，適合工程與財務分析)。
+
+### 🧠 NotebookLM 隱藏神技：系統架構大師 (指令檔案化)
+「系統架構大師」是一種將 AI 的行為指令「檔案化」的技術。傳統上我們只能在對話框貼 Prompt，但在 NotebookLM 中，我們可以把「指令」寫成 Markdown 檔案作為來源上傳，透過勾選左側的指令來源，精準控制輸出的品質與格式。
+
+*   **雙框架系統配置**：
+    1.  **靈魂框架 (Soul Framework)**：以 Markdown 檔案形式上傳，定義 AI 的角色、思考邏輯、解題步驟與專業程度。
+    2.  **結構格式框架 (Format Framework)**：定義排版、段落樣式、表格格式、最大字數限制與 OMML 數學公式標記。
+*   **實戰效果**：在上傳海量雜亂文獻時，只要勾選「靈魂框架」與「格式框架」，即可產出格式完美、思路清晰的期末考卷、簡報大綱或 Deep Research 研究簡進計畫。
 
 ### 🛠️ 簡報圖層拆解與修改 (Lovart / Canva 免重新生成法)
 以往 AI 生成的簡報若有錯字或排版不佳，只能狼狽地重新生成。現在可採用以下工作流進行「免重新生成」的圖層修改：
