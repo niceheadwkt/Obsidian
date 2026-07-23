@@ -111,3 +111,7 @@ AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)
 *   **光學字元辨識與圖像**：`pytesseract`, `Pillow` (PIL)，用於解析複雜架構圖並提取文字。
 *   **安全加密與區塊鏈**：`cryptography`, `web3` (以太坊開發套件)。
 *   **格式轉換**：`omml` 數學公式庫、`markdown` 處理等。
+
+---
+
+*(相關概念延伸閱讀：[[Claude 專案管理一桌三櫃工作流]]、[[Claude 基本功與個人 AI 工作流實戰]])*

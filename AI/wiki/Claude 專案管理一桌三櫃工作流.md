@@ -75,4 +75,4 @@ AI 的上下文視窗（Context Window）是有上限的。當對話拉長，或
 *   **chezmoi 跨裝置同步**：若在多台電腦間切換，Claude Code 的「自訂技能 (Skills)」預設不會隨雲端同步。可以使用 `chezmoi` 命令列工具，將不同裝置間的 CLI Settings 與 Skills 進行同步備份。
 *   **Claude Design 前端優化**：在專案開發尾聲，可調用 Claude 桌面版的 Claude Design 功能，對生成的 UI/UX 進行視覺美化與樣式修飾（注意：此功能 token 消耗量較高，建議在主要功能開發完成後再行調用）。
 
-*(相關概念延伸閱讀：[[AI 第二大腦與 Claude Cowork 自動化]])*
+*(相關概念延伸閱讀：[[AI 第二大腦與 Claude Cowork 自動化]]、[[Claude 基本功與個人 AI 工作流實戰]])*

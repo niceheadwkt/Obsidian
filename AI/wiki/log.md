@@ -284,3 +284,15 @@
   - `[[AI/raw/Google_Drive_Cross_PC_Setup_Guide.md|Google_Drive_Cross_PC_Setup_Guide.md]]`
 - **執行人**：Antigravity Agent
 
+## [2026-07-23] ingest | 匯入第十八批：三師爸 Claude 基本功系列 EP01-EP10 與 Matt Pocock Skills 評估
+
+- **說明**：完成 12 份今日原始素材的 Ingest 彙整與 Wiki 新頁面編譯。
+- **新增 Wiki 頁面**：
+  - `[[Claude 基本功與個人 AI 工作流實戰]]`
+- **更新索引與關聯連結**：[index.md](index.md) 索引已同步更新，錄入 SRC-198 至 SRC-209。
+- **執行人**：Antigravity Agent
+
+## [2026-07-23] lint | 收工維護與知識庫健康度檢查
+
+- **說明**：執行今日收工檢查，跑 Lint 腳本確保全域無斷鏈與孤立頁面，維護知識圖譜一致性。
+- **執行人**：Antigravity Agent
