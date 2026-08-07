@@ -1,6 +1,6 @@
 # mcp-drink 工作筆記
 
-## 上次做到哪 (2026-08-07)
+## 上次做到哪
 - **完成網頁內置 AI (WebLLM) 點餐引擎整合**：
   - 成功將 WebLLM 引入前端 PWA。使用者可直接在瀏覽器沙盒內運行 Llama 3.2 1B、Qwen 2.5 1.5B 等模型，完全避開行動端與本機 Ollama / PocketPal 的跨來源 HTTPS 阻擋。
   - 實作「提示詞引導式函數呼叫 (Prompt-Based Tool Calling)」機制，繞過 WebLLM 僅支援大參數模型的 tools 限制，成功讓 1B/1.5B 小模型在手機端流暢調用點餐與修改工具。
@@ -13,7 +13,7 @@
   - 全量匯入 `AI/raw/` 目錄中剩餘 20 份文獻（包含 AI Agent 基本功系列 EP01-EP07、一沐日雲端點餐 MCP 專案啟動說明、Kimi 發展專題等）。
   - 新增 4 個 Wiki 頁面，修訂 6 個現有概念頁面，並同步更新 [index.md](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/wiki/index.md)、[log.md](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/wiki/log.md) 與 [dashboard.html](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/dashboard.html)。
 
-## ⚠️ 本週卡關與已解決/待解決之架構挑戰 (2026-08-07 更新)
+## ⚠️ 本週卡關與已解決/待解決之架構挑戰
 
 本週研發與測試過程中，遇到之技術卡關與架構挑戰依**時間演進順序（從 Streamlit 早期環境、Gemini 對接、PWA 重構、行動端自適應至內置 AI 精細調優）**整理如下：
 
