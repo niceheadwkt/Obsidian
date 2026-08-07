@@ -2,6 +2,7 @@
 type: concept
 tags: [Git, GitGUI, GitHub, 版本控制, 同步, 衝突解決]
 sources: [
+  - "[[sources/Google_Drive_Cross_PC_Setup_Guide.md]]"
   "[[raw/Git GUI 與 GitHub 雙向同步全面操作指南.md]]",
   "[[raw/Git_GUI_GitHub_Comprehensive_Guide.pdf]]",
   "[[raw/Git GUI 與 GitHub 雙向同步全面指南(整合實戰衝突、底層邏輯與問答精華之技術對談紀錄).md]]",
@@ -204,3 +205,10 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
 > **延伸閱讀與交叉連結**：
 > - 關於基礎的 Git 指令、分支管理及 Shebang 規範，請參閱 [[前端與系統開發常用技術]]。
 > - 關於團隊管理多個專案時的 Git 子模組 (Git Submodule) 整合與文件目錄防呆規範，請參閱 [[多專案文件管理與 Git 子模組規範]]。
+
+## 8. 跨電腦 AI 協作與 Google Drive 路徑統一
+- **三層工具分工定位**：
+  - **Google Drive**：負責存放專案原始檔案與共享的工作目錄。
+  - **Obsidian**：本地第二大腦，負責渲染雙向連結。
+- **跨電腦路徑統一最佳實踐**：
+  - 將專案放置在雲端硬碟本地端應用程式同步的資料夾（如 G:\\ 槽），避免不同電腦的使用者目錄路徑（如 `C:/Users/username/`）不一致導致的絕對路徑斷鏈問題。

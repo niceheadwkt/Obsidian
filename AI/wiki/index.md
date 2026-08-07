@@ -19,19 +19,19 @@
 | `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景 | 9 | 2026-07-09 |
 | `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發 | 8 | 2026-07-09 |
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-07-09 |
-| `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt，以及 6 大免費線上課程地圖 | 15 | 2026-07-20 |
+| `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt，全球 6 大免費 AI 課程與證書，以及 Google AI Studio 開發平台 | 16 | 2026-08-07 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-07-09 |
 | `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，70 組品牌社群、工作、生活、靈感與風格轉換範本 | 1 | 2026-07-09 |
-| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定 | 5 | 2026-07-09 |
+| `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定，以及多 PC 設定下 Google Drive 工作空間路徑統一與同步模式排障 | 6 | 2026-08-07 |
 | `[[商業案例與投資思維專題]]` | 芒格、納瓦爾、老謝、施昇輝、陳重銘與孫宇晨等人物思維，Computex 跨境出海數據驅動品牌案例，通膨對個人資產傳導，以及買 ETF 必懂九大術語（含收益平準金） | 10 | 2026-07-20 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-07-09 |
 | `[[母語式英文聽力與外語習得法]]` | 馮凱文的英文聽力核心秘訣與 Oio 外語習得系統底層邏輯，包括去心譯聲音直接聯結、直譯口說練習與低阻力微習慣系統 | 1 | 2026-07-09 |
 | `[[國外旅遊實用英語情境]]` | 實用國外旅遊英文求助與購物句型對話（問路、餐廳點餐與拆帳、服飾尺寸庫存、設備故障行李寄存、藥局成藥詢問），結合語感圖像化反射訓練 | 1 | 2026-07-09 |
 | `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、影片生成，YT/Grabbit 整合，8 大商務學術場景，YAML 全域視覺 DNA 框架與系統架構大師雙框架、Canva 轉場後製與 NanoBanana Pro 局部改圖 | 31 | 2026-07-20 |
 | `[[Claude 系統優化與 Token 節省指南]]` | 解決 Claude 額度超限與成本控制，涵蓋 Token 暴漲原因、4 大用量超限技巧、PDF 處理優化、Claude Code CLI 官方 4 條節流建議、三種模型定價選用對照，以及 `CLAUDE.md` 自我審查與 12 條優化規則 | 9 | 2026-07-09 |
-| `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理 | 16 | 2026-07-09 |
+| `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理，以及 grill-me 拷問與技能建立器實戰 | 19 | 2026-08-07 |
 | `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 7 | 2026-07-09 |
-| `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查 | 13 | 2026-07-09 |
+| `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查，以及 Karpathy 的 10 分鐘碎念語音提示法 | 14 | 2026-08-07 |
 | `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 2 | 2026-07-09 |
 | `[[Antigravity 與 Remotion 影片生成實務]]` | 「影片即程式碼」影片工程實務，比較畫家模式與工程師模式，解構 4 大應用場景與限制、3 大質感提升秘訣與自動化影片生產線實操 | 1 | 2026-07-09 |
 | `[[Claude 辦公自動化 (Excel & Word)]]` | Microsoft Excel 與 Word 的官方增益集深度整合，包含 DCF 模型、自動偵錯與修訂追蹤等多項辦公自動化實務 | 2 | 2026-07-09 |
@@ -43,14 +43,18 @@
 | `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務，以及 AI 防詐資訊素養教材 | 2 | 2026-07-09 |
 | `[[AI 工具與任務場景橫向評比]]` | 對比 ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok 六大工具在腦力激盪、文案、簡報、資料表、資料搜集等五大場景之優劣，4 步驟 AI 輔助建立 HTML Dashboard 工作流，以及老牌零售良興 3C 與 Data-DI 合作的 AI 落地變革案例 | 2 | 2026-07-09 |
 | `[[多專案文件管理與 Git 子模組規範]]` | 基於 Git Submodule 機制管理多專案共通規範，實施專案首頁導覽分流、防呆命名與相對路徑跳脫防斷鏈實務 | 1 | 2026-07-09 |
-| `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件詳解 | 12 | 2026-07-20 |
+| `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份 | 13 | 2026-08-07 |
 | `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
-| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析 | 4 | 2026-07-20 |
+| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制 | 5 | 2026-08-07 |
 | `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
 | `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧 | 3 | 2026-07-20 |
 | `[[Claude 基本功與個人 AI 工作流實戰]]` | 三師爸 Claude 基本功 EP01-EP10，包含四大操作模式、五層擴充機制、NotebookLM/GitHub/Supabase 串接與專案一桌三櫃管理，以及 Matt Pocock Skills 本地 Python 客製化評估 | 12 | 2026-07-23 |
 
+| `[[Kimi 與月之暗面 (Moonshot AI) 發展專題]]` | 月之暗面創辦人楊植麟的留美學術與回國創業背景，以及 Kimi K2/K3 大模型長文本、Agentic LLM 技術架構，與應對白宮模型蒸餾指控之探討 | 2 | 2026-08-07 |
+| `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` | 三師爸 AI Agent 基本功 EP01-EP07 系統化實踐，涵蓋雲端與本地端差異、初始化與權限配置、MCP通道、三層架構與跨電腦同步，以及 RDQ 需求探索四象限法 | 7 | 2026-08-07 |
+| `[[一沐日雲端點餐與 MCP 系統開發實務]]` | 本專案 mcp-drink-main 開發啟動說明，使用 Streamlit 前端整合 Firestore 與 MCP-Server 背景拉起機制，以及低推理溫度與歷史過濾防幻覺優化、CSS樣式修正 | 2 | 2026-08-07 |
+| `[[深度學習與大語言模型架構全景]]` | 深度學習底層優化器（SGD、Momentum、Adam、AdamW、Muon 矩陣正交優化器）運作機制與大語言模型（Encoder/Decoder/MQA）架構分類演進 | 1 | 2026-08-07 |
 ## 實體與工具專頁 (Entities & Tools)
 
 | 名稱 | 類別 | 一行總結 | 關聯頁面 |
@@ -274,6 +278,26 @@
 | `SRC-208` | `2026-07-23T215303+0800-Claude基本功EP09免費Supabase串起你的資料庫_用自然語言操控資料庫，完全免費的開發新邏輯.md` | 影片 / 資料庫 | 2026-07-23 | `[[Claude 基本功與個人 AI 工作流實戰]]` |
 | `SRC-209` | `2026-07-23T215946+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md` | 影片 / 專案 | 2026-07-23 | `[[Claude 基本功與個人 AI 工作流實戰]]` |
 
+| `SRC-210` | `2026-07-24T101707+0800-楊植麟是誰？打造Kimi K3引爆美中角力，他為何放棄蘋果高薪回中國創業？.md` | 報導 / 專論 | 2026-08-07 | `[[Kimi 與月之暗面 (Moonshot AI) 發展專題]]` |
+| `SRC-211` | `2026-07-24T112815+0800-Kimi Founder Yang Zhilin K2, Agentic LLMs, Brains in Vats, and the Beginning of Infinity.md` | 訪談 / 視頻 | 2026-08-07 | `[[Kimi 與月之暗面 (Moonshot AI) 發展專題]]` |
+| `SRC-212` | `2026-07-24T115526+0800-prompt怎麼下？AI大神卡帕西教學「10分鐘碎念法」.md` | 技巧 / 語音 | 2026-08-07 | `[[Claude 高階提示詞與應用場景]]` |
+| `SRC-213` | `2026-07-28T064848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-214` | `2026-07-28T070734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-215` | `2026-07-28T081508+0800-AI Agent 基本功 EP03：一句話讓 AI 幫你讀檔、寫程式、上網、做出成品.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-216` | `2026-07-28T081524+0800-AI Agent 基本功 EP04：連接外部工具，MCP 與連接器一張地圖講清楚.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-217` | `2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-218` | `2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-219` | `2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md` | 影片 / 教學 | 2026-08-07 | `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]` |
+| `SRC-220` | `2026-08-03T114715+0800-AI Skills怎麼寫？grill-me工作流5步拆解，附中文提示詞可複製.md` | 報導 / 教學 | 2026-08-07 | `[[Claude Cowork 與 Agent Skill 實務]]` |
+| `SRC-221` | `Google AI Studio 1.md` | 介紹 / 文件 | 2026-08-07 | `[[AI 工具與框架概覽]]` |
+| `SRC-222` | `Google_Drive_Cross_PC_Setup_Guide.md` | 指南 / 設定 | 2026-08-07 | `[[Git GUI 與 GitHub 雙向同步實務]]` |
+| `SRC-223` | `KV Cache.md` | 說明 / 技術 | 2026-08-07 | `[[生成式 AI 企業應用與成本經濟學]]` |
+| `SRC-224` | `Skill Creator（技能建立器）.md` | 說明 / 技能 | 2026-08-07 | `[[Claude Cowork 與 Agent Skill 實務]]` |
+| `SRC-225` | `chezmoi.md` | 說明 / 同步 | 2026-08-07 | `[[AI Agent 實戰與 MCP 伺服器整合]]` |
+| `SRC-226` | `一沐日雲端點餐與 MCP 系統 (mcp-drink-main)啟動.md` | 指南 / 啟動 | 2026-08-07 | `[[一沐日雲端點餐與 MCP 系統開發實務]]` |
+| `SRC-227` | `一沐日雲端點餐與 MCP 系統.md` | 專案 / 架構 | 2026-08-07 | `[[一沐日雲端點餐與 MCP 系統開發實務]]` |
+| `SRC-228` | `深度學習：優化器演算法與大語言模型（LLM）架構全景指南.md` | 指南 / 學術 | 2026-08-07 | `[[深度學習與大語言模型架構全景]]` |
+| `SRC-229` | `目前你有那些skill，如何使用， 請給些範例.md` | 說明 / 範例 | 2026-08-07 | `[[Claude Cowork 與 Agent Skill 實務]]` |
 ---
 
 > [!TIP]

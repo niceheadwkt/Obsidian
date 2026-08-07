@@ -2,6 +2,9 @@
 type: concept
 tags: [Claude, ClaudeCowork, AgentSkills, AI工作流, Excel自動化]
 sources: [
+  - "[[sources/2026-08-03T114715+0800-AI Skills怎麼寫？grill-me工作流5步拆解，附中文提示詞可複製.md]]"
+  - "[[sources/Skill Creator（技能建立器）.md]]"
+  - "[[sources/目前你有那些skill，如何使用， 請給些範例.md]]"
   "[[raw/2026-06-15T152529+0800-Claude桌面版三大模式：Chat、Cowork、Code差在哪？.md]]",
   "[[raw/2026-06-15T154818+0800-Claude Cowork是什麼？Cowork教學：簡報、報帳、整理雲端硬碟5個超實用場景.md]]",
   "[[raw/2026-06-15T154838+0800-同事都在用AI做事？Claude Cowork完整教學，教你一步步打造AI Agent超強工作流.md]]",
@@ -96,3 +99,19 @@ updated: 2026-07-09
 5.  **接續記憶**：每次開新 Session，Claude 都會自動繼承 Project 內的所有知識檔案，擁有長期的專案記憶，不會因為對話清除而「失憶」。
 
 *(可交叉參考：[[AI 第二大腦與 Claude Cowork 自動化]]、[[Claude 基本功與個人 AI 工作流實戰]])*
+
+## 5. grill-me 與自訂 Skills 實踐
+- **grill-me 拷問工作流**：
+  - 由 Matt Pocock 開源的超級熱門 Skill，核心功能是「叫 AI 反過來拷問你」。
+  - **運作 5 步拆解**：
+    1. 使用者給出初步需求。
+    2. AI 基於 `grill-me` 觸發，反過來提出 3-5 個深刻的架構與設計問題（Grill）。
+    3. 使用者簡短回答。
+    4. AI 整理為明確的規格與拆票 (Spec)。
+    5. 使用者確認後執行。
+- **Skill Creator (技能建立器)**：
+  - 協助使用者設計、編寫並部署自訂 Skill 的智能助理。
+  - **核心步驟**：定義 YAML Frontmatter 觸發條件 $\rightarrow$ 撰寫處理指令與步驟 (SKILL.md) $\rightarrow$ 儲存至專案目錄的 `.agents/skills/` 或全域的 `skills/` 目錄。
+- **活躍的自訂技能範例**：
+  - **Google Tasks 任務整合技能**：自動管理 Google Tasks 任務清單（建立、搜尋、更新、刪除）。
+  - **Obsidian 知識管理技能**：進行雙向連結自動關聯與 Lint 健康檢查。

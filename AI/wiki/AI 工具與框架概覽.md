@@ -2,6 +2,7 @@
 type: analysis
 tags: [AI工具, Cursor, Dify, Grok, Groq, LMStudio, vLLM]
 sources: [
+  - "[[sources/Google AI Studio 1.md]]"
   "[[sources/01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md]]",
   "[[sources/01_AI_Tools/Dify.md]]",
   "[[sources/01_AI_Tools/Grok 與 Groq 差異解析.md]]",
@@ -136,3 +137,10 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
 > - 關於 AI 代理技能與 MCP 伺服器的開發，請參閱 `[[AI Agent 實戰與 MCP 伺服器整合]]`。
 > - 關於 AI 原生命令行工具的對比與實戰，請參閱 [[AI CLI 工具比較與選擇_摘要]]。
 
+## 9. Google AI Studio 進階開發實務
+- **平台定位**：Google 專為開發者打造的 Gemini 原型設計與 API 測試平台。
+- **核心工作區 (Playground)**：
+  - **Chat Prompts**：建構多輪對話，提供 Few-Shot 範例訓練人設。
+  - **Freeform Prompts**：自由格式提示，適合靈感發想與思維鏈 (CoT) 測試。
+  - **Structured Prompts**：以表格或範例強制模型輸出特定結構資料（如 JSON）。
+  - **System Instructions**：全域約束 AI 的角色定位與知識回答邊界。

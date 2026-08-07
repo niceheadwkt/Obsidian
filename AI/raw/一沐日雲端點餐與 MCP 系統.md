@@ -490,6 +490,21 @@ model_name = "qwen3:latest"
 
 ---
 
+## 📅 收工紀錄 (2026-08-04)
+### 已完成工作
+* **多 AI 金鑰動態自適應偵測**：調整 [drink_app.py](file:///c:/aiTest/mcp-drink-main/drink_app.py)，優先讀取 `st.secrets` 中的金鑰定義順序，若無則降級讀取系統環境變數（如 `GOOGLE_API_KEY` 等）。
+* **修正 Gemini 400 錯誤**：實作 `clean_schema` 遞迴清理函數，解決 Tool Use 的參數驗證問題。
+* **雲端/本地雙模式與切換 UI**：側邊欄整合了「選擇 AI 運行模式」單選按鈕，本地模式完全走 OpenAI 相容協定發送對話與呼叫 MCP 工具，無須 JSON 轉接器。
+* **說明文件更新**：更新 [README.md](file:///c:/aiTest/mcp-drink-main/README.md) 說明。
+* **新增修改與刪除 Tool Schema**：在 `app.js` 與 `api/chat.js` 的工具清單補齊並實作 `update_order_by_name` (修改訂單) 與 `delete_order_by_name` (刪除訂單)，並對接 Firestore。
+* **PWA 多輪對話歷史上下文 (Chat History) 支援**：在前端與中轉 API 支援累積 `chatHistory` 對話脈絡，徹底解決本地模型 Gemma 4 多輪對話「忘記前文」的 Bug。
+* **姓名模糊匹配防選字錯別字 (fuzzyMatchName)**：實作 `fuzzyMatchName` 並調整比對相似度門檻為 `>= 0.45`，解決 2 字姓名錯 1 字（如 `國烔` 誤選成 `國炯`）時 50% 相似度的邊界判定問題。
+
+### 下一步計劃
+* 於雲端環境進行 PWA 功能與最終發布測試，驗證對話與資料庫運作。
+
+---
+
 > [!NOTE]
 > 我如何啟動claude來做mcp
 

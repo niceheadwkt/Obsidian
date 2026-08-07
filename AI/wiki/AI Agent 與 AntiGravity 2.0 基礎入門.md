@@ -1,18 +1,22 @@
 ---
 type: concept
-tags: [AIAgent, AntiGravity, 專案管理, 權限設定, Token優化]
-sources: [
-  "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]",
-  "[[raw/2026-06-25T134848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent.md]]",
-  "[[raw/2026-06-25T210734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定.md]]",
-  "[[raw/2026-06-26T190950+0800-AntiGravity 基本功 EP01Claude Code 與 Codex 的強敵？Google AntiGravity 2.0 實測評價.md]]",
-  "[[raw/2026-07-13T102604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]",
-  "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]",
-  "[[raw/2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md]]",
-  "[[raw/2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md]]",
-  "[[raw/2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md]]",
-  "[[raw/2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]"
-]
+tags:
+  - AIAgent
+  - AntiGravity
+  - 專案管理
+  - 權限設定
+  - Token優化
+sources:
+  - "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]"
+  - "[[2026-07-28T064848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent]]"
+  - "[[2026-07-28T070734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定]]"
+  - "[[raw/2026-06-26T190950+0800-AntiGravity 基本功 EP01Claude Code 與 Codex 的強敵？Google AntiGravity 2.0 實測評價.md]]"
+  - "[[2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案]]"
+  - "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]"
+  - "[[raw/2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md]]"
+  - "[[raw/2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md]]"
+  - "[[raw/2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md]]"
+  - "[[raw/2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]"
 created: 2026-06-26
 updated: 2026-07-20
 ---

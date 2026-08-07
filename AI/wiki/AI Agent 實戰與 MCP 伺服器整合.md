@@ -1,11 +1,16 @@
 ---
 type: concept
-tags: [AI-Agent, MCP, Antigravity, Sandbox, Workspace-Sync]
-sources: 
+tags:
+  - AI-Agent
+  - MCP
+  - Antigravity
+  - Sandbox
+  - Workspace-Sync
+sources:
   - "[[raw/2026-07-15-Google_Tasks_MCP_安裝建立與功能驗收指南.md]]"
   - "[[raw/2026-07-15-Obsidian_MCP_安裝建立與功能驗收指南.md]]"
-  - "[[raw/2026-07-20T203320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]"
-  - "[[raw/2026-07-13T102604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]"
+  - "[[2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位]]"
+  - "[[2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案]]"
   - "[[raw/2026-06-27T212603+0800-AntiGravity 基本功 EP04一鍵將 Gems 全面升級成 Skill 的終極指南_懶人包大放送.md]]"
   - "[[raw/2026-06-26T215728+0800-AntiGravity基本功EP03最強備課懶人包_寫 GAS 竟然再也不用複製貼上程式碼？我是怎麼做到的.md]]"
   - "[[raw/2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md]]"
@@ -14,6 +19,7 @@ sources:
   - "[[raw/ava_sandbox Python 套件功能詳解.md]]"
   - "[[raw/ava_sandbox有哪些功能.md]]"
   - "[[raw/dry_architecture_ai_agent_guide.md]]"
+  - "[[sources/chezmoi.md]]"
 created: 2026-07-20
 updated: 2026-07-20
 ---
@@ -115,3 +121,8 @@ AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)
 ---
 
 *(相關概念延伸閱讀：[[Claude 專案管理一桌三櫃工作流]]、[[Claude 基本功與個人 AI 工作流實戰]])*
+
+## 5. chezmoi 全域配置同步
+- **dotfiles 集中管理**：chezmoi 可建立專屬本地 Git 倉庫（如 `~/.local/share/chezmoi`），便於將個人的 dotfiles（設定檔如 `.bashrc`、`CLAUDE.md` 等）備份至 GitHub。
+- **範本機制 (Templates)**：支援 Golang text/template，可動態生成不同電腦的專屬路徑與帳號設定。
+- **安全管理 (Secrets)**：整合密碼管理器，防止私鑰或 API Key 泄露。

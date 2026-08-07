@@ -6,6 +6,7 @@ sources:
   - "[[raw/2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md]]"
   - "[[raw/AI_Cost_and_Token_Economics.md]]"
   - "[[raw/Creao_AI_Comprehensive_Report.md]]"
+  - "[[sources/KV Cache.md]]"
 created: 2026-07-20
 updated: 2026-07-20
 ---
@@ -90,3 +91,10 @@ updated: 2026-07-20
 ## 5. 延伸閱讀與交叉連結
 *   關於 Claude 系統優化的具體節流規則，請參閱：`[[Claude 系統優化與 Token 節省指南]]`。
 *   關於本地 Ollama 與 Dify 部署，請參閱：`[[Ollama]]` 與 `[[Dify]]`。
+
+## 6. KV Cache 運作機制與顯存控管
+- **痛點背景**：LLM 生成文字為自迴歸（Autoregressive）模式，每次生成新 Token 均需計算之前所有的 Token。隨着上下文拉長，運算量呈二次方增長。
+- **KV Cache 運作原理**：
+  - 將已生成歷史 Token 的 Key 與 Value 矩陣快取在 GPU 顯存中，避免重複運算。
+  - **代價**：KV Cache 佔用極大顯存，是導致長文本推論時 GPU 顯存溢出（OOM）的主要原因。
+- **企業成本影響**：長文本任務中，KV Cache 的顯存開銷成為計費與推論併發（Concurrency）的主要瓶頸，優化快取機制能大幅節省企業推理算力成本。
