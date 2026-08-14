@@ -17,8 +17,9 @@ sources:
   - "[[raw/2026-06-26T213754+0800-AntiGravity基本功EP02備課救星_極速處理教學檔案_出考卷_填文件_下載考古題_整理檔案夾.md]]"
   - "[[raw/2026-07-16T133634+0800-Agent Skills懶人包｜Agent Skills格式、範例，跟GPT或Gem有什麼差異？.md]]"
   - "[[raw/2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]"
+  - "[[AI/raw/2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md|AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配]]"
 created: 2026-06-26
-updated: 2026-07-20
+updated: 2026-08-14
 ---
 
 # AI Agent 與 AntiGravity 2.0 基礎入門

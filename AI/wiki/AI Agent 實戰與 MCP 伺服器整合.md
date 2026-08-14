@@ -126,3 +126,7 @@ AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)
 - **dotfiles 集中管理**：chezmoi 可建立專屬本地 Git 倉庫（如 `~/.local/share/chezmoi`），便於將個人的 dotfiles（設定檔如 `.bashrc`、`CLAUDE.md` 等）備份至 GitHub。
 - **範本機制 (Templates)**：支援 Golang text/template，可動態生成不同電腦的專屬路徑與帳號設定。
 - **安全管理 (Secrets)**：整合密碼管理器，防止私鑰或 API Key 泄露。
+
+
+## 實戰開發案例
+- 關於 FastMCP 與前端 PWA 直連 Firestore 的雲端點餐整合實踐，請參閱：[[一沐日雲端點餐與 MCP 系統開發實務]]。

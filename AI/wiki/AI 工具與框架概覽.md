@@ -1,6 +1,6 @@
 ---
 type: analysis
-tags: [AI工具, Cursor, Dify, Grok, Groq, LMStudio, vLLM]
+tags: [AI工具, Cursor, Dify, Grok, Groq, LMStudio, vLLM, Qwen, OpenCode, GitHub]
 sources: [
   - "[[sources/Google AI Studio 1.md]]"
   "[[sources/01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md]]",
@@ -17,10 +17,13 @@ sources: [
   "[[raw/2026-07-06T095236+0800-別再只用Gemini摘要！教你Chrome右上角「問問」高階用法，卡住直接變即時助教！.md]]",
   "[[raw/2026-07-06T110758+0800-問問 Gemini 被低估了：邊看影片，邊把知識問懂.md]]",
   "[[raw/2026-07-08T160237+0800-免費AI課程大全！AI、程式、設計6大平台推薦，完成可拿證書.md]]",
-  "[[raw/2026-07-11T210528+0800-ChatGPT APP 基本功第六集全新改版！教師教學神器改版大解析，一次看懂.md]]"
+  "[[raw/2026-07-11T210528+0800-ChatGPT APP 基本功第六集全新改版！教師教學神器改版大解析，一次看懂.md]]",
+  "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]",
+  "[[AI/raw/2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md|27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！]]",
+  "[[AI/raw/2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md|OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配]]"
 ]
 created: 2026-06-11
-updated: 2026-07-20
+updated: 2026-08-14
 ---
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
@@ -144,3 +147,26 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
   - **Freeform Prompts**：自由格式提示，適合靈感發想與思維鏈 (CoT) 測試。
   - **Structured Prompts**：以表格或範例強制模型輸出特定結構資料（如 JSON）。
   - **System Instructions**：全域約束 AI 的角色定位與知識回答邊界。
+
+## 10. 2026 最新開源模型與跨平台開發環境
+
+### 10.1 本地模型越級突破：Qwen 3.8
+- **27B 模型越級打怪**：高密度訓練架構打破參數迷思，評測超越 397B 大模型，為企業提供高性價比且機密不外流的私有 AI 方案。
+- **極限推理與加速**：結合 GGUFF 量化、MInference（每秒 550～650 Tokens）、llama.cpp 緩衝區優化與 vLLM 高併發部署。
+- **詳見專頁**：`[[Qwen 3.8 本地模型部署與企業 ROI 實務]]`。
+
+### 10.2 跨模型多核心 Agent：OpenCode 新版 (EP07)
+- **自由切換模型**：在同一個對話中支援跨商業模型（DeepSeek V4 Flash / GPT 5.6 Luna / Claude / GPT SOL）與本地模型無縫切換。
+- **以時間換智力**：便宜模型開 Max 思考強度，以三十分之一成本達到 52 分高智力。
+- **免費技能包**：整合 `image-vision-sidecar`（Groq 視覺前處理）與 `opencode-draw-free`（免費生圖壓繁中）。
+- **詳見專頁**：`[[OpenCode 新版架構與模型最佳搭配指南]]`。
+
+### 10.3 GitHub 開源軍火庫與 AI Skills 入門
+- **免安裝與低門檻開源工具**：涵蓋 OpenCut 剪輯、AI-For-Beginners 課程、free-for-dev 清單、OfficeCLI 文書自動化及 n8n 工作流。
+- **AI Skills 4 大入口**：Anthropic 官方、awesome-agent-skills、awesome-mcp-servers 及 awesome-copilot。
+- **詳見專頁**：`[[GitHub 開源工具與 AI Skills 入門指南]]`。
+
+
+
+## 長文本與國產大模型專題
+- 關於月之暗面與長文本模型架構發展，請參閱：[[Kimi 與月之暗面 (Moonshot AI) 發展專題]]。

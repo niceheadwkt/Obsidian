@@ -15,7 +15,7 @@ updated: 2026-08-07
 
 # AI Agent 基本功系列實踐指南 (EP01-EP07)
 
-本指南根據三師爸 [[三師爸Sense Bar]] 的「AI Agent 基本功」EP01 至 EP07 系列教學整理，旨在幫助開發者與非技術人員打通 AI Agent 的核心觀念與本地環境配置，不分工具（如 Claude Code, Codex, OpenCode, AntiGravity 等）均能一體適用。
+本指南根據三師爸 [[Claude 基本功與個人 AI 工作流實戰|三師爸 (Sense Bar)]] 的「AI Agent 基本功」EP01 至 EP07 系列教學整理，旨在幫助開發者與非技術人員打通 AI Agent 的核心觀念與本地環境配置，不分工具（如 Claude Code, Codex, OpenCode, AntiGravity 等）均能一體適用。
 
 ## EP01：用 Agent 來學習 Agent 與知識庫複製
 - **雲端 AI 與本地 Agent 的差異**：
@@ -61,3 +61,11 @@ updated: 2026-08-07
 - **RDQ (Requirements Discovery Quadrant)**：
   - 釐清專案需求時，人類通常只能表達「你知道你知道的」與「你知道你不知道的」前兩個象限。
   - 後半部的「你不知道你知道的」與「你不知道你不知道的」需要依靠 Agent 透過引導式問答（例如「用 RDQ 問我」，AI 引導最多 3 個追問）來挖掘，從而避免最終產出與期望不符。
+
+---
+
+## 延伸實務應用專題
+- **無 API 平台自動化 (EP04 延伸)**：針對無官方 API/MCP 的平台（如 Wordwall、LoiLoNote），採用 Playwright 封裝為 CLI，實現三級自動出題。詳見 `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`。
+- **雲端排程與 GAS 閉環**：結合雲端 24/7 常駐 Agent 與本地 `clasp` 部署。詳見 `[[Google Spark 與 GAS 雲端自動化實務]]`。
+- **跨平台 Agent 新版實踐**：跨模型與平價高智力架構。詳見 `[[OpenCode 新版架構與模型最佳搭配指南]]`。
+

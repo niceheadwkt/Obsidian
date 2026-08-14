@@ -314,3 +314,31 @@
   - `[[AI Agent 實戰與 MCP 伺服器整合]]`
 - **更新索引**：[index.md](index.md) 已同步更新，整理所有 20 筆新文獻來源與 4 個新增 Wiki 頁面。
 - **執行人**：Antigravity Agent
+
+## [2026-08-14] ingest | 全量匯入第二十批：GitHub 開源工具、Wordwall、Google Spark 與 Qwen 3.8 等 5 份文獻
+
+- **來源文獻**：SRC-230 至 SRC-234 共 5 份原始文獻（位於 
+aw/ 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - [[GitHub 開源工具與 AI Skills 入門指南]]
+  - [[Wordwall 與教育科技的 AI Agent 自動化實務]]
+  - [[Google Spark 與 GAS 雲端自動化實務]]
+  - [[Qwen 3.8 本地模型部署與企業 ROI 實務]]
+  - [[OpenCode 新版架構與模型最佳搭配指南]]
+- **更新 Wiki 頁面**：
+  - [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]
+  - [[AI Agent 與 AntiGravity 2.0 基礎入門]]
+  - [[AI 工具與框架概覽]]
+  - [[Claude Cowork 與 Agent Skill 實務]]
+  - [[生成式 AI 企業應用與成本經濟學]]
+- **更新索引**：[index.md](index.md) 已同步更新，整理所有 5 筆新文獻來源與 5 個新增 Wiki 概念頁面。
+- **執行人**：Antigravity Agent
+
+## [2026-08-14] lint | 知識庫全域健康檢查與孤立頁面關聯修復
+
+- **檢查範圍**：全域 54 篇 Wiki 概念與實體頁面。
+- **健康檢查結果**：
+  - **斷鏈修復**：修正 [[OpenCode]]、[[楊植麟]]、[[三師爸]] 等多處引用格式，確保雙括號鏈結 100% 精準對齊。
+  - **孤立頁面修復**：為 [[深度學習與大語言模型架構全景]]、[[Kimi 與月之暗面 (Moonshot AI) 發展專題]] 與 [[一沐日雲端點餐與 MCP 系統開發實務]] 建立交叉入站鏈結，消除知識孤島。
+  - **Frontmatter 結構**：所有 54 篇頁面之 YAML 元數據（標籤、來源、日期）均通過驗證。
+- **執行人**：Antigravity Agent

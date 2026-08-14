@@ -74,6 +74,14 @@ title: listenTWNews 工作筆記
   1. 在 [app.js](file:///c:/aiTest/listenTWNews/app.js) 的 `resolveKissRadioUrl()` 動態解析中，引入 `AbortController` 設定單次 fetch 逾時為 2 秒，防止長時間掛起，確保失敗時能在 4 秒內快速切換至「播放失敗」狀態。
   2. 在 UI 播放器描述區，動態渲染一個「開啟官網播放頁」的直連超連結（連結至 `http://www.kiss.com.tw/radio_hq.php?radio_id=156`），即使在內嵌受阻或公司防火牆限制 Twitch 聊天室等外部服務時，使用者仍可點擊進入官網直接播放音訊。
 
+### 🚨 雷區 8：Vite 生產打包 (vite build) 遺漏無 type="module" 屬性的 Script 導致上線後 404 空白
+* **雷區現象**：在本地端使用 Vite 的開發伺服器 (`npm run dev`) 執行時，網頁可以完美載入並播放所有頻道。但當執行生產打包 (`npm run build`) 並部署至 Vercel 上線後，首頁的頻道卡片列表完全空白，控制台噴出 `app.js 404 Not Found` 致命錯誤。
+* **根本原因**：在 `index.html` 載入邏輯中，原本使用的是 `<script src="app.js?v=11"></script>`。Vite 在 `npm run dev` 模式下只是一個簡單的靜態檔案代理，因此瀏覽器可以成功對根目錄發起靜態檔案請求。但在執行 `vite build` 構建生產包時，Vite 採用 ESM 規範，**只會 bundle 具有 `type="module"` 的 script**！因為原本沒有指定該屬性，Vite 在打包時完全忽略了 `app.js`，導致它根本沒有被編譯且沒有被複製到 `dist/` 目錄下，部署至 Vercel 後瀏覽器便會對 `app.js` 請求 404。
+* **解決方案**：
+  1. 將 `index.html` 底部的載入方式修改為 Vite 支援的 Module 格式：`<script type="module" src="app.js"></script>`。
+  2. 移去 Query String 版本號（因為 Vite 打包時會自動在 output 的 JS 檔名中附上雜湊值，例如 `index-r_jNTbOG.js`，因此不需要行內版本號來防止快取）。
+  3. 重新執行 `npm run build` 打包，此時 Vite 會順暢將其編譯至 `dist/assets/index-*.js` 中並於 `dist/index.html` 正確關聯，解決 404 問題。
+
 ---
 
 ## 目前進度
@@ -89,3 +97,33 @@ title: listenTWNews 工作筆記
 ## 下一步計劃
 1. 持續追蹤其他新聞台 YouTube 嵌入是否有類似變更。
 2. 串接與測試安童哥語音複製伺服器 (`voxcpm2-voice-cloner`) 的 `custom` 模式。
+
+---
+
+## 💡 給初學者的架構秘笈：純靜態託管 vs 現代前端打包工具（Vite）
+
+對於剛接觸前端開發的初學者來說，「為什麼多了一個 `package.json` 專案就突然變複雜，還會讓 PWA 出問題？」這是一個非常好的問題。以下為您拆解這兩者運作方式的奧秘：
+
+### 1. 📂 方案一：純靜態網頁（No-Build / Simple Static）— 本專案最終回歸的方案
+* **運作方式**：這是最原始、最單純的網頁架構。你的專案目錄裡有什麼檔案，瀏覽器就會直接去下載並讀取什麼檔案。
+* **路徑對應**：檔案路徑與網址路徑是 **1:1 絕對對應**。例如，你把 `sw.js` 放在專案根目錄下，上線後的網址就是 `https://yourdomain.com/sw.js`。
+* **部署機制**：Vercel 等託管商偵測到此專案沒有 `package.json`，會自動將其視為靜態伺服器，**直接上傳並託管您根目錄下的所有檔案**。
+* **優點**：結構極度簡單、直覺、不需要安裝 Node.js，也完全不需要編譯工具，隨點隨改。
+
+### 2. ⚙️ 方案二：現代前端打包（Build-based / Vite / Webpack）
+* **運作方式**：當網頁引入了現代前端框架（如 React, Vue）或新語法（TS, SCSS）時，瀏覽器是無法直接解讀的。必須在本地使用打包工具（如 Vite）把程式碼進行「轉譯、優化、打包、壓縮」，最後輸出成打包產物（通常輸出到一個名為 `dist/` 的發佈資料夾下）。
+* **部署機制**：Vercel 只要在倉庫根目錄發現有 `package.json` 且含有 `build` 腳本，就會主動在雲端執行 `npm run build`，並且**僅僅把 `dist/` 資料夾裡的內容發佈上線**，根目錄的原始碼（如 package.json 本身）反而會被隱藏。
+* **為什麼 PWA 檔案在此模式下會 404 損壞？**
+  * 打包工具（Vite）非常「精明」，它只會去打包程式碼中有明確被 `import` 引用、或是 HTML 標籤有連結的檔案。
+  * 像 `sw.js` (Service Worker) 或是圖示（`icon-192.png`），它們是透過瀏覽器在背景去向特定的 URL 發起非同步請求的，Vite 無法靜態解析出它們的依賴關係，因此**在執行 `vite build` 時會直接遺漏它們，不把它們複製到 `dist/` 輸出目錄中**。
+  * 這導致專案部署到 Vercel 上線後，瀏覽器請求 `/sw.js` 會直接回傳 404，PWA 功能與安裝也隨之報銷。
+* **打包模式下的解決方案：`public/` 的妙用**
+  * 在 Vite 專案中，**`public/` 資料夾是靜態檔案的安全通道**。
+  * Vite 的機制規定：只要把任何不需要被編譯壓縮、但在打包後需要原封不動被瀏覽器存取的資源（如 `sw.js`、`manifest.json`、PWA 圖示）放進 `public/` 資料夾中，Vite 在 build 時就會**自動把 `public/` 的內容全數複製到 `dist/` 的根目錄下**。這就解決了 PWA 線上 404 的問題。
+
+### 🌟 總結：初學者該如何選擇？
+* **當專案是純 Vanilla JS (原生 HTML/CSS/JS) 且規模適中**：
+  建議採用 **「純靜態網頁模式」**。不需要 `package.json`，把所有檔案直接丟在根目錄，這是最簡單、最無腦且最不易出錯的做法。
+* **當專案引入了複雜的前端框架、TypeScript 或需要極致的打包體積優化**：
+  才需要採用 **「現代前端打包模式 (Vite/Webpack)」**，並學會使用 `public/` 目錄或 `vite-plugin-pwa` 等套件來處理 Service Worker 靜態檔案。
+

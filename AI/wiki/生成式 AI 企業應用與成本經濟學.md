@@ -1,19 +1,20 @@
 ---
 type: concept
-tags: [Token-Economics, 企業AI, 成本控制, CreaoAI, Semantic-Routing]
+tags: [Token-Economics, 企業AI, 成本控制, CreaoAI, Semantic-Routing, Qwen, Local-LLM]
 sources:
   - "[[raw/2026 年生成式 AI 企業端應用趨勢報告.md]]"
   - "[[raw/2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md]]"
   - "[[raw/AI_Cost_and_Token_Economics.md]]"
   - "[[raw/Creao_AI_Comprehensive_Report.md]]"
   - "[[sources/KV Cache.md]]"
+  - "[[AI/raw/2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md|27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！]]"
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-08-14
 ---
 
 # 生成式 AI 企業應用與成本經濟學
 
-本頁面探討 2026 年生成式 AI 在企業端落地的最新趨勢、失控的 AI 帳單背景下的 **Token 經濟學** 與成本控管技術（如語意路由與模型分流），並橫向剖析無代碼 AI 代理平台 **Creao AI**。
+本頁面探討 2026 年生成式 AI 在企業端落地的最新趨勢、失控的 AI 帳單背景下的 **Token 經濟學** 與成本控管技術（如語意路由與模型分流），並橫向剖析無代碼 AI 代理平台 **Creao AI** 與本地端私有化部署。
 
 ---
 
@@ -37,10 +38,11 @@ updated: 2026-07-20
 | 觀測指標 | 說明 | 控管技術 |
 | :--- | :--- | :--- |
 | **KV Cache (鍵值快取)** | 重複載入相同背景文件會重複計費。 | 使用支援 Prompt Caching 的模型（如 Claude 3.5 Sonnet / Gemini 1.5 Pro），可省下 80%+ 的重複輸入費用。 |
-| **地端模型分流 (Hybrid Cloud)** | 將敏感或簡單任務留在企業地端伺服器運行，減少雲端 API 消耗。 | 本地部署 Llama 3 或 DeepSeek-R1，配合 [[Ollama]] 處理常規讀寫。 |
+| **地端模型分流 (Hybrid Cloud)** | 將敏感或日常任務留在企業地端伺服器運行，兼顧零 API 成本與資料安全。 | 本地部署 [[Qwen 3.8 本地模型部署與企業 ROI 實務|Qwen 3.8-27B]]，配合 GGUFF 量化與 [[Ollama]] / vLLM 處理常規讀寫。 |
 | **對話壓縮 (Compaction)** | 多輪對話歷史會呈指數型消耗 Token。 | 當任務階段性完成時，清除歷史，僅保留當前 State 作為下一次輸入。 |
-| **中低階模型性價比** | 美國頂尖大模型價格昂貴。 | 企業將常規任務轉向性價比極高的國產大模型（如智譜 GLM、月之暗面 Kimi）。 |
+| **中低階模型性價比** | 美國頂尖大模型價格昂貴。 | 企業將常規任務轉向性價比極高的大模型（如 DeepSeek V4 Flash、GPT 5.6 Luna，參見 `[[OpenCode 新版架構與模型最佳搭配指南]]`）。 |
 | **語意路由 (Semantic Routing)** | 根據使用者問題的複雜度，自動派發至不同成本的模型。 | 實施「雙階段語意路由器」。 |
+
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 type: concept
-tags: [Claude, ClaudeCowork, AgentSkills, AI工作流, Excel自動化]
+tags: [Claude, ClaudeCowork, AgentSkills, AI工作流, Excel自動化, GitHub, OpenSource]
 sources: [
   - "[[sources/2026-08-03T114715+0800-AI Skills怎麼寫？grill-me工作流5步拆解，附中文提示詞可複製.md]]"
   - "[[sources/Skill Creator（技能建立器）.md]]"
@@ -17,10 +17,11 @@ sources: [
   "[[raw/2026-06-15T155546+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]",
   "[[raw/2026-06-15T155632+0800-X上爆紅的26個Skill！賈伯斯、卡帕西的思維都能「蒸餾」、還能算命，完整清單一次收.md]]",
   "[[raw/2026-06-15T155655+0800-不會Claude Code也能上手！用Projects打造AI工作流，5步驟養成長期記憶助理.md]]",
-  "[[raw/2026-06-15T154424+0800-Claude地圖｜Cowork、Claude Code是什麼？初階者從哪開始學？進階技巧有哪些？.md]]"
+  "[[raw/2026-06-15T154424+0800-Claude地圖｜Cowork、Claude Code是什麼？初階者從哪開始學？進階技巧有哪些？.md]]",
+  "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]"
 ]
 created: 2026-06-15
-updated: 2026-07-09
+updated: 2026-08-14
 ---
 
 # Claude Cowork 與 Agent Skill 實務
