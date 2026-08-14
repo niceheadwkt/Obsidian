@@ -9,6 +9,10 @@
   - 新增「自訂模型」欄位，允許進階使用者輸入 MLC / WebLLM 相容的 Hugging Face 模型 ID 進行下載與運行。
 - **精細化調試與介面修正**：
   - 今日集中修復了網頁內置小模型的推理偏差（如人名與規格混淆、否定語意加料、歷史對話模仿產生的點餐幻覺）、快取匹配演算法缺陷，以及 Dark 主題在原生 Light 模式下拉選單白底白字等問題（詳細對策與原因請參閱下方卡關紀錄第 14~19 項）。
+- **知識庫文件整理與匯入 (第二十批 Ingest 與 全域 Lint)**：
+  - 成功匯入 AI/raw/ 目錄中新增之 5 份文獻（包含 GitHub 開源工具、Wordwall 自動化、Google Spark + GAS、Qwen 3.8 本地模型與 OpenCode 新版架構）。
+  - 新增 5 個 Wiki 頁面，修訂 5 個關聯概念頁面，更新 [index.md](file:///g:/我的雲端硬碟/Obsidian/AI/wiki/index.md) 與 [log.md](file:///g:/我的雲端硬碟/Obsidian/AI/wiki/log.md)。
+  - 執行全域 Lint 健康檢查，完成斷鏈修復與孤立頁面關聯串接，達成全域 54 篇 Wiki 零斷鏈、零孤島標準，並已全數 Git Commit & Push 至遠端儲存庫。
 - **知識庫文件整理與匯入 (第十九批 Ingest)**：
   - 全量匯入 `AI/raw/` 目錄中剩餘 20 份文獻（包含 AI Agent 基本功系列 EP01-EP07、一沐日雲端點餐 MCP 專案啟動說明、Kimi 發展專題等）。
   - 新增 4 個 Wiki 頁面，修訂 6 個現有概念頁面，並同步更新 [index.md](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/wiki/index.md)、[log.md](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/wiki/log.md) 與 [dashboard.html](file:///g:/%E6%88%91%E7%9A%84%E9%9B%B2%E7%AB%AF%E7%A1%AC%E7%A2%9F/Obsidian/AI/dashboard.html)。
