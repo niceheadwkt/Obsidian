@@ -342,3 +342,17 @@ aw/ 唯讀目錄下）。
   - **孤立頁面修復**：為 [[深度學習與大語言模型架構全景]]、[[Kimi 與月之暗面 (Moonshot AI) 發展專題]] 與 [[一沐日雲端點餐與 MCP 系統開發實務]] 建立交叉入站鏈結，消除知識孤島。
   - **Frontmatter 結構**：所有 54 篇頁面之 YAML 元數據（標籤、來源、日期）均通過驗證。
 - **執行人**：Antigravity Agent
+
+## [2026-09-16] setup | 建構跨電腦 (NB) 與跨 Agent (Antigravity/Claude Code/Codex) 全域規範同步體系
+
+- **說明**：為解決跨辦公室與家裡 NB、以及三款主要 AI CLI/IDE（Antigravity、Claude Code、Codex）的全域運作規範一致性問題，建構基於 `chezmoi` 範本與 GitHub `dotfiles` 庫的動態同步架構。
+- **更新 Wiki 頁面**：
+  - `[[AI Agent 實戰與 MCP 伺服器整合]]`：擴充章節 2.2，記錄三方 Agent 規則路徑分發與 `{{ .chezmoi.homeDir }}` 跨裝置動態變數適配機制。
+- **核心實作**：
+  - Antigravity 規則：`dot_gemini/config/AGENTS.md.tmpl`
+  - Claude Code 規則：`dot_claude/rules/global-rules.md.tmpl`
+  - Codex 規則：`dot_codex/AGENTS.md.tmpl`
+  - 家裡 NB 同步指令：`chezmoi update`
+- **更新索引**：[index.md](index.md) 已同步更新最後維護日期。
+- **執行人**：Antigravity Agent
+

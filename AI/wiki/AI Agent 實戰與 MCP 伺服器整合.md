@@ -79,9 +79,15 @@ graph TD
 *   **設定**：必須使用雲端硬碟的**桌面應用程式**（例如 Google Drive 桌面版，將同步模式設定為「串流檔案」或「鏡像檔案」），將專案資料夾直接建在虛擬的雲端磁碟中。
 *   **優勢**：所有 Agent 在讀寫專案檔案時，底層的雲端硬碟程式會自動在背景進行即時同步，避免任何代碼丟失或複製貼上的繁瑣操作。
 
-### 2.2 chezmoi 設定與技能同步
-*   **概念**：`chezmoi` 是一個強大的 dotfiles (設定檔) 管理器。
-*   **做法**：將您的全域設定（如 `mcp_config.json`、`.gitconfig` 等）與 Agent 技能宣告檔納入 chezmoi 中，並使用 Github Git 儲存庫進行版本控制。換電腦時，只需執行 `chezmoi apply` 即可秒速還原所有 Agent 運行環境。
+### 2.2 chezmoi 設定與技能/規範多 Agent 同步
+*   **概念**：`chezmoi` 是一個強大的 dotfiles（設定檔）管理器，支援 Git 版本控制與動態範本引擎。
+*   **做法**：將全域設定（如 `.gitconfig`、`mcp_config.json`）以及跨 Agent 共用的全域規範（如「開工/收工流程」、「語音回覆規範」、「語音錯字善意還原」）納入 chezmoi 範本管理。
+*   **多 Agent 規則分發機制**：
+    * `dot_gemini/config/AGENTS.md.tmpl` $\rightarrow$ Antigravity CLI / IDE 全域規則
+    * `dot_claude/rules/global-rules.md.tmpl` $\rightarrow$ Claude Code CLI / IDE 全域規則
+    * `dot_codex/AGENTS.md.tmpl` $\rightarrow$ Codex CLI / IDE 全域規則
+*   **跨電腦動態路徑適配**：範本中使用 `{{ .chezmoi.homeDir }}` 動態變數，自動適配辦公室電腦與家裡筆電（NB）不同的 Windows 使用者家目錄路徑。
+*   **同步流程**：在任何一台設備修改後提交並推送到 GitHub；在另一台設備（如家裡 NB）只需執行 `chezmoi update`，即可一秒將 Antigravity、Claude Code、Codex 的規則同步至最新。
 
 ---
 
