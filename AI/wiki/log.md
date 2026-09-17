@@ -342,3 +342,11 @@ aw/ 唯讀目錄下）。
   - **孤立頁面修復**：為 [[深度學習與大語言模型架構全景]]、[[Kimi 與月之暗面 (Moonshot AI) 發展專題]] 與 [[一沐日雲端點餐與 MCP 系統開發實務]] 建立交叉入站鏈結，消除知識孤島。
   - **Frontmatter 結構**：所有 54 篇頁面之 YAML 元數據（標籤、來源、日期）均通過驗證。
 - **執行人**：Antigravity Agent
+
+## [2026-09-16] ingest | Google Flow 零門檻AI短片製造工具
+
+- **來源文獻**：`SRC-235`（位於 `raw/` 唯讀目錄下）。
+- **新增 Wiki 頁面**：
+  - [[Google Flow AI短片製作實務]]
+- **更新索引**：[index.md](index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
+- **執行人**：Antigravity Agent

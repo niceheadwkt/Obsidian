@@ -10,7 +10,7 @@ sources: [
   "[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md]]"
 ]
 created: 2026-06-13
-updated: 2026-07-09
+updated: 2026-09-17
 ---
 
 # Git GUI 與 GitHub 雙向同步實務
@@ -149,6 +149,9 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
 ### ▍ 1. Google 雲端硬碟電腦版同步模式調整
 *   **「串流檔案」的潛在風險**：實體存於雲端，本地僅顯示虛擬投影。Git 頻繁讀寫微小索引時會引發大量網路 I/O 衝突，並在背景產生 `.tmp.driveupload` 暫存檔，造成 Git 誤判變更，甚至引發 Git 索引損壞。
 *   **🛠️ 解決方案**：將同步模式變更為**「雙向同步檔案」（鏡像模式）**，使檔案 100% 下載至本地硬碟，讓 Git 的讀寫回歸本機高速操作。
+
+> [!WARNING]
+> **設定已變更（2026-09-17）**：三師爸已將 Google 雲端硬碟同步模式**改回「串流檔案」**，`Obsidian` 專案唯一正確路徑為 `G:/我的雲端硬碟/Obsidian`。先前因「雙向同步檔案（鏡像模式）」而在 `C:\Users\ch26788\我的雲端硬碟\Obsidian` 產生的本機鏡像複本已停用、不再同步，AI 代理不可再讀寫該路徑。所有 Agent 全域規則（`global-rules.md` / `AGENTS.md`）與 `.gitconfig`、`.claude.json` 專案設定均已同步修正為 `G:` 路徑。
 
 ### ▍ 2. 實務排障：推送遭拒 (rejected main -> main fetch first)
 *   **情境**：在 Git GUI 點擊 `Push` 被拒絕，提示遠端包含本地沒有的變更。
