@@ -56,7 +56,7 @@
 | `[[一沐日雲端點餐與 MCP 系統開發實務]]` | 本專案 mcp-drink-main 開發啟動說明，使用 Streamlit 前端整合 Firestore 與 MCP-Server 背景拉起機制，以及低推理溫度與歷史過濾防幻覺優化、CSS樣式修正 | 2 | 2026-08-07 |
 | `[[深度學習與大語言模型架構全景]]` | 深度學習底層優化器（SGD、Momentum、Adam、AdamW、Muon 矩陣正交優化器）運作機制與大語言模型（Encoder/Decoder/MQA）架構分類演進 | 1 | 2026-08-07 |
 | [[GitHub 開源工具與 AI Skills 入門指南]] | GitHub 6 大核心關鍵詞與 3 大挑選信號、三層開源工具推薦（免裝網頁版/一鍵安裝/進階自架）、4 大 AI Skills 入口清單與資安成本防坑指南 | 1 | 2026-08-14 |
-| [[Wordwall 與教育科技的 AI Agent 自動化實務]] | Playwright 封裝 wordwall-cli 解決無 API 平台出題痛點、Level 1-3 三級出題模式（純文字/考卷截圖/AI生圖）與學生個資去識別化原則 | 1 | 2026-08-14 |
+| [[Wordwall 與教育科技的 AI Agent 自動化實務]] | Playwright 封裝 wordwall-cli 解決無 API 平台出題痛點、Level 1-3 三級出題模式（純文字/考卷截圖/AI生圖）與學生個資去識別化原則，以及多 Agent（AntiGravity/Codex/OpenCode）段考試卷生成實戰、OMML 方程式與 Bloom 認知層次難度控制、Math Review Deck 互動複習網頁技能 | 2 | 2026-09-17 |
 | [[Google Spark 與 GAS 雲端自動化實務]] | Google Spark 雲端 24/7 常駐 Agent 與 Gemini 角色分工、Google Workspace 深度排程與試算表輪詢，及本機 Agent 搭配 clasp 部署 GAS 閉環 | 1 | 2026-08-14 |
 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] | 通義千問 Qwen 3.8-27B 越級挑戰 397B 巨獸、GGUF 量化、MInference 推理加速 (550-650 tokens/s)、llama.cpp 緩衝區優化及企業在地端部署 ROI 哲學 | 1 | 2026-08-14 |
 | [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中) | 1 | 2026-08-14 |
@@ -311,6 +311,7 @@
 | SRC-232 | 2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md | 影片 / 教學 | 2026-08-14 | [[Google Spark 與 GAS 雲端自動化實務]] |
 | SRC-233 | 2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md | 評測 / 本地端 | 2026-08-14 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] |
 | SRC-234 | 2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md | 影片 / 架構 | 2026-08-14 | [[OpenCode 新版架構與模型最佳搭配指南]] |
+| SRC-235 | 2026-09-17T082024+0800-AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷.md | 影片 / 教學 | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
 ---
 
 > [!TIP]
