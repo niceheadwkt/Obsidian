@@ -350,3 +350,11 @@ aw/ 唯讀目錄下）。
   - [[Google Flow AI短片製作實務]]
 - **更新索引**：[index.md](index.md) 已同步更新，追加此 Wiki 頁面與 1 筆文獻來源。
 - **執行人**：Antigravity Agent
+
+## [2026-09-17] ingest | AI Agent 段考出題與教育科技自動化實務
+
+- **來源文獻**：`SRC-236`（`AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷.md`，三師爸直播逐字稿，位於 `raw/` 唯讀目錄下）。
+- **更新 Wiki 頁面**：
+  - `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`：新增「多 Agent 段考出題自動化實戰」章節，涵蓋教材索引與舊卷格式建立流程、Bloom 認知層次難度控制、OMML 方程式與 Python 幾何繪圖，以及 AntiGravity／Codex／OpenCode 三家 Agent 出題實測比較與 Math Review Deck 互動複習網頁技能。
+- **更新索引**：[index.md](index.md) 已同步更新該頁面說明、關聯來源數（2）與最後更新日期，並新增 `SRC-236` 至原始文獻目錄。
+- **執行人**：Claude Code
