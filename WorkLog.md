@@ -1,20 +1,33 @@
 # 工作筆記
 
-**更新日期**：2026-08-27
+**更新日期**：2026-09-20
 
 ## 上次做到哪
-- **工安稽查單號 1150504015 誤植資料刪除案 (RQ11508035)**：
-  - 完成 `HGJJG01`（稽查登錄維護）全系統 7 張關聯資料表探索與相依性分析。
-  - 透過正式機 CDP / Web Executor 實測確認資料筆數（`db.tbhg208` 1 筆、`db.tbhg001B` 2 筆，其餘子表為 0 筆）。
-  - 自動完成異動申請表 ODT 檔案（[ERP資料_異動申請表_RQ11508035(稽核單號1150504015誤植資料刪除).odt](file:///D:/0.翁國烔_中鴻專案/RQ115/RQ11508035(稽核單號1150504015誤植資料刪除)/ERP資料_異動申請表_RQ11508035(稽核單號1150504015誤植資料刪除).odt)）之 ERP 系統代碼更正（HG）與備份/刪除 SQL 填寫。
-  - 完成兩日對談記錄與技術細節整理，歸檔至 Obsidian 知識庫。
+- **SogaType 語音輸入操作踩坑與 Windows 底層除錯全紀錄**：
+  - 診斷出 ASUS ROG Zephyrus G14 內建麥克風陣列在 Windows CoreAudio 處於 `0x2`（`DEVICE_STATE_DISABLED`）狀態，致 WinMM `waveInGetNumDevs() == 0`，引發 SogaType `NAudio BadDeviceId` 崩潰。
+  - 運用 Windows 未公開 COM 介面 `IPolicyConfig::SetEndpointVisibility` 成功將端點復原為 Active（`0x1`），WinMM 順利收音 32,000 bytes。
+  - 釐清實體鍵盤 F8 受 ASUS Hotkey 控制為調高亮度（需按 `Fn + F8`）及 `Ctrl + Space` 與輸入法切換相撞失焦之問題。
+  - 查明 SogaType 識別成功卻無法在終端機自動貼上文字的根因：Windows UIPI（使用者介面權限隔離）——以管理員身分執行的 Windows Terminal 阻擋了一般權限 SogaType 發送的 `keybd_event(Ctrl + V)`。
+  - 完成完整踩坑實戰技術文件：[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄.md](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄.md)。
+- **NoType 專案深入分析與架構演進建議書**：
+  - 針對 `C:\aiTest\NoType` 進行全專案架構分析，比對 SogaType 優缺點。
+  - 完成建議書 [AI/raw/NoType 專案深度分析與演進建議書.md](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/raw/NoType%20專案深度分析與演進建議書.md) 並同步備份於 [C:/aiTest/NoType/IMPROVEMENT_PROPOSAL.md](file:///C:/aiTest/NoType/IMPROVEMENT_PROPOSAL.md)。
+  - 制定台灣客製化詞庫策略（Whisper Prompt 注入 + LLM 系統提示詞雙層過濾機制；前期使用輕量 JSON / `store.js`，後期採用純 JS Trie 字典樹，避免破壞跨平台純 Node 架構）。
+- **四大 AI Agent 技能共享與 NTFS Junction 架構整定（家用 NB 實裝完成）**：
+  - 於本機建立中央真相來源 `~/.agents/skills/`，集中管理 7 個核心自訂技能。
+  - 落地新機一鍵冷啟動萬能腳本至 [AI/scripts/bootstrap-skills.ps1](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/scripts/bootstrap-skills.ps1)。
 
-## 相關筆記連結
-- [[對談整理_2026-08-26_27_HGJJG01稽核單號1150504015刪除案]]
-- [[HGJJG01_稽查單號_1150504015_資料關聯與刪除計畫]]
+## 相關筆記與腳本連結
+- [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]]
+- [[AI/raw/NoType 專案深度分析與演進建議書]]
+- [[AI/raw/如何看四大工具的目錄連結（NTFS Junction）]]
+- [[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN]]
+- [[AI/scripts/bootstrap-skills.ps1]]
 
 ## 下一步
-- 待使用者或業務單位完成 ODT 申請表內部簽核後，於維護時段於正式機執行資料備份與刪除。
+- 深入研究 NoType 專案架構，評估實作台灣專用詞庫與兩岸用語對照（雙層過濾機制）。
+- SogaType 操作注意事項：若需在管理員權限終端機輸入，需以系統管理員權限啟動 SogaType，或以 `Ctrl + V` 手動貼上剪貼簿。
+- 於公司 NB 執行 `chezmoi update` 驗證全域設定與腳本同步狀態。
 
 ---
 
