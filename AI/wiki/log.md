@@ -343,6 +343,19 @@ aw/ 唯讀目錄下）。
   - **Frontmatter 結構**：所有 54 篇頁面之 YAML 元數據（標籤、來源、日期）均通過驗證。
 - **執行人**：Antigravity Agent
 
+## [2026-09-16] setup | 建構跨電腦 (NB) 與跨 Agent (Antigravity/Claude Code/Codex) 全域規範同步體系
+
+- **說明**：為解決跨辦公室與家裡 NB、以及三款主要 AI CLI/IDE（Antigravity、Claude Code、Codex）的全域運作規範一致性問題，建構基於 `chezmoi` 範本與 GitHub `dotfiles` 庫的動態同步架構。
+- **更新 Wiki 頁面**：
+  - `[[AI Agent 實戰與 MCP 伺服器整合]]`：擴充章節 2.2，記錄三方 Agent 規則路徑分發與 `{{ .chezmoi.homeDir }}` 跨裝置動態變數適配機制。
+- **核心實作**：
+  - Antigravity 規則：`dot_gemini/config/AGENTS.md.tmpl`
+  - Claude Code 規則：`dot_claude/rules/global-rules.md.tmpl`
+  - Codex 規則：`dot_codex/AGENTS.md.tmpl`
+  - 家裡 NB 同步指令：`chezmoi update`
+- **更新索引**：[index.md](index.md) 已同步更新最後維護日期。
+- **執行人**：Antigravity Agent
+
 ## [2026-09-16] ingest | Google Flow 零門檻AI短片製造工具
 
 - **來源文獻**：`SRC-235`（位於 `raw/` 唯讀目錄下）。
@@ -357,4 +370,25 @@ aw/ 唯讀目錄下）。
 - **更新 Wiki 頁面**：
   - `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`：新增「多 Agent 段考出題自動化實戰」章節，涵蓋教材索引與舊卷格式建立流程、Bloom 認知層次難度控制、OMML 方程式與 Python 幾何繪圖，以及 AntiGravity／Codex／OpenCode 三家 Agent 出題實測比較與 Math Review Deck 互動複習網頁技能。
 - **更新索引**：[index.md](index.md) 已同步更新該頁面說明、關聯來源數（2）與最後更新日期，並新增 `SRC-236` 至原始文獻目錄。
+- **執行人**：Claude Code
+
+## [2026-09-17] ingest | 全量匯入第二十三批：16 篇文獻（知識管理工具、Claude浮水印、GAS自動化、SQL/Node/React入門、ChatGPT提示詞更新、AI簡報與PPT編修、本地AI陪伴應用、OpenCode入門、教育Agent繪本應用、GCP數據工程、民生食安評測等）
+
+- **來源文獻**：`SRC-237` 至 `SRC-252` 共 16 份原始文獻（位於 `raw/` 唯讀目錄下）。原規劃含 `sqlite 教學 - Google 搜尋.md` 一篇（純搜尋結果快照），經使用者決定直接刪除該檔案，故未列入 SRC 編號。
+- **新增 Wiki 頁面**：
+  - `[[民生消費品實測與食安評估]]`（台灣鮮乳市場實測、行銷迷思與選購指南）
+  - `[[GCP 雲端排程與現代化數據工程實戰]]`（Cloud Scheduler、ETL/ELT 演進、dbt + BigQuery 實戰）
+- **更新 Wiki 頁面**：
+  - `[[個人知識管理系統構築]]`：新增第 5 節「五大筆記／知識工具橫向選型」（Notion/Obsidian/Heptabase/Gemini Notebook/Kuse AI）
+  - `[[Claude]]`：新增第 6 節「Claude 文字浮水印機制」
+  - `[[智慧裝置與日常應用技巧]]`：新增第 4 節「台電 App 住宅用電分析」
+  - `[[Google Spark 與 GAS 雲端自動化實務]]`：新增第四節「LINE AI 待辦機器人」零成本實戰案例
+  - `[[前端與系統開發常用技術]]`：新增第 4～6 節（SQLite 資料庫入門、Discord 通訊協作平台、Node.js 與 React 全端基礎）
+  - `[[ChatGPT 影像生成提示詞指南]]`：由 70 組更新為 120 組提示詞，新增第 4、5 節（靈感點子類、照片風格轉換類）
+  - `[[Claude Design 與前端美化實務]]`：新增第 5、6 節（AI 改造原廠 PPT 四段指令、AI 簡報方法論 KH3R 法則）
+  - `[[AI 語音複製與 VoxCPM2 本地部署]]`：新增第 6 節「桌面 AI 女友」本地陪伴應用趨勢
+  - `[[OpenCode 新版架構與模型最佳搭配指南]]`：新增第五節「零基礎入門實戰：四階段工作流」
+  - `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`：新增第五節「生生有 Token」教案/簡報/繪本平台
+- **Lint 修復**：修正 `SRC-235`（Google Flow）於 `index.md` 中登記檔名與實際檔案全形冒號後空格數不一致的問題。
+- **更新索引**：[index.md](index.md) 已同步更新上述 12 個頁面之說明、關聯來源數與最後更新日期，並新增 `SRC-237` 至 `SRC-252`。
 - **執行人**：Claude Code
