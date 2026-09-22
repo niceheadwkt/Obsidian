@@ -1,8 +1,32 @@
 # 工作筆記
 
-**更新日期**：2026-09-20
+**更新日期**：2026-09-22
 
 ## 上次做到哪
+- **ZP `zpjcDailyTriggerWorkNotice`　`{maxPosNo:08}` 模板展開修復（測試、驗證、清理全部完成）**：
+  - 詳見 [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]] 與 [D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/zpjcDailyTriggerWorkNotice_TBZP0053_測試報告.md](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/zpjcDailyTriggerWorkNotice_TBZP0053_測試報告.md)。
+  - 測試機驗證通過後，清理 17 筆測試簽核單/工作通知與 48+6 筆 TBDW11 殘留、13 筆 TBZP0053 測試資料。
+  - 依同一份修復邏輯，協助重設 3 筆正式機匯入用測試資料（`TBZP0053_v1.txt`：初始值重設、cron 限今日執行），並排除 DSIMPORT 匯入工具的欄位切分 bug（字串區隔字元需改用 `%`）。
+- **EA `(EAJJLICENSEBAT)` 證照整批新增版次作業　操作手冊建置**：
+  - 讀 [eajjLicenseBat.jsp](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/jsp/eajjLicenseBat.jsp)／[eajjLicenseBatM1.jsp](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/jsp/eajjLicenseBatM1.jsp)／[eajcLicenseBat.java](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/src/com/chsteel/ea/eajcLicenseBat.java)／[eajcLicense.java](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/src/com/chsteel/ea/eajcLicense.java) 原始碼，整理成使用者操作角度的 md＋PDF 手冊。
+  - PDF 產製踩坑：Chrome headless `--print-to-pdf` 對特定中文字型有已知 bug，會把常用字（如「手」）誤對應成康熙部首碼（U+2F80~U+2FDF 區段），改用 reportlab 內嵌微軟正黑體字型重新產生，逐頁掃描確認無部首誤植字元。
+  - 手冊補上正式機實際畫面截圖，並將證書號碼／專責人員／證照名稱／證照原始號碼等個資欄位事後遮蔽處理。
+- **Obsidian 筆記庫跨電腦分岐合併**：解掉 `WorkLog.md`／`AI/wiki/log.md`／`AI/wiki/index.md`／一篇 `AI/raw/` 逐字稿共 4 個檔案的真實 Git 合併衝突（兩台電腦各自獨立新增的內容，非格式問題），保留雙方各自獨有內容後推送成功。
+
+## 相關筆記與腳本連結
+- [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
+- [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]]
+- [[AI/raw/NoType 專案深度分析與演進建議書]]
+
+## 下一步
+- ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
+- EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
+- SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。
+
+---
+
+## [歷史紀錄 2026-09-20] SogaType 語音輸入除錯與 NoType 專案分析
+
 - **SogaType 語音輸入操作踩坑與 Windows 底層除錯全紀錄**：
   - 診斷出 ASUS ROG Zephyrus G14 內建麥克風陣列在 Windows CoreAudio 處於 `0x2`（`DEVICE_STATE_DISABLED`）狀態，致 WinMM `waveInGetNumDevs() == 0`，引發 SogaType `NAudio BadDeviceId` 崩潰。
   - 運用 Windows 未公開 COM 介面 `IPolicyConfig::SetEndpointVisibility` 成功將端點復原為 Active（`0x1`），WinMM 順利收音 32,000 bytes。
@@ -17,14 +41,7 @@
   - 於本機建立中央真相來源 `~/.agents/skills/`，集中管理 7 個核心自訂技能。
   - 落地新機一鍵冷啟動萬能腳本至 [AI/scripts/bootstrap-skills.ps1](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/scripts/bootstrap-skills.ps1)。
 
-## 相關筆記與腳本連結
-- [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]]
-- [[AI/raw/NoType 專案深度分析與演進建議書]]
-- [[AI/raw/如何看四大工具的目錄連結（NTFS Junction）]]
-- [[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN]]
-- [[AI/scripts/bootstrap-skills.ps1]]
-
-## 下一步
+### 當時的下一步（供對照）
 - 深入研究 NoType 專案架構，評估實作台灣專用詞庫與兩岸用語對照（雙層過濾機制）。
 - SogaType 操作注意事項：若需在管理員權限終端機輸入，需以系統管理員權限啟動 SogaType，或以 `Ctrl + V` 手動貼上剪貼簿。
 - 於公司 NB 執行 `chezmoi update` 驗證全域設定與腳本同步狀態。
