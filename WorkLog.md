@@ -1,8 +1,39 @@
 # 工作筆記
 
-**更新日期**：2026-09-22
+**更新日期**：2026-09-29
 
 ## 上次做到哪
+- **ZPJJB01 每日工作記錄：九月紀錄盤點與補登**：
+  - 用 erp-prod-web-executor 查正式機 `DB.TBZP0050`（每日工作記錄主檔，DAO：[zpjc0050DAO.java](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/src/com/icsc/zp/dao/zpjc0050DAO.java)），九月原有 11 筆、34.5 HR。
+  - 對照 Obsidian 筆記找出漏填，透過已登入瀏覽器（CDP）操作 [zpjjb0101Edit.jsp](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/jsp/zpjjb0101Edit.jsp) 畫面按「新增」補登 5 筆，每筆送出後都查表確認：
+    - 09/15 001　0800–1200（4.0）：zpjcDailyTriggerWorkNotice排程null錯誤修復(v1.21)
+    - 09/21 001　0800–1600（7.0）：zpjcDailyTriggerWorkNotice測試機驗證及{maxPosNo}模板修正
+    - 09/23 001　0800–1600（7.0）：zpjcDailyTriggerWorkNotice修正後驗證及測試資料清理
+    - 09/29 001　1000–1100（1.0）：115年9月份A3處務會議（系統別、報告內容留空，比照以往處務會議寫法）
+    - 09/29 002　1300–1600（3.0）：ZPJJB01九月每日工作記錄盤點及補登
+  - 補登後九月共 16 筆、56.5 HR。
+  - 踩坑記錄：
+    - `TBZP0050` 為 Big5 編碼，`TOPIC`（工作摘要）上限 60 bytes、`MEMO`（報告內容）上限 1000 bytes；工作摘要沒有跳脫單引號（`MEMO` 有 `encodeSqlStr`），不可含 `'`。
+    - 週別、星期、工時、部門代號由 controller `zpjcb01` 自動計算，畫面只需填起訖時間。
+    - erp_web_client 匯出 CSV 時，報告內容含換行的欄位沒有加引號，一筆會被拆成多列（回報 27 筆，實際 11 筆），用 Excel 開 CSV 要注意。
+
+## 相關筆記與腳本連結
+- [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
+- [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]
+- [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
+
+## 下一步
+- ZPJJB01：九月還沒有紀錄的平日 09/01、04、07、14、16～18、25、29（09/28 教師節若放假不算），需回想後補登。
+- EA：`EAJJRE00N` 最新B表的 DAJJU1 上線申請已填好但**尚未送出**（需求單號未填），上線後到正式機匯出驗證，詳見 [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]。
+- ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
+- HG：`HGJJG01` 稽查單號 1150504015 刪除案（RQ11508035），待 ODT 申請表簽核後到正式機執行備份與刪除。
+- EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
+- SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。
+
+---
+
+## [歷史紀錄 2026-09-22] ZP 模板展開修復／EAJJLICENSEBAT 操作手冊／筆記庫合併
+
 - **ZP `zpjcDailyTriggerWorkNotice`　`{maxPosNo:08}` 模板展開修復（測試、驗證、清理全部完成）**：
   - 詳見 [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]] 與 [D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/zpjcDailyTriggerWorkNotice_TBZP0053_測試報告.md](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/zpjcDailyTriggerWorkNotice_TBZP0053_測試報告.md)。
   - 測試機驗證通過後，清理 17 筆測試簽核單/工作通知與 48+6 筆 TBDW11 殘留、13 筆 TBZP0053 測試資料。
@@ -13,12 +44,12 @@
   - 手冊補上正式機實際畫面截圖，並將證書號碼／專責人員／證照名稱／證照原始號碼等個資欄位事後遮蔽處理。
 - **Obsidian 筆記庫跨電腦分岐合併**：解掉 `WorkLog.md`／`AI/wiki/log.md`／`AI/wiki/index.md`／一篇 `AI/raw/` 逐字稿共 4 個檔案的真實 Git 合併衝突（兩台電腦各自獨立新增的內容，非格式問題），保留雙方各自獨有內容後推送成功。
 
-## 相關筆記與腳本連結
+### 相關筆記連結（當時）
 - [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
 - [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]]
 - [[AI/raw/NoType 專案深度分析與演進建議書]]
 
-## 下一步
+### 下一步（當時，供對照）
 - ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
 - EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
 - SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。

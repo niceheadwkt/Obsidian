@@ -16,12 +16,12 @@
 | `[[NotebookLM 綜合指南]]` | Google NotebookLM 知識庫功能、Gemini 3.5 與 Antigravity 推理引擎升級、自定義圖表、簡報與 Podcast 語音生成 | 4 | 2026-07-09 |
 | `[[RAG 與 DeepSearch 概念綜述]]` | 比較 Semantic search（語意搜尋）與 RAG 檢索增強生成架構，解決大模型幻覺與私有資料限制之方案 | 2 | 2026-07-09 |
 | `[[LLM 到 Agent 的工程解析]]` | 剖析大模型生態系技術棧（Tokenizer、Context、Tool 呼叫、MCP 統一標準、Agent 規劃與 Agent Skill）及本地 MCP 開發實務 | 2 | 2026-07-09 |
-| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景 | 9 | 2026-07-09 |
-| `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發 | 8 | 2026-07-09 |
+| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景，以及 Notion/Obsidian/Heptabase/Gemini Notebook/Kuse AI 五大筆記工具橫向選型 | 10 | 2026-09-17 |
+| `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發，並新增 SQLite 資料庫入門、Discord 通訊協作平台，以及 Node.js／React 全端 JavaScript 基礎 | 12 | 2026-09-17 |
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-07-09 |
 | `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt，全球 6 大免費 AI 課程與證書，以及 Google AI Studio 開發平台 | 16 | 2026-08-07 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-07-09 |
-| `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，70 組品牌社群、工作、生活、靈感與風格轉換範本 | 1 | 2026-07-09 |
+| `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，已更新為 120 組品牌社群、工作、生活、靈感與風格轉換範本 | 2 | 2026-09-17 |
 | `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定，以及多 PC 設定下 Google Drive 工作空間路徑統一與同步模式排障 | 6 | 2026-08-07 |
 | `[[商業案例與投資思維專題]]` | 芒格、納瓦爾、老謝、施昇輝、陳重銘與孫宇晨等人物思維，Computex 跨境出海數據驅動品牌案例，通膨對個人資產傳導，以及買 ETF 必懂九大術語（含收益平準金） | 10 | 2026-07-20 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-07-09 |
@@ -30,7 +30,7 @@
 | `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、影片生成，YT/Grabbit 整合，8 大商務學術場景，YAML 全域視覺 DNA 框架與系統架構大師雙框架、Canva 轉場後製與 NanoBanana Pro 局部改圖 | 31 | 2026-07-20 |
 | `[[Claude 系統優化與 Token 節省指南]]` | 解決 Claude 額度超限與成本控制，涵蓋 Token 暴漲原因、4 大用量超限技巧、PDF 處理優化、Claude Code CLI 官方 4 條節流建議、三種模型定價選用對照，以及 `CLAUDE.md` 自我審查與 12 條優化規則 | 9 | 2026-07-09 |
 | `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理，以及 grill-me 拷問與技能建立器實戰 | 19 | 2026-08-07 |
-| `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合，以及對話框「互動視覺」圖表繪製 | 7 | 2026-07-09 |
+| `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合、對話框「互動視覺」圖表繪製，以及 AI 改造原廠 PPT 四段指令流程與「特殊洞察 × 個性表達（KH3R）」簡報方法論 | 9 | 2026-09-17 |
 | `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查，以及 Karpathy 的 10 分鐘碎念語音提示法 | 14 | 2026-08-07 |
 | `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 2 | 2026-07-09 |
 | `[[Antigravity 與 Remotion 影片生成實務]]` | 「影片即程式碼」影片工程實務，比較畫家模式與工程師模式，解構 4 大應用場景與限制、3 大質感提升秘訣與自動化影片生產線實操 | 1 | 2026-07-09 |
@@ -40,7 +40,7 @@
 | `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-07-09 |
 | `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-07-09 |
 | `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` | 解構生成式 AI 與 AI Agent 根本差異、初始化 Git 與 .gitignore 設定、全域與專案記憶 (.md)，權限管理 (1-5 級/Bypass 模式)、Token 節約經濟學，以及 Google AntiGravity 2.0 一鍵安裝、Gems 轉 Skills，與備課及 GAS 開發實戰 | 10 | 2026-07-20 |
-| `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務，以及 AI 防詐資訊素養教材 | 2 | 2026-07-09 |
+| `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務、AI 防詐資訊素養教材，以及「桌面 AI 女友」本地陪伴應用趨勢 | 3 | 2026-09-17 |
 | `[[AI 工具與任務場景橫向評比]]` | 對比 ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok 六大工具在腦力激盪、文案、簡報、資料表、資料搜集等五大場景之優劣，4 步驟 AI 輔助建立 HTML Dashboard 工作流，以及老牌零售良興 3C 與 Data-DI 合作的 AI 落地變革案例 | 2 | 2026-07-09 |
 | `[[多專案文件管理與 Git 子模組規範]]` | 基於 Git Submodule 機制管理多專案共通規範，實施專案首頁導覽分流、防呆命名與相對路徑跳脫防斷鏈實務 | 1 | 2026-07-09 |
 | `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份 | 13 | 2026-08-07 |
@@ -48,7 +48,7 @@
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
 | `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制 | 5 | 2026-08-07 |
 | `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
-| `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧 | 3 | 2026-07-20 |
+| `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧，以及台電 App「住宅用電分析」AI 家電耗電推估（NILM 技術） | 4 | 2026-09-17 |
 | `[[Claude 基本功與個人 AI 工作流實戰]]` | 三師爸 Claude 基本功 EP01-EP10，包含四大操作模式、五層擴充機制、NotebookLM/GitHub/Supabase 串接與專案一桌三櫃管理，以及 Matt Pocock Skills 本地 Python 客製化評估 | 12 | 2026-07-23 |
 
 | `[[Kimi 與月之暗面 (Moonshot AI) 發展專題]]` | 月之暗面創辦人楊植麟的留美學術與回國創業背景，以及 Kimi K2/K3 大模型長文本、Agentic LLM 技術架構，與應對白宮模型蒸餾指控之探討 | 2 | 2026-08-07 |
@@ -56,10 +56,12 @@
 | `[[一沐日雲端點餐與 MCP 系統開發實務]]` | 本專案 mcp-drink-main 開發啟動說明，使用 Streamlit 前端整合 Firestore 與 MCP-Server 背景拉起機制，以及低推理溫度與歷史過濾防幻覺優化、CSS樣式修正 | 2 | 2026-08-07 |
 | `[[深度學習與大語言模型架構全景]]` | 深度學習底層優化器（SGD、Momentum、Adam、AdamW、Muon 矩陣正交優化器）運作機制與大語言模型（Encoder/Decoder/MQA）架構分類演進 | 1 | 2026-08-07 |
 | [[GitHub 開源工具與 AI Skills 入門指南]] | GitHub 6 大核心關鍵詞與 3 大挑選信號、三層開源工具推薦（免裝網頁版/一鍵安裝/進階自架）、4 大 AI Skills 入口清單與資安成本防坑指南 | 1 | 2026-08-14 |
-| [[Wordwall 與教育科技的 AI Agent 自動化實務]] | Playwright 封裝 wordwall-cli 解決無 API 平台出題痛點、Level 1-3 三級出題模式（純文字/考卷截圖/AI生圖）與學生個資去識別化原則，以及多 Agent（AntiGravity/Codex/OpenCode）段考試卷生成實戰、OMML 方程式與 Bloom 認知層次難度控制、Math Review Deck 互動複習網頁技能 | 2 | 2026-09-17 |
-| [[Google Spark 與 GAS 雲端自動化實務]] | Google Spark 雲端 24/7 常駐 Agent 與 Gemini 角色分工、Google Workspace 深度排程與試算表輪詢，及本機 Agent 搭配 clasp 部署 GAS 閉環 | 1 | 2026-08-14 |
+| [[Wordwall 與教育科技的 AI Agent 自動化實務]] | Playwright 封裝 wordwall-cli 解決無 API 平台出題痛點、Level 1-3 三級出題模式（純文字/考卷截圖/AI生圖）與學生個資去識別化原則、多 Agent（AntiGravity/Codex/OpenCode）段考試卷生成實戰、OMML 方程式與 Bloom 認知層次難度控制、Math Review Deck 互動複習網頁技能，以及「生生有 Token」教案/簡報/繪本一次生成平台 | 3 | 2026-09-17 |
+| [[Google Spark 與 GAS 雲端自動化實務]] | Google Spark 雲端 24/7 常駐 Agent 與 Gemini 角色分工、Google Workspace 深度排程與試算表輪詢、本機 Agent 搭配 clasp 部署 GAS 閉環，以及零成本 LINE AI 待辦機器人（GAS ＋ Gemini API）實戰 | 2 | 2026-09-17 |
 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] | 通義千問 Qwen 3.8-27B 越級挑戰 397B 巨獸、GGUF 量化、MInference 推理加速 (550-650 tokens/s)、llama.cpp 緩衝區優化及企業在地端部署 ROI 哲學 | 1 | 2026-08-14 |
-| [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中) | 1 | 2026-08-14 |
+| [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中)，以及零基礎四階段安裝入門實戰 | 2 | 2026-09-17 |
+| [[民生消費品實測與食安評估]] | 台灣鮮乳市場實測：脂肪標準化與 UHT 超高溫殺菌之美納反應、假小農文青包裝行銷迷思、瑞穗鮮乳與瑞穗極致殺菌工藝對比，以及選購避坑指南 | 1 | 2026-09-17 |
+| [[GCP 雲端排程與現代化數據工程實戰]] | Google Cloud Scheduler 免費額度與計費機制、Cloud Scheduler vs. Gemini Spark 分工對比、ETL 與 ELT 架構演進差異，以及 dbt + BigQuery 金牌分層架構實戰 | 1 | 2026-09-17 |
 | [[Google Flow AI短片製作實務]] | Google Flow 零門檻短片工具鏈（Gemini分鏡→Flow生畫面→MyEdit配音→Canva剪輯）、無／有指定主角二分法、每日50點與Veo模型選用 | 1 | 2026-09-16 |
 
 ---
@@ -68,7 +70,7 @@
 
 | 名稱 | 類別 | 一行總結 | 關聯頁面 |
 | :--- | :--- | :--- | :--- |
-| `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline) 及 Claude Code CLI | `[[Claude]]` |
+| `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline)、Claude Code CLI，以及文字浮水印生成內容標記機制 | `[[Claude]]` |
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
 | `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
@@ -312,8 +314,24 @@
 | SRC-232 | 2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md | 影片 / 教學 | 2026-08-14 | [[Google Spark 與 GAS 雲端自動化實務]] |
 | SRC-233 | 2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md | 評測 / 本地端 | 2026-08-14 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] |
 | SRC-234 | 2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md | 影片 / 架構 | 2026-08-14 | [[OpenCode 新版架構與模型最佳搭配指南]] |
-| SRC-235 | 2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md | 影片 / 教學 | 2026-09-16 | [[Google Flow AI短片製作實務]] |
+| SRC-235 | 2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md | 影片 / 教學 | 2026-09-16 | [[Google Flow AI短片製作實務]] |
 | SRC-236 | 2026-09-17T082024+0800-AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷.md | 影片 / 教學 | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
+| SRC-237 | 2026-08-15T082829+0800-筆記軟體推薦｜Notion、Obsidian等5款比較：AI、離線、協作怎麼選？.md | 比較 / 工具 | 2026-09-17 | [[個人知識管理系統構築]] |
+| SRC-238 | 2026-08-18T194359+0800-Claude「隱形文字浮水印」是什麼？看懂背後原理、限制和影響.md | 文件 / 合規 | 2026-09-17 | [[Claude]] |
+| SRC-239 | 2026-08-25T083056+0800-台電App用電分析怎麼看？為什麼我沒有？5步驟揪出6類家電吃電怪獸.md | 教學 / 生活科技 | 2026-09-17 | [[智慧裝置與日常應用技巧]] |
+| SRC-240 | 2026-09-02T162726+0800-LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學.md | 教學 / 自動化 | 2026-09-17 | [[Google Spark 與 GAS 雲端自動化實務]] |
+| SRC-241 | 2026-09-04T214823+0800-【SQL】 超簡易 SQLite 入門教學！SQLite 很可能是世界上最多用戶使用的 SQL 引擎？(中文字幕) (可調節速度).md | 影片 / 資料庫 | 2026-09-17 | [[前端與系統開發常用技術]] |
+| SRC-242 | 2026-09-06T131809+0800-Discord是什麼？新手怎麼用？完整教學一次看.md | 教學 / 通訊平台 | 2026-09-17 | [[前端與系統開發常用技術]] |
+| SRC-243 | 2026-09-08T100348+0800-ChatGPT指令大全！120組提示詞一次整理，LINE貼圖、簡報封面、插畫菜單全搞定.md | 提示 / 影像 | 2026-09-17 | [[ChatGPT 影像生成提示詞指南]] |
+| SRC-244 | 2026-09-09T081642+0800-實測全聯、家樂福與超商11款熱銷鮮乳：瑞穗、萬丹、義美都在列，同個代工廠換包裝貴三成？你每天在冰箱拿的那瓶很可能買錯了.md | 評測 / 食安 | 2026-09-17 | [[民生消費品實測與食安評估]] |
+| SRC-245 | 2026-09-10T101705+0800-AI改PPT教學！4段指令去掉原廠Logo與企業色，把原廠簡報套進公司模板.md | 教學 / 簡報 | 2026-09-17 | [[Claude Design 與前端美化實務]] |
+| SRC-246 | 2026-09-14T115634+0800-1小時Node快速入門 - Node教學.md | 影片 / 教學 | 2026-09-17 | [[前端與系統開發常用技術]] |
+| SRC-247 | 2026-09-14T143200+0800-2小時React快速入門 - React基礎教學.md | 影片 / 教學 | 2026-09-17 | [[前端與系統開發常用技術]] |
+| SRC-248 | 2026-09-15T140533+0800-AI簡報術最終回_這不是AI簡報教學_而是不可被取代的簡報思維.md | 影片 / 方法論 | 2026-09-17 | [[Claude Design 與前端美化實務]] |
+| SRC-249 | 2026-09-17T073243+0800-最近爆火的「桌面 AI 女友」！怎么做的？免费教程来了，手搓一个属于自己的 AI 女友！ 零度解说.md | 影片 / 本地部署 | 2026-09-17 | [[AI 語音複製與 VoxCPM2 本地部署]] |
+| SRC-250 | 2026-09-17T075738+0800-OpenCode 從零開始 一部影片一次教完 免費入門 AI Agent.md | 影片 / 教學 | 2026-09-17 | [[OpenCode 新版架構與模型最佳搭配指南]] |
+| SRC-251 | 2026-09-17T075805+0800-生生有 Token：做出一本繪本｜教案 · 簡報 · 繪本一次搞定.md | 影片 / 教育Agent | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
+| SRC-252 | GCP_AI_and_ETL_Master_Guide.md | 指南 / 數據工程 | 2026-09-17 | [[GCP 雲端排程與現代化數據工程實戰]] |
 ---
 
 > [!TIP]

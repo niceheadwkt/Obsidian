@@ -93,9 +93,20 @@ title: listenTWNews 工作筆記
 - [x] 註冊 Service Worker 並完成 PWA 安裝指南
 - [x] 新增預設廣播電台頻道：中廣新聞網、飛碟聯播網與 KISSRadio 聯播網
 - [x] 修正東森新聞台 (51台) 的預設 YouTube Video ID 與正確的 Channel ID
+- [x] 2026-09-29 訪客統計新增電信業者欄位 `asn`、`org`（commit `45c21de`，已 push）
+- [x] 2026-09-29 清空 Firestore `visitor_logs` 既有 83 筆（清空前分析：真人僅 2 台高雄裝置，其餘為美國 Santa Clara 爬蟲）
+- [x] 2026-09-29 新版上線後再次清空 6 筆，重新開始統計；清空後第一筆為 NB 桌面應用程式（09:46），爬蟲過濾未誤擋
+
+## 上次做到哪（2026-09-29）
+- 訪客統計加上爬蟲過濾 `isLikelyBot()`，Firestore 規則加上欄位白名單與型別、長度檢查（commit `a9136e8`，已部署 Vercel 與 Firestore 規則）。規則檔在專案 `firestore.rules`，改完用 `npx firebase-tools deploy --only firestore:rules` 上線。
+- 訪客統計加上電信業者欄位，程式已 commit 並 push 到 GitHub。
+- Vercel CLI 憑證失效後已重新登入（`npx vercel login`），並部署至正式環境（READY，alias `listen-twn-ews.vercel.app`）。公司網路連不到 vercel.app，需用手機網路確認正式站已載入 `app.js?v=13`。
+- 查 Firestore 的方式：`npx firebase-tools login` 登入後，用 refresh token 呼叫 Firestore REST API（安全規則禁止前端讀取，這是對的）。
+- 定位判讀：行動網路 IP（如台灣大哥大 `2402:7500::`）只能對應到電信機房，城市不可信；固定寬頻較準。
 
 ## 下一步計劃
-1. 持續追蹤其他新聞台 YouTube 嵌入是否有類似變更。
+1. 用手機網路確認正式站已載入 `app.js?v=13`，且 Firestore 新紀錄帶有 `asn`、`org` 欄位。
+2. 持續追蹤其他新聞台 YouTube 嵌入是否有類似變更。
 2. 串接與測試安童哥語音複製伺服器 (`voxcpm2-voice-cloner`) 的 `custom` 模式。
 
 ---

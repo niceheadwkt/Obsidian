@@ -8,8 +8,9 @@ tags:
   - 成本優化
 sources:
   - "[[AI/raw/2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md|OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配]]"
+  - "[[AI/raw/2026-09-17T075738+0800-OpenCode 從零開始 一部影片一次教完 免費入門 AI Agent.md|OpenCode 從零開始：一部影片一次教完，免費入門 AI Agent]]"
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-09-17
 ---
 
 # OpenCode 新版架構與模型最佳搭配指南
@@ -84,8 +85,23 @@ graph TD
 
 ---
 
+## 五、零基礎入門實戰：OpenCode Desktop 一站式安裝與四階段工作流
+
+三師爸「OpenCode 從零開始」教學示範了完全免費入門 AI Agent 的完整路徑，分為四個階段：
+
+1. **安裝與啟用免費模型**：下載 OpenCode Desktop → 透過 Zen 帳號（Continue with Google）取得免費 API Key → 在「設定 → 提供者」選擇 OpenCode Zen 方案並貼上金鑰 → 在「設定 → 模型」中啟用 **Muse Spark 1.3 Free**（Meta 提供，多模態、100 萬上下文，思考強度建議開至 High）。
+2. **增強電腦內部能力**：向 Agent 說明自己的職業背景與需求，讓它主動搜尋並安裝適合的工具；文中特別推薦三項全電腦通用工具：**Edge TTS**（免 API Key 合成教學語音）、**yt-dlp**（影片下載處理，備課常用）、**FFmpeg**（影音格式處理）。
+3. **連接外部工具**：以自然語言請 Agent 決定「授權方式」（如開啟 Chrome 登入視窗保存憑證）與「連接方式」（請 Agent 自行上網搜尋當前最熱門的連接協定），示範對象為 NotebookLM，同樣方法可套用於 Gmail、Canva、Kahoot 等其他外部工具。
+4. **技能打包**：待內部工具與外部連接都就緒後，才將可重複的專業工作流打包成「技能」（本質是一份使用說明書），可請 Agent 直接教學設計、打包與優化技能的方法；忘記已裝技能時可請 Agent「列出我所有的技能」。
+
+> [!TIP]
+> Muse Spark 1.3 Free 的代價是對話紀錄會被 Meta 用於訓練下一代模型，一般課務與例行工作不涉及隱私資料即可放心使用；待確認 Agent 已上手後再考慮升級付費方案。
+
+---
+
 ## 關聯頁面
 - `[[AI 工具與框架概覽]]`
 - `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]`
 - `[[Qwen 3.8 本地模型部署與企業 ROI 實務]]`
 - `[[Claude Cowork 與 Agent Skill 實務]]`
+- `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`

@@ -8,8 +8,9 @@ tags:
   - 雲端Agent
 sources:
   - "[[AI/raw/2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md|AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配]]"
+  - "[[AI/raw/2026-09-02T162726+0800-LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學.md|LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學]]"
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-09-17
 ---
 
 # Google Spark 與 GAS 雲端自動化實務
@@ -76,6 +77,28 @@ graph TD
 1. **收集端 (GAS Web App)**：學生在線上表單填寫課堂心得或隨堂練習（僅填班級座號，保障個資）。
 2. **儲存端 (Google Sheets)**：GAS 將作答即時寫入試算表。
 3. **處理端 (Google Spark)**：Spark 雲端排程定時讀取 Sheet，自動批改、分類常犯錯誤，並產出 Google Slide 檢討簡報。
+
+---
+
+## 四、零成本實戰案例：LINE AI 待辦機器人（GAS ＋ Gemini API）
+
+不需要租伺服器，僅靠 **Google 試算表 ＋ Google Apps Script ＋ Gemini API ＋ LINE 官方帳號**四項免費／免額度服務，即可打造一個「傳一句話或截圖，AI 自動整理成待辦事項並寫入日曆」的 LINE 機器人。
+
+### 1. 架構與四步驟
+| 服務 | 系統角色 |
+| --- | --- |
+| Google 試算表 | 存放待辦事項的資料庫 |
+| Google Apps Script | 執行程式碼的環境（doPost 接收 LINE Webhook） |
+| Gemini API | 語意分析中樞，將文字/截圖判讀為 JSON（summary/category/date/time） |
+| LINE 官方帳號（Messaging API） | 前端互動介面 |
+
+流程：① 建立試算表並在 Apps Script 貼上判讀程式碼 → ② 申請 Gemini API Key、設定指令碼屬性（`GEMINI_API_KEY`、`SHEET_ID`） → ③ 透過 LINE Official Account Manager 建立官方帳號並啟用 Messaging API、取得 `LINE_CHANNEL_ACCESS_TOKEN` → ④ 部署 Apps Script 為網頁應用程式（執行身分「我」、存取權限「所有人」），將 Webhook URL 貼回 LINE 後台並關閉自動回應。
+
+### 2. 三項需知道的限制
+- **無法驗證 LINE Webhook 簽章**：Apps Script 的 `doPost(e)` 讀不到 HTTP Header 中的 `x-line-signature`，`/exec` 網址需視為密碼保管，進階可在程式中加入 `userId` 白名單。
+- **Gemini 免費層模型會被不定期調整下架**（如原本的 `gemini-2.5-flash`），系統忽然無回應時需至 AI Studio 更新模型名稱。
+- **隱私風險**：免費版 Gemini API 的請求內容可能被用於改善 Google 產品，不建議傳輸機密或敏感個資。
+- 此方案的優勢在於「資料主控權」：待辦資料存於自己的 Google 帳號，且可高度客製化輸入辨識邏輯與提醒時間，不受制於現成 LINE 待辦機器人。
 
 ---
 
