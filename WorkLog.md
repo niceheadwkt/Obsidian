@@ -1,8 +1,54 @@
 # 工作筆記
 
-**更新日期**：2026-09-29
+**更新日期**：2026-10-05
 
 ## 上次做到哪
+- **2026-10-05 新進人員教育訓練教材（三份）**：
+  - MT：[MT系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/mt/MT系統新進人員教育訓練.html)，詳見 [[AI/ERP/MT教育訓練文件_工作筆記]]。
+  - EA：[EA系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/EA系統新進人員教育訓練.html)（10/05 13:42 再修訂），詳見 [[AI/ERP/EA教育訓練文件_工作筆記]]。
+  - HG：[HG門禁管理系統_新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/hg/HG門禁管理系統_新進人員教育訓練.html)，依選單分類逐支作業說明用途、功能、管制限制與不妥之處。
+  - 三份皆未提交 CVS、未發布。
+- **ZPJJB01 10/05 登打完成**（已查 `DB.TBZP0050` 確認，合計 7.0 HR）：
+  - 001　0900–1200（3.0）115年「防禦性駕駛交通安全訓練」（原已存在）
+  - 002　1300–1600（3.0）HG：HG門禁管理系統新進人員教育訓練文件製作
+  - 003　0800–0900（1.0）MT：MT系統新進人員教育訓練文件製作
+  - 10/02 也已有兩筆（HG 教材、erp-cvs），10/02 下午 EA 教材時段未登打。
+- **HGJJB02 承攬商工作證申請作業：明細 cardOk（是否核准）判斷分析**：
+  - 結論：畫面下拉的 cardOk 會被 `hgjcb02StaffEntity.checkValidDate()` 的規則覆寫，實際由停權期間、重複發證、人事基本資料等規則決定 isOk。
+  - 產出分析文件 [[AI/ERP/HGJJB02_cardOk核准判斷分析]]（本機版放在 `hg/` 根目錄，未加入 CVS），詳見 [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]。
+  - 發現 5 個程式問題，**尚未修改**。
+- **chezmoi：停止同步 `~/.claude.json`**：
+  - 這個檔案是 Claude Code 的狀態和快取檔（內含 machineID、帳號資訊、各專案上一次對話的第一句話），多台電腦同步只會反覆出現 `MM` 衝突。
+  - 已執行 `chezmoi forget`，commit `756d7c3` 並推上遠端，`chezmoi status` 已經沒有差異。
+- **語音回覆修復**：公司網路的 SSL 檢查會讓 `edge-tts` 指令失敗，而且仍產生 0 KB 的 mp3。改用 Python 的 `truststore.inject_into_ssl()` 再呼叫 `edge_tts`；播放要用 `powershell.exe -STA`（pwsh 7 預設 MTA，MediaPlayer 抓不到長度）。
+- **ZPJJB01 每日工作記錄：登打 10/01 兩筆**（已查 `DB.TBZP0050` 確認寫入，合計 6.0 HR）：
+  - 001　0800–1200（4.0）HG：HGJJB02明細cardOk核准判斷流程分析
+  - 002　1300–1500（2.0）HG：HGJJB02 cardOk核准判斷分析文件整理
+  - 踩坑記錄：瀏覽器開了兩個 dsjjsql.jsp 分頁時，erp_web_client 會抓到沒有載入完成的那一個，回傳 `NO_SQL_FIELD`；改挑標題含「命令中心」的分頁就正常。時間格式是 `0800`，沒有冒號。
+
+## 相關筆記與腳本連結
+- [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]
+- [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
+- [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]
+- [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
+
+## 下一步
+- 教材：MT／EA／HG 三份 HTML 請檢閱，決定是否提交 CVS 或發布分享。
+- ZPJJB01：10/02 15:00 後 EA 教材時段是否補登，需確認。
+- HG：`HGJJB02` 若要修正 Entity 的問題（規則 2 錯誤訊息被蓋掉、tips 殘留），先確認需求再改 `hgjcb02StaffEntity.java`，詳見 [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]。
+- chezmoi：另一台電腦執行一次 `chezmoi update`，讓它也停止管理 `.claude.json`。
+- 安全：今天 CVS 密碼曾出現在對話中，方便時更換 CVS 密碼，之後只用 `erp-cvs setpw` 的視窗輸入。
+- ZPJJB01：九月還沒有紀錄的平日 09/01、04、07、14、16～18、25、29（09/28 教師節若放假不算），需回想後補登。
+- EA：`EAJJRE00N` 最新B表的 DAJJU1 上線申請已填好但**尚未送出**（需求單號未填），上線後到正式機匯出驗證，詳見 [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]。
+- ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
+- HG：`HGJJG01` 稽查單號 1150504015 刪除案（RQ11508035），待 ODT 申請表簽核後到正式機執行備份與刪除。
+- EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
+- SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。
+
+---
+
+## [歷史紀錄 2026-09-29] ZPJJB01 九月每日工作記錄盤點與補登
+
 - **ZPJJB01 每日工作記錄：九月紀錄盤點與補登**：
   - 用 erp-prod-web-executor 查正式機 `DB.TBZP0050`（每日工作記錄主檔，DAO：[zpjc0050DAO.java](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/src/com/icsc/zp/dao/zpjc0050DAO.java)），九月原有 11 筆、34.5 HR。
   - 對照 Obsidian 筆記找出漏填，透過已登入瀏覽器（CDP）操作 [zpjjb0101Edit.jsp](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/zp/jsp/zpjjb0101Edit.jsp) 畫面按「新增」補登 5 筆，每筆送出後都查表確認：
@@ -16,19 +62,6 @@
     - `TBZP0050` 為 Big5 編碼，`TOPIC`（工作摘要）上限 60 bytes、`MEMO`（報告內容）上限 1000 bytes；工作摘要沒有跳脫單引號（`MEMO` 有 `encodeSqlStr`），不可含 `'`。
     - 週別、星期、工時、部門代號由 controller `zpjcb01` 自動計算，畫面只需填起訖時間。
     - erp_web_client 匯出 CSV 時，報告內容含換行的欄位沒有加引號，一筆會被拆成多列（回報 27 筆，實際 11 筆），用 Excel 開 CSV 要注意。
-
-## 相關筆記與腳本連結
-- [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
-- [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]
-- [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
-
-## 下一步
-- ZPJJB01：九月還沒有紀錄的平日 09/01、04、07、14、16～18、25、29（09/28 教師節若放假不算），需回想後補登。
-- EA：`EAJJRE00N` 最新B表的 DAJJU1 上線申請已填好但**尚未送出**（需求單號未填），上線後到正式機匯出驗證，詳見 [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]。
-- ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
-- HG：`HGJJG01` 稽查單號 1150504015 刪除案（RQ11508035），待 ODT 申請表簽核後到正式機執行備份與刪除。
-- EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
-- SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。
 
 ---
 

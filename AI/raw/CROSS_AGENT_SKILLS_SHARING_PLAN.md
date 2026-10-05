@@ -4,14 +4,15 @@
 
 ## 壹、背景與核心目標
 
-目前本機環境中擁有 7 個核心自訂技能：
-1. `erp-big5`
-2. `erp-conventions`
-3. `erp-reference`
-4. `erp-prod-web-executor`
-5. `db-data-migration-and-analysis`
-6. `mermaid-syntax-guard`
-7. `sanshiba-voice`（三師爸專屬語音技能）
+> [!info] 目前狀態（2026-10-02 更新）
+> - **技能清單以中央倉庫的 `~/.agents/skills/README.md` 為準**。本文件不再列出完整清單，以免新增技能後文件跟不上。
+> - **實際採用的同步方式是途徑三（獨立 Git Repository）**，遠端為 `https://github.com/niceheadwkt/erp-skills.git`。這個 repo 含公司內部資訊，必須維持 Private。**skills 不用 chezmoi 管理**；chezmoi 只管理 `~/.claude/rules` 等全域設定。
+> - 2026-10-02 中央倉庫共有 10 個技能：`db-data-migration-and-analysis`、`erp-big5`、`erp-conventions`、`erp-cvs`、`erp-dajju1`、`erp-prod-web-executor`、`erp-reference`、`find-skills`、`mermaid-syntax-guard`、`pdf`。Claude、Codex、Antigravity、OpenCode 四個工具都已經用 Junction 連到中央倉庫。
+> - 不納入中央倉庫的技能（2026-10-02 確認）：
+>   - `sanshiba-voice`：規劃初期有列入，但目前不在中央倉庫，也不在任何工具的技能目錄，不再納入。
+>   - `finmind-agent`：只留在 `~/.codex/skills/` 作為 Codex 專用的實體資料夾，不納入中央倉庫，也不同步到其他工具或電腦。
+
+規劃初期（建立中央倉庫之前）盤點到的核心自訂技能：`erp-big5`、`erp-conventions`、`erp-reference`、`erp-prod-web-executor`、`db-data-migration-and-analysis`、`mermaid-syntax-guard`、`sanshiba-voice`（三師爸專屬語音技能）。之後新增的技能，請看中央倉庫的 README。
 
 **核心目標**：
 - **單一真相來源（Single Source of Truth, SSOT）**：全系統僅保留一套實體檔案，編輯任何一處即全數生效。
@@ -22,7 +23,7 @@
 
 ## 貳、現狀盤點與問題點分析
 
-經過對本機檔案系統的實際探測，目前存在以下五項核心問題點：
+以下是建立中央倉庫之前，檢查本機檔案系統時發現的五項核心問題。這是當時的紀錄，目前都已依本規劃解決：
 
 ### 問題點一：檔案散落與重複拷貝，版本出現落差
 - **現況**：
@@ -74,13 +75,9 @@
 flowchart TD
     subgraph Central["中央真相來源 (SSOT)"]
         CentralRepo["C:/Users/<User>/.agents/skills/
-        ├── erp-big5
-        ├── erp-conventions
-        ├── erp-reference
-        ├── erp-prod-web-executor
-        ├── db-data-migration-and-analysis
-        ├── mermaid-syntax-guard
-        ├── sanshiba-voice
+        ├── 各技能資料夾（清單見 README.md）
+        ├── _home/erp_web_client.py
+        ├── README.md
         └── setup-junctions.ps1"]
     end
 
@@ -96,7 +93,7 @@ flowchart TD
     end
 
     subgraph Remote["跨機同步管道"]
-        GitRepo["Git / chezmoi 遠端版本庫"]
+        GitRepo["GitHub Private Repo<br>niceheadwkt/erp-skills"]
     end
 
     CentralRepo -->|Junction 映射| Claude
@@ -114,7 +111,7 @@ flowchart TD
 ### 階段一：本機資料庫整併與中央目錄建立（公司 NB）
 
 1. **整合檔案至中央目錄**：
-   以目前最完整的技能目錄為基準，將 7 個技能（`erp-big5`、`erp-conventions`、`erp-reference`、`erp-prod-web-executor`、`db-data-migration-and-analysis`、`mermaid-syntax-guard`、`sanshiba-voice`）完整搬移或同步至中央庫 `C:/Users/<User>/.agents/skills/`。
+   以目前最完整的技能目錄為基準，把所有自訂技能完整搬移或同步到中央倉庫 `C:/Users/<User>/.agents/skills/`。這一步已經在公司 NB 完成，技能清單請看 README.md。
 2. **安全原則**：
    在執行任何連接點置換前，必須先確認實體檔案已 100% 複製至中央庫，嚴禁在中央庫未就緒前直接清空舊工具目錄。
 
@@ -126,62 +123,23 @@ flowchart TD
 > **PowerShell 5.1 編碼關鍵避坑點（UTF-8 with BOM）**：
 > Windows 預設的 Windows PowerShell 5.1 在使用 `-File` 參數執行腳本時，若腳本包含中文字元（如提示字元或註解），**必須採用 UTF-8 with BOM 格式儲存**。若儲存為 UTF-8 without BOM，PowerShell 5.1 會以系統預設 ANSI 字碼頁解析，導致中文字串引號截斷並拋出 `TerminatorExpectedAtEndOfString` 語法錯誤中斷。
 
-在中央庫 `C:/Users/<User>/.agents/skills/setup-junctions.ps1` 建立腳本，以動態取得當前使用者家目錄，具備跨電腦相容性：
+**腳本以中央倉庫內的 `~/.agents/skills/setup-junctions.ps1` 為準**，本文件不再內嵌完整程式碼，以免兩邊版本不一致。（2026-10-02 曾發現文件內嵌版、冷啟動腳本內嵌版、repo 版三份內容都不一樣）
 
+目前版本的行為：
+1. 確保四個工具的技能目錄都存在：`.gemini\config\skills`、`.claude\skills`、`.codex\skills`、`.config\opencode\skills`。
+2. **只有含 `SKILL.md` 的資料夾才算技能**。`_home`、`.` 或 `_` 開頭、名稱含 `backup` 的資料夾都會排除。
+3. 工具目錄裡已經有同名的 Junction，而且指向正確時，直接跳過，所以重複執行不會有影響。
+4. 工具目錄裡有同名的**實體資料夾**時，會先搬到 `~/.agents/skills-backup/<工具>/<技能>-<時間>` 保存，再建立 Junction，不會直接刪除。
+5. 不會清除已從中央倉庫移除的技能所留下的舊 Junction，需要手動刪除。
+
+**在 PowerShell 中寫出 UTF-8 with BOM 腳本的標準語法**：
 ```powershell
-# setup-junctions.ps1
-# 功能：自動將 ~/.agents/skills 下的所有技能以 Junction 連結至各大 Agent 工具目錄
-# 注意：此檔案必須儲存為 UTF-8 with BOM 格式
-$ErrorActionPreference = "Stop"
-
-$userHome   = [Environment]::GetFolderPath("UserProfile")
-$ssotPath   = Join-Path $userHome ".agents\skills"
-$clientDirs = @(
-    (Join-Path $userHome ".gemini\config\skills"),
-    (Join-Path $userHome ".claude\skills"),
-    (Join-Path $userHome ".codex\skills"),
-    (Join-Path $userHome ".config\opencode\skills")
-)
-
-# 確保所有工具技能目標資料夾存在
-foreach ($dir in $clientDirs) {
-    if (!(Test-Path $dir)) {
-        New-Item -ItemType Directory -Path $dir -Force | Out-Null
-    }
-}
-
-# 抓取中央目錄中所有的技能資料夾（排除以 . 開頭的檔案與隱藏夾）
-$skills = Get-ChildItem -Path $ssotPath -Directory | Where-Object { $_.Name -notmatch "^\." }
-
-foreach ($s in $skills) {
-    $skillName = $s.Name
-    $sourceDir = $s.FullName
-
-    foreach ($clientDir in $clientDirs) {
-        $destDir = Join-Path $clientDir $skillName
-
-        if (Test-Path $destDir) {
-            $item = Get-Item $destDir
-            if ($item.LinkType -eq "Junction") {
-                [System.IO.Directory]::Delete($destDir)
-            } else {
-                Remove-Item -Path $destDir -Recurse -Force
-            }
-        }
-
-        New-Item -ItemType Junction -Path $destDir -Target $sourceDir | Out-Null
-        Write-Host "已建立 Junction: $skillName -> $clientDir" -ForegroundColor Green
-    }
-}
-
-Write-Host "`n所有 Agent 技能已成功關聯至中央庫！" -ForegroundColor Cyan
-```
-
-**在 PowerShell 中產生具備 UTF-8 BOM 之腳本標準語法**：
-```powershell
-# 使用 .NET 內建 StreamWriter 輸出 UTF-8 with BOM
-$scriptPath = "$HOME\.agents\skills\setup-junctions.ps1"
+# [System.Text.Encoding]::UTF8 會寫入 BOM
 [System.IO.File]::WriteAllText($scriptPath, $scriptContent, [System.Text.Encoding]::UTF8)
+```
+檢查 Windows PowerShell 5.1 能否正確解析（錯誤數應為 0）：
+```powershell
+powershell -NoProfile -Command "$e=$null; [void][System.Management.Automation.Language.Parser]::ParseFile('$HOME\.agents\skills\setup-junctions.ps1',[ref]$null,[ref]$e); $e.Count"
 ```
 
 ### 階段三：第二台電腦／新筆電（家裡 NB / 下一台新機）冷啟動與同步步驟
@@ -192,95 +150,33 @@ $scriptPath = "$HOME\.agents\skills\setup-junctions.ps1"
 > `-File 參數的 'C:\Users\<user>\.agents\skills\setup-junctions.ps1' 引數不存在。`
 > 這是因為新電腦尚未建立 `~/.agents/skills/` 目錄，也沒有落地實體腳本。新機部署請嚴格依循以下三種途徑之一進行冷啟動。
 
-#### 途徑一：新機一鍵冷啟動萬能腳本（Zero-to-Hero Bootstrap，最推薦）
-本腳本已實體化並存放於 [AI/scripts/bootstrap-skills.ps1](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/scripts/bootstrap-skills.ps1)，隨 Google Drive 串流同步。
+#### 途徑一：新機一鍵冷啟動腳本（Bootstrap，建議）
+腳本放在 [AI/scripts/bootstrap-skills.ps1](file:///G:/我的雲端硬碟/Obsidian/AI/scripts/bootstrap-skills.ps1)，是冷啟動的入口。**技能本身不經過 Google Drive**，一律由 GitHub 取得，符合拓撲架構圖。
 
-**新機執行方式（二選一）**：
-1. **直接執行雲端實體腳本（最快）**：
-   新機登入 Google Drive 後，在 PowerShell 直接貼上執行：
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File "$HOME\我的雲端硬碟\Obsidian\AI\scripts\bootstrap-skills.ps1"
-   ```
-2. **複製貼上內嵌代碼（免檔案前置）**：
-   若尚未掛載雲端硬碟，直接複製貼上以下完整腳本代碼至 PowerShell 執行：
+> [!warning] 雲端硬碟路徑
+> Google Drive 一律使用串流模式，唯一正確的路徑是 `G:/我的雲端硬碟/`。舊的 `C:/Users/<User>/我的雲端硬碟/`（雙向同步模式）已經停用，不可讀寫。
 
+**前置條件**：已安裝 Git for Windows，並能存取 Private Repo `niceheadwkt/erp-skills`。
+
+**執行方式**：
 ```powershell
-# === 新機一鍵冷啟動萬能腳本 ===
-$ErrorActionPreference = "Stop"
-$userHome = [Environment]::GetFolderPath("UserProfile")
-$ssot     = Join-Path $userHome ".agents\skills"
-
-# 1. 建立中央庫
-if (!(Test-Path $ssot)) { New-Item -ItemType Directory -Path $ssot -Force | Out-Null }
-
-# 2. 安全掃描並遷移現有目錄實體技能（防止既有資料夾被 Junction 覆蓋刪除）
-$existingSources = @(
-    (Join-Path $userHome ".gemini\config\skills"),
-    (Join-Path $userHome "我的雲端硬碟\claude_erp_rule\chs-erp\skills")
-)
-foreach ($src in $existingSources) {
-    if (Test-Path $src) {
-        Get-ChildItem -Path $src -Directory | Where-Object { $_.Name -ne ".system" -and $_.LinkType -ne "Junction" } | ForEach-Object {
-            $dest = Join-Path $ssot $_.Name
-            if (!(Test-Path $dest)) {
-                Copy-Item -Path $_.FullName -Destination $dest -Recurse -Force
-                Write-Host "已遷移實體技能至中央庫: $($_.Name)" -ForegroundColor Yellow
-            }
-        }
-    }
-}
-
-# 3. 寫入具備 UTF-8 BOM 之 setup-junctions.ps1
-$scriptContent = @'
-$ErrorActionPreference = "Stop"
-$userHome   = [Environment]::GetFolderPath("UserProfile")
-$ssotPath   = Join-Path $userHome ".agents\skills"
-$clientDirs = @(
-    (Join-Path $userHome ".gemini\config\skills"),
-    (Join-Path $userHome ".claude\skills"),
-    (Join-Path $userHome ".codex\skills"),
-    (Join-Path $userHome ".config\opencode\skills")
-)
-
-foreach ($dir in $clientDirs) {
-    if (!(Test-Path $dir)) {
-        New-Item -ItemType Directory -Path $dir -Force | Out-Null
-    }
-}
-
-$skills = Get-ChildItem -Path $ssotPath -Directory | Where-Object { $_.Name -notmatch "^\." }
-
-foreach ($s in $skills) {
-    $skillName = $s.Name
-    $sourceDir = $s.FullName
-
-    foreach ($clientDir in $clientDirs) {
-        $destDir = Join-Path $clientDir $skillName
-
-        if (Test-Path $destDir) {
-            $item = Get-Item $destDir
-            if ($item.LinkType -eq "Junction") {
-                [System.IO.Directory]::Delete($destDir)
-            } else {
-                Remove-Item -Path $destDir -Recurse -Force
-            }
-        }
-
-        New-Item -ItemType Junction -Path $destDir -Target $sourceDir | Out-Null
-        Write-Host "已建立 Junction: $skillName -> $clientDir" -ForegroundColor Green
-    }
-}
-Write-Host "`n所有 Agent 技能已成功關聯至中央庫！" -ForegroundColor Cyan
-'@
-
-$ps1Path = Join-Path $ssot "setup-junctions.ps1"
-[System.IO.File]::WriteAllText($ps1Path, $scriptContent, [System.Text.Encoding]::UTF8)
-
-# 4. 執行連接點建立
-powershell -ExecutionPolicy Bypass -File $ps1Path
+powershell -ExecutionPolicy Bypass -File "G:\我的雲端硬碟\Obsidian\AI\scripts\bootstrap-skills.ps1"
 ```
 
-#### 途徑二：使用 `chezmoi` 同步（與收工流程一致）
+**腳本流程**（2026-10-02 改版）：
+1. **取得中央倉庫**：`~/.agents/skills` 還不是 Git 倉庫時，執行 `git clone` 取得。如果目錄已經存在、不是空的、又不是 Git 倉庫，腳本會停止，避免覆蓋。
+2. **搬移既有實體技能**：掃描四個工具目錄（`.gemini`、`.claude`、`.codex`、`.config\opencode`）中，含有 `SKILL.md` 的實體資料夾。中央倉庫沒有同名技能的才搬進去；同名的以 repo 版本為準。腳本內的 `$excludeSkills` 清單（目前只有 `finmind-agent`）不會被搬移。搬進來的技能還沒進 Git，腳本最後會提醒你 commit。
+3. **複製 `_home` 檔案**：把 `_home\erp_web_client.py` 等檔案複製到家目錄。家目錄已有不同版本時不覆蓋，只顯示提醒。
+4. **建立 Junction**：執行 **repo 內的** `setup-junctions.ps1`。冷啟動腳本不再內嵌、也不再覆寫這支腳本。
+
+> [!note] 沒有 Google Drive 的新電腦
+> 直接照途徑三手動操作即可：`git clone` 後執行 `setup-junctions.ps1`，再複製 `_home` 檔案。效果和冷啟動腳本相同。
+
+#### 途徑二：使用 `chezmoi` 同步（未採用）
+
+> [!caution] 未採用
+> 實際採用的是途徑三。skill 不要用 `chezmoi add` 納入管理，否則同一份技能會在 chezmoi 和 Git repo 各存一份，違反單一真相來源的原則。以下內容僅保留作為參考。
+
 1. **公司 NB（首次發布）**：
    ```powershell
    chezmoi add ~/.agents/skills
@@ -294,9 +190,9 @@ powershell -ExecutionPolicy Bypass -File $ps1Path
    powershell -ExecutionPolicy Bypass -File "$HOME\.agents\skills\setup-junctions.ps1"
    ```
 
-#### 途徑三：使用獨立 Git Repository 同步
+#### 途徑三：使用獨立 Git Repository 同步（目前採用）
 1. **公司 NB（首次發布）**：
-   在 `~/.agents/skills/` 初始化 Git 倉庫並推送到遠端 Private Repo。
+   在 `~/.agents/skills/` 初始化 Git 倉庫，推送到遠端 Private Repo `https://github.com/niceheadwkt/erp-skills.git`。這一步已經完成。
 2. **新筆電／家裡 NB（首次同步）**：
    ```powershell
    # 1. 複製技能庫至本機（確保資料夾落地）
@@ -304,9 +200,16 @@ powershell -ExecutionPolicy Bypass -File $ps1Path
 
    # 2. 執行關聯腳本
    powershell -ExecutionPolicy Bypass -File "$HOME\.agents\skills\setup-junctions.ps1"
+
+   # 3. 把 erp-prod-web-executor 使用的用戶端程式複製到家目錄
+   Copy-Item "$HOME\.agents\skills\_home\erp_web_client.py" "$HOME\"
    ```
+   CVS 密碼不在 repo 內（`.gitignore` 已排除 `*.dpapi`）。第一次使用 `erp-cvs` 時，會跳出 `setpw` 視窗重新設定。
 3. **日常更新**：
-   未來若在公司修改了技能，家裡電腦只需進入 `~/.agents/skills` 執行 `git pull`，所有四大工具之 CLI 與 IDE 即刻全數生效，**無需再次執行腳本**。
+   - 修改技能後：在 `~/.agents/skills` 執行 `git add -A`、`git commit`、`git push`。收工時如果有修改技能，就在這裡提交。
+   - 另一台電腦：執行 `git pull`，四個工具的 CLI 與 IDE 會馬上生效。只有在新增技能時，才需要再執行一次 `setup-junctions.ps1`。
+   - 修改 `_home\erp_web_client.py` 後，記得同步到 `%USERPROFILE%\erp_web_client.py`。
+   - 新增或移除技能時，同時更新 README.md 的技能清單。
 
 ---
 
@@ -320,14 +223,14 @@ powershell -ExecutionPolicy Bypass -File $ps1Path
   Get-Item ~/.claude/skills/* | Select-Object Name, LinkType, Target | Format-Table -AutoSize
   ```
 - [ ] **2. Antigravity CLI / IDE 驗證**：
-  確認 `~/.gemini/config/skills` 7 個技能均為 `Junction`，且每個技能底層包含有效的 `SKILL.md`。
+  確認 `~/.gemini/config/skills` 中，README.md 所列的每個技能都是 `Junction`，而且每個技能底下都有有效的 `SKILL.md`。
 - [ ] **3. Claude Code 動態實測驗證**：
   在終端執行無提示靜態查詢，確認 Claude 穿透 Junction 成功列出自訂技能：
   ```powershell
   "" | claude -p "你有什麼自訂 skills 可以使用？請只簡要列出名稱"
   ```
 - [ ] **4. Codex 桌面版／外掛驗證**：
-  確認 `~/.codex/skills` 內除了內建 `.system` 外，已補齊 7 個自訂技能的 Junction。
+  確認 `~/.codex/skills` 中，除了內建的 `.system`，README.md 所列的自訂技能都已經建立 Junction。`finmind-agent` 是 Codex 專用的實體資料夾，刻意不納入中央倉庫。
 - [ ] **5. OpenCode CLI 動態實測驗證**：
   執行 OpenCode 專屬技能除錯指令：
   ```powershell
@@ -342,8 +245,8 @@ powershell -ExecutionPolicy Bypass -File $ps1Path
 
 ### 一、日常維護規範
 1. **日常修改技能**：直接在任何 IDE 或文字編輯器中修改技能（無論從中央庫還是從四大工具的 Junction 資料夾打開，底層均為同一份檔案），存檔即全域生效。
-2. **新增技能**：在 `~/.agents/skills/` 建立新技能資料夾並寫入 `SKILL.md`，完成後重新執行一次 `setup-junctions.ps1` 即可分發至所有工具。
-3. **刪除技能**：直接在 `~/.agents/skills/` 刪除該資料夾，並重新執行 `setup-junctions.ps1` 自動清除無效 Junction。
+2. **新增技能**：在 `~/.agents/skills/` 建立新技能資料夾並寫入 `SKILL.md`，重新執行一次 `setup-junctions.ps1` 分發到所有工具，**並更新 README.md 的技能清單**，最後 commit 並 push。
+3. **刪除技能**：在 `~/.agents/skills/` 刪除該資料夾，從 README.md 移除這個技能，最後 commit 並 push。注意：`setup-junctions.ps1` 只會為中央倉庫現有的技能建立 Junction，**不會清除已失效的舊 Junction**，各工具目錄中殘留的同名連結要手動刪除。
 
 ### 二、實戰避坑精華（Lessons Learned）
 1. **PowerShell 5.1 編碼陷阱**：
@@ -352,3 +255,13 @@ powershell -ExecutionPolicy Bypass -File $ps1Path
    若新機器上某個 Agent（如 Antigravity）已經放了真實資料夾，腳本在建立 Junction 前會執行刪除；因此執行關聯腳本前，**務必先將既有實體複製進 `~/.agents/skills`**，不可直接執行置換。
 3. **驗證層次區分（檔案系統 vs 動態 CLI）**：
    檔案系統 Junction 建立成功僅代表「目錄管道暢通」；必須透過 `opencode debug skill` 或 `claude -p` 等指令進行動態實測，方可確認 AI 模型在對話期已順利掛載技能。
+
+---
+
+## 柒、更新紀錄
+| 日期 | 內容 |
+|---|---|
+| 2026-10-02 | 冷啟動腳本改版：改成先 `git clone`，再執行 repo 內的 `setup-junctions.ps1`，不再內嵌和覆寫它；只搬移含 `SKILL.md` 的實體技能；新增複製 `_home` 檔案。repo 版 `setup-junctions.ps1` 補上 BOM（原本沒有 BOM，在 PowerShell 5.1 解析會出現 2 個語法錯誤），只把含 `SKILL.md` 的資料夾當成技能（排除 `_home`），遇到實體資料夾時改為先備份到 `~/.agents/skills-backup` 再建 Junction。本文件階段二、途徑一移除內嵌程式碼，改為說明，並指向 repo。 |
+| 2026-10-02 | 冷啟動腳本的遷移來源補上 `.config\opencode\skills`，和 setup-junctions.ps1 的四個工具目錄一致；內嵌程式碼也同步改成這四個目錄（.gemini、.claude、.codex、opencode）。 |
+| 2026-10-02 | 冷啟動腳本的「既有技能遷移來源」移除 Google Drive 的 `claude_erp_rule\chs-erp\skills`：依架構圖，技能只經由 `~/.agents/skills` 與 GitHub 同步，Google Drive 不在架構內；那裡的 erp-big5、erp-conventions、erp-reference 是舊副本，不應再被搬進中央倉庫。 |
+| 2026-10-02 | 技能清單改以中央倉庫 README.md 為準（目前 10 個），補上 erp-cvs、erp-dajju1、find-skills、pdf，並確認 sanshiba-voice、finmind-agent 不納入中央倉庫。註明實際採用途徑三（GitHub Private Repo），途徑二 chezmoi 未採用。雲端硬碟路徑改為 `G:/我的雲端硬碟/`。途徑三補上 `_home\erp_web_client.py`、CVS 密碼與日常同步規範。修正刪除技能的說明：setup-junctions.ps1 不會清除失效的 Junction。 |
