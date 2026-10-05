@@ -7,7 +7,7 @@
   - MT：[MT系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/mt/MT系統新進人員教育訓練.html)，詳見 [[AI/ERP/MT教育訓練文件_工作筆記]]。
   - EA：[EA系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/EA系統新進人員教育訓練.html)（10/05 13:42 再修訂），詳見 [[AI/ERP/EA教育訓練文件_工作筆記]]。
   - HG：[HG門禁管理系統_新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/hg/HG門禁管理系統_新進人員教育訓練.html)，依選單分類逐支作業說明用途、功能、管制限制與不妥之處。
-  - 三份皆未提交 CVS、未發布。
+  - 三份皆未發布；教材不需提交 CVS。
 - **ZPJJB01 10/05 登打完成**（已查 `DB.TBZP0050` 確認，合計 7.0 HR）：
   - 001　0900–1200（3.0）115年「防禦性駕駛交通安全訓練」（原已存在）
   - 002　1300–1600（3.0）HG：HG門禁管理系統新進人員教育訓練文件製作
@@ -33,7 +33,7 @@
 - [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
 
 ## 下一步
-- 教材：MT／EA／HG 三份 HTML 請檢閱，決定是否提交 CVS 或發布分享。
+- 教材：MT／EA／HG 三份 HTML 請檢閱，決定是否發布分享（教材不提交 CVS）。
 - HG：`HGJJB02` 若要修正 Entity 的問題（規則 2 錯誤訊息被蓋掉、tips 殘留），先確認需求再改 `hgjcb02StaffEntity.java`，詳見 [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]。
 - chezmoi：另一台電腦執行一次 `chezmoi update`，讓它也停止管理 `.claude.json`。
 - 安全：今天 CVS 密碼曾出現在對話中，方便時更換 CVS 密碼，之後只用 `erp-cvs setpw` 的視窗輸入。
