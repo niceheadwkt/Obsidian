@@ -19,6 +19,12 @@
   - 原因：「下載後不落地直接 IEX + Bypass 執行原則」是無檔案型（fileless）惡意程式手法，McAfee 行為偵測因此誤判（PSFL 推測為 PowerShell FileLess）。
   - 影響：只有自動更新失敗，`codex.exe` 未被隔離，Codex 可正常使用。
   - 處置：**不要**加入 McAfee 例外（等於放行所有 PowerShell 下載即執行的腳本）；改為手動更新 `npm install -g @openai/codex@latest`。之後再跳同名通知按「完成」即可。
+- **發現：Codex 沙盒會建立本機帳號群組並改 ACL**：清 `.git/worktrees/organize-documentation-files` 殘留目錄時，在 ACL 看到 `weng\CodexSandboxUsers`。
+  - 安裝 Codex 後多了本機群組 `CodexSandboxUsers`（描述：Codex sandbox internal group (managed)），成員為 `CodexSandboxOffline`、`CodexSandboxOnline` 兩個沙盒帳號（應由 `codex-windows-sandbox-setup.exe` 建立）。
+  - 權限只有 `ReadAndExecute`（唯讀＋執行），不能寫入或刪除。
+  - 出現位置：`~\.codex`、`~\Documents` 為直接設定；Obsidian 專案（含 `.git`、`AI`）為從上層 `我的雲端硬碟` 繼承；`~` 本身沒有。
+  - 與 worktree 刪不掉無關，真正原因是該目錄帶 `ReadOnly` 屬性（已清屬性後刪除並 `git worktree prune`）。
+  - 之後遇到奇怪的權限問題，可先檢查是否與這些沙盒群組／ACL 有關；若日後移除 Codex，需另外清除這些本機帳號、群組與 ACL。
 
 ## 先前紀錄 (2026-10-06 早)
 - **agy 配色字體太淡**：在淺藍背景上，agy 用白色顯示的工具參數，例如 `Bash(...)` 括號裡的指令，幾乎看不見。調整 `ai-cli-colors.ps1` 的 agy 調色盤：
