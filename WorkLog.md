@@ -1,8 +1,12 @@
 # 工作筆記
 
-**更新日期**：2026-10-05
+**更新日期**：2026-10-06
 
 ## 上次做到哪
+- **2026-10-06 家裡 NB 技能中央倉庫同步修復**：
+  - 原因：`~/.agents/skills` 是 09/18 複製的普通資料夾，不是 git clone，所以 10/02 之後新增的 `erp-cvs`、`erp-dajju1`、`find-skills`、`pdf` 都沒有同步過來。
+  - 已原地轉為 `niceheadwkt/erp-skills` 的 git checkout，重跑 `setup-junctions.ps1`，四個工具都已載入 11 個技能；`~/erp_web_client.py` 同步為 repo 版；`sanshiba-voice` 加入本機 `.git/info/exclude`。
+  - 刪除 Google Drive 上的技能散落副本（根目錄四個與 `claude_erp_rule`），細節見 [[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN]]。
 - **2026-10-05 新進人員教育訓練教材（三份）**：
   - MT：[MT系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/mt/MT系統新進人員教育訓練.html)，詳見 [[AI/ERP/MT教育訓練文件_工作筆記]]。
   - EA：[EA系統新進人員教育訓練.html](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/EA系統新進人員教育訓練.html)（10/05 13:42 再修訂），詳見 [[AI/ERP/EA教育訓練文件_工作筆記]]。
@@ -34,6 +38,7 @@
 - [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
 
 ## 下一步
+- 技能：家裡 NB 第一次用 `erp-cvs` 時要用 `setpw` 視窗設定 CVS 密碼；確認沒問題後可刪除 `~/.agents/skills.bak-20261006`。
 - 教材：MT／EA／HG 三份 HTML 請檢閱，決定是否發布分享（教材不提交 CVS）。
 - HG：`HGJJB02` 若要修正 Entity 的問題（規則 2 錯誤訊息被蓋掉、tips 殘留），先確認需求再改 `hgjcb02StaffEntity.java`，詳見 [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]。
 - chezmoi：另一台電腦執行一次 `chezmoi update`，讓它也停止管理 `.claude.json`。

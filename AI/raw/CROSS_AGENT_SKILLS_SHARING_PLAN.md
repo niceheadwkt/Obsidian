@@ -4,12 +4,14 @@
 
 ## 壹、背景與核心目標
 
-> [!info] 目前狀態（2026-10-02 更新）
+> [!info] 目前狀態（2026-10-06 更新）
 > - **技能清單以中央倉庫的 `~/.agents/skills/README.md` 為準**。本文件不再列出完整清單，以免新增技能後文件跟不上。
 > - **實際採用的同步方式是途徑三（獨立 Git Repository）**，遠端為 `https://github.com/niceheadwkt/erp-skills.git`。這個 repo 含公司內部資訊，必須維持 Private。**skills 不用 chezmoi 管理**；chezmoi 只管理 `~/.claude/rules` 等全域設定。
 > - 2026-10-02 中央倉庫共有 10 個技能：`db-data-migration-and-analysis`、`erp-big5`、`erp-conventions`、`erp-cvs`、`erp-dajju1`、`erp-prod-web-executor`、`erp-reference`、`find-skills`、`mermaid-syntax-guard`、`pdf`。Claude、Codex、Antigravity、OpenCode 四個工具都已經用 Junction 連到中央倉庫。
 > - 不納入中央倉庫的技能（2026-10-02 確認）：
->   - `sanshiba-voice`：規劃初期有列入，但目前不在中央倉庫，也不在任何工具的技能目錄，不再納入。
+>   - `sanshiba-voice`：規劃初期有列入，不納入 repo。家裡 NB（weng）的 `~/.agents/skills/sanshiba-voice` 仍保留實體資料夾，以 `.git/info/exclude` 排除（只在本機生效），四個工具仍透過 Junction 使用；公司 NB 沒有這個技能。
+> - 2026-10-06 家裡 NB（weng）的 `~/.agents/skills` 原本是 09/18 複製的普通資料夾（不是 git clone），缺少 `erp-cvs`、`erp-dajju1`、`find-skills`、`pdf`。已原地轉為 repo 的 git checkout（同步到 `148b2fc`），重跑 `setup-junctions.ps1`，舊版備份在 `~/.agents/skills.bak-20261006`。
+> - 2026-10-06 已刪除 Google Drive 上的技能散落副本（根目錄的 `db-data-migration-and-analysis`、`erp-cvs`、`erp-prod-web-executor`、`mermaid-syntax-guard`，以及整個 `claude_erp_rule`）。團隊安裝包以 fileserver 上的 `claude_erp_rule` 為準，Google Drive 不再放任何技能。
 >   - `finmind-agent`：只留在 `~/.codex/skills/` 作為 Codex 專用的實體資料夾，不納入中央倉庫，也不同步到其他工具或電腦。
 
 規劃初期（建立中央倉庫之前）盤點到的核心自訂技能：`erp-big5`、`erp-conventions`、`erp-reference`、`erp-prod-web-executor`、`db-data-migration-and-analysis`、`mermaid-syntax-guard`、`sanshiba-voice`（三師爸專屬語音技能）。之後新增的技能，請看中央倉庫的 README。
@@ -261,6 +263,7 @@ powershell -ExecutionPolicy Bypass -File "G:\我的雲端硬碟\Obsidian\AI\scri
 ## 柒、更新紀錄
 | 日期 | 內容 |
 |---|---|
+| 2026-10-06 | 家裡 NB 的 `~/.agents/skills` 轉為 git checkout（資料夾被占用無法改名，改用複製 `.git` 加上 `git reset --hard origin/HEAD` 原地轉換），補齊 `erp-cvs`、`erp-dajju1`、`find-skills`、`pdf` 的 Junction；`_home/erp_web_client.py` 同步到 `~/erp_web_client.py`（新版依序嘗試 `[::1]`、`localhost`、`127.0.0.1`）。`sanshiba-voice` 加入本機 `.git/info/exclude`。刪除 Google Drive 根目錄四個技能副本與 `claude_erp_rule`（逐檔比對過，皆為 repo 舊版或相同內容）。 |
 | 2026-10-02 | 冷啟動腳本改版：改成先 `git clone`，再執行 repo 內的 `setup-junctions.ps1`，不再內嵌和覆寫它；只搬移含 `SKILL.md` 的實體技能；新增複製 `_home` 檔案。repo 版 `setup-junctions.ps1` 補上 BOM（原本沒有 BOM，在 PowerShell 5.1 解析會出現 2 個語法錯誤），只把含 `SKILL.md` 的資料夾當成技能（排除 `_home`），遇到實體資料夾時改為先備份到 `~/.agents/skills-backup` 再建 Junction。本文件階段二、途徑一移除內嵌程式碼，改為說明，並指向 repo。 |
 | 2026-10-02 | 冷啟動腳本的遷移來源補上 `.config\opencode\skills`，和 setup-junctions.ps1 的四個工具目錄一致；內嵌程式碼也同步改成這四個目錄（.gemini、.claude、.codex、opencode）。 |
 | 2026-10-02 | 冷啟動腳本的「既有技能遷移來源」移除 Google Drive 的 `claude_erp_rule\chs-erp\skills`：依架構圖，技能只經由 `~/.agents/skills` 與 GitHub 同步，Google Drive 不在架構內；那裡的 erp-big5、erp-conventions、erp-reference 是舊副本，不應再被搬進中央倉庫。 |
