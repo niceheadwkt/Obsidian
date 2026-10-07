@@ -36,7 +36,7 @@
 | `[[Antigravity 與 Remotion 影片生成實務]]` | 「影片即程式碼」影片工程實務，比較畫家模式與工程師模式，解構 4 大應用場景與限制、3 大質感提升秘訣與自動化影片生產線實操 | 1 | 2026-07-09 |
 | `[[Claude 辦公自動化 (Excel & Word)]]` | Microsoft Excel 與 Word 的官方增益集深度整合，包含 DCF 模型、自動偵錯與修訂追蹤等多項辦公自動化實務 | 2 | 2026-07-09 |
 | `[[AI 時代的 Agent 術語與核心概念]]` | 以「公司部門與人員架構」的現實生活比喻，系統化解讀大語言模型 (LLM)、API、MCP、RAG 等 16 個核心技術術語 | 1 | 2026-07-09 |
-| `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢 | 1 | 2026-07-09 |
+| `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢，並補充 a16z 第七版榜單之流量與付費數據 | 2 | 2026-10-07 |
 | `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-07-09 |
 | `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-07-09 |
 | `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` | 解構生成式 AI 與 AI Agent 根本差異、初始化 Git 與 .gitignore 設定、全域與專案記憶 (.md)，權限管理 (1-5 級/Bypass 模式)、Token 節約經濟學，以及 Google AntiGravity 2.0 一鍵安裝、Gems 轉 Skills，與備課及 GAS 開發實戰 | 10 | 2026-07-20 |
@@ -46,7 +46,7 @@
 | `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份 | 13 | 2026-08-07 |
 | `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
-| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制 | 5 | 2026-08-07 |
+| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成） | 6 | 2026-10-07 |
 | `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
 | `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧，以及台電 App「住宅用電分析」AI 家電耗電推估（NILM 技術） | 4 | 2026-09-17 |
 | `[[Claude 基本功與個人 AI 工作流實戰]]` | 三師爸 Claude 基本功 EP01-EP10，包含四大操作模式、五層擴充機制、NotebookLM/GitHub/Supabase 串接與專案一桌三櫃管理，以及 Matt Pocock Skills 本地 Python 客製化評估 | 12 | 2026-07-23 |
@@ -58,6 +58,7 @@
 | [[GitHub 開源工具與 AI Skills 入門指南]] | GitHub 6 大核心關鍵詞與 3 大挑選信號、三層開源工具推薦（免裝網頁版/一鍵安裝/進階自架）、4 大 AI Skills 入口清單與資安成本防坑指南 | 1 | 2026-08-14 |
 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] | Playwright 封裝 wordwall-cli 解決無 API 平台出題痛點、Level 1-3 三級出題模式（純文字/考卷截圖/AI生圖）與學生個資去識別化原則、多 Agent（AntiGravity/Codex/OpenCode）段考試卷生成實戰、OMML 方程式與 Bloom 認知層次難度控制、Math Review Deck 互動複習網頁技能，以及「生生有 Token」教案/簡報/繪本一次生成平台 | 3 | 2026-09-17 |
 | [[Google Spark 與 GAS 雲端自動化實務]] | Google Spark 雲端 24/7 常駐 Agent 與 Gemini 角色分工、Google Workspace 深度排程與試算表輪詢、本機 Agent 搭配 clasp 部署 GAS 閉環，以及零成本 LINE AI 待辦機器人（GAS ＋ Gemini API）實戰 | 2 | 2026-09-17 |
+| [[a16z 第七版生成式 AI 應用榜與變現趨勢]] | a16z 第 7 版 Top 100 生成式 AI 消費應用榜六大洞察：首度納入支出數據、4.5% 訂閱率與前 1% 重度用戶經濟、29 家流量榜外的隱形贏家、個人助理 Agent（Instinct 對 Muse）、訂閱轉向廣告與交易抽成、新創四大破口 | 1 | 2026-10-07 |
 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] | 通義千問 Qwen 3.8-27B 越級挑戰 397B 巨獸、GGUF 量化、MInference 推理加速 (550-650 tokens/s)、llama.cpp 緩衝區優化及企業在地端部署 ROI 哲學 | 1 | 2026-08-14 |
 | [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中)，以及零基礎四階段安裝入門實戰 | 2 | 2026-09-17 |
 | [[民生消費品實測與食安評估]] | 台灣鮮乳市場實測：脂肪標準化與 UHT 超高溫殺菌之美納反應、假小農文青包裝行銷迷思、瑞穗鮮乳與瑞穗極致殺菌工藝對比，以及選購避坑指南 | 1 | 2026-09-17 |
@@ -70,7 +71,7 @@
 
 | 名稱 | 類別 | 一行總結 | 關聯頁面 |
 | :--- | :--- | :--- | :--- |
-| `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline)、Claude Code CLI，以及文字浮水印生成內容標記機制 | `[[Claude]]` |
+| `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline)、Claude Code CLI，以及文字浮水印生成內容標記機制、a16z 第七版榜單市場地位（流量第三、不放廣告、Max 方案占比 7.3%） | `[[Claude]]` |
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
 | `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
@@ -332,6 +333,7 @@
 | SRC-250 | 2026-09-17T075738+0800-OpenCode 從零開始 一部影片一次教完 免費入門 AI Agent.md | 影片 / 教學 | 2026-09-17 | [[OpenCode 新版架構與模型最佳搭配指南]] |
 | SRC-251 | 2026-09-17T075805+0800-生生有 Token：做出一本繪本｜教案 · 簡報 · 繪本一次搞定.md | 影片 / 教育Agent | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
 | SRC-252 | GCP_AI_and_ETL_Master_Guide.md | 指南 / 數據工程 | 2026-09-17 | [[GCP 雲端排程與現代化數據工程實戰]] |
+| SRC-253 | 2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md | 報告 / 市場趨勢 | 2026-10-07 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]], [[Claude]], [[三大 AI 付費版選用與效能橫向對比]], [[生成式 AI 企業應用與成本經濟學]] |
 ---
 
 > [!TIP]

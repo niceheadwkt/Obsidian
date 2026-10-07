@@ -3,6 +3,7 @@
 **更新日期**：2026-10-07
 
 ## 上次做到哪
+- **2026-10-07 Wiki Ingest：a16z 第七版生成式 AI 應用榜**：新增 [[AI/wiki/a16z 第七版生成式 AI 應用榜與變現趨勢]]（六大洞察、4.5% 訂閱率與前 1% 重度用戶經濟、29 家隱形贏家、Agent 平台選邊、變現轉向廣告與抽成）；同步更新 `Claude`、`三大 AI 付費版選用與效能橫向對比`、`生成式 AI 企業應用與成本經濟學`，index 新增 `SRC-253`、log 追加 ingest 紀錄。原始剪藏後半段混入無關業配文（星城），未納入。
 - **2026-10-07 Wiki 健康檢查**：修正 wiki 37 處斷鏈（多為 `[[sources/…]]` 實際在 `raw/`），wiki 內已無斷鏈；raw／sources 的 179 個為剪藏作者鏈結（唯讀，不修改）。無孤立頁面，frontmatter 完整。詳見 [[AI/wiki/log]] 2026-10-07 lint 紀錄。
 - **2026-10-07 根目錄歸檔整理**：根目錄由 49 個檔案整理到剩 7 個（AGENTS／CLAUDE／README／WorkLog／package*.json／檔案清冊.base）。圖片 20 張移到 `AI/sources/images/`、PDF 2 份移到新建的 `AI/sources/assets/`；17 篇筆記依主題歸入 `AI/sources/01_AI_Tools`、`03_AI_Concepts`、`05_Tech_Development`、`06_Networking_Systems`、`07_Daily_Notes`；`chezmoi.md` 移到 `AI/`；`未命名.md` 改名為 `AI/fastmarkets-daily-v2/Fastmarkets_問題修復摘要.md`；刪除空白的 `2026-07-28.md` 與 2 個內容完全相同且無引用的重複檔。Obsidian 附件資料夾設為 `AI/sources/images`。搬移前後斷鏈數皆為 217（既有問題，搬移未新增）。
 - **2026-10-07 ZPJJB01 九月補登完成**：依 Obsidian、chezmoi、Outlook 信件、TBDW11 待辦線索，補登 09/01、04、07、14、16、17、18 共 7 筆（各 0800–1500、6.0 HR），每筆送出後查 `DB.TBZP0050` 確認。九月現為 25 筆、105.0 HR，平日全數有紀錄（09/25 中秋節、09/28 教師節放假）。另將 10/06 序號 001 的報告內容改為 HGJJB05 結案結果。

@@ -53,7 +53,7 @@
 - Claude Code 主題 `custom:solarized-light` 只管文字色，背景色由終端機決定。
 
 ## 下一步
-- chezmoi 原始碼目錄有未追蹤的 `dot_agents/skills/setup-junctions.ps1`，收工時決定是否 commit。
+- ~~chezmoi 原始碼目錄有未追蹤的 `dot_agents/skills/setup-junctions.ps1`~~ → ✅ 已於 dotfiles commit `40b7e1b` 停止以 chezmoi 管理，改由 erp-skills repo 管理（2026-10-07 收工確認 chezmoi 工作區乾淨）。
 - ~~`weng` 的 Google Drive 模式需確認~~ → ✅ 已確認 `weng` 為**鏡像（雙向同步）模式**（`G:\` 只有指向 C 槽的 `我的雲端硬碟.lnk`，DriveFS 的 `mirror_sqlite.db` 持續寫入），決定維持現狀。全域規範三份模板（Claude／Codex／Gemini）改用 chezmoi `{{ if eq .chezmoi.hostname "weng" }}` 依電腦區分路徑，dotfiles commit `f52ba16`。
   - 踩坑：部署出去的規範檔是 CRLF，模板用 `{{- ... }}` 會吃掉前一行的換行而改到無關行，要改用 `{{ ... -}}`。
 - 其他電腦若「文件」也被 OneDrive 重新導向，比照 `weng` 的作法處理 `$PROFILE`。
