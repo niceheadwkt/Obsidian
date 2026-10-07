@@ -3,6 +3,7 @@
 **更新日期**：2026-10-07
 
 ## 上次做到哪
+- **2026-10-07 根目錄歸檔整理**：根目錄由 49 個檔案整理到剩 7 個（AGENTS／CLAUDE／README／WorkLog／package*.json／檔案清冊.base）。圖片 20 張移到 `AI/sources/images/`、PDF 2 份移到新建的 `AI/sources/assets/`；17 篇筆記依主題歸入 `AI/sources/01_AI_Tools`、`03_AI_Concepts`、`05_Tech_Development`、`06_Networking_Systems`、`07_Daily_Notes`；`chezmoi.md` 移到 `AI/`；`未命名.md` 改名為 `AI/fastmarkets-daily-v2/Fastmarkets_問題修復摘要.md`；刪除空白的 `2026-07-28.md` 與 2 個內容完全相同且無引用的重複檔。Obsidian 附件資料夾設為 `AI/sources/images`。搬移前後斷鏈數皆為 217（既有問題，搬移未新增）。
 - **2026-10-07 ZPJJB01 九月補登完成**：依 Obsidian、chezmoi、Outlook 信件、TBDW11 待辦線索，補登 09/01、04、07、14、16、17、18 共 7 筆（各 0800–1500、6.0 HR），每筆送出後查 `DB.TBZP0050` 確認。九月現為 25 筆、105.0 HR，平日全數有紀錄（09/25 中秋節、09/28 教師節放假）。另將 10/06 序號 001 的報告內容改為 HGJJB05 結案結果。
 - **ZPJJB01 10/07 登打完成**（已查 `DB.TBZP0050` 確認）：001　0800–0900（1.0）ZP：ZPJJB01九月工作記錄補登及待辦事項盤點結案。10/06 維持只有 001（2.0 HR），其餘時段不補登。
 - **2026-10-07 待辦盤點結案**：EAJJRE00N（已上線，無需求單）、HGJJG01 刪除案（使用者已刪除）、ZP 正式機測試資料（交由 26622 自行處理）、HGJJB02（移交 27159 劉明峰）、MT／EA／HG 教材（不發布）、EAJJLICENSEBAT 手冊（已 Email 給 M9）、SogaType（結案；NoType 列為構想）、環境整理（公司電腦 ADM-189 已 `chezmoi update` 拉下 3 個 commit 並套用）。
@@ -44,6 +45,7 @@
 - 目前沒有待辦。
 
 ## 以後的構想（不列入待辦）
+- Wiki 斷鏈：全庫既有 217 個 `[[…]]` 斷鏈（不含 wiki_backup），可找時間跑一次 Lint 修正。另 `AI/raw/chezmoi.md`（7/21 舊版）與 `AI/chezmoi.md` 同名。
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
 - NoType：依 [[AI/raw/NoType 專案深度分析與演進建議書]] 的三階段藍圖（台灣詞庫、情境感知、記憶體直傳／UIPI），有空再評估是否實作。SogaType 已於 2026-10-07 結案（四個踩坑皆已排除）。
 ---

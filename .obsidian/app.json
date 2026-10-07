@@ -1,5 +1,6 @@
 {
   "showLineNumber": true,
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "AI/sources/images"
 }
