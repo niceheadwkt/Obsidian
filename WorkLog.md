@@ -1,8 +1,11 @@
 # 工作筆記
 
-**更新日期**：2026-10-06
+**更新日期**：2026-10-07
 
 ## 上次做到哪
+- **2026-10-07 ZPJJB01 九月補登完成**：依 Obsidian、chezmoi、Outlook 信件、TBDW11 待辦線索，補登 09/01、04、07、14、16、17、18 共 7 筆（各 0800–1500、6.0 HR），每筆送出後查 `DB.TBZP0050` 確認。九月現為 25 筆、105.0 HR，平日全數有紀錄（09/25 中秋節、09/28 教師節放假）。另將 10/06 序號 001 的報告內容改為 HGJJB05 結案結果。
+- **ZPJJB01 10/07 登打完成**（已查 `DB.TBZP0050` 確認）：001　0800–0900（1.0）ZP：ZPJJB01九月工作記錄補登及待辦事項盤點結案。10/06 維持只有 001（2.0 HR），其餘時段不補登。
+- **2026-10-07 待辦盤點結案**：EAJJRE00N（已上線，無需求單）、HGJJG01 刪除案（使用者已刪除）、ZP 正式機測試資料（交由 26622 自行處理）、HGJJB02（移交 27159 劉明峰）、MT／EA／HG 教材（不發布）、EAJJLICENSEBAT 手冊（已 Email 給 M9）、SogaType（結案；NoType 列為構想）、環境整理（公司電腦 ADM-189 已 `chezmoi update` 拉下 3 個 commit 並套用）。
 - **2026-10-06 家裡 NB 技能中央倉庫同步修復**：
   - 原因：`~/.agents/skills` 是 09/18 複製的普通資料夾，不是 git clone，所以 10/02 之後新增的 `erp-cvs`、`erp-dajju1`、`find-skills`、`pdf` 都沒有同步過來。
   - 已原地轉為 `niceheadwkt/erp-skills` 的 git checkout，重跑 `setup-junctions.ps1`，四個工具都已載入 11 個技能；`~/erp_web_client.py` 同步為 repo 版；`sanshiba-voice` 加入本機 `.git/info/exclude`。
@@ -38,18 +41,11 @@
 - [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
 
 ## 下一步
-- 技能：家裡 NB 第一次用 `erp-cvs` 時要用 `setpw` 視窗設定 CVS 密碼；確認沒問題後可刪除 `~/.agents/skills.bak-20261006`。
-- 教材：MT／EA／HG 三份 HTML 請檢閱，決定是否發布分享（教材不提交 CVS）。
-- HG：`HGJJB02` 若要修正 Entity 的問題（規則 2 錯誤訊息被蓋掉、tips 殘留），先確認需求再改 `hgjcb02StaffEntity.java`，詳見 [[AI/ERP/HGJJB02_cardOk核准判斷_工作筆記]]。
-- chezmoi：另一台電腦執行一次 `chezmoi update`，讓它也停止管理 `.claude.json`。
-- 安全：今天 CVS 密碼曾出現在對話中，方便時更換 CVS 密碼，之後只用 `erp-cvs setpw` 的視窗輸入。
-- ZPJJB01：九月還沒有紀錄的平日 09/01、04、07、14、16～18、25、29（09/28 教師節若放假不算），需回想後補登。
-- EA：`EAJJRE00N` 最新B表的 DAJJU1 上線申請已填好但**尚未送出**（需求單號未填），上線後到正式機匯出驗證，詳見 [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]。
-- ZP：正式機那 3 筆測試資料實際匯入、觸發驗證後，記得清理正式機產生的簽核單／工作通知殘留（比照測試機作法，勿用裸 SQL）。
-- HG：`HGJJG01` 稽查單號 1150504015 刪除案（RQ11508035），待 ODT 申請表簽核後到正式機執行備份與刪除。
-- EA：`EAJJLICENSEBAT` 操作手冊如需交付其他同仁，確認遮蔽後的截圖與內容是否符合需求。
-- SogaType／NoType 相關待辦沿用 [[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄]] 內容，尚未進一步跟進。
+- 目前沒有待辦。
 
+## 以後的構想（不列入待辦）
+- chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
+- NoType：依 [[AI/raw/NoType 專案深度分析與演進建議書]] 的三階段藍圖（台灣詞庫、情境感知、記憶體直傳／UIPI），有空再評估是否實作。SogaType 已於 2026-10-07 結案（四個踩坑皆已排除）。
 ---
 
 ## [歷史紀錄 2026-09-29] ZPJJB01 九月每日工作記錄盤點與補登

@@ -39,7 +39,10 @@
   - 移除 Google Drive 的 `claude_erp_rule` 遷移來源，補上 opencode。
   - 只做過語法檢查，**尚未實際執行**。
 
+- **✅ 結案（2026-10-07）**：使用者決定教材不發布、不再後續修訂，本案結案；HTML 留在本機供參考（不提交 CVS）。
+
 ## 下一步
+- 已結案，沒有待辦（以下為結案前紀錄，僅供參考）。
 1. 等劉明峰、楊硯媚回覆。
 2. 依回覆修正教材：控制主機 IP 與維護單位、排程清單（以 DF 現行設定為準）、MQ 處理步驟。
 3. ~~考慮把 erp-cvs 的 `rlog` 查詢功能正式加進 skill。~~ 已完成（2026-10-02）：`erp_cvs.py` 新增唯讀指令 `log [-n 筆數]`、`cat <檔案> -r <版次> [-o 輸出檔]`，以及結束碼 5（`NOT_FOUND`），`SKILL.md` 也補上歷史查詢流程。查詢已刪除檔案（Attic）的分支，因為 zp、ds、ea、hg 都找不到可測試的檔案，還沒有實測。備份方式：依 `CROSS_AGENT_SKILLS_SHARING_PLAN.md`，skill 的實體檔案在中央倉庫 `~/.agents/skills`（`~/.claude/skills/*` 是 Junction，連回中央倉庫），以獨立 Git repo 同步到 `github.com/niceheadwkt/erp-skills`，**不要**用 chezmoi 管理 skills。本次修改已 commit `3650bea` 並 push。

@@ -13,5 +13,7 @@
 - 執行方式：SQL 命令中心單一語句有 10 筆異動上限，改寫 Python 腳本透過既有 CDP 連線分批（≤10 筆／批）送出 SQL 完成，未走 DF 批次排程。
 - **踩坑記錄**：測試機 DF 排程實際是**每小時觸發一次**，不是只有兩次手動觸發；`TEST_APPLYEMP_NOTEXIST`／`TEST_DUP_UNIKEY`／`TEST_NO_FOLLOWUP` 這 3 筆必定失敗的測資不受「當日已執行」防重複機制擋下，每小時都會重新產生失敗通知，第一輪清理只鎖定 2 個已知時間窗因而漏掉 05:00／06:00 各 3 筆。之後用 SELECT 不限定時間窗、只用 `USERID+WORKITEMSTATE='01'` 廣查才抓到全部殘留。
 
+- **正式機測試資料（2026-10-07 查詢後結案）**：正式機仍殘留 `TBZP0053` 3 筆測試設定（`TEST_ESIGN_MULTI`／`TEST_ESIGN_TEMPLATE`／`TEST_URL_APPROVAL`，cron 限 9/23、已執行完畢，不會再產生新通知）、`tbzpESign` 3 筆 9/23 04:00 測試簽核單（status=00）、26622 的 `TBDW11` 3 筆待處理公用簽核。使用者決定不由我們處理，**交由 26622 自行處理，本案結案**。
+
 ## 下一步
 - `zpjcDailyTriggerWorkNotice` 這次修復（`{maxPosNo:08}` 模板展開）已測試、驗證、清理完畢，暫無待辦。
