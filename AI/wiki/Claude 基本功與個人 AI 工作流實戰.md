@@ -2,18 +2,18 @@
 type: concept
 tags: [Claude基本功, AI-Agent, 知識庫, 自動化, MCP, 專案管理]
 sources: 
-  - "[[sources/2026-07-23T113800+0800-Matt_Pocock_Skills_評估與客製化安裝紀錄.md]]"
-  - "[[sources/2026-07-23T144123+0800-Claude基本功 EP01：一次搞懂 Claude 全生態：從聊天到全自動化寫程式.md]]"
-  - "[[sources/2026-07-23T145216+0800-Claude基本功EP02 從入門到精通的 Skills 全攻略.md]]"
-  - "[[sources/2026-07-23T154207+0800-Claude基本功EP03_連接你的notebookLM_AI效率大爆發.md]]"
-  - "[[sources/2026-07-23T154310+0800-Claude基本功EP04  NotebookLM 進階應用五大情境_跨工具神操作：從 NotebookLM 自動同步到 Obsidian 與 GitHub.md]]"
-  - "[[sources/2026-07-23T154347+0800-Claude基本功EP05 建立你的個人倉庫_GitHub懶人包與教學網頁上線_別再為了 GitHub 設定卡關！這份教學懶人包教你一鍵完成連線_直播精華.md]]"
-  - "[[sources/2026-07-23T154936+0800-Claude基本功EP06用claude+notebookLM+Github打造你的專屬教學駕駛艙.md]]"
-  - "[[sources/2026-07-23T160655+0800-Claude基本功EP07  5 分鐘搞定！Claude 結合 Obsidian 第二大腦懶人包完整教學.md]]"
-  - "[[sources/2026-07-23T161811+0800-Claude基本功EP08 用 Obsidian 打造 AI 筆記流_為什麼你的筆記總是沒用？打造會自動成長的 AI 第二大腦！.md]]"
-  - "[[sources/2026-07-23T214054+0800-Claude基本功EP08 用 Obsidian 打造 AI 筆記流_為什麼你的筆記總是沒用？打造會自動成長的 AI 第二大腦！.md]]"
-  - "[[sources/2026-07-23T215303+0800-Claude基本功EP09免費Supabase串起你的資料庫_用自然語言操控資料庫，完全免費的開發新邏輯.md]]"
-  - "[[sources/2026-07-23T215946+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md]]"
+  - "[[raw/2026-07-23T113800+0800-Matt_Pocock_Skills_評估與客製化安裝紀錄.md]]"
+  - "[[raw/2026-07-23T144123+0800-Claude基本功 EP01：一次搞懂 Claude 全生態：從聊天到全自動化寫程式.md]]"
+  - "[[raw/2026-07-23T145216+0800-Claude基本功EP02 從入門到精通的 Skills 全攻略.md]]"
+  - "[[raw/2026-07-23T154207+0800-Claude基本功EP03_連接你的notebookLM_AI效率大爆發.md]]"
+  - "[[raw/2026-07-23T154310+0800-Claude基本功EP04  NotebookLM 進階應用五大情境_跨工具神操作：從 NotebookLM 自動同步到 Obsidian 與 GitHub.md]]"
+  - "[[raw/2026-07-23T154347+0800-Claude基本功EP05 建立你的個人倉庫_GitHub懶人包與教學網頁上線_別再為了 GitHub 設定卡關！這份教學懶人包教你一鍵完成連線_直播精華.md]]"
+  - "[[raw/2026-07-23T154936+0800-Claude基本功EP06用claude+notebookLM+Github打造你的專屬教學駕駛艙.md]]"
+  - "[[raw/2026-07-23T160655+0800-Claude基本功EP07  5 分鐘搞定！Claude 結合 Obsidian 第二大腦懶人包完整教學.md]]"
+  - "[[raw/2026-07-23T161811+0800-Claude基本功EP08 用 Obsidian 打造 AI 筆記流_為什麼你的筆記總是沒用？打造會自動成長的 AI 第二大腦！.md]]"
+  - "[[raw/2026-07-23T214054+0800-Claude基本功EP08 用 Obsidian 打造 AI 筆記流_為什麼你的筆記總是沒用？打造會自動成長的 AI 第二大腦！.md]]"
+  - "[[raw/2026-07-23T215303+0800-Claude基本功EP09免費Supabase串起你的資料庫_用自然語言操控資料庫，完全免費的開發新邏輯.md]]"
+  - "[[raw/2026-07-23T215946+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md]]"
 created: 2026-07-23
 updated: 2026-07-23
 ---

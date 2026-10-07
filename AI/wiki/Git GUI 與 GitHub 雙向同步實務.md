@@ -2,7 +2,7 @@
 type: concept
 tags: [Git, GitGUI, GitHub, 版本控制, 同步, 衝突解決]
 sources: [
-  - "[[sources/Google_Drive_Cross_PC_Setup_Guide.md]]"
+  - "[[raw/Google_Drive_Cross_PC_Setup_Guide.md]]"
   "[[raw/Git GUI 與 GitHub 雙向同步全面操作指南.md]]",
   "[[raw/Git_GUI_GitHub_Comprehensive_Guide.pdf]]",
   "[[raw/Git GUI 與 GitHub 雙向同步全面指南(整合實戰衝突、底層邏輯與問答精華之技術對談紀錄).md]]",

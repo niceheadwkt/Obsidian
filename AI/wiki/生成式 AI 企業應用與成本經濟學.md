@@ -6,7 +6,7 @@ sources:
   - "[[raw/2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md]]"
   - "[[raw/AI_Cost_and_Token_Economics.md]]"
   - "[[raw/Creao_AI_Comprehensive_Report.md]]"
-  - "[[sources/KV Cache.md]]"
+  - "[[raw/KV Cache.md]]"
   - "[[AI/raw/2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md|27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！]]"
 created: 2026-07-20
 updated: 2026-08-14

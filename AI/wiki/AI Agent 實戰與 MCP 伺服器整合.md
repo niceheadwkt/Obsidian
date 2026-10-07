@@ -19,7 +19,7 @@ sources:
   - "[[raw/ava_sandbox Python 套件功能詳解.md]]"
   - "[[raw/ava_sandbox有哪些功能.md]]"
   - "[[raw/dry_architecture_ai_agent_guide.md]]"
-  - "[[sources/chezmoi.md]]"
+  - "[[AI/chezmoi.md]]"
 created: 2026-07-20
 updated: 2026-07-20
 ---

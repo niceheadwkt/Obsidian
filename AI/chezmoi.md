@@ -286,7 +286,7 @@ Windows 11 上最簡單的方式是用內建的winget,開 PowerShell 執行:
 ### 附錄：AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案 核心摘要
 
 > **來源影片**：[AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位](https://www.youtube.com/watch?v=mnFdJaAmeUM&t=47s)（講師：三師爸 Sense Bar）  
-> **原始逐字稿**：[[AI/raw/2026-07-20T203320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]
+> **原始逐字稿**：[[AI/raw/2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]
 
 #### 一、核心痛點與架構解法
 當開發者有多台電腦（如公司桌機與隨身筆電）、或在同一台電腦中使用多個 Agent（如 Claude Code、Codex、ChatGPT App、AntiGravity、OpenCode）時，面臨兩大核心問題：

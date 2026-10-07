@@ -2,9 +2,9 @@
 type: concept
 tags: [Claude, ClaudeCowork, AgentSkills, AI工作流, Excel自動化, GitHub, OpenSource]
 sources: [
-  - "[[sources/2026-08-03T114715+0800-AI Skills怎麼寫？grill-me工作流5步拆解，附中文提示詞可複製.md]]"
-  - "[[sources/Skill Creator（技能建立器）.md]]"
-  - "[[sources/目前你有那些skill，如何使用， 請給些範例.md]]"
+  - "[[raw/2026-08-03T114715+0800-AI Skills怎麼寫？grill-me工作流5步拆解，附中文提示詞可複製.md]]"
+  - "[[raw/Skill Creator（技能建立器）.md]]"
+  - "[[raw/目前你有那些skill，如何使用， 請給些範例.md]]"
   "[[raw/2026-06-15T152529+0800-Claude桌面版三大模式：Chat、Cowork、Code差在哪？.md]]",
   "[[raw/2026-06-15T154818+0800-Claude Cowork是什麼？Cowork教學：簡報、報帳、整理雲端硬碟5個超實用場景.md]]",
   "[[raw/2026-06-15T154838+0800-同事都在用AI做事？Claude Cowork完整教學，教你一步步打造AI Agent超強工作流.md]]",

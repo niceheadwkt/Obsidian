@@ -2,8 +2,8 @@
 type: concept
 tags: [Kimi, 月之暗面, 楊植麟, Agentic-LLM, K3, K2]
 sources: 
-  - "[[sources/2026-07-24T101707+0800-楊植麟是誰？打造Kimi K3引爆美中角力，他為何放棄蘋果高薪回中國創業？.md]]"
-  - "[[sources/2026-07-24T112815+0800-Kimi Founder Yang Zhilin K2, Agentic LLMs, Brains in Vats, and the Beginning of Infinity.md]]"
+  - "[[raw/2026-07-24T101707+0800-楊植麟是誰？打造Kimi K3引爆美中角力，他為何放棄蘋果高薪回中國創業？.md]]"
+  - "[[raw/2026-07-24T112815+0800-Kimi Founder Yang Zhilin K2, Agentic LLMs, Brains in Vats, and the Beginning of Infinity.md]]"
 created: 2026-08-07
 updated: 2026-08-07
 ---

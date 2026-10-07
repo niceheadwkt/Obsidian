@@ -2,13 +2,13 @@
 type: concept
 tags: [AI-Agent, 基礎入門, MCP, 專案管理, RDQ, 跨電腦同步]
 sources: 
-  - "[[sources/2026-07-28T064848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent.md]]"
-  - "[[sources/2026-07-28T070734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定.md]]"
-  - "[[sources/2026-07-28T081508+0800-AI Agent 基本功 EP03：一句話讓 AI 幫你讀檔、寫程式、上網、做出成品.md]]"
-  - "[[sources/2026-07-28T081524+0800-AI Agent 基本功 EP04：連接外部工具，MCP 與連接器一張地圖講清楚.md]]"
-  - "[[sources/2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]"
-  - "[[sources/2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]"
-  - "[[sources/2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md]]"
+  - "[[raw/2026-07-28T064848+0800-AI Agent基本功EP01用Agent來學習Agent_一個 GitHub repo，複製我的整套 AI 工作流到你的 Agent.md]]"
+  - "[[raw/2026-07-28T070734+0800-AI Agent 基本功 EP02：學習 Agent 必懂的核心觀念與初始化設定.md]]"
+  - "[[raw/2026-07-28T081508+0800-AI Agent 基本功 EP03：一句話讓 AI 幫你讀檔、寫程式、上網、做出成品.md]]"
+  - "[[raw/2026-07-28T081524+0800-AI Agent 基本功 EP04：連接外部工具，MCP 與連接器一張地圖講清楚.md]]"
+  - "[[raw/2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]"
+  - "[[raw/2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]"
+  - "[[raw/2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md]]"
 created: 2026-08-07
 updated: 2026-08-07
 ---

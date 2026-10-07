@@ -2,7 +2,7 @@
 type: analysis
 tags: [AI工具, Cursor, Dify, Grok, Groq, LMStudio, vLLM, Qwen, OpenCode, GitHub]
 sources: [
-  - "[[sources/Google AI Studio 1.md]]"
+  - "[[raw/Google AI Studio 1.md]]"
   "[[sources/01_AI_Tools/Cursor：AI 程式碼編輯器介紹.md]]",
   "[[sources/01_AI_Tools/Dify.md]]",
   "[[sources/01_AI_Tools/Grok 與 Groq 差異解析.md]]",

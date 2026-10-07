@@ -2,8 +2,8 @@
 type: concept
 tags: [mcp-drink, 專案開發, Firestore, MCP-Server, 點餐助理]
 sources: 
-  - "[[sources/一沐日雲端點餐與 MCP 系統 (mcp-drink-main)啟動.md]]"
-  - "[[sources/一沐日雲端點餐與 MCP 系統.md]]"
+  - "[[raw/一沐日雲端點餐與 MCP 系統 (mcp-drink-main)啟動.md]]"
+  - "[[raw/一沐日雲端點餐與 MCP 系統.md]]"
 created: 2026-08-07
 updated: 2026-08-07
 ---
