@@ -438,3 +438,11 @@ aw/ 唯讀目錄下）。
   - `[[商業案例與投資思維專題]]`：文末加入延伸閱讀連結。
 - **更新索引**：新增概念頁一列與 `SRC-255`，更新商業案例頁日期。
 - **執行人**：Claude Code
+
+## [2026-10-08] ingest | AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程
+
+- **來源**：`raw/2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md`。原始網址為公司內部 AVA-GPT 對話（https://avagpt.chsteel.com.tw/c/c6d3e0b6-5fab-42ef-8a92-76ceba9c7fda），經使用者已登入的 Chrome（CDP 9222）擷取全文，移除模型思考內容與側邊欄後存入 `raw/`。
+- **新增頁面**：`[[AVA_ERP MCP 工具建立標準流程]]`（source-summary）：AVA_ERP 四個會議室工具與用法、強制禁用政策、AVA-GPT 第 8 輪的兩階段標準流程與駕駛比喻；以 `[!WARNING]` 標註兩處錯誤（MCP 誤稱為 Model-Controller-Policy；工具定義應由 MCP 伺服器經 `tools/list` 宣告，而非管理員手寫），並補上修正後的七步驟流程與 FastMCP 示意範例。
+- **更新頁面**：`[[AI Agent 實戰與 MCP 伺服器整合]]`：sources 加入本次來源，「實戰開發案例」加入本頁連結。
+- **更新索引**：新增概念頁一列與 `SRC-256`，更新 MCP 頁說明、關聯來源數與日期。
+- **執行人**：Claude Code

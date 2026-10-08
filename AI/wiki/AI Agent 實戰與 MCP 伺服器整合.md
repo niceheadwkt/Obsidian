@@ -20,8 +20,9 @@ sources:
   - "[[raw/ava_sandbox有哪些功能.md]]"
   - "[[raw/dry_architecture_ai_agent_guide.md]]"
   - "[[AI/chezmoi.md]]"
+  - "[[AI/raw/2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md|AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程]]"
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-10-08
 ---
 
 # AI Agent 實戰與 MCP 伺服器整合
@@ -136,3 +137,4 @@ AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)
 
 ## 實戰開發案例
 - 關於 FastMCP 與前端 PWA 直連 Firestore 的雲端點餐整合實踐，請參閱：[[一沐日雲端點餐與 MCP 系統開發實務]]。
+- 關於公司內部 AVA-GPT 的 AVA_ERP 會議室 MCP 工具、強制禁用政策與工具建立標準流程，請參閱：[[AVA_ERP MCP 工具建立標準流程]]。

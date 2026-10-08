@@ -43,7 +43,7 @@
 | `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務、AI 防詐資訊素養教材，以及「桌面 AI 女友」本地陪伴應用趨勢 | 3 | 2026-09-17 |
 | `[[AI 工具與任務場景橫向評比]]` | 對比 ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok 六大工具在腦力激盪、文案、簡報、資料表、資料搜集等五大場景之優劣，4 步驟 AI 輔助建立 HTML Dashboard 工作流，以及老牌零售良興 3C 與 Data-DI 合作的 AI 落地變革案例 | 2 | 2026-07-09 |
 | `[[多專案文件管理與 Git 子模組規範]]` | 基於 Git Submodule 機制管理多專案共通規範，實施專案首頁導覽分流、防呆命名與相對路徑跳脫防斷鏈實務 | 1 | 2026-07-09 |
-| `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份 | 13 | 2026-08-07 |
+| `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份，以及 AVA_ERP 會議室 MCP 工具與建立流程 | 14 | 2026-10-08 |
 | `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
 | `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成） | 6 | 2026-10-07 |
@@ -61,6 +61,7 @@
 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]] | a16z 第 7 版 Top 100 生成式 AI 消費應用榜六大洞察：首度納入支出數據、4.5% 訂閱率與前 1% 重度用戶經濟、29 家流量榜外的隱形贏家、個人助理 Agent（Instinct 對 Muse）、訂閱轉向廣告與交易抽成、新創四大破口 | 1 | 2026-10-07 |
 | [[Gemini 全能使用手冊與 Google 生態工作流]] | Gemini 9 大用法實測：一鍵分析 YouTube（Canvas 互動學習指南＋時間戳）、Gems 自訂智慧體與分享、Chrome Ask Gemini 與 Go Live 語音、Gmail／雲端硬碟／Docs／Sheets／Slides 整合、長文件精準定位、Deep Research 先審計畫、資訊圖／PPT 轉換、AI Studio TTS 製作 Podcast | 1 | 2026-10-08 |
 | [[2026 銀髮經濟認知地圖與樂齡數位課程商機]] | 2026 銀髮經濟全景（三大結構轉變、新銀髮族輪廓、四大商業模式與黃金賽道），智慧照護三條技術路徑與成功關鍵，樂齡社群 OMO 營運與子女經濟，線上興趣課程「輕、趣、慢」與 LINE 主陣地，數位科技應用四大課程模組與教長輩學科技三心法 | 1 | 2026-10-08 |
+| [[AVA_ERP MCP 工具建立標準流程]] | 公司內部 AVA-GPT 的 AVA_ERP 四個會議室 MCP 工具（查詢、可用清單、時段檢查、預訂）與強制禁用政策，「後端開發 → 工具整合」標準流程，並修正 MCP 定義與工具宣告方式、附 FastMCP 最小範例 | 1 | 2026-10-08 |
 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] | 通義千問 Qwen 3.8-27B 越級挑戰 397B 巨獸、GGUF 量化、MInference 推理加速 (550-650 tokens/s)、llama.cpp 緩衝區優化及企業在地端部署 ROI 哲學 | 1 | 2026-08-14 |
 | [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中)，以及零基礎四階段安裝入門實戰 | 2 | 2026-09-17 |
 | [[民生消費品實測與食安評估]] | 台灣鮮乳市場實測：脂肪標準化與 UHT 超高溫殺菌之美納反應、假小農文青包裝行銷迷思、瑞穗鮮乳與瑞穗極致殺菌工藝對比，以及選購避坑指南 | 1 | 2026-09-17 |
@@ -338,6 +339,7 @@
 | SRC-253 | 2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md | 報告 / 市場趨勢 | 2026-10-07 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]], [[Claude]], [[三大 AI 付費版選用與效能橫向對比]], [[生成式 AI 企業應用與成本經濟學]] |
 | SRC-254 | 2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md | 影片 / 教學 | 2026-10-08 | [[Gemini 全能使用手冊與 Google 生態工作流]], [[AI 工具與框架概覽]], [[三大 AI 付費版選用與效能橫向對比]] |
 | SRC-255 | 2026-10-08T150000+0800-Gemini 對話：2026銀髮經濟認知地圖.md | 對話 / 產業研究 | 2026-10-08 | [[2026 銀髮經濟認知地圖與樂齡數位課程商機]] |
+| SRC-256 | 2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md | 對話 / MCP | 2026-10-08 | [[AVA_ERP MCP 工具建立標準流程]], [[AI Agent 實戰與 MCP 伺服器整合]] |
 ---
 
 > [!TIP]
