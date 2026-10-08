@@ -10,6 +10,10 @@
   - `SRC-257` 根目錄筆記〈目前 2026 年最主流的 AI 發展趨勢〉移入 `raw/`，新增 [[AI/wiki/AI 工具應用內容趨勢與選題地圖]]（10 個選題對照本庫素材與知識缺口）。
   - 根目錄 `未命名.md`（手動貼上的 AVA-GPT 標準流程段落，內容已收進 SRC-256）已刪除。
   - 踩坑：AVA-GPT 須在 CDP 9222 的同一個 Chrome 登入；載入時會轉址，讀取要容錯等待。
+- **ZPJJB01 10/08 登打完成**（已查 `DB.TBZP0050` 確認，合計 3.0 HR，系統別留空）：
+  - 001　1300–1430（1.5）AVA_ERP MCP工具建立流程研究
+  - 002　1430–1600（1.5）AI知識庫匯入及git同步假修改自動清除
+  - 開新分頁用 `/erp/zp/do?_pageId=zpjjb0101Edit` 時員工欄位為空，需先填 26788 再送出。
 - **2026-10-08 跨電腦同步造成的 git 假修改：自動清除**（commit `6f68a8c`、`8971e02`，已推送）：
   - 現象：在家裡 NB（鏡像模式）commit 後，公司 ADM-189（串流模式）的 `git status` 會把內容未變的檔案標成 `M`（`.git` index 經雲端硬碟同步、時間戳記不符，`core.autocrlf=true`）。
   - 新增 SessionStart hook：`.claude/settings.json` → `.claude/hooks/clean-phantom-modified.sh`，啟動時從 `git status` 取 ` M` 檔案、忽略換行比對，內容相同者 `git add` 刷新；加入後若與 HEAD 仍有差異則撤回。已用測試 repo 驗證 autocrlf 開關兩種情況。
@@ -55,9 +59,10 @@
 - [[AI/ERP/zpjcDailyTriggerWorkNotice_工作筆記]]
 - [[AI/ERP/EAJJRE00N_最新B表_工作筆記]]
 - [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
+- [[AI/ERP/RQ11510012_風險評估系統優化_規劃設計]]
 
 ## 下一步
-- 目前沒有待辦。
+- RQ11510012 風險評估系統優化：規劃設計文件草稿 v0.2 已完成（含新版複製寫 WorkDocEX、HC 預估評估；待確認 Q1～Q12），家中可續作項目見該文件第 8.2 節，回公司待辦見第 8.3 節。
 
 ## 以後的構想（不列入待辦）
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
