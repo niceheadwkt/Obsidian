@@ -1,0 +1,2 @@
+# Shell 腳本固定使用 LF 換行，避免 autocrlf=true 的電腦轉成 CRLF 導致 bash 執行失敗
+*.sh text eol=lf
