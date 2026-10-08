@@ -1,8 +1,14 @@
 # 工作筆記
 
-**更新日期**：2026-10-07
+**更新日期**：2026-10-08
 
 ## 上次做到哪
+- **2026-10-08 Wiki Ingest 三筆**（commit `82e3f31`、`895728c`，皆已推送）：
+  - `SRC-254` Gemini 3 全能使用手冊影片：原始剪藏與檔名轉繁體（OpenCC s2twp），逐字稿依影片 12 個章節時間戳分段；新增 [[AI/wiki/Gemini 全能使用手冊與 Google 生態工作流]]，更新 `AI 工具與框架概覽`、`三大 AI 付費版選用與效能橫向對比`。
+  - `SRC-255` Gemini 私人對話「2026 銀髮經濟認知地圖」：經 CDP 9222 已登入 Chrome 擷取（Gemini 對話內容為隱藏 DOM，需用 textContent 才抓得到）；新增 [[AI/wiki/2026 銀髮經濟認知地圖與樂齡數位課程商機]]。
+  - `SRC-256` AVA-GPT 內部對話「AVA_ERP MCP 工具建立標準流程」：新增 [[AI/wiki/AVA_ERP MCP 工具建立標準流程]]，標註 AVA-GPT 兩處錯誤（MCP 誤稱 Model-Controller-Policy、工具定義應由 MCP 伺服器宣告），補七步驟流程與 FastMCP 示意範例。AVA_ERP 四個會議室工具當天為強制禁用。
+  - 根目錄 `未命名.md`（手動貼上的 AVA-GPT 標準流程段落，內容已收進 SRC-256）已刪除。
+  - 踩坑：AVA-GPT 須在 CDP 9222 的同一個 Chrome 登入；載入時會轉址，讀取要容錯等待。
 - **2026-10-07 Wiki Ingest：a16z 第七版生成式 AI 應用榜**：新增 [[AI/wiki/a16z 第七版生成式 AI 應用榜與變現趨勢]]（六大洞察、4.5% 訂閱率與前 1% 重度用戶經濟、29 家隱形贏家、Agent 平台選邊、變現轉向廣告與抽成）；同步更新 `Claude`、`三大 AI 付費版選用與效能橫向對比`、`生成式 AI 企業應用與成本經濟學`，index 新增 `SRC-253`、log 追加 ingest 紀錄。原始剪藏後半段混入無關業配文（星城），未納入。
 - **2026-10-07 Wiki 健康檢查**：修正 wiki 37 處斷鏈（多為 `[[sources/…]]` 實際在 `raw/`），wiki 內已無斷鏈；raw／sources 的 179 個為剪藏作者鏈結（唯讀，不修改）。無孤立頁面，frontmatter 完整。詳見 [[AI/wiki/log]] 2026-10-07 lint 紀錄。
 - **2026-10-07 根目錄歸檔整理**：根目錄由 49 個檔案整理到剩 7 個（AGENTS／CLAUDE／README／WorkLog／package*.json／檔案清冊.base）。圖片 20 張移到 `AI/sources/images/`、PDF 2 份移到新建的 `AI/sources/assets/`；17 篇筆記依主題歸入 `AI/sources/01_AI_Tools`、`03_AI_Concepts`、`05_Tech_Development`、`06_Networking_Systems`、`07_Daily_Notes`；`chezmoi.md` 移到 `AI/`；`未命名.md` 改名為 `AI/fastmarkets-daily-v2/Fastmarkets_問題修復摘要.md`；刪除空白的 `2026-07-28.md` 與 2 個內容完全相同且無引用的重複檔。Obsidian 附件資料夾設為 `AI/sources/images`。搬移前後斷鏈數皆為 217（既有問題，搬移未新增）。
@@ -44,7 +50,8 @@
 - [[AI/ERP/EAJJLICENSEBAT_工作筆記]]
 
 ## 下一步
-- 目前沒有待辦。
+- `目前 2026 年最主流的 AI 發展趨勢.md`、`AI/ERP/RQ11506072_特檢申報到職年資管制_計畫書.md` 尚未納入 git，待決定歸檔位置或是否 Ingest。
+- 若需使用 AVA_ERP 會議室工具，向 IT／AVA 管理團隊申請解除強制禁用。
 
 ## 以後的構想（不列入待辦）
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
