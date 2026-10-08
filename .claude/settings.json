@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/clean-phantom-modified.sh\"",
+            "timeout": 30,
+            "statusMessage": "清除跨電腦同步造成的 git 假修改..."
+          }
+        ]
+      }
+    ]
+  }
+}
