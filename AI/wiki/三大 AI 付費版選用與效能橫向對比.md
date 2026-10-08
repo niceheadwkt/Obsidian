@@ -1,9 +1,9 @@
 ---
 type: analysis
 tags: [AI工具, 對比分析, 付費訂閱, 華頓商學院, ChatGPT, Claude, Gemini]
-sources: ["[[raw/2026-06-15T153819+0800-Claude、Gemini、ChatGPT三大工具差在哪？華頓商學院教授教你「付費版」選用指南.md]]", "[[AI/raw/2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md|全球100大AI工具榜出爐！6大洞察一次看（數位時代）]]"]
+sources: ["[[raw/2026-06-15T153819+0800-Claude、Gemini、ChatGPT三大工具差在哪？華頓商學院教授教你「付費版」選用指南.md]]", "[[AI/raw/2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md|全球100大AI工具榜出爐！6大洞察一次看（數位時代）]]", "[[AI/raw/2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md|Google Gemini 3 全能使用手冊（盈夏AI輕創業）]]"]
 created: 2026-06-18
-updated: 2026-10-07
+updated: 2026-10-08
 ---
 
 # 三大 AI 付費版選用與效能橫向對比
@@ -52,6 +52,9 @@ updated: 2026-10-07
 | **指標性工具** | ・[[NotebookLM 綜合指南|NotebookLM]]：AI 筆記與學術研究助理<br>・Nano banana：頂尖影像生成 | GPT-5.2 Pro：參與前沿科學與數理推導的超強模型 | Claude Cowork：能在本機虛擬環境幫你處理行政雜事 |
 | **適合工作場景** | 重度 Google 雲端協作、文獻分析、多媒體影音剪輯與摘要 | 深度市場與財務分析、軟體工程研發、統計研究 | 行政流程自動化、專案管理、商務書信撰寫 |
 | **月付訂閱費** *(2026年對照)* | ・AI Plus：NT$260<br>・AI Pro：NT$650<br>・AI Ultra：NT$8150 | ・ChatGPT Go：NT$270<br>・ChatGPT Plus：NT$690<br>・ChatGPT Pro：NT$6990 | ・Claude Pro：約 NT$600<br>・Claude Max 5x：NT$300<br>・Claude Team：約 NT$750-3750 |
+
+> [!TIP]
+> Gemini「Google Workspace 生態系整合」優勢的實際操作（Gmail、雲端硬碟、Docs、Sheets、Slides、Chrome、YouTube 內直接呼叫），請參閱 [[Gemini 全能使用手冊與 Google 生態工作流]]。
 
 ---
 

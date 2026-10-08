@@ -20,10 +20,11 @@ sources: [
   "[[raw/2026-07-11T210528+0800-ChatGPT APP 基本功第六集全新改版！教師教學神器改版大解析，一次看懂.md]]",
   "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]",
   "[[AI/raw/2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md|27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！]]",
-  "[[AI/raw/2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md|OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配]]"
+  "[[AI/raw/2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md|OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配]]",
+  "[[AI/raw/2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md|Google Gemini 3 全能使用手冊（盈夏AI輕創業）]]"
 ]
 created: 2026-06-11
-updated: 2026-08-14
+updated: 2026-10-08
 ---
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
@@ -119,6 +120,11 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
 *   **四、讀取長文章/數據表時**：如「對比這兩款模型的 Token 成本並以表格輸出」、「這份報告有哪些數據是推論而非事實？」
 *   **五、考試與證照備考時**：如「我正在準備 iPAS AI 應用規劃師，請針對本頁內容出一題中級難度的模擬題」。
 
+### 7.2 Go Live 語音對話與 YouTube「提問」側欄
+*   **Go Live**：Ask Gemini 側邊欄右下角的語音按鈕，選擇聲音後可直接語音問答，問題可超出當前網頁範圍（會自行查詢最新資訊）。
+*   **YouTube 提問**：影片下方的「提問」按鈕會叫出 Gemini 側欄，內建預設問題（如總結影片），回答附可點擊的時間戳。
+*   完整 9 大用法請參閱 [[Gemini 全能使用手冊與 Google 生態工作流]]。
+
 ---
 
 ## 8. 全球 6 大免費 AI 課程地圖與證書認證
@@ -147,6 +153,7 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
   - **Freeform Prompts**：自由格式提示，適合靈感發想與思維鏈 (CoT) 測試。
   - **Structured Prompts**：以表格或範例強制模型輸出特定結構資料（如 JSON）。
   - **System Instructions**：全域約束 AI 的角色定位與知識回答邊界。
+- **TTS 語音生成**：右上角切換到 Audio，選 Gemini 3.1 Flash TTS Preview 模型，貼上講稿、選聲音後按 Run，即可把 YouTube 影片摘要稿轉成 Podcast（2026-09 影片實測，見 [[Gemini 全能使用手冊與 Google 生態工作流#2. 九大用法速覽]]）。
 
 ## 10. 2026 最新開源模型與跨平台開發環境
 
