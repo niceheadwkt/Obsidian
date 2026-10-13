@@ -1,8 +1,20 @@
 # 工作筆記
 
-**更新日期**：2026-10-12
+**更新日期**：2026-10-13
 
 ## 上次做到哪
+- **ZPJJB01 10/13 登打完成**（已查 DB.TBZP0050 確認，合計 2.0 HR，系統別 HG）：
+  - 001 0830~1030 (2.0) HG：查承攬商人員E124765450派工單簽核核准歷程（產製 Markdown、排版 PDF 報告與多表關聯 SQL）。
+- **2026-10-13 RQ11510012：決定採用 v0.4（RE03 加欄位）**：v0.3（WorkDocEX 追蹤列）不再續作，只當 DDL 被退回時的備案參考。已在 v0.4 開頭、Q-B1、第 9 節，以及 v0.3 開頭標註這個決定。
+  - Q-B4 正式機查詢：`tbeaRE03` 共 1,309,777 筆、2,805 個 formNo，只有主鍵索引；B2 反查沒帶 formNo，**必須加索引** `ixeaRE03_ref (refDocNo, refType)`，和 ALTER 放同一個 SQL 檔。
+  - 3.6.2 三項確認：`eajcRE03CRN` 修改是原地 update（插入序號、插入作業也都是 UPDATE），B14 不會發生；`eajcRE10CRN`／`eajcRE13CRN` 的 `SELECT *` 經 `getInstanceByName()` 依名稱取值，不受影響；依位置取值的 `getInstance(rs)` 在 `ea/` 下沒有人呼叫。
+  - 新發現：`eajcRE03DAO.update()`／`updateList()` 的 VO 來自畫面，daotool 重新產生後若 SET 帶上新欄位，使用者一按修改就會清空追蹤資料，重新產生後要拿掉。已寫入 v0.4 第 3.3.3、3.6.2 節。
+  - 第一段過渡版（v0.4 第 5 節步驟 1）本機已改好，**尚未測試、尚未提交 CVS**：`eajcRE03DAO.copyByFormNo()`、`eajcRE00CRN` 與 `eajcRE00CR` 的匯入 `prepareSql`，各改一行補上 16 欄清單（正式機 `SYSCAT.COLUMNS` 確認欄位順序）。改前備份在本次對話的 scratchpad `bak/`。
+  - 測試機 T-B5：A 表匯入成功（41 筆）；B 表匯入失敗「第67列(MPW1-20-01-2)資料鍵值已存在」，原因是**匯出 B 表的既有 bug**：`eajcRERpt.exptByFormNos()` B 表為取狀態 join `tbeare02` 只用作業流程，A 表一個作業多列就重複（來源 114 筆匯出 539 列）。已比照最新B表改寫（以事故類型對應危害特性、每筆 RE03 只取 srlNo 最小的 RE02），測試機驗證 114 筆、鍵不重複；尚未在測試機 reload／測試。
+  - **CVS 已提交（2026-10-13，T-B5 尚未測完）**：`eajcRE03DAO` 1.10→1.11、`eajcRE00CRN` 1.24→1.25、`eajcRE00CR` 1.11→1.12、`eajcRERpt` 1.15→1.16。測試機 DAJJU1 四則上線說明已填（未送出）。
+  - `eajcRERpt.exptByFormNox()`（風險與機會評估匯出，`eajcRE10CRN` 呼叫）同樣修正重複，**CVS 已提交 1.16→1.17**（DAJJU1 說明已改為「修正B表及機會匯出資料重複」，畫面版本仍顯示 1.16，需重新帶入）：除了 RE02，還有 RE13 同一序號存 `'14'` 和 `'0014'` 兩筆（測試機 1,184 組；`eajcRE10CRN.addRE13()` 補零 4 碼、`eajcRE13CRN` 畫面用未補零），優先取未補零那筆。測試機驗證：MT61 單 172→171、MPW1 單 539→114。RE13 補零不一致是資料面既有問題，未處理。
+  - `eajjRE00CopyListN.jsp`（複製來源清單）換頁無反應：分頁 `deGrid_setFunc()` 取最後一個 form，但 `form1` 放在 `</html>` 後且沒包住分頁欄位，`f.deGrid_pageRow` 為 undefined 而 JS 中斷。已比照 `eajjBossList.jsp` 把 form1 移進 body 包住分頁列與表格，本機已改、**未測試／未提交**。`eajjEA00CopyListN.jsp`（環境考量複製清單）同樣問題，已用同方式修正。**CVS 已提交**：`eajjRE00CopyListN.jsp` 1.4→1.5、`eajjEA00CopyListN.jsp` 1.7→1.8（畫面換頁尚未實測、尚未加入 DAJJU1）。之後測試機分頁列變成新式 bootstrap 按鈕，但 `eajjRE00CopyListN` 用 `dzjjmain.jsp` 沒載入 bootstrap，按鈕只剩空框；改用 `dzjjMainHeader`／`dzjjMainFooter`（比照 `eajjRE00CopyList`），**CVS 1.5→1.6**，提交後測試機仍是舊版，待更新後確認版面。DAJJU1 版本需改 1.6。`eajjRE00CopyList.jsp`、`eajjEA00CopyList.jsp`（舊版）暫不修。
+  - 測試機查詢：Edge（`[::1]:9222`）＝正式機、Chrome（`127.0.0.1:9222`）＝測試機；`erp_web_client.py` 只會連到 Edge，查測試機要用 scratchpad 的 `erp_web_client_host.py`（`CDP_HOST=127.0.0.1 ERP_HOST=test.chsteel.com.tw`）。
 - **2026-10-12 RQ11510012：規劃設計 v0.4（整合 RE03 加欄位替代方案）**：
   - 以 v0.3 為基礎，把替代方案整合成完整的另一版：[[AI/ERP/RQ11510012_風險評估系統優化_規劃設計_v0.4]]；v0.3 保留不動（開頭加註新版連結），作為 DDL 無法執行時的備案。
   - 主要變動：追蹤資料改存 `tbeaRE03` 的 `refType`／`refDocNo`／`hcTransDate`（3.3.3，含 DDL、回退、DAO 重新產生）；HC 移轉改掃 RE03；B2／B6／B8 改讀 RE03，B9 消失，新增 B14（空窗期改鍵要保留新欄位）；取號修正拿掉 `NOT LIKE 'CP%'`；新增 3.6 既有程式影響、第 5 節兩段式上線與回退；測試、待確認（分申請人／DBA 兩表）、工時（約 12 人日）一併更新。
@@ -77,13 +89,18 @@
 - [[AI/ERP/RQ11510012_風險評估系統優化_規劃設計]]
 - [[AI/ERP/RQ11510012_替代方案_RE03加欄位_計畫書]]
 - [[AI/ERP/RQ11510012_風險評估系統優化_規劃設計_v0.4]]
+- [[AI/ERP/RQ11510012_2026-10-13_修改紀錄]]
 
 ## 下一步
-- RQ11510012 風險評估系統優化：規劃設計文件 v0.4（方案 B＋RE03 加欄位）。
-  0. 先問 DBA／資訊部門正式機 DDL 流程與時程（v0.4 Q-B1），決定採 v0.4，或回到 v0.3（WorkDocEX 追蹤列，見 v0.4 附錄 B）；同時查 Q-B4（RE03 筆數）與 v0.4 3.6.2 三項確認。
+- RQ11510012 風險評估系統優化：**已決定採用 v0.4**（方案 B＋RE03 加欄位，2026-10-13）。
+  0. DDL（ALTER＋索引）申請流程、時程與上線時段：使用者評估應無問題，不列為阻礙，上線前依程序申請即可（Q-B1、Q-B3）。Q-B4、3.6.2 已於 10/13 完成。
+  0a. 第一段過渡版（六支已提交 CVS，詳見 [[AI/ERP/RQ11510012_2026-10-13_修改紀錄]]）：
+     - 測試機更新 `eajjRE00CopyListN` 1.6 後，確認換頁按鈕與版面。
+     - 補測：B 表重新匯出（應 114 列）→ 匯入、原「複製」（22／41／114）、B 表維護、風險與機會評估匯出、兩個複製清單換頁。
+     - DAJJU1（測試機，未送出）：第 5 列版本重新帶入 1.6、確認取出標籤，測完再送出。
   1. 待確認清單 .docx 補上「提出：」姓名後寄給申請人蔡侑儒，取得 Q11、Q13、Q14 回覆（Q14 子題 A1「撤除舊文號簽核待辦」若不想增加工時可拿掉）。
   2. 其餘待確認 Q1～Q8、Q10、Q12 一併與申請人確認。
-  3. 依回覆修訂規劃文件，再寫 `doCopyLatest()`、`agree()` hook、共用 `estimate()` 與 `getWorkDocNumber()` 修正的程式草稿；家中可續作項目見該文件第 8.2 節，回公司待辦見第 8.3 節。
+  3. 依回覆修訂規劃文件，再寫 `doCopyLatest()`、`agree()` hook、共用 `estimate()` 與 `getWorkDocNumber()` 修正的程式草稿；家中可續作項目見 v0.4 第 9.2 節，回公司待辦見第 9.3 節。
 
 ## 以後的構想（不列入待辦）
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
