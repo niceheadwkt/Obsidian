@@ -12,7 +12,8 @@
   - **正式機上線失敗**：伺服器以 `-encoding big5` 編譯，`eajcExportCSV` 註解含「銹、碁、裏」→ unmappable character。改註解 **1.6→1.7**，5 支以 big5 編譯全過。測試機重新申請（1.7）；正式機 5 支：`eajcExportCSV` 1.7、`eajcRE00CRN` 1.26、`eajcRE10CRN` 1.21、`eajcEA00CRN` 1.20、`eajcEA02DAO` 1.4，**預計 16:17 上線**。
   - 流程作業表沒有匯入功能：建議暫不開發，加入待確認 **Q16**（7.2 已有 Q15）；第二段加「匯入前檢查流程存在」（T-C1／T-C2、0.5 人日），已寫入 v0.4。
   - ZPJJB01 10/14 002　0830–1000（1.5）、003　1000–1200（2.0）、004　1300–1630（3.5），需求編號 RQ11510012，連 001 合計 8.0 HR，已讀回確認。
-  - 工具：`erp_web_client.py` 預設固定正式機完整網址，`--test` 查測試機（私人技能 repo `~/.agents/skills` 三個檔案，收工時 commit）；statusline 設定 `~/.claude/statusline-command.sh`（未納入 chezmoi）。
+  - 工具：`erp_web_client.py` 預設固定正式機完整網址，`--test` 查測試機（私人技能 repo `~/.agents/skills` 三個檔案，收工時 commit）；statusline 設定 `~/.claude/statusline-command.sh`。
+  - **chezmoi 同步 Claude Code 狀態列與佈景主題**（commit `0678818`、`f407603`、`3b47cde`，已推送）：`statusline-command.sh`、`themes/solarized-light.json` 整檔納入；`settings.json` 用 modify 範本 `dot_claude/modify_settings.json`，只合併 `statusLine`、`theme`（`custom:solarized-light`），`autoUpdatesChannel`／`skipDangerousModePermissionPrompt` 等其餘設定保留各電腦原值，沒有 settings.json 的電腦會建立只含這兩項的檔案。chezmoi repo 新增 `.gitattributes`（`*.sh text eol=lf`），避免其他電腦 checkout 成 CRLF 讓 bash 失敗。其他電腦執行 `chezmoi update` 即套用。
 - **2026-10-14 環境考量查詢畫面顯示 SQL 修正（納入 RQ11510012）**：
   - 現象：`eajjEA00PopupN.jsp` 查詢結果最上方印出整段 SQL。原因是結果頁 `eajjEA00ListN.jsp` 第 23 行遺留除錯用 `out.print(sql)`（1.8 版，2017 年 ch25359 提交），與這次 RQ11510012 上線無關；兩支 CopyList(N) 早已註解。
   - 修正：該行註解；版次參數 `isCrntVer` 原本直接串入 SQL，改為只接受選單值（`A`／`S`／`Y`／`N`／空字串），其餘視為 `A`，防止 SQL injection。**CVS 1.8→1.9**，使用者已自行送出正式機上線，**10:17 生效**。改前備份在本次對話 scratchpad `bak/`。
