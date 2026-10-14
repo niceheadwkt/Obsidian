@@ -1,8 +1,15 @@
 # 工作筆記
 
-**更新日期**：2026-10-13
+**更新日期**：2026-10-14
 
 ## 上次做到哪
+- **2026-10-14 環境考量查詢畫面顯示 SQL 修正（納入 RQ11510012）**：
+  - 現象：`eajjEA00PopupN.jsp` 查詢結果最上方印出整段 SQL。原因是結果頁 `eajjEA00ListN.jsp` 第 23 行遺留除錯用 `out.print(sql)`（1.8 版，2017 年 ch25359 提交），與這次 RQ11510012 上線無關；兩支 CopyList(N) 早已註解。
+  - 修正：該行註解；版次參數 `isCrntVer` 原本直接串入 SQL，改為只接受選單值（`A`／`S`／`Y`／`N`／空字串），其餘視為 `A`，防止 SQL injection。**CVS 1.8→1.9**，使用者已自行送出正式機上線，**10:17 生效**。改前備份在本次對話 scratchpad `bak/`。
+  - 未處理：舊版 `eajjEA00List.jsp` 第 13 行同樣串接 `isCrntVer`；框架 `dejcGridTable.getCombineSql(request)` 是否跳脫未查。
+  - DAJJCVS（`dajjCVSTag.jsp`）按 Checkout 很久才列出明細：`CK` 動作走 `da.jar` 的 `dajcCVSFuncControl.checkout()`，以 Ant `Cvs` task checkout **整個系統模組**（EA 本機約 1,900 檔、29 MB）再用 Ant `Copy` 部署，主要耗時在此；`dajcCVS` 1.19（2011）、`dajcCVSFuncControl` 1.9（2006）為 ICSC 框架，CVS 上無原始碼、本機無 JDK 無法反編譯。**使用者決定暫不處理**。
+  - ZPJJB01 10/14 001　0730–0830（1.0）系統別 EA、需求編號 RQ11510012：環境考量查詢顯示SQL修正及CVS Checkout效能分析（已查 `DB.TBZP0050` 確認）。
+  - 踩坑：Python 經 CDP 印出中文時，Git Bash 主控台要設 `PYTHONIOENCODING=utf-8`，否則 cp950 輸出看起來像亂碼（頁面本身正常）。
 - **2026-10-13 16:17 RQ11510012 第一段過渡版正式機上線（6 支）**：`eajcRE00CR` 1.12、`eajcRE00CRN` 1.25、`eajcRE03DAO` 1.11、`eajcRERpt` 1.17、`eajjRE00CopyListN`（CVS 1.6）、`eajjEA00CopyListN` 1.8。
   - 16:2x 從正式機抓兩支 JSP 頁面，**仍是舊版**（form1 在分頁列之後，RE00 沒有載入 bootstrap、換頁列為圖片），可能 JSP 尚未同步；Java 部分未從外部驗證。
 - **ZPJJB01 補登 10/09、10/12、10/13 也補了報告內容、附件代號各自獨立**（10/09 001 保留使用者上傳的附件）。
@@ -105,6 +112,7 @@
   0a. 第一段過渡版**已於 10/13 16:17 正式機上線**（詳見 [[AI/ERP/RQ11510012_2026-10-13_修改紀錄]]）：
      - 確認正式機兩支 JSP 是否已更新為新版（`eajjRE00CopyListN` 1.6、`eajjEA00CopyListN` 1.8）；16:2x 抓頁面仍是舊版。
      - 正式機上線後驗證：原「複製」、B 表匯出（不重複）與匯入、B 表維護、風險與機會評估匯出、兩個複製清單換頁。
+     - 10/14 10:17 後確認 `eajjEA00ListN` 1.9 生效：查詢結果不再顯示 SQL、版次下拉各選項篩選正常。
   1. 待確認清單 .docx 補上「提出：」姓名後寄給申請人蔡侑儒，取得 Q11、Q13、Q14 回覆（Q14 子題 A1「撤除舊文號簽核待辦」若不想增加工時可拿掉）。
   2. 其餘待確認 Q1～Q8、Q10、Q12 一併與申請人確認。
   3. 依回覆修訂規劃文件，再寫 `doCopyLatest()`、`agree()` hook、共用 `estimate()` 與 `getWorkDocNumber()` 修正的程式草稿；家中可續作項目見 v0.4 第 9.2 節，回公司待辦見第 9.3 節。
