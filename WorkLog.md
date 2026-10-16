@@ -3,6 +3,12 @@
 **更新日期**：2026-10-16（收工）
 
 ## 上次做到哪
+- **2026-10-16 傍晚 RQ11510012：程式修改清單補批次 8、9，三份操作手冊（MD＋Word）**：
+  - `D:/temp/RQ11510012_程式修改清單.md`：補批次 8（10/16 10:39～11:16，4 支）、批次 9（14:36～14:37，7 支），總覽加測試機 DAJJU1 14 支版次、環境考量 3 支可先上；待辦改 5 點。ZPJJB01 001 附件是舊版，需要時重傳。
+  - **操作手冊（依 CVS 最新版程式撰寫，使用者要求：不提需求單、不分上線階段、不用「第一／第二階段」字眼，當作都已上線）**：`D:/temp/EAJJRE00N_風險評估_操作手冊.md／.docx`（8 頁）、`EAJJRE20N_高風險改善追蹤_操作手冊.md／.docx`（7 頁）、`EAJJRE10N_風險與機會評估_操作手冊.md／.docx`（5 頁）。截圖未放，待測試機操作時補。
+  - Word 轉檔：本機沒有 pandoc／LibreOffice，用 scratchpad `md2docx.py`（python-docx，微軟正黑體、表格格線＋標題列底色＋跨頁重複）；檢查用 Word COM 轉 PDF、pymupdf 擷圖。
+  - **核對程式發現（待使用者決定是否修）**：①`eajcRE10CRN.Import` 機會評估匯入沒擋原等級 1、2（增修有擋）；②`eajjRE20aMainN.jsp` 退回 `actionB()` 檢查 `memo` 欄位，但頁面沒有此欄位；③`eajjRE10MainN.jsp`【修改】鈕永遠隱藏。
+  - ZPJJB01 10/16 004　1500–1630（1.5），已查 `DB.TBZP0050` 確認，10/16 合計 6.0 HR。
 - **2026-10-16 下午 RQ11510012：匯入前檢查流程、環境考量流程作業表匯入、B13 通知排程、B 表原始依據（CVS 已提交，測試機 DAJJU1 14 支已送出上線中）**：
   - **匯入前檢查流程**：`eajcRE00CRN`（A、B 表）、`eajcEA00CRN`（投入產出表、環境考量）匯入前讀本單 RE01／EA01 作業清單，流程不存在就報「流程 xx-xx 不存在，請先建立流程作業表」並整批回復；錯誤訊息改為欄數過多才提示雙引號。`eajjRE00MainN.jsp` 匯入說明加第 4 點。
   - **環境考量流程作業表匯入**：`eajcEA00CRN.doImportFlow()`（匯入類型 `F`）比照風險評估流程圖，代碼須 2 碼（正式機 EA01 代碼全為 2 碼，A／B 表編號以 4 碼對應）、已有製程資料拒絕；`eajcEARpt` 流程作業表匯出名稱 `csvQuote`；`eajjEA00MainN.jsp` 匯入選單加「流程作業表」與順序說明。
@@ -181,7 +187,7 @@
      - B13：測試機手動跑排程，看通知筆數與狀態名稱（測試機 SQL 試算 26 筆／24 部門）。
   2. 正式機上線：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署（`eajcRE00CRN` 1.31、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.32、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。**`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20 不依賴 DDL，可先上**。
   3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10（已做原始依據）、Q12、Q16（環境考量已做流程匯入）；**加上「送簽前必須先【確認】」的操作改變**。
-  4. **R6 操作手冊**（含送簽前先確認、新版複製、原始依據、流程匯入順序）。
+  4. R6 操作手冊：三份 MD／Word 已完成（`D:/temp/EAJJRE00N／EAJJRE20N／EAJJRE10N_…_操作手冊`），待測試機截圖補入；決定上述 3 個程式問題是否修正（機會匯入擋高風險、RE20 退回 memo 檢查、RE10 修改鈕）。
   5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白；B13 最新版定義＝每部門 versDate 最新；匯入檢查流程；EA 流程匯入代碼 2 碼）。
   6. 既有問題（另開需求或註記）：舊版 `eajjEA00List.jsp` 第 13 行 `isCrntVer` 串 SQL；RE13 序號 `'14'`／`'0014'` 補零不一致；舊控制器 `eajcRE00CR`、`eajcEA00CR` 未改 readCSV。
 
