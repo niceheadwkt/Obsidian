@@ -3,6 +3,16 @@
 **更新日期**：2026-10-16（收工）
 
 ## 上次做到哪
+- **2026-10-16 下午 RQ11510012：匯入前檢查流程、環境考量流程作業表匯入、B13 通知排程、B 表原始依據（CVS 已提交，測試機 DAJJU1 14 支已送出上線中）**：
+  - **匯入前檢查流程**：`eajcRE00CRN`（A、B 表）、`eajcEA00CRN`（投入產出表、環境考量）匯入前讀本單 RE01／EA01 作業清單，流程不存在就報「流程 xx-xx 不存在，請先建立流程作業表」並整批回復；錯誤訊息改為欄數過多才提示雙引號。`eajjRE00MainN.jsp` 匯入說明加第 4 點。
+  - **環境考量流程作業表匯入**：`eajcEA00CRN.doImportFlow()`（匯入類型 `F`）比照風險評估流程圖，代碼須 2 碼（正式機 EA01 代碼全為 2 碼，A／B 表編號以 4 碼對應）、已有製程資料拒絕；`eajcEARpt` 流程作業表匯出名稱 `csvQuote`；`eajjEA00MainN.jsp` 匯入選單加「流程作業表」與順序說明。
+  - **B13 `eajcREHRiskInform`**：每部門只取最新一版（isCrntVer Y／S 中 versDate、formNo 最大，Y／S 一起比）——**舊流程未把舊版改 N，正式機有 214 組同部門同評估代碼多張 Y**，不能只靠 isCrntVer；每項目只取最新 RE04；完成＝狀態 50，或狀態 30 且高風險文號（WorkDocEX）簽核 E；狀態名稱改現行代碼，新版複製未移轉顯示「風險評估核准後移轉」；附檔加「高風險文號」；修正作業名稱 join 缺 flowCode 造成重複。正式機試算 1,399 筆→36 筆（30 部門，其中 22 筆「尚無資料」）。**用到 RE03 新欄位，只能第二段上線**。
+  - **B8 `eajjRE03MainN.jsp`**：作業流程名稱下顯示「原始依據：refType-refDocNo」，HC 未移轉紅字「（核准後移轉）」、已移轉標「（已移轉）」。**用到 RE03 新欄位，只能第二段上線**。
+  - 舊控制器 `eajcRE00CR`／`eajcEA00CR`：JSP 已無引用，使用者決定確認停用就不改。
+  - **CVS 已提交**：`eajcRE00CRN` 1.31、`eajjRE00MainN` 1.32、`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18（4 支 Java 本機 zulu JDK 8 `-encoding big5` 編譯通過；改前備份在本次 scratchpad `bak2/`）。
+  - **測試機 DAJJU1**：使用者撤回原申請後重新送出 14 支（原 9 支＋上述 5 支，版本已更新），類別 40、RQ11510012，上線中。已確認 RQ11510012 無其他未上線程式（`eajcRE03.dao` 為定義檔、`.sql` 走 ODT；`eajcSQ`／`eajcSU`／MPReqCheck 為他人 RQ11409044）。
+  - ZPJJB01 10/16 003　1300–1500（2.0），已查 `DB.TBZP0050` 確認，10/16 合計 4.5 HR。
+  - 工具：`erp-big5` 的 `erp_patch.py --edits` JSON 不接受字串內 tab，改用 scratchpad `bpatch.py`（Python 檔定義 EDITS，cp950 讀寫保留 CRLF）；ZPJJB01 以 CDP 腳本 `zp_add.py` 新增。
 - **2026-10-16 RQ11510012：B10、B7、R1 前端提示，新增時版次改空白（測試機 DAJJU1 已送出，待上線後測試）**：
   - 使用者告知 10/15 列的測試機續測（新版複製、R4 核准移轉、R5、預估評估、0c）**已全部完成**。
   - **B10**：`eajcRE20CRN.countPendingHC()` 計算本單 `refType='HC' and hcTransDate=''` 筆數；`eajjRE00MainN.jsp` 核准鈕旁紅字「簽核完成後將自動移轉高風險追蹤 n 筆並執行【預估評估】」，`actionA()` 跳確認視窗（措辭用「簽核完成後」，因第一階段若還有下一位主管，本次核准不會移轉）。
@@ -159,16 +169,20 @@
 - [[AI/ERP/RQ11510012_2026-10-13_修改紀錄]]
 
 ## 下一步
-- RQ11510012 風險評估系統優化（v0.4；R1～R5 測試機已測完，10/16 加 B10、B7、R1 前端提示、新增版次空白）：
-  1. **測試機上線後測試（10/16 送出的 DAJJU1）**：
+- RQ11510012 風險評估系統優化（v0.4；程式面已全部完成，剩測試、上線、手冊與確認事項）：
+  1. **測試機上線後測試（10/16 下午重送的 DAJJU1 14 支）**：
      - R1：前一版未完成【風險與機會評估】的部門，按新增應跳 alert、新增鈕旁有紅字。
      - B10：有 HC 項目的單送簽，主管畫面核准鈕旁顯示筆數，按核准跳確認視窗。
      - B7：核准到 E 後，建立人首頁收到 DW 訊息，連結可開到該單。
      - 新增版次空白：新增後 vers／versDate 空白、可直接刪除及新版複製；未確認直接送簽應被擋。
-  2. 正式機上線前：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署 9 支（`eajcRE00CRN` 1.30、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.31、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。
-  3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10、Q12、Q16；**加上「送簽前必須先【確認】」的操作改變**。
-  4. 未做（視需要）：B 表顯示原始依據（Q10）、排程 B13（舊版重複通知，新版複製上線後會變多，建議一併修）、環境考量流程圖匯入、匯入前檢查流程存在、**R6 操作手冊**（含送簽前先確認）。
-  5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白）。
+     - 匯入檢查（T-C1／T-C2）：缺流程的單匯入 A／B 表、投入產出表／環境考量應報錯且 0 筆；流程齊全照常成功。
+     - 環境考量：匯出流程作業表→匯入空白單成功；重複匯入應被擋。
+     - B8：新版複製的單 B 表顯示原始依據、HC 未移轉紅字。
+     - B13：測試機手動跑排程，看通知筆數與狀態名稱（測試機 SQL 試算 26 筆／24 部門）。
+  2. 正式機上線：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署（`eajcRE00CRN` 1.31、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.32、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。**`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20 不依賴 DDL，可先上**。
+  3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10（已做原始依據）、Q12、Q16（環境考量已做流程匯入）；**加上「送簽前必須先【確認】」的操作改變**。
+  4. **R6 操作手冊**（含送簽前先確認、新版複製、原始依據、流程匯入順序）。
+  5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白；B13 最新版定義＝每部門 versDate 最新；匯入檢查流程；EA 流程匯入代碼 2 碼）。
   6. 既有問題（另開需求或註記）：舊版 `eajjEA00List.jsp` 第 13 行 `isCrntVer` 串 SQL；RE13 序號 `'14'`／`'0014'` 補零不一致；舊控制器 `eajcRE00CR`、`eajcEA00CR` 未改 readCSV。
 
 ## 以後的構想（不列入待辦）
