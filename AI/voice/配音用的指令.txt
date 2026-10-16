@@ -1,0 +1,6 @@
+配音用的指令
+1.	產生語音：用 Python 的 edge-tts，聲音是 zh-TW-YunJheNeural（台灣腔男聲），語速 +5%。因為公司網路會檢查 SSL，程式開頭要先加 truststore.inject_into_ssl()。
+2.	合成影片：用 ffmpeg 把每段語音延遲到指定秒數（adelay），混成一軌（amix normalize=0），再補靜音到跟影片一樣長（apad）。影片畫面直接複製、不重新編碼（-c:v copy），原本的聲音整個換掉，輸出成 原檔名_配音.mp4。
+
+台灣版神經網路語音共有 zh-TW-HsiaoChenNeural (曉臻 女聲)、zh-TW-HsiaoYuNeural (曉雨 女聲)、zh-TW-YunJheNeural (雲哲 男聲) 三種，
+我自己實測的感覺，曉臻在預設語速 1.0 聽起來就很自然，其餘二者偏慢，曉雨語速調提高到 1.2 雲哲 1.1 會好一些。

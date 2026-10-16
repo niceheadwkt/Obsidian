@@ -1,8 +1,19 @@
 # 工作筆記
 
-**更新日期**：2026-10-15（收工）
+**更新日期**：2026-10-16（收工）
 
 ## 上次做到哪
+- **2026-10-16 RQ11510012：B10、B7、R1 前端提示，新增時版次改空白（測試機 DAJJU1 已送出，待上線後測試）**：
+  - 使用者告知 10/15 列的測試機續測（新版複製、R4 核准移轉、R5、預估評估、0c）**已全部完成**。
+  - **B10**：`eajcRE20CRN.countPendingHC()` 計算本單 `refType='HC' and hcTransDate=''` 筆數；`eajjRE00MainN.jsp` 核准鈕旁紅字「簽核完成後將自動移轉高風險追蹤 n 筆並執行【預估評估】」，`actionA()` 跳確認視窗（措辭用「簽核完成後」，因第一階段若還有下一位主管，本次核准不會移轉）。
+  - **B7**：`transferHC()` 成功 ≥1 筆時，以 `new zpjcDwMsg(dsCom,conn,"EAJCRE20CRN").throwDwMsgUrl()` 發 DW 訊息給 `re00.createId`（同一交易、savepoint 包住；失敗不擋核准，只在訊息加「通知建立人失敗」；建立人離職不發）。連結 `/erp/ea/do?_pageId=eajjRE00N&_action=F&compId_qry=…&dept_qry=…&formNo_qry=…`，內容 ≤300 字。
+  - **R1 前端提示**：`checkVerCtl()` 的檢查抽成 `public static getVerCtlMsg(dsCom,compId,dept)`；新增 action `VC`（`doCheckVerCtl`，forward `zafjAJAX.jsp`）；`actionN()` 前先 `verCtlCK()` 以 AJAX 帶 `dept_v1` 檢查，擋下時跳 alert；查詢的部門前一版未完成時，新增鈕旁顯示紅字（title 為完整原因）。
+  - **新增時版次改空白**：`eajcRE00CRN` 自 **1.18（2020/03/17，ch25359，提交說明空白）** 起，`doInsert()` 固定 `vers='01'`、`versDate=今天`，造成刪除、複製、新版複製被擋（`vers<>''`）、確認被擋（已確認），且**可不按【確認】直接送簽**（跳過完整性檢查、版次遞增、舊版改 N）。正式機：2026 年 F／0001 草稿 vers 空白 27 張、01 7 張；疑似跳過確認（vers=01 但同部門同評估代碼已有更早版次）2020/03 後 32 張。改回新增時空白、確認時產生（舊控制器 `eajcRE00CR` 本來就是空白）。**操作改變：送簽前必須先【確認】，需寫入 R6 操作手冊並告知申請人**；既有 vers=01 草稿仍需先取消確認。
+  - **CVS 已提交（10/16）**：`eajcRE00CRN` 1.28→1.29→**1.30**、`eajcRE20CRN` **1.91**、`eajjRE00MainN.jsp` **1.31**、`eaStructs.xml` **1.168**（`-encoding big5` 編譯通過；改前備份在本次 scratchpad `bak/`）。
+  - **測試機 DAJJU1**：使用者兩度撤回重送，最新一次 9 支（`eajcRE00CRN` 1.30、`eajcRE13CRN` 1.12、`eajcRE20CRN` 1.91、`eajcRERpt` 1.19、`eajjRE00MainN` 1.31、`eajjRE13MainN` 1.17、`eaStructs` 1.168、`eajcRE03DAO` 1.12、`eajcRE03VO` 1.5），類別 40、RQ11510012，上線說明已填，使用者自行送出。
+  - B10 會查 RE03 新欄位，**這 4 支只能在正式機第二段（DDL 之後）上線**。
+  - ZPJJB01 10/16 002　1000–1130（1.5）RQ11510012核准移轉提示通知、新增前檢查及新增版次空白修正，已查 `DB.TBZP0050` 確認（001 0900–1000 1.0 為另一工作階段登打，合計 2.5 HR）。報告內容改為每點一行（使用者偏好，已記入 memory）。
+  - 踩坑：ZPJJB01 `applyNo_v1` 為唯讀欄位，要用 JS 設 value；畫面是 `zpjjb01.jsp` 內的 frame `zpjjb0101EditId`，修改要先在上方框架以員工、日期、序號查詢。
 - **2026-10-15 工作日誌整理匯入晤談內容檔 TBHBM22B（已匯入，使用者確認）**：
   - 來源：`DB.TBZP0050` 本人（26788）`YYYYMMDD` 20260101～20260831、`APPLYNO` 有值，共 85 筆、274.0 HR、47 張需求單 → `D:/temp/tbzp0050_26788_202601_202608_APPLYNO.csv`（dsimport 原表格式；文字欄用 `HEX()` 取原始 Big5 位元組，避免命令中心 CSV 遇多行 MEMO 錯欄）。
   - 目標：`TBHBM22B`（晤談內容(專業及主管)檔，PK `APPLYID, EMPNO, NUM`），本期 `APPLYID=1788912444167`。比照同仁 26358 格式：一張需求單一筆，ITEM＝「需求單號＋名稱」(≤50 bytes，標題取自 `DB.TBZM100.APPLYTITLE` 並縮短)、TARGET＝「工時X小時」、DESC＝民國日期區間＋摘要(≤300 bytes)。
@@ -148,17 +159,17 @@
 - [[AI/ERP/RQ11510012_2026-10-13_修改紀錄]]
 
 ## 下一步
-- RQ11510012 風險評估系統優化（v0.4，R1～R5 程式已完成並上測試機，10/15）：
-  1. **測試機續測**（R1 已測通過）：
-     - 新版複製：目標草稿單 `25Y01MPW1262661342`（建立人 26788），預期來源 `25Y01MPW1250391703`、B 表 114 筆（RA 112／RO 1／HC 1，HC 舊文號 `25Y01MPW125039170330021001`），複製後比對 RE03 refType／refDocNo 及 RO 列覆蓋值。
-     - R4：該單確認→送簽→核准到 E，確認核准訊息「高風險移轉成功 1 筆」、新高風險文號（發文者暫存、發文者＝建立人）、RE043 歷程改核准日、RE03.hcTransDate；EAJJRE20N 舊文號顯示已移轉不可異動。
-     - R5：進【風險與機會評估】原等級 1、2 列勾選框停用、後端擋下。
-     - 原【預估評估】（改用共用 `estimate()`）與取號修正：任一高風險項目手動預估評估一次。
-     - 0c：Excel 另存 Big5／UTF-8 CSV 匯入、舊格式檔應 0 筆、`eajcRE10CRN` 機會評估匯入；重複匯入流程圖應被擋；最新A表匯出（`tmp-M-`）。
-  2. 正式機上線前：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署 9 支（含 RE03 DAO 1.12／VO 1.5）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。
-  3. 待確認清單寄申請人蔡侑儒：Q1、Q8 已依附件確定可刪；R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請申請人確認；另 Q4～Q7、Q10、Q12、Q16。
-  4. 未做（視需要）：B7 核准後待辦訊息、B10 核准前提示移轉筆數、B 表顯示原始依據（Q10）、R1 前端提示、排程 B13、環境考量流程圖匯入、匯入前檢查流程存在、R6 操作手冊。
-  5. 規劃文件 v0.4 補記 10/15 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆）。
+- RQ11510012 風險評估系統優化（v0.4；R1～R5 測試機已測完，10/16 加 B10、B7、R1 前端提示、新增版次空白）：
+  1. **測試機上線後測試（10/16 送出的 DAJJU1）**：
+     - R1：前一版未完成【風險與機會評估】的部門，按新增應跳 alert、新增鈕旁有紅字。
+     - B10：有 HC 項目的單送簽，主管畫面核准鈕旁顯示筆數，按核准跳確認視窗。
+     - B7：核准到 E 後，建立人首頁收到 DW 訊息，連結可開到該單。
+     - 新增版次空白：新增後 vers／versDate 空白、可直接刪除及新版複製；未確認直接送簽應被擋。
+  2. 正式機上線前：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署 9 支（`eajcRE00CRN` 1.30、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.31、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。
+  3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10、Q12、Q16；**加上「送簽前必須先【確認】」的操作改變**。
+  4. 未做（視需要）：B 表顯示原始依據（Q10）、排程 B13（舊版重複通知，新版複製上線後會變多，建議一併修）、環境考量流程圖匯入、匯入前檢查流程存在、**R6 操作手冊**（含送簽前先確認）。
+  5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白）。
+  6. 既有問題（另開需求或註記）：舊版 `eajjEA00List.jsp` 第 13 行 `isCrntVer` 串 SQL；RE13 序號 `'14'`／`'0014'` 補零不一致；舊控制器 `eajcRE00CR`、`eajcEA00CR` 未改 readCSV。
 
 ## 以後的構想（不列入待辦）
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
