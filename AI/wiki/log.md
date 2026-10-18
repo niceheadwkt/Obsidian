@@ -454,3 +454,10 @@ aw/ 唯讀目錄下）。
 - **更新頁面**：`[[Gemini 全能使用手冊與 Google 生態工作流]]`：4.1 Gems 小節加入本頁作為選題助手產出實例。
 - **更新索引**：新增概念頁一列與 `SRC-257`。
 - **執行人**：Claude Code
+
+## [2026-10-18] ingest | AI 越聰明，你越省力（三師爸 Sense Bar 直播）
+
+- **來源**：`raw/2026-10-18T222039+0800-AI 越聰明，你越省力.md`。三師爸 Sense Bar 於 2026-10-18 之 YouTube 直播逐字稿（https://www.youtube.com/watch?v=Ysiva2yGEWE）。
+- **新增頁面**：`[[AI 越聰明，你越省力_直播總結與學習卡]]`（source-summary）：AI 工具收斂分水嶺、AI 三代演進路徑（生成式 AI → AI Agent → Agent Bot）、Strata 架構本地 Agent 部署破局點、一條龍 AI 影音生成、Codex 視覺化動態教學、數學非選題命題排版與手寫考卷精準批改（200+ 題驗證，90%+ 準確率）、Google Drive 鏡像雙向同步與 Remote Control 架構、Claude Code 黃金四檔設定、10 張精選學習卡。
+- **更新索引**：新增概念頁一列與 `SRC-258`。
+- **執行人**：Antigravity Agent
