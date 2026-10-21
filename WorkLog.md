@@ -1,8 +1,17 @@
 # 工作筆記
 
-**更新日期**：2026-10-18（收工）
+**更新日期**：2026-10-21（收工）
 
 ## 上次做到哪
+- **2026-10-21 RQ11510012 批次 10：機會評估匯入擋高風險、RE20 退回檢查、RE20 說明文件（CVS 已提交，測試機 DAJJU1 已填說明待送出）**：
+  - 10/16 核對程式發現的 3 點，使用者決定：①機會匯入要擋；②RE20 退回改檢查加註意見；③RE10【修改】鈕維持隱藏（不改）。另加 RE20【說明文件】。
+  - `eajcRE10CRN` **1.22**：新增 `skipHighRisk()`，以 RE03 的 rank 判斷原等級 1、2；該列機會欄位（17 欄格式 arr[8～15]、24 欄格式 arr[15～22]）有值→整批擋下；全空→略過不計筆數。**匯出 CSV 本來就含高風險列，所以不能「出現就擋」**。R5 前已填機會資料的舊單，重匯會被擋，須先清空。
+  - `eajjRE20aMainN.jsp` **1.117**：`actionB()` 的 `ch.addBlank("memo")` 改成 `"Annotate_v5"`（de 標籤 `v5.Annotate` 的 id 慣例為 `欄位_v5`）。
+  - `eajjRE20N.jsp` **1.23**：比照 RE00N 加 `eajcFileUpload.genFileHtmlFieldAutoCommit100(_dsCom,"Attach_qry","EA","EAJJRE20N",attachID)`，系統參數 PM 才能上傳；補 import `com.icsc.ea.*`、`com.chsteel.ea.util.*`（已查無同名類別衝突）及 `genJavaScriptCode()`。
+  - 本機 JDK 8（`D:/Java_SDK_x64/jdk1.8.0_162`）`-encoding big5`，classpath `WEB-INF/classes;WEB-INF/lib/*` 編譯通過；改前備份在本次 scratchpad `bak/`。三支都不依賴 DDL。
+  - 測試機 DAJJU1：第 15～17 列上線說明已填，**版本欄空白，需使用者確認後自行送出**；清單仍有 10/16 的 14 支。
+  - 操作手冊更新（MD＋Word 重產）：EAJJRE10N 6.2 匯入高風險規則、FAQ；EAJJRE20N 說明文件欄位、退回加註意見必填、FAQ。`D:/temp/RQ11510012_程式修改清單.md` 補批次 10 與待辦。
+  - ZPJJB01 10/21 001　0800–1000（2.0）RQ11510012，已查 `DB.TBZP0050` 確認。命令中心查 `workhour` 欄位會逾時（欄名可能不對）。
 - **2026-10-18 晚【AI 越聰明，你越省力】直播重點整理、學習卡與 Strata 架構深度整合入 Wiki**：
   - 完成三師爸原始逐字稿 [`AI/raw/2026-10-18T222039+0800-AI 越聰明，你越省力.md`](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/raw/2026-10-18T222039+0800-AI%20%E8%B6%8A%E8%81%B0%E6%98%8E%EF%BC%8C%E4%BD%A0%E8%B6%8A%E7%9C%81%E5%8A%9B.md) 之重點提煉與 10 張精選學習卡。
   - 依據 [`AI/schema.md`](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/schema.md) 規範，建立 Wiki 文獻總結頁面 [`AI 越聰明，你越省力_直播總結與學習卡.md`](file:///C:/Users/niceh/我的雲端硬碟/Obsidian/AI/wiki/AI%20%E8%B6%8A%E8%81%B0%E6%98%8E%EF%BC%8C%E4%BD%A0%E8%B6%8A%E7%9C%81%E5%8A%9B_%E7%9B%B4%E6%92%AD%E7%B8%BD%E7%B5%90%E8%88%87%E5%AD%B8%E7%BF%92%E5%8D%A1.md)（涵蓋工具收斂分水嶺、AI 三代演進路徑、一條龍影音生成、Codex 視覺化動態教學、數學非選題命題排版與紙本考卷精準批改）。
@@ -190,9 +199,10 @@
      - 環境考量：匯出流程作業表→匯入空白單成功；重複匯入應被擋。
      - B8：新版複製的單 B 表顯示原始依據、HC 未移轉紅字。
      - B13：測試機手動跑排程，看通知筆數與狀態名稱（測試機 SQL 試算 26 筆／24 部門）。
-  2. 正式機上線：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署（`eajcRE00CRN` 1.31、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.32、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。**`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20 不依賴 DDL，可先上**。
+     - 批次 10（10/21 DAJJU1 3 支，待確認版本送出）：機會評估匯入高風險列有填機會欄位應整批擋、全空略過；RE20 退回未填加註意見應被擋；RE20【說明文件】PM 可上傳、其他人只能下載。
+  2. 正式機上線：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署（`eajcRE00CRN` 1.31、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.32、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。**`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20 及批次 10 `eajcRE10CRN` 1.22、`eajjRE20aMainN` 1.117、`eajjRE20N` 1.23 不依賴 DDL，可先上**。
   3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10（已做原始依據）、Q12、Q16（環境考量已做流程匯入）；**加上「送簽前必須先【確認】」的操作改變**。
-  4. R6 操作手冊：三份 MD／Word 已完成（`D:/temp/EAJJRE00N／EAJJRE20N／EAJJRE10N_…_操作手冊`），待測試機截圖補入；決定上述 3 個程式問題是否修正（機會匯入擋高風險、RE20 退回 memo 檢查、RE10 修改鈕）。
+  4. R6 操作手冊：三份 MD／Word 已完成（`D:/temp/EAJJRE00N／EAJJRE20N／EAJJRE10N_…_操作手冊`），10/21 已依批次 10 更新，待測試機截圖補入；正式機上線後把 EAJJRE20N 手冊上傳到【說明文件】。（3 個程式問題 10/21 已處理完）
   5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白；B13 最新版定義＝每部門 versDate 最新；匯入檢查流程；EA 流程匯入代碼 2 碼）。
   6. 既有問題（另開需求或註記）：舊版 `eajjEA00List.jsp` 第 13 行 `isCrntVer` 串 SQL；RE13 序號 `'14'`／`'0014'` 補零不一致；舊控制器 `eajcRE00CR`、`eajcEA00CR` 未改 readCSV。
 
