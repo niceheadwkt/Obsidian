@@ -9,6 +9,7 @@
   - 原始檔解壓到 `C:/恆逸/decision-plan/decision-plan/`（以後改這裡再打包），新 `decision-plan.skill` 已重新打包，舊版留 `decision-plan.skill.bak`。
   - 說明文件 `C:/恆逸/decision-plan/decision-plan_說明.md`（產生過程、內容架構、提示詞範例、自動測試），已複製到 `Obsidian/AI/decision-plan/`。
   - 自動測試 `C:/恆逸/decision-plan/tests/cdp_test.mjs`：無頭 Edge＋CDP，17 項全通過。**複製按鈕要用 `Input.dispatchMouseEvent` 真實點擊，`element.click()` 不算使用者操作，`execCommand("copy")` 會失敗**。本機無 Playwright，Node 24 內建 WebSocket 可直接接 CDP。
+  - chezmoi 狀態列改用 Python 版（`69b43e4`、`7060600`）：`dot_claude/modify_settings.json` 是 modify-template，只強制 `statusLine`、`theme`，**`chezmoi re-add` 對它無效，要直接改範本**；路徑用 `.chezmoi.homeDir` 組成；`statusline.py` 納入管理；`statusline-command.sh` 刪除並加入 `.chezmoiremove`，其他電腦 `chezmoi update` 時一併刪除（需有 `~/AppData/Local/Python/bin/python.exe`）。
 - **2026-10-22 下午 HG 起日空白疑慮結案、10/21 日誌補齊、風險評估查詢、操作手冊轉 HTML／PDF**：
   - HG S120391044「1.22 起日空白」疑慮結案：ch27159 10/21 16:52 回信（RE: MPD-承攬商出入證資料重覆）說明起日都由 hg201VO 複製，正式機僅 2013 年以前有空值；核對 `hgjcB02Upload` 185～186 行先設日期再 `doCreate／doUpdate`，無影響。Outlook 信件可用 PowerShell COM（`Outlook.Application`）查。
   - ZPJJB01 10/21 補齊為 8.0 HR：001 改 0800–1030（2.5）；003 改 1400–1700（3.0）；新增 004 1130–1200（0.5）、005 1300–1400（1.0）RQ11510029 風險評估查詢作業優化修改計畫研擬。**修改時迄時改了工時不會自動重算，要一併設 `manHour_v1`**。
