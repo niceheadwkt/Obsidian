@@ -3,6 +3,12 @@
 **更新日期**：2026-10-22（收工）
 
 ## 上次做到哪
+- **2026-10-22 晚 decision-plan skill 改佔位符範本、重新打包、說明文件與自動測試（尚未重新上傳 Claude.ai）**：
+  - 釐清三處檔案關係：`C:/恆逸/Lab2_v3/UUU精機_報修系統重建_素材/UUU報修素材/` 為素材與草稿（`skill.md` 開頭被跳脫成 `\---`，不能直接用）；`C:/恆逸/decision-plan/decision-plan.skill` 為打包成品；`~/.claude/skills/synced/.../decision-plan/` 為帳號同步版，**只有 SKILL.md，缺 `assets/template.html`**。
+  - 原 `template.html` 與 UUU 案成品 `決策計畫.html` 完全相同，改成佔位符版：頁首 `{{專案名稱}}` 等，`<script>` 資料區 `cards／mech／footnote／cmds` 留一張示範卡（2 個替代方案）；機械性工作改依階段分組 `{stage, items}`、項數自動計算。`SKILL.md` Step 4 補佔位符填寫說明與「不得殘留 `{{`」。
+  - 原始檔解壓到 `C:/恆逸/decision-plan/decision-plan/`（以後改這裡再打包），新 `decision-plan.skill` 已重新打包，舊版留 `decision-plan.skill.bak`。
+  - 說明文件 `C:/恆逸/decision-plan/decision-plan_說明.md`（產生過程、內容架構、提示詞範例、自動測試），已複製到 `Obsidian/AI/decision-plan/`。
+  - 自動測試 `C:/恆逸/decision-plan/tests/cdp_test.mjs`：無頭 Edge＋CDP，17 項全通過。**複製按鈕要用 `Input.dispatchMouseEvent` 真實點擊，`element.click()` 不算使用者操作，`execCommand("copy")` 會失敗**。本機無 Playwright，Node 24 內建 WebSocket 可直接接 CDP。
 - **2026-10-22 下午 HG 起日空白疑慮結案、10/21 日誌補齊、風險評估查詢、操作手冊轉 HTML／PDF**：
   - HG S120391044「1.22 起日空白」疑慮結案：ch27159 10/21 16:52 回信（RE: MPD-承攬商出入證資料重覆）說明起日都由 hg201VO 複製，正式機僅 2013 年以前有空值；核對 `hgjcB02Upload` 185～186 行先設日期再 `doCreate／doUpdate`，無影響。Outlook 信件可用 PowerShell COM（`Outlook.Application`）查。
   - ZPJJB01 10/21 補齊為 8.0 HR：001 改 0800–1030（2.5）；003 改 1400–1700（3.0）；新增 004 1130–1200（0.5）、005 1300–1400（1.0）RQ11510029 風險評估查詢作業優化修改計畫研擬。**修改時迄時改了工時不會自動重算，要一併設 `manHour_v1`**。
@@ -239,6 +245,7 @@
   1. 使用者評估修改計畫書（`ea/RQ11510029_風險評估查詢作業優化_修改計畫.md`），決定待澄清事項後再動程式。
   2. 查 MPW1 `26S01MPW1262451457`（07 版，10/19 簽核完成卻是舊版本）所有版次，確認是有更新版次或 isCrntVer 旗標異常。
 - ZPJJB01 10/22 尚缺 09:30–10:00、16:00 以後。
+- decision-plan skill：到 Claude.ai「設定 → Capabilities → Skills」上傳 `C:/恆逸/decision-plan/decision-plan.skill` 覆蓋舊版，再確認同步版有 `assets/template.html`；之後用新案子實跑一次，檢查輸出沒有殘留 `{{`。
 
 ## 以後的構想（不列入待辦）
 - chezmoi 範本小瑕疵：非 weng 電腦的全域規範「例外」說明用 `{{ .chezmoi.homeDir }}`，會把 weng 路徑顯示成本機家目錄（如 `C:/Users/ch26788/`），實際應為 weng 的 `C:/Users/niceh/`；不影響運作，有空再改三份 `.tmpl`。
