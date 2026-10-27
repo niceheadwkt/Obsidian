@@ -1,8 +1,14 @@
 # 工作筆記
 
-**更新日期**：2026-10-22（收工）
+**更新日期**：2026-10-27（收工）
 
 ## 上次做到哪
+- **2026-10-27 上午 RQ11510012 正式機上線、DDL 確認、ZMJJREQ04 完成、補登 10/23～10/27 工作記錄**：
+  - 正式機 DAJJU1 已申請 17 支（`20261027_090517`），10/27 10:17 生效。DDL 申請表日期改為 20261027，檔名改為 `20261027-ERP資料庫異動作業表格-修改表格TBEARE03.odt`（RQ11510012 資料夾）；格式與 RQ11504050 的 TBEARE043 申請表相同。
+  - 正式機 TBEARE03 已確認：refType／refDocNo／hcTransDate（NOT NULL DEFAULT ''，既有 1,313,448 筆皆空白）、索引 `DB.IXEARE03_REF(refDocNo, refType)` 09:35 建立，09:36 RUNSTATS。
+  - ZMJJREQ04【程式異動明細】登打 24 筆（001 TBEARE03＋23 支程式，`DB.TBZM140`）。程式清單來源：`DB.TBDAU1`（APPLYREQNO）join `DB.TBDAU3`（OBJID、REMARK），排除 STATUS=N 的失敗批次。**新增後畫面 `applyNo_v1` 會被清空，連續新增要用 JS 補回**。
+  - ZMJJREQ04【資訊需求單】已按【完成】（狀態 35，耗用工時 45.5＝ZPJJB01 中 RQ11510012 合計）。處理說明漏寫環境考量，已由使用者在 DSJJSQL 執行 UPDATE 補第 6 點，997 位元組。**【註記】與【完成】都只限狀態 30，狀態 35 後只能直接改 `DB.TBZM100`**。
+  - ZPJJB01：10/23 放颱風假8HR（薔琵颱風）、10/26 補假8HR（10/25 光復節）、10/27 001 0800–1000 RQ11510012，均已查 `DB.TBZP0050` 確認。
 - **2026-10-22 晚 decision-plan skill 改佔位符範本、重新打包、說明文件與自動測試（尚未重新上傳 Claude.ai）**：
   - 釐清三處檔案關係：`C:/恆逸/Lab2_v3/UUU精機_報修系統重建_素材/UUU報修素材/` 為素材與草稿（`skill.md` 開頭被跳脫成 `\---`，不能直接用）；`C:/恆逸/decision-plan/decision-plan.skill` 為打包成品；`~/.claude/skills/synced/.../decision-plan/` 為帳號同步版，**只有 SKILL.md，缺 `assets/template.html`**。
   - 原 `template.html` 與 UUU 案成品 `決策計畫.html` 完全相同，改成佔位符版：頁首 `{{專案名稱}}` 等，`<script>` 資料區 `cards／mech／footnote／cmds` 留一張示範卡（2 個替代方案）；機械性工作改依階段分組 `{stage, items}`、項數自動計算。`SKILL.md` Step 4 補佔位符填寫說明與「不得殘留 `{{`」。
@@ -237,7 +243,7 @@
      - B8：新版複製的單 B 表顯示原始依據、HC 未移轉紅字。
      - B13：測試機手動跑排程，看通知筆數與狀態名稱（測試機 SQL 試算 26 筆／24 部門）。
      - 批次 10（10/21 DAJJU1 3 支，待確認版本送出）：機會評估匯入高風險列有填機會欄位應整批擋、全空略過；RE20 退回未填加註意見應被擋；RE20【說明文件】PM 可上傳、其他人只能下載。
-  2. 正式機上線：依程序申請 DDL（ODT 已備：`20261015-ERP資料庫異動作業表格-修改表格TBEARE03.odt`）；上線當天先 ALTER＋索引→確認→部署（`eajcRE00CRN` 1.31、`eajcRE20CRN` 1.91、`eajjRE00MainN` 1.32、`eaStructs` 1.168、`eajcRE13CRN` 1.12、`eajcRERpt` 1.19、`eajjRE13MainN` 1.17、RE03 DAO 1.12／VO 1.5、`eajcREHRiskInform` 1.6、`eajjRE03MainN` 1.18）；TBDE23 新增 `REVerCtlDate`（日期依申請人，例 20261201）。**`eajcEA00CRN` 1.21、`eajcEARpt` 1.5、`eajjEA00MainN` 1.20 及批次 10 `eajcRE10CRN` 1.22、`eajjRE20aMainN` 1.117、`eajjRE20N` 1.23 不依賴 DDL，可先上**。
+  2. ~~正式機上線~~ **10/27 10:17 已上線，DDL 欄位與索引已確認**。待做：正式機實際操作驗證新版複製、版次管控、HC 移轉；確認 TBDE23 `REVerCtlDate` 是否已設定（日期依申請人）。
   3. 待確認清單寄申請人蔡侑儒（現有附件只有 Q11、Q13、Q14，要擴充成完整清單）：R4 的 Q2、Q3、Q11、Q13、Q14 已先依建議實作，請確認；另 Q4～Q7、Q10（已做原始依據）、Q12、Q16（環境考量已做流程匯入）；**加上「送簽前必須先【確認】」的操作改變**。
   4. R6 操作手冊：三份 MD／Word 已完成（`D:/temp/EAJJRE00N／EAJJRE20N／EAJJRE10N_…_操作手冊`），10/21 已依批次 10 更新，10/22 另轉 HTML／PDF；待測試機截圖補入（補圖後 MD 改完要重轉 Word／HTML／PDF）；正式機上線後把 EAJJRE20N 手冊上傳到【說明文件】。（3 個程式問題 10/21 已處理完）
   5. 規劃文件 v0.4 補記 10/15、10/16 決定（R1 前一版＝WorkDoc.timeStamp 最新、參數 REVerCtlDate、R4 共用方法放 `eajcRE20CRN` static、transferHC 以 savepoint 逐筆；B10／B7／R1 前端提示做法；新增時版次空白；B13 最新版定義＝每部門 versDate 最新；匯入檢查流程；EA 流程匯入代碼 2 碼）。
@@ -245,7 +251,7 @@
 - RQ11510029 風險評估查詢作業優化：
   1. 使用者評估修改計畫書（`ea/RQ11510029_風險評估查詢作業優化_修改計畫.md`），決定待澄清事項後再動程式。
   2. 查 MPW1 `26S01MPW1262451457`（07 版，10/19 簽核完成卻是舊版本）所有版次，確認是有更新版次或 isCrntVer 旗標異常。
-- ZPJJB01 10/22 尚缺 09:30–10:00、16:00 以後。
+- ZPJJB01 10/22 尚缺 09:30–10:00、16:00 以後；10/27 只登打 0800–1000，其餘時段待補。
 - decision-plan skill：到 Claude.ai「設定 → Capabilities → Skills」上傳 `C:/恆逸/decision-plan/decision-plan.skill` 覆蓋舊版，再確認同步版有 `assets/template.html`；之後用新案子實跑一次，檢查輸出沒有殘留 `{{`。
 
 ## 以後的構想（不列入待辦）
