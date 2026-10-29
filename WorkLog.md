@@ -1,8 +1,20 @@
 # 工作筆記
 
-**更新日期**：2026-10-28（收工）
+**更新日期**：2026-10-29（收工）
 
 ## 上次做到哪
+- **2026-10-29 下午 HG 長期工作證無法申請查核、HGJJA02 人員辦證紀錄顯示起日及排序**：
+  - M45 謝明志 14:25 來信（只附截圖）：高啟清（E122287597，廠商 42797768）長期工作證人員資料「輸入欄位有誤」。查 `hgjcb02Staff.java` 第 243～255 行：通識測驗（check4）、高危險作業測驗（check5）、資安宣導（check7）日期**不可晚於核發起日 validDateS**；check5／check7 為 1151028，晚於起日 1151007。保險到期日「需大於核定止日」的檢核已註解掉，不會擋。回信草稿（建議起日改 1151028 以後）已存 Outlook 草稿匣，**由使用者自行寄出**；申請單 TBHG201 核發期限未查證。
+  - HGJJA02【人員辦證紀錄】：有效期限改顯示「起日～迄日」（`getValidDatePeriodCF()`，起迄日相同或起日空白只顯示一個），排序由 `applyId` 改為 `validDateS desc, applyId desc`。CVS：`hgjca02RecordEntity.java` **1.6**、`hgjja02Record.jsp` **1.7**；測試機 DAJJU1 上線說明已填（類別 40）；正式機預計 10/29 16:17 生效，**尚未驗證**。
+  - ZPJJB01 10/29 009 1530–1600、010 1600–1630（Q0910，各 0.5），清單已查到；10/29 合計 7.5 HR。
+  - pwsh 讀 Big5 簽名檔要 `GetEncoding(950)`；Outlook `Reply()` 有時已自動帶回覆簽名，附簽名前先檢查 `Body` 避免重複。
+- **2026-10-29 RQ11510029 第二期程式上線測試機、評估代碼選擇視窗修正、D1／D3／D4 資料修正**（詳見修改計畫書 [RQ11510029_風險評估查詢作業優化_修改計畫.md](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/RQ11510029_風險評估查詢作業優化_修改計畫.md)）：
+  - D3 正式機 DBA 已執行（補零序號 0 筆）；D4 8 欄全空白資料刪除：測試機已刪 165,017 筆，正式機 181,065 筆已送 DBA 異動申請表（`…_D4空白資料刪除.odt`）。
+  - 第二期程式（CVS）：`eajcRERpt` 1.22、`eajcRERptCRN` 1.8（統計取各部門最新簽准版、限同年度）、`eajjRERptListN.jsp` 1.13（評估編號、機會、簽准日期欄、統計說明）；需求確認書（ZMJJREQ12）與工時估算（190 小時）已登打。
+  - 評估代碼選擇視窗：`eajjRECodeListN.jsp`、`eajjEACodeListN.jsp` **1.6**（首次開啟依畫面預設當年度＋年度評估查詢、依代碼由新到舊排序）。滑過列樣式跑掉為共用 `de/dejtTableCursor.jss`（`Restore()` 讀 `.deOldClass` 屬性，Chrome 為 undefined），**未修改，待反映框架負責人**。
+  - 測試機 DAJJU1 `20261029_140418`（5 支，上線類別 40，狀態 Y）已驗證；原 `20261029_111025`、`20261029_121108` 撤回（R）。
+  - D1（M661 CHANGE='I'）：已確認改 `CHANGE='V'`、`IMETHOD='I'`。SQL [RQ11510029_D1_機會I資料修正.sql](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/RQ11510029_D1_機會I資料修正.sql)；測試機已更新 63 筆並逐筆比對；正式機 122 筆已備份 `D:/temp/query_results/RQ11510029_D1_正式機備份_20261029.csv`，異動申請表 `…_D1機會I資料修正.odt`（未轉 PDF，本機無 LibreOffice）待送 DBA。
+  - ZPJJB01 10/29 001～008 已登打並查 `DB.TBZP0050` 確認（007 14:00–14:30 評估代碼選擇視窗；008 14:30–15:30 D1 資料修正與修改計畫書更新）。
 - **2026-10-28 RQ11510029 第一期程式修改、測試機驗證、正式機上線、D3 資料修正 SQL 與異動申請表**：
   - 修改計畫書 [RQ11510029_風險評估查詢作業優化_修改計畫.md](file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/ea/RQ11510029_風險評估查詢作業優化_修改計畫.md) 已更新（P1～P7、F1～F4、驗證結果、D3 步驟、上線紀錄）。
   - 程式（CVS 已提交）：`eajcRERpt` **1.21**（P1 機會有值匯出 V、P2 改善方法用字消除／取代、P3 等級 0 空白、F1 KEYNO trim）；`eajcRE10CRN` **1.26**（P2 上傳中文轉回 D／I、P4 機會與改善方法值檢查、P5 序號不補零、`create()` 不再呼叫 `addRE13()`／`addRE13a()`、F2 編號去空白、F3 依標題列 24／17 欄補足資料列，機會欄全空白時 RE13 有該筆才清空否則略過、F4 rankno 依轉換後序號組成）；`dao/eajcRE13.txt` 1.2（P6 說明）。
@@ -274,11 +286,16 @@
   6. 既有問題（另開需求或註記）：舊版 `eajjEA00List.jsp` 第 13 行 `isCrntVer` 串 SQL；~~RE13 序號補零不一致~~（RQ11510029 處理）；舊控制器 `eajcRE00CR`、`eajcEA00CR` 未改 readCSV。
 - RQ11510029 風險評估查詢作業優化：
   1. ~~第一期程式 P1～P6~~ **10/28 完成並上線**（eajcRERpt 1.21、eajcRE10CRN 1.26）；待正式機只匯出驗證（不上傳）。
-  2. **正式機 D3**：由 DBA 依異動申請表 ODT 執行（先 5 段備份，再依序異動 1～5），執行後以異動後檢查查回 0 筆，修改計畫書補執行結果。D1 等 M66 張宏遠回覆（10/28 已發信）後擬 UPDATE（122 筆 CHANGE I→V、IMETHOD 空白→I），D2 確認 MT61／MP82／MPM1 舊單是否仍為最新簽准版。
+  2. ~~正式機 D3~~ **10/29 DBA 已執行**。**D1**：異動申請表 ODT 轉 PDF 送 DBA，執行後查 `CHANGE='I'` 0 筆、M661 `V／I` 122 筆，修改計畫書補結果。**D4**：DBA 執行後查空白 0 筆。D2 確認 MT61／MP82／MPM1 舊單是否仍為最新簽准版。
+  - 第二期：使用者確認測試機畫面後，正式機 DAJJU1 送 5 支（eajcRERpt 1.22、eajcRERptCRN 1.8、eajjRERptListN 1.13、eajjRECodeListN 1.6、eajjEACodeListN 1.6）。
+  - `dejtTableCursor.jss` 滑過樣式問題反映框架負責人。
   - 待使用者決定：測試機 MPB3／M91 測試資料是否還原；SQL 檔步驟 1～6 是否改成與 ODT 相同排版。
   3. 待查 Q1：MPW1 `26S01MPW1262451457`（07 版，10/19 簽核完成卻是舊版本）所有版次與 isCrntVer；Q2：最新 B 表是否把 RE04 狀態 50 算完工。
   4. 第二期：第五節待澄清 8 點由使用者確認後再動工。
-- ZPJJB01 10/28 已登打 0800–1200、1300–1600 共 8.0 HR。
+- HG：
+  1. **HGJJA02 正式機驗證**（16:17 上線後）：查 E122287597 等多筆人員，確認最新在最上面、有效期限顯示起迄日；Entity 與 JSP 需同時生效。
+  2. 確認謝明志回信已寄出、高啟清改起日後可存檔；如仍失敗，查正式機 TBHG201 申請單核發期限及 TBHG202 資料。
+- ZPJJB01 10/28 已登打 8.0 HR；10/29 已登打 001～010（7.5 HR）。
 - decision-plan skill：到 Claude.ai「設定 → Capabilities → Skills」上傳 `C:/恆逸/decision-plan/decision-plan.skill` 覆蓋舊版，再確認同步版有 `assets/template.html`；之後用新案子實跑一次，檢查輸出沒有殘留 `{{`。
 
 ## 以後的構想（不列入待辦）
