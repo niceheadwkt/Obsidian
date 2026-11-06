@@ -1,8 +1,11 @@
 # 工作筆記
 
-**更新日期**：2026-11-05
+**更新日期**：2026-11-06
 
 ## 上次做到哪
+- **2026-11-06 RQ11510012 上線核准查核、zpq 查詢 API 原始碼研讀**：
+  - `DB.TBDAU1` 申請 `20261105_162613`（ea，RQ11510012，類別 30）狀態 **A（已核准）**，審核 CHS01；`DB.TBDAU3` 4 支程式（eajcRE03DAO、eajcRERpt、eajcRE00CRN、eajcExportCSV）正確，但 `COMMITVERSION` 空白，版本號與生效時間無法由此確認。
+  - 研讀 zpq 用戶端與 `zp/jsp/zpjjQueryApi.jsp`、`zpjjQueryApiToken.jsp`、`zpjjQueryApiAdm.jsp`（皆 26295 負責）及共用連線池 `jdbc/dsyl`，整理成 [zpq查詢API運作說明](AI/ERP/zpq查詢API運作說明.md)（含可回報 26295 的 7 點建議，尚未寄出）。
 - **2026-11-05 下午 RQ11510012 新版複製擴充字錯位修正（C8FE）**：
   - 原因：同 HGJJC01，`doCopyLatest()` B 表讀成 Java 字串再逐列 `create()` 寫回，C8FE 每複製一次多錯 1 byte。【複製】`doCopy()` 用 `copyByFormNo()` 在資料庫內複製，不受影響。匯入 `readCSV()` 已處理 F9D6～F9FE，但無法辨識字元／簡體字會被默默寫成 C8FE。
   - 程式（CVS）：`eajcRERpt` 1.23（最新B表SQL拆成 `getLatestBWithSql()`＋`getLatestBSelectSql()`，匯出SQL改前改後逐字相同；新增 `getLatestBCopyInsertSql()`、`queryLatestBCopyCount()`）、`eajcRE03DAO` 1.13（`insertBySql()`）、`eajcRE00CRN` 1.33（B表改 INSERT … WITH … SELECT，寫入後核對筆數）、`eajcExportCSV` 1.10（`checkDbChar()`：以 x-IBM950 檢查，U+FFFD、簡體字、表情符號擋下並提示行數）。
@@ -297,7 +300,7 @@
   3. ~~與 ch27159 確認 `hgjcb02StaffEntity` 1.22 起日空白改加 tips 是否刻意~~ **已結案（10/22）**：ch27159 10/21 16:52 來信說明起日不會空白，都由 hg201VO 複製；正式機僅 2013 年以前有空值。已核對 `hgjcB02Upload` 第 185～186 行在 `doCreate／doUpdate`（→ `checkValidDate`）前先設 validDateS／E，`hgjcb02ApplyBs`、`hgjcb02ApplyEC` 亦同，無影響。
 - RQ11510012 風險評估系統優化（**10/27 正式機上線；規劃文件已定版 v0.5**；剩上線後驗證與手冊上傳）：
   0. **擴充字 C8FE 修正（11/05 重新納入）**：
-     - 查 `DB.TBDAU1` 確認正式機 11/05 23:17 申請已核准（A），版本 eajcRE03DAO 1.13、eajcRERpt 1.23、eajcRE00CRN 1.33、eajcExportCSV 1.10。
+     - ~~查 `DB.TBDAU1` 確認正式機 11/05 23:17 申請已核准（A）~~ **11/06 已查：A 已核准**；TBDAU3 `COMMITVERSION` 空白，版本 eajcRE03DAO 1.13、eajcRERpt 1.23、eajcRE00CRN 1.33、eajcExportCSV 1.10 需另由 CVS／DAJJU1 畫面確認。
      - 資料修正 ODT（`ERP資料_異動申請表_RQ11510012(風險評估系統優化)_D1擴充字亂碼資料修正.odt`，6 張單 18 列 21 欄位）送 DBA；執行後查 6 張單 C8FE 為 0、位元組同 `RQ11510012_D1_預期修正後_20261102.csv`。另 2026 年 7 張歷史簽准版（30 列）未列入。
      - 正式機有人新版複製或匯入時，抽查 B 表位元組與來源相同。
      - 測試機 `26S01M462262881018` 版次目前空白，待使用者決定是否恢復 01／20261015。
