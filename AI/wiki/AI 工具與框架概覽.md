@@ -24,7 +24,7 @@ sources: [
   "[[AI/raw/2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md|Google Gemini 3 全能使用手冊（盈夏AI輕創業）]]"
 ]
 created: 2026-06-11
-updated: 2026-10-08
+updated: 2026-11-12
 ---
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
@@ -169,7 +169,7 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
 - **詳見專頁**：`[[OpenCode 新版架構與模型最佳搭配指南]]`。
 
 ### 10.3 GitHub 開源軍火庫與 AI Skills 入門
-- **免安裝與低門檻開源工具**：涵蓋 OpenCut 剪輯、AI-For-Beginners 課程、free-for-dev 清單、OfficeCLI 文書自動化及 n8n 工作流。
+- **免安裝與低門檻開源工具**：涵蓋 OpenCut 剪輯、AI-For-Beginners 課程、free-for-dev 清單、OfficeCLI 文書自動化及 [[n8n]] 工作流（n8n 的本機 Docker 架設與 LINE、Gemini 串接實作，見 [[AI 工作流程自動化實作_n8n 課程總結]]）。
 - **AI Skills 4 大入口**：Anthropic 官方、awesome-agent-skills、awesome-mcp-servers 及 awesome-copilot。
 - **詳見專頁**：`[[GitHub 開源工具與 AI Skills 入門指南]]`。
 

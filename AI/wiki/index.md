@@ -69,6 +69,7 @@
 | [[GCP 雲端排程與現代化數據工程實戰]] | Google Cloud Scheduler 免費額度與計費機制、Cloud Scheduler vs. Gemini Spark 分工對比、ETL 與 ELT 架構演進差異，以及 dbt + BigQuery 金牌分層架構實戰 | 1 | 2026-09-17 |
 | [[Google Flow AI短片製作實務]] | Google Flow 零門檻短片工具鏈（Gemini分鏡→Flow生畫面→MyEdit配音→Canva剪輯）、無／有指定主角二分法、每日50點與Veo模型選用 | 1 | 2026-09-16 |
 | [[AI 越聰明，你越省力_直播總結與學習卡]] | 三師爸 2026-10-18 直播精華：AI Agent 作為最後一個工具的收斂分水嶺、AI 三代演進（生成式→Agent→Agent Bot）、Strata 架構本地 Agent 破局點、一條龍 AI 影音、Codex 視覺化動態教學、數學非選題命題排版與手寫考卷精準批改（90%+ 準確率）、Claude Code 黃金四檔與 10 張精選學習卡 | 1 | 2026-10-18 |
+| [[AI 工作流程自動化實作_n8n 課程總結]] | 產發署線上課程（講師李迦恩）：Docker 本機架設 n8n、節點與工作流觀念、RSS 抓氣象資料轉 JSON 後用 LINE Messaging API 推播，再加 Gemini 分支依提示詞產生穿著建議，並用主幹與分支互相對照驗證 AI 輸出 | 1 | 2026-11-12 |
 
 ---
 
@@ -80,6 +81,7 @@
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
 | `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
+| `[[n8n]]` | 工作流程自動化平台 | 開源、以節點組成的 No-Code／Low-Code 自動化平台，可以用 Docker 免費自架，透過 HTTP Request 串接任何 API 與 AI 模型 | `[[AI 工作流程自動化實作_n8n 課程總結]]` |
 
 ## 原始文獻目錄 (Sources Catalog)
 
@@ -344,6 +346,7 @@
 | SRC-256 | 2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md | 對話 / MCP | 2026-10-08 | [[AVA_ERP MCP 工具建立標準流程]], [[AI Agent 實戰與 MCP 伺服器整合]] |
 | SRC-257 | 目前 2026 年最主流的 AI 發展趨勢.md | 筆記 / 趨勢選題 | 2026-10-08 | [[AI 工具應用內容趨勢與選題地圖]] |
 | SRC-258 | 2026-10-18T222039+0800-AI 越聰明，你越省力.md | 直播 / 逐字稿 | 2026-10-18 | [[AI 越聰明，你越省力_直播總結與學習卡]] |
+| SRC-259 | 2026-11-12T113821+0800-AI工作流程自動化實作（n8n＋LINE＋Gemini）課程重點整理.md | 線上課程 / 字幕整理 | 2026-11-12 | [[AI 工作流程自動化實作_n8n 課程總結]]、[[n8n]] |
 ---
 
 > [!TIP]

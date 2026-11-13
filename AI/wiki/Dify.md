@@ -3,7 +3,7 @@ type: entity
 tags: [AI工具, Dify, LowCode, NoCode, RAG, 工作流, Docker]
 sources: ["[[sources/01_AI_Tools/Dify.md]]"]
 created: 2026-06-18
-updated: 2026-07-09
+updated: 2026-11-12
 ---
 
 # Dify (開源企業級低代碼 AI 應用平台)
@@ -61,3 +61,9 @@ Dify 支援建立多種不同的 AI 應用，滿足從輕量聊天到複雜業�
 
 - **Dify Cloud**：直接在 Dify 官網註冊，內建免費額度，只需綁定自己的 Model API Key 即可快速上手。
 - **Dify Community (開源版)**：支援透過 **Docker Compose** 一鍵本地部署（Self-hosted），對於重視隱私安全、數據不允許外流的企業提供完善的私有化保障。
+
+---
+
+## 5. 相關工具比較
+
+- [[n8n]]：同樣提供視覺化工作流，也能用 Docker 自架，但重點是跨系統的流程自動化與 API 串接，例如 RSS、LINE、Gemini；Dify 的重點則是 LLM 應用、RAG 知識庫與 BaaS API。實作範例見 [[AI 工作流程自動化實作_n8n 課程總結]]。

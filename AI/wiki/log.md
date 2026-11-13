@@ -461,3 +461,13 @@ aw/ 唯讀目錄下）。
 - **新增頁面**：`[[AI 越聰明，你越省力_直播總結與學習卡]]`（source-summary）：AI 工具收斂分水嶺、AI 三代演進路徑（生成式 AI → AI Agent → Agent Bot）、Strata 架構本地 Agent 部署破局點、一條龍 AI 影音生成、Codex 視覺化動態教學、數學非選題命題排版與手寫考卷精準批改（200+ 題驗證，90%+ 準確率）、Google Drive 鏡像雙向同步與 Remote Control 架構、Claude Code 黃金四檔設定、10 張精選學習卡。
 - **更新索引**：新增概念頁一列與 `SRC-258`。
 - **執行人**：Antigravity Agent
+
+## [2026-11-12] ingest | AI 工作流程自動化實作（n8n＋LINE＋Gemini）
+
+- **來源**：`raw/2026-11-12T113821+0800-AI工作流程自動化實作（n8n＋LINE＋Gemini）課程重點整理.md`。經濟部產業發展署「AIUP 產發署人培專區」的線上課程（講師：李迦恩，共三章、3 小時 13 分），依 Vimeo 自動字幕整理；簡報上講師沒有念出的 API 網址與 JSON 範本，已依官方文件補充並標註。
+- **新增頁面**：
+  - `[[AI 工作流程自動化實作_n8n 課程總結]]`（source-summary）：Docker 本機架設 n8n、節點與工作流觀念、氣象 RSS 轉 JSON 推播 LINE（LINE Notify 已停止服務，改用 Messaging API）、Gemini 分支的提示詞設計，以及主幹與分支對照的驗證機制。
+  - `[[n8n]]`（entity）：核心概念、萬用節點、三種部署方式比較、常用操作技巧，以及和 Dify、AI Agent 的比較。
+- **更新頁面**：`[[AI 工具與框架概覽]]`（10.3 節的 n8n 改為連到新頁面）、`[[Dify]]`（新增第 5 節「相關工具比較」）。
+- **更新索引**：新增概念頁一列、實體頁一列與 `SRC-259`。
+- **執行人**：Claude Code
