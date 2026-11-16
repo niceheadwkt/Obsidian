@@ -1,6 +1,6 @@
 ---
 type: concept
-tags: [Token-Economics, 企業AI, 成本控制, CreaoAI, Semantic-Routing, Qwen, Local-LLM]
+tags: [Token-Economics, 企業AI, 成本控制, CreaoAI, Semantic-Routing, Jev, Qwen, Local-LLM]
 sources:
   - "[[raw/2026 年生成式 AI 企業端應用趨勢報告.md]]"
   - "[[raw/2026-07-17T131343+0800-再見！便宜AI - 商業周刊第2018期 - 商周線上讀.md]]"
@@ -9,8 +9,9 @@ sources:
   - "[[raw/KV Cache.md]]"
   - "[[AI/raw/2026-08-12T162328+0800-27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！🤯🔥.md|27B 小蝦米竟打贏 397B 大鯨魚？Qwen 3.8 要把 AI 巨獸塞進你的電腦！]]"
   - "[[AI/raw/2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md|全球100大AI工具榜出爐！6大洞察一次看（數位時代）]]"
+  - "[[AI/raw/2026-11-13T132312+0800-不能生成文字卻暴紅！ChatGPT技術推手打造AI決策模型Jev，為何讓開發者搶到當機？.md|不能生成文字卻暴紅！ChatGPT技術推手打造AI決策模型Jev（數位時代）]]"
 created: 2026-07-20
-updated: 2026-10-07
+updated: 2026-11-16
 ---
 
 # 生成式 AI 企業應用與成本經濟學
@@ -68,6 +69,10 @@ updated: 2026-10-07
 ### 3.1 任務分流實例對照表
 *   **Luna / Haiku / Terra (輕量/低成本)**：適合執行客服問答、文字摘要、格式轉換或簡單的 SQL 生成。
 *   **SOL / Opus / Sonnet (高階/推理)**：適合執行系統架構設計、複雜 Bug 除錯、跨檔案重構與深度產業預測。
+
+### 3.2 用決策模型擔任路由器：Jev
+
+路由判斷本身是「一眼就能判斷」的 System One 類任務，用 LLM 來做既慢又貴。TypeSafe AI 的 **Jev** 不生成文字，只回傳選擇、評分與真實機率，反應 70～500 毫秒、輸出免費，適合放在第一階段判斷「要不要動用旗艦模型」；信心低於門檻的再轉人工或交給高階模型。詳見 [[Jev 與 System One 決策模型]]。
 
 ---
 

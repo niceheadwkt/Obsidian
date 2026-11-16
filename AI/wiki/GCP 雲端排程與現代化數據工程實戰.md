@@ -8,10 +8,12 @@ tags:
   - dbt
   - BigQuery
   - 數據工程
+  - Document-AI
 sources:
   - "[[AI/raw/GCP_AI_and_ETL_Master_Guide.md|GCP 雲端服務、AI Agent 與現代化數據工程 (ETL/ELT) 全方位實戰指南]]"
+  - "[[AI/raw/2026-11-13T112525+0800-使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理.md|使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理]]"
 created: 2026-09-17
-updated: 2026-09-17
+updated: 2026-11-16
 ---
 
 # GCP 雲端排程與現代化數據工程實戰
@@ -77,6 +79,21 @@ updated: 2026-09-17
 
 ---
 
+## 5. 非結構化文件進資料倉儲：Document AI 擷取管道
+
+紙本或 PDF 表單要進 BigQuery，可以在 Extract 階段加上 **Document AI**，組成事件驅動管道（詳見 [[Document AI 大規模資料擷取_課程總結]]）：
+
+```text
+上傳 Cloud Storage（輸入 bucket）→ Cloud Run 函式 → Document AI（Form Parser，非同步）
+  → 欄位寫進 BigQuery → Pub/Sub 觸發後續加值（例如 Geocoding）→ 原檔移到封存 bucket
+```
+
+- Form Parser 擷取有標籤欄位的鍵/值與可信度分數；沒有標籤的版面改用專用剖析器（例如發票剖析器）。
+- 課程提醒：Cloud Run 函式可能超過逾時上限，正式環境建議改用 **Cloud Tasks**。
+
+---
+
 ## 關聯頁面
 - `[[Google Spark 與 GAS 雲端自動化實務]]`
+- `[[Document AI 大規模資料擷取_課程總結]]`
 - `[[生成式 AI 企業應用與成本經濟學]]`

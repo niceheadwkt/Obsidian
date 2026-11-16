@@ -38,7 +38,7 @@
 | `[[AI 時代的 Agent 術語與核心概念]]` | 以「公司部門與人員架構」的現實生活比喻，系統化解讀大語言模型 (LLM)、API、MCP、RAG 等 16 個核心技術術語 | 1 | 2026-07-09 |
 | `[[三大 AI 付費版選用與效能橫向對比]]` | 整合賓州大學華頓商學院 Ethan Mollick 教授之模型選用邏輯，對比 ChatGPT, Gemini 與 Claude 訂閱版之優勢，並補充 a16z 第七版榜單之流量與付費數據及 Gemini 生態整合實操連結 | 3 | 2026-10-08 |
 | `[[硬筆書法與美字練習心法]]` | 均間、橫畫微上揚與拉長主筆等美字書寫三大技巧，結合日常 10 分鐘格子本練字微習慣 | 1 | 2026-07-09 |
-| `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-07-09 |
+| `[[跨平台螢幕擷取與智慧辨識實務]]` | Windows 11、Android（含紅米 Note 13 Pro+）與 iOS 之螢幕截圖、文字動作 (OCR) 提取、即時翻譯與以圖搜尋操作，及 Google Lens 與替代掃描工具 (Google Drive / Adobe Scan) 實務 | 1 | 2026-11-16 |
 | `[[AI Agent 與 AntiGravity 2.0 基礎入門]]` | 解構生成式 AI 與 AI Agent 根本差異、初始化 Git 與 .gitignore 設定、全域與專案記憶 (.md)，權限管理 (1-5 級/Bypass 模式)、Token 節約經濟學，以及 Google AntiGravity 2.0 一鍵安裝、Gems 轉 Skills，與備課及 GAS 開發實戰 | 10 | 2026-07-20 |
 | `[[AI 語音複製與 VoxCPM2 本地部署]]` | 開源 VoxCPM2 語音複製模型本地部署流程、GPU 自動偵測 (NVIDIA/Intel Arc/CPU)、極致克隆技術 (Ultimate Cloning)、自然語言與 Agent 驅動配音、多角色對話 (dialogue.py) 實務、AI 防詐資訊素養教材，以及「桌面 AI 女友」本地陪伴應用趨勢 | 3 | 2026-09-17 |
 | `[[AI 工具與任務場景橫向評比]]` | 對比 ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok 六大工具在腦力激盪、文案、簡報、資料表、資料搜集等五大場景之優劣，4 步驟 AI 輔助建立 HTML Dashboard 工作流，以及老牌零售良興 3C 與 Data-DI 合作的 AI 落地變革案例 | 2 | 2026-07-09 |
@@ -46,7 +46,7 @@
 | `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份，以及 AVA_ERP 會議室 MCP 工具與建立流程 | 14 | 2026-10-08 |
 | `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
-| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成） | 6 | 2026-10-07 |
+| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成），以及 Jev 決策模型擔任路由器 | 7 | 2026-11-16 |
 | `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
 | `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧，以及台電 App「住宅用電分析」AI 家電耗電推估（NILM 技術） | 4 | 2026-09-17 |
 | `[[Claude 基本功與個人 AI 工作流實戰]]` | 三師爸 Claude 基本功 EP01-EP10，包含四大操作模式、五層擴充機制、NotebookLM/GitHub/Supabase 串接與專案一桌三櫃管理，以及 Matt Pocock Skills 本地 Python 客製化評估 | 12 | 2026-07-23 |
@@ -66,10 +66,11 @@
 | [[Qwen 3.8 本地模型部署與企業 ROI 實務]] | 通義千問 Qwen 3.8-27B 越級挑戰 397B 巨獸、GGUF 量化、MInference 推理加速 (550-650 tokens/s)、llama.cpp 緩衝區優化及企業在地端部署 ROI 哲學 | 1 | 2026-08-14 |
 | [[OpenCode 新版架構與模型最佳搭配指南]] | OpenCode Desktop 新版 Go 方案、DeepSeek V4 Flash 重訓版 + GPT 5.6 Luna 雙模型黃金搭檔、「以時間換智力」思考強度 Max 哲學與兩大免費技能 (Vision Sidecar/免費生圖壓繁中)，以及零基礎四階段安裝入門實戰 | 2 | 2026-09-17 |
 | [[民生消費品實測與食安評估]] | 台灣鮮乳市場實測：脂肪標準化與 UHT 超高溫殺菌之美納反應、假小農文青包裝行銷迷思、瑞穗鮮乳與瑞穗極致殺菌工藝對比，以及選購避坑指南 | 1 | 2026-09-17 |
-| [[GCP 雲端排程與現代化數據工程實戰]] | Google Cloud Scheduler 免費額度與計費機制、Cloud Scheduler vs. Gemini Spark 分工對比、ETL 與 ELT 架構演進差異，以及 dbt + BigQuery 金牌分層架構實戰 | 1 | 2026-09-17 |
+| [[GCP 雲端排程與現代化數據工程實戰]] | Google Cloud Scheduler 免費額度與計費機制、Cloud Scheduler vs. Gemini Spark 分工對比、ETL 與 ELT 架構演進差異，以及 dbt + BigQuery 金牌分層架構實戰、Document AI 文件擷取管道 | 2 | 2026-11-16 |
 | [[Google Flow AI短片製作實務]] | Google Flow 零門檻短片工具鏈（Gemini分鏡→Flow生畫面→MyEdit配音→Canva剪輯）、無／有指定主角二分法、每日50點與Veo模型選用 | 1 | 2026-09-16 |
 | [[AI 越聰明，你越省力_直播總結與學習卡]] | 三師爸 2026-10-18 直播精華：AI Agent 作為最後一個工具的收斂分水嶺、AI 三代演進（生成式→Agent→Agent Bot）、Strata 架構本地 Agent 破局點、一條龍 AI 影音、Codex 視覺化動態教學、數學非選題命題排版與手寫考卷精準批改（90%+ 準確率）、Claude Code 黃金四檔與 10 張精選學習卡 | 1 | 2026-10-18 |
 | [[AI 工作流程自動化實作_n8n 課程總結]] | 產發署線上課程（講師李迦恩）：Docker 本機架設 n8n、節點與工作流觀念、RSS 抓氣象資料轉 JSON 後用 LINE Messaging API 推播，再加 Gemini 分支依提示詞產生穿著建議，並用主幹與分支互相對照驗證 AI 輸出 | 1 | 2026-11-12 |
+| [[Document AI 大規模資料擷取_課程總結]] | Google Skills 技能徽章課程：Form Parser 鍵/值與可信度擷取、同步與非同步 API、Cloud Storage → Cloud Run → Document AI → BigQuery／Pub/Sub 事件驅動管道，挑戰實驗室 GSP367 任務與排錯，以及 ERP 單據擷取應用聯想 | 1 | 2026-11-16 |
 
 ---
 
@@ -81,6 +82,7 @@
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
 | `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
+| `[[Jev 與 System One 決策模型]]` | AI 決策模型 | TypeSafe AI 推出、不生成文字的 System One 模型，回傳選擇／評分／真實機率，70～500 毫秒、輸出免費，用於分類、Agent 監控與模型路由，可透過 Claude Code／Codex 的 Skill 使用 | `[[生成式 AI 企業應用與成本經濟學]]` |
 | `[[n8n]]` | 工作流程自動化平台 | 開源、以節點組成的 No-Code／Low-Code 自動化平台，可以用 Docker 免費自架，透過 HTTP Request 串接任何 API 與 AI 模型 | `[[AI 工作流程自動化實作_n8n 課程總結]]` |
 
 ## 原始文獻目錄 (Sources Catalog)
@@ -347,6 +349,8 @@
 | SRC-257 | 目前 2026 年最主流的 AI 發展趨勢.md | 筆記 / 趨勢選題 | 2026-10-08 | [[AI 工具應用內容趨勢與選題地圖]] |
 | SRC-258 | 2026-10-18T222039+0800-AI 越聰明，你越省力.md | 直播 / 逐字稿 | 2026-10-18 | [[AI 越聰明，你越省力_直播總結與學習卡]] |
 | SRC-259 | 2026-11-12T113821+0800-AI工作流程自動化實作（n8n＋LINE＋Gemini）課程重點整理.md | 線上課程 / 字幕整理 | 2026-11-12 | [[AI 工作流程自動化實作_n8n 課程總結]]、[[n8n]] |
+| SRC-260 | 2026-11-13T112525+0800-使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理.md | 線上課程 / 課程頁整理 | 2026-11-16 | [[Document AI 大規模資料擷取_課程總結]] |
+| SRC-261 | 2026-11-13T132312+0800-不能生成文字卻暴紅！ChatGPT技術推手打造AI決策模型Jev，為何讓開發者搶到當機？.md | 新聞 / 數位時代 | 2026-11-16 | [[Jev 與 System One 決策模型]] |
 ---
 
 > [!TIP]
