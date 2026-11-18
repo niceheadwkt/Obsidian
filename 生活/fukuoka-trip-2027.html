@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#23406B">
+<title>福岡自由行手帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#23406B; --red:#D9482F; --yellow:#F2B441; --pink:#E58FA6; --green:#2F7D6B; --sky:#7FB9D6;
+  --bg:#EEF4F3; --card:#FFFFFF; --ink:#1E2B3A; --muted:#566575; --line:#D7E1E4;
+  --t-spot:#E3F0F7; --t-food:#FDF0D4; --t-shop:#FBE6EC; --t-base:#F3F5F6;
+  --radius:16px; --bd:1.5px solid var(--blue);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 48px}
+h1,h2,h3,h4{line-height:1.35;margin:0}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--blue)}
+.card{background:var(--card);border:var(--bd);border-radius:var(--radius);padding:16px;margin:0 0 14px}
+.tag{display:inline-block;font-size:13px;line-height:1;padding:5px 9px;border-radius:999px;font-weight:700;vertical-align:middle}
+.tag-sample{background:var(--yellow);color:var(--blue)}
+.muted{color:var(--muted)}
+.notice{background:#FFF8E8;border:1.5px dashed var(--yellow);border-radius:var(--radius);padding:12px 14px;margin:0 0 14px;font-size:15px}
+.sec-title{font-size:22px;color:var(--blue);margin:4px 0 14px}
+.sub{font-size:18px;color:var(--blue);margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 14px;border:var(--bd);border-radius:12px;background:#fff;color:var(--blue);font-weight:700;text-decoration:none;font-size:15px;line-height:1.2}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.wide{width:100%;min-height:52px;font-size:16px}
+.btn.on{background:var(--green);border-color:var(--green);color:#fff}
+.btn-light{background:#fff;color:var(--blue);border-color:#fff;margin-top:12px}
+.back{display:flex;justify-content:center;align-items:center;gap:8px;width:100%;min-height:56px;border:var(--bd);border-radius:var(--radius);background:#fff;color:var(--blue);font-weight:700;font-size:16px;margin-top:20px}
+.back svg{width:20px;height:20px}
+
+/* 首頁 */
+.hero{padding-top:16px}
+.hero-art{border:var(--bd);border-radius:var(--radius);overflow:hidden;background:#DDEDF3}
+.hero-art svg{display:block;width:100%;height:auto}
+.hero h1{font-size:27px;margin:16px 0 2px;color:var(--blue);letter-spacing:.02em}
+.hero .meta{margin:0;color:var(--muted)}
+.lantern{transform-box:fill-box;transform-origin:50% 0;animation:sway 3.8s ease-in-out infinite}
+.lantern.b{animation-delay:-1.9s}
+.steam path{animation:steam 3.4s ease-out infinite;opacity:0}
+.steam path:nth-child(2){animation-delay:-1.1s}
+.steam path:nth-child(3){animation-delay:-2.2s}
+.waves{animation:wave 7s linear infinite}
+.waves.w2{animation-duration:11s}
+.petal{animation:fall 10s linear infinite}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes steam{0%{transform:translateY(4px);opacity:0}30%{opacity:.9}100%{transform:translateY(-16px);opacity:0}}
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:1}85%{opacity:1}100%{transform:translate(-70px,150px) rotate(220deg);opacity:0}}
+
+/* 主選單 */
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 22px;scroll-margin-top:12px}
+.menu button{min-height:64px;display:flex;align-items:center;gap:10px;padding:10px 14px;border:var(--bd);border-radius:var(--radius);background:#fff;color:var(--blue);font-weight:700;font-size:17px;text-align:left}
+.menu button svg{width:28px;height:28px;flex:none}
+.menu button[aria-selected="true"]{background:var(--blue);color:#fff}
+.panel[hidden]{display:none}
+
+/* 倒數 */
+.count{background:var(--blue);color:#fff;border-color:var(--blue)}
+.count .c-lab{margin:0;font-weight:700}
+.count .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 6px;margin:6px 0 4px}
+.count .num{font-size:44px;font-weight:700;line-height:1.05;color:var(--yellow)}
+.count .unit{margin-right:8px}
+.count .c-sub{margin:0;font-size:15px;opacity:.85}
+.count .next{margin-top:8px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.12)}
+
+/* 登機證 */
+.pass{padding:0;overflow:hidden}
+.pass-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;background:var(--blue);color:#fff}
+.pass.ret .pass-head{background:var(--green)}
+.pass-head b{font-size:17px}
+.pass-head .dir{font-size:14px;padding:3px 10px;border:1.5px solid #fff;border-radius:999px}
+.pass-body{padding:14px 16px 12px}
+.route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px}
+.route .end{text-align:right}
+.route .code{font-size:34px;font-weight:700;color:var(--blue);line-height:1.1}
+.route .ap{font-size:14px;color:var(--muted);line-height:1.4}
+.route .tm{font-size:22px;font-weight:700;margin-top:4px}
+.route .tz{font-size:13px;color:var(--muted)}
+.route .mid{display:flex;flex-direction:column;align-items:center;color:var(--red);font-size:13px;font-weight:700}
+.route .mid svg{width:30px;height:30px}
+.perf{position:relative;border-top:2px dashed var(--line);margin:0 16px}
+.perf::before,.perf::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--bg);border:var(--bd)}
+.perf::before{left:-29px}.perf::after{right:-29px}
+.pass-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 16px 16px;margin:0}
+.pass-foot div{min-width:0}
+.pass-foot dt{font-size:13px;color:var(--muted)}
+.pass-foot dd{margin:0;font-weight:700;font-size:15px;line-height:1.4}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.facts div{border-radius:12px;background:var(--bg);padding:10px 12px}
+.facts dt{font-size:13px;color:var(--muted)}
+.facts dd{margin:0;font-weight:700;line-height:1.4}
+
+/* 每日行程 */
+.days-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.days-pick button{min-height:72px;border:var(--bd);border-radius:14px;background:#fff;padding:6px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.25;color:var(--blue)}
+.days-pick .dn{font-size:13px;color:var(--muted)}
+.days-pick .dd{font-size:19px;font-weight:700}
+.days-pick .dw{font-size:14px}
+.days-pick button[aria-pressed="true"]{background:var(--blue);color:#fff}
+.days-pick button[aria-pressed="true"] .dn{color:#fff}
+.daybar{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0}
+.sum{width:100%;display:flex;align-items:center;gap:10px;padding:8px 14px;background:#fff;border:var(--bd);border-radius:var(--radius);text-align:left;min-height:58px}
+.sum[aria-expanded="true"]{border-radius:16px 16px 0 0}
+.sum .w-ico{width:34px;height:34px;flex:none}
+.sum .s-main{flex:1;min-width:0}
+.sum .s-l1{font-weight:700;line-height:1.4}
+.sum .s-l2{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}
+.sum .chev{width:20px;height:20px;flex:none;transition:transform .2s}
+.sum[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.sum-more{background:#fff;border:var(--bd);border-top:1px solid var(--line);border-radius:0 0 16px 16px;padding:12px 14px 14px;max-height:60vh;overflow:auto}
+.sum-more h4{font-size:15px;color:var(--blue);margin:0 0 4px}
+.sum-more p{margin:0 0 10px}
+.wx{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.wx span b{color:var(--blue)}
+.day-head{margin:8px 0 6px}
+.day-head h3{font-size:20px;color:var(--blue)}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:var(--bd);border-radius:999px;overflow:hidden;background:#fff;margin:10px 0 16px}
+.seg button{min-height:48px;border:0;background:transparent;font-weight:700;color:var(--blue);display:flex;align-items:center;justify-content:center;gap:6px}
+.seg button svg{width:22px;height:22px}
+.seg button[aria-pressed="true"]{background:var(--blue);color:#fff}
+.seg button:disabled{color:#9AA8B4;cursor:not-allowed}
+.seg-note{font-size:14px;color:var(--muted);margin:-8px 0 14px;text-align:center}
+
+.tl > *{animation:pop .55s cubic-bezier(.34,1.45,.55,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+@keyframes pop{0%{opacity:0;transform:translateY(14px) scale(.97)}60%{opacity:1;transform:translateY(-3px) scale(1.01)}100%{opacity:1;transform:none}}
+.item{border:var(--bd);border-radius:var(--radius);padding:14px 16px;transition:opacity .2s}
+.t-spot{background:var(--t-spot)} .t-food{background:var(--t-food)} .t-shop{background:var(--t-shop)} .t-base{background:var(--t-base);border-color:#8A99A6}
+.item .head{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.item .time{font-weight:700;font-size:18px;color:var(--blue);margin-right:4px}
+.kind{font-size:13px;font-weight:700;padding:4px 9px;border-radius:999px;line-height:1}
+.k-spot{background:var(--sky);color:var(--blue)} .k-food{background:var(--yellow);color:var(--blue)} .k-shop{background:var(--pink);color:var(--blue)} .k-base{background:#DCE2E6;color:var(--blue)}
+.must{background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:4px 9px;border-radius:999px;line-height:1}
+.item h3{font-size:19px;color:var(--blue)}
+.item .note{margin:6px 0 0}
+.item dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:10px 0 0}
+.item dt{color:var(--muted);font-size:15px;white-space:nowrap}
+.item dd{margin:0}
+.item .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.item.done{opacity:.6}
+.item.done h3{text-decoration:line-through}
+.move{margin:0 0 0 22px;padding:10px 0 10px 18px;border-left:2.5px dashed var(--sky);font-size:15px}
+.leg{display:flex;gap:8px;align-items:flex-start;padding:3px 0}
+.leg .mode{flex:none;font-size:13px;font-weight:700;padding:4px 9px;border-radius:999px;margin-top:2px;line-height:1.1;color:#fff;background:var(--blue)}
+.m-walk{background:var(--green)!important}
+.m-bus{background:var(--yellow)!important;color:var(--blue)!important}
+.m-car{background:var(--pink)!important;color:var(--blue)!important}
+.m-train{background:var(--red)!important}
+.leg .rt{font-weight:700;display:block;line-height:1.45}
+.leg small{display:block;color:var(--muted);font-size:14px;line-height:1.5}
+
+/* 表單與花費 */
+.field{display:block;margin:0 0 10px;border:0;padding:0;min-width:0}
+.field > span,.field legend{display:block;font-size:14px;color:var(--muted);margin-bottom:4px;padding:0}
+.field input,.field select,.inp{width:100%;min-height:46px;border:1.5px solid #B4C3CA;border-radius:12px;padding:8px 12px;background:#fff;font-size:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:4px 12px;border:1.5px solid var(--blue);border-radius:999px;font-size:15px;background:#fff;cursor:pointer}
+.chip input{width:18px;height:18px;accent-color:var(--blue);margin:0}
+.chip:has(input:checked){background:#E3ECF6}
+.mini{display:flex;gap:8px;margin-top:8px}
+.mini button{border:1.5px solid #B4C3CA;background:#fff;border-radius:10px;padding:4px 12px;font-size:14px;min-height:36px}
+.err{color:var(--red);font-size:14px;margin:0 0 8px;min-height:0}
+.exp-row{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.exp-row .e-main{flex:1;min-width:0}
+.exp-row .e-name{font-weight:700;line-height:1.4}
+.exp-row .e-meta{font-size:14px;color:var(--muted);line-height:1.4}
+.exp-row .amt{text-align:right;font-weight:700;line-height:1.35;white-space:nowrap}
+.exp-row .amt small{display:block;font-weight:400;color:var(--muted);font-size:14px}
+.del{width:40px;height:40px;flex:none;border:1.5px solid #C6D1D6;border-radius:10px;background:#fff;color:var(--muted);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding-top:10px;border-top:1.5px solid var(--blue);font-weight:700}
+.total .big{font-size:20px;color:var(--blue)}
+.rate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0 12px;font-size:15px}
+.rate input{width:110px;min-height:42px}
+
+/* 清單 */
+.bar{height:14px;border-radius:999px;background:#DCE6E8;overflow:hidden;border:1.5px solid var(--blue);margin:8px 0}
+.bar i{display:block;height:100%;background:var(--green);transition:width .4s}
+.ck{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.ck label{flex:1;display:flex;gap:12px;align-items:center;min-height:44px;cursor:pointer}
+.ck input{width:24px;height:24px;accent-color:var(--green);flex:none;margin:0}
+.ck.done span{text-decoration:line-through;color:var(--muted)}
+.add{display:flex;gap:8px;margin-top:12px}
+.add input{flex:1}
+.add .btn{flex:none}
+
+/* 速查 */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:10px 0 12px}
+.kv dt{color:var(--muted);font-size:15px;white-space:nowrap}
+.kv dd{margin:0;font-weight:500}
+.tel{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:56px;padding:8px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.tel:first-of-type{border-top:0}
+.tel b{display:block;color:var(--blue)}
+.tel small{display:block;color:var(--muted);font-size:14px;line-height:1.4}
+.tel .num{flex:none;font-weight:700;font-size:18px;color:#fff;background:var(--red);border-radius:12px;padding:6px 12px}
+.tel .num.alt{background:var(--blue);font-size:15px}
+.area{padding:10px 0;border-top:1px solid var(--line)}
+.area:first-of-type{border-top:0}
+.area h4{color:var(--blue);font-size:17px}
+.area p{margin:2px 0}
+.list{margin:6px 0 0;padding-left:20px}
+.list li{margin:2px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:8px 4px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:14px;border-top:0}
+td.r,th.r{text-align:right;white-space:nowrap}
+.pos{color:var(--green);font-weight:700}.neg{color:var(--red);font-weight:700}
+.tx{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);align-items:center}
+.tx b{color:var(--blue)}
+.mem{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.mem input{flex:1}
+.foot{margin-top:28px;font-size:14px;color:var(--muted);text-align:center}
+.reset{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:14px;padding:8px}
+
+@media (max-width:360px){
+  .row2{grid-template-columns:1fr}
+  .pass-foot{grid-template-columns:1fr 1fr}
+  .route .code{font-size:28px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .steam path{opacity:.7}
+  .petal{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-art">
+    <svg viewBox="0 0 360 230" role="img" aria-label="福岡插畫：福岡塔、那珂川畔的中洲屋台與太宰府梅花">
+      <defs>
+        <g id="plum"><circle cx="0" cy="-3.6" r="3.2"/><circle cx="3.4" cy="-1.1" r="3.2"/><circle cx="2.1" cy="2.9" r="3.2"/><circle cx="-2.1" cy="2.9" r="3.2"/><circle cx="-3.4" cy="-1.1" r="3.2"/></g>
+      </defs>
+      <rect width="360" height="230" fill="#DDEDF3"/>
+      <circle cx="158" cy="46" r="15" fill="#F2B441"/>
+      <g fill="#FFFFFF">
+        <rect x="20" y="30" width="38" height="10" rx="5"/><rect x="30" y="24" width="20" height="10" rx="5"/>
+        <rect x="196" y="52" width="44" height="10" rx="5"/><rect x="208" y="46" width="22" height="10" rx="5"/>
+      </g>
+      <!-- 遠景城市 -->
+      <g fill="#C2DBE5">
+        <rect x="0" y="128" width="30" height="40"/><rect x="28" y="112" width="22" height="56"/>
+        <rect x="96" y="120" width="26" height="48"/><rect x="120" y="134" width="34" height="34"/>
+        <rect x="152" y="116" width="20" height="52"/><rect x="300" y="124" width="30" height="44"/>
+        <rect x="328" y="108" width="32" height="60"/>
+      </g>
+      <!-- 福岡塔 -->
+      <g stroke="#23406B" stroke-width="1.5" stroke-linejoin="round">
+        <line x1="70" y1="40" x2="70" y2="14" stroke-linecap="round"/>
+        <polygon points="60,168 80,168 75,40 65,40" fill="#7FB9D6"/>
+        <rect x="61.5" y="56" width="17" height="11" rx="2" fill="#23406B"/>
+        <path d="M66 82 L76 100 M64.5 106 L77 128 M63 134 L78.5 156" stroke="#FFFFFF" stroke-width="1.2" fill="none"/>
+      </g>
+      <!-- 河岸 -->
+      <rect x="0" y="166" width="360" height="14" fill="#2F7D6B"/>
+      <!-- 熱食鍋與蒸氣 -->
+      <g class="steam" fill="none" stroke="#A7C1CE" stroke-width="2.6" stroke-linecap="round">
+        <path d="M174 140 q-4 -6 0 -12 q4 -6 0 -12"/>
+        <path d="M182 140 q-4 -6 0 -12 q4 -6 0 -12"/>
+        <path d="M190 140 q-4 -6 0 -12 q4 -6 0 -12"/>
+      </g>
+      <g stroke="#23406B" stroke-width="1.5" stroke-linejoin="round">
+        <rect x="168" y="152" width="28" height="14" fill="#FFFFFF"/>
+        <path d="M170 152 h24 v-8 h-24z" fill="#D9482F"/>
+      </g>
+      <!-- 屋台 -->
+      <g stroke="#23406B" stroke-width="1.5" stroke-linejoin="round">
+        <line x1="208" y1="100" x2="208" y2="124"/><line x1="284" y1="100" x2="284" y2="124"/>
+        <rect x="204" y="128" width="84" height="34" fill="#FFFFFF"/>
+        <rect x="198" y="123" width="96" height="6" fill="#F2B441"/>
+        <path d="M226 123 h18 v-5 a2 2 0 0 0 -2 -2 h-14 a2 2 0 0 0 -2 2z" fill="#E58FA6"/>
+        <polygon points="192,100 300,100 290,85 202,85" fill="#23406B"/>
+        <rect x="204" y="100" width="84" height="14" fill="#D9482F"/>
+        <g stroke="#FFFFFF" stroke-width="1.2"><line x1="225" y1="101" x2="225" y2="113"/><line x1="246" y1="101" x2="246" y2="113"/><line x1="267" y1="101" x2="267" y2="113"/></g>
+        <text x="246" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#D9482F" stroke="none" font-family="Noto Sans TC, sans-serif">屋台</text>
+        <circle cx="220" cy="166" r="8" fill="#FFFFFF"/><circle cx="272" cy="166" r="8" fill="#FFFFFF"/>
+      </g>
+      <g class="lantern">
+        <line x1="196" y1="100" x2="196" y2="106" stroke="#23406B" stroke-width="1.5"/>
+        <ellipse cx="196" cy="114" rx="6" ry="8" fill="#F2B441" stroke="#23406B" stroke-width="1.5"/>
+        <path d="M190.6 110.5 h10.8 M190.6 117.5 h10.8" stroke="#D9482F" stroke-width="1.2"/>
+      </g>
+      <g class="lantern b">
+        <line x1="296" y1="100" x2="296" y2="106" stroke="#23406B" stroke-width="1.5"/>
+        <ellipse cx="296" cy="114" rx="6" ry="8" fill="#F2B441" stroke="#23406B" stroke-width="1.5"/>
+        <path d="M290.6 110.5 h10.8 M290.6 117.5 h10.8" stroke="#D9482F" stroke-width="1.2"/>
+      </g>
+      <!-- 那珂川 -->
+      <rect x="0" y="180" width="360" height="50" fill="#7FB9D6"/>
+      <g fill="#F2B441" opacity=".5"><ellipse cx="196" cy="192" rx="4" ry="7"/><ellipse cx="296" cy="192" rx="4" ry="7"/><ellipse cx="70" cy="196" rx="3" ry="9"/></g>
+      <g class="waves" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".9"><path data-wave="198"/></g>
+      <g class="waves w2" stroke="#FFFFFF" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".6"><path data-wave="214"/></g>
+      <!-- 太宰府梅枝 -->
+      <path d="M362 16 C334 20 314 30 290 48 M326 24 C320 14 326 6 336 0 M304 38 C296 34 286 36 276 44 M344 18 C346 30 342 40 334 48" fill="none" stroke="#5B4038" stroke-width="3.5" stroke-linecap="round"/>
+      <g fill="#E58FA6" stroke="#FFFFFF" stroke-width=".7">
+        <use href="#plum" x="290" y="48"/><use href="#plum" x="318" y="27"/><use href="#plum" x="334" y="4"/>
+        <use href="#plum" x="277" y="44"/><use href="#plum" x="334" y="48"/><use href="#plum" x="350" y="16"/>
+      </g>
+      <g fill="#F2B441"><circle cx="290" cy="48" r="1.6"/><circle cx="318" cy="27" r="1.6"/><circle cx="334" cy="4" r="1.6"/><circle cx="277" cy="44" r="1.6"/><circle cx="334" cy="48" r="1.6"/><circle cx="350" cy="16" r="1.6"/></g>
+      <g fill="#E58FA6"><circle cx="304" cy="38" r="2.4"/><circle cx="342" cy="34" r="2.2"/><circle cx="326" cy="15" r="2.2"/></g>
+      <circle class="petal" cx="300" cy="58" r="2.6" fill="#E58FA6"/>
+    </svg>
+  </div>
+  <h1 id="trip-title"></h1>
+  <p class="meta" id="trip-meta"></p>
+</header>
+
+<nav class="menu" id="menu" role="tablist" aria-label="主選單">
+  <button type="button" role="tab" data-tab="overview" aria-selected="true">
+    <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 13 14 5l10 8v10a1 1 0 0 1-1 1h-6v-7h-6v7H5a1 1 0 0 1-1-1z"/></svg><span>總覽</span>
+  </button>
+  <button type="button" role="tab" data-tab="days" aria-selected="false">
+    <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="6" width="20" height="18" rx="3"/><path d="M4 12h20M10 3v6M18 3v6"/></svg><span>每日行程</span>
+  </button>
+  <button type="button" role="tab" data-tab="prep" aria-selected="false">
+    <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="18" height="21" rx="3"/><path d="m9 11 2.5 2.5L16 9M9 19h10"/></svg><span>行前清單</span>
+  </button>
+  <button type="button" role="tab" data-tab="info" aria-selected="false">
+    <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22V7M3 17h22v5M25 17v-3a3 3 0 0 0-3-3h-9v6"/><circle cx="8" cy="13" r="2"/></svg><span>住宿速查</span>
+  </button>
+</nav>
+
+<main>
+  <section class="panel" id="p-overview" role="tabpanel" aria-label="總覽">
+    <h2 class="sec-title">旅行總覽</h2>
+    <div id="ov-body"></div>
+    <button type="button" class="back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>回主選單</button>
+  </section>
+
+  <section class="panel" id="p-days" role="tabpanel" aria-label="每日行程" hidden>
+    <h2 class="sec-title">每日行程</h2>
+    <div class="notice" id="days-notice"></div>
+    <div class="days-pick" id="day-pick"></div>
+    <div class="daybar" id="daybar"></div>
+    <div class="day-head" id="day-head"></div>
+    <div class="seg" id="mode-seg" role="group" aria-label="晴天或雨天方案"></div>
+    <div id="seg-note"></div>
+    <div class="tl" id="timeline"></div>
+    <div id="exp" style="margin-top:18px"></div>
+    <button type="button" class="back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>回主選單</button>
+  </section>
+
+  <section class="panel" id="p-prep" role="tabpanel" aria-label="行前清單" hidden>
+    <h2 class="sec-title">出發前準備清單</h2>
+    <div id="prep-body"></div>
+    <button type="button" class="back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>回主選單</button>
+  </section>
+
+  <section class="panel" id="p-info" role="tabpanel" aria-label="住宿速查" hidden>
+    <h2 class="sec-title">住宿與實用資訊</h2>
+    <div id="info-body"></div>
+    <button type="button" class="back" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>回主選單</button>
+  </section>
+</main>
+
+<p class="foot">勾選、清單、花費與分帳紀錄只存在這支手機的這個瀏覽器中。<br>修改航班、住宿與行程：用文字編輯器開啟本檔，搜尋「資料區」。</p>
+</div>
+
+<script>
+/* =====================================================================
+   【資料區】更新航班、住宿、行程只需修改 TRIP 物件
+   - sample: true 代表「範例」資料，換成真實資料後改成 false，頁面上的「範例」標籤就會消失
+   - 時間格式：'YYYY-MM-DDTHH:MM'，tz 為該地時區（台灣 8、日本 9）
+   - 行程卡片 type：spot 景點、food 美食、shop 購物、base 機場與飯店
+   - move：從上一站到這一站的交通，可以是單段物件或多段陣列
+       搭車：{mode:'地鐵', line:'路線與方向', from:'出發站', to:'抵達站', min:搭乘分鐘, walk:轉乘步行分鐘}
+       步行：{mode:'步行', from:'起點', to:'終點', dist:'距離', min:分鐘}
+   - rainy：雨天方案。可寫晴天卡片的 id 字串沿用，或 {ref:'id', ...要覆蓋的欄位}，或全新卡片
+   - map：Google 地圖搜尋關鍵字；寫 '@hotel' 會使用住宿的地圖位置
+   ===================================================================== */
+const TRIP = {
+  title: '福岡六天五夜自由行',
+  subtitle: '博多・太宰府・糸島・天神',
+  startDate: '2027-02-04',
+  defaultRate: 0.21,               // 1 日圓兌新台幣的預設匯率，可在頁面上修改
+  membersSample: true,
+  members: ['我', '阿哲', '小雯', '大偉', '佩佩', '阿凱', '小安'],   // 範例旅伴名稱，可在頁面上改名、增減
+  daysSample: true,
+
+  flights: [
+    { dir: '去程', airline: '中華航空', flightNo: 'CI 110', sample: true,
+      dep: { code: 'TPE', airport: '臺灣桃園國際機場', terminal: '第一航廈', time: '2027-02-04T08:20', tz: 8 },
+      arr: { code: 'FUK', airport: '福岡機場', terminal: '國際線航廈', time: '2027-02-04T11:30', tz: 9 } },
+    { dir: '回程', airline: '中華航空', flightNo: 'CI 111', sample: true,
+      dep: { code: 'FUK', airport: '福岡機場', terminal: '國際線航廈', time: '2027-02-09T12:40', tz: 9 },
+      arr: { code: 'TPE', airport: '臺灣桃園國際機場', terminal: '第一航廈', time: '2027-02-09T14:15', tz: 8 } }
+  ],
+
+  hotel: {
+    sample: true,
+    name: '博多站前飯店（範例）',
+    address: '福岡縣福岡市博多區博多站周邊（範例地址）',
+    mapQuery: '博多駅 筑紫口',
+    station: 'JR／地鐵 博多站 筑紫口',
+    walk: '步行約 3 分鐘',
+    checkin: '15:00',
+    checkout: '11:00',
+    nights: '2/4（四）入住至 2/9（二）退房，共 5 晚',
+    rooms: '雙人房 × 3、單人房 × 1',
+    booking: 'HTL-20270204-XXXX',
+    phone: '+81-92-000-0000'
+  },
+
+  reservations: [
+    { sample: true, when: '2/5（五）18:30', name: '博多牛腸鍋（範例）', people: 7, code: 'R-0205-XXXX' },
+    { sample: true, when: '2/6（六）09:00', name: '糸島 9 人座包車（範例）', people: 7, code: 'CAR-0206-XXXX' },
+    { sample: true, when: '2/7（日）19:00', name: '博多和牛燒肉（範例）', people: 7, code: 'R-0207-XXXX' },
+    { sample: true, when: '2/8（一）18:30', name: '博多水炊き（範例）', people: 7, code: 'R-0208-XXXX' }
+  ],
+
+  insurance: {
+    sample: true,
+    company: '○○產物保險（範例）',
+    policy: 'POL-0000-0000',
+    hotline: '+886-2-0000-0000',
+    cover: '海外突發疾病醫療、班機延誤、行李延誤'
+  },
+
+  emergency: [
+    { name: '警察', note: '遇竊、事故、遺失', num: '110', red: true },
+    { name: '消防・救護車', note: '火災、急病、受傷', num: '119', red: true },
+    { name: '台北駐日經濟文化代表處 福岡分處', note: '護照遺失、急難協助（出發前請再核對電話）', num: '092-734-2810' },
+    { name: '日本觀光局 訪日旅客熱線', note: '24 小時，提供中文服務（出發前請再核對）', num: '050-3816-2787' },
+    { name: '外交部緊急聯絡中心', note: '旅外國人急難救助（出發前請再核對）', num: '+886-800-085-095' }
+  ],
+
+  shopping: [
+    { area: '博多站', where: 'AMU PLAZA 博多、博多阪急、MING（マイング）',
+      buy: ['辛子明太子（需保冷）', '博多通りもん', 'ひよ子', '明太子仙貝'],
+      tax: '百貨與服飾店可辦退稅；MING 的伴手禮店大多不辦。' },
+    { area: '天神', where: '岩田屋、大丸、天神地下街、PARCO',
+      buy: ['服飾與選物', '化妝品、藥妝', '百貨地下樓的甜點禮盒'],
+      tax: '百貨設退稅櫃台，同日同店購買可合併計算。' },
+    { area: '中洲・川端', where: '川端通商店街、博多運河城',
+      buy: ['博多傳統雜貨', '角色商品', '運河城限定商品'],
+      tax: '運河城多數店鋪可辦；商店街小店多半不辦。' },
+    { area: '太宰府', where: '天滿宮表參道',
+      buy: ['梅枝餅（現烤現吃）', '太宰府限定御守', '梅子相關點心'],
+      tax: '多為小店，大多不辦退稅。' },
+    { area: '糸島', where: '伊都菜彩（產直市場）',
+      buy: ['糸島海鹽', '手工果醬', '當季草莓'],
+      tax: '不適用。' }
+  ],
+  taxNotes: [
+    '同一店家、同一天購買合計達 5,000 日圓（未稅）以上，才可辦理退稅。',
+    '辦理時需出示護照正本，影本或照片不行。',
+    '日本自 2026 年 11 月起改為「先付含稅價、出境時經海關確認後退稅」，實際流程以店家說明為準。',
+    '退稅商品請放在方便拿出的位置，出境時可能要給海關查看。'
+  ],
+
+  checklist: {
+    todo: [
+      '確認護照效期',
+      '填寫 Visit Japan Web（入境審查與海關申報）',
+      '購買旅遊平安險與海外不便險',
+      '預約 7 人餐廳（牛腸鍋、燒肉、水炊き）',
+      '預約糸島 9 人座包車',
+      '購買日本網卡或 eSIM',
+      '兌換日圓現金',
+      '信用卡開通海外交易',
+      '下載 Google 地圖離線地圖',
+      '建立旅伴群組，確認集合時間與分帳方式',
+      '確認飯店房型與分房',
+      '出發前兩週更新天氣預報'
+    ],
+    pack: [
+      '護照',
+      '電子機票、訂房確認單（截圖離線保存）',
+      '日圓現金、信用卡',
+      'IC 交通卡（SUGOCA、Suica 等）',
+      '手機、充電線、行動電源（需隨身登機）',
+      '保暖外套、圍巾、手套',
+      '發熱衣、好走的鞋',
+      '折疊傘',
+      '常備藥品',
+      '盥洗用品',
+      '購物袋、保冷袋（裝明太子）'
+    ]
+  },
+
+  days: [
+    { title: '抵達福岡・博多站周邊與中洲屋台',
+      weather: { icon: 'cloud', text: '多雲', hi: 11, lo: 4, rain: 30, outfit: '洋蔥式穿搭：發熱衣＋毛衣＋防風外套。晚上河邊風大，去屋台記得帶圍巾。' },
+      hotelNote: '第 1 晚，15:00 起可入住',
+      sunny: [
+        { id: 'd1-1', time: '11:30', type: 'base', name: '抵達福岡機場（國際線）', note: '入境審查、領行李，預計 12:30 出關。7 人在入境大廳集合點名。', map: '福岡空港 国際線ターミナル' },
+        { id: 'd1-2', time: '13:00', type: 'base', name: '飯店寄放行李', note: '15:00 才能入住，先寄放行李再去吃午餐。', map: '@hotel',
+          move: { mode: '巴士', line: '西鐵巴士（往博多巴士總站，直達）', from: '國際線航廈巴士站', to: '博多巴士總站', min: 20, walk: 5 } },
+        { id: 'd1-3', time: '13:30', type: 'food', name: '博多麵街道（博多站 DEITOS 2F）', note: '博多站內的拉麵、烏龍麵店聚集處。', map: '博多めん街道',
+          food: { cuisine: '博多豚骨拉麵', signature: '極細麵豚骨拉麵、加麵（替玉）', budget: '¥1,000–1,500／人', reserve: '不需訂位；7 人建議分兩家或分兩桌' },
+          move: { mode: '步行', from: '飯店', to: '博多站', dist: '300 公尺', min: 5 } },
+        { id: 'd1-4', time: '15:00', type: 'spot', name: '住吉神社', stay: '約 40 分鐘', note: '筑前國一之宮，境內清幽，還有能樂殿。', map: '住吉神社 福岡',
+          move: { mode: '步行', from: '博多站', to: '住吉神社', dist: '1.2 公里', min: 15 } },
+        { id: 'd1-5', time: '16:00', type: 'base', name: '辦理入住、休息', map: '@hotel',
+          move: { mode: '步行', from: '住吉神社', to: '飯店', dist: '1.3 公里', min: 16 } },
+        { id: 'd1-6', time: '18:30', type: 'food', must: true, name: '中洲屋台', note: '那珂川畔的屋台街，夜晚燈籠亮起是福岡的代表風景。', map: '中洲屋台',
+          food: { cuisine: '屋台小吃', signature: '豚骨拉麵、關東煮、烤雞肉串、明太子玉子燒', budget: '¥2,000–3,000／人', reserve: '屋台不接受訂位；一攤多為 8 至 10 席，7 人建議分 2 至 3 攤。遇雨或強風可能休息。' },
+          move: { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '中洲川端', min: 3, walk: 5 } }
+      ],
+      rainy: ['d1-1', 'd1-2', 'd1-3',
+        { id: 'd1-r1', time: '14:30', type: 'shop', name: 'AMU PLAZA 博多・博多阪急', map: 'アミュプラザ博多',
+          shop: { goods: '服飾、雜貨、藥妝；頂樓有餐廳街', tax: '百貨與多數服飾店可辦退稅（需護照）', hours: '約 10:00–20:00' },
+          move: { mode: '步行', from: '博多站 DEITOS', to: 'AMU PLAZA', dist: '200 公尺', min: 3 } },
+        { ref: 'd1-5', move: { mode: '步行', from: '博多站', to: '飯店', dist: '300 公尺', min: 5 } },
+        { id: 'd1-r2', time: '18:30', type: 'food', name: '中洲室內居酒屋（範例）', note: '屋台遇雨可能休息，改到室內居酒屋。', map: '中洲 居酒屋',
+          food: { cuisine: '九州居酒屋', signature: '芝麻鯖魚、雞皮串、明太子料理', budget: '¥3,000–4,000／人', reserve: '7 人建議前一天先訂位' },
+          move: { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '中洲川端', min: 3, walk: 5 } }
+      ] },
+
+    { title: '太宰府天滿宮・梅花與表參道',
+      weather: { icon: 'sun', text: '晴', hi: 12, lo: 3, rain: 10, outfit: '早晚冷、白天有陽光。參道與石階多，穿好走的鞋。' },
+      sunny: [
+        { id: 'd2-1', time: '09:00', type: 'base', name: '飯店出發', map: '@hotel' },
+        { id: 'd2-2', time: '09:50', type: 'spot', must: true, name: '太宰府天滿宮', stay: '約 1.5 小時', note: '供奉學問之神菅原道真。二月初梅花初開，滿開多在二月中旬到三月上旬。記得摸摸御神牛。', map: '太宰府天満宮',
+          move: [
+            { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '天神', min: 5, walk: 5 },
+            { mode: '電車', line: '西鐵天神大牟田線（往大牟田方向）', from: '西鐵福岡（天神）', to: '西鐵二日市', min: 15, walk: 1 },
+            { mode: '電車', line: '西鐵太宰府線', from: '西鐵二日市', to: '太宰府', min: 6 },
+            { mode: '步行', from: '太宰府站', to: '天滿宮', dist: '400 公尺', min: 6 }
+          ] },
+        { id: 'd2-3', time: '11:30', type: 'food', name: '表參道烏龍麵店（範例）', map: '太宰府 参道 うどん',
+          food: { cuisine: '博多烏龍麵', signature: '牛蒡天烏龍麵、稻荷壽司', budget: '¥900–1,300／人', reserve: '中午容易客滿，建議 11:30 前入店' },
+          move: { mode: '步行', from: '天滿宮', to: '表參道', dist: '300 公尺', min: 5 } },
+        { id: 'd2-4', time: '12:40', type: 'shop', name: '太宰府表參道散策', map: '太宰府天満宮 表参道',
+          shop: { goods: '現烤梅枝餅、太宰府限定御守、隈研吾設計的木條星巴克', tax: '多為小店，大多不辦退稅', hours: '約 9:00–18:00（依店家而異）' },
+          move: { mode: '步行', from: '餐廳', to: '參道商店', dist: '100 公尺', min: 2 } },
+        { id: 'd2-5', time: '14:00', type: 'spot', name: '光明禪寺', stay: '約 40 分鐘', note: '以枯山水與苔庭聞名，適合安靜坐一會兒。', map: '光明禅寺 太宰府',
+          move: { mode: '步行', from: '表參道', to: '光明禪寺', dist: '400 公尺', min: 6 } },
+        { id: 'd2-6', time: '15:00', type: 'base', name: '返回博多、飯店休息', map: '@hotel',
+          move: [
+            { mode: '電車', line: '西鐵太宰府線 → 二日市轉天神大牟田線（往福岡（天神）方向）', from: '太宰府', to: '西鐵福岡（天神）', min: 25, walk: 5 },
+            { mode: '地鐵', line: '空港線（往福岡空港方向）', from: '天神', to: '博多', min: 5 }
+          ] },
+        { id: 'd2-7', time: '18:30', type: 'food', name: '博多牛腸鍋（範例）', map: 'もつ鍋 博多',
+          food: { cuisine: '牛腸鍋（もつ鍋）', signature: '醬油或味噌湯底牛腸鍋、收尾強棒麵', budget: '¥3,500–5,000／人', reserve: '7 人務必提前預約，請店家安排同桌或相鄰座位' },
+          move: { mode: '步行', from: '飯店', to: '餐廳', dist: '800 公尺', min: 10 } }
+      ],
+      rainy: ['d2-1', 'd2-2', 'd2-3', 'd2-4',
+        { id: 'd2-r1', time: '14:00', type: 'spot', name: '九州國立博物館', stay: '約 1.5 小時', note: '從天滿宮旁的手扶梯與「彩虹隧道」直達，雨天也方便。週一休館。', map: '九州国立博物館',
+          move: { mode: '步行', from: '表參道', to: '九州國立博物館', dist: '500 公尺', min: 8 } },
+        { ref: 'd2-6', time: '15:40' }, 'd2-7'
+      ] },
+
+    { title: '糸島海岸一日遊',
+      weather: { icon: 'partly', text: '晴時多雲', hi: 10, lo: 4, rain: 30, outfit: '海邊風大、體感更冷：防風外套＋毛帽，鞋子要防滑。' },
+      sunny: [
+        { id: 'd3-1', time: '09:00', type: 'base', name: '飯店集合、包車出發', note: '7 人建議預約 9 人座包車（範例）；若租車，台灣駕照需附日文譯本。', map: '@hotel' },
+        { id: 'd3-2', time: '10:00', type: 'spot', must: true, name: '櫻井二見浦・夫婦岩', stay: '約 50 分鐘', note: '海中的白色鳥居與夫婦岩，是糸島的代表景色。', map: '桜井二見ヶ浦',
+          move: { mode: '包車', line: '包車（範例）', from: '飯店', to: '二見浦', min: 50 } },
+        { id: 'd3-3', time: '11:00', type: 'spot', name: '椰子樹鞦韆', stay: '約 30 分鐘', note: '海邊的打卡鞦韆，週末可能要排隊。', map: 'ヤシの木ブランコ 糸島',
+          move: { mode: '包車', line: '沿海岸道路', from: '二見浦', to: '椰子樹鞦韆', min: 10 } },
+        { id: 'd3-4', time: '12:00', type: 'food', must: true, name: '糸島牡蠣小屋', note: '牡蠣小屋多在冬季營業（約 11 月至隔年 3 月），二月正是產季。', map: '岐志漁港 牡蠣小屋',
+          food: { cuisine: '炭烤海鮮', signature: '現烤牡蠣、烤扇貝、牡蠣飯', budget: '¥2,000–3,000／人', reserve: '多為現場排隊；週末建議 11:30 前到。烤牡蠣會噴汁，穿不怕髒的外套。' },
+          move: { mode: '包車', line: '沿海岸道路', from: '椰子樹鞦韆', to: '岐志漁港', min: 20 } },
+        { id: 'd3-5', time: '14:00', type: 'shop', name: '伊都菜彩（JA 糸島產直市場）', map: '伊都菜彩',
+          shop: { goods: '糸島蔬果、當季草莓、手工果醬、糸島海鹽', tax: '不適用', hours: '約 9:00–18:00（以現場為準）' },
+          move: { mode: '包車', line: '糸島市區', from: '岐志漁港', to: '伊都菜彩', min: 20 } },
+        { id: 'd3-6', time: '15:30', type: 'base', name: '返回飯店休息', map: '@hotel',
+          move: { mode: '包車', line: '返回博多', from: '伊都菜彩', to: '飯店', min: 40 } },
+        { id: 'd3-7', time: '18:30', type: 'food', name: '博多一口煎餃（範例）', map: '一口餃子 中洲',
+          food: { cuisine: '鐵鍋煎餃', signature: '一口煎餃、柚子胡椒沾醬、炸雞翅', budget: '¥1,500–2,500／人', reserve: '小店座位少，7 人建議訂位或分兩批' },
+          move: { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '中洲川端', min: 3, walk: 5 } }
+      ],
+      rainy: [
+        { id: 'd3-r0', time: '09:30', type: 'base', name: '飯店出發（取消包車）', note: '雨天請提前一天與包車業者確認能否免費取消或改期。', map: '@hotel' },
+        { id: 'd3-r1', time: '10:00', type: 'shop', name: '博多運河城', map: 'キャナルシティ博多',
+          shop: { goods: '服飾、角色商品、雜貨；整點有運河噴水秀', tax: '多數店鋪可辦退稅（需護照）', hours: '約 10:00–21:00' },
+          move: { mode: '步行', from: '飯店', to: '運河城', dist: '1.2 公里', min: 15 } },
+        { id: 'd3-r2', time: '12:00', type: 'food', name: '拉麵競技場（運河城 5F）', map: 'ラーメンスタジアム キャナルシティ博多',
+          food: { cuisine: '日本各地拉麵', signature: '各地名店拉麵一次比較', budget: '¥1,000–1,500／人', reserve: '不需訂位' },
+          move: { mode: '步行', from: '運河城', to: '5 樓', dist: '館內移動', min: 3 } },
+        { id: 'd3-r3', time: '14:00', type: 'spot', name: '福岡亞洲美術館', stay: '約 1.5 小時', note: '位於博多 Riverain 7 至 8 樓，收藏亞洲近現代藝術。週三休館。', map: '福岡アジア美術館',
+          move: { mode: '步行', from: '運河城', to: '博多 Riverain', dist: '1 公里', min: 13 } },
+        { ref: 'd3-7', move: { mode: '步行', from: '博多 Riverain', to: '中洲', dist: '500 公尺', min: 7 } }
+      ] },
+
+    { title: '大濠公園・福岡城跡・福岡塔',
+      weather: { icon: 'sun', text: '晴', hi: 13, lo: 5, rain: 20, outfit: '白天回暖適合散步，薄羽絨或大衣即可；福岡塔看夕陽時海風冷，帶圍巾。' },
+      sunny: [
+        { id: 'd4-1', time: '09:30', type: 'base', name: '飯店出發', map: '@hotel' },
+        { id: 'd4-2', time: '10:00', type: 'spot', name: '大濠公園', stay: '約 1 小時', note: '環湖步道約 2 公里，湖中有浮見堂，適合早晨散步。', map: '大濠公園',
+          move: { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '大濠公園', min: 10, walk: 5 } },
+        { id: 'd4-3', time: '11:10', type: 'spot', must: true, name: '福岡城跡・舞鶴公園', stay: '約 1 小時', note: '登上天守台可俯瞰市區；二月可到園內梅園賞梅。', map: '福岡城跡',
+          move: { mode: '步行', from: '大濠公園', to: '福岡城跡', dist: '600 公尺', min: 10 } },
+        { id: 'd4-4', time: '12:30', type: 'food', name: '天神明太子料理（範例）', map: '天神 明太子 ランチ',
+          food: { cuisine: '明太子料理', signature: '明太子玉子燒、明太子茶泡飯', budget: '¥2,000–3,000／人', reserve: '熱門店排隊長，建議事先網路預約' },
+          move: [
+            { mode: '步行', from: '福岡城跡', to: '赤坂站', dist: '700 公尺', min: 9 },
+            { mode: '地鐵', line: '空港線（往福岡空港方向）', from: '赤坂', to: '天神', min: 2, walk: 3 }
+          ] },
+        { id: 'd4-5', time: '14:30', type: 'spot', name: '百道濱海濱公園', stay: '約 40 分鐘', note: '人工沙灘與海上的 Marizon，是拍福岡塔的好角度。', map: 'シーサイドももち海浜公園',
+          move: { mode: '巴士', line: '西鐵巴士（往福岡塔方向）', from: '天神', to: '福岡塔南口', min: 25, walk: 5 } },
+        { id: 'd4-6', time: '16:00', type: 'spot', must: true, name: '福岡塔', stay: '約 2 小時（看完夕陽）', note: '高 234 公尺，展望室約 123 公尺。二月日落約 18:00，建議待到夕陽與夜景。', map: '福岡タワー',
+          move: { mode: '步行', from: '海濱公園', to: '福岡塔', dist: '400 公尺', min: 6 } },
+        { id: 'd4-7', time: '19:00', type: 'food', name: '博多和牛燒肉（範例）', map: '博多和牛 焼肉 博多駅',
+          food: { cuisine: '燒肉', signature: '博多和牛、厚切牛舌', budget: '¥5,000–7,000／人', reserve: '7 人建議提前預約包廂' },
+          move: { mode: '巴士', line: '西鐵巴士（往博多站方向）', from: '福岡塔', to: '博多站', min: 30, walk: 5 } }
+      ],
+      rainy: ['d4-1',
+        { id: 'd4-r1', time: '10:30', type: 'spot', name: '福岡市博物館', stay: '約 1.5 小時', note: '收藏國寶「漢委奴國王」金印，介紹福岡歷史。週一休館。', map: '福岡市博物館',
+          move: [
+            { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '西新', min: 13 },
+            { mode: '步行', from: '西新站', to: '博物館', dist: '1.2 公里', min: 15 }
+          ] },
+        { id: 'd4-r2', time: '12:30', type: 'food', name: 'MARK IS 福岡ももち 美食街', map: 'MARK IS 福岡ももち',
+          food: { cuisine: '多種選擇', signature: '拉麵、定食、甜點', budget: '¥1,200–2,000／人', reserve: '不需訂位，7 人可各自點餐' },
+          move: { mode: '步行', from: '博物館', to: 'MARK IS', dist: '800 公尺', min: 10 } },
+        { ref: 'd4-6', time: '14:30', stay: '約 2 小時', move: { mode: '步行', from: 'MARK IS', to: '福岡塔', dist: '900 公尺', min: 12 } },
+        'd4-7'
+      ] },
+
+    { title: '櫛田神社・川端商店街・天神購物',
+      weather: { icon: 'rain', text: '小雨', hi: 10, lo: 5, rain: 60, outfit: '降雨機率高：防水外套、防水鞋與折疊傘。建議切換到「雨天」方案。' },
+      sunny: [
+        { id: 'd5-1', time: '09:30', type: 'base', name: '飯店出發', map: '@hotel' },
+        { id: 'd5-2', time: '09:50', type: 'spot', must: true, name: '櫛田神社', stay: '約 40 分鐘', note: '博多總鎮守，境內常年展示博多祇園山笠的裝飾山笠。', map: '櫛田神社',
+          move: { mode: '步行', from: '飯店', to: '櫛田神社', dist: '1.2 公里', min: 15 } },
+        { id: 'd5-3', time: '10:40', type: 'shop', name: '川端通商店街', map: '上川端商店街',
+          shop: { goods: '博多傳統雜貨、紅豆湯（ぜんざい）、老舖小吃', tax: '多為小店，大多不辦退稅', hours: '約 10:00–18:00（依店家而異）' },
+          move: { mode: '步行', from: '櫛田神社', to: '商店街', dist: '200 公尺', min: 3 } },
+        { id: 'd5-4', time: '12:00', type: 'food', name: '天神天婦羅定食（範例）', map: '天神 天ぷら定食',
+          food: { cuisine: '現炸天婦羅定食', signature: '天婦羅定食、免費續的醃漬小菜', budget: '¥1,000–1,500／人', reserve: '不需訂位，午餐尖峰可能排隊' },
+          move: { mode: '地鐵', line: '空港線（往姪濱方向）', from: '中洲川端', to: '天神', min: 2, walk: 5 } },
+        { id: 'd5-5', time: '13:30', type: 'shop', name: '天神地下街', map: '天神地下街',
+          shop: { goods: '雜貨、服飾、甜點', tax: '部分店鋪可辦退稅', hours: '約 10:00–20:00' },
+          move: { mode: '步行', from: '餐廳', to: '天神地下街', dist: '300 公尺', min: 4 } },
+        { id: 'd5-6', time: '15:00', type: 'shop', name: '大名・岩田屋・天神 PARCO', map: '岩田屋本店',
+          shop: { goods: '服飾、選物店、咖啡廳；百貨地下美食', tax: '百貨設退稅櫃台，同日同店合併計算（需護照）', hours: '約 10:00–20:00' },
+          move: { mode: '步行', from: '天神地下街', to: '岩田屋', dist: '400 公尺', min: 6 } },
+        { id: 'd5-7', time: '18:30', type: 'food', must: true, name: '博多水炊き（範例）', map: '水炊き 博多',
+          food: { cuisine: '雞肉鍋（水炊き）', signature: '白湯雞肉鍋、收尾雜炊', budget: '¥5,000–8,000／人', reserve: '名店常需數週前預約，7 人務必提前訂位' },
+          move: { mode: '地鐵', line: '空港線（往福岡空港方向）', from: '天神', to: '中洲川端', min: 2, walk: 5 } },
+        { id: 'd5-8', time: '20:30', type: 'shop', name: '博多站 MING 伴手禮預購', note: '最後一天早上時間短，伴手禮今晚先買齊。', map: '博多駅 マイング',
+          shop: { goods: '辛子明太子、博多通りもん、ひよ子、明太子仙貝', tax: '伴手禮店大多不辦退稅', hours: '約 9:00–21:00' },
+          move: { mode: '地鐵', line: '空港線（往福岡空港方向）', from: '中洲川端', to: '博多', min: 3 } }
+      ],
+      rainy: ['d5-1',
+        { ref: 'd5-2', move: [
+            { mode: '地鐵', line: '空港線（往姪濱方向）', from: '博多', to: '祇園', min: 2 },
+            { mode: '步行', from: '祇園站', to: '櫛田神社', dist: '400 公尺', min: 6 }
+          ] },
+        'd5-3', 'd5-4', 'd5-5',
+        { id: 'd5-r1', time: '15:00', type: 'shop', name: '岩田屋・大丸福岡天神店', note: '雨天不逛大名街區，經地下街直達百貨，不必淋雨。', map: '大丸福岡天神店',
+          shop: { goods: '服飾、化妝品、百貨地下美食', tax: '百貨設退稅櫃台（需護照）', hours: '約 10:00–20:00' },
+          move: { mode: '步行', from: '天神地下街', to: '百貨', dist: '地下街直通', min: 5 } },
+        'd5-7', 'd5-8'
+      ] },
+
+    { title: '最後採買・返台',
+      weather: { icon: 'cloud', text: '多雲', hi: 11, lo: 4, rain: 20, outfit: '機上較冷，薄外套放在隨身包。' },
+      hotelNote: '今日退房',
+      sunny: [
+        { id: 'd6-1', time: '08:30', type: 'base', name: '退房', note: '確認房卡、保險箱、充電器都帶走了。', map: '@hotel' },
+        { id: 'd6-2', time: '09:00', type: 'shop', name: '博多站 MING 最後補貨', map: '博多駅 マイング',
+          shop: { goods: '辛子明太子（記得保冷）、博多通りもん', tax: '伴手禮店大多不辦退稅', hours: '約 9:00–21:00' },
+          move: { mode: '步行', from: '飯店', to: '博多站', dist: '300 公尺', min: 5 } },
+        { id: 'd6-3', time: '09:50', type: 'base', name: '前往福岡機場國際線', note: '國際線建議起飛前 2 小時抵達。退稅商品出境時要接受海關確認。', map: '福岡空港 国際線ターミナル',
+          move: { mode: '巴士', line: '西鐵巴士（往福岡機場國際線，直達）', from: '博多巴士總站', to: '國際線航廈', min: 20, walk: 3 } },
+        { id: 'd6-4', time: '12:40', type: 'base', name: '搭機返台', note: '範例航班，抵達桃園為台灣時間 14:15。', map: '福岡空港 国際線ターミナル' }
+      ] }
+  ]
+};
+/* =====================================================================
+   【資料區結束】以下為程式，一般不需要修改
+   ===================================================================== */
+
+const KEY = 'fukuoka-trip-2027-v1';
+const WK = ['日', '一', '二', '三', '四', '五', '六'];
+const CATS = ['餐飲', '交通', '購物', '門票', '住宿', '其他'];
+const KIND = { spot: '景點', food: '美食', shop: '購物', base: '交通・住宿' };
+const MODE_CLS = { '地鐵': '', '電車': 'm-train', 'JR': 'm-train', '巴士': 'm-bus', '包車': 'm-car', '計程車': 'm-car', '步行': 'm-walk' };
+const RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const fmtJPY = n => '¥' + Math.round(n).toLocaleString('zh-TW');
+const fmtTWD = n => 'NT$ ' + Math.round(n).toLocaleString('zh-TW');
+const t2m = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+const tag = on => on ? ' <span class="tag tag-sample">範例</span>' : '';
+const mapURL = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q === '@hotel' ? TRIP.hotel.mapQuery : q);
+
+/* ---------- 本機儲存 ---------- */
+function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
+const S = Object.assign({ done: {}, mode: {}, rate: TRIP.defaultRate, members: null, expenses: [], checklist: null, prepTab: 'todo', day: 0, sumOpen: false }, load());
+if (!Array.isArray(S.members) || !S.members.length) S.members = TRIP.members.map((n, i) => ({ id: 'm' + (i + 1), name: n }));
+if (!S.checklist) S.checklist = {
+  todo: TRIP.checklist.todo.map((t, i) => ({ id: 't' + i, text: t, done: false })),
+  pack: TRIP.checklist.pack.map((t, i) => ({ id: 'p' + i, text: t, done: false }))
+};
+if (!Array.isArray(S.expenses)) S.expenses = [];
+if (!(S.rate > 0)) S.rate = TRIP.defaultRate;
+
+/* ---------- 時間 ---------- */
+function toUTC(iso, tz) {
+  const [d, t] = iso.split('T'); const [y, m, da] = d.split('-').map(Number); const [h, mi] = t.split(':').map(Number);
+  return Date.UTC(y, m - 1, da, h - tz, mi);
+}
+function jstNow() { const d = new Date(Date.now() + 9 * 3600e3); return { y: d.getUTCFullYear(), m: d.getUTCMonth(), d: d.getUTCDate(), min: d.getUTCHours() * 60 + d.getUTCMinutes() }; }
+function startUTC() { const [y, m, d] = TRIP.startDate.split('-').map(Number); return Date.UTC(y, m - 1, d); }
+function dayIndexJST() { const n = jstNow(); return Math.round((Date.UTC(n.y, n.m, n.d) - startUTC()) / 864e5); }
+function dayDate(k) { const dt = new Date(startUTC() + k * 864e5); return { md: (dt.getUTCMonth() + 1) + '/' + dt.getUTCDate(), w: WK[dt.getUTCDay()] }; }
+function isoDate(iso) { const [y, m, d] = iso.slice(0, 10).split('-').map(Number); const dt = new Date(Date.UTC(y, m - 1, d)); return m + '/' + d + '（' + WK[dt.getUTCDay()] + '）'; }
+function durText(ms) { const m = Math.round(ms / 6e4); return Math.floor(m / 60) + ' 小時 ' + (m % 60) + ' 分'; }
+const FIRST = TRIP.flights[0], LAST = TRIP.flights[TRIP.flights.length - 1];
+const DEP = toUTC(FIRST.dep.time, FIRST.dep.tz), END = toUTC(LAST.arr.time, LAST.arr.tz);
+function todayIdx() { const now = Date.now(); if (now < DEP || now > END) return -1; return clamp(dayIndexJST(), 0, TRIP.days.length - 1); }
+
+/* ---------- 行程資料 ---------- */
+function plan(i) {
+  const day = TRIP.days[i];
+  const mode = S.mode[i] === 'rainy' && day.rainy ? 'rainy' : 'sunny';
+  const byId = {}; day.sunny.forEach(x => byId[x.id] = x);
+  const list = mode === 'rainy' ? day.rainy : day.sunny;
+  return list.map(x => {
+    if (typeof x === 'string') return byId[x];
+    if (x.ref) { const o = Object.assign({}, byId[x.ref], x); o.id = x.ref; delete o.ref; return o; }
+    return x;
+  }).filter(Boolean);
+}
+function nextEvent(idx) {
+  const items = plan(idx), now = jstNow().min;
+  const nx = items.find(it => t2m(it.time) > now);
+  if (nx) return '下一個行程：<b>' + esc(nx.time) + ' ' + esc(nx.name) + '</b>';
+  if (idx + 1 < TRIP.days.length) { const f = plan(idx + 1)[0]; return '今天的行程結束了，好好休息。明天 <b>' + esc(f.time) + ' ' + esc(f.name) + '</b>'; }
+  return '行程全部結束，準備回家囉。';
+}
+
+/* ---------- 圖示 ---------- */
+const W = {
+  sun: '<svg viewBox="0 0 32 32" class="w-ico" aria-hidden="true"><circle cx="16" cy="16" r="6.5" fill="#F2B441" stroke="#23406B" stroke-width="1.5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8" stroke="#23406B" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  cloud: '<svg viewBox="0 0 32 32" class="w-ico" aria-hidden="true"><path d="M9 25a5.5 5.5 0 0 1-.4-11A7.5 7.5 0 0 1 23 12.6 6.2 6.2 0 0 1 23.5 25z" fill="#FFFFFF" stroke="#23406B" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  partly: '<svg viewBox="0 0 32 32" class="w-ico" aria-hidden="true"><circle cx="11" cy="11" r="5" fill="#F2B441" stroke="#23406B" stroke-width="1.5"/><path d="M11 2.5v2.5M2.5 11H5M5 5l1.7 1.7M17 5l-1.7 1.7" stroke="#23406B" stroke-width="1.6" stroke-linecap="round"/><path d="M11 27a5 5 0 0 1-.3-10A7 7 0 0 1 24 15.5 5.7 5.7 0 0 1 24.4 27z" fill="#FFFFFF" stroke="#23406B" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  rain: '<svg viewBox="0 0 32 32" class="w-ico" aria-hidden="true"><path d="M9 20a5.5 5.5 0 0 1-.4-11A7.5 7.5 0 0 1 23 7.6 6.2 6.2 0 0 1 23.5 20z" fill="#FFFFFF" stroke="#23406B" stroke-width="1.6" stroke-linejoin="round"/><path d="M11 23l-1.5 4M17 23l-1.5 4M23 23l-1.5 4" stroke="#7FB9D6" stroke-width="2.2" stroke-linecap="round"/></svg>'
+};
+const IC = {
+  map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  chev: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#23406B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
+  plane: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 15.5v-1.8l-8-5V3.5a1.5 1.5 0 0 0-3 0v5.2l-8 5v1.8l8-2.5v5l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5z" transform="rotate(90 12 12)"/></svg>'
+};
+
+/* ---------- 總覽 ---------- */
+function passHTML(f) {
+  const dur = durText(toUTC(f.arr.time, f.arr.tz) - toUTC(f.dep.time, f.dep.tz));
+  const tzName = tz => tz === 9 ? '日本時間' : tz === 8 ? '台灣時間' : 'UTC+' + tz;
+  return `<article class="card pass ${f.dir === '回程' ? 'ret' : ''}">
+    <div class="pass-head"><b>${esc(f.airline)}　${esc(f.flightNo)}</b><span class="dir">${esc(f.dir)}</span></div>
+    <div class="pass-body">
+      <div class="route">
+        <div><div class="code">${esc(f.dep.code)}</div><div class="ap">${esc(f.dep.airport)}<br>${esc(f.dep.terminal)}</div><div class="tm">${f.dep.time.slice(11, 16)}</div><div class="tz">${tzName(f.dep.tz)}</div></div>
+        <div class="mid">${IC.plane}<span>${dur}</span></div>
+        <div class="end"><div class="code">${esc(f.arr.code)}</div><div class="ap">${esc(f.arr.airport)}<br>${esc(f.arr.terminal)}</div><div class="tm">${f.arr.time.slice(11, 16)}</div><div class="tz">${tzName(f.arr.tz)}</div></div>
+      </div>
+    </div>
+    <div class="perf"></div>
+    <dl class="pass-foot">
+      <div><dt>日期</dt><dd>${isoDate(f.dep.time)}</dd></div>
+      <div><dt>飛行時數</dt><dd>${dur}</dd></div>
+      <div><dt>資料</dt><dd>${f.sample ? '<span class="tag tag-sample">範例</span>' : '已確認'}</dd></div>
+    </dl>
+  </article>`;
+}
+function renderOverview() {
+  const h = TRIP.hotel;
+  $('#ov-body').innerHTML = `
+    <div class="card count" id="countdown"></div>
+    <h3 class="sub">航班資訊${tag(TRIP.flights.some(f => f.sample))}</h3>
+    <p class="muted" style="margin:-4px 0 12px;font-size:15px">起降時間皆為當地時間：日本比台灣快 1 小時。</p>
+    ${TRIP.flights.map(passHTML).join('')}
+    <h3 class="sub">旅程速覽</h3>
+    <dl class="card facts">
+      <div><dt>旅伴</dt><dd>${S.members.length} 人${tag(TRIP.membersSample)}</dd></div>
+      <div><dt>天數</dt><dd>${TRIP.days.length} 天 ${TRIP.days.length - 1} 夜</dd></div>
+      <div><dt>住宿</dt><dd>${esc(h.name)}</dd></div>
+      <div><dt>時差</dt><dd>日本快 1 小時</dd></div>
+      <div><dt>匯率設定</dt><dd>¥1 = NT$ ${S.rate}</dd></div>
+      <div><dt>電壓插座</dt><dd>100V・A 型，與台灣相同</dd></div>
+    </dl>`;
+  updateCountdown();
+}
+function updateCountdown() {
+  const el = $('#countdown'); if (!el) return;
+  const now = Date.now();
+  if (now < DEP) {
+    let ms = DEP - now; const d = Math.floor(ms / 864e5); ms -= d * 864e5; const h = Math.floor(ms / 36e5); ms -= h * 36e5; const m = Math.floor(ms / 6e4);
+    el.innerHTML = `<p class="c-lab">距離出發還有</p>
+      <div class="big"><span class="num">${d}</span><span class="unit">天</span><span class="num">${h}</span><span class="unit">時</span><span class="num">${m}</span><span class="unit">分</span></div>
+      <p class="c-sub">以台灣時間 ${isoDate(FIRST.dep.time)} ${FIRST.dep.time.slice(11, 16)} 起飛計算</p>`;
+  } else if (now <= END) {
+    const idx = clamp(dayIndexJST(), 0, TRIP.days.length - 1);
+    el.innerHTML = `<p class="c-lab">旅程進行中</p>
+      <div class="big"><span class="unit">第</span><span class="num">${idx + 1}</span><span class="unit">天（共 ${TRIP.days.length} 天）</span></div>
+      <div class="next">${nextEvent(idx)}</div>
+      <button type="button" class="btn btn-light" data-goday="${idx}">看今天的行程</button>`;
+  } else {
+    el.innerHTML = `<p class="c-lab">旅程已結束</p><div class="big"><span class="num">歡迎回家</span></div>
+      <p class="c-sub">到「住宿速查」查看六天總支出與分帳結果。</p>`;
+  }
+}
+
+/* ---------- 每日行程 ---------- */
+function moveHTML(m, n) {
+  const legs = Array.isArray(m) ? m : [m];
+  return `<div class="move" style="--i:${n}" aria-label="交通指引">${legs.map(l => {
+    const cls = MODE_CLS[l.mode] || '';
+    if (l.mode === '步行') return `<div class="leg"><span class="mode ${cls}">步行</span><div><span class="rt">${l.from ? esc(l.from) + ' → ' + esc(l.to) : '步行前往'}</span><small>${esc(l.dist)}・約 ${l.min} 分鐘</small></div></div>`;
+    return `<div class="leg"><span class="mode ${cls}">${esc(l.mode)}</span><div><span class="rt">${esc(l.from)} → ${esc(l.to)}</span><small>${esc(l.line)}・搭乘約 ${l.min} 分鐘${l.walk ? '<br>轉乘／出站步行約 ' + esc(l.walk) + ' 分鐘' : ''}</small></div></div>`;
+  }).join('')}</div>`;
+}
+function itemHTML(it, n) {
+  const done = !!S.done[it.id];
+  const rows = [];
+  if (it.stay) rows.push(['預計停留', it.stay]);
+  if (it.food) rows.push(['料理類型', it.food.cuisine], ['招牌菜', it.food.signature], ['預算', it.food.budget], ['訂位', it.food.reserve]);
+  if (it.shop) rows.push(['推薦商品', it.shop.goods], ['退稅', it.shop.tax], ['營業時間', it.shop.hours]);
+  return `<article class="item t-${it.type}${done ? ' done' : ''}" style="--i:${n}" data-item="${esc(it.id)}">
+    <div class="head"><span class="time">${esc(it.time)}</span><span class="kind k-${it.type}">${KIND[it.type]}</span>${it.must ? '<span class="must">必去</span>' : ''}</div>
+    <h3>${esc(it.name)}</h3>
+    ${it.note ? `<p class="note">${esc(it.note)}</p>` : ''}
+    ${rows.length ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl>` : ''}
+    <div class="acts">
+      ${it.map ? `<a class="btn" href="${mapURL(it.map)}" target="_blank" rel="noopener">${IC.map}地圖</a>` : ''}
+      <button type="button" class="btn${done ? ' on' : ''}" data-done="${esc(it.id)}" aria-pressed="${done}">${IC.check}${done ? '已完成' : '標記完成'}</button>
+    </div>
+  </article>`;
+}
+function renderDays() {
+  const ti = todayIdx();
+  $('#days-notice').innerHTML = TRIP.daysSample ? '<b>以下行程、餐廳與天氣皆為範例。</b>天氣為福岡二月平均氣候，出發前兩週請改成實際預報。' : '';
+  $('#day-pick').innerHTML = TRIP.days.map((d, k) => {
+    const dt = dayDate(k);
+    return `<button type="button" data-day="${k}" aria-pressed="${k === S.day}"><span class="dn">第 ${k + 1} 天${k === ti ? '・今天' : ''}</span><span class="dd">${dt.md}</span><span class="dw">（${dt.w}）</span></button>`;
+  }).join('');
+  renderSummary();
+  const day = TRIP.days[S.day], dt = dayDate(S.day);
+  $('#day-head').innerHTML = `<h3>第 ${S.day + 1} 天・${dt.md}（${dt.w}）</h3><p class="muted" style="margin:2px 0 0">${esc(day.title)}</p>`;
+  renderMode();
+  renderTimeline();
+  renderExpenses();
+}
+function renderSummary() {
+  const day = TRIP.days[S.day], w = day.weather, h = TRIP.hotel;
+  $('#daybar').innerHTML = `
+    <button type="button" class="sum" id="sum-btn" aria-expanded="${S.sumOpen}" aria-controls="sum-more">
+      ${W[w.icon] || W.cloud}
+      <span class="s-main"><span class="s-l1">${esc(w.text)}　${w.hi}° / ${w.lo}°　降雨 ${w.rain}%</span><span class="s-l2">${esc(h.name)}${day.hotelNote ? '・' + esc(day.hotelNote) : ''}</span></span>
+      ${IC.chev}
+    </button>
+    <div class="sum-more" id="sum-more" ${S.sumOpen ? '' : 'hidden'}>
+      <h4>天氣${tag(TRIP.daysSample)}</h4>
+      <div class="wx"><span>最高 <b>${w.hi}°C</b></span><span>最低 <b>${w.lo}°C</b></span><span>降雨機率 <b>${w.rain}%</b></span></div>
+      <p>${esc(w.outfit)}</p>
+      <h4>住宿${tag(h.sample)}</h4>
+      <p><b>${esc(h.name)}</b><br>${esc(h.address)}<br>最近車站：${esc(h.station)}，${esc(h.walk)}</p>
+      <a class="btn" href="${mapURL('@hotel')}" target="_blank" rel="noopener">${IC.map}Google 地圖</a>
+    </div>`;
+}
+function renderMode() {
+  const day = TRIP.days[S.day], hasRain = !!day.rainy, mode = hasRain && S.mode[S.day] === 'rainy' ? 'rainy' : 'sunny';
+  $('#mode-seg').innerHTML = `
+    <button type="button" data-mode="sunny" aria-pressed="${mode === 'sunny'}">${W.sun}晴天行程</button>
+    <button type="button" data-mode="rainy" aria-pressed="${mode === 'rainy'}" ${hasRain ? '' : 'disabled'}>${W.rain}雨天備案</button>`;
+  $('#seg-note').innerHTML = hasRain ? '' : '<p class="seg-note">本日以室內與交通為主，沒有另外的雨天備案。</p>';
+}
+function renderTimeline() {
+  let n = 0, html = '';
+  plan(S.day).forEach(it => { if (it.move) html += moveHTML(it.move, n++); html += itemHTML(it, n++); });
+  $('#timeline').innerHTML = html;
+}
+
+/* ---------- 花費 ---------- */
+const memName = id => (S.members.find(m => m.id === id) || {}).name || '（已移除）';
+function expRowHTML(e) {
+  const each = e.jpy / e.split.length;
+  return `<div class="exp-row">
+    <div class="e-main"><div class="e-name">${esc(e.name)}</div><div class="e-meta">${esc(e.cat)}・${esc(memName(e.payer))} 付・${e.split.length} 人分攤（每人 ${fmtJPY(each)}）</div></div>
+    <div class="amt">${fmtJPY(e.jpy)}<small>${fmtTWD(e.jpy * S.rate)}</small></div>
+    <button type="button" class="del" data-del-exp="${esc(e.id)}" aria-label="刪除 ${esc(e.name)}">×</button>
+  </div>`;
+}
+function rateHTML() { return `<label class="rate"><span>匯率：¥1 = NT$</span><input class="inp rate-input" type="number" inputmode="decimal" step="0.001" min="0.01" value="${S.rate}"></label>`; }
+function renderExpenses() {
+  const list = S.expenses.filter(e => e.day === S.day);
+  const total = list.reduce((a, e) => a + e.jpy, 0);
+  $('#exp').innerHTML = `<section class="card">
+    <h3 class="sub" style="margin-top:0">第 ${S.day + 1} 天花費</h3>
+    ${rateHTML()}
+    <form id="exp-form" autocomplete="off">
+      <div class="row2">
+        <label class="field"><span>項目</span><input name="name" required maxlength="40" placeholder="例：屋台拉麵"></label>
+        <label class="field"><span>金額（日圓）</span><input name="jpy" required inputmode="numeric" placeholder="例：3500"></label>
+      </div>
+      <div class="row2">
+        <label class="field"><span>類別</span><select name="cat">${CATS.map(c => `<option>${c}</option>`).join('')}</select></label>
+        <label class="field"><span>付款人</span><select name="payer">${S.members.map(m => `<option value="${esc(m.id)}">${esc(m.name)}</option>`).join('')}</select></label>
+      </div>
+      <fieldset class="field"><legend>分攤成員（預設全員）</legend>
+        <div class="chips">${S.members.map(m => `<label class="chip"><input type="checkbox" name="split" value="${esc(m.id)}" checked>${esc(m.name)}</label>`).join('')}</div>
+        <div class="mini"><button type="button" data-split="all">全選</button><button type="button" data-split="none">全不選</button></div>
+      </fieldset>
+      <p class="err" id="exp-err"></p>
+      <button type="submit" class="btn primary wide">新增花費</button>
+    </form>
+    <div style="margin-top:14px">${list.length ? list.map(expRowHTML).join('') : '<p class="muted" style="margin:0 0 10px">今天還沒有花費紀錄。</p>'}</div>
+    <div class="total"><span>本日合計</span><span class="big">${fmtJPY(total)}<br><small class="muted" style="font-weight:400;font-size:14px">${fmtTWD(total * S.rate)}</small></span></div>
+  </section>`;
+}
+
+/* ---------- 行前清單 ---------- */
+function renderPrep() {
+  const c = S.checklist, all = c.todo.concat(c.pack);
+  const dn = a => a.filter(x => x.done).length;
+  const pct = all.length ? Math.round(dn(all) / all.length * 100) : 0;
+  const tab = S.prepTab === 'pack' ? 'pack' : 'todo', list = c[tab];
+  $('#prep-body').innerHTML = `
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><b>整體準備進度</b><b style="color:var(--blue);font-size:20px">${pct}%</b></div>
+      <div class="bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>
+      <div class="muted" style="font-size:15px">已完成 ${dn(all)} / ${all.length} 項：行前待辦 ${dn(c.todo)} / ${c.todo.length}，行李準備 ${dn(c.pack)} / ${c.pack.length}</div>
+    </section>
+    <div class="seg" role="group" aria-label="清單類型">
+      <button type="button" data-ptab="todo" aria-pressed="${tab === 'todo'}">行前待辦（${dn(c.todo)}/${c.todo.length}）</button>
+      <button type="button" data-ptab="pack" aria-pressed="${tab === 'pack'}">行李準備（${dn(c.pack)}/${c.pack.length}）</button>
+    </div>
+    <section class="card">
+      ${list.length ? list.map(x => `<div class="ck${x.done ? ' done' : ''}">
+        <label><input type="checkbox" data-ck="${esc(x.id)}" ${x.done ? 'checked' : ''}><span>${esc(x.text)}</span></label>
+        <button type="button" class="del" data-del-ck="${esc(x.id)}" aria-label="移除 ${esc(x.text)}">×</button></div>`).join('') : '<p class="muted" style="margin:0">清單是空的，從下方新增項目。</p>'}
+      <form class="add" id="ck-form" autocomplete="off">
+        <input class="inp" name="text" required maxlength="60" placeholder="${tab === 'todo' ? '新增待辦，例如：預約 JR 車票' : '新增行李，例如：暖暖包'}">
+        <button type="submit" class="btn primary">新增</button>
+      </form>
+      ${tab === 'pack' ? '<p class="muted" style="font-size:14px;margin:12px 0 0">日本插座與台灣相同（A 型、100V），一般電器不需轉接頭。</p>' : ''}
+    </section>`;
+}
+
+/* ---------- 住宿速查 ---------- */
+function settle() {
+  const bal = {}; S.members.forEach(m => bal[m.id] = { paid: 0, owe: 0 });
+  S.expenses.forEach(e => {
+    if (bal[e.payer]) bal[e.payer].paid += e.jpy;
+    const sh = e.jpy / e.split.length; e.split.forEach(id => { if (bal[id]) bal[id].owe += sh; });
+  });
+  const net = S.members.map(m => ({ id: m.id, v: Math.round(bal[m.id].paid - bal[m.id].owe) }));
+  const cr = net.filter(x => x.v > 0).sort((a, b) => b.v - a.v).map(x => ({ id: x.id, v: x.v }));
+  const db = net.filter(x => x.v < 0).sort((a, b) => a.v - b.v).map(x => ({ id: x.id, v: -x.v }));
+  const tx = []; let i = 0, j = 0;
+  while (i < db.length && j < cr.length) {
+    const a = Math.min(db[i].v, cr[j].v);
+    if (a >= 1) tx.push({ from: db[i].id, to: cr[j].id, amt: a });
+    db[i].v -= a; cr[j].v -= a;
+    if (db[i].v < 1) i++; if (cr[j].v < 1) j++;
+  }
+  return { bal, tx };
+}
+function renderInfo() {
+  const h = TRIP.hotel, ins = TRIP.insurance;
+  const total = S.expenses.reduce((a, e) => a + e.jpy, 0);
+  const byDay = TRIP.days.map((_, k) => S.expenses.filter(e => e.day === k).reduce((a, e) => a + e.jpy, 0));
+  const byCat = CATS.map(c => [c, S.expenses.filter(e => e.cat === c).reduce((a, e) => a + e.jpy, 0)]).filter(x => x[1] > 0);
+  const st = settle();
+  $('#info-body').innerHTML = `
+    <h3 class="sub" style="margin-top:0">住宿${tag(h.sample)}</h3>
+    <section class="card">
+      <h4 style="font-size:19px;color:var(--blue)">${esc(h.name)}</h4>
+      <dl class="kv">
+        <dt>地址</dt><dd>${esc(h.address)}</dd>
+        <dt>最近車站</dt><dd>${esc(h.station)}</dd>
+        <dt>步行</dt><dd>${esc(h.walk)}</dd>
+        <dt>入住</dt><dd>${esc(h.checkin)} 起</dd>
+        <dt>退房</dt><dd>${esc(h.checkout)} 前</dd>
+        <dt>期間</dt><dd>${esc(h.nights)}</dd>
+        <dt>房型</dt><dd>${esc(h.rooms)}</dd>
+        <dt>訂房編號</dt><dd>${esc(h.booking)}</dd>
+        <dt>電話</dt><dd><a href="tel:${esc(h.phone)}">${esc(h.phone)}</a></dd>
+      </dl>
+      <a class="btn wide" href="${mapURL('@hotel')}" target="_blank" rel="noopener">${IC.map}在 Google 地圖開啟</a>
+    </section>
+
+    <h3 class="sub">緊急聯絡</h3>
+    <section class="card">
+      ${TRIP.emergency.map(e => `<a class="tel" href="tel:${esc(e.num.replace(/[^\d+]/g, ''))}"><span><b>${esc(e.name)}</b><small>${esc(e.note)}</small></span><span class="num${e.red ? '' : ' alt'}">${esc(e.num)}</span></a>`).join('')}
+    </section>
+
+    <h3 class="sub">訂位與保險${tag(TRIP.reservations.some(r => r.sample) || ins.sample)}</h3>
+    <section class="card">
+      <table><thead><tr><th>時間</th><th>內容</th><th class="r">編號</th></tr></thead><tbody>
+        ${TRIP.reservations.map(r => `<tr><td>${esc(r.when)}</td><td>${esc(r.name)}（${r.people} 人）</td><td class="r">${esc(r.code)}</td></tr>`).join('')}
+      </tbody></table>
+      <dl class="kv" style="margin-top:16px">
+        <dt>保險公司</dt><dd>${esc(ins.company)}</dd>
+        <dt>保單號碼</dt><dd>${esc(ins.policy)}</dd>
+        <dt>海外救助</dt><dd><a href="tel:${esc(ins.hotline.replace(/[^\d+]/g, ''))}">${esc(ins.hotline)}</a></dd>
+        <dt>保障內容</dt><dd>${esc(ins.cover)}</dd>
+      </dl>
+      <p class="muted" style="font-size:14px;margin:0">本檔只存在你自己的裝置；若要轉傳給別人，請勿填入護照號碼等個資。</p>
+    </section>
+
+    <h3 class="sub">伴手禮與退稅</h3>
+    <section class="card">
+      ${TRIP.shopping.map(s => `<div class="area"><h4>${esc(s.area)}</h4><p class="muted" style="font-size:15px">${esc(s.where)}</p>
+        <ul class="list">${s.buy.map(b => `<li>${esc(b)}</li>`).join('')}</ul><p style="font-size:15px;margin-top:6px"><b>退稅：</b>${esc(s.tax)}</p></div>`).join('')}
+    </section>
+    <section class="card" style="background:#FFF8E8;border-color:var(--yellow)">
+      <h4 style="color:var(--blue);font-size:17px">退稅提醒</h4>
+      <ul class="list">${TRIP.taxNotes.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+    </section>
+
+    <h3 class="sub">旅程總支出</h3>
+    <section class="card">
+      ${rateHTML()}
+      <div class="total" style="border-top:0;padding-top:0"><span>六天合計</span><span class="big">${fmtJPY(total)}<br><small class="muted" style="font-weight:400;font-size:14px">${fmtTWD(total * S.rate)}・平均每人 ${fmtTWD(total * S.rate / Math.max(1, S.members.length))}</small></span></div>
+      <table style="margin-top:12px"><thead><tr><th>日期</th><th class="r">日圓</th><th class="r">新台幣</th></tr></thead><tbody>
+        ${byDay.map((v, k) => { const d = dayDate(k); return `<tr><td>第 ${k + 1} 天 ${d.md}（${d.w}）</td><td class="r">${fmtJPY(v)}</td><td class="r">${fmtTWD(v * S.rate)}</td></tr>`; }).join('')}
+      </tbody></table>
+      ${byCat.length ? `<table style="margin-top:12px"><thead><tr><th>類別</th><th class="r">日圓</th><th class="r">占比</th></tr></thead><tbody>
+        ${byCat.map(c => `<tr><td>${c[0]}</td><td class="r">${fmtJPY(c[1])}</td><td class="r">${Math.round(c[1] / total * 100)}%</td></tr>`).join('')}</tbody></table>` : ''}
+    </section>
+
+    <h3 class="sub">分帳結算</h3>
+    <section class="card">
+      <table><thead><tr><th>成員</th><th class="r">已付</th><th class="r">應付</th><th class="r">差額</th></tr></thead><tbody>
+        ${S.members.map(m => { const b = st.bal[m.id], n = Math.round(b.paid - b.owe); return `<tr><td>${esc(m.name)}</td><td class="r">${fmtJPY(b.paid)}</td><td class="r">${fmtJPY(b.owe)}</td><td class="r ${n > 0 ? 'pos' : n < 0 ? 'neg' : ''}">${n > 0 ? '+' : ''}${fmtJPY(n).replace('¥-', '-¥')}</td></tr>`; }).join('')}
+      </tbody></table>
+      <h4 style="color:var(--blue);font-size:17px;margin-top:16px">誰該付給誰</h4>
+      ${st.tx.length ? st.tx.map(t => `<div class="tx"><span><b>${esc(memName(t.from))}</b> 付給 <b>${esc(memName(t.to))}</b></span><span style="text-align:right;font-weight:700">${fmtJPY(t.amt)}<br><small class="muted" style="font-weight:400">${fmtTWD(t.amt * S.rate)}</small></span></div>`).join('') : '<p class="muted" style="margin:6px 0 0">目前帳目平衡，不需要轉帳。</p>'}
+      <p class="muted" style="font-size:14px;margin:12px 0 0">差額為正代表多付、應收回；為負代表應補給他人。結算以最少轉帳次數計算。</p>
+    </section>
+
+    <h3 class="sub">旅伴名單${tag(TRIP.membersSample)}</h3>
+    <section class="card">
+      ${S.members.map(m => `<div class="mem"><input class="inp" data-mem="${esc(m.id)}" value="${esc(m.name)}" maxlength="12" aria-label="成員名稱"><button type="button" class="del" data-del-mem="${esc(m.id)}" aria-label="移除 ${esc(m.name)}">×</button></div>`).join('')}
+      <p class="err" id="mem-err"></p>
+      <form class="add" id="mem-form" autocomplete="off" style="margin-top:4px"><input class="inp" name="name" required maxlength="12" placeholder="新增旅伴名稱"><button type="submit" class="btn primary">新增</button></form>
+      <p class="muted" style="font-size:14px;margin:10px 0 0">改名後直接點其他地方即可儲存。已有花費紀錄的成員無法移除。</p>
+    </section>
+    <p style="text-align:center"><button type="button" class="reset" data-reset>清除這支手機上的所有紀錄</button></p>`;
+}
+
+/* ---------- 切換與事件 ---------- */
+const PANELS = { overview: renderOverview, days: renderDays, prep: renderPrep, info: renderInfo };
+let curTab = 'overview';
+function switchTab(name) {
+  curTab = name;
+  document.querySelectorAll('#menu [data-tab]').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === name));
+  Object.keys(PANELS).forEach(k => { $('#p-' + k).hidden = k !== name; });
+  PANELS[name]();
+}
+function toMenu() { $('#menu').scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' }); }
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('button'); if (!t) return;
+  const d = t.dataset;
+  if (d.tab) { switchTab(d.tab); return; }
+  if (t.hasAttribute('data-back')) { toMenu(); return; }
+  if (d.goday !== undefined) { S.day = +d.goday; save(); switchTab('days'); toMenu(); return; }
+  if (d.day !== undefined) { S.day = +d.day; save(); renderDays(); return; }
+  if (t.id === 'sum-btn') { S.sumOpen = !S.sumOpen; save(); t.setAttribute('aria-expanded', S.sumOpen); $('#sum-more').hidden = !S.sumOpen; return; }
+  if (d.mode) { if (t.disabled) return; S.mode[S.day] = d.mode; save(); renderMode(); renderTimeline(); return; }
+  if (d.done) {
+    const id = d.done, on = !S.done[id];
+    if (on) S.done[id] = true; else delete S.done[id];
+    save();
+    const card = t.closest('.item'); card.classList.toggle('done', on);
+    t.classList.toggle('on', on); t.setAttribute('aria-pressed', on); t.innerHTML = IC.check + (on ? '已完成' : '標記完成');
+    return;
+  }
+  if (d.split) { document.querySelectorAll('#exp-form input[name="split"]').forEach(c => c.checked = d.split === 'all'); return; }
+  if (d.delExp) { S.expenses = S.expenses.filter(x => x.id !== d.delExp); save(); renderExpenses(); return; }
+  if (d.ptab) { S.prepTab = d.ptab; save(); renderPrep(); return; }
+  if (d.delCk) { const c = S.checklist; c.todo = c.todo.filter(x => x.id !== d.delCk); c.pack = c.pack.filter(x => x.id !== d.delCk); save(); renderPrep(); return; }
+  if (d.delMem) {
+    const used = S.expenses.some(x => x.payer === d.delMem || x.split.includes(d.delMem));
+    if (used) { $('#mem-err').textContent = memName(d.delMem) + ' 已有花費紀錄，請先刪除相關花費再移除。'; return; }
+    if (S.members.length <= 1) { $('#mem-err').textContent = '至少需要保留一位成員。'; return; }
+    S.members = S.members.filter(m => m.id !== d.delMem); save(); renderInfo(); return;
+  }
+  if (t.hasAttribute('data-reset')) {
+    if (confirm('確定要清除這支手機上的勾選、清單、花費與旅伴名單嗎？此動作無法復原。')) { try { localStorage.removeItem(KEY); } catch (err) { } location.reload(); }
+  }
+});
+
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.classList.contains('rate-input')) {
+    const v = parseFloat(t.value);
+    if (v > 0) { S.rate = v; save(); if (curTab === 'days') renderExpenses(); if (curTab === 'info') renderInfo(); }
+    return;
+  }
+  if (t.dataset.ck) {
+    const c = S.checklist, x = c.todo.concat(c.pack).find(i => i.id === t.dataset.ck);
+    if (x) { x.done = t.checked; save(); renderPrep(); }
+    return;
+  }
+  if (t.dataset.mem) {
+    const m = S.members.find(i => i.id === t.dataset.mem), v = t.value.trim();
+    if (m && v) { m.name = v; save(); renderInfo(); } else if (m) t.value = m.name;
+  }
+});
+
+document.addEventListener('submit', e => {
+  const f = e.target; e.preventDefault();
+  if (f.id === 'exp-form') {
+    const fd = new FormData(f);
+    const name = String(fd.get('name') || '').trim();
+    const jpy = parseInt(String(fd.get('jpy') || '').replace(/[^\d]/g, ''), 10);
+    const split = fd.getAll('split');
+    const err = $('#exp-err');
+    if (!name) { err.textContent = '請輸入項目名稱。'; return; }
+    if (!(jpy > 0)) { err.textContent = '請輸入日圓金額（數字）。'; return; }
+    if (!split.length) { err.textContent = '請至少選一位分攤成員。'; return; }
+    S.expenses.push({ id: uid(), day: S.day, name, cat: fd.get('cat'), jpy, payer: fd.get('payer'), split });
+    save(); renderExpenses();
+  } else if (f.id === 'ck-form') {
+    const text = String(new FormData(f).get('text') || '').trim(); if (!text) return;
+    const tab = S.prepTab === 'pack' ? 'pack' : 'todo';
+    S.checklist[tab].push({ id: uid(), text, done: false }); save(); renderPrep();
+    const inp = $('#ck-form input'); if (inp) inp.focus();
+  } else if (f.id === 'mem-form') {
+    const name = String(new FormData(f).get('name') || '').trim(); if (!name) return;
+    S.members.push({ id: 'm' + uid(), name }); save(); renderInfo();
+  }
+});
+
+/* ---------- 啟動 ---------- */
+(function init() {
+  $('#trip-title').textContent = TRIP.title;
+  const f0 = TRIP.flights[0], f1 = TRIP.flights[TRIP.flights.length - 1];
+  $('#trip-meta').textContent = isoDate(f0.dep.time) + ' — ' + isoDate(f1.dep.time) + '・' + TRIP.subtitle;
+  document.querySelectorAll('[data-wave]').forEach(p => {
+    let d = 'M-40 ' + p.dataset.wave + ' q10 -4 20 0'; for (let i = 0; i < 23; i++) d += ' t20 0';
+    p.setAttribute('d', d);
+  });
+  S.day = clamp(+S.day || 0, 0, TRIP.days.length - 1);
+  const ti = todayIdx(); if (ti >= 0) S.day = ti;
+  switchTab('overview');
+  setInterval(() => { if (curTab === 'overview') updateCountdown(); }, 30000);
+})();
+</script>
+</body>
+</html>

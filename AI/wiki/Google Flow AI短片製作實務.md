@@ -1,7 +1,7 @@
 ---
 type: concept
 tags: [Google Flow, Gemini, AI短片, Veo, MyEdit, Canva, 分鏡腳本]
-sources: ["[[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md]]"]
+sources: ["[[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md]]", "[[AI/raw/2026-11-01T200728+0800-【下集】AI 影片原理全公開：MiniMax-H3 本機實測，踩過的坑全部告訴你.md|【下集】AI 影片原理全公開：MiniMax-H3 本機實測（三師爸）]]"]
 created: 2026-09-16
 updated: 2026-11-18
 ---
@@ -10,7 +10,7 @@ updated: 2026-11-18
 
 本頁彙整自 [[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md|Google Flow 零門檻AI短片教學影片]]（2026-08-24 發布，來源：數位內容設計），主題為以 Google Flow 為核心，從腳本到畫面、配音到剪輯的 10 秒景點介紹短片完整工作流。
 
-相關主題可參閱 [[Antigravity 與 Remotion 影片生成實務]]（程式碼派影片工程）、[[AI 工具與框架概覽]]（Gemini 應用）、[[NotebookLM 進階應用與實戰指引]]（Canva 後製）。
+相關主題可參閱 [[Antigravity 與 Remotion 影片生成實務]]（程式碼派影片工程）、[[AI 工具與框架概覽]]（Gemini 應用）、[[NotebookLM 進階應用與實戰指引]]（Canva 後製）。想在本機做、並控制角色一致性與配音品質，見 [[MiniMax-H3 本機 AI 短片製作原理與踩坑]]。
 
 ---
 

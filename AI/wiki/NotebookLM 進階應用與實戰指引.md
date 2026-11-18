@@ -33,9 +33,10 @@ sources: [
   "[[raw/2026-07-02T202241+0800-Notebook教學簡報終極完全體_學會 YAML 框架：100% 掌握 NotebookLM 視覺風格.md]]",
   "[[raw/2026-07-02T213657+0800-NotebookLM 隱藏神技：用「系統架構大師」一鍵打造你的專屬教學 AI！.md]]",
   "[[raw/NotebookLM 系統架構大師.md]]"
+  "[[AI/raw/搞懂NotebookLM與Napkin AI-提升你的知識管理力.md|搞懂 NotebookLM 與 Napkin AI（課程筆記）]]"
 ]
 created: 2026-06-15
-updated: 2026-07-20
+updated: 2026-11-18
 ---
 
 # NotebookLM 進階應用與實戰指引
@@ -149,4 +150,4 @@ NotebookLM 生成簡報時，為避免產出具有廉價的「AI 味」，可透
     *   將圖片上傳至 Gemini 3.5 (NanoBanana Pro)，下達精確指令（例如：「將圖片中右下角的水藍色標題字換成橘色的『動畫視覺排版』，其餘背景與圖案完全保持不變」）。
     *   Gemini 3.5 會以極高的一致性完成局部圖像與文字修改。下載修改後的圖片覆蓋回 Canva 中，即可完美修正所有視覺硬傷。
 
-*(可交叉參考：[[NotebookLM 綜合指南]])*
+*(可交叉參考：[[NotebookLM 綜合指南]]；會議錄音四步整理、來源 ABCD 評分與 Napkin AI 視覺化，見 [[NotebookLM 與 Napkin AI 知識管理課程]])*

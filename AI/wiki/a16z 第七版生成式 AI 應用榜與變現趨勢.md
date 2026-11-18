@@ -3,7 +3,7 @@ type: source-summary
 tags: [AI市場, a16z, 消費者AI, 變現模式, 訂閱經濟, AI Agent, ChatGPT, Claude, Gemini]
 sources: ["[[AI/raw/2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md|全球100大AI工具榜出爐！6大洞察一次看（數位時代）]]"]
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-11-18
 ---
 
 # a16z 第七版生成式 AI 應用榜與變現趨勢
@@ -72,7 +72,7 @@ updated: 2026-10-07
 ### 洞察六：新創的四個破口
 存量巨頭 AI 化來勢洶洶（Canva、Notion 進網頁前十，Figma 前 15，Superhuman〔原 Grammarly〕支出榜第 4；Google 一家就有 Gemini、NotebookLM、AI Studio、Labs、Antigravity 五個產品上榜），但新創仍有機會：
 
-1. **差異化模型**：Suno（網頁第 19、支出第 7）、ElevenLabs（網頁第 25、支出第 10）、Midjourney、HeyGen、Kling、Topaz——獨特的聲音、視覺風格或訓練資料比「通用模型誰最強」更重要。
+1. **差異化模型**：Suno（網頁第 19、支出第 7；用法見 [[AI 音樂生成：Suno 與 YuE2]]）、ElevenLabs（網頁第 25、支出第 10）、Midjourney、HeyGen、Kling、Topaz——獨特的聲音、視覺風格或訓練資料比「通用模型誰最強」更重要。
 2. **多模型體驗**：Cursor（網頁版 41 → 35 名）、OpenRouter 讓用戶按任務選模型；模型實驗室賣自家模型，沒有誘因這麼做。
 3. **垂直場景**：醫師用的 OpenEvidence（網頁新進第 47）、主打隱私的 Venice（第 43）。
 4. **改寫老介面與硬體**：新創沒有包袱更敢重做互動；Plaud 硬體＋訂閱、Meta 將 Muse 放進智慧眼鏡、OpenAI 收購 io Products 皆為硬體布局訊號。

@@ -26,6 +26,14 @@ WIKI = AI_DIR / "wiki"
 RAW = AI_DIR / "raw"
 SKIP_DIRS = {".git", ".obsidian", ".trash", "node_modules", ".claude"}
 SPECIAL = {"index", "log", "README"}
+
+
+def in_index(name, index_text):
+    r"""判斷頁面是否列在 index.md。
+    支援 [[頁名]]、[[頁名|別名]]，以及表格內為了跳脫直線而寫的 [[頁名\|別名]]。"""
+    return any(f"[[{name}{tail}" in index_text for tail in ("]]", "|", "\\|"))
+
+
 PAGE_TYPES = {"concept", "entity", "source-summary", "analysis"}
 REQUIRED_FIELDS = ["type", "tags", "sources", "created", "updated"]
 # 自此日期起建立的頁面，才要求「一句話重點」與「我可以怎麼用」（舊頁不追溯）
@@ -193,7 +201,7 @@ def cmd_check(args):
         add(not broken, "內文無斷鏈" + (f"（斷鏈：{broken}）" if broken else ""))
         add(len(inbound[name]) >= 1, f"有其他 Wiki 頁回連（雙向連結，目前 {len(inbound[name])} 篇）")
 
-        add(f"[[{name}]]" in index_text or f"[[{name}|" in index_text, "已列入 index.md")
+        add(in_index(name, index_text), "已列入 index.md")
         add(name in log_text, "log.md 有記錄此頁")
 
         if f.get("created", "") >= NEW_RULE_DATE:
@@ -265,7 +273,7 @@ def cmd_lint(args):
     print("\n".join(f"- [[{n}]]" for n in orphans) or "- 無")
 
     print("\n## 4. 未列入 index.md 的頁面")
-    not_idx = [n for n in normal if f"[[{n}]]" not in index_text and f"[[{n}|" not in index_text]
+    not_idx = [n for n in normal if not in_index(n, index_text)]
     print("\n".join(f"- [[{n}]]" for n in not_idx) or "- 無")
 
     print("\n## 5. frontmatter 問題")

@@ -9,6 +9,7 @@ sources:
   - "[[raw/2026-07-28T082604+0800-AI Agent基本功 EP05三層一次講清楚 搞定 技能全域專案.md]]"
   - "[[raw/2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]"
   - "[[raw/2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md]]"
+  - "[[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN.md|跨 Agent 技能共用整合實施規劃書]]"
 created: 2026-08-07
 updated: 2026-11-18
 ---
@@ -56,6 +57,10 @@ updated: 2026-11-18
   - 將專案建立於雲端硬碟本地端應用程式同步的目錄（如 Google Drive 的 G:\\ 槽），而非網頁版，使多台實體電腦與不同的 Agent 程式能共享同一個專案實體檔案。
 - **設定檔與技能同步**：
   - 使用 `chezmoi` 管理工具在多台 PC 之間同步全域 dotfiles（如 `chezmoi.md` 指南）與 Agent Skills，確保多台機器上的 Agent 表現一致。
+
+> [!WARNING] 內容衝突（技能同步方式已改變）
+> 本段寫「技能也用 chezmoi 同步」；但依 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]（使用者 2026-10-06 規劃書），**技能已改由 `~/.agents/skills` 私人 Git repo 同步，不用 chezmoi**，chezmoi 只管理 `~/.claude/rules` 等全域設定。以下原文保留供參考。
+
 
 ## EP07：需求探索四象限法 (RDQ)
 - **RDQ (Requirements Discovery Quadrant)**：

@@ -3,7 +3,8 @@ type: concept
 tags: [AI工具, 橫向評比, 任務場景, 企業轉型, 良興]
 sources: [
   "[[raw/2026-06-25T101504+0800-AI工具怎麼選？4步驟用ChatGPT、Claude、Gemini做出比較網頁，找到最適合AI.md]]",
-  "[[raw/5 大任務情境：AI 工具橫向評比.md]]"
+  "[[raw/5 大任務情境：AI 工具橫向評比.md]]",
+  "[[AI/raw/2026-09-17T150844+0800-AI Agents 時代下的教學簡報完全體：HTML 簡報_別再被傳統簡報軟體綁架！帶你看見未來教學簡報的完全體。.md|AI Agents 時代下的教學簡報完全體：HTML 簡報（三師爸直播）]]"
 ]
 created: 2026-06-26
 updated: 2026-11-18
@@ -35,7 +36,7 @@ updated: 2026-11-18
 目前 AI 雖無法直接產出完美排版的簡報，但能極大加速簡報大綱與插圖設計。
 - **Gemini (首選)**：可直接於 Google Slides 中自動生成大綱與 Imagen 3 圖片。不過內建生成的排版相對陽春。
 - **Copilot**：可直接在微軟 PowerPoint (Office 365) 中生成簡報草稿，但需持有 M365 相關付費訂閱。
-- **[[Claude（Anthropic）|Claude]]**：利用 Artifacts 互動視窗能即時生成網頁版 HTML 簡報進行預覽，但無法直接匯出為標準 PPTX。
+- **[[Claude（Anthropic）|Claude]]**：利用 Artifacts 互動視窗能即時生成網頁版 HTML 簡報進行預覽，但無法直接匯出為標準 PPTX。HTML 簡報的優勢（可讀性、互動、分享）與 AI 生圖換圖標、文字雲等做法，見 [[HTML 簡報：AI Agent 時代的教學簡報完全體]]。
 
 ### 📌 任務 4：整理資料表（數據分析、統計圖表）
 需要 AI 讀取 CSV、Excel，進行公式推導、統計或繪製圖表。

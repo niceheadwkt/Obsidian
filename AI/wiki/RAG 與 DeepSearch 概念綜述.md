@@ -3,10 +3,11 @@ type: concept
 tags: [AI概念, RAG, DeepSearch, 向量檢索, 語意搜尋]
 sources: [
   "[[sources/03_AI_Concepts/RAG.md]]",
-  "[[sources/03_AI_Concepts/DeepSearch.md]]"
+  "[[sources/03_AI_Concepts/DeepSearch.md]]",
+  "[[AI/raw/2026-10-14T212236+0800-1 年雲端 AI 預算 3 個月燒光！企業為何要搶回主權 AI？拆解 token 帳單三層陷阱｜未來商務.md|1 年雲端 AI 預算 3 個月燒光！企業為何要搶回主權 AI？（數位時代）]]"
 ]
 created: 2026-06-11
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # RAG 與 DeepSearch 概念綜述 (Semantic Search & RAG Overview)
@@ -54,6 +55,12 @@ updated: 2026-07-09
 - **消除 AI 幻覺**：強制 LLM 僅能根據提供的資料回答，否則回答「不知道」。
 - **使用私有/即時資料**：無須耗資重新微調 (Fine-tuning) 模型，即可讓 AI 掌握企業內部機密或即時資訊。
 - **高性價比**：建立與維護向量資料庫（如 Chroma, Pinecone, Qdrant）的成本遠低於微調模型。
+
+### RAG 的限制：切塊漏讀（2026-11 補充）
+- RAG 要先把文件切塊再向量化，嵌入模型長度通常頂多約 32K；切錯地方就會漏讀。例：100 多頁的合約，第 20 頁財務比率符合授信條件，第 120 頁卻有例外排除條款，切塊後可能只檢索到前者。
+- 對策（APMIC 金融模型做法，見 [[主權 AI 與 token 帳單三層陷阱]]）：
+  1. **少切碎**：改用 128K 甚至百萬 token 的長上下文一次讀完；超出時讓多個 Agent 分段處理，但每段都是完整長文本。
+  2. **情境微調**：把領域邏輯微調進模型，而不是把提示詞堆到上萬行。
 
 ---
 

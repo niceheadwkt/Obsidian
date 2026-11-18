@@ -3,10 +3,11 @@ type: concept
 tags: [AI概念, LLM, Agent, MCP, AgentSkill, CLI, Ollama]
 sources: [
   "[[sources/03_AI_Concepts/LLM 到 Agent 的工程解析.md]]",
-  "[[sources/03_AI_Concepts/Gemma 4 MCP 開發：本地與雲端計費.md]]"
+  "[[sources/03_AI_Concepts/Gemma 4 MCP 開發：本地與雲端計費.md]]",
+  "[[AI/raw/2026-09-29T114755+0800-換AI不用重教一次！Claude⇄ChatGPT雙向搬家，記憶、對話紀錄、Skills轉移教學一次看.md|換AI不用重教一次！Claude⇄ChatGPT雙向搬家（數位時代）]]"
 ]
 created: 2026-06-11
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # 從 LLM 到 Agent Skill 的底層工程解析
@@ -41,6 +42,9 @@ updated: 2026-07-09
 6. **MCP (Model Context Protocol)**：AI 界的「Type-C 統一標準接口」。MCP 讓工具開發者只需按照一套標準開發一次，即可無縫接入所有支援 MCP 的 AI 平台（如 Claude Desktop, VS Code 插件等），避免為每家 LLM 重寫接入代碼。
 7. **Agent (智能體)**：具備「自主規劃與工具調用」能力的程式系統。常用的構建模式有 ReAct、Plan-and-Execute 等。它能反覆思考、決定下一步行動，直到解決使用者問題。
 8. **Agent Skill (代理技能)**：給 Agent 閱讀的 **SOP 說明文檔**。它是一個以 Markdown 格式撰寫、檔名必須為大寫 `SKILL.md` 的文件，結構包含元數據層（Name & Description）與指令層（目標、步驟、判斷規則、格式與範例）。當使用者提問與元數據相關時，Agent 才會加載該 Skill 的指令層（**漸進式披露機制**，以節省 Token 成本）。
+
+> [!NOTE] 衝突已解決（2026-11-18）
+> 《數位時代》曾稱搬到 Claude 要改為小寫 `skill.md`（見 [[Claude 與 ChatGPT 雙向搬家：記憶、對話紀錄與 Skills]]）；經使用者確認，主檔名為大寫 `SKILL.md`，本頁說法正確。
 
 ---
 

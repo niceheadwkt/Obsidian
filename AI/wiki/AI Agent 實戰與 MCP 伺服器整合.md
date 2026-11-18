@@ -21,8 +21,10 @@ sources:
   - "[[raw/dry_architecture_ai_agent_guide.md]]"
   - "[[AI/chezmoi.md]]"
   - "[[AI/raw/2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md|AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程]]"
+  - "[[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄.md|SogaType 語音輸入操作踩坑與排錯實戰全紀錄]]"
+  - "[[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN.md|跨 Agent 技能共用整合實施規劃書]]"
 created: 2026-07-20
-updated: 2026-10-08
+updated: 2026-11-18
 ---
 
 # AI Agent 實戰與 MCP 伺服器整合
@@ -81,6 +83,10 @@ graph TD
 *   **優勢**：所有 Agent 在讀寫專案檔案時，底層的雲端硬碟程式會自動在背景進行即時同步，避免任何代碼丟失或複製貼上的繁瑣操作。
 
 ### 2.2 chezmoi 設定與技能/規範多 Agent 同步
+
+> [!WARNING] 內容衝突（技能同步方式已改變）
+> 本節寫「技能也用 chezmoi 同步」；但依 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]（使用者 2026-10-06 規劃書），**技能已改由 `~/.agents/skills` 私人 Git repo 同步，不用 chezmoi**，chezmoi 只管理 `~/.claude/rules` 等全域設定。以下原文保留供參考。
+
 *   **概念**：`chezmoi` 是一個強大的 dotfiles（設定檔）管理器，支援 Git 版本控制與動態範本引擎。
 *   **做法**：將全域設定（如 `.gitconfig`、`mcp_config.json`）以及跨 Agent 共用的全域規範（如「開工/收工流程」、「語音回覆規範」、「語音錯字善意還原」）納入 chezmoi 範本管理。
 *   **多 Agent 規則分發機制**：
@@ -97,7 +103,7 @@ graph TD
 AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)** 的三層架構：
 
 1.  **技能 (Skills)**：具體的任務說明書（由 Markdown 撰寫），通常放置於 `skills/` 子目錄下，搭配程式碼或外部 API 驅動特定工作流。
-2.  **全域設定 (Global Settings)**：每次對話皆會載入的背景習慣，如「語音回答結論 (Edge TTS)」、「語音輸入錯字正規化」等。
+2.  **全域設定 (Global Settings)**：每次對話皆會載入的背景習慣，如「語音回答結論 (Edge TTS)」、「語音輸入錯字正規化」等。（語音輸入工具在 Windows 管理員終端機貼不上字的原因與解法，見 [[SogaType 語音輸入 Windows 排錯紀錄]]。）
 3.  **專案規則 (Project Rules)**：特定工作區根目錄的 `.agents/` 或 `CLAUDE.md`，定義該專案的架構規範與程式碼風格。
 
 ### 3.1 技能升級心法 (Gems 轉 Skills)

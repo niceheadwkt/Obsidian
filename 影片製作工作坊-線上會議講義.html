@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>利用 Skill + Agent 快速協做 AI 影片｜線上會議講義</title>
+<style>
+:root { --bg:#fff; --fg:#24292f; --muted:#6b7280; --line:#d8dee4; --accent:#0969da; --soft:#f6f8fa; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --line:#30363d; --accent:#4493f8; --soft:#161b22; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif; font-size:16px; line-height:1.75; }
+article { max-width:860px; margin:0 auto; padding:32px 16px 64px; overflow-wrap:anywhere; }
+.src { font-size:13px; color:var(--muted); border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:24px; }
+h1, h2, h3 { line-height:1.4; margin:1.6em 0 .6em; }
+h2 { font-size:1.45em; padding-bottom:.3em; border-bottom:1px solid var(--line); }
+article > h2:first-of-type { margin-top:0; }
+p { margin:.6em 0; }
+hr { border:none; border-top:1px solid var(--line); margin:28px 0; }
+a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+ul, ol { padding-left:1.6em; }
+code { background:var(--soft); padding:.15em .4em; border-radius:4px; font-size:.92em; }
+@media print { .src a { color:inherit; } article { max-width:none; } }
+</style>
+</head>
+<body>
+<article>
+<div class="src">來源：<a href="https://hackmd.io/@fyy1234/H1gs_UlCGx" target="_blank" rel="noopener">HackMD｜https://hackmd.io/@fyy1234/H1gs_UlCGx</a>（2026-11-16 轉存）</div>
+<h2>利用skill + Agent快速協做AI影片-線上會議</h2>
+<p>日期：11月 13日 (週五)·下午12:10 - 13:10<br />
+形式：Team 線上教學<br />
+講師:楊豐源 醫檢師 /  北榮醫研部  &amp;  YS Class</p>
+<hr />
+<p>提示詞講義：<a target="_blank" rel="noopener" href="https://yanger.pse.is/1113-note">https://yanger.pse.is/1113-note</a><br />
+PPT檔（僅供檢視）：<a target="_blank" rel="noopener" href="https://canva.link/qi34qncnwz8a45k">https://canva.link/qi34qncnwz8a45k</a><br />
+Padlet 成果上傳位置：<a target="_blank" rel="noopener" href="https://yanger.pse.is/9uzr8m">https://yanger.pse.is/9uzr8m</a></p>
+<hr />
+<h2>一、認識Google Flow：Google 的影片創作平台：</h2>
+<p>Flow 自去年(2025年)五月正式推出以來，迅速成為生成式AI 影片創作領域中最受歡迎的平台之一。<br />
+    根據官方數據，短短數月內透過Flow 所生成的影片數量已突破5億支以上。這不僅反映出生成式AI 影音工具的普及速度，也顯示創作者對「低門檻、高效率」創作方式的強烈需求。 *<br />
+-網址： <strong><a target="_blank" rel="noopener" href="https://flow.google.com/">https://flow.google.com/</a></strong></p>
+<p><strong>-點數：</strong><br />
+<strong>新註冊給100點，每日進入給50點(不會累積)</strong><br />
+Google AI Plus用戶：每月200點<br />
+Google AI Pro用戶：每月1000點<br />
+Google AI Ultra用戶：每月25000點</p>
+<p>-影片風格：電影寫實風格、3D 動畫風格、日系動漫風格、賽博龐克風格、復古膠片風格、水彩插畫風格</p>
+<hr />
+<h2><strong>一、短影片（直/橫）製作公式：</strong></h2>
+<p>▪ 影片 [標題或內容]<br />
+▪ 一共 X 小段，每段 X 秒，共 X 秒 (或共 X 秒的影片)<br />
+▪ 直式(9:16)、橫式(16:9)<br />
+▪ 影片風格：電影寫實風格、3D 動畫風格、日系動漫風格、賽博龐克風格、復古膠片風格、水彩插畫風格<br />
+▪ 影片生成方式：1.直出、2.首幀、3.首尾幀<br />
+▪ 建立成「技能」：用"@"，呼叫SKILL （video-generate-custom）</p>
+<p>Skill連結：<a target="_blank" rel="noopener" href="https://yanger.pse.is/9uujac">https://yanger.pse.is/9uujac</a><br />
+(需先把skill建立在Gemini中，現場會教大家)</p>
+<hr />
+<p><strong>二、生成影片</strong></p>
+<p>1.點擊 +【新建專案】</p>
+<ul>
+<li>
+<p>影格：  可利用 <strong>首尾禎 / 首禎</strong> 的相片來生成影片</p>
+</li>
+<li>
+<p>主要人物或場景：<br />
+  上傳參考圖片來生成影片</p>
+</li>
+</ul>
+<p>一次生成的影片數(1片到4片)，建議產生1個就好了</p>
+<p>▪ 免費帳號：<strong>每天有 50 點 </strong>(不會累加)，Pro 帳號：每月 1000 點<br />
+▪ 生圖免點數，模型有：<br />
+▪ Nano Banana Pro<br />
+▪ Nano Banana 2 Lite<br />
+▪ Nano Banana 2.1<br />
+▪ 生影片要點數，模型有：<br />
+目前推出 Omni 1.2<br />
+▪ Omni 1.1 Flash - 目前半價<br />
+▪ 10 秒：15 點 (720p) =&gt; 50 點可生 3 段影<br />
+片，共 30 秒<br />
+▪ 08 秒：12 點 (720p) =&gt; 50 點可生 4 段影<br />
+片，共 32 秒<br />
+▪ 06 秒：10 點 (720p) =&gt; 50 點可生 5 段影片，<br />
+共 30 秒<br />
+▪ 04 秒：7 點 (720p) =&gt; 50 點可生 7 段影<br />
+片，共 28 秒 (比較不建議)<br />
+<strong>Veo 3.1 - Lite (10 秒：10 點)</strong><br />
+▪ Veo 3.1 - Fast (10 秒：20 點)<br />
+▪ Veo 3.1 - Quality (10 秒：100 點)</p>
+<p>▪ 目前這些模型的最大敗筆就是中文發音問題，用 Omni 會<br />
+好一點點</p>
+<hr />
+<p><strong>三-1、最新終極技巧</strong></p>
+<p>1.使用Gemini + 呼叫「技能」協助</p>
+<p><strong>*Prompt:</strong><br />
+@video-generate-custom  幫我製作一個關於 [糖尿病足部衛教] 影音腳本。一共4小段，每段10秒，共40 秒，橫式影片，影片生成方式為首尾幀。</p>
+<p>提醒：主題盡量精準及鎖定小目標</p>
+<p>*示範作品1.：<a target="_blank" rel="noopener" href="https://youtube.com/shorts/Qi_4j9OE7rs?si=5R5gRELxJsdqxovA">https://youtube.com/shorts/Qi_4j9OE7rs?si=5R5gRELxJsdqxovA</a></p>
+<p>*示範作品2：<a target="_blank" rel="noopener" href="https://youtu.be/P8p56wpas0A">https://youtu.be/P8p56wpas0A</a></p>
+<hr />
+<h2>輸入 prompt 就可以生成影片</h2>
+<p><strong>Google Flow</strong><br />
+-網址： <strong><a target="_blank" rel="noopener" href="https://flow.google.com/">https://flow.google.com/</a></strong></p>
+<p>(現場教導技巧)</p>
+<p>1.請先產生主角相片</p>
+<p>--&gt;進行2之前先把Agent按掉，改成「影片模型」，再開始以下步驟。</p>
+<p>2.請產生第一個影片，包含對話及旁白</p>
+<p>3.請產生第二個影片，包含對話及旁白</p>
+<p>4.請產生第三個影片，包含對話及旁白</p>
+<p>5.請產生第四個影片，包含對話及旁白</p>
+<p>6.請將新生成的影片命名為V01～V04</p>
+<p>7.下載影片</p>
+<hr />
+<p><strong>三-2、影片包裝</strong></p>
+<p>封面繪圖：……請增加劇名（三選一）：</p>
+<p>封底繪圖：….請增加「謝謝收看」</p>
+<p>製作影片音樂：Gemini</p>
+<hr />
+<p><strong>四、音訊（免費配音）</strong><br />
+網址：<a target="_blank" rel="noopener" href="https://ttsmaker.com/zh-hk">https://ttsmaker.com/zh-hk</a></p>
+<p>-教學影片請參考底下影片6和7</p>
+<p><strong>五、影片剪輯</strong></p>
+<ul>
+<li><strong>Concat (開源軟體，免費版 CapCut)</strong> <br />
+▪ 官方網站：<a target="_blank" rel="noopener" href="https://concat.standalones.org/">https://concat.standalones.org/</a> 、<a target="_blank" rel="noopener" href="https://github.com/jub0t/Concat">https://github.com/jub0t/Concat</a><br />
+▪ 軟體下載：Windows 系統 (Concat-0.2.8-windows-x86_64-setup.exe 、Concat-0.2.8-windows-x86_64.msi )<br />
+▪ 下載完後，進行安裝<br />
+▪ 開始使用 Concat<br />
+▪ File / Settings<br />
+▪ 更改語言為【繁體中文】<br />
+▪ 外觀：光<br />
+▪ 轉錄器：下載模型 (語音轉字幕用)<br />
+▪ 語音：下載模型 (文字轉語音用)<br />
+▪ 接下來跟一般的剪輯軟體一樣<br />
+▪ <strong>參考影片：</strong><br />
+<strong>跨平台免費開源剪輯軟體 Concat 完整入門</strong><br />
+影片連結：<a target="_blank" rel="noopener" href="https://youtu.be/PKecALO2218">https://youtu.be/PKecALO2218</a></li>
+</ul>
+<hr />
+<p>五-2、Canva剪輯（上字幕+配音 +輸出）<br />
+網址：<a target="_blank" rel="noopener" href="https://www.canva.com/">https://www.canva.com/</a></p>
+<hr />
+<p>AI影片製作-參考課程：</p>
+<p>1.AI影片製作免費工具在這裡啦！Meta AI、Google Flow新流程讓您一次從腳本、製片到剪輯疾速攻略</p>
+<p>🚀YT連結：<a target="_blank" rel="noopener" href="https://youtu.be/kZG2CL_vSQM">https://youtu.be/kZG2CL_vSQM</a></p>
+<p>2.🎖️從專業到好懂：衛教短片製作與剪輯心法</p>
+<p>🎯YT連結：<a target="_blank" rel="noopener" href="https://youtu.be/gvOeyn5JAAg">https://youtu.be/gvOeyn5JAAg</a></p>
+<p>3.一站式搞定專業短影音！Google Vids衛教影片實戰策略！</p>
+<p>🎯YT連結：<a target="_blank" rel="noopener" href="https://youtu.be/RYQv9DB-hC0">https://youtu.be/RYQv9DB-hC0</a></p>
+<p>官方網址： <a target="_blank" rel="noopener" href="https://workspace.google.com/intl/zh-TW/products/vids/">https://workspace.google.com/intl/zh-TW/products/vids/</a></p>
+<p>4.🎖️AI 廣告自動生成！Edimakor實測：零技術、低成本，一人完成商品攝影與廣告大片</p>
+<p>YT連結：<a target="_blank" rel="noopener" href="https://youtu.be/6YxOX6ISoeE">https://youtu.be/6YxOX6ISoeE</a></p>
+<p>5.🎖️AI生成影片再升級4K！HitPaw VikPea超強實測</p>
+<p>🎊連結：<a target="_blank" rel="noopener" href="https://youtu.be/CVNrokOW4UA">https://youtu.be/CVNrokOW4UA</a></p>
+<p>6.1分鐘做出高品質「配音小幫手」攻略！ (上集)<br />
+🎊連結：<a target="_blank" rel="noopener" href="https://youtu.be/CC7y-5nZvXU?si=tXBjRbANmSXOxmJB">https://youtu.be/CC7y-5nZvXU?si=tXBjRbANmSXOxmJB</a></p>
+<p>7.免費神器！AI配音一鍵搞定影片旁白 （下集）<br />
+🎊連結：<a target="_blank" rel="noopener" href="https://youtu.be/xMsHp_7bBvA?si=DCds8Otgo4Y-oJQu">https://youtu.be/xMsHp_7bBvA?si=DCds8Otgo4Y-oJQu</a></p>
+</article>
+</body>
+</html>

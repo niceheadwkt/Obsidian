@@ -19,7 +19,8 @@ sources: [
   "[[raw/2026-06-15T155655+0800-不會Claude Code也能上手！用Projects打造AI工作流，5步驟養成長期記憶助理.md]]",
   "[[raw/2026-06-15T154424+0800-Claude地圖｜Cowork、Claude Code是什麼？初階者從哪開始學？進階技巧有哪些？.md]]",
   "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]",
-  "[[AI/raw/2026-11-18T074516+0800-Claude＋Obsidian 第二大腦教學｜零基礎 7 步，讓 AI 從陌生人變成最懂你的同事.md|Claude＋Obsidian 第二大腦教學｜零基礎 7 步（Fanko AI 範式）]]"
+  "[[AI/raw/2026-11-18T074516+0800-Claude＋Obsidian 第二大腦教學｜零基礎 7 步，讓 AI 從陌生人變成最懂你的同事.md|Claude＋Obsidian 第二大腦教學｜零基礎 7 步（Fanko AI 範式）]]",
+  "[[AI/raw/2026-09-29T114755+0800-換AI不用重教一次！Claude⇄ChatGPT雙向搬家，記憶、對話紀錄、Skills轉移教學一次看.md|換AI不用重教一次！Claude⇄ChatGPT雙向搬家（數位時代）]]"
 ]
 created: 2026-06-15
 updated: 2026-11-18
@@ -41,6 +42,9 @@ updated: 2026-11-18
     *   **定位**：具備 Agent 自主規劃能力。能夠讀取您指定的整個專案資料夾，並透過背景排程自主拆解任務、執行文件處理、建立多步驟工作流，且支援 API 與 Connectors 連線（如 Gmail）。
 3.  **Claude Code (終端開發 CLI)**：
     *   **定位**：終端機原生 Agent。直接在 CLI 環境中讀寫代碼、編譯、執行本地測試、修復 Bug 並自動撰寫 Git 提交。
+
+> [!NOTE] 2026-09 介面整合
+> Anthropic 自 2026-09-16 起逐步把 Chat、Cowork 與 Artifacts 整合為統一介面，由 Claude 自動判斷任務需要的能力，不再要求手動切換 Cowork 分頁；先從 Pro、Max 分批推出（來源：[[Claude 與 ChatGPT 雙向搬家：記憶、對話紀錄與 Skills]]）。上述三模式的分法可能逐步改變。
 
 *(關於初學者的學習地圖與進階技巧大綱，請參見 [[raw/2026-06-15T154424+0800-Claude地圖｜Cowork、Claude Code是什麼？初階者從哪開始學？進階技巧有哪些？.md|Claude 學習地圖與進階技巧指南]])*
 
@@ -112,7 +116,7 @@ updated: 2026-11-18
     4. AI 整理為明確的規格與拆票 (Spec)。
     5. 使用者確認後執行。
 
-- **「先做順、再固化」的 Skill 建法**（2026-11 補充）：先在同一對話手動處理三個實例並逐次糾正，再請 AI「把剛才這套做法變成 Skill」，此時它已看過你怎麼改，說明書會更準；同時寫入評分標準，讓它每次做完先自評、未過自改。grill-me 式的「一直問我問題，一次問一個」也可用來產出 CLAUDE.md 路由表。詳見 [[Claude＋Obsidian 第二大腦七步法]]。
+- **「先做順、再固化」的 Skill 建法**（2026-11 補充）：先在同一對話手動處理三個實例並逐次糾正，再請 AI「把剛才這套做法變成 Skill」，此時它已看過你怎麼改，說明書會更準；同時寫入評分標準，讓它每次做完先自評、未過自改。grill-me 式的「一直問我問題，一次問一個」也可用來產出 CLAUDE.md 路由表。詳見 [[Claude＋Obsidian 第二大腦七步法]]。實例：直播中先手動做一份 HTML 簡報（換圖標、加文字雲、滑桿），確認可行後再用 Skill Creator 打包成 HTML 簡報技能，見 [[HTML 簡報：AI Agent 時代的教學簡報完全體]]。
 
 - **Skill Creator (技能建立器)**：
   - 協助使用者設計、編寫並部署自訂 Skill 的智能助理。
@@ -120,3 +124,4 @@ updated: 2026-11-18
 - **活躍的自訂技能範例**：
   - **Google Tasks 任務整合技能**：自動管理 Google Tasks 任務清單（建立、搜尋、更新、刪除）。
   - **Obsidian 知識管理技能**：進行雙向連結自動關聯與 Lint 健康檢查。
+- **跨平台搬 Skill**（2026-11 補充）：Codex 與 Claude 的 Skill 都是「資料夾＋說明檔」結構，可沿用；上傳到 Claude 網頁版時每個 Skill 資料夾各自壓成 ZIP、最外層是資料夾，再到 Customize → Skills 上傳。ChatGPT 桌面版「匯入」與 Codex CLI 的 `/import` 也能帶入 Claude Code／Cowork 的 Skills 與設定。主檔名維持大寫 `SKILL.md`，不需改名（媒體報導稱要改小寫有誤），詳見 [[Claude 與 ChatGPT 雙向搬家：記憶、對話紀錄與 Skills]]。

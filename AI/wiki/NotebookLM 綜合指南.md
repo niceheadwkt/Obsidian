@@ -8,7 +8,7 @@ sources: [
   "[[sources/02_NotebookLM_Special/NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md]]"
 ]
 created: 2026-06-11
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # NotebookLM 知識庫與應用綜合指南
@@ -69,6 +69,7 @@ NotebookLM 介面分為三大區塊：
 
 ## 5. 進階實戰與橫向評估
 
+- **課程筆記**：NotebookLM 來源限制、會議錄音四步整理、ABCD 來源評分與 Napkin AI 文字轉圖，見 [[NotebookLM 與 Napkin AI 知識管理課程]]。
 - **進階操作實戰**：關於 NotebookLM 的 Deep Research（深度研究）、Grabbit 影片匯入、簡報 YAML 樣式美化與 Lovart 圖層拆解等實務操作，請參閱 [[NotebookLM 進階應用與實戰指引]]。
 - **付費版橫向評估**：有關 NotebookLM 底層的 Gemini 與其他主力大模型（ChatGPT、Claude）付費訂閱版的橫向效能對比，請參閱 [[三大 AI 付費版選用與效能橫向對比]]。
 

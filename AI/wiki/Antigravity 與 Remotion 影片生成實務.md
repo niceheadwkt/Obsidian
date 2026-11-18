@@ -1,9 +1,9 @@
 ---
 type: analysis
 tags: [Remotion, Antigravity, 影片工程, 自動化, React]
-sources: ["[[raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md]]"]
+sources: ["[[raw/2026-06-17T095541+0800-報表救星，抽像概念轉影片，Google Antigravity 用 Remotion Skills 做出高級數據動態影片，用程式碼寫影片，自動化攻略 (安裝skills)，程式碼即影片!.md]]", "[[AI/raw/2026-10-27T220731+0800-超強做動畫技能_全agent通用_說明欄附上github repo.md|超強做動畫技能：全 Agent 通用（三師爸直播）]]"]
 created: 2026-06-18
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # Antigravity 與 Remotion 影片生成實務
@@ -90,5 +90,6 @@ graph TD
 - **Antigravity 系統原理**：[[Antigravity 核心概念與五層記憶系統]]
 - **前端常用技術**：[[前端與系統開發常用技術]]
 - **影片配音與角色克隆**：[[AI 語音複製與 VoxCPM2 本地部署]]
+- **後續發展（2026-10）**：講者把 Claude Code 做解說動畫的能力（HyperFrames 等）打包成跨 Agent 技能，見 [[claude-motion-explainer 科普解說動畫技能]]
 - **畫面與提示詞設計**：[[ChatGPT 影像生成提示詞指南]]
 - **知識庫首頁**：[[index]]
