@@ -1,9 +1,13 @@
 ---
 type: source-summary
 tags: [AI-Agent, Agent-Bot, Claude-Code, Codex, Strata, 本地AI, 批改作業, 自動出題, Google-Drive鏡像同步, 學習卡, 三師爸]
-sources: ["[[AI/raw/2026-10-18T222039+0800-AI 越聰明，你越省力.md|AI 越聰明，你越省力（三師爸 Sense Bar 直播）]]"]
+sources: [
+  "[[AI/raw/2026-10-18T222039+0800-AI 越聰明，你越省力.md|AI 越聰明，你越省力（三師爸 Sense Bar 直播）]]",
+  "[[AI/raw/2026-11-02T074859+0800-Agent Bot，一次搞懂基本原理.md|Agent Bot，一次搞懂基本原理（三師爸 Sense Bar）]]",
+  "[[AI/raw/2026-11-10T141555+0800-最新世代 AI Agent bot，一次搞懂基本原理.md|最新世代 AI Agent bot，一次搞懂基本原理（同場直播）]]"
+]
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-11-18
 ---
 
 # AI 越聰明，你越省力：直播總結與精選學習卡
@@ -31,10 +35,15 @@ updated: 2026-10-18
 | :--- | :--- | :--- | :--- |
 | **第一代：生成式 AI (Generative AI)** | Gemini、NotebookLM、ChatGPT Web | 僅在雲端生成文字或圖表，無本機手腳，無法碰觸本地系統。 | 僅適合簡單對話；面對複雜專案效率低落，建議果斷「棄守」。 |
 | **第二代：AI Agent** | [[Claude（Anthropic）\|Claude]] (Claude Code)、Codex、[[AI Agent 與 AntiGravity 2.0 基礎入門\|AntiGravity]]、OpenCode | 具備執行環境、讀寫本地檔案、執行終端機命令、聯網搜尋與工具調用手腳。 | **當前主力**，能在單一對話框內完成端到端工作交付。 |
-| **第三代：Agent Bot（代理人機器人）** | Dot（小巴）、GUACBOT | 具備專屬雲端虛擬電腦與長期記憶，關閉本機仍 24 小時在雲端自動化運轉。 | 可掛載雲端硬碟自主工作，或跨端遠端喚醒家中桌機執行任務。 |
+| **第三代：Agent Bot（代理人機器人）** | Dart（ChatGPT）、Grok Bot | 具備專屬雲端虛擬電腦與長期記憶，關閉本機仍 24 小時在雲端自動化運轉。 | 可掛載雲端硬碟自主工作，或跨端遠端喚醒家中桌機執行任務。 |
 
 > [!NOTE]
 > 若不想每月支付額外高額月費（如 30 美金）訂閱雲端 Agent Bot，善用 **Remote Control** 遠端連線家中常駐開啟的桌機（如 Mac mini），其工作流與效益幾乎與 Agent Bot 無異。
+
+> [!WARNING] 內容衝突
+> **Remote Control 能否取代 Agent Bot**：本場直播（2026-10-18）指出用 Remote Control 連家中常駐主機，效益「幾乎與 Agent Bot 無異」；但同一講者 2026-11-02 直播（[[Agent Bot 基本原理與分層指揮架構]]）指出 Remote Control 需事先開啟、無法新開對話或做複雜設定，彈性比 Agent Bot 低。
+
+Agent Bot 的定義、三家產品比較與「人類 → Agent Bot → 本機 Agent」分層架構，詳見 [[Agent Bot 基本原理與分層指揮架構]]。
 
 ---
 
@@ -84,7 +93,7 @@ updated: 2026-10-18
 
 ### 5. 跨設備 Google Drive 鏡像雙向同步架構
 * **單一事實來源 (Single Source of Truth)**：選定一台常駐開機之主力桌機（如 PC 或 Mac mini）設定 Google Drive **「鏡像檔案（雙向同步）」**（本機實體硬碟一份，雲端硬碟一份）。
-* **多端一致存取**：筆電、手機、外部 Agent（如 Dot 小巴）統一掛載至該 Google Drive 目錄，實現全設備隨時隨地無縫存取同套專案資料夾。
+* **多端一致存取**：筆電、手機、外部 Agent（如 Dart、Grok Bot 等 Agent Bot）統一掛載至該 Google Drive 目錄，實現全設備隨時隨地無縫存取同套專案資料夾。
 
 ---
 

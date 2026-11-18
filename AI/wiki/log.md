@@ -528,3 +528,27 @@ aw/ 唯讀目錄下）。
 - **原因**：Windows 檔名不分大小寫，`AI/wiki/Claude.md` 會被 Claude Code 當成 `CLAUDE.md` 指令檔自動載入（約 9 KB），在 `AI/wiki` 目錄工作時平白佔用 Context。
 - **處理**：以 `git mv` 改名為 [[Claude（Anthropic）]]，並將全 Vault 34 個檔案共 60 處 `[[Claude]]` 類連結改為 `[[Claude（Anthropic）|Claude]]`（保留原顯示文字；表格內使用 `\|` 跳脫；含 `AI/wiki_backup/`）。改名後 lint 斷鏈 0、孤立頁 0。
 - **執行人**：Claude Code
+
+## [2026-11-18] ingest | Agent Bot，一次搞懂基本原理（三師爸 Sense Bar 直播，兩篇合併）
+
+- **來源**：`raw/2026-11-02T074859+0800-Agent Bot，一次搞懂基本原理.md`（YouTube J47Q77nFRUM）、`raw/2026-11-10T141555+0800-最新世代 AI Agent bot，一次搞懂基本原理.md`（YouTube 1MV-yuYLiV4，附使用者先前的重點整理）。兩檔為同一場 2026-11-02 直播，合併入庫。
+- **新增頁面**：[[Agent Bot 基本原理與分層指揮架構]]（source-summary）：Agent Bot 定義與三家產品比較、AI 三階段、分層指揮架構、有自己電腦的意義、講者七種應用、建置前提，以及對照 ERP 與知識庫工作的「我可以怎麼用」。
+- **更新頁面**：[[AI 越聰明，你越省力_直播總結與學習卡]]（三代演進段新增衝突警示與連結）、[[AI 時代的 Agent 術語與核心概念]]（新增 Agent Bot 詞條）；兩頁皆補上 sources。
+- **待使用者決定的衝突**：Remote Control 能否取代 Agent Bot（10-18 與 11-02 直播說法不同）；舊頁「Dot（小巴）、GUACBOT」是否為 Dart 與 Grok Bot 的語音辨識誤寫。
+- **更新索引**：新增概念頁一列、更新兩列，新增 `SRC-266`、`SRC-267`。
+- **執行人**：Claude Code
+
+## [2026-11-18] fix | 更正 Agent Bot 產品名稱誤寫
+
+- **依據**：使用者確認 [[AI 越聰明，你越省力_直播總結與學習卡]] 中的「Dot（小巴）」「GUACBOT」為語音辨識誤寫，正確為 ChatGPT 的 Dart 與 Grok Bot（見 [[Agent Bot 基本原理與分層指揮架構]]）。
+- **處理**：三代演進表第三代代表工具改為「Dart（ChatGPT）、Grok Bot」；「多端一致存取」段的「Dot 小巴」改為 Dart、Grok Bot；移除衝突警示中的產品名稱項，保留 Remote Control 一項待決定。
+- **執行人**：Claude Code
+
+## [2026-11-18] ingest | 別讓AI只做雜事！Anthropic主管公開「野心提示詞」3招（數位時代）
+
+- **來源**：`raw/2026-11-04T133604+0800-別讓AI只做雜事！Anthropic主管公開「野心提示詞」3招，如何徹底釋放Claude極限？.md`。《數位時代》李先泰 2026-11-03 整理（初稿為 AI 編撰），原文為 Felix Rieseberg 2026-10-13 部落格。剪輯檔後段夾帶〈免費下載「會議紀錄整理師」〉（2026-09-17）一文，與主題無關，未匯入。
+- **新增頁面**：[[Anthropic 野心提示詞：高度、深度、廣度三招]]（source-summary）：四方向與自我效能／目標設定理論、拉高度與 QBR 三階提示詞、挖深度四問提示詞與五技巧、拓廣度名詞換動詞與跨領域紅隊、適用前提，以及對照 ERP 工作的「我可以怎麼用」。
+- **更新頁面**：[[Claude 高階提示詞與應用場景]]（新增第 7 節、於「紅隊安全測試」加衝突警示、補 sources，並修正 sources 第 5 行的 YAML 格式）、[[Agent Bot 基本原理與分層指揮架構]]（關聯頁面）。
+- **待使用者決定的衝突**：角色扮演提示詞（「你是一位業界老手」）是否有效——舊頁推薦，Rieseberg 認為只換口吻、做法不變。
+- **更新索引**：新增概念頁一列、更新一列，新增 `SRC-268`。
+- **執行人**：Claude Code
