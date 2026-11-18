@@ -10,7 +10,7 @@ sources:
   - "[[raw/2026-07-28T083320+0800-AI Agent 基本功 EP06 跨 Agent、跨電腦協作同一個專案，設定觀念一次到位.md]]"
   - "[[raw/2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md]]"
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-11-18
 ---
 
 # AI Agent 基本功系列實踐指南 (EP01-EP07)
@@ -65,7 +65,7 @@ updated: 2026-08-07
 ---
 
 ## 延伸實務應用專題
-- **無 API 平台自動化 (EP04 延伸)**：針對無官方 API/MCP 的平台（如 Wordwall、LoiLoNote），採用 Playwright 封裝為 CLI，實現三級自動出題。詳見 `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`。
-- **雲端排程與 GAS 閉環**：結合雲端 24/7 常駐 Agent 與本地 `clasp` 部署。詳見 `[[Google Spark 與 GAS 雲端自動化實務]]`。
-- **跨平台 Agent 新版實踐**：跨模型與平價高智力架構。詳見 `[[OpenCode 新版架構與模型最佳搭配指南]]`。
+- **無 API 平台自動化 (EP04 延伸)**：針對無官方 API/MCP 的平台（如 Wordwall、LoiLoNote），採用 Playwright 封裝為 CLI，實現三級自動出題。詳見 [[Wordwall 與教育科技的 AI Agent 自動化實務]]。
+- **雲端排程與 GAS 閉環**：結合雲端 24/7 常駐 Agent 與本地 `clasp` 部署。詳見 [[Google Spark 與 GAS 雲端自動化實務]]。
+- **跨平台 Agent 新版實踐**：跨模型與平價高智力架構。詳見 [[OpenCode 新版架構與模型最佳搭配指南]]。
 

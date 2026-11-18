@@ -3,14 +3,14 @@ type: concept
 tags: [Google Flow, Gemini, AI短片, Veo, MyEdit, Canva, 分鏡腳本]
 sources: ["[[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md]]"]
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-11-18
 ---
 
 # Google Flow AI短片製作實務
 
-本頁彙整自 `[[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md|Google Flow 零門檻AI短片教學影片]]`（2026-08-24 發布，來源：數位內容設計），主題為以 Google Flow 為核心，從腳本到畫面、配音到剪輯的 10 秒景點介紹短片完整工作流。
+本頁彙整自 [[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md|Google Flow 零門檻AI短片教學影片]]（2026-08-24 發布，來源：數位內容設計），主題為以 Google Flow 為核心，從腳本到畫面、配音到剪輯的 10 秒景點介紹短片完整工作流。
 
-相關主題可參閱 `[[Antigravity 與 Remotion 影片生成實務]]`（程式碼派影片工程）、`[[AI 工具與框架概覽]]`（Gemini 應用）、`[[NotebookLM 進階應用與實戰指引]]`（Canva 後製）。
+相關主題可參閱 [[Antigravity 與 Remotion 影片生成實務]]（程式碼派影片工程）、[[AI 工具與框架概覽]]（Gemini 應用）、[[NotebookLM 進階應用與實戰指引]]（Canva 後製）。
 
 ---
 
@@ -20,7 +20,7 @@ updated: 2026-09-16
 
 | 階段 | 推薦工具 | 用途 |
 | :--- | :--- | :--- |
-| 腳本分鏡 | `[[Gemini]]`（或 ChatGPT，皆可） | 寫 10 秒分鏡腳本，產出中英並列提示詞 |
+| 腳本分鏡 | [[Gemini 全能使用手冊與 Google 生態工作流|Gemini]]（或 ChatGPT，皆可） | 寫 10 秒分鏡腳本，產出中英並列提示詞 |
 | 畫面生成 | Google Flow（本篇重點） | 將英文提示詞轉為影片，支援角色與場景綁定 |
 | 語音配音 | MyEdit | 產出道地台灣腔中文，取代 Flow 不準的中文發音 |
 | 剪輯整合 | Canva（免費、易上手） | 換音、接片段、加字幕與背景音樂，輸出 MP4 |

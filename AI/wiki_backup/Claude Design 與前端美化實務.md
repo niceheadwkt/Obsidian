@@ -89,7 +89,7 @@ Claude Design 的運作邏輯是將 AI 的代碼寫入能力與網頁渲染引�
 ### ▍ 核心工作流特點
 *   **品牌自適應 (Brand-Aware)**：系統能自動讀取公司網站、Logo、色票，甚至連接 GitHub，自動在後台建立與對齊品牌一致的「設計系統 (Design System)」。
 *   **多維度素材匯入**：支持直接上傳 DOCX、PPTX、XLSX、PDF 文件，將文字數據自動轉換為對應的設計稿；亦可直接上傳現有產品網頁截圖要求 AI 學習其視覺風格。
-*   **工程交接 (Handoff)**：支持將視覺原型一鍵 Handoff 交接給 [[Claude]] Code 或本地 Agent 轉化為真正的產品代碼，或匯出為 HTML 網頁與 Canva 連接。
+*   **工程交接 (Handoff)**：支持將視覺原型一鍵 Handoff 交接給 [[Claude（Anthropic）|Claude]] Code 或本地 Agent 轉化為真正的產品代碼，或匯出為 HTML 網頁與 Canva 連接。
 
 ### ▍ 與主流設計工具的對比與分工
 在現代 AI 輔助工作流中，不同設計工具各司其職：

@@ -10,7 +10,7 @@ sources: [
   "[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md]]"
 ]
 created: 2026-06-13
-updated: 2026-09-17
+updated: 2026-11-18
 ---
 
 # Git GUI 與 GitHub 雙向同步實務
@@ -144,7 +144,7 @@ git commit -m "chore: 配置防嵌套 .gitignore 規則並刷新 Git 索引快�
 
 ## 7. Google 雲端硬碟同步、推送遭拒與清理排障
 
-根據 `[[raw/Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md|Google雲端與Git遠端綁定排障指南]]` 與 `[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md|VS Code與GitHub雙向同步排障指南]]`，將本地倉庫存放於雲端硬碟時，需特別防範同步與清理衝突：
+根據 [[raw/Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md|Google雲端與Git遠端綁定排障指南]] 與 [[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md|VS Code與GitHub雙向同步排障指南]]，將本地倉庫存放於雲端硬碟時，需特別防範同步與清理衝突：
 
 ### ▍ 1. Google 雲端硬碟電腦版同步模式調整
 *   **「串流檔案」的潛在風險**：實體存於雲端，本地僅顯示虛擬投影。Git 頻繁讀寫微小索引時會引發大量網路 I/O 衝突，並在背景產生 `.tmp.driveupload` 暫存檔，造成 Git 誤判變更，甚至引發 Git 索引損壞。

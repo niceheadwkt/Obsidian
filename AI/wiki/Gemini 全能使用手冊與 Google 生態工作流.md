@@ -12,7 +12,7 @@ updated: 2026-10-08
 
 一句話結論：**Gemini 的優勢不在「比較會聊天」，而在它直接長在 Google 生態裡（YouTube、Chrome、Gmail、Drive、Docs、Sheets、Slides、AI Studio），不用切換軟體、反覆複製貼上，就能把分散的資訊變成可用的成品。**
 
-影片的定位比喻：ChatGPT 像思考搭子、[[Claude]] 像文案寫手、Gemini 像私人助理。
+影片的定位比喻：ChatGPT 像思考搭子、[[Claude（Anthropic）|Claude]] 像文案寫手、Gemini 像私人助理。
 
 > [!NOTE]
 > 影片中的模型版本與免費額度屬於快速變動資訊（拍攝時：Gemini 網頁版免費用戶可用 3.6 Flash；Google AI Studio 免費用戶可用 9 月發布的 3.8 Flash），引用前請重新確認。原始剪藏後段另附一份 Glasp 比對摘要，其時間區間是依逐字稿自動時間碼切分，和影片章節時間不完全一致。

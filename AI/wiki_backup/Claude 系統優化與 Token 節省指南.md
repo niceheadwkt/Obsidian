@@ -41,7 +41,7 @@ updated: 2026-06-15
 
 ## 2. Claude Code (終端機 CLI) 官方 4 條節流建議
 
-當您在本地使用 [[Claude|Claude Code]] CLI 工具時，其高頻的檔案掃描與指令執行容易在不知不覺中消耗大量額度。官方給出以下 4 條防禦建議：
+當您在本地使用 [[Claude（Anthropic）|Claude Code]] CLI 工具時，其高頻的檔案掃描與指令執行容易在不知不覺中消耗大量額度。官方給出以下 4 條防禦建議：
 
 1.  **限制終端機輸出長度**：避免在對話中執行如 `git log`、`npm test` 等會產生上千行文字的命令。建議使用 `git log -n 5` 或過濾特定錯誤訊息，防止大量終端文字被打包成上下文發送。
 2.  **配置排除清單 (.gitignore)**：確保將 `node_modules/`、`build/`、`dist/` 以及像 `.obsidian/workspace.json`（參見 [[Git GUI 與 GitHub 雙向同步實務]]）等隨時變動的環境暫存檔寫入排除名單，防止 Claude Code 在掃描專案目錄時將其完整讀取。

@@ -21,7 +21,7 @@ updated: 2026-07-09
 
 # Claude 高階提示詞與應用場景
 
-**Claude 高階提示詞與應用場景** 系統性地總結了 Anthropic 推出新版模型後，人機協作思維從「一次性提示詞」轉向「長期情境工程（Context Engineering）」的演進，並深度解析如何將 Claude 應用於高難度學術文獻分析、複雜商業決策及日常開發場景。此外，本篇收錄了本地 CLI 工具 [[Claude|Claude Code]] 的完整安裝指南與 13 大類指令/快捷鍵速查。
+**Claude 高階提示詞與應用場景** 系統性地總結了 Anthropic 推出新版模型後，人機協作思維從「一次性提示詞」轉向「長期情境工程（Context Engineering）」的演進，並深度解析如何將 Claude 應用於高難度學術文獻分析、複雜商業決策及日常開發場景。此外，本篇收錄了本地 CLI 工具 [[Claude（Anthropic）|Claude Code]] 的完整安裝指南與 13 大類指令/快捷鍵速查。
 
 ---
 

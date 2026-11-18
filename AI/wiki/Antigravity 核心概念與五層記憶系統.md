@@ -6,7 +6,7 @@ sources: [
   "[[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md]]"
 ]
 created: 2026-06-18
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # Antigravity 核心概念與五層記憶系統
@@ -64,7 +64,7 @@ Antigravity 設計了精細的五層記憶結構，用以在長對話中保持�
 ## 5. 模型多樣性與 MCP 協議
 
 ### 多模型支持
-Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、OpenAI 等大模型。此外，可以在 IDE 中直接安裝 [[Claude]] 相關的 CLI 工具（如 Claude Code）或整合 CodeX 橋接本地與雲端推理服務。
+Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、OpenAI 等大模型。此外，可以在 IDE 中直接安裝 [[Claude（Anthropic）|Claude]] 相關的 CLI 工具（如 Claude Code）或整合 CodeX 橋接本地與雲端推理服務。
 
 ### 連接萬物的 MCP 協議
 - **MCP 協議 (Model Context Protocol)**：由 Anthropic 提出的統一標準，用於將外部資料源和工具（如 Notion、Airtable、GitHub、YouTube 等）以 API 或 MCP Server 的形式接入 AI Agent。
@@ -98,5 +98,5 @@ Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、
 
 ## 關聯概念與頁面
 - **知識庫規範**：[運作規範](../schema.md)
-- **專案管理工作流**：`[[Claude 專案管理一桌三櫃工作流]]`
-- **影片工程自動化**：`[[Antigravity 與 Remotion 影片生成實務]]`
+- **專案管理工作流**：[[Claude 專案管理一桌三櫃工作流]]
+- **影片工程自動化**：[[Antigravity 與 Remotion 影片生成實務]]

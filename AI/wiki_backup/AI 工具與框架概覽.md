@@ -18,7 +18,7 @@ updated: 2026-06-11
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
 
-本頁面彙整並分析了 2026 年除 [[Claude]] 與 [[Ollama]] 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
+本頁面彙整並分析了 2026 年除 [[Claude（Anthropic）|Claude]] 與 [[Ollama]] 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
 
 ---
 

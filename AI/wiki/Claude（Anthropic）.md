@@ -12,7 +12,7 @@ sources: [
   "[[AI/raw/2026-11-16T113459+0800-Claude把圍棋作業變遊戲！不會寫程式，也能做出5關兒童陪練.md|Claude把圍棋作業變遊戲！5關兒童陪練（數位時代）]]"
 ]
 created: 2026-06-11
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 # Claude (Anthropic AI 家族)

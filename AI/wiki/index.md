@@ -16,11 +16,11 @@
 | `[[NotebookLM 綜合指南]]` | Google NotebookLM 知識庫功能、Gemini 3.5 與 Antigravity 推理引擎升級、自定義圖表、簡報與 Podcast 語音生成 | 4 | 2026-07-09 |
 | `[[RAG 與 DeepSearch 概念綜述]]` | 比較 Semantic search（語意搜尋）與 RAG 檢索增強生成架構，解決大模型幻覺與私有資料限制之方案 | 2 | 2026-07-09 |
 | `[[LLM 到 Agent 的工程解析]]` | 剖析大模型生態系技術棧（Tokenizer、Context、Tool 呼叫、MCP 統一標準、Agent 規劃與 Agent Skill）及本地 MCP 開發實務 | 2 | 2026-07-09 |
-| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景，以及 Notion/Obsidian/Heptabase/Gemini Notebook/Kuse AI 五大筆記工具橫向選型 | 10 | 2026-09-17 |
+| `[[個人知識管理系統構築]]` | Karpathy 提出的 LLM-Wiki 核心思想、Obsidian 雙向連結（別名、精確定位）設定，及讀書、程式、專案與 App 四大實務場景，以及 Notion/Obsidian/Heptabase/Gemini Notebook/Kuse AI 五大筆記工具橫向選型 | 11 | 2026-11-18 |
 | `[[前端與系統開發常用技術]]` | Git 時光機的核心工作流、分支合併與防呆救援，以及 Electron 桌面開發、Unix 腳本 Shebang 規範、CDN 網路分發，並新增 SQLite 資料庫入門、Discord 通訊協作平台，以及 Node.js／React 全端 JavaScript 基礎 | 12 | 2026-09-17 |
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-07-09 |
 | `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt 與 Go Live 語音，全球 6 大免費 AI 課程與證書，以及 Google AI Studio 開發平台與 TTS 語音生成 | 17 | 2026-10-08 |
-| `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 2 | 2026-07-09 |
+| `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 3 | 2026-11-18 |
 | `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，已更新為 120 組品牌社群、工作、生活、靈感與風格轉換範本 | 2 | 2026-09-17 |
 | `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定，以及多 PC 設定下 Google Drive 工作空間路徑統一與同步模式排障 | 6 | 2026-08-07 |
 | `[[商業案例與投資思維專題]]` | 芒格、納瓦爾、老謝、施昇輝、陳重銘與孫宇晨等人物思維，Computex 跨境出海數據驅動品牌案例，通膨對個人資產傳導，以及買 ETF 必懂九大術語（含收益平準金） | 10 | 2026-10-08 |
@@ -29,7 +29,7 @@
 | `[[國外旅遊實用英語情境]]` | 實用國外旅遊英文求助與購物句型對話（問路、餐廳點餐與拆帳、服飾尺寸庫存、設備故障行李寄存、藥局成藥詢問），結合語感圖像化反射訓練 | 1 | 2026-07-09 |
 | `[[NotebookLM 進階應用與實戰指引]]` | Google NotebookLM Deep Research、中文 Podcast、影片生成，YT/Grabbit 整合，8 大商務學術場景，YAML 全域視覺 DNA 框架與系統架構大師雙框架、Canva 轉場後製與 NanoBanana Pro 局部改圖 | 31 | 2026-07-20 |
 | `[[Claude 系統優化與 Token 節省指南]]` | 解決 Claude 額度超限與成本控制，涵蓋 Token 暴漲原因、4 大用量超限技巧、PDF 處理優化、Claude Code CLI 官方 4 條節流建議、三種模型定價選用對照，以及 `CLAUDE.md` 自我審查與 12 條優化規則 | 9 | 2026-07-09 |
-| `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理，以及 grill-me 拷問與技能建立器實戰 | 19 | 2026-08-07 |
+| `[[Claude Cowork 與 Agent Skill 實務]]` | Claude Desktop 三大模式比較、Cowork 自動化工作流（核心資料夾、.md 知識背景），Excel/Word 自動化、Agent Skills 格式與 6 步驟製作流程、X 爆紅 26 個 Skill 盤點與 Projects 長期記憶助理，以及 grill-me 拷問與技能建立器實戰 | 20 | 2026-11-18 |
 | `[[Claude Design 與前端美化實務]]` | Claude Design 網頁與簡報美化實戰、XML 提示詞結構、Slider 微調與 Comments 修改、麥肯錫風皇家藍皇家簡報與 Refero 設計整合、對話框「互動視覺」圖表繪製，以及 AI 改造原廠 PPT 四段指令流程與「特殊洞察 × 個性表達（KH3R）」簡報方法論 | 9 | 2026-09-17 |
 | `[[Claude 高階提示詞與應用場景]]` | Claude Opus 4.7 提示詞官方升級與字面化調整、少即是多提示心法、情境工程（about-me/brand-voice）、記憶轉移（ChatGPT/Gemini 搬家）、史丹佛博士生 9 步學術鏈與 7 大決策反駁框架，並附錄 Claude Code CLI 的安裝與 13 大類指令/快捷鍵速查，以及 Karpathy 的 10 分鐘碎念語音提示法 | 14 | 2026-08-07 |
 | `[[Antigravity 核心概念與五層記憶系統]]` | 剖析 Google Antigravity 的 IDE 介面架構、權限與安全機制、`agent.md` 行為規範、MCP 協議整合及 5 層記憶系統（解決 Agent 遺忘） | 2 | 2026-07-09 |
@@ -73,6 +73,7 @@
 | [[Document AI 大規模資料擷取_課程總結]] | Google Skills 技能徽章課程：Form Parser 鍵/值與可信度擷取、同步與非同步 API、Cloud Storage → Cloud Run → Document AI → BigQuery／Pub/Sub 事件驅動管道，挑戰實驗室 GSP367 任務與排錯，以及 ERP 單據擷取應用聯想 | 1 | 2026-11-16 |
 | [[AI 圍棋陪練：專案指示與成品小遊戲]] | 不會下圍棋的家長把 AI 設定成圍棋家教：專案指示（角色、孩子進度、檢查作業／引導訂正／出題／家長模式／練習紀錄觸發詞），再用 Claude 成品做數鼻孔、提吃、逃走、叫吃、雙叫吃 5 關手指點棋盤遊戲；強調程式驗證題目＋家長核對 | 2 | 2026-11-17 |
 | [[Claude 成品製作旅遊行程網站]] | Claude 免費版成品實測做手機版旅遊網站：免費版與 Pro 差異（連結分享、官方資料儲存）、提示詞 6 欄位、先出規格再生成的 4 步驟、福岡六天五夜範例提示詞結構、天氣／字型／虛構資料等限制 | 1 | 2026-11-17 |
+| [[Claude＋Obsidian 第二大腦七步法]] | Fanko AI 範式七步法：路由表（讓 Claude 反過來訪問你）、資料夾與 Web Clipper 入口、入庫 Skill＋評分標準、Artifacts 看板、三種筆記模板、每晚排程整理收集箱、Claude Code 客製與 /insights | 1 | 2026-11-18 |
 
 ---
 
@@ -80,7 +81,7 @@
 
 | 名稱 | 類別 | 一行總結 | 關聯頁面 |
 | :--- | :--- | :--- | :--- |
-| `[[Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline)、Claude Code CLI，以及文字浮水印生成內容標記機制、a16z 第七版榜單市場地位（流量第三、不放廣告、Max 方案占比 7.3%），以及成品（Artifacts）免費版與付費版分享／儲存差異與實作案例 | `[[Claude]]` |
+| `[[Claude（Anthropic）\|Claude]]` | AI 家族/工具 | Anthropic 旗下大模型，包含對話網頁、專案、Artifacts、VS Code 整合 (Continue/Cline)、Claude Code CLI，以及文字浮水印生成內容標記機制、a16z 第七版榜單市場地位（流量第三、不放廣告、Max 方案占比 7.3%），以及成品（Artifacts）免費版與付費版分享／儲存差異與實作案例 | `[[Claude（Anthropic）\|Claude]]` |
 | `[[Ollama]]` | 本地運行引擎 | 開源本地 AI 執行工具，支持 Qwen、DeepSeek 等本地運行，並提供 Codex/Codex-app 的本地端點橋接 | `[[Ollama]]` |
 | `[[Dify]]` | 應用開發平台 | 開源大語言模型應用開發平台，支持可視化 Canvas 工作流、RAG 知識庫與自動 API (BaaS) 導出 | `[[Dify]]` |
 | `[[Warp 現代化終端機工具]]` | 終端機/開發工具 | 區塊架構、IDE級智慧補全、內建 Warp AI 智慧助理與指令雲端儲存庫 Warp Drive | `[[Warp 現代化終端機工具]]` |
@@ -93,8 +94,8 @@
 | :---: | :--- | :---: | :---: | :--- |
 | `SRC-001` | *Andrej Karpathy LLM Wiki Gist* | Gist / 文章 | 2026-07-09 | `[[README]]` |
 | `SRC-002` | `AI CLI 工具比較與選擇.md` | 比較 / CLI | 2026-07-09 | `[[AI CLI 工具比較與選擇_摘要]]` |
-| `SRC-003` | `Claude 操作模式與功能介紹.md` | 介紹 / 文件 | 2026-07-09 | `[[Claude]]` |
-| `SRC-004` | `claude 如何加入vs code中.md` | 教程 / 插件 | 2026-07-09 | `[[Claude]]` |
+| `SRC-003` | `Claude 操作模式與功能介紹.md` | 介紹 / 文件 | 2026-07-09 | `[[Claude（Anthropic）\|Claude]]` |
+| `SRC-004` | `claude 如何加入vs code中.md` | 教程 / 插件 | 2026-07-09 | `[[Claude（Anthropic）\|Claude]]` |
 | `SRC-005` | `Ollama 中Launch 選項codex app與codex 之差異為何.md` | CLI / 設定 | 2026-07-09 | `[[Ollama]]` |
 | `SRC-006` | `Ollama 可以針對LOCAL設專案目錄來運作？.md` | 問答 / 設定 | 2026-07-09 | `[[Ollama]]` |
 | `SRC-007` | `在 Ollama 中使用 Qwen 是完全免費的.md` | 說明 / Qwen | 2026-07-09 | `[[Ollama]]` |
@@ -329,7 +330,7 @@
 | SRC-235 | 2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md | 影片 / 教學 | 2026-09-16 | [[Google Flow AI短片製作實務]] |
 | SRC-236 | 2026-09-17T082024+0800-AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷.md | 影片 / 教學 | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
 | SRC-237 | 2026-08-15T082829+0800-筆記軟體推薦｜Notion、Obsidian等5款比較：AI、離線、協作怎麼選？.md | 比較 / 工具 | 2026-09-17 | [[個人知識管理系統構築]] |
-| SRC-238 | 2026-08-18T194359+0800-Claude「隱形文字浮水印」是什麼？看懂背後原理、限制和影響.md | 文件 / 合規 | 2026-09-17 | [[Claude]] |
+| SRC-238 | 2026-08-18T194359+0800-Claude「隱形文字浮水印」是什麼？看懂背後原理、限制和影響.md | 文件 / 合規 | 2026-09-17 | [[Claude（Anthropic）\|Claude]] |
 | SRC-239 | 2026-08-25T083056+0800-台電App用電分析怎麼看？為什麼我沒有？5步驟揪出6類家電吃電怪獸.md | 教學 / 生活科技 | 2026-09-17 | [[智慧裝置與日常應用技巧]] |
 | SRC-240 | 2026-09-02T162726+0800-LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學.md | 教學 / 自動化 | 2026-09-17 | [[Google Spark 與 GAS 雲端自動化實務]] |
 | SRC-241 | 2026-09-04T214823+0800-【SQL】 超簡易 SQLite 入門教學！SQLite 很可能是世界上最多用戶使用的 SQL 引擎？(中文字幕) (可調節速度).md | 影片 / 資料庫 | 2026-09-17 | [[前端與系統開發常用技術]] |
@@ -344,7 +345,7 @@
 | SRC-250 | 2026-09-17T075738+0800-OpenCode 從零開始 一部影片一次教完 免費入門 AI Agent.md | 影片 / 教學 | 2026-09-17 | [[OpenCode 新版架構與模型最佳搭配指南]] |
 | SRC-251 | 2026-09-17T075805+0800-生生有 Token：做出一本繪本｜教案 · 簡報 · 繪本一次搞定.md | 影片 / 教育Agent | 2026-09-17 | [[Wordwall 與教育科技的 AI Agent 自動化實務]] |
 | SRC-252 | GCP_AI_and_ETL_Master_Guide.md | 指南 / 數據工程 | 2026-09-17 | [[GCP 雲端排程與現代化數據工程實戰]] |
-| SRC-253 | 2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md | 報告 / 市場趨勢 | 2026-10-07 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]], [[Claude]], [[三大 AI 付費版選用與效能橫向對比]], [[生成式 AI 企業應用與成本經濟學]] |
+| SRC-253 | 2026-10-07T155412+0800-全球100大AI工具榜出爐！誰流量海放全場？有哪些隱形贏家？6大洞察一次看.md | 報告 / 市場趨勢 | 2026-10-07 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]], [[Claude（Anthropic）\|Claude]], [[三大 AI 付費版選用與效能橫向對比]], [[生成式 AI 企業應用與成本經濟學]] |
 | SRC-254 | 2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md | 影片 / 教學 | 2026-10-08 | [[Gemini 全能使用手冊與 Google 生態工作流]], [[AI 工具與框架概覽]], [[三大 AI 付費版選用與效能橫向對比]] |
 | SRC-255 | 2026-10-08T150000+0800-Gemini 對話：2026銀髮經濟認知地圖.md | 對話 / 產業研究 | 2026-10-08 | [[2026 銀髮經濟認知地圖與樂齡數位課程商機]] |
 | SRC-256 | 2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md | 對話 / MCP | 2026-10-08 | [[AVA_ERP MCP 工具建立標準流程]], [[AI Agent 實戰與 MCP 伺服器整合]] |
@@ -354,8 +355,9 @@
 | SRC-260 | 2026-11-13T112525+0800-使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理.md | 線上課程 / 課程頁整理 | 2026-11-16 | [[Document AI 大規模資料擷取_課程總結]] |
 | SRC-261 | 2026-11-13T132312+0800-不能生成文字卻暴紅！ChatGPT技術推手打造AI決策模型Jev，為何讓開發者搶到當機？.md | 新聞 / 數位時代 | 2026-11-16 | [[Jev 與 System One 決策模型]] |
 | SRC-262 | 2026-11-16T114023+0800-不會下圍棋，也能陪孩子練棋？她把AI設定成「圍棋家教」，看作業、出題都包了.md | 教學 / 數位時代 | 2026-11-17 | [[AI 圍棋陪練：專案指示與成品小遊戲]] |
-| SRC-263 | 2026-11-16T113459+0800-Claude把圍棋作業變遊戲！不會寫程式，也能做出5關兒童陪練.md | 教學 / 數位時代 | 2026-11-17 | [[AI 圍棋陪練：專案指示與成品小遊戲]], [[Claude]] |
-| SRC-264 | 2026-11-16T113604+0800-用Claude一次整理出國行程！免費版製作旅遊網站，航班、地圖、記帳全都有.md | 教學 / 數位時代 | 2026-11-17 | [[Claude 成品製作旅遊行程網站]], [[Claude]] |
+| SRC-263 | 2026-11-16T113459+0800-Claude把圍棋作業變遊戲！不會寫程式，也能做出5關兒童陪練.md | 教學 / 數位時代 | 2026-11-17 | [[AI 圍棋陪練：專案指示與成品小遊戲]], [[Claude（Anthropic）\|Claude]] |
+| SRC-264 | 2026-11-16T113604+0800-用Claude一次整理出國行程！免費版製作旅遊網站，航班、地圖、記帳全都有.md | 教學 / 數位時代 | 2026-11-17 | [[Claude 成品製作旅遊行程網站]], [[Claude（Anthropic）\|Claude]] |
+| SRC-265 | 2026-11-18T074516+0800-Claude＋Obsidian 第二大腦教學｜零基礎 7 步，讓 AI 從陌生人變成最懂你的同事.md | 影片 / Fanko AI 範式 | 2026-11-18 | [[Claude＋Obsidian 第二大腦七步法]] |
 ---
 
 > [!TIP]

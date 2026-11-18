@@ -3,12 +3,12 @@ type: entity
 tags: [AI工具, Dify, LowCode, NoCode, RAG, 工作流, Docker]
 sources: ["[[sources/01_AI_Tools/Dify.md]]"]
 created: 2026-06-18
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
 # Dify (開源企業級低代碼 AI 應用平台)
 
-**Dify** 是一個開源的大語言模型（LLM）應用開發平台（Orchestration Platform）。它的核心理念是讓開發者與業務人員能夠快速、無縫地將各種大語言模型（如 ChatGPT、[[Claude]]、Gemini、DeepSeek 等）轉化為具備實際功能、符合生產環境要求的企業級 AI 應用。
+**Dify** 是一個開源的大語言模型（LLM）應用開發平台（Orchestration Platform）。它的核心理念是讓開發者與業務人員能夠快速、無縫地將各種大語言模型（如 ChatGPT、[[Claude（Anthropic）|Claude]]、Gemini、DeepSeek 等）轉化為具備實際功能、符合生產環境要求的企業級 AI 應用。
 
 如果用一句話來形容：**Dify 是 AI 時代的 Low-Code（低代碼）/ No-Code（無代碼）開發看板與工作流引擎。**
 
@@ -24,10 +24,10 @@ Dify 支援建立多種不同的 AI 應用，滿足從輕量聊天到複雜業�
 
 ### 內建 RAG 與知識庫管理
 - **一鍵導入**：支援上傳 PDF、Word、TXT 等文件，或直接同步 Notion、抓取網頁內容。
-- **自動化向量化**：Dify 自動在背景完成文本分段（Chunking）、向量化（Embedding）與清理，使用者無需手動架設與維護複雜的向量資料庫（Vector DB），即可輕鬆讓 AI 根據私有知識庫進行精確的檢索與問答（詳細技術原理請參閱 `[[RAG 與 DeepSearch 概念綜述]]`）。
+- **自動化向量化**：Dify 自動在背景完成文本分段（Chunking）、向量化（Embedding）與清理，使用者無需手動架設與維護複雜的向量資料庫（Vector DB），即可輕鬆讓 AI 根據私有知識庫進行精確的檢索與問答（詳細技術原理請參閱 [[RAG 與 DeepSearch 概念綜述]]）。
 
 ### 模型中立 (Model Agnostic)
-- **廣泛兼容**：支援市面上所有主流雲端模型 API，同時支援透過 `[[Ollama]]` 本地部署的開源模型（如 Qwen、Llama 等）。
+- **廣泛兼容**：支援市面上所有主流雲端模型 API，同時支援透過 [[Ollama]] 本地部署的開源模型（如 Qwen、Llama 等）。
 - **混合呼叫**：允許在同一個工作流中混合使用不同的模型（例如：前端先用輕量低成本模型做意圖分類，後端核心步驟再調用強大的 Claude 模型進行深度推理），切換模型只需透過下拉選單即可完成。
 
 ### 後端即服務 (BaaS, Backend as a Service)
@@ -52,7 +52,7 @@ Dify 支援建立多種不同的 AI 應用，滿足從輕量聊天到複雜業�
 ## 3. 常見應用場景與實務
 
 1. **企業內部智慧客服**：將公司的規章制度、產品規格書、HR 手冊整包餵給 Dify 知識庫，打造 24 點不間斷的內部 IT 與 HR 問答助理。
-2. **自動化行銷與新聞日報**：設定定時任務，讓 AI 工作流自動抓取科技新聞、進行篩選摘要，並將排版好的日報自動發送至 `[[sources/Slack.md|Slack]]` 或 Gmail。
+2. **自動化行銷與新聞日報**：設定定時任務，讓 AI 工作流自動抓取科技新聞、進行篩選摘要，並將排版好的日報自動發送至 [[AI/sources/05_Tech_Development/Slack.md|Slack]] 或 Gmail。
 3. **多步驟 AI 代碼偵錯 Agent**：建立一個能幫忙寫程式的 Agent，第一步生成程式碼，第二步調用本地 Python 節點執行測試，第三步若報錯則自動讀取錯誤日誌進行自我修正。
 
 ---

@@ -10,7 +10,7 @@ sources:
   - "[[AI/raw/2026-08-13T081058+0800-OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配.md|OpenCode 基本功 EP07新版本完全體，DeepSeek V4 Flash ＋ Luna 最佳搭配]]"
   - "[[AI/raw/2026-09-17T075738+0800-OpenCode 從零開始 一部影片一次教完 免費入門 AI Agent.md|OpenCode 從零開始：一部影片一次教完，免費入門 AI Agent]]"
 created: 2026-08-14
-updated: 2026-09-17
+updated: 2026-11-18
 ---
 
 # OpenCode 新版架構與模型最佳搭配指南
@@ -100,8 +100,8 @@ graph TD
 ---
 
 ## 關聯頁面
-- `[[AI 工具與框架概覽]]`
-- `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]`
-- `[[Qwen 3.8 本地模型部署與企業 ROI 實務]]`
-- `[[Claude Cowork 與 Agent Skill 實務]]`
-- `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`
+- [[AI 工具與框架概覽]]
+- [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]
+- [[Qwen 3.8 本地模型部署與企業 ROI 實務]]
+- [[Claude Cowork 與 Agent Skill 實務]]
+- [[Wordwall 與教育科技的 AI Agent 自動化實務]]

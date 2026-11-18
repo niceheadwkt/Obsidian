@@ -9,7 +9,7 @@ sources:
   - "[[raw/Software_Architect_v1.0_繁體中文.md]]"
   - "[[raw/Software Architect Workspace Pro v2.0製作方式.md]]"
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-11-18
 ---
 
 # Claude Code 與 Workspace Pro 實戰
@@ -87,5 +87,5 @@ Software-Architect-Workspace-Pro/
 ---
 
 ## 4. 延伸閱讀與交叉連結
-*   關於如何跨電腦同步一桌三櫃專案資料夾與 chezmoi 技能，請參閱：`[[AI Agent 實戰與 MCP 伺服器整合#2. 跨裝置與多 Agent 專案協作架構]]`。
-*   關於 Claude Token 的節流技巧，請參閱：`[[Claude 系統優化與 Token 節省指南]]`。
+*   關於如何跨電腦同步一桌三櫃專案資料夾與 chezmoi 技能，請參閱：[[AI Agent 實戰與 MCP 伺服器整合#2. 跨裝置與多 Agent 專案協作架構]]。
+*   關於 Claude Token 的節流技巧，請參閱：[[Claude 系統優化與 Token 節省指南]]。

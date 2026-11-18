@@ -9,14 +9,14 @@ tags:
 sources:
   - "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]"
 created: 2026-08-14
-updated: 2026-08-14
+updated: 2026-11-18
 ---
 
 # GitHub 開源工具與 AI Skills 入門指南
 
 ## 概述與核心理念
 
-在 AI Agent 時代，**GitHub** 已不僅僅是軟體工程師託管程式碼的平台，更是一座對所有人開放的全球開源工具與 AI 技能庫。透過理解 GitHub 的基礎運作架構，使用者無需具備深厚的程式開發背景，也能透過自然語言請 AI Agent（如 [[Claude]] Code、Codex、Cursor 或 [[OpenCode 新版架構與模型最佳搭配指南|OpenCode]]）協助解讀專案、進行安全評估並自動部署，從而大幅降低商用軟體的訂閱成本。
+在 AI Agent 時代，**GitHub** 已不僅僅是軟體工程師託管程式碼的平台，更是一座對所有人開放的全球開源工具與 AI 技能庫。透過理解 GitHub 的基礎運作架構，使用者無需具備深厚的程式開發背景，也能透過自然語言請 AI Agent（如 [[Claude（Anthropic）|Claude]] Code、Codex、Cursor 或 [[OpenCode 新版架構與模型最佳搭配指南|OpenCode]]）協助解讀專案、進行安全評估並自動部署，從而大幅降低商用軟體的訂閱成本。
 
 ---
 
@@ -101,7 +101,7 @@ flowchart TD
 ---
 
 ## 關聯頁面
-- `[[AI 工具與框架概覽]]`
-- `[[Claude Cowork 與 Agent Skill 實務]]`
-- `[[LLM 到 Agent 的工程解析]]`
-- `[[前端與系統開發常用技術]]`
+- [[AI 工具與框架概覽]]
+- [[Claude Cowork 與 Agent Skill 實務]]
+- [[LLM 到 Agent 的工程解析]]
+- [[前端與系統開發常用技術]]

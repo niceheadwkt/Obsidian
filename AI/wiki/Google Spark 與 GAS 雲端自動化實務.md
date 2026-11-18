@@ -10,14 +10,14 @@ sources:
   - "[[AI/raw/2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md|AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配]]"
   - "[[AI/raw/2026-09-02T162726+0800-LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學.md|LINE AI待辦機器人怎麼做？Gemini API＋Apps Script免費4步驟教學]]"
 created: 2026-08-14
-updated: 2026-09-17
+updated: 2026-11-18
 ---
 
 # Google Spark 與 GAS 雲端自動化實務
 
 ## 概述與定位
 
-**Google Spark** 是 Google 在 Gemini 生態系中推出的雲端常駐型 AI Agent（Beta 階段，適用於 Google One AI Premium / Pro 訂閱用戶）。不同於在使用者電腦本機運行的 Agent（如 [[Antigravity 核心概念與五層記憶系統|Antigravity]]、[[Claude]] Code、Codex），**Spark 完全常駐於 Google 雲端伺服器**；即使關閉個人電腦，Spark 仍可在背景持續執行**排程 (Scheduling)**、**輪詢 (Polling)** 與 **Google Workspace 檔案批次處理**。
+**Google Spark** 是 Google 在 Gemini 生態系中推出的雲端常駐型 AI Agent（Beta 階段，適用於 Google One AI Premium / Pro 訂閱用戶）。不同於在使用者電腦本機運行的 Agent（如 [[Antigravity 核心概念與五層記憶系統|Antigravity]]、[[Claude（Anthropic）|Claude]] Code、Codex），**Spark 完全常駐於 Google 雲端伺服器**；即使關閉個人電腦，Spark 仍可在背景持續執行**排程 (Scheduling)**、**輪詢 (Polling)** 與 **Google Workspace 檔案批次處理**。
 
 結合本機 Agent 透過 `clasp` 工具直接撰寫並部署的 **Google Apps Script (GAS)**，能形成強大的「前端資料收集 $\rightarrow$ Google 試算表 $\rightarrow$ 雲端 Spark 自動定時處理」無伺服器自動化閉環。
 
@@ -103,7 +103,7 @@ graph TD
 ---
 
 ## 關聯頁面
-- `[[AI Agent 與 AntiGravity 2.0 基礎入門]]`
-- `[[AI Agent 實戰與 MCP 伺服器整合]]`
-- `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]`
-- `[[Wordwall 與教育科技的 AI Agent 自動化實務]]`
+- [[AI Agent 與 AntiGravity 2.0 基礎入門]]
+- [[AI Agent 實戰與 MCP 伺服器整合]]
+- [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]
+- [[Wordwall 與教育科技的 AI Agent 自動化實務]]

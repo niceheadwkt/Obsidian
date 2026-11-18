@@ -19,7 +19,7 @@ sources:
   - "[[raw/2026-07-16T140516+0800-實測｜我用Skill把AI訓練成專屬助理，報帳、資料整理都超快！.md]]"
   - "[[AI/raw/2026-08-10T112529+0800-AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配.md|AI Agent 教學應用 Google Spark ＋ GAS，教師自動化的雲端神搭配]]"
 created: 2026-06-26
-updated: 2026-08-14
+updated: 2026-11-18
 ---
 
 # AI Agent 與 AntiGravity 2.0 基礎入門
@@ -112,5 +112,5 @@ AntiGravity 2.0 支援透過 MCP 協議與 [[Git GUI 與 GitHub 雙向同步實�
 
 > [!NOTE]
 > **延伸閱讀與交叉連結**：
-> - 關於 MCP 伺服器配置、跨裝置工作區同步與進階沙箱，請參閱新建立之概念頁面：`[[AI Agent 實戰與 MCP 伺服器整合]]`。
-> - 關於 Antigravity 記憶系統的五層架構（工作記憶、情境記憶、專案記憶、全域記憶、語意記憶），請參閱 `[[Antigravity 核心概念與五層記憶系統]]`。
+> - 關於 MCP 伺服器配置、跨裝置工作區同步與進階沙箱，請參閱新建立之概念頁面：[[AI Agent 實戰與 MCP 伺服器整合]]。
+> - 關於 Antigravity 記憶系統的五層架構（工作記憶、情境記憶、專案記憶、全域記憶、語意記憶），請參閱 [[Antigravity 核心概念與五層記憶系統]]。

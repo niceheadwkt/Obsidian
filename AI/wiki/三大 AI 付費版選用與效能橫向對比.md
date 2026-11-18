@@ -10,7 +10,7 @@ updated: 2026-10-08
 
 在 2026 年，大語言模型（LLM）已正式進入**「AI 代理（Agentic Era）時代」**。工作者評估 AI 的價值，不再僅僅關注大腦是否「聰明」，更要看它是否具備調用工具、自主操作瀏覽器與解決複雜任務的「執行力」。
 
-本頁面整理賓州大學華頓商學院知名 AI 趨勢專家 **Ethan Mollick (伊森・莫利克) 教授** 的模型選用邏輯與對三大付費版 AI 工具（ChatGPT, Gemini, [[Claude]]）的橫向對比分析。
+本頁面整理賓州大學華頓商學院知名 AI 趨勢專家 **Ethan Mollick (伊森・莫利克) 教授** 的模型選用邏輯與對三大付費版 AI 工具（ChatGPT, Gemini, [[Claude（Anthropic）|Claude]]）的橫向對比分析。
 
 ---
 
@@ -44,7 +44,7 @@ updated: 2026-10-08
 
 ## 3. 三大 AI 工具付費版橫向對比表
 
-| **比較項目** | **Gemini** | **ChatGPT** | **[[Claude]]** |
+| **比較項目** | **Gemini** | **ChatGPT** | **[[Claude（Anthropic）\|Claude]]** |
 | :--- | :--- | :--- | :--- |
 | **背後開發商** | Google | OpenAI | Anthropic |
 | **最新主力模型** | Gemini 3.1 Pro | GPT-5.2 / 5.3-Codex | Claude Opus 4.6 |

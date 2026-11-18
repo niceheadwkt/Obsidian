@@ -13,7 +13,7 @@ sources:
   - "[[AI/raw/GCP_AI_and_ETL_Master_Guide.md|GCP 雲端服務、AI Agent 與現代化數據工程 (ETL/ELT) 全方位實戰指南]]"
   - "[[AI/raw/2026-11-13T112525+0800-使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理.md|使用 Document AI 大規模自動擷取資料（Google Skills 技能徽章課程）重點整理]]"
 created: 2026-09-17
-updated: 2026-11-16
+updated: 2026-11-18
 ---
 
 # GCP 雲端排程與現代化數據工程實戰
@@ -94,6 +94,6 @@ updated: 2026-11-16
 ---
 
 ## 關聯頁面
-- `[[Google Spark 與 GAS 雲端自動化實務]]`
-- `[[Document AI 大規模資料擷取_課程總結]]`
-- `[[生成式 AI 企業應用與成本經濟學]]`
+- [[Google Spark 與 GAS 雲端自動化實務]]
+- [[Document AI 大規模資料擷取_課程總結]]
+- [[生成式 AI 企業應用與成本經濟學]]

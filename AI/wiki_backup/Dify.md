@@ -8,7 +8,7 @@ updated: 2026-06-18
 
 # Dify (開源企業級低代碼 AI 應用平台)
 
-**Dify** 是一個開源的大語言模型（LLM）應用開發平台（Orchestration Platform）。它的核心理念是讓開發者與業務人員能夠快速、無縫地將各種大語言模型（如 ChatGPT、[[Claude]]、Gemini、DeepSeek 等）轉化為具備實際功能、符合生產環境要求的企業級 AI 應用。
+**Dify** 是一個開源的大語言模型（LLM）應用開發平台（Orchestration Platform）。它的核心理念是讓開發者與業務人員能夠快速、無縫地將各種大語言模型（如 ChatGPT、[[Claude（Anthropic）|Claude]]、Gemini、DeepSeek 等）轉化為具備實際功能、符合生產環境要求的企業級 AI 應用。
 
 如果用一句話來形容：**Dify 是 AI 時代的 Low-Code（低代碼）/ No-Code（無代碼）開發看板與工作流引擎。**
 

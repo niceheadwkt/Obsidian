@@ -18,10 +18,11 @@ sources: [
   "[[raw/2026-06-15T155632+0800-X上爆紅的26個Skill！賈伯斯、卡帕西的思維都能「蒸餾」、還能算命，完整清單一次收.md]]",
   "[[raw/2026-06-15T155655+0800-不會Claude Code也能上手！用Projects打造AI工作流，5步驟養成長期記憶助理.md]]",
   "[[raw/2026-06-15T154424+0800-Claude地圖｜Cowork、Claude Code是什麼？初階者從哪開始學？進階技巧有哪些？.md]]",
-  "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]"
+  "[[AI/raw/2026-08-08T105345+0800-GitHub是什麼？新手免費用開源工具、AI Skills入門指南.md|GitHub是什麼？新手免費用開源工具、AI Skills入門指南]]",
+  "[[AI/raw/2026-11-18T074516+0800-Claude＋Obsidian 第二大腦教學｜零基礎 7 步，讓 AI 從陌生人變成最懂你的同事.md|Claude＋Obsidian 第二大腦教學｜零基礎 7 步（Fanko AI 範式）]]"
 ]
 created: 2026-06-15
-updated: 2026-08-14
+updated: 2026-11-18
 ---
 
 # Claude Cowork 與 Agent Skill 實務
@@ -110,6 +111,9 @@ updated: 2026-08-14
     3. 使用者簡短回答。
     4. AI 整理為明確的規格與拆票 (Spec)。
     5. 使用者確認後執行。
+
+- **「先做順、再固化」的 Skill 建法**（2026-11 補充）：先在同一對話手動處理三個實例並逐次糾正，再請 AI「把剛才這套做法變成 Skill」，此時它已看過你怎麼改，說明書會更準；同時寫入評分標準，讓它每次做完先自評、未過自改。grill-me 式的「一直問我問題，一次問一個」也可用來產出 CLAUDE.md 路由表。詳見 [[Claude＋Obsidian 第二大腦七步法]]。
+
 - **Skill Creator (技能建立器)**：
   - 協助使用者設計、編寫並部署自訂 Skill 的智能助理。
   - **核心步驟**：定義 YAML Frontmatter 觸發條件 $\rightarrow$ 撰寫處理指令與步驟 (SKILL.md) $\rightarrow$ 儲存至專案目錄的 `.agents/skills/` 或全域的 `skills/` 目錄。

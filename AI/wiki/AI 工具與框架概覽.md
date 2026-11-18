@@ -24,18 +24,18 @@ sources: [
   "[[AI/raw/2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md|Google Gemini 3 全能使用手冊（盈夏AI輕創業）]]"
 ]
 created: 2026-06-11
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
 # AI 開發工具與推理框架概覽 (AI Tools & Frameworks Overview)
 
-本頁面彙整並分析了 2026 年除 `[[Claude]]` 與 `[[Ollama]]` 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
+本頁面彙整並分析了 2026 年除 [[Claude（Anthropic）|Claude]] 與 [[Ollama]] 之外，主流的 AI 程式碼編輯器、低程式碼開發平台、雲端推論引擎、以及本地推理替代框架。
 
 ---
 
 ## 1. AI 程式碼編輯器：Cursor
 
-**Cursor** 是一款基於 VS Code 分叉（Fork，參見 `[[raw/Fork.md|Fork 概念解析]]`）開發的 AI 原生程式碼編輯器，已成為許多工程師的標準配備。
+**Cursor** 是一款基於 VS Code 分叉（Fork，參見 [[raw/Fork.md|Fork 概念解析]]）開發的 AI 原生程式碼編輯器，已成為許多工程師的標準配備。
 
 - **核心特色**：
   - **原生上下文理解 (Codebase Indexing)**：自動掃描並索引整個專案目錄，問答時能精準理解變數與函式的呼叫關係。
@@ -52,7 +52,7 @@ updated: 2026-11-12
 
 **Dify** 是一個開源的大語言模型應用開發平台 (Orchestration Platform)，被定位為 **「AI 時代的低代碼/無代碼工作流引擎」**。
 
-關於 Dify 的詳細架構、核心功能優勢、與 LangChain/Flowise 的橫向比較以及部署方案，請參閱獨立實體專頁：`[[Dify]]`。
+關於 Dify 的詳細架構、核心功能優勢、與 LangChain/Flowise 的橫向比較以及部署方案，請參閱獨立實體專頁：[[Dify]]。
 
 ---
 
@@ -87,7 +87,7 @@ Grok 與 Groq 是兩個名字極度相似，但本質完全不同的 AI 技術�
 
 ## 5. 雲端開發與測試環境：Google AI Studio
 
-**Google AI Studio** 是一個由 Google 推出的網頁端整合開發環境（IDE），專為開發者與創作者設計，提供快速測試、原型設計與部署生成式 AI 應用的實驗室。詳細說明與 API 密鑰管理機制，可參見 `[[raw/Google AI Studio.md|Google AI Studio 指南]]`。
+**Google AI Studio** 是一個由 Google 推出的網頁端整合開發環境（IDE），專為開發者與創作者設計，提供快速測試、原型設計與部署生成式 AI 應用的實驗室。詳細說明與 API 密鑰管理機制，可參見 [[raw/Google AI Studio.md|Google AI Studio 指南]]。
 
 ---
 
@@ -142,8 +142,8 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
 
 > [!NOTE]
 > **延伸閱讀與交叉連結**：
-> - 關於 AI 原生命令列工具的官方 52 組提示詞與 CLI 安裝，請參閱 `[[Claude Code 與 Workspace Pro 實戰]]`。
-> - 關於 AI 代理技能與 MCP 伺服器的開發，請參閱 `[[AI Agent 實戰與 MCP 伺服器整合]]`。
+> - 關於 AI 原生命令列工具的官方 52 組提示詞與 CLI 安裝，請參閱 [[Claude Code 與 Workspace Pro 實戰]]。
+> - 關於 AI 代理技能與 MCP 伺服器的開發，請參閱 [[AI Agent 實戰與 MCP 伺服器整合]]。
 > - 關於 AI 原生命令行工具的對比與實戰，請參閱 [[AI CLI 工具比較與選擇_摘要]]。
 
 ## 9. Google AI Studio 進階開發實務
@@ -160,18 +160,18 @@ Chrome 原生的「問問 Gemini」側邊欄，其最大的核心優勢在於**�
 ### 10.1 本地模型越級突破：Qwen 3.8
 - **27B 模型越級打怪**：高密度訓練架構打破參數迷思，評測超越 397B 大模型，為企業提供高性價比且機密不外流的私有 AI 方案。
 - **極限推理與加速**：結合 GGUFF 量化、MInference（每秒 550～650 Tokens）、llama.cpp 緩衝區優化與 vLLM 高併發部署。
-- **詳見專頁**：`[[Qwen 3.8 本地模型部署與企業 ROI 實務]]`。
+- **詳見專頁**：[[Qwen 3.8 本地模型部署與企業 ROI 實務]]。
 
 ### 10.2 跨模型多核心 Agent：OpenCode 新版 (EP07)
 - **自由切換模型**：在同一個對話中支援跨商業模型（DeepSeek V4 Flash / GPT 5.6 Luna / Claude / GPT SOL）與本地模型無縫切換。
 - **以時間換智力**：便宜模型開 Max 思考強度，以三十分之一成本達到 52 分高智力。
 - **免費技能包**：整合 `image-vision-sidecar`（Groq 視覺前處理）與 `opencode-draw-free`（免費生圖壓繁中）。
-- **詳見專頁**：`[[OpenCode 新版架構與模型最佳搭配指南]]`。
+- **詳見專頁**：[[OpenCode 新版架構與模型最佳搭配指南]]。
 
 ### 10.3 GitHub 開源軍火庫與 AI Skills 入門
 - **免安裝與低門檻開源工具**：涵蓋 OpenCut 剪輯、AI-For-Beginners 課程、free-for-dev 清單、OfficeCLI 文書自動化及 [[n8n]] 工作流（n8n 的本機 Docker 架設與 LINE、Gemini 串接實作，見 [[AI 工作流程自動化實作_n8n 課程總結]]）。
 - **AI Skills 4 大入口**：Anthropic 官方、awesome-agent-skills、awesome-mcp-servers 及 awesome-copilot。
-- **詳見專頁**：`[[GitHub 開源工具與 AI Skills 入門指南]]`。
+- **詳見專頁**：[[GitHub 開源工具與 AI Skills 入門指南]]。
 
 
 

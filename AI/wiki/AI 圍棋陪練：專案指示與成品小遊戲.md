@@ -11,7 +11,7 @@ updated: 2026-11-17
 
 # AI 圍棋陪練：專案指示與成品小遊戲
 
-《數位時代》「一天一 AI」日報（韋惟珊）連續兩天的讀者客座分享。分享者 Michelle 自己不會下圍棋，先把 AI 設定成「圍棋家教」幫忙看作業、出題（上集），再用 [[Claude]] 的成品（Artifacts）功能把練習做成孩子可以用手指點棋盤的 5 關小遊戲（下集）。
+《數位時代》「一天一 AI」日報（韋惟珊）連續兩天的讀者客座分享。分享者 Michelle 自己不會下圍棋，先把 AI 設定成「圍棋家教」幫忙看作業、出題（上集），再用 [[Claude（Anthropic）|Claude]] 的成品（Artifacts）功能把練習做成孩子可以用手指點棋盤的 5 關小遊戲（下集）。
 
 > 來源：上集 https://www.bnext.com.tw/article/92970/ai-go-practice-for-kids （2026-11-09）；下集 https://www.bnext.com.tw/article/92988/claude-artifacts-go-practice-game-for-kids （2026-11-10）。兩個剪輯檔後段各夾帶一篇無關文章（b-JADE 詐騙存證、法國皇家 AI for Pets 徵件），沒有匯入。
 
@@ -102,7 +102,7 @@ updated: 2026-11-17
 4. **家長是最後一道核對**：和 [[Wordwall 與教育科技的 AI Agent 自動化實務]] 的段考出題一樣，AI 負責從 0 到 1，專業判斷與審題仍要靠人。
 
 ## 關聯頁面
-- [[Claude]]
+- [[Claude（Anthropic）|Claude]]
 - [[Claude 成品製作旅遊行程網站]]
 - [[Wordwall 與教育科技的 AI Agent 自動化實務]]
 - [[Claude Cowork 與 Agent Skill 實務]]

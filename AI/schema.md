@@ -8,9 +8,9 @@
 
 本系統由以下三個層次組成：
 
-1. **原始資料庫 (`AI/sources/`)**：
-   - 用於存放原始不可變的輸入資料（如 PDF、剪輯文章、逐字稿等）。
-   - AI 代理對此目錄僅有**唯讀**權限，絕對不能修改其內容。
+1. **原始素材 (`AI/raw/` 為主、`AI/sources/` 為早期分類資料)**：
+   - 用於存放原始不可變的輸入資料（如 PDF、Web Clipper 剪輯文章、逐字稿等）。新素材一律放 `AI/raw/`。
+   - AI 代理對這兩個目錄僅有**唯讀**權限，絕對不能修改其內容。
 
 2. **個人 Wiki (`AI/wiki/`)**：
    - 存放由 AI 生成與維護的 Markdown 知識頁面。
@@ -25,6 +25,11 @@
 ## 2. 核心工作流 (Workflows)
 
 AI 代理在執行任務時，必須遵循以下三大工作流：
+
+> [!TIP]
+> Claude Code 已有對應的 skill 與檢查腳本，執行時以 skill 的步驟為準：
+> - 匯入：`.claude/skills/wiki-ingest`（說「入庫」即可），完成後以 `python AI/scripts/wiki_tool.py check` 自我評分。
+> - 檢查：`.claude/skills/wiki-lint`（說「健檢」即可），以 `python AI/scripts/wiki_tool.py lint` 產生報告。
 
 ### 2.1 匯入流程 (Ingest Workflow)
 當使用者放入新資料至 `sources/` 並要求編譯時，AI 應執行以下步驟：

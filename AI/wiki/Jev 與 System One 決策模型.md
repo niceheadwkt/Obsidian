@@ -58,7 +58,7 @@ updated: 2026-11-16
 
 ## 4. 上手方式（透過 AI 程式助理）
 
-Jev 沒有聊天介面，最順手的用法是讓 [[Claude]] Code 或 Codex 當中間人，由助理替你寫腳本、呼叫 Jev。
+Jev 沒有聊天介面，最順手的用法是讓 [[Claude（Anthropic）|Claude]] Code 或 Codex 當中間人，由助理替你寫腳本、呼叫 Jev。
 
 1. **開帳號**：到 TypeSafe 官網註冊，不用綁信用卡，送 5 美元測試額度。只依**輸入 Token** 計費，題目越長扣越多。
 2. **安裝 Agent Skill**：

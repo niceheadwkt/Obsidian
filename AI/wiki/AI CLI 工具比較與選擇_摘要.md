@@ -3,12 +3,12 @@ type: source-summary
 tags: [AI工具, CLI, Gemini, Claude, OpenAI, Aider]
 sources: ["[[sources/01_AI_Tools/AI CLI 工具比較與選擇.md]]"]
 created: 2026-06-11
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # AI CLI 工具比較與選擇 (文獻摘要)
 
-本篇摘要整理自原始文獻 `[[sources/01_AI_Tools/AI CLI 工具比較與選擇.md|AI CLI 工具比較與選擇]]`，系統性梳理了 2026 年主流的 AI 命令行介面 (CLI) 工具之核心功能、免費方案及實戰排障策略。
+本篇摘要整理自原始文獻 [[sources/01_AI_Tools/AI CLI 工具比較與選擇.md|AI CLI 工具比較與選擇]]，系統性梳理了 2026 年主流的 AI 命令行介面 (CLI) 工具之核心功能、免費方案及實戰排障策略。
 
 ---
 
@@ -67,4 +67,4 @@ AI CLI（如 Claude Code）在執行完任務後提供的統計資訊代表意�
 > [!NOTE]
 > 關聯實體與概念頁面：
 > - 關於本地運行的引擎，請參閱 [[Ollama]]。
-> - 關於 Anthropic 的核心工具，請參閱 [[Claude]]。
+> - 關於 Anthropic 的核心工具，請參閱 [[Claude（Anthropic）|Claude]]。

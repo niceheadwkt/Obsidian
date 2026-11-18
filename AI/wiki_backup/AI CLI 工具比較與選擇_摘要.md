@@ -46,4 +46,4 @@ updated: 2026-06-11
 > [!NOTE]
 > 關聯實體頁面：
 > - 關於本地運行的引擎，請參閱 [[Ollama]]。
-> - 關於 Anthropic 的核心工具，請參閱 [[Claude]]。
+> - 關於 Anthropic 的核心工具，請參閱 [[Claude（Anthropic）|Claude]]。

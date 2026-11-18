@@ -9,7 +9,7 @@ sources: [
   "[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md]]"
 ]
 created: 2026-06-11
-updated: 2026-07-09
+updated: 2026-11-18
 ---
 
 # Ollama (本地 AI 模型執行引擎)
@@ -61,7 +61,7 @@ ollama run qwen2.5-coder:7b
 
 ## 4. `ollama launch` 功能詳解：整合 Codex
 
-Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類（另外關於 OpenCode 整合 Qwen3 的設定細節可參考 `[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md|OPENCODE如何加QWEN3？]]`）：
+Ollama 提供了啟動 OpenAI Codex 軟體載體的橋接指令，主要區分為兩類（另外關於 OpenCode 整合 Qwen3 的設定細節可參考 [[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md|OPENCODE如何加QWEN3？]]）：
 
 ### A. `ollama launch codex-app` (桌面 App 模式)
 - **載體**：啟動 Codex 桌面獨立應用程式（圖形介面 GUI）。

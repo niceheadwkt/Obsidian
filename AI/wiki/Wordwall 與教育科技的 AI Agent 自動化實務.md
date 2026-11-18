@@ -13,7 +13,7 @@ sources:
   - "[[AI/raw/2026-09-17T082024+0800-AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷.md|AI Agent 教學應用：放大你的專業能力_輕鬆生成段考試卷]]"
   - "[[AI/raw/2026-09-17T075805+0800-生生有 Token：做出一本繪本｜教案 · 簡報 · 繪本一次搞定.md|生生有 Token：做出一本繪本｜教案‧簡報‧繪本一次搞定]]"
 created: 2026-08-14
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 # Wordwall 與教育科技的 AI Agent 自動化實務
@@ -22,7 +22,7 @@ updated: 2026-11-17
 
 在教育科技應用中，許多廣受師生喜愛的互動教學平台（如 **Wordwall**、**LoiLoNote**、**Wayground**、**Quizizz**、**Kahoot**）並未提供公開 API 或官方 MCP 接口。傳統上，教師出題時必須手動逐題複製貼上；一旦想切換題型或重整題目，又必須重覆繁複的工序。
 
-透過 **Playwright 瀏覽器自動化** 技術將網站操作封裝為命令列工具（如 `wordwall-cli`），AI Agent（如 ChatGPT、[[Claude]] Code 或 [[OpenCode 新版架構與模型最佳搭配指南|OpenCode]]）能夠直接模擬人類在瀏覽器上的行為：**「自動開啟網頁 $\rightarrow$ 登入驗證 $\rightarrow$ 選擇模板 $\rightarrow$ 填寫題幹與選項 $\rightarrow$ 儲存與發布」**，實現「將現有教材交給 Agent，全自動生成 30 種互動遊戲」的高效工作流。
+透過 **Playwright 瀏覽器自動化** 技術將網站操作封裝為命令列工具（如 `wordwall-cli`），AI Agent（如 ChatGPT、[[Claude（Anthropic）|Claude]] Code 或 [[OpenCode 新版架構與模型最佳搭配指南|OpenCode]]）能夠直接模擬人類在瀏覽器上的行為：**「自動開啟網頁 $\rightarrow$ 登入驗證 $\rightarrow$ 選擇模板 $\rightarrow$ 填寫題幹與選項 $\rightarrow$ 儲存與發布」**，實現「將現有教材交給 Agent，全自動生成 30 種互動遊戲」的高效工作流。
 
 ---
 
@@ -103,7 +103,7 @@ sequenceDiagram
 | Agent / 模型 | 表現與特色 |
 | :--- | :--- |
 | **AntiGravity**（Gemini 3.8 Flash） | 生成速度最快、非選題品質最高（作者評估完成度約 80 分）。 |
-| **Codex**（Astra） | 幾何圖形最精準，可直接輸出 SVG 向量圖；適合需要 AI 生圖（情境圖、地理／歷史圖片）的科目。作者已將主力 Agent 由 [[Claude]] Code 轉為 Codex。 |
+| **Codex**（Astra） | 幾何圖形最精準，可直接輸出 SVG 向量圖；適合需要 AI 生圖（情境圖、地理／歷史圖片）的科目。作者已將主力 Agent 由 [[Claude（Anthropic）\|Claude]] Code 轉為 Codex。 |
 | **[[OpenCode 新版架構與模型最佳搭配指南\|OpenCode]]**（Muse Spark 1.3 Free） | 免費模型（Meta），具 100 萬上下文與多模態能力，出圖與排版效果令人驚艷；代價是對話紀錄會被用於訓練資料，不建議輸入隱私內容。 |
 
 ### 3. 延伸應用：Math Review Deck 互動複習網頁技能
@@ -130,10 +130,11 @@ sequenceDiagram
 ---
 
 ## 關聯頁面
-- `[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]`
-- `[[Chrome Skills 與瀏覽器自動化實務]]`
-- `[[AI Agent 實戰與 MCP 伺服器整合]]`
-- `[[OpenCode 新版架構與模型最佳搭配指南]]`
-- `[[Claude]]`
-- `[[軟體架構與發布自動化]]`（OMML 格式規格）
+- [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]
+- [[Chrome Skills 與瀏覽器自動化實務]]
+- [[AI Agent 實戰與 MCP 伺服器整合]]
+- [[OpenCode 新版架構與模型最佳搭配指南]]
+- [[Claude（Anthropic）|Claude]]
+- [[軟體架構與發布自動化]]（OMML 格式規格）
 - [[AI 圍棋陪練：專案指示與成品小遊戲]]（家長不懂專業也能用專案指示陪練、用 Claude 成品做兒童練習遊戲）
+- [[AI 越聰明，你越省力_直播總結與學習卡]]（數學非選題命題排版、紙本手寫作業 AI 批改）

@@ -30,7 +30,7 @@ updated: 2026-10-18
 | 世代 | 代表工具 | 核心技術與運作特徵 | 建議定位與策略 |
 | :--- | :--- | :--- | :--- |
 | **第一代：生成式 AI (Generative AI)** | Gemini、NotebookLM、ChatGPT Web | 僅在雲端生成文字或圖表，無本機手腳，無法碰觸本地系統。 | 僅適合簡單對話；面對複雜專案效率低落，建議果斷「棄守」。 |
-| **第二代：AI Agent** | [[Claude]] (Claude Code)、Codex、[[AI Agent 與 AntiGravity 2.0 基礎入門\|AntiGravity]]、OpenCode | 具備執行環境、讀寫本地檔案、執行終端機命令、聯網搜尋與工具調用手腳。 | **當前主力**，能在單一對話框內完成端到端工作交付。 |
+| **第二代：AI Agent** | [[Claude（Anthropic）\|Claude]] (Claude Code)、Codex、[[AI Agent 與 AntiGravity 2.0 基礎入門\|AntiGravity]]、OpenCode | 具備執行環境、讀寫本地檔案、執行終端機命令、聯網搜尋與工具調用手腳。 | **當前主力**，能在單一對話框內完成端到端工作交付。 |
 | **第三代：Agent Bot（代理人機器人）** | Dot（小巴）、GUACBOT | 具備專屬雲端虛擬電腦與長期記憶，關閉本機仍 24 小時在雲端自動化運轉。 | 可掛載雲端硬碟自主工作，或跨端遠端喚醒家中桌機執行任務。 |
 
 > [!NOTE]
@@ -192,7 +192,7 @@ Claude Code 為當前邏輯最嚴密、意圖理解最準確且 OCR 能力最強
 
 ## 五、關聯知識頁面
 * [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]：三師爸 Agent 基本功系列實務操作指南。
-* [[Claude]]：Anthropic 旗下大模型家族與 Claude Code 核心設定。
+* [[Claude（Anthropic）|Claude]]：Anthropic 旗下大模型家族與 Claude Code 核心設定。
 * [[AI 工具與框架概覽]]：跨模型框架與推理工具對照。
 * [[AI Agent 與 AntiGravity 2.0 基礎入門]]：Google AntiGravity 核心入門。
 * [[Wordwall 與教育科技的 AI Agent 自動化實務]]：教育領域出題與題庫自動化。
