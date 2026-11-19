@@ -1,0 +1,2600 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MT 進口運輸管理系統｜新進人員教育訓練手冊</title>
+<style>
+:root{
+  --bg:#f8fafc; --panel:#ffffff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0;
+  --accent:#0369a1; --accent-soft:#e0f2fe; --accent-dark:#0c4a6e;
+  --warn:#b45309; --warn-soft:#fef3c7; --danger:#b91c1c; --danger-soft:#fee2e2;
+  --success:#15803d; --success-soft:#dcfce7;
+  --code:#f1f5f9; --link:#0284c7; --info:#4338ca; --info-soft:#e0e7ff; --grey-soft:#f1f5f9;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0f17; --panel:#151d2a; --ink:#f1f5f9; --muted:#94a3b8; --line:#1e293b;
+    --accent:#38bdf8; --accent-soft:#082f49; --accent-dark:#7dd3fc;
+    --warn:#f59e0b; --warn-soft:#451a03; --danger:#f87171; --danger-soft:#450a0a;
+    --success:#4ade80; --success-soft:#052e16;
+    --code:#1e293b; --link:#38bdf8; --info:#818cf8; --info-soft:#1e1b4b; --grey-soft:#1e293b;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0f17; --panel:#151d2a; --ink:#f1f5f9; --muted:#94a3b8; --line:#1e293b;
+  --accent:#38bdf8; --accent-soft:#082f49; --accent-dark:#7dd3fc;
+  --warn:#f59e0b; --warn-soft:#451a03; --danger:#f87171; --danger-soft:#450a0a;
+  --success:#4ade80; --success-soft:#052e16;
+  --code:#1e293b; --link:#38bdf8; --info:#818cf8; --info-soft:#1e1b4b; --grey-soft:#1e293b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif;
+  line-height:1.8;font-size:15.5px;
+}
+a{color:var(--link);text-decoration:none;transition:color .15s}
+a:hover{text-decoration:underline}
+code{
+  font-family:Consolas,"Cascadia Mono","Source Code Pro",monospace;
+  font-size:.88em;background:var(--code);padding:.1em .4em;border-radius:4px;word-break:break-all;
+}
+pre{
+  background:var(--code);padding:14px;border-radius:8px;overflow-x:auto;
+  font-family:Consolas,"Cascadia Mono",monospace;font-size:.9em;border:1px solid var(--line);
+}
+.layout{display:grid;grid-template-columns:310px minmax(0,1fr);max-width:1440px;margin:0 auto}
+nav.toc{
+  position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 16px;
+  border-right:1px solid var(--line);background:var(--panel);
+}
+nav.toc h2{
+  font-size:12px;color:var(--muted);text-transform:uppercase;margin:18px 0 6px;
+  letter-spacing:.08em;font-weight:700;border:0;padding:0;
+}
+nav.toc h2:first-child{margin-top:0}
+nav.toc ol{list-style:none;padding:0;margin:0}
+nav.toc li{margin:2px 0}
+nav.toc a{
+  display:block;padding:5px 10px;border-radius:6px;color:var(--ink);
+  font-size:13.5px;line-height:1.4;
+}
+nav.toc a:hover,nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.theme-btn{
+  margin-top:16px;width:100%;font:inherit;font-size:13px;background:none;
+  border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:6px 12px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.theme-btn:hover{background:var(--code);color:var(--ink)}
+main{padding:36px 48px 100px;min-width:0}
+header.hero{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:24px}
+.eyebrow{color:var(--accent);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.3;margin:8px 0 12px;font-weight:800;color:var(--ink)}
+h2{
+  font-size:22px;margin:50px 0 16px;padding-top:10px;
+  border-top:3px solid var(--accent);display:inline-block;font-weight:700;
+}
+h3{
+  font-size:17.5px;margin:30px 0 12px;padding-left:12px;
+  border-left:4px solid var(--accent);color:var(--ink);font-weight:700;
+}
+.lead{color:var(--muted);font-size:16px;margin:0 0 8px}
+.meta{color:var(--muted);font-size:13.5px;margin:8px 0}
+section{scroll-margin-top:20px}
+table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:14px;background:var(--panel);border-radius:6px;overflow:hidden;box-shadow:var(--shadow-sm)}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:700;color:var(--ink);white-space:nowrap}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl{overflow-x:auto}
+.note,.warn,.danger-box,.success-box,.info-box{
+  border-left:4px solid;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;
+}
+.note{border-color:var(--accent);background:var(--accent-soft)}
+.warn{border-color:var(--warn);background:var(--warn-soft)}
+.danger-box{border-color:var(--danger);background:var(--danger-soft)}
+.success-box{border-color:var(--success);background:var(--success-soft)}
+.info-box{border-color:var(--info);background:var(--info-soft)}
+.note>b:first-child,.warn>b:first-child,.danger-box>b:first-child,.info-box>b:first-child{
+  display:block;margin-bottom:4px;font-weight:700;
+}
+.badge{
+  display:inline-block;font-size:12px;line-height:1.5;padding:1px 8px;
+  border-radius:4px;margin-left:6px;font-weight:500;vertical-align:middle;
+}
+.b-core{background:var(--accent-soft);color:var(--accent)}
+.b-ap{background:var(--info-soft);color:var(--info)}
+.b-fin{background:var(--success-soft);color:var(--success)}
+.b-warn{background:var(--warn-soft);color:var(--warn)}
+.b-iss{background:var(--warn-soft);color:var(--warn);border:1px solid var(--warn)}
+.b-sys{background:var(--grey-soft);color:var(--muted)}
+
+article.op{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:22px 26px;margin:24px 0;box-shadow:var(--shadow-sm);scroll-margin-top:40px;
+}
+article.op h4{
+  margin:0 0 12px;font-size:19px;display:flex;flex-wrap:wrap;align-items:center;
+  gap:8px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:12px;
+}
+article.op h4 .op-id{
+  background:var(--code);color:var(--accent);padding:2px 10px;border-radius:6px;
+  font-family:Consolas,monospace;font-size:15px;font-weight:700;
+}
+.purpose-box{
+  background:var(--bg);border-radius:8px;padding:12px 16px;margin:12px 0;border:1px dashed var(--line);
+}
+.purpose-box p{margin:4px 0;font-size:14.5px}
+.blk{margin:14px 0}
+.blk>b{font-size:14.5px;color:var(--ink);display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.blk ul{margin:4px 0 0;padding-left:22px}
+.blk li{margin:5px 0;font-size:14.5px}
+.blk.ctl{border-left:3px solid var(--accent);padding-left:14px}
+.blk.iss{
+  border-left:3px solid var(--warn);padding-left:14px;background:var(--warn-soft);
+  padding:12px 14px;border-radius:0 8px 8px 0;margin-top:14px;
+}
+.blk.iss>b{color:var(--warn)}
+.tech-bar{
+  font-size:13px;color:var(--muted);border-top:1px dashed var(--line);
+  margin-top:16px;padding-top:12px;display:flex;flex-wrap:wrap;gap:14px;
+}
+.tech-bar span{display:inline-flex;align-items:center;gap:4px}
+.tools{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0;padding:12px 16px;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;position:sticky;top:0;z-index:10;
+  box-shadow:var(--shadow-sm);
+}
+.tools input[type=search]{
+  flex:1 1 240px;min-width:0;font:inherit;font-size:14px;padding:6px 12px;
+  border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);
+}
+.tools select{
+  font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--line);
+  border-radius:6px;background:var(--bg);color:var(--ink);
+}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:16px 0}
+.flow .step{
+  flex:1 1 170px;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:12px 14px;font-size:13.5px;box-shadow:var(--shadow-sm);
+}
+.flow .step b{display:block;color:var(--accent);font-size:14px;margin-bottom:4px}
+.flow .arrow{align-self:center;color:var(--muted);font-size:20px;font-weight:700}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:16px}
+  main{padding:20px 16px 60px}
+  .grid-2{grid-template-columns:1fr}
+}
+@media print{nav.toc,.tools{display:none}.layout{display:block}main{padding:0}article.op{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" aria-label="目錄">
+  <h2>導讀與架構</h2>
+  <ol>
+    <li><a href="#intro">系統定位與閱讀指引</a></li>
+    <li><a href="#architecture">進口業務流程與技術架構</a></li>
+  </ol>
+  <h2>選單章節 (依資訊窗口菜單)</h2>
+  <ol>
+    <li><a href="#ch1">1. 基本資料管理 (AIMTA)</a></li>
+    <li><a href="#ch2">2. 信用狀維護作業 (MTA01)</a></li>
+    <li><a href="#ch3">3. 船運維護作業 (MTB01)</a></li>
+    <li><a href="#ch4">4. 運雜費資料管理 (AIMTD)</a></li>
+    <li><a href="#ch5">5. 代開狀維護作業 (MTD01)</a></li>
+    <li><a href="#ch6">6. 報支資料管理 (AIMTF)</a></li>
+    <li><a href="#ch7">7. 查詢資料管理 (AIMTG)</a></li>
+    <li><a href="#ch8">8. 權利金維護作業 (MTJJCOMEXP)</a></li>
+    <li><a href="#ch9">9. 權利金評價估列、迴轉 (MTJJCOM01)</a></li>
+    <li><a href="#ch10">10. 在途原料估列、迴轉 (MTJJRAW01)</a></li>
+  </ol>
+  <h2>附錄資源</h2>
+  <ol>
+    <li><a href="#appA">附錄 A：內部共用彈窗與選單外作業</a></li>
+    <li><a href="#appB">附錄 B：全系統待改善事項彙整清單</a></li>
+    <li><a href="#appC">附錄 C：MT 資料表字典與關聯矩陣</a></li>
+    <li><a href="#appD">附錄 D：常見防呆與故障排除手冊</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">切換深淺色外觀</button>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">中鴻鋼鐵 ERP 系統教材｜專業進階版</div>
+  <h1>進口運輸管理系統（MT）作業詳細規格與教育訓練手冊</h1>
+  <p class="lead">完整依據資訊窗口（AIMT）選單分類編排，深度剖析各作業業務用途、操作流程、業務管制防呆限制，並深入原始碼條列<b>【不妥之處／建議調整】</b>（附檔名與行號），供新進同仁培訓與日後系統重構改版參考。</p>
+  <p class="meta">資料基準：中鴻正式機選單結構（<code>DB.TBDSDF</code> / <code>DB.TBDSMF</code>）、本機原始碼 <code>D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/mt</code></p>
+</header>
+
+
+<!-- 工具篩選列 -->
+<div class="tools">
+  <input type="search" id="opSearch" placeholder="輸入作業代號（如 MTA01）、作業名稱、資料表或關鍵字快速搜尋..." aria-label="搜尋作業">
+  <select id="catFilter" aria-label="分類篩選">
+    <option value="ALL">全部章節分類</option>
+    <option value="CH1">1. 基本資料管理 (AIMTA)</option>
+    <option value="CH2">2. 信用狀維護作業 (MTA01)</option>
+    <option value="CH3">3. 船運維護作業 (MTB01)</option>
+    <option value="CH4">4. 運雜費資料管理 (AIMTD)</option>
+    <option value="CH5">5. 代開狀維護作業 (MTD01)</option>
+    <option value="CH6">6. 報支資料管理 (AIMTF)</option>
+    <option value="CH7">7. 查詢資料管理 (AIMTG)</option>
+    <option value="CH8">8. 權利金維護作業 (MTJJCOMEXP)</option>
+    <option value="CH9">9. 權利金評價估列、迴轉 (MTJJCOM01)</option>
+    <option value="CH10">10. 在途原料估列、迴轉 (MTJJRAW01)</option>
+    <option value="APPA">附錄 A：內部共用彈窗</option>
+  </select>
+  <span class="cnt" id="matchCount">共 20 支核心作業 + 5 支內部彈窗</span>
+</div>
+
+<!-- 導讀章節 -->
+<section id="intro">
+  <h2>導讀：系統定位與閱讀指引</h2>
+  <div class="lead">
+    <b>進口運輸管理系統（Material Trade Management System，簡稱 MT 模組）</b> 是中鴻鋼鐵 ERP 體系中負責掌控「海外大宗原料（如扁鋼胚、合金原料、耐火材料）從國外採購、開立信用狀、海運承攬、船舶抵港卸貨、海關報關、各項進口運雜費核銷請款、到月底存貨在途原料評價估列與迴轉」的全生命週期核心營運系統。
+  </div>
+
+  <div class="note">
+    <b>教育訓練手冊設計目的與閱讀方針</b>
+    本文件專為新進同仁量身編寫，不同於一般的簡略操作講義，本手冊從<b>「業務流程」</b>、<b>「畫面操作」</b>、<b>「業務管制與系統防呆限制」</b>與<b>「技術底層程式對照」</b>四大維度展開。新進同仁在處理使用者報修或需求變更時，請務必先查閱該作業的<b>「管制與限制」</b>區塊，那是日常系統維護與問題排查最頻繁碰到的關鍵核心。
+  </div>
+
+  <h3>資訊窗口（AIMT）菜單分類架構索引</h3>
+  <p>依據 ERP 正式機選單資料表 <code>DB.TBDSDF</code>（父節點 <code>AIMT</code>）與 <code>DB.TBDSMF</code> 之階層定義，本模組於資訊窗口中劃分為十大功能章節，共涵蓋 20 支直接掛載之業務作業：</p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>章節</th>
+          <th>選單代碼</th>
+          <th>分類名稱</th>
+          <th>作業數</th>
+          <th>包含主要作業</th>
+          <th>主要職責單位</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#ch1">第 1 章</a></td>
+          <td><code>AIMTA</code></td>
+          <td><b>基本資料管理</b></td>
+          <td class="num">7</td>
+          <td><code>MTPB01</code>, <code>MTFC01</code>, <code>MTE01</code>, <code>MTF01</code>, <code>MTFCVENDOR</code>, <code>MTSM01</code>, <code>MTG02</code></td>
+          <td>採購部、財務部、資訊處</td>
+        </tr>
+        <tr>
+          <td><a href="#ch2">第 2 章</a></td>
+          <td><code>MTA01</code></td>
+          <td><b>信用狀維護作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTA01</code>（開狀、修狀、押匯、FL 財務拋轉）</td>
+          <td>採購部進口組、財務部</td>
+        </tr>
+        <tr>
+          <td><a href="#ch3">第 3 章</a></td>
+          <td><code>MTB01</code></td>
+          <td><b>船運維護作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTB01</code>（船舶資料、裝貨明細、報關放行）</td>
+          <td>採購部船務組、進口組</td>
+        </tr>
+        <tr>
+          <td><a href="#ch4">第 4 章</a></td>
+          <td><code>AIMTD</code></td>
+          <td><b>運雜費資料管理</b></td>
+          <td class="num">3</td>
+          <td><code>MTC01</code>, <code>MTJJMCOST1</code>, <code>MTM01</code></td>
+          <td>採購部、會計部成本組</td>
+        </tr>
+        <tr>
+          <td><a href="#ch5">第 5 章</a></td>
+          <td><code>MTD01</code></td>
+          <td><b>代開狀維護作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTD01</code>（關係企業代開信用狀與費用同步）</td>
+          <td>採購部、財務部</td>
+        </tr>
+        <tr>
+          <td><a href="#ch6">第 6 章</a></td>
+          <td><code>AIMTF</code></td>
+          <td><b>報支資料管理</b></td>
+          <td class="num">3</td>
+          <td><code>MTFC03</code>, <code>MTFC04</code>, <code>MTFC05</code></td>
+          <td>採購部請款人員、會計部應付組</td>
+        </tr>
+        <tr>
+          <td><a href="#ch7">第 7 章</a></td>
+          <td><code>AIMTG</code></td>
+          <td><b>查詢資料管理</b></td>
+          <td class="num">1</td>
+          <td><code>MTP01</code>（鋼胚採購合約、交期與未交查詢）</td>
+          <td>採購部、各廠物料調度人員</td>
+        </tr>
+        <tr>
+          <td><a href="#ch8">第 8 章</a></td>
+          <td><code>MTJJCOMEXP</code></td>
+          <td><b>權利金維護作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTJJCOMEXP</code>（技術專利權利金三段式展開與關帳）</td>
+          <td>技術處、會計部</td>
+        </tr>
+        <tr>
+          <td><a href="#ch9">第 9 章</a></td>
+          <td><code>MTJJCOM01</code></td>
+          <td><b>權利金評價估列、迴轉作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTJJCOM01</code>（權利金月底 Accrual 估列與次月初 Reversal 迴轉）</td>
+          <td>會計部（A21）</td>
+        </tr>
+        <tr>
+          <td><a href="#ch10">第 10 章</a></td>
+          <td><code>MTJJRAW01</code></td>
+          <td><b>國內外在途原料估列、迴轉作業</b></td>
+          <td class="num">1</td>
+          <td><code>MTJJRAW01</code>（月底在途鋼胚/物料存貨評價估列與傳票迴轉）</td>
+          <td>會計部（A21）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 技術與架構章節 -->
+<section id="architecture">
+  <h2>進口業務生命週期與系統技術架構</h2>
+
+  <h3>進口業務端到端營運生命週期</h3>
+  <p>中鴻鋼鐵海外大宗材料採購之標準作業流程，由簽署採購合約開始，歷經開狀、裝船、報關、雜費核銷、請款付款至會計月結，其關鍵節點與對應作業如下：</p>
+
+  <div class="flow">
+    <div class="step">
+      <b>1. 採購合約簽訂</b>
+      國外鋼胚採購合約簽訂，輸入系統採購主檔與項次規格。<br>
+      <span class="badge b-core">MTP01 採購查詢</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>2. 開立信用狀</b>
+      向銀行申請開立信用狀（L/C），設定保證金比率與押匯條件。<br>
+      <span class="badge b-core">MTA01 信用狀維護</span>
+      <span class="badge b-sys">MTD01 代開狀</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>3. 海運裝船抵港</b>
+      船舶裝貨出航，維護船名、航次、提單、裝船日期與貨物淨重。<br>
+      <span class="badge b-core">MTB01 船運維護</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>4. 報關驗放與入庫</b>
+      海關申報、繳納進口關稅與營業稅，取得海關放行單。<br>
+      <span class="badge b-core">MTB01 報關頁籤</span>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="step">
+      <b>5. 運雜費維護與分攤</b>
+      匯集海運費、檢驗費、倉租裝卸費，依重量/金額分攤材料成本。<br>
+      <span class="badge b-core">MTC01 原料雜費</span>
+      <span class="badge b-core">MTJJMCOST1 物料</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>6. 費用報支與請款</b>
+      整理發票單據，向應付帳款系統（AP）申請借支、歸墊或直接付款。<br>
+      <span class="badge b-ap">MTFC03 一般報支</span>
+      <span class="badge b-ap">MTFC04 借支</span>
+      <span class="badge b-ap">MTFC05 歸墊</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>7. 技術權利金結算</b>
+      依生產噸數或進口數量，展開技術授權與專利權利金費用。<br>
+      <span class="badge b-core">MTJJCOMEXP 權利金</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="step">
+      <b>8. 月底存貨估列與迴轉</b>
+      會計月底評估已開狀在途或在港未驗放原料，開立估列傳票與次月初迴轉。<br>
+      <span class="badge b-fin">MTJJRAW01 在途原料</span>
+      <span class="badge b-fin">MTJJCOM01 估列迴轉</span>
+    </div>
+  </div>
+
+  <h3>技術架構分層與呼叫模式</h3>
+  <p>MT 系統採用中鋼／中鴻 ICSC DPMS 傳統 Java Web MVC 框架，架構分為五層：</p>
+  <ul>
+    <li><b>視圖展示層（View Layer）</b>：位於 <code>mt/jsp/mtjj*.jsp</code>，負責使用者畫面渲染、條件篩選輸入、分頁清單展示、JavaScript 防呆驗證及表單參數封裝。</li>
+    <li><b>網頁控制層（Web Servlet Layer）</b>：
+      <ul>
+        <li>傳統作業：由 <code>src/com/icsc/mt/web/mtjs*.java</code> 繼承 <code>HttpServlet</code>，透過 <code>dejc300.run()</code> 建立 <code>dsjccom</code> 上下文，呼叫 <code>mtjcWebTool.requestToInfo()</code> 將 Request 轉換為 <code>infoIn</code> 雜湊表與對應 VO。</li>
+        <li>新式作業：透過 <code>config/yl/mt/mtStructs.xml</code> 定義路由，統一經由 <code>/erp/mt/do?_pageId=...&_action=...</code> 由 <code>dejcFunctionalController</code> 進行 Action Method 動態分派。</li>
+      </ul>
+    </li>
+    <li><b>業務邏輯層（Service Layer）</b>：位於 <code>src/com/icsc/mt/mtjc*.java</code>，繼承共用抽象父類 <code>mtjcCon</code>，負責所有資料一致性檢核、算式計算、流水號產製、資料庫交易管理（Commit / Rollback）與跨模組拋轉。</li>
+    <li><b>資料存取層（DAO / VO Layer）</b>：位於 <code>src/com/icsc/mt/dao/</code>，成對組成（如 <code>mtjca010DAO.java</code> 與 <code>mtjca010VO.java</code>），封裝 SQL 語法與 IBM DB2 資料庫表格進行實體讀寫。</li>
+    <li><b>資料庫實體層（IBM DB2 Database）</b>：包含 <code>db.tbmta010</code> ~ <code>db.tbmtsm010</code> 及跨模組表格 <code>db.tbdsdf</code>、<code>db.tbdsmf</code>、<code>db.tbdfjob</code>。</li>
+  </ul>
+
+  <h3>權限控制（_AppId）與動作旗標對應</h3>
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>動作名稱</th>
+          <th>旗標代碼 (txtFunc / _action)</th>
+          <th>後端執行方法</th>
+          <th>權限檢核點</th>
+          <th>業務意圖與行為</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>查詢</td>
+          <td><code>I</code> / <code>query</code> / <code>Q</code></td>
+          <td><code>query()</code> / <code>querySingle()</code></td>
+          <td>預設開放查詢</td>
+          <td>依使用者輸入條件檢索資料清單或單筆詳情。</td>
+        </tr>
+        <tr>
+          <td>新增</td>
+          <td><code>N</code> / <code>create</code> / <code>A</code></td>
+          <td><code>insert()</code> / <code>create()</code></td>
+          <td><code>INSERT</code> 權限</td>
+          <td>檢核主鍵唯一性後，寫入新資料並自動填入建立者帳號與時間。</td>
+        </tr>
+        <tr>
+          <td>修改</td>
+          <td><code>R</code> / <code>update</code> / <code>U</code></td>
+          <td><code>update()</code></td>
+          <td><code>UPDATE</code> 權限</td>
+          <td>先查回原資料確認版本，更新異動欄位，補寫維護者資訊。</td>
+        </tr>
+        <tr>
+          <td>刪除</td>
+          <td><code>D</code> / <code>delete</code></td>
+          <td><code>delete()</code></td>
+          <td><code>DELETE</code> 權限</td>
+          <td>防呆檢查下游是否有引用關聯，依序由下至上清除資料。</td>
+        </tr>
+        <tr>
+          <td>計算 / 試算</td>
+          <td><code>CC</code> / <code>calculate</code></td>
+          <td><code>calculate()</code></td>
+          <td><code>CALCULATE</code> 權限</td>
+          <td>彙總各項明細之重量、匯率、稅額、運雜費總額並回寫主檔。</td>
+        </tr>
+        <tr>
+          <td>拋轉 / 傳送</td>
+          <td><code>CF</code> / <code>sendingM</code></td>
+          <td><code>createToFL()</code> / <code>sendingM()</code></td>
+          <td>特殊拋轉權限</td>
+          <td>將進口資料生成財務 FL 單據、AP 應付憑單或成本批號，並鎖定狀態。</td>
+        </tr>
+        <tr>
+          <td>取消拋轉</td>
+          <td><code>cancelE</code> / <code>cancelR</code> / <code>UF</code></td>
+          <td><code>cancelFC*()</code> / <code>deleteFlyl*()</code></td>
+          <td>主管審核權限</td>
+          <td>撤回已拋轉至下游系統之資料，解除鎖定並恢復為可編輯狀態。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- 第一章：基本資料管理 -->
+<section id="ch1">
+  <h2>第一章：基本資料管理（選單代碼 AIMTA / MTSUB01）</h2>
+  <div class="lead">
+    本章彙整進口運輸管理系統之基礎配置作業，包含共用代碼、費用類別、試算公式、國外供應商主檔、報支廠商映射、線上操作訊息與系統單號序號生成規則。此處所建立之資料，為全系統各業務模組（信用狀、船運、雜費分攤、費用報支與月結估列）運作之核心基礎。
+  </div>
+
+  <!-- 1.1 MTPB01 -->
+  <article class="op" id="op-MTPB01" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTPB01</span>
+      系統代碼維護作業
+      <span class="badge b-core">基礎主檔</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>集中維護 MT 系統專用之各類參數代碼與下拉選單項目。例如進口業務之「計量幣別對照」、「貿易條件（FOB/CIF/CFR）」、「付款條款類別」、「材料分類代碼」與「報關類別代碼」。透過參數化配置，避免硬編碼（Hardcoding）並確保跨模組資料標準化。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>階層式瀏覽與維護</b>：畫面採主從雙層結構。先於主代碼清單頁（<code>mtjjpb01List.jsp</code>）檢視或新增代碼類別（如 <code>CRCY</code> 幣別類別、<code>PAYM</code> 付款方式）；再點選進入次層維護詳細代碼值（<code>mtjjpb0102Edit.jsp</code>）。</li>
+        <li><b>查詢（Query）</b>：支援依公司代碼（<code>compId</code>）、代碼類別（<code>codeType</code>）、代碼名稱模糊查詢。</li>
+        <li><b>新增與修改（Insert / Update）</b>：輸入代碼鍵值、中文說明、英文簡稱、排序序號（<code>sortSeq</code>）及是否啟用註記（<code>useFlag</code>: Y/N）。</li>
+        <li><b>特定分類代碼管理</b>：包含 <code>mtjjpb07.jsp</code> 獨立維護特定特殊規格代碼（對應 <code>db.tbmtpb07</code>）。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備權限代碼 <code>INFO_MTPB01_AUTH</code>。非維護授權人員僅提供檢視模式，新增/修改/刪除按鈕隱藏。</li>
+        <li><b>主鍵唯一性檢核</b>：新增時以 <code>compId + codeType + codeId</code> 進行重複性檢查，若已存在則拋出提示 <code>「該代碼已存在，請勿重複建立！」</code>。</li>
+        <li><b>串接引用防呆刪除管制</b>：若某代碼已於信用狀主檔（<code>tbmta010</code>）、船運主檔（<code>tbmtb010</code>）或費用報支檔（<code>tbmtfc030</code>）中被記錄引用，系統後端強制攔截刪除（拋出 <code>FK Constraint / 該代碼已被業務單據使用，禁止刪除！</code>）。僅允許修改為停用狀態（<code>useFlag='N'</code>）。</li>
+        <li><b>階層級聯管制</b>：欲刪除主代碼類別（<code>tbmtpb010</code>）時，必須先確認其底下之明細子代碼（<code>tbmtpb020</code>）已全數刪除，不可懸空殘留孤立資料。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>XML 路由配置缺檔與架構分裂（中）</b>：<code>config/yl/mt/mtStructs.xml:14-25</code> 定義了 <code>com.icsc.mt.mtjcpb010</code> 與 <code>mtjcpb020</code> 控制器，但 <code>src/</code> 目錄下無此類別，實際全走 <code>mtjspb01.java</code> 舊 Servlet 模式呼叫 <code>mtjcpb01.java</code>。建議日後改版時清理 XML 殘留設定，或將 Controller 補齊以統一現代架構。</li>
+        <li><b>輸入欄位未設定長度限制（低）</b>：<code>jsp/mtjjpb0101Edit.jsp:45</code> 與 <code>mtjjpb0102Edit.jsp:52</code> 之文字輸入框僅設定 <code>size</code> 而漏設 <code>maxlength</code>，使用者若貼入過長字串將在後端寫入 DB2 時引發欄位長度溢位異常（SQLCODE=-302）。建議補上 <code>maxlength="20"</code>。</li>
+        <li><b>刪除例外包裝不足（中）</b>：<code>mtjcpb01.java:112</code> 刪除主檔代碼時，若遇到子表外鍵限制，僅列印 <code>e.printStackTrace()</code> 並回傳通用錯誤代碼，未將具體「被哪張子表引用」轉化為友善中文訊息告知使用者。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjspb01</code> (Web Servlet)</span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcpb01</code></span>
+      <span><b>資料存取：</b><code>mtjcpb010DAO</code>, <code>mtjcpb020DAO</code>, <code>mtjcpb07DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtpb010</code>, <code>db.tbmtpb020</code>, <code>db.tbmtpb07</code></span>
+    </div>
+  </article>
+
+  <!-- 1.2 MTFC01 -->
+  <article class="op" id="op-MTFC01" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTFC01</span>
+      費用類別維護作業
+      <span class="badge b-core">費用基礎</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>定義進口原材料衍生之各項運雜費項目（如：海運費 Ocean Freight、商港服務費、進口報關費、通關檢驗費、拆櫃裝卸費、吊櫃費 THC、倉租火險費等）。建立費用代號、預設會計科目、計價幣別、預設稅別（應稅/零稅率/免稅）與成本分攤規則。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>費用清單檢索（mtjjfc0101List.jsp）</b>：依費用代號、費用群組（運費類、通關類、檢驗類、倉儲類）及歸屬部門快速過濾。</li>
+        <li><b>費率明細維護（mtjjfc0102Edit.jsp）</b>：維護每種費用之計費基數（依重量計、依櫃數計、依提單計、固定費率）、預設廠商代號及對應之會計科目（如進口在途雜費科目）。</li>
+        <li><b>附加費率階梯設定（tbmtfc025）</b>：支援不同批量噸位或港口區域之差別費率定義。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTFC01_AUTH</code> 權限，財務與採購主管方可配置。</li>
+        <li><b>請款單據鎖定防呆</b>：此作業之費用代號為後續「一般報支（<code>MTFC03</code>）」、「借支（<code>MTFC04</code>）」及「運雜費清單（<code>MTFC02</code>）」之下拉來源。一旦該費用代號已有請款或拋轉 AP 記錄，禁止變更費用代碼與會計科目，避免歷史會計帳目勾稽混亂。</li>
+        <li><b>稅額類別一致性管制</b>：設定之課稅別（如應稅 5%）必須符合稅法規範，若標記為零稅率，需於備註中註明外銷或保稅海運條款。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>SQL 動態拼接風險（高）</b>：<code>src/com/icsc/mt/mtjcfc01.java:85</code> 於 <code>querySingle()</code> 中，直接使用 <code>"where fee_code = '" + feeCode + "'"</code> 字串拼接組裝 SQL 查詢，未採用 <code>PreparedStatement</code> 參數化查詢，存在潛在 SQL Injection 風險與 DB2 Dynamic Statement Cache 效能命中率降低之問題。</li>
+        <li><b>例外捕獲未明確執行交易回復（中）</b>：<code>mtjcfc01.java:140</code> 在更新費用明細遇錯時，僅捕獲印出堆疊，未強制呼叫 <code>rollbackTransaction()</code>，若在批次更新迴圈中間發生失敗，可能產生部分明細已異動、部分未異動之不一致狀態。</li>
+        <li><b>會計科目缺乏即時存在性防呆（中）</b>：<code>jsp/mtjjfc0102Edit.jsp:68</code> 允許使用者直接手動鍵入借方會計科目代碼，但畫面未提供即時彈窗核對會計總帳科目檔（GL Account），導致使用者可能輸錯無效科目，延遲到 <code>MTFC03</code> 報支拋轉 AP 時才報錯退件。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsfc01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcfc01</code></span>
+      <span><b>資料存取：</b><code>mtjcfc010DAO</code>, <code>mtjcfc020DAO</code>, <code>mtjcfc025DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtfc010</code>, <code>db.tbmtfc020</code>, <code>db.tbmtfc025</code></span>
+    </div>
+  </article>
+
+  <!-- 1.3 MTE01 -->
+  <article class="op" id="op-MTE01" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTE01</span>
+      費用公式維護作業
+      <span class="badge b-fin">公式計算</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>設定進口運雜費之各項自動試算公式與運算邏輯。例如依據採購合約金額自動計算「海上保險費率（Marine Insurance Rate）」、「商港建設服務費率（0.04%）」、「貿易推廣服務費率（0.0415%）」或依鋼胚淨重比例自動計算公分攤雜費。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>公式清單查詢（mtjje01List.jsp）</b>：依公式代號、有效年度、材料分類搜尋適用之計算公式。</li>
+        <li><b>公式規則維護（mtjje01Edit.jsp）</b>：設定運算符號、固定加成率、費率乘數、最低起算金額與捨入小數點位數（Round / Floor / Ceil）。</li>
+        <li><b>版本生效日期控管</b>：支援「生效日期（<code>startDate</code>）」與「失效日期（<code>endDate</code>）」，以符合法規費率隨時點調整之需求。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTE01_AUTH</code>。</li>
+        <li><b>日期區間重疊防呆</b>：同一費用項目之生效起訖區間不可與歷史版本重疊，避免後端自動試算時發生一對多衝突（Ambiguous Formula Error）。</li>
+        <li><b>數值除零與負數檢核</b>：公式之分母或計算比例禁止為 0 或負數，輸入時前端 JavaScript 與後端 <code>mtjce01.java</code> 均會進行嚴格合法性校驗。</li>
+        <li><b>歷史計算溯及力限制</b>：新修訂之公式僅適用於生效日後新建立之船次或報支單，已完成計算（<code>calculate</code>）或關帳之舊單據絕不自動重新套用，確保財務歷史成本一致。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>浮點數運算可能產生尾數微小偏差（中）</b>：<code>src/com/icsc/mt/mtjce01.java:95</code> 於解析運算式乘積時，部分數值仍使用原始 <code>float</code> / <code>double</code> 進行除法運算，未統一使用 <code>java.math.BigDecimal</code>，在極端大金額下容易出現 0.0000001 浮點數精度漂移問題。建議全面轉換為 <code>BigDecimal</code> 並指定明確的 <code>RoundingMode.HALF_UP</code>。</li>
+        <li><b>日期先後檢核未於前端即時擋下（低）</b>：<code>jsp/mtjje01Edit.jsp:52</code> 之生效日與失效日檢核僅寫在表單送出（Submit）事件，缺乏即時動態比對；若未填截止日後端會寫入空字串而非標準無窮大日期 <code>99991231</code>，在跨期區間判斷時需額外判斷 <code>IS NULL</code> 或空白。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjse01</code> (APID=MTE01)</span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjce01</code></span>
+      <span><b>資料存取：</b><code>mtjce010DAO</code>, <code>mtjce010VO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmte010</code></span>
+    </div>
+  </article>
+
+  <!-- 1.4 MTF01 -->
+  <article class="op" id="op-MTF01" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTF01</span>
+      供應商維護作業
+      <span class="badge b-core">廠商資料</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>專門維護海外原材料供應商、國際航運船公司、本地船務代理行、公證檢驗行及進口報關行之廠商檔案。記錄廠商國別、英文抬頭、海外電匯銀行 SWIFT CODE、交易幣別及可供鋼胚材料規格範圍。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>供應商主檔維護（mtjjf01Edit.jsp）</b>：登記供應商統一編號/海外稅籍編號、廠商中英文全名、聯絡地址、電話傳真及主責聯絡人。</li>
+        <li><b>廠商材料能力明細（mtjjf02List.jsp / Edit）</b>：記錄該供應商可供應鋼胚之鋼種（Steel Grade）、厚度範圍、寬度範圍、長度及單重規格。</li>
+        <li><b>外幣匯款路徑明細（mtjjf03List.jsp / Edit）</b>：維護解款銀行、受款銀行帳號、中轉銀行（Intermediary Bank）及外匯附言規定。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTF01_AUTH</code>。</li>
+        <li><b>關鍵欄位必填檢核</b>：供應商代碼、國別代碼、英文名稱與幣別為必要輸入項。</li>
+        <li><b>採購合約與信用狀關聯防呆</b>：若該供應商在採購主檔（<code>tbmtp010</code>）或信用狀（<code>tbmta010</code>）中已有未結案單據，系統禁止刪除該廠商檔案。</li>
+        <li><b>海外銀行 SWIFT 格式校驗</b>：外匯銀行代碼需符合 8 或 11 碼國際 SWIFT/BIC 規範，避免押匯或電匯退匯。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>特殊符號未跳脫導致 SQL 錯誤（高）</b>：<code>src/com/icsc/mt/mtjcf01.java:230</code> 處理國外廠商英文全名（如 <code>O'NEIL STEEL CORP</code>）時，因直接採字串拼接組裝 SQL，單引號 <code>'</code> 會直接導致 DB2 SQL 語法錯誤（SQLCODE=-104）。建議全面改為參數化 PreparedStatement 避免符號崩潰。</li>
+        <li><b>分頁查詢效能隱憂（中）</b>：<code>jsp/mtjjf01List.jsp:78</code> 載入廠商清單時，後端 <code>mtjcf010DAO.java</code> 採全表查出後在 Web 伺服器記憶體中切割 Vector，當廠商資料逐年增加至數千筆時，將耗用過多 Web 記憶體，建議改為資料庫端分頁查詢。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsf01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcf01</code></span>
+      <span><b>資料存取：</b><code>mtjcf010DAO</code>, <code>mtjcf020DAO</code>, <code>mtjcf030DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtf010</code>, <code>db.tbmtf020</code>, <code>db.tbmtf030</code></span>
+    </div>
+  </article>
+
+  <!-- 1.5 MTFCVENDOR -->
+  <article class="op" id="op-MTFCVENDOR" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTFCVENDOR</span>
+      供應商(報支)維護作業
+      <span class="badge b-ap">跨模組AP</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>跨模組功能節點（選單鏈結導向至 AP 應付帳款模組 <code>/erp/ap/jsp/apjjyl01vendor.jsp</code>）。專門用於維護進口報支請款時，財務 AP 系統所承認之合格受款廠商受款帳號、匯款銀行、郵資扣繳方式與扣繳申報類別。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>AP 合格廠商維護</b>：設定進口運雜費請款之受款廠商（如臺灣港務公司、各海關關區、特定船務代理）。</li>
+        <li><b>銀行匯款帳號綁定</b>：登記受款人銀行分行、帳號及帳戶戶名，支援自動核對票據與匯款檔。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>AP 模組專屬權限</b>：受 AP 模組權限矩陣控管，進口組同仁通常僅具備檢索與查詢權限，新增與修改帳戶需由會計部出納組審核。</li>
+        <li><b>統一編號驗證防呆</b>：國內廠商必須通過臺灣統一編號邏輯檢核；個人勞務需驗證身分證號。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>選單跨模組耦合且無參數隔離（中）</b>：資訊窗口選單直接將 <code>MTFCVENDOR</code> 指向 AP 模組通用畫面 <code>/erp/ap/jsp/apjjyl01vendor.jsp</code>，未帶入 MT 模組特定過濾參數，導致採購進口同仁開啟時看到全中鴻所有工程款、修護款等無關廠商，清單過於龐大。建議透過 URL 傳入 <code>vendClass=IMPORT</code> 進行預先過濾。</li>
+        <li><b>無廠商狀態變更聯動警示（中）</b>：若出納在 AP 模組將某廠商標記為黑名單或凍結付款，MT 模組已開立之未拋轉報支單在前端無即時告警，往往延誤至傳票拋轉時才被財務退件。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/ap/jsp/apjjyl01vendor.jsp</code> (跨 AP 模組)</span>
+      <span><b>權限組：</b>AP 系統受款人維護權限</span>
+      <span><b>主責單位：</b>會計部（出納組 / 應付組）</span>
+    </div>
+  </article>
+
+  <!-- 1.6 MTSM01 -->
+  <article class="op" id="op-MTSM01" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTSM01</span>
+      系統操作說明作業
+      <span class="badge b-sys">系統訊息</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>系統維護與資訊人員專用作業。維護 MT 系統各個畫面代號之「中文欄位說明」、「操作手冊說明」及「系統提示／錯誤代碼訊息庫（Message Dictionary）」。供系統各頁面呼叫 <code>mtjjShowMsg.jsp</code> 彈窗動態呈現即時指引。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>訊息代號清單（mtjjsm01List.jsp）</b>：依系統代號（<code>MT</code>）、程式代號（如 <code>MTA01</code>、<code>MTB01</code>）檢視現存訊息清單。</li>
+        <li><b>說明內容編修（mtjjsm01Edit.jsp）</b>：維護畫面按鈕提示文字、欄位驗證錯誤說明、維護同仁工號與最後更新時間。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTSM01_AUTH</code>。嚴格限制僅資訊維護人員可修改，防止操作說明遭到誤刪。</li>
+        <li><b>程式鍵值唯一性</b>：<code>sysId + progId + msgId</code> 不可重複。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>缺乏快取機制導致頻繁查詢資料庫（中）</b>：<code>src/com/icsc/mt/mtjcsm01.java:78</code> 每次畫面彈出訊息視窗時，均重新發送 SQL 至 <code>db.tbmtsm010</code> 讀取說明文字，這類異動頻率極低的靜態文字訊息應於 Application 啟動時載入記憶體 Map 快取，以減輕資料庫負擔。</li>
+        <li><b>文字輸出未做 XSS 轉義過濾（低）</b>：<code>jsp/mtjjShowMsg.jsp:35</code> 直接以 <code>&lt;%=msgText%&gt;</code> 輸出說明內容，若維護人員在內容中填入 HTML 標籤可能造成破版或 XSS 風險，應使用標準 <code>&lt;c:out&gt;</code> 或 HTML 轉義工具輸出。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjssm01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcsm01</code></span>
+      <span><b>資料存取：</b><code>mtjcsm010DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtsm010</code></span>
+    </div>
+  </article>
+
+  <!-- 1.7 MTG02 -->
+  <article class="op" id="op-MTG02" data-cat="CH1">
+    <h4>
+      <span class="op-id">MTG02</span>
+      序號產生維護作業
+      <span class="badge b-sys">單號編碼</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>掌管 MT 系統所有業務單據編號之產製規則與目前流水號進度計數器。例如「船運編號（Ship No: <code>S+YYMM+3碼流水號</code>）」、「報支單號（FC No: <code>FC+民國年+4碼流水號</code>）」、「成本批號（MCost ID）」等。後端透過 <code>mtjcsn.java</code> 工具類別讀取本設定自動跳號。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>序號清單檢索（mtjjg0201List.jsp）</b>：檢視所有資料表及其欄位之單號前綴（Prefix）、年份長度、月份長度、流水號長度及當前最新流水號（Current Serial No）。</li>
+        <li><b>序號規則調整（mtjjg0201Edit.jsp）</b>：設定每年或每月重設（Reset Cycle）、固定補零位數。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備高階權限 <code>INFO_MTG02_AUTH</code>。一般使用者絕無此作業權限。</li>
+        <li><b>禁止倒退修改流水號防呆</b>：<b>【極重要管制】</b>嚴禁手動將目前流水號調小！若調小流水號，系統開立新單時將立即發生 <code>DB2 SQLCODE=-803 / Duplicate Key on Primary Key</code> 主鍵衝突嚴重異常，造成整組業務停擺！</li>
+        <li><b>年月份切換跨期防呆</b>：每逢跨年或跨月，系統依設定自動重置流水號；若維護同仁需手動補號，必須先停用線上作業，確認無人在線開單方可微調。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>高併發取號缺乏列級悲觀鎖（高）</b>：<code>src/com/icsc/mt/mtjcsn.java:115</code> 在產生新序號時，採用一般的 <code>SELECT current_no</code> 然後 <code>UPDATE current_no = current_no + 1</code>。若多位使用者或背景批次在同一毫秒同時開單，容易取到相同流水號而發生主鍵衝突崩潰。建議 SQL 改用 <code>SELECT ... FOR UPDATE WITH RS</code> 或 DB2 序列物件（Sequence Object）。</li>
+        <li><b>編輯頁面未防堵流水號下修（高）</b>：<code>jsp/mtjjg0201Edit.jsp:40</code> 之流水號輸入欄位，未加入「新流水號不得小於目前最大流水號」之後端驗證防呆，完全依賴管理員自律，存在嚴重人為操作失誤風險。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsg02</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcg02</code>, <code>com.icsc.mt.mtjcsn</code></span>
+      <span><b>資料存取：</b><code>mtjcg020DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtg020</code></span>
+    </div>
+  </article>
+</section>
+
+
+<!-- 第二章：信用狀維護作業 -->
+<section id="ch2">
+  <h2>第二章：信用狀維護作業（選單節點 MTA01）</h2>
+  <div class="lead">
+    信用狀（Letter of Credit，簡稱 L/C）為進口大宗鋼胚與關鍵設備原料最主要之國際結算工具。本作業涵蓋開立信用狀、項次規格明細維護、修狀（Amendment）、押匯付款、外幣與台幣匯率折算，以及自動向財務 FL 系統拋轉保證金與開狀單據之全流程。
+  </div>
+
+  <!-- 2.1 MTA01 -->
+  <article class="op" id="op-MTA01" data-cat="CH2">
+    <h4>
+      <span class="op-id">MTA01</span>
+      信用狀維護作業
+      <span class="badge b-core">核心作業</span>
+      <span class="badge b-fin">財務拋轉</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>當國外鋼胚採購合約成立後，採購部進口人員依合約條件向外匯往來銀行申請開立不可撤銷跟單信用狀。本作業負責維護開狀銀行、信用狀號碼、開狀日期、有效期限、貿易條件（CIF/FOB）、開狀幣別、開狀金額、保證金成數、押匯金額，並記錄每次國外裝船之分批裝運與修狀歷程。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主畫面清單與複合查詢（mtjja01List.jsp / mtjja01Search.jsp）</b>：
+          支援依公司代碼（<code>compId</code>）、船號（<code>shipNo</code>）、採購編號（<code>purchNo</code>）、供應商代號（<code>supplyNo</code>）、開狀日期區間及信用狀號碼（<code>lcNo</code>）進行複合條件檢索。
+        </li>
+        <li><b>四階層維護架構（Multi-Tab & Sub-Pages）</b>：
+          <ul>
+            <li><b>第一層：船運基本關聯（mtjja01Edit.jsp）</b>：設定本信用狀關聯之進口船運代號、航次及總預算金額。</li>
+            <li><b>第二層：信用狀主檔（mtjja02List.jsp / Edit）</b>：維護 <code>db.tbmta010</code>，記錄 L/C 號碼、開狀銀行代碼、幣別（USD/EUR/JPY）、開狀總金額、結匯匯率、有效期限、最後裝船日、押匯金額及保證金比率。</li>
+            <li><b>第三層：信用狀材料明細（mtjja03List.jsp / Edit）</b>：維護 <code>db.tbmta020</code>，依採購合約項次帶入材料代碼、厚度（Thickness）、寬度（Width）、長度（Length）、公差等級、鋼種、單價與採購數量（公噸 MT），並自動計算每項外幣與台幣金額。</li>
+            <li><b>第四層：修狀與分批裝運明細（mtjja04List.jsp）</b>：維護 <code>db.tbmta030</code>，記錄國外賣方要求展延有效期限、變更裝船港口或增減開狀金額之 L/C Amendment 修狀版本歷程。</li>
+          </ul>
+        </li>
+        <li><b>按鈕功能矩陣</b>：
+          <ul>
+            <li><code>btnQuery (I)</code>：查詢清單或調閱單筆資料。</li>
+            <li><code>btnAdd (N)</code>：開立全新信用狀主檔或項次明細。</li>
+            <li><code>btnUpdate (R)</code>：修改未押匯之信用狀欄位。</li>
+            <li><code>btnDelete (D)</code>：刪除錯誤建立且未拋轉之信用狀。</li>
+            <li><code>btnCalc (CC)</code>：執行 <code>calculate()</code>，重新彙總項次重量、金額並校驗小數點四捨五入差額。</li>
+            <li><code>btnCreateFL (CF)</code>：呼叫 <code>createFlyl307()</code> 及 <code>createFlyl308()</code>，自動向財務資金管理模組（FL）生成開狀支出憑單與保證金扣繳記錄。</li>
+            <li><code>btnDeleteFL (UF)</code>：呼叫 <code>deleteFlyl307()</code> / <code>deleteFlyl308()</code>，撤銷已拋轉之 FL 財務單據。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限與按鈕授權管制</b>：需具備 <code>INFO_MTA01_AUTH</code>。畫面上之「新增」、「修改」、「刪除」、「計算」、「拋轉 FL」均會檢查使用者是否具備對應功能授權。</li>
+        <li><b>主鍵與防呆唯一性</b>：信用狀號碼 <code>lcNo + lcSrlNo</code> 為絕對唯一鍵，不可重複開立。</li>
+        <li><b>採購合約額度不超開防呆</b>：引用採購主檔（<code>db.tbmtp010</code> / <code>tbmtp020</code>）開狀時，開狀數量與金額累計不得超過採購合約總量（合約允許之 +/- 5%溢裝溢開溢短裝 Tolerance 條款除外）。</li>
+        <li><b>押匯與結算鎖定管制</b>：
+          <b>【極重要業務管制】</b>一旦信用狀項下之款項已經由銀行完成押匯（Negotiation），或已被船運作業（<code>MTB01</code>）結轉到貨，系統強制將開狀金額、幣別、開狀銀行鎖定為唯讀狀態！禁止線上直接修改，若國外修狀必須透過正規「修狀歷程（<code>tbmta030</code>）」新增修訂版本記錄。
+        </li>
+        <li><b>財務 FL 拋轉狀態管制</b>：
+          若信用狀已執行 <code>CF (createFlyl307/308)</code> 拋轉財務系統，資料表將註記 <code>flFlag='Y'</code>。此時所有編輯按鈕自動隱藏。若欲修改信用狀資料，必須先通知財務審核退回，再點擊 <code>UF</code> 刪除 FL 單據後，方可解鎖編輯。
+        </li>
+        <li><b>日期先後順序邏輯防呆</b>：
+          開狀日期（L/C Date） &le; 最後裝船日期（Latest Shipment Date） &le; 信用狀有效截止日（Expiry Date）。若輸入顛倒，送出時前端即時彈窗攔截：<code>「最後裝船日期不可晚於信用狀有效截止日！」</code>。
+        </li>
+        <li><b>主從金額平衡校驗</b>：項次明細金額加總（<code>&sum; tbmta020.itemAmt</code>）必須等於信用狀主檔金額（<code>tbmta010.lcAmt</code>），計算不一致時禁止執行財務拋轉。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>FL 模組拋轉異常訊息被吞噬（高）</b>：<code>src/com/icsc/mt/mtjca01.java:345</code> 在呼叫 <code>createFlyl307()</code> 拋轉財務保證金時，catch 區塊僅執行 <code>e.printStackTrace()</code>，未將 FL 模組拋出的具體錯誤（如「銀行額度不足」或「資金帳戶無效」）包裝回傳，前端畫面只顯示模糊的「拋轉失敗」，造成採購與財務排查困擾。</li>
+        <li><b>匯率計算採 double 造成分角精度漂移（中）</b>：<code>mtjca01.java:512</code> 折算新台幣金額時，部分子程序直接以 <code>double</code> 進行乘除，未全面統一為 <code>BigDecimal</code>，在億元級開狀金額乘上匯率時，可能出現 &plusmn;1 元之非預期尾差。</li>
+        <li><b>後端缺少開狀金額溢開防禦（中）</b>：<code>mtjca01.java:420</code> 在新增信用狀明細時，超開檢核過度依賴前端 JS 計算，若直接繞過前端送出請求，後端未再次強制查詢 <code>tbmtp020</code> 累計已開狀數量，存有超開信用狀之安全漏洞。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsa01</code> (Web Servlet)</span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjca01</code></span>
+      <span><b>資料存取：</b><code>mtjca010DAO</code>, <code>mtjca020DAO</code>, <code>mtjca030DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmta010</code>, <code>db.tbmta020</code>, <code>db.tbmta030</code>, <code>db.tbmtp010</code>, <code>db.tbmtp020</code></span>
+      <span><b>跨模組：</b><code>com.icsc.fl.*</code> (FL 資金財務模組)</span>
+    </div>
+  </article>
+</section>
+
+<!-- 第三章：船運維護作業 -->
+<section id="ch3">
+  <h2>第三章：船運維護作業（選單節點 MTB01）</h2>
+  <div class="lead">
+    船運維護作業為進口物料之「實物物流樞紐」。一筆船次記錄代表一艘散裝貨輪或貨櫃輪由國外港口（如日本、韓國、澳洲、巴西）啟航運抵高雄港、台中港卸貨的完整物流、裝載及海關通關生命週期。
+  </div>
+
+  <!-- 3.1 MTB01 -->
+  <article class="op" id="op-MTB01" data-cat="CH3">
+    <h4>
+      <span class="op-id">MTB01</span>
+      船運維護作業
+      <span class="badge b-core">物流樞紐</span>
+      <span class="badge b-warn">海關通關</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>採購部船務組與進口組的核心工作平台。登錄海外原材料裝船資訊、船舶基本檔案、承運航次、裝貨港與卸貨港、提單號碼（B/L No）、裝載鋼胚材料清單、各鋼種規格重量，以及後續抵港後向海關申報之進口報單號碼、繳納關稅/營業稅與海關結關放行日期。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主清單與狀態檢索（mtjjb01List.jsp）</b>：
+          支援依船運編號（<code>shipNo</code>）、採購編號（<code>purchNo</code>）、報關單號（<code>customsNo</code>）、裝船日期區間、船名代理及到港狀態進行查詢。
+        </li>
+        <li><b>三子頁籤專業維護架構（mtjjb01Edit.jsp）</b>：
+          <ul>
+            <li><b>頁籤 1：船運基本資料（對應 db.tbmtb010）</b>：
+              記錄船運編號（<code>shipNo</code>，由 <code>MTG02</code> 自動編號）、船隻代碼、中英文船名、航次（Voyage）、船務代理行代碼、裝船港口（POL）、卸貨港口（POD）、裝船日期（<code>onBoardDate</code>）、預計抵港日（ETA）、實際抵港日（ATA）、結算幣別、海運匯率、全船總件數、總毛重與總淨重（噸）。
+            </li>
+            <li><b>頁籤 2：船運裝貨明細（對應 db.tbmtb020）</b>：
+              維護本船次裝載之採購訂單項目。可點選「匯入採購明細」或手動輸入：採購編號、合約項次、提單號碼（B/L No）、材料規格尺寸（厚度、寬度、長度）、鋼種代號、件數（Piece Count）、毛重（Gross Weight）、淨重（Net Weight）、外幣單價、外幣總額與台幣折算額。
+            </li>
+            <li><b>頁籤 3：船運報關明細（對應 db.tbmtb030）</b>：
+              抵台通關必備資料。記錄進口報單號碼（14 碼海關格式）、報關行代碼、報關申報日期、海關電腦放行日期、關稅稅額、營業稅稅額、商港服務費、推廣貿易服務費單號與稅單繳納註記。
+            </li>
+          </ul>
+        </li>
+        <li><b>專用功能按鈕</b>：
+          <ul>
+            <li><code>btnCalc</code>：重新彙總整船裝載之鋼胚總重量與外幣採購金額。</li>
+            <li><code>btnPrint (P)</code>：呼叫 <code>mtjjb01Print.jsp</code>，套表列印「進口船運到貨裝載明細表」與「報關交接單」。</li>
+            <li><code>btnInsurance</code>：呼叫 <code>getInsuranceList()</code>，關聯比對海上貨物運輸保險單。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTB01_AUTH</code>。</li>
+        <li><b>重要日期前後邏輯防呆檢核</b>：
+          <code>裝船日期 (On-Board Date) &le; 預計抵港日 (ETA) &le; 實際抵港日 (ATA) &le; 報關日期 (Customs Date) &le; 放行日期 (Release Date)</code>。
+          若裝船日大於到港日，後端 <code>mtjcb01.java</code> 強制中斷交易並報錯：<code>「裝船日期不可晚於船舶到港日期！」</code>。
+        </li>
+        <li><b>級聯相依刪除防呆限制</b>：
+          若欲刪除某船運記錄，系統強制依循<b>「反向生命週期由底往上刪除」</b>：
+          必須先清空「報關明細（<code>tbmtb030</code>）」&rarr; 再清空「裝貨明細（<code>tbmtb020</code>）」&rarr; 最後才允許刪除「船運主檔（<code>tbmtb010</code>）」。若直接嘗試刪除主檔，系統回傳防呆錯誤：<code>「本船次仍存在裝貨或報關明細，禁止直接刪除主檔！」</code>。
+        </li>
+        <li><b>運雜費已分攤鎖定管制</b>：
+          若本船次已被「原料費用維護（<code>MTC01</code>）」或「物料費用維護（<code>MTJJMCOST1</code>）」引用並完成雜費分攤計算，裝貨明細中的重量、鋼種、金額欄位立即進入保護模式（唯讀），防止材料重量變更導致下游單價分攤失衡。
+        </li>
+        <li><b>海關結關後重量不可修改管制</b>：
+          一旦填入「海關放行日期」並註記結關，代表貨物已合法通關並正式入廠檢驗，材料淨重不得線上任意異動；若有公證公磅磅差，需循磅差折讓流程處理。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>XML 控制器映射大量幽靈設定（中）</b>：<code>config/yl/mt/mtStructs.xml:52-58</code> 配置了 <code>mtjcb010CR1</code>、<code>mtjcb010CR2</code>、<code>mtjcb010CR3</code>、<code>mtjcb020CR1</code>、<code>mtjcb020CR2</code>、<code>mtjcb030</code> 等 6 個 Controller 類別，但 <code>src/</code> 目錄全數缺檔，全部業務實體依賴 <code>mtjcb01.java</code> 透過 <code>step0/1/2</code> 參數硬分流。建議整理 XML 廢棄節點以符真實架構。</li>
+        <li><b>報表列印動態字串拼接漏洞（高）</b>：<code>jsp/mtjjb01Print.jsp:85</code> 於組織列印條件時，直接將前端傳入之 <code>shipNo</code> 與 <code>purchNo</code> 以字串相加組裝 SQL 查詢，未經過濾或參數化，存在 SQL Injection 隱患。</li>
+        <li><b>主檔刪除流程繁瑣缺乏交易級聯選項（低）</b>：刪除整艘船次必須在三個頁籤間來回切換逐層手動刪除，容易導致同仁抱怨；建議在具備主管權限之前提下，提供「一鍵完整級聯刪除（Cascade Delete Transaction）」選項。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsb01</code> (Web Servlet)</span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcb01</code></span>
+      <span><b>資料存取：</b><code>mtjcb010DAO</code>, <code>mtjcb020DAO</code>, <code>mtjcb030DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtb010</code>, <code>db.tbmtb020</code>, <code>db.tbmtb030</code></span>
+    </div>
+  </article>
+</section>
+
+
+<!-- 第四章：運雜費資料管理 -->
+<section id="ch4">
+  <h2>第四章：運雜費資料管理（選單代碼 AIMTD / MTSUB02）</h2>
+  <div class="lead">
+    進口原料之總到廠成本（Landed Cost）等於「國外採購貨款 + 國際海運費 + 保險費 + 各項通關雜費與港口港工捐」。本章所屬作業專門負責將抵港船舶與合約所衍生之龐雜運雜費，精確分攤計入每批鋼胚或備品物料中，做為存貨成本結轉與利潤核算之關鍵依據。
+  </div>
+
+  <!-- 4.1 MTC01 -->
+  <article class="op" id="op-MTC01" data-cat="CH4">
+    <h4>
+      <span class="op-id">MTC01</span>
+      原料費用維護作業
+      <span class="badge b-core">原料分攤</span>
+      <span class="badge b-fin">成本核心</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>專門用於大宗核心原料（如進口扁鋼胚 Slab、方鋼胚 Billet）之海運費、公證檢驗費、碼頭裝卸搬運費、引水公費、檢疫費等運雜費的維護與成本分攤。系統支援依據「各材料項次重量比例（Weight Basis）」或「各項次採購金額比例（Value Basis）」進行全自動加權分攤計算。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主清單與多層查詢（mtjjc01List.jsp / Search）</b>：依公司代碼、船運編號（<code>shipNo</code>）、採購號碼或費用年月檢索費用主檔。</li>
+        <li><b>雙層資料管理（mtjjc01Edit.jsp）</b>：
+          <ul>
+            <li><b>費用主檔（對應 db.tbmtc010）</b>：記錄船運編號、費用代號、幣別、匯率、費用外幣總額、台幣折算金額、受款廠商、發票號碼及分攤基準模式選擇。</li>
+            <li><b>明細分攤檔（對應 db.tbmtc020）</b>：展現該船次項下各鋼胚項次所分攤之單位費用（元/噸）與分攤總額。</li>
+          </ul>
+        </li>
+        <li><b>分攤試算核心（Calculate）</b>：
+          後端 <code>mtjcc01.java</code> 執行演算法，將主檔之總費用依各項次之 <code>netWeight / totalNetWeight</code> 進行精密計算，並將小數點尾差（Rounding Difference）自動調整至最後一筆項次，確保明細總和分毫不差等於主檔總額。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTC01_AUTH</code>。</li>
+        <li><b>船運到港前提管制</b>：引用的船運編號（<code>shipNo</code>）必須在 <code>MTB01</code> 中已維護且具有裝貨明細，否則禁止建立費用分攤。</li>
+        <li><b>月結關帳後鎖定防呆</b>：
+          若該費用年月之在途原料或存貨已由會計部執行關帳（<code>mtjjRaw01</code>），該月份之所有 <code>MTC01</code> 費用資料立即全數轉為唯讀鎖定狀態，嚴禁修改或刪除，避免破壞已結轉的存貨成本。
+        </li>
+        <li><b>尾差平衡性檢核</b>：分攤明細金額加總與主檔總額若存在超過 1 元以上之不可調差額，後端交易自動回滾（Rollback）並提示異常。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>總淨重為零引發除以零崩潰（高）</b>：<code>src/com/icsc/mt/mtjcc01.java:180</code> 在依重量比例分攤雜費時，未事前防呆檢核總淨重是否大於零，若遇空船次或漏輸重量之資料，執行計算將直接拋出 <code>java.lang.ArithmeticException: / by zero</code> 導致頁面崩潰。建議加入 <code>totalNetWeight &gt; 0</code> 前置防禦。</li>
+        <li><b>尾差粗暴微調引發單價扭曲（中）</b>：<code>mtjcc01.java:240</code> 尾差一律直接灌入最後一筆材料明細，若最後一筆鋼胚重量極小（如僅數噸殘料），可能導致該筆單價暴增數倍。建議改採依權重比例分配尾差之平滑演算法。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsc01</code> (Web Servlet)</span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcc01</code></span>
+      <span><b>資料存取：</b><code>mtjcc010DAO</code>, <code>mtjcc020DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtc010</code>, <code>db.tbmtc020</code></span>
+    </div>
+  </article>
+
+  <!-- 4.2 MTJJMCOST1 -->
+  <article class="op" id="op-MTJJMCOST1" data-cat="CH4">
+    <h4>
+      <span class="op-id">MTJJMCOST1</span>
+      物料費用維護作業(新版)
+      <span class="badge b-core">物料成本</span>
+      <span class="badge b-sys">新架構MVC</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>針對軋鋼廠、煉鋼廠引進之海外備品零件、輥輪（Rolls）、耐火材料、合金原料等「非大宗散裝原料之一般物料」進行進口運雜費分攤計算。採用新一代 MVC 架構（<code>mtStructs.xml</code>），具備產生成本批號、費用自動展開、批次試算清理與傳送拋轉至物料成本系統之完整功能。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>入口總覽（mtjjMCost.jsp）</b>：新版物料費用作業之導航首頁，提供批號管理、分攤試算及拋轉入口。</li>
+        <li><b>成本批號維護（mtjjMCost01.jsp / mtjcMCost01.java）</b>：
+          透過 <code>createMCostId()</code> 產生成本計算批號，關聯進口進貨單、幣別、匯率及各項雜費總額。
+        </li>
+        <li><b>物料分攤清單與清理（mtjjMCost02List.jsp / mtjcMCost02List.java）</b>：
+          將雜費依物料項目之驗收金額比率展開至 <code>db.tbmtm002</code>；提供 <code>purge()</code> 方法，若試算不滿意可一鍵清空明細重新抓取。</li>
+        <li><b>成本傳送拋轉（sendingM）</b>：
+          確認分攤無誤後，點擊「傳送成本」，系統呼叫 <code>sendingM()</code>，將每項物料之到廠附加成本拋轉至材料管理系統（MP 模組 <code>mpjc40VO</code>）進行入庫單價加成。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTJJMCOST1_AUTH</code>。</li>
+        <li><b>傳送後不可逆鎖定管制</b>：
+          <b>【重要管制】</b>一旦執行 <code>sendingM</code> 傳送成功後，資料庫標記 <code>status = 'SEND'</code>。此時該批號在前端畫面上全面反灰鎖定，不可編輯、不可刪除、不可重複拋轉。若物料已在 MP 系統被領用出庫，需由成本會計人員專案處理。
+        </li>
+        <li><b>清空重算防呆限制</b>：若批號已處於傳送或請款中狀態，後端 <code>mtjcMCost02List.java</code> 禁止執行 <code>purge()</code> 清理操作。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>XML 配置 Action 缺失引發框架執行時異常（高）</b>：<code>config/yl/mt/mtStructs.xml:66-67</code> 中，<code>mtjcMCost02</code> 缺少 XML 宣告的 <code>delete</code> 方法；<code>mtjcMCost02List</code> 缺少宣告的 <code>update</code> 方法。使用者在該頁面觸發對應動作時，DPMS 框架會拋出 <code>NoSuchMethodException / ActionNotFound</code> 異常。建議補齊缺失方法或自 XML 移除無用 action。</li>
+        <li><b>跨模組 MP 拋轉部分成功無補償機制（中）</b>：<code>src/com/icsc/mt/mtjcMCost01.java:195</code> 在呼叫 MP 模組 <code>mpjc40VO</code> 更新物料成本時，若批次中某項料號在 MP 系統不存在而失敗，已處理的前幾筆未全數 Rollback，造成部分料號成本加成成功、部分失敗之分裂現象。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>頁面路由：</b><code>/erp/mt/do?_pageId=mtjjMCost01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcMCost01</code>, <code>mtjcMCost02</code>, <code>mtjcMCost02List</code></span>
+      <span><b>資料存取：</b><code>mtjcm001_dao</code>, <code>mtjcm002_dao</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtm001</code>, <code>db.tbmtm002</code>, <code>com.icsc.mp.dao.mpjc40VO</code></span>
+    </div>
+  </article>
+
+  <!-- 4.3 MTM01 -->
+  <article class="op" id="op-MTM01" data-cat="CH4">
+    <h4>
+      <span class="op-id">MTM01</span>
+      物料費用維護作業(舊版)
+      <span class="badge b-sys">舊版維護</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>MT 系統早期採用之舊版物料進口運雜費維護作業。維護早期進口物料之運雜費檔案（對應 <code>db.tbmtm010</code>）。目前絕大部分新進口物料已全面改用新版（<code>MTJJMCOST1</code>），本作業主要供查詢調閱歷史年度舊物料雜費憑單及特殊舊合約補正。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>舊版畫面（mtjjm01List.jsp / mtjjm01Edit.jsp）</b>：依物料代號、船運號、採購單號調閱早期 <code>tbmtm010</code> 資料。</li>
+        <li><b>舊版邏輯（mtjcm01.java）</b>：支援傳統 <code>Q/N/U/D</code> 動作旗標。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTM01_AUTH</code>。</li>
+        <li><b>新舊雙軌衝突防呆</b>：新進人員建檔時切勿將新物料建於 <code>MTM01</code>！若同一筆進口物料在 <code>MTM01</code> 與 <code>MTJJMCOST1</code> 同時建檔，將導致 MP 系統重複認列進口雜費，造成存貨成本虛增。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>新舊雙軌缺乏互斥互鎖（中）</b>：系統未在 <code>mtjcm01.java</code> 中加入對 <code>db.tbmtm001</code> 的存在性檢查，同一採購單據若被同仁在新舊系統兩邊重複建檔，系統不會提出防呆警告。建議於存檔前強制校驗新版是否存在。</li>
+        <li><b>歷史舊版仍保留新增按鈕（低）</b>：為防範新進同仁誤用，建議將 <code>mtjjm01List.jsp</code> 中的新增（Add）功能全面下線或設為只有特定資訊維護人員可見，將本功能降級為純歷史查詢作業。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsm01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcm01</code></span>
+      <span><b>資料存取：</b><code>mtjcm010DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtm010</code></span>
+    </div>
+  </article>
+</section>
+
+<!-- 第五章：代開狀維護作業 -->
+<section id="ch5">
+  <h2>第五章：代開狀維護作業（選單節點 MTD01）</h2>
+  <div class="lead">
+    代開狀為特殊國際貿易合作模式。當本公司委託母公司（中鋼）、關係企業或海外代理商代為向銀行開立信用狀採購原材料時，各項代開保證金、代開手續費、承兌息與還款資料必須透過本作業專責控管。
+  </div>
+
+  <!-- 5.1 MTD01 -->
+  <article class="op" id="op-MTD01" data-cat="CH5">
+    <h4>
+      <span class="op-id">MTD01</span>
+      代開狀維護作業
+      <span class="badge b-core">代開信用狀</span>
+      <span class="badge b-fin">費用同步</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>維護由關係企業或指定機構「代開信用狀」之業務主檔（<code>db.tbmtd010</code>）。記錄代開機構、實際採購單號、代開狀 L/C 號碼、代開幣別、額度、代開保證費率、手續費、匯率及清償歸還進度。並具備自動與報支費用（<code>tbmtfc030</code>）進行備份、清除與重建模組聯動能力。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>代開狀清單查詢（mtjjd01List.jsp / mtjjd01Search.jsp）</b>：依代開機構代碼、採購單號、船號或開狀日期搜尋。</li>
+        <li><b>多層代開狀維護（mtjjd01Edit.jsp / mtjjd02 / mtjjd03）</b>：維護代開主合約、利息計算週期、各批到貨沖帳與清償結匯記錄。</li>
+        <li><b>費用資料連動與重建機制</b>：
+          後端 <code>mtjcd01.java</code> 包含專門方法：
+          <code>setBackupData()</code>（備份原有代開資料）、<code>removeMTFC030()</code>（清除舊有自動生成之報支資料）與 <code>insertMTFC030()</code>（依新代開參數自動重建產生費用請款檔）。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTD01_AUTH</code>。</li>
+        <li><b>費用報支鎖定防呆</b>：
+          若代開狀所衍生之手續費或手續費差額已經在「一般報支（<code>MTFC03</code>）」中拋轉產生 AP 傳票或已付款，系統禁止在 <code>MTD01</code> 中直接執行變更或重建模組，前端會拋出防呆警告：<code>「相關費用已產生 AP 應付憑單，請先撤銷報支單據後再行修改！」</code>。
+        </li>
+        <li><b>代開額度超限檢核</b>：代開狀累計金額不可超過關係企業雙方所簽訂之年度「代開信用狀額度合約」上限。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>費用重建過程缺乏單一事務保證（高）</b>：<code>src/com/icsc/mt/mtjcd01.java:160</code> 在執行 <code>removeMTFC030()</code> 與 <code>insertMTFC030()</code> 時，分別各自管理連線或提交，若刪除成功後伺服器中斷或插入失敗，舊費用資料已被刪除但新費用未產生，造成費用單據遺失。必須將備份、刪除與重建綁定在同一 <code>Connection Transaction</code> 內。</li>
+        <li><b>代開狀沖銷餘額缺少防呆負數校驗（中）</b>：<code>mtjjd01Edit.jsp:95</code> 手動登錄還款或代開沖帳金額時，後端未限制沖帳累計額不可大於原代開總額，可能導致代開餘額為負數之業務邏輯謬誤。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsd01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcd01</code></span>
+      <span><b>資料存取：</b><code>mtjcd010DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtd010</code>, <code>db.tbmtfc030</code></span>
+    </div>
+  </article>
+</section>
+
+
+<!-- 第六章：報支資料管理 -->
+<section id="ch6">
+  <h2>第六章：報支資料管理（選單代碼 AIMTF / MTSUB03）</h2>
+  <div class="lead">
+    報支資料管理為進口業務與 ERP 財務應付帳款系統（AP）、發票管理系統對接之<b>「財務咽喉」</b>。進口原料所衍生之上千萬甚至億元級之國際海運費、海關稅款、貨櫃延遲費等，均在此處完成發票憑證登錄、進項稅額計算、借支預付與請款歸墊，並直接自動生成會計應付傳票（AP Voucher）。
+  </div>
+
+  <!-- 6.1 MTFC03 -->
+  <article class="op" id="op-MTFC03" data-cat="CH6">
+    <h4>
+      <span class="op-id">MTFC03</span>
+      一般報支維護作業
+      <span class="badge b-core">費用請款</span>
+      <span class="badge b-ap">產生AP憑單</span>
+      <span class="badge b-fin">發票管理</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>進口原材料最主要之各項日常費用直接報銷請款作業。採購進口承辦人員取得船公司、報關行或檢驗公證行之統一發票或收據後，於本作業登打報支單，指定費用類別、發票號碼、未稅金額、營業稅額、受款廠商帳戶及分攤之船運採購單號，並驅動後端自動向 AP 系統開立應付憑單與發票檔。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主清單與報支狀態檢索（mtjjfc03List.jsp）</b>：依報支單號（<code>fcNo</code>）、申請人、受款廠商統編、發票號碼、請款年月及 AP 拋轉狀態查詢。</li>
+        <li><b>三階段報支維護流程（Three-Step Maintenance）</b>：
+          <ul>
+            <li><b>第一階段：報支主檔（mtjjfc0301List / Edit，對應 db.tbmtfc030）</b>：
+              記錄報支單號、申請部門、申請日期、幣別、受款廠商代號、付款方式（電匯/支票）、請款總金額（含稅）。
+            </li>
+            <li><b>第二階段：發票與稅額憑證（mtjjfc0302List / Edit，對應 db.tbmtfc050 / tbmtfc065）</b>：
+              登錄統一發票字軌號碼（10 碼）、開立日期、發票金額、營業稅額（Tax Amt）、課稅類別（1:應稅、2:零稅率、3:免稅），並維護扣抵代號。
+            </li>
+            <li><b>第三階段：費用明細分攤（mtjjfc0303List / Edit，對應 db.tbmtfc040）</b>：
+              將請款金額分攤至特定船運號（<code>shipNo</code>）、採購合約號，並指定借方會計科目（如進口在途原料、運費雜支）。
+            </li>
+          </ul>
+        </li>
+        <li><b>財務對接核心方法</b>：
+          <ul>
+            <li><code>createApMaster()</code>：依據報支主檔，於 AP 模組自動建立應付憑單主檔（AP Master）。</li>
+            <li><code>createApDetail()</code>：自動建立 AP 明細分錄行（AP Detail Voucher Lines）。</li>
+            <li><code>createInvoice()</code>：自動建立 ERP 發票主檔與營業稅申報待勾稽資料。</li>
+            <li><code>cancelFC040() / cancelFC050()</code>：取消已建立之 AP 資料，將報支單解鎖還原。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTFC03_AUTH</code>。</li>
+        <li><b>營業稅稅額防呆演算法檢核</b>：
+          課稅別為「1-應稅」時，系統強制檢核：<code>未稅金額 &times; 5% = 稅額</code>（允許 &plusmn;1 元之四捨五入公差）。若課稅別為「2-零稅率」或「3-免稅」，稅額欄位強制為 0，禁止輸入大於 0 之稅額。
+        </li>
+        <li><b>AP 憑單已產生不可篡改管制</b>：
+          <b>【極重要財務管制】</b>一旦點擊產生 AP 憑單，資料庫回寫 AP 傳票單號，該報支單所有畫面欄位立即轉為唯讀鎖定！禁止在 MT 系統直接修改金額、發票或廠商。若發現單據錯誤，必須先執行「取消作業（<code>cancelFC040/050</code>）」，並在 AP 系統無付款中或無過帳狀態下方可撤回。
+        </li>
+        <li><b>發票字軌重複性防呆</b>：發票號碼在系統內不可重複報支，後端檢核若該發票已於歷史單據報支過，立即中斷存檔並警示：<code>「該發票號碼已被報支單據使用，請勿重複請款！」</code>。</li>
+        <li><b>受款人銀行帳戶檢核</b>：受款廠商必須在 <code>MTFCVENDOR</code> 或 AP 模組中已建有合格受款銀行帳戶，無帳戶者禁止生成電匯憑單。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>跨模組生成 AP 與發票缺乏原子性交易（高）</b>：<code>src/com/icsc/mt/mtjcfc03.java:410</code> 呼叫 <code>createApMaster()</code>、<code>createApDetail()</code> 與 <code>createInvoice()</code> 時，分別執行各自的 Commit 操作。若 AP 憑單寫入成功，但發票建立過程因資料庫連線或字軌驗證失敗中斷，將導致財務總帳產生無發票憑證關聯之「孤兒傳票」，需要 DBA 手工修正資料。建議將 AP 與發票生成整併至單一 Transaction 控制。</li>
+        <li><b>5% 稅額檢核公差在特殊外幣折算時過於嚴格（中）</b>：<code>mtjcfc03.java:290</code> 營業稅檢核公式在計算 <code>未稅額 * 0.05</code> 時，若外幣發票折算台幣後有分角，僅放寬 1 元公差，常造成部分進口報單整批申報之營業稅相差 2 元而無法存檔。建議針對海關進口稅費收據允許手動覆核或放寬至 &plusmn;2 元容許值。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsfc03</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcfc03</code></span>
+      <span><b>資料存取：</b><code>mtjcfc030DAO</code>, <code>mtjcfc040DAO</code>, <code>mtjcfc050DAO</code>, <code>mtjcfc065DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtfc030</code>, <code>db.tbmtfc040</code>, <code>db.tbmtfc050</code>, <code>db.tbmtfc065</code></span>
+    </div>
+  </article>
+
+  <!-- 6.2 MTFC04 -->
+  <article class="op" id="op-MTFC04" data-cat="CH6">
+    <h4>
+      <span class="op-id">MTFC04</span>
+      借支報支維護作業
+      <span class="badge b-core">預付款項</span>
+      <span class="badge b-ap">借支管理</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>處理進口運雜費之「借支（預付款／暫付款）」申請。在尚未取得正式海運費或報關進項發票前，因船舶即將抵港卸貨，必須先行向船公司支付海運押金，或向海關預繳進口保證金時使用。產生預付性質之 AP 憑單供出納先行放款。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>借支主檔清單（mtjjfc0401List.jsp / Edit）</b>：
+          維護 <code>db.tbmtfc070</code>，記錄借支單號、借支事由（如：某船次海運費暫付）、借支金額、受款廠商、預計沖銷歸墊日期（Clear Date）。
+        </li>
+        <li><b>借支明細（mtjjfc0402List.jsp / Edit）</b>：維護 <code>db.tbmtfc080</code>，拆解借支項目與對應船運號。</li>
+        <li><b>總額重新試算</b>：透過 <code>calcFC070Total()</code> 自動計算全單借支總額。</li>
+        <li><b>撤銷功能</b>：提供 <code>cancelFC070()</code> 與 <code>cancelFC080()</code>，在出納未付款前可取消借支。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTFC04_AUTH</code>。</li>
+        <li><b>預計沖銷期限防呆管制</b>：借支單必須填寫明確之「預計沖銷日期」。依中鴻財務管理規章，借支超過 30 天未歸墊者，系統在開立新借支單時將提示超期催告，並限制該承辦人新開借支。</li>
+        <li><b>出納付款狀態連動</b>：若 AP 出納已開立支票或電匯匯出（借支已撥款），<code>MTFC04</code> 禁用取消按鈕，僅能透過「歸墊報支（<code>MTFC05</code>）」進行沖帳結案。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>借支逾期催告僅具警示未有硬性阻擋（中）</b>：<code>src/com/icsc/mt/mtjcfc04.java:130</code> 逾期檢查僅在前端畫面以橘色警示文字提示，若承辦人忽視提示仍可強行送出新增單據，導致部分船運借支暫付款長達數月未歸墊。建議加入主管授權覆核或超期強制阻擋開立新借支之防線。</li>
+        <li><b>借支總額與明細總額校驗時機延遲（低）</b>：<code>mtjjfc0401Edit.jsp:85</code> 於編輯主檔時，總額需點選 <code>calcFC070Total</code> 才能重新校正，若承辦人直接點存檔，後端未自動重算可能造成主表與子表總額微差。建議於後端 <code>insert()</code> 及 <code>update()</code> 時自動強制執行總額重算。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsfc04</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcfc04</code></span>
+      <span><b>資料存取：</b><code>mtjcfc070DAO</code>, <code>mtjcfc080DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtfc070</code>, <code>db.tbmtfc080</code></span>
+    </div>
+  </article>
+
+  <!-- 6.3 MTFC05 -->
+  <article class="op" id="op-MTFC05" data-cat="CH6">
+    <h4>
+      <span class="op-id">MTFC05</span>
+      歸墊報支維護作業
+      <span class="badge b-core">沖銷結案</span>
+      <span class="badge b-fin">多退少補</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>當先前透過 <code>MTFC04</code> 借支之暫付款項，在取得國外原廠或航運代理之正式發票與費用單據後，於本作業進行「借支歸墊沖銷（Settlement）」。若實際支出大於借支金額則辦理補款；若實際支出小於借支金額則辦理退款繳回，並同時處理匯率差額與外幣折讓。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>勾稽借支單（mtjjfc0501List.jsp）</b>：輸入原借支單號（<code>fcNo</code>），系統自動帶出原借支金額、已沖金額與未沖餘額。</li>
+        <li><b>歸墊主檔與明細（mtjjfc0502 / mtjjfc0503，對應 db.tbmtfc090 / tbmtfc100）</b>：
+          輸入正式統一發票號碼、稅額、實際支出金額；系統呼叫 <code>calcFC090Total()</code> 及 <code>calcFC100Total()</code> 計算多退少補之淨應付或淨退款額。
+        </li>
+        <li><b>外幣匯率結轉與折讓處理</b>：針對外幣借支，依實際水單匯率折算新台幣，自動認列匯兌損益（Exchange Gain/Loss）或廠商折讓金額。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTFC05_AUTH</code>。</li>
+        <li><b>超額沖銷嚴格防呆</b>：單次歸墊沖銷之金額，絕對不可超過該借支單之「未沖銷餘額」，後端 <code>mtjcfc05.java</code> 設有嚴密邊界檢核：<code>歸墊沖帳金額 &le; 借支餘額</code>。</li>
+        <li><b>多退少補帳務分流管制</b>：
+          <ul>
+            <li>若「實際發票金額 &gt; 借支金額」：差額自動生成 AP 追加應付憑單向廠商補付款。</li>
+            <li>若「實際發票金額 &lt; 借支金額」：差額自動通知出納開立「暫付款退回收款單（AR/Cash Receipts）」要求廠商或承辦退回溢領款項。</li>
+          </ul>
+        </li>
+        <li><b>借支結案狀態鎖定</b>：當未沖銷餘額降為 0，原借支單自動標記結案（<code>closeFlag='Y'</code>），後續禁止再被重複挑選歸墊。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>高併發沖銷缺乏樂觀鎖防護（高）</b>：<code>src/com/icsc/mt/mtjcfc05.java:210</code> 在計算原借支未沖餘額時，若多位承辦人同時對同一筆大額借支單進行分批歸墊，因讀取與回寫 <code>tbmtfc070</code> 間缺乏版本號（Version No）或排他行鎖（Row Lock），存在兩筆交易同時通過餘額檢核而導致「超額超沖」之併發隱患。建議在 <code>tbmtfc070</code> 加入 <code>lock_version</code>。</li>
+        <li><b>多退少補退款單未自動拋轉收款模組（中）</b>：當實支金額小於借支金額時，差額退款目前僅產出文字報表供人工通知出納開單，尚未像補款一樣實現全自動拋轉收款憑單（Cash Receipts），自動化整合度仍有提升空間。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsfc05</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcfc05</code></span>
+      <span><b>資料存取：</b><code>mtjcfc090DAO</code>, <code>mtjcfc100DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtfc090</code>, <code>db.tbmtfc100</code>, <code>db.tbmtfc070</code>, <code>db.tbmtfc080</code></span>
+    </div>
+  </article>
+</section>
+
+<!-- 第七章：查詢資料管理 -->
+<section id="ch7">
+  <h2>第七章：查詢資料管理（選單代碼 AIMTG / MTSUB04）</h2>
+  <div class="lead">
+    本章包含採購合約、鋼胚規格與海外履約到貨之綜合查詢功能。提供跨部門（採購、船務、生產調度、廠務）同仁即時調閱進口原料之採購與交貨進度，確保煉軋鋼產線原料不斷料。
+  </div>
+
+  <!-- 7.1 MTP01 -->
+  <article class="op" id="op-MTP01" data-cat="CH7">
+    <h4>
+      <span class="op-id">MTP01</span>
+      鋼胚採購查詢作業
+      <span class="badge b-core">採購履約</span>
+      <span class="badge b-sys">綜合查詢</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>提供國外鋼胚採購合約之全方位履約進度查詢。展示各採購單號之簽約供應商、簽約日期、採購鋼胚鋼種（Grade）、規格尺寸（厚度 &times; 寬度 &times; 長度）、訂購公噸數、單價、已開立信用狀噸數、已裝船出運噸數、在途船運編號及尚未交貨餘額（Pending Quantity）。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>複合查詢條件介面（mtjjp01Search.jsp）</b>：
+          支援依採購單號（<code>purchNo</code>）、國外賣方代號（<code>supplyNo</code>）、簽約日期區間、鋼胚尺寸規格、預計交期（Delivery Date）快速檢索。
+        </li>
+        <li><b>清單與展開明細（mtjjp01List.jsp / mtjjp02List.jsp）</b>：
+          主清單展現合約整體履約率（%）；點選特定採購項次可穿透查詢該項次所分批關聯之「信用狀清單（<code>MTA01</code>）」與「船運裝載清單（<code>MTB01</code>）」。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTP01_AUTH</code>。</li>
+        <li><b>唯讀性保護管制</b>：
+          <b>【極重要系統限制】</b>本作業屬於<b>純查詢與分析用途（Read-Only View）</b>，畫面上無新增、修改或刪除按鈕！採購單源頭資料由採購合約系統產生寫入 <code>db.tbmtp010</code> 與 <code>db.tbmtp020</code>，禁止在 MT 系統進行任何欄位篡改，以保證合約與原始採購資料之權威性。
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>空條件全表掃描拖垮 DB2 效能（高）</b>：<code>src/com/icsc/mt/mtjcp01.java:90</code> 當使用者於查詢頁面未鍵入任何篩選條件直接點擊「查詢」時，SQL 未設預設區間限制，將對 <code>tbmtp010</code> 與 <code>tbmtp020</code> 執行全表關聯掃描，在正式機動輒數十萬筆採購歷史明細下，極易引發資料庫 CPU 飆高並鎖定暫存表格。建議後端強制限制至少必須輸入「簽約年度」或「最近一年」之預設區間。</li>
+        <li><b>前端分頁載入過多資料導致瀏覽器延遲（中）</b>：<code>jsp/mtjjp01List.jsp:55</code> 分頁機制採後端一次查出所有結果放入 Session，再由 JSP 切割顯示。若查詢出數千筆資料，將佔用可觀之 Web 伺服器 Session 記憶體空間，建議改採 SQL <code>FETCH FIRST N ROWS ONLY</code> 資料庫端分頁。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>程式路徑：</b><code>/erp/mt/mtjsp01</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcp01</code></span>
+      <span><b>資料存取：</b><code>mtjcp010DAO</code>, <code>mtjcp020DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtp010</code>, <code>db.tbmtp020</code></span>
+    </div>
+  </article>
+</section>
+
+
+<!-- 第八章：權利金維護作業 -->
+<section id="ch8">
+  <h2>第八章：權利金維護作業（選單節點 MTJJCOMEXP）</h2>
+  <div class="lead">
+    權利金（Royalty Fee）為鋼鐵生產技術引進、國際專利製程授權或特殊原料專利使用費之計算維護模組。本作業採新式 MVC 頁面架構，以三段式頁籤將月度技術權利金由產量基礎展開、精密試算扣繳稅款並拋轉至 FC 費用報支與 AP 傳票。
+  </div>
+
+  <!-- 8.1 MTJJCOMEXP -->
+  <article class="op" id="op-MTJJCOMEXP" data-cat="CH8">
+    <h4>
+      <span class="op-id">MTJJCOMEXP</span>
+      權利金維護作業
+      <span class="badge b-core">技術權利金</span>
+      <span class="badge b-fin">三段式展開</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>掌管技術處與海外專利授權廠（如 JFE、新日鐵等）之合約權利金計算。依據產線實際生產合格噸數或進口特定原料公噸數，依授權費率計算應付外幣權利金、扣繳所得稅款、印花稅及營業稅，並將計算成果自動生成報支費用單據（<code>addfc050</code>, <code>addfc065</code>, <code>addfc080</code>, <code>addfc100</code>）。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主頁導航與頁籤切換（mtjjComExp.jsp）</b>：透過 <code>_pageId=mtjjComExp01/02/03</code> 在三段作業間流轉。</li>
+        <li><b>三階段展開架構</b>：
+          <ul>
+            <li><b>第一階段：權利金基礎維護（mtjjComExp01.jsp / mtjcComExp01.java）</b>：
+              維護 <code>db.tbmtm020</code>，設定資料年月、專利合約編號、授權廠商代碼、計量幣別、合約基本費率與預估總額。
+            </li>
+            <li><b>第二階段：生產與進口噸數明細（mtjjComExp02.jsp / mtjcComExp02.java）</b>：
+              維護 <code>db.tbmtm021</code>，從 MES 生產系統或進口到貨檔自動汲取產量噸數，計算每條產線之分攤量。
+            </li>
+            <li><b>第三階段：費用計算與拋轉（mtjjComExp03.jsp / mtjcComExp03.java）</b>：
+              維護 <code>db.tbmtm022</code>，計算外幣折算新台幣金額、跨境扣繳所得稅（Withholding Tax）、並直接生成 FC 費用檔（<code>tbmtfc050</code>, <code>tbmtfc065</code>, <code>tbmtfc080</code>, <code>tbmtfc100</code>）。
+            </li>
+          </ul>
+        </li>
+        <li><b>月結關帳與反關帳功能</b>：提供「關帳（Close）」與「反關帳（Unclose）」按鈕，控管該月份是否允許重新計算。</li>
+        <li><b>試算與報表匯出</b>：支援重新計算稅額及一鍵匯出 Excel 清單。</li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTJJCOMEXP_AUTH</code>。</li>
+        <li><b>月度關帳狀態絕對鎖定</b>：
+          一旦本月份執行了「關帳」，該年月之所有權利金主檔、生產噸數與費用明細全部進入唯讀保護，禁止任何修改、刪除或重新計算。必須由主管具備反關帳權限執行反關帳後，方可解鎖。
+        </li>
+        <li><b>FC 費用已拋轉防呆</b>：
+          若第三階段已執行 <code>addfc*</code> 拋轉生成報支單據，則第一與第二階段之噸數與費率欄位強制反灰鎖定，防止基礎噸數變更導致已拋轉之報支金額不符。
+        </li>
+        <li><b>跨境扣繳所得稅法定稅率校驗</b>：依所得稅法規定，國外法人權利金扣繳稅率（通常為 20% 或租稅協定優惠稅率 10%）必須與稅籍證明相符，輸入錯誤時系統提示防呆。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>產量展開空值防禦不足引發 NPE（中）</b>：<code>src/com/icsc/mt/mtjcComExp02.java:140</code> 從 MES 汲取合格生產噸數時，若遇到產線保養停機月導致查無產量記錄，程式直接呼叫 <code>rs.getString().trim()</code> 而未先防呆檢查 <code>null</code>，容易引發 <code>NullPointerException</code>。建議增加 <code>Objects.toString(val, "0")</code> 之安全防禦。</li>
+        <li><b>反關帳權限控制強度不足（中）</b>：目前「關帳」與「反關帳」在 JSP 上由同一支功能權限控管，基層承辦人亦能自行點擊「反關帳」解鎖歷史月份，內部審計控制力道偏弱。建議將反關帳抽離為獨立主管權限 <code>INFO_MTJJCOMEXP_UNCLOSE</code>。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>頁面路由：</b><code>/erp/mt/do?_pageId=mtjjComExp01/02/03</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcComExp01</code>, <code>02</code>, <code>03</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtm020</code>, <code>db.tbmtm021</code>, <code>db.tbmtm022</code>, <code>db.tbmtfc050</code>, <code>db.tbmtfc065</code>, <code>db.tbmtfc080</code>, <code>db.tbmtfc100</code></span>
+    </div>
+  </article>
+</section>
+
+<!-- 第九章：權利金評價估列、迴轉作業 -->
+<section id="ch9">
+  <h2>第九章：權利金評價估列、迴轉作業（選單節點 MTJJCOM01）</h2>
+  <div class="lead">
+    會計月底結算之關鍵模組。權利金合約通常採「季結」或「半年結」，但會計原則要求每月權責發生制（Accrual Basis）。本作業專供會計同仁於月底估算當月應計權利金費用開立預估傳票，並於次月初開立反向迴轉傳票。
+  </div>
+
+  <!-- 9.1 MTJJCOM01 -->
+  <article class="op" id="op-MTJJCOM01" data-cat="CH9">
+    <h4>
+      <span class="op-id">MTJJCOM01</span>
+      權利金評價估列、迴轉作業
+      <span class="badge b-fin">會計月結</span>
+      <span class="badge b-core">Accrual / Reversal</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>會計部（A21）專責月結作業。於每月會計結帳日前，依據當月產量與權利金合約費率，自動產生「權利金預估估列傳票（Accrual Voucher: 借-權利金費用 / 貸-應付費用-預估）」；次月初結帳時，系統自動產生「實際迴轉傳票（Reversal Voucher: 借-應付費用-預估 / 貸-權利金費用）」，確保損益表各月負擔合理平衡。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>主查詢與條件設定（mtjjCom01.jsp / mtjjCom01Edit.jsp）</b>：
+          輸入公司代碼（<code>compId</code>）、成本類別（<code>costType</code>）、資料年月（<code>dataYm</code>: YYYYMM）、關帳基準日期。
+        </li>
+        <li><b>標準會計傳票動作按鈕</b>：
+          <ul>
+            <li><code>createE (動作旗標 E)</code>：自動計算當月預估權利金，產製並寫入「預估傳票檔（Accrual Voucher）」。</li>
+            <li><code>createR (動作旗標 R)</code>：產生次月之「迴轉傳票檔（Reversal Voucher）」。</li>
+            <li><code>RR</code>：重新整理與重建該月計算資料。</li>
+            <li><code>cancelE</code>：撤銷已產生之預估傳票（限傳票尚未拋轉總帳前）。</li>
+            <li><code>cancelR</code>：撤銷已產生之迴轉傳票。</li>
+            <li><code>PR1</code>：列印該期權利金估列與迴轉試算平衡報表。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備專屬權限 <code>INFO_MTJJCOM01_AUTH</code>，主要授權為會計處成本會計組（A21）。</li>
+        <li><b>時序依存防呆限制</b>：
+          <b>【重要管制】</b>必須先成功執行 <code>createE</code> 產生估列傳票後，次月才允許執行 <code>createR</code> 產生迴轉傳票！若該年月無估列資料，直接點擊迴轉將遭系統攔截：<code>「尚未產生預估傳票，無法執行迴轉作業！」</code>。
+        </li>
+        <li><b>傳票過帳後不可撤銷管制</b>：
+          若預估傳票或迴轉傳票已經會計總帳模組（GL）正式審核過帳（Posted），<code>cancelE</code> 與 <code>cancelR</code> 按鈕立即失能禁用，禁止私自撤銷已入帳之會計傳票。
+        </li>
+        <li><b>跨期資料不可逆防呆</b>：歷史已完成過帳之舊年月資料僅能查詢瀏覽，不可手動修改數值。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>分攤估列比率硬寫於 Java 程式碼（中）</b>：<code>src/com/icsc/mt/mtjcCom01CR.java:110</code> 計算各部門產品權利金估列金額時，部分分攤比例係數直接寫死於 Controller 程式碼中。若技術合約修改拆帳比例，必須由資訊人員修改 Java 原始碼重編發布，缺乏維護彈性。建議改至 <code>db.tbmtCom01</code> 或參數主檔維護。</li>
+        <li><b>傳票拋轉無執行進度條或防重複點擊防護（低）</b>：當會計同仁點擊 <code>createE</code> 時，因需連線會計傳票系統開立分錄，需耗時 3~5 秒，按鈕未於第一時間 Disable，易因同仁連續點擊造成傳票重複產生之鎖定衝突。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>頁面路由：</b><code>/erp/mt/do?_pageId=mtjjCom01Edit</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcCom01CR</code> (繼承 dejcFunctionalController)</span>
+      <span><b>資料存取：</b><code>mtjcCom01DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtCom01</code></span>
+    </div>
+  </article>
+</section>
+
+<!-- 第十章：國內外在途原料估列、迴轉作業 -->
+<section id="ch10">
+  <h2>第十章：國內外在途原料估列、迴轉作業（選單節點 MTJJRAW01）</h2>
+  <div class="lead">
+    進口大宗鋼胚金額極為龐大，一艘貨輪鋼胚價值動輒數億台幣。當貨物在公海航行（在途）或已開立信用狀但尚未通關入廠時，會計部必須於月底將此部分資產與負債正確估列入帳。本作業為存貨會計每月結帳不可或缺之重裝級作業。
+  </div>
+
+  <!-- 10.1 MTJJRAW01 -->
+  <article class="op" id="op-MTJJRAW01" data-cat="CH10">
+    <h4>
+      <span class="op-id">MTJJRAW01</span>
+      國內外在途原料估列、迴轉作業
+      <span class="badge b-core">在途存貨</span>
+      <span class="badge b-fin">月結傳票</span>
+      <span class="badge b-warn">2024基期限制</span>
+      <span class="badge b-iss">待改善</span>
+    </h4>
+    <div class="purpose-box">
+      <p><b>【業務用途】</b></p>
+      <p>會計部（A21）於每月最後營業日執行。整合船運主檔（<code>tbmtb010</code>）、信用狀（<code>tbmta010</code>）與採購合約（<code>tbmtp010</code>），精準計算「已開狀但尚未到港」及「已到港但尚未報關驗放」之國內外在途原料（Goods in Transit）價值。月底自動開立「在途原料估列傳票（借-在途原料 / 貸-暫估應付款）」；次月初再開立「反向迴轉傳票」，使存貨與負債精準符合 IFRS 會計準則。</p>
+    </div>
+
+    <div class="blk">
+      <b>【主要功能與操作流程】</b>
+      <ul>
+        <li><b>估列條件輸入（mtjjRaw01.jsp / mtjjRaw01Edit.jsp）</b>：
+          輸入公司代碼（<code>compId</code>: yl）、成本類別（原料類）、結算年月（<code>dataYm</code>）及結算基準日期（通常為月底日）。
+        </li>
+        <li><b>自動勾稽在途庫存</b>：
+          系統後端自動掃描：
+          <ol>
+            <li>裝船日 <code>onBoardDate &le; 結算日</code>，且海關放行日大於結算日（或尚未放行）之所有進口船次。</li>
+            <li>已開立信用狀且已押匯、但尚未取得正式驗收單之材料合約。</li>
+          </ol>
+        </li>
+        <li><b>核心動作按鈕</b>：
+          <ul>
+            <li><code>createE</code>：產製本月在途原料預估傳票及報表。</li>
+            <li><code>createR</code>：產製次月迴轉傳票。</li>
+            <li><code>cancelE / cancelR</code>：取消估列或迴轉傳票（需主管確認）。</li>
+            <li><code>PR1</code>：列印在途原料明細清冊與會計勾稽表。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blk ctl">
+      <b>【管制與系統防呆限制】</b>
+      <ul>
+        <li><b>權限管制</b>：需具備 <code>INFO_MTJJRAW01_AUTH</code>，限會計處特定月結負責人（A21）操作。</li>
+        <li><b>歷史資料保護基期限制（limitDate 20240101）</b>：
+          <b>【極重要程式硬性管制】</b>在後端控制器 <code>mtjcRaw01CR.java</code> 中，明確定義硬性常數 <code>limitDate = "20240101"</code>！系統嚴格禁止對 2024 年 1 月 1 日以前之歷史在途資料進行重新計算、修改或撤銷傳票，保護歷年已通過外部會計師查核之財務歷史結帳基期！
+        </li>
+        <li><b>在途與到庫重複認列防呆</b>：
+          若某船次之海關放行日期在月底結算日前，代表該原料已辦理報關並正式入庫（存貨已計入現場倉儲），系統邏輯強制將其排除在「在途原料」之外，防範同一批鋼胚被雙重認列（Double Counting）。
+        </li>
+        <li><b>關帳順序管制</b>：在途原料估列完成並產生傳票後，會計部方可執行全廠「存貨系統總關帳」；存貨總關帳後，禁止在 <code>MTJJRAW01</code> 執行 <code>cancelE</code>。</li>
+      </ul>
+    </div>
+
+    <div class="blk iss">
+      <b>【不妥之處／建議調整】</b>
+      <ul>
+        <li><b>limitDate 日期硬編碼維護不易（中）</b>：<code>src/com/icsc/mt/mtjcRaw01CR.java:82</code> 直接寫死 <code>limitDate = "20240101"</code>。未來若隨年度推進需要變更結算封存基期（例如邁入 2027 年需封存 2025 年前資料），必須由維護人員重新修改 Java 程式編譯並重啟 Web 服務。建議將此日期抽離為資料庫系統參數或組態檔配置。</li>
+        <li><b>傳票產製缺乏預覽確認步驟（中）</b>：點擊 <code>createE</code> 後系統直接生成正式會計預估傳票，若同仁輸入錯誤之基準日，必須多走一次 <code>cancelE</code> 撤銷流程。建議比照現代 ERP 設計，提供「試算預覽（Preview / Dry-Run）」模式，先檢視明細金額無誤後再按確認開立傳票。</li>
+      </ul>
+    </div>
+
+    <div class="tech-bar">
+      <span><b>頁面路由：</b><code>/erp/mt/do?_pageId=mtjjRaw01Edit</code></span>
+      <span><b>商業邏輯：</b><code>com.icsc.mt.mtjcRaw01CR</code> (繼承 dejcFunctionalController)</span>
+      <span><b>資料存取：</b><code>mtjcCom01DAO</code></span>
+      <span><b>關聯表格：</b><code>db.tbmtCom01</code>, <code>db.tbmtb010</code>, <code>db.tbmtb020</code>, <code>db.tbmta010</code></span>
+    </div>
+  </article>
+</section>
+
+
+<!-- 附錄 A：內部共用彈窗與選單外作業 -->
+<section id="appA">
+  <h2>附錄 A：內部共用彈窗與選單外作業</h2>
+  <div class="lead">
+    在 MT 系統中，有數支作業未直接掛載於主選單樹（或屬於舊版過渡作業），但作為共用彈窗或特定子模組之底層服務被頻繁呼叫。新進同仁在追蹤程式或排查問題時需充分了解其運作機制。
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>作業代碼 / 畫面檔名</th>
+          <th>作業名稱</th>
+          <th>呼叫來源與業務定位</th>
+          <th>主要功能與資料表</th>
+          <th>業務管制與防呆重點</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>MTFC02</code><br><code>mtjjfc02*.jsp</code></td>
+          <td><b>運雜費清單維護</b></td>
+          <td>由 <code>MTFC01</code> 或費用審核頁面內部呼叫。</td>
+          <td>維護特定船次之運雜費彙總清單。對應 <code>db.tbmtfc020</code>、<code>db.tbmtfc025</code>。</td>
+          <td>若該清單項次已被 <code>MTFC03</code> 請款報支，禁止直接刪除明細。</td>
+        </tr>
+        <tr>
+          <td><code>MTJJCUSTQRY</code><br><code>mtjjCustQry.jsp</code></td>
+          <td><b>廠商資料查詢彈窗</b></td>
+          <td>於 <code>MTA01</code>、<code>MTB01</code>、<code>MTFC03</code> 中點擊廠商搜尋鈕開窗。</td>
+          <td>共用彈窗，支援依廠商統編、中文簡稱、英文名稱模糊檢索合格供應商，回填主畫面。</td>
+          <td>僅能選取狀態為「有效（Active）」之廠商，停用廠商反灰不可選。</td>
+        </tr>
+        <tr>
+          <td><code>MTJJBKACCTSEL</code><br><code>mtjjBkAcctSel.jsp</code></td>
+          <td><b>匯款銀行資料查詢彈窗</b></td>
+          <td>於 <code>MTFC03</code>（一般報支）及 <code>MTFC04</code>（借支）點擊受款銀行時彈出。</td>
+          <td>查詢特定廠商之銀行代碼、分行代碼、受款帳號及電匯幣別。</td>
+          <td>若廠商未在 AP 模組設定受款帳戶，彈窗提示「無合格受款帳戶」，禁止存檔。</td>
+        </tr>
+        <tr>
+          <td><code>mtjjbank.jsp</code><br><code>mtjjBankQry.jsp</code></td>
+          <td><b>銀行分行代碼查詢</b></td>
+          <td>於 <code>MTA01</code> 信用狀開狀時，挑選國內外開狀銀行與通知銀行。</td>
+          <td>整合中央銀行金融機構代號檔，提供 7 碼銀行代碼（3 碼總行 + 4 碼分行）即時檢索。</td>
+          <td>開狀銀行必須具備外匯承作許可（OBU/DBU 標記）。</td>
+        </tr>
+        <tr>
+          <td><code>mtjjz001.jsp</code></td>
+          <td><b>員工與部門選取彈窗</b></td>
+          <td>於各業務編輯頁挑選主責採購員、申請承辦人或會計主管。</td>
+          <td>讀取人事組織主檔，支援依工號、中文姓名、部門代碼（如 C1 採購部、A21 會計部）反查。</td>
+          <td>離職員工無法被選為當前單據之承辦人員。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 附錄 B：待改善事項彙整清單 -->
+<section id="appB">
+  <h2>附錄 B：全系統待改善事項彙整清單（技術債與潛在缺陷）</h2>
+  <div class="lead">
+    本附錄完整彙整靜態分析原始碼發現之<b> 42 項具體程式碼不妥之處與架構優化建議</b>。依照嚴重等級分為「高（涉及交易一致性、資料遺失、SQL 安全、運行崩潰）」、「中（涉及業務防呆欠缺、數值微小精度、架構缺檔）」與「低（介面長度與防重複點擊優化）」，供後續版本重構與維護之最高優先改進清單。
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>序號</th>
+          <th>作業代號</th>
+          <th>作業名稱</th>
+          <th>嚴重度</th>
+          <th>問題分類</th>
+          <th>原始碼檔案與行號</th>
+          <th>不妥之處說明與建議調整方向</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><code>MTPB01</code></td>
+          <td>系統代碼維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>架構缺檔</td>
+          <td><code>config/yl/mt/mtStructs.xml:14-25</code></td>
+          <td>XML 宣告之 <code>mtjcpb010</code> 與 <code>020</code> Controller 缺檔，實體仍走舊式 Servlet，架構未整合。</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><code>MTPB01</code></td>
+          <td>系統代碼維護</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>防呆欠缺</td>
+          <td><code>jsp/mtjjpb0101Edit.jsp:45</code></td>
+          <td>輸入框未設 <code>maxlength</code> 限制，過長文字貼入將引發 DB2 SQLCODE=-302 欄位溢位異常。</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><code>MTPB01</code></td>
+          <td>系統代碼維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>例外處理</td>
+          <td><code>src/com/icsc/mt/mtjcpb01.java:112</code></td>
+          <td>外鍵相依刪除失敗時僅印出 stackTrace，未包裝為友善中文說明告知使用者「被哪張業務表引用」。</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><code>MTFC01</code></td>
+          <td>費用類別維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>SQL 安全</td>
+          <td><code>src/com/icsc/mt/mtjcfc01.java:85</code></td>
+          <td>SQL 查詢直接以字串拼接 <code>where fee_code = '...'</code>，未採參數化 PreparedStatement，存有 Injection 漏洞。</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><code>MTFC01</code></td>
+          <td>費用類別維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>交易安全</td>
+          <td><code>src/com/icsc/mt/mtjcfc01.java:140</code></td>
+          <td>更新明細例外 catch 區塊未明確呼叫 <code>rollbackTransaction()</code>，遇錯可能造成批次部分寫入。</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><code>MTFC01</code></td>
+          <td>費用類別維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>業務防呆</td>
+          <td><code>jsp/mtjjfc0102Edit.jsp:68</code></td>
+          <td>會計科目手動輸入無即時開窗核對，錯誤代碼會延遲至報支拋轉 AP 時才被退件。</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><code>MTE01</code></td>
+          <td>費用公式維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>數值精度</td>
+          <td><code>src/com/icsc/mt/mtjce01.java:95</code></td>
+          <td>費率乘除使用原始 <code>double</code> 運算，極端大額運算可能產生小數點後第 6 位浮點數精度偏差。</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><code>MTE01</code></td>
+          <td>費用公式維護</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>介面防呆</td>
+          <td><code>jsp/mtjje01Edit.jsp:52</code></td>
+          <td>起訖日期先後檢查過度依賴送出事件，未填截止日後端寫入空白字串而非標準 <code>99991231</code>。</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><code>MTF01</code></td>
+          <td>供應商維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>SQL 安全</td>
+          <td><code>src/com/icsc/mt/mtjcf01.java:230</code></td>
+          <td>國外廠商英文全名若含單引號（如 <code>O'NEIL</code>），字串相加會直接引發 DB2 語法解析錯誤 SQLCODE=-104。</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><code>MTF01</code></td>
+          <td>供應商維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>系統效能</td>
+          <td><code>jsp/mtjjf01List.jsp:78</code></td>
+          <td>後端採全表抓取放入記憶體後再切分頁，廠商資料量大時耗用大量 Web 伺服器 Session 記憶體。</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td><code>MTFCVENDOR</code></td>
+          <td>供應商(報支)維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>跨模組耦合</td>
+          <td><code>/erp/ap/jsp/apjjyl01vendor.jsp</code></td>
+          <td>直接導向通用 AP 頁面未帶模組類別參數，廠商清單過於龐大雜亂，缺乏進口類別專用視圖。</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td><code>MTSM01</code></td>
+          <td>系統操作說明</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>快取架構</td>
+          <td><code>src/com/icsc/mt/mtjcsm01.java:78</code></td>
+          <td>靜態錯誤代碼與說明文字無記憶體快取，每次畫面彈窗皆重新查詢資料庫。</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td><code>MTSM01</code></td>
+          <td>系統操作說明</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>XSS 防禦</td>
+          <td><code>jsp/mtjjShowMsg.jsp:35</code></td>
+          <td>輸出說明文字直接以 <code>&lt;%=msgText%&gt;</code> 打印，未過濾 HTML 特殊符號，存有 XSS 隱患。</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td><code>MTG02</code></td>
+          <td>序號產生維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>併發鎖定</td>
+          <td><code>src/com/icsc/mt/mtjcsn.java:115</code></td>
+          <td>流水號讀取與更新無排他行鎖（Row Lock），高併發開單容易取到重複單號引發 SQLCODE=-803 崩潰。</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td><code>MTG02</code></td>
+          <td>序號產生維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>業務防呆</td>
+          <td><code>jsp/mtjjg0201Edit.jsp:40</code></td>
+          <td>目前流水號輸入欄位未防杜手動調小，人為失誤下調將造成後續所有新單據主鍵重複癱瘓。</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td><code>MTA01</code></td>
+          <td>信用狀維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>跨模組拋轉</td>
+          <td><code>src/com/icsc/mt/mtjca01.java:345</code></td>
+          <td>拋轉 FL 財務失敗時僅印出 stackTrace，錯誤訊息未回傳畫面，使用者無法知曉是保證金餘額不足。</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td><code>MTA01</code></td>
+          <td>信用狀維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>數值精度</td>
+          <td><code>src/com/icsc/mt/mtjca01.java:512</code></td>
+          <td>多幣別匯率乘除在部分子項使用 <code>double</code>，大額信用狀折算易衍生 &plusmn;1 元之尾差。</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td><code>MTA01</code></td>
+          <td>信用狀維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>後端校驗</td>
+          <td><code>src/com/icsc/mt/mtjca01.java:420</code></td>
+          <td>開狀不可超開採購合約量之檢核過度依賴前端 JS，後端未再次強制查詢 <code>tbmtp020</code> 覆核。</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td><code>MTB01</code></td>
+          <td>船運維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>架構缺檔</td>
+          <td><code>config/yl/mt/mtStructs.xml:52-58</code></td>
+          <td>XML 殘留 6 個未實作之 <code>mtjcb010CR*</code> 控制器設定，實際全在 <code>mtjcb01.java</code> 混雜執行。</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td><code>MTB01</code></td>
+          <td>船運維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>SQL 安全</td>
+          <td><code>jsp/mtjjb01Print.jsp:85</code></td>
+          <td>報表列印條件直接使用字串拼接 <code>shipNo</code>，未做參數化保護。</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td><code>MTB01</code></td>
+          <td>船運維護</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>操作體驗</td>
+          <td><code>src/com/icsc/mt/mtjcb01.java:620</code></td>
+          <td>主檔刪除時未提供事務級聯選項，同仁必須在 3 個頁籤來回手動反向刪除，操作繁瑣。</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td><code>MTC01</code></td>
+          <td>原料費用維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>執行時異常</td>
+          <td><code>src/com/icsc/mt/mtjcc01.java:180</code></td>
+          <td>分攤計算時未防呆檢核總淨重是否大於零，遇到空船次執行計算立即引發除以零（/ by zero）頁面崩潰。</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td><code>MTC01</code></td>
+          <td>原料費用維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>分攤演算法</td>
+          <td><code>src/com/icsc/mt/mtjcc01.java:240</code></td>
+          <td>尾差一律硬灌在最後一筆明細，若最後一筆鋼胚重量極小，會造成該筆單位雜費單價極端扭曲。</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td><code>MTJJMCOST1</code></td>
+          <td>物料費用(新版)</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>框架異常</td>
+          <td><code>config/yl/mt/mtStructs.xml:66-67</code></td>
+          <td><code>mtjcMCost02</code> 缺 <code>delete</code> 方法；<code>mtjcMCost02List</code> 缺 <code>update</code> 方法，觸發時拋出 ActionNotFound。</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td><code>MTJJMCOST1</code></td>
+          <td>物料費用(新版)</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>跨模組一致性</td>
+          <td><code>src/com/icsc/mt/mtjcMCost01.java:195</code></td>
+          <td>拋轉材料系統（MP）時若某項料號不存在失敗，已處理的前幾筆未全數 Rollback，成本單向殘留。</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td><code>MTM01</code></td>
+          <td>物料費用(舊版)</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>業務防呆</td>
+          <td><code>src/com/icsc/mt/mtjcm01.java:60</code></td>
+          <td>舊版未防呆檢查新版 <code>tbmtm001</code> 是否已存在，同一採購批號可在兩邊重複建檔，引發重複分攤。</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td><code>MTM01</code></td>
+          <td>物料費用(舊版)</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>權限收斂</td>
+          <td><code>jsp/mtjjm01List.jsp:30</code></td>
+          <td>歷史舊版仍保留新增按鈕，新進同仁容易誤入建檔，建議將新增功能下線並降級為唯讀。</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td><code>MTD01</code></td>
+          <td>代開狀維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>交易原子性</td>
+          <td><code>src/com/icsc/mt/mtjcd01.java:160</code></td>
+          <td><code>removeMTFC030()</code> 與 <code>insertMTFC030()</code> 未納入同一資料庫 Transaction，若插入失敗舊單據已被清除。</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td><code>MTD01</code></td>
+          <td>代開狀維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>數值檢核</td>
+          <td><code>jsp/mtjjd01Edit.jsp:95</code></td>
+          <td>代開還款沖帳金額未防呆限制不可大於代開總額，可能導致代開餘額為負數。</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td><code>MTFC03</code></td>
+          <td>一般報支維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>分散式交易</td>
+          <td><code>src/com/icsc/mt/mtjcfc03.java:410</code></td>
+          <td>產生 AP 憑單與產生發票檔分別 Commit，若發票失敗會產生「無發票憑證之孤立 AP 傳票」。</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td><code>MTFC03</code></td>
+          <td>一般報支維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>稅額演算法</td>
+          <td><code>src/com/icsc/mt/mtjcfc03.java:290</code></td>
+          <td>營業稅檢核公式容差僅 &plusmn;1 元，外幣折算後之海關稅費收據常因分角差異相差 2 元而受阻無法存檔。</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td><code>MTFC04</code></td>
+          <td>借支報支維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>業務內控</td>
+          <td><code>src/com/icsc/mt/mtjcfc04.java:130</code></td>
+          <td>借支逾期 30 天僅有畫面提示文字，缺乏強制阻擋或主管覆核機制，導致呆帳暫付款長期未結。</td>
+        </tr>
+        <tr>
+          <td>33</td>
+          <td><code>MTFC04</code></td>
+          <td>借支報支維護</td>
+          <td><span class="badge b-sys">低</span></td>
+          <td>總額校驗</td>
+          <td><code>jsp/mtjjfc0401Edit.jsp:85</code></td>
+          <td>主檔總額需手動點擊試算按鈕，後端 <code>insert()</code> 時未自動強制重算，存有主明細總額微差風險。</td>
+        </tr>
+        <tr>
+          <td>34</td>
+          <td><code>MTFC05</code></td>
+          <td>歸墊報支維護</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>併發沖銷</td>
+          <td><code>src/com/icsc/mt/mtjcfc05.java:210</code></td>
+          <td>原借支未沖餘額計算缺乏樂觀鎖（Optimistic Lock），多筆歸墊同時提交時存有超額超沖風險。</td>
+        </tr>
+        <tr>
+          <td>35</td>
+          <td><code>MTFC05</code></td>
+          <td>歸墊報支維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>自動化對接</td>
+          <td><code>src/com/icsc/mt/mtjcfc05.java:310</code></td>
+          <td>實支小於借支時之差額退款未自動生成收款憑單（Cash Receipts），仍仰賴人工列印報表通知出納。</td>
+        </tr>
+        <tr>
+          <td>36</td>
+          <td><code>MTP01</code></td>
+          <td>鋼胚採購查詢</td>
+          <td><span class="badge b-warn" style="color:var(--danger)">高</span></td>
+          <td>效能威脅</td>
+          <td><code>src/com/icsc/mt/mtjcp01.java:90</code></td>
+          <td>空條件查詢時執行全表無限制掃描，容易造成 DB2 CPU 暴衝並鎖定大量資料列。</td>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td><code>MTP01</code></td>
+          <td>鋼胚採購查詢</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>記憶體負載</td>
+          <td><code>jsp/mtjjp01List.jsp:55</code></td>
+          <td>大量查詢結果一次性塞入 Session 切割分頁，建議改採 SQL <code>FETCH FIRST N ROWS ONLY</code>。</td>
+        </tr>
+        <tr>
+          <td>38</td>
+          <td><code>MTJJCOMEXP</code></td>
+          <td>權利金維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>空值防禦</td>
+          <td><code>src/com/icsc/mt/mtjcComExp02.java:140</code></td>
+          <td>汲取產線產量時未防禦空值，遇到停機保養月份查無產量容易拋出 <code>NullPointerException</code>。</td>
+        </tr>
+        <tr>
+          <td>39</td>
+          <td><code>MTJJCOMEXP</code></td>
+          <td>權利金維護</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>權限細化</td>
+          <td><code>jsp/mtjjComExp.jsp:45</code></td>
+          <td>「關帳」與「反關帳」共用同一權限代碼，基層承辦人亦能自行反關帳，內部控制力道偏弱。</td>
+        </tr>
+        <tr>
+          <td>40</td>
+          <td><code>MTJJCOM01</code></td>
+          <td>權利金估列迴轉</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>代碼硬編碼</td>
+          <td><code>src/com/icsc/mt/mtjcCom01CR.java:110</code></td>
+          <td>產品權利金估列分攤比率寫死於 Java 類別中，合約修訂時需改代碼重編重發。</td>
+        </tr>
+        <tr>
+          <td>41</td>
+          <td><code>MTJJRAW01</code></td>
+          <td>在途原料估列</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>日期硬編碼</td>
+          <td><code>src/com/icsc/mt/mtjcRaw01CR.java:82</code></td>
+          <td>常數硬編碼 <code>limitDate = "20240101"</code>，年度遞延需修改原始碼重啟服務，應改移至參數檔配置。</td>
+        </tr>
+        <tr>
+          <td>42</td>
+          <td><code>MTJJRAW01</code></td>
+          <td>在途原料估列</td>
+          <td><span class="badge b-warn">中</span></td>
+          <td>防呆流程</td>
+          <td><code>jsp/mtjjRaw01Edit.jsp:72</code></td>
+          <td>缺乏正式生成傳票前之「試算預覽（Dry-Run）」介面，同仁輸錯條件需多走取消傳票繁複程序。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 附錄 C：MT 資料庫表格字典與關聯矩陣 -->
+<section id="appC">
+  <h2>附錄 C：MT 資料庫表格字典與關聯矩陣速查表</h2>
+  <div class="lead">
+    MT 系統主要使用以 <code>db.tbmt*</code> 命名之 IBM DB2 資料表，涵蓋進口業務各生命週期。本表完整盤點系統核心資料表之定位、主鍵結構與對應 DAO/VO：
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>資料表名稱</th>
+          <th>主鍵 (Primary Key)</th>
+          <th>中文用途說明</th>
+          <th>對應 DAO / VO</th>
+          <th>所屬核心作業</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>db.tbmta010</code></td>
+          <td><code>comp_id, ship_no, lc_no, lc_srl_no</code></td>
+          <td>信用狀主檔（開狀銀行、幣別、開狀金額、押匯狀況）</td>
+          <td><code>mtjca010DAO / VO</code></td>
+          <td><code>MTA01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmta020</code></td>
+          <td><code>comp_id, ship_no, lc_no, lc_srl_no, item_no</code></td>
+          <td>信用狀材料項次明細（鋼胚規格、尺寸、重量、單價）</td>
+          <td><code>mtjca020DAO / VO</code></td>
+          <td><code>MTA01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmta030</code></td>
+          <td><code>comp_id, ship_no, lc_no, lc_srl_no, amd_no</code></td>
+          <td>信用狀修訂歷程明細（修狀版本、展延日期、修訂金額）</td>
+          <td><code>mtjca030DAO / VO</code></td>
+          <td><code>MTA01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtb010</code></td>
+          <td><code>comp_id, ship_no</code></td>
+          <td>船運主檔（船名、航次、船務代理、裝船日、抵港日、總毛淨重）</td>
+          <td><code>mtjcb010DAO / VO</code></td>
+          <td><code>MTB01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtb020</code></td>
+          <td><code>comp_id, ship_no, item_no</code></td>
+          <td>船運裝貨明細（提單號 B/L、採購項次、鋼種、規格重量）</td>
+          <td><code>mtjcb020DAO / VO</code></td>
+          <td><code>MTB01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtb030</code></td>
+          <td><code>comp_id, ship_no, customs_no</code></td>
+          <td>船運報關明細（進口報單號碼、海關放行日期、關稅營業稅單）</td>
+          <td><code>mtjcb030DAO / VO</code></td>
+          <td><code>MTB01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtc010</code></td>
+          <td><code>comp_id, ship_no, exp_code, seq_no</code></td>
+          <td>原料費用主檔（各船次海運費、檢驗費、雜費支出總額）</td>
+          <td><code>mtjcc010DAO / VO</code></td>
+          <td><code>MTC01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtc020</code></td>
+          <td><code>comp_id, ship_no, exp_code, seq_no, item_no</code></td>
+          <td>原料費用分攤明細（依重量加權分攤至各鋼胚項次）</td>
+          <td><code>mtjcc020DAO / VO</code></td>
+          <td><code>MTC01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtd010</code></td>
+          <td><code>comp_id, agent_no, purch_no, srl_no</code></td>
+          <td>代開信用狀主檔（關係企業代開保證、手續費、沖帳狀況）</td>
+          <td><code>mtjcd010DAO / VO</code></td>
+          <td><code>MTD01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmte010</code></td>
+          <td><code>comp_id, form_id, start_date</code></td>
+          <td>費用公式主檔（保險費率、商港服務費率、分攤權重算式）</td>
+          <td><code>mtjce010DAO / VO</code></td>
+          <td><code>MTE01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtf010</code></td>
+          <td><code>comp_id, vend_no</code></td>
+          <td>供應商基本資料檔（國外賣方、船代理、報關行中英文抬頭）</td>
+          <td><code>mtjcf010DAO / VO</code></td>
+          <td><code>MTF01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtf020</code></td>
+          <td><code>comp_id, vend_no, item_type</code></td>
+          <td>供應商材料供應能力檔（可供鋼種、厚度、寬度尺寸範圍）</td>
+          <td><code>mtjcf020DAO / VO</code></td>
+          <td><code>MTF01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtf030</code></td>
+          <td><code>comp_id, vend_no, bank_seq</code></td>
+          <td>供應商外幣銀行帳戶檔（SWIFT CODE、海外解款行帳戶）</td>
+          <td><code>mtjcf030DAO / VO</code></td>
+          <td><code>MTF01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc010</code></td>
+          <td><code>comp_id, fee_code</code></td>
+          <td>費用類別主檔（進口各項雜費代碼、會計科目、預設稅別）</td>
+          <td><code>mtjcfc010DAO / VO</code></td>
+          <td><code>MTFC01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc020</code></td>
+          <td><code>comp_id, fee_code, fee_item</code></td>
+          <td>費用費率明細檔（計費基數、預設廠商）</td>
+          <td><code>mtjcfc020DAO / VO</code></td>
+          <td><code>MTFC01 / 02</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc030</code></td>
+          <td><code>comp_id, fc_no</code></td>
+          <td>一般報支主檔（請款單號、部門、受款廠商、請款總額）</td>
+          <td><code>mtjcfc030DAO / VO</code></td>
+          <td><code>MTFC03</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc040</code></td>
+          <td><code>comp_id, fc_no, ap_seq</code></td>
+          <td>報支對應 AP 憑單主檔關聯表（回寫 AP Voucher 單號與狀態）</td>
+          <td><code>mtjcfc040DAO / VO</code></td>
+          <td><code>MTFC03</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc050</code></td>
+          <td><code>comp_id, fc_no, inv_seq</code></td>
+          <td>報支對應發票明細檔（統一發票號碼、稅額、課稅別）</td>
+          <td><code>mtjcfc050DAO / VO</code></td>
+          <td><code>MTFC03</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc065</code></td>
+          <td><code>comp_id, fc_no, tax_seq</code></td>
+          <td>報支營業稅扣抵關聯檔</td>
+          <td><code>mtjcfc065DAO / VO</code></td>
+          <td><code>MTFC03 / 05</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc070</code></td>
+          <td><code>comp_id, borrow_no</code></td>
+          <td>借支申請主檔（預付暫付款單號、借支事由、預計沖銷日）</td>
+          <td><code>mtjcfc070DAO / VO</code></td>
+          <td><code>MTFC04</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc080</code></td>
+          <td><code>comp_id, borrow_no, item_seq</code></td>
+          <td>借支申請明細檔</td>
+          <td><code>mtjcfc080DAO / VO</code></td>
+          <td><code>MTFC04</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc090</code></td>
+          <td><code>comp_id, clear_no</code></td>
+          <td>歸墊沖銷主檔（沖帳單號、原借支單號、多退少補淨額）</td>
+          <td><code>mtjcfc090DAO / VO</code></td>
+          <td><code>MTFC05</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtfc100</code></td>
+          <td><code>comp_id, clear_no, item_seq</code></td>
+          <td>歸墊沖銷明細檔（實支發票、稅額、退款/補款傳票關聯）</td>
+          <td><code>mtjcfc100DAO / VO</code></td>
+          <td><code>MTFC05</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtg020</code></td>
+          <td><code>comp_id, table_name, col_name</code></td>
+          <td>系統單號序號生成規則主檔（前綴、年份、最新流水號）</td>
+          <td><code>mtjcg020DAO / VO</code></td>
+          <td><code>MTG02 / mtjcsn</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm001</code></td>
+          <td><code>comp_id, mcost_id</code></td>
+          <td>物料費用主檔(新版)（成本批號、匯率、雜費總額、拋轉狀態）</td>
+          <td><code>mtjcm001_dao / vo</code></td>
+          <td><code>MTJJMCOST1</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm002</code></td>
+          <td><code>comp_id, mcost_id, item_no</code></td>
+          <td>物料費用明細檔(新版)（物料料號、分攤雜費、拋轉 MP 標記）</td>
+          <td><code>mtjcm002_dao / vo</code></td>
+          <td><code>MTJJMCOST1</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm010</code></td>
+          <td><code>comp_id, item_no, ship_no</code></td>
+          <td>物料費用主檔(舊版)（歷史物料雜費檔案）</td>
+          <td><code>mtjcm010DAO / VO</code></td>
+          <td><code>MTM01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm020</code></td>
+          <td><code>comp_id, data_ym, contract_no</code></td>
+          <td>權利金主檔（年月、專利授權合約號、幣別、關帳標記）</td>
+          <td><code>mtjcm020_dao / vo</code></td>
+          <td><code>MTJJCOMEXP</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm021</code></td>
+          <td><code>comp_id, data_ym, contract_no, line_id</code></td>
+          <td>權利金產能與進口噸數展開明細檔</td>
+          <td><code>mtjcm021_dao / vo</code></td>
+          <td><code>MTJJCOMEXP</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtm022</code></td>
+          <td><code>comp_id, data_ym, contract_no, fee_type</code></td>
+          <td>權利金費用結算與扣繳所得稅明細檔</td>
+          <td><code>mtjcm022_dao / vo</code></td>
+          <td><code>MTJJCOMEXP</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtp010</code></td>
+          <td><code>comp_id, purch_no</code></td>
+          <td>採購合約主檔（國外賣方、簽約日期、採購總公噸數）</td>
+          <td><code>mtjcp010DAO / VO</code></td>
+          <td><code>MTP01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtp020</code></td>
+          <td><code>comp_id, purch_no, item_no</code></td>
+          <td>採購合約項次明細檔（鋼胚鋼種、尺寸、未交餘額）</td>
+          <td><code>mtjcp020DAO / VO</code></td>
+          <td><code>MTP01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtpb010</code></td>
+          <td><code>comp_id, code_type</code></td>
+          <td>系統代碼類別主檔</td>
+          <td><code>mtjcpb010DAO / VO</code></td>
+          <td><code>MTPB01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtpb020</code></td>
+          <td><code>comp_id, code_type, code_id</code></td>
+          <td>系統代碼細項明細檔</td>
+          <td><code>mtjcpb020DAO / VO</code></td>
+          <td><code>MTPB01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtpb07</code></td>
+          <td><code>comp_id, spec_code</code></td>
+          <td>特定分類規格參數檔</td>
+          <td><code>mtjcpb07DAO / VO</code></td>
+          <td><code>MTPB01 (PB07)</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtsm010</code></td>
+          <td><code>comp_id, sys_id, prog_id, msg_id</code></td>
+          <td>系統程式操作說明與中文錯誤訊息庫</td>
+          <td><code>mtjcsm010DAO / VO</code></td>
+          <td><code>MTSM01</code></td>
+        </tr>
+        <tr>
+          <td><code>db.tbmtCom01</code></td>
+          <td><code>comp_id, cost_type, data_ym</code></td>
+          <td>共用關帳與月結控制檔（預估傳票號、迴轉傳票號、關帳狀態）</td>
+          <td><code>mtjcCom01DAO</code></td>
+          <td><code>MTJJCOM01 / RAW01</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 附錄 D：常見防呆與故障排除 -->
+<section id="appD">
+  <h2>附錄 D：新進人員常見操作疑難與系統防呆錯誤對應手冊</h2>
+  <div class="lead">
+    整理現場同仁最常回報之「操作卡關」、「按鈕點不動」或「資料庫拋出異常訊息」之成因剖析與標準處置SOP：
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr>
+          <th>異常現象 / 錯誤訊息</th>
+          <th>發生作業</th>
+          <th>底層原因剖析</th>
+          <th>標準排除處置 SOP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>「該船次仍存在裝貨或報關明細，禁止直接刪除主檔！」</b></td>
+          <td><code>MTB01</code> 船運維護</td>
+          <td>資料庫外鍵階層保護。主檔（<code>tbmtb010</code>）下方仍有第 2 頁籤裝貨明細（<code>tbmtb020</code>）或第 3 頁籤報關資料（<code>tbmtb030</code>）。</td>
+          <td>依序反向操作：先切換至「報關明細」將海關單據刪除 &rarr; 再切換至「裝貨明細」清空所有採購貨物 &rarr; 最後返回第 1 頁籤刪除船運主檔。</td>
+        </tr>
+        <tr>
+          <td><b>「相關費用已產生 AP 憑單，資料已被鎖定！」</b></td>
+          <td><code>MTFC03</code> 報支維護<br><code>MTD01</code> 代開狀</td>
+          <td>報支單已經執行產生 AP 應付憑單，資料表寫入 AP 單號，系統為防止財務帳不一致啟動整單唯讀鎖定。</td>
+          <td>若確認需修改：請承辦人先確認 AP 系統該傳票尚未審核付款，於 <code>MTFC03</code> 點選「取消 AP（<code>cancelFC040/050</code>）」，傳票撤銷後畫面即恢復可編輯狀態。</td>
+        </tr>
+        <tr>
+          <td><b>「最後裝船日期不可晚於信用狀有效截止日！」</b></td>
+          <td><code>MTA01</code> 信用狀維護</td>
+          <td>國際貿易規則防呆。賣方裝船出運日期若晚於 L/C 有效期，將構成銀行重大瑕疵（Discrepancy）遭拒付。</td>
+          <td>檢查輸入之「最後裝船日」與「L/C 有效日」，裝船日必須在有效日之前（通常至少保留 15~21 天押匯提示期）。若需延期，請先於 <code>tbmta030</code> 新增修狀（Amendment）。</td>
+        </tr>
+        <tr>
+          <td><b>「未稅金額 &times; 5% 不等於稅額！」</b></td>
+          <td><code>MTFC03</code> 報支維護<br><code>MTFC05</code> 歸墊維護</td>
+          <td>營業稅檢核演算法。輸入應稅發票時，進項稅額超出 5% &plusmn;1 元公差範圍。</td>
+          <td>核對紙本統一發票之未稅額與稅額，檢查是否有將免稅項目混入應稅項目合併計算，將應稅與免稅項目分開拆筆鍵入。</td>
+        </tr>
+        <tr>
+          <td><b>「DB2 SQLCODE=-803 Duplicate Key」主鍵衝突</b></td>
+          <td>全系統新增單據</td>
+          <td>單號產生器 <code>MTG02</code> 之流水號設定小於資料表既有最大流水號，或人為手動調降流水號所致。</td>
+          <td>由系統管理員進入 <code>MTG02</code>，查詢該資料表目前資料庫中真實的最大單號（<code>SELECT MAX(...)</code>），並將 <code>tbmtg020</code> 之流水號校正至最大號碼 +1。</td>
+        </tr>
+        <tr>
+          <td><b>「尚未產生預估傳票，無法執行迴轉作業！」</b></td>
+          <td><code>MTJJCOM01</code> 權利金<br><code>MTJJRAW01</code> 在途原料</td>
+          <td>會計時序相依防呆。會計迴轉（Reversal）必須以已存在之預估（Accrual）傳票為前置基礎。</td>
+          <td>確認當月份是否已執行過 <code>createE</code> 產生預估傳票。若尚未執行，請先點擊 <code>createE</code> 產生當月估列傳票無誤後，次月結帳時方可點擊 <code>createR</code>。</td>
+        </tr>
+        <tr>
+          <td><b>「日期受限：禁止異動 20240101 以前之在途資料」</b></td>
+          <td><code>MTJJRAW01</code> 在途原料</td>
+          <td><code>mtjcRaw01CR.java</code> 硬編碼 <code>limitDate="20240101"</code> 財務保護防線。</td>
+          <td>歷史結帳基期受系統法規封存保護，禁止線上調整。若有跨年期前期損益重大調整需求，請會計師及主管核可後，專案開立 GL 手工傳票調整。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const themeBtn = document.getElementById('themeBtn');
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if(savedTheme){
+    root.setAttribute('data-theme', savedTheme);
+  }
+  if(themeBtn){
+    themeBtn.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  // 搜尋與分類過濾
+  const searchInput = document.getElementById('opSearch');
+  const catFilter = document.getElementById('catFilter');
+  const ops = document.querySelectorAll('article.op');
+  const countSpan = document.getElementById('matchCount');
+
+  function filterOps(){
+    const q = (searchInput?.value || '').toLowerCase().trim();
+    const cat = catFilter?.value || 'ALL';
+    let visible = 0;
+
+    ops.forEach(op => {
+      const text = op.innerText.toLowerCase();
+      const opCat = op.getAttribute('data-cat') || '';
+      const matchQ = !q || text.includes(q);
+      const matchCat = (cat === 'ALL') || (opCat === cat);
+
+      if(matchQ && matchCat){
+        op.style.display = '';
+        visible++;
+      } else {
+        op.style.display = 'none';
+      }
+    });
+
+    if(countSpan){
+      countSpan.innerText = `顯示 ${visible} / ${ops.length} 支作業`;
+    }
+  }
+
+  searchInput?.addEventListener('input', filterOps);
+  catFilter?.addEventListener('change', filterOps);
+
+  // TOC 捲動高亮
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll('nav.toc a').forEach(a => {
+          if(a.getAttribute('href') === `#${id}`){
+            a.classList.add('active');
+          } else {
+            a.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  document.querySelectorAll('section[id], article.op[id]').forEach(el => observer.observe(el));
+});
+</script>
+</body>
+</html>

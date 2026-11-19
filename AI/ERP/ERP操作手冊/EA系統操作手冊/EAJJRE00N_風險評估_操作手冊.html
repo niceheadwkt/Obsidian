@@ -1,0 +1,605 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>(EAJJRE00N) 風險評估 操作手冊</title><style>
+:root{--fg:#222;--bg:#fff;--accent:#2b5797;--line:#b8c4d6;--th:#dde6f3;--code:#f3f5f8;--toc:#f7f9fc}
+@media (prefers-color-scheme:dark){:root{--fg:#ddd;--bg:#1e1f22;--accent:#7fa7e0;--line:#4a5568;--th:#2c3a50;--code:#2a2c31;--toc:#25272b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Microsoft JhengHei","PingFang TC",sans-serif;font-size:15px;line-height:1.75}
+.wrap{display:flex;max-width:1280px;margin:0 auto}
+nav{position:sticky;top:0;align-self:flex-start;width:270px;max-height:100vh;overflow:auto;padding:20px 14px;background:var(--toc);border-right:1px solid var(--line);font-size:13.5px}
+nav .t{font-weight:bold;color:var(--accent);margin-bottom:6px}
+nav ul{list-style:none;margin:0;padding-left:12px}nav>div>ul{padding-left:0}
+nav a{color:var(--fg);text-decoration:none;display:block;padding:2px 0}nav a:hover{color:var(--accent)}
+main{flex:1;min-width:0;padding:24px 36px 60px}
+h1{color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:6px;font-size:26px}
+h2{color:var(--accent);border-left:5px solid var(--accent);padding-left:10px;margin-top:36px;font-size:21px}
+h3{font-size:17px;margin-top:24px;border-bottom:1px dashed var(--line);padding-bottom:3px}
+table{border-collapse:collapse;width:100%;margin:10px 0;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;vertical-align:top}th{background:var(--th);white-space:nowrap}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-family:Consolas,"Microsoft JhengHei",monospace;font-size:.92em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto;line-height:1.55}pre code{padding:0;background:none}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid #e0a020;background:var(--code)}
+img{max-width:100%;border:1px solid var(--line);border-radius:4px}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+a.top{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;border-radius:50%;width:40px;height:40px;text-align:center;line-height:40px;text-decoration:none}
+@media (max-width:900px){.wrap{display:block}nav{position:static;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--line)}main{padding:16px}}
+@media print{nav,a.top{display:none}main{padding:0}h2{page-break-after:avoid}tr,pre{page-break-inside:avoid}}
+</style></head><body><div class="wrap">
+<nav><div class="t">目錄</div><div><div class="toc">
+<ul>
+<li><a href="#_1">一、作業概要</a><ul>
+<li><a href="#11">1.1 整體流程</a></li>
+</ul>
+</li>
+<li><a href="#_2">二、畫面說明</a><ul>
+<li><a href="#21">2.1 查詢列</a></li>
+<li><a href="#22">2.2 頁籤</a></li>
+<li><a href="#23">2.3 表頭欄位（風險評估版次資料）</a></li>
+</ul>
+</li>
+<li><a href="#_3">三、按鈕功能一覽</a></li>
+<li><a href="#_4">四、操作步驟</a><ul>
+<li><a href="#41">4.1 新增風險評估</a></li>
+<li><a href="#42">4.2 新版複製（建議的改版方式）</a></li>
+<li><a href="#43">4.3 複製（挑選版次）</a></li>
+<li><a href="#44-a-b">4.4 維護流程作業表、A 表、B 表</a></li>
+<li><a href="#45">4.5 確認（產生版次）</a></li>
+<li><a href="#46">4.6 送簽</a></li>
+<li><a href="#47">4.7 主管核准、退回、強制取回</a></li>
+<li><a href="#48-hc">4.8 風險評估簽核完成：HC 項目自動移轉</a></li>
+<li><a href="#49-eajjre10n">4.9 風險與機會評估（EAJJRE10N）</a></li>
+</ul>
+</li>
+<li><a href="#_5">五、匯入與匯出</a><ul>
+<li><a href="#51">5.1 匯出</a></li>
+<li><a href="#52">5.2 匯入</a></li>
+</ul>
+</li>
+<li><a href="#_6">六、高風險未完成通知（排程）</a></li>
+<li><a href="#_7">七、常見問題</a></li>
+</ul>
+</div>
+</div></nav><main id="top"><h1 id="eajjre00n">(EAJJRE00N) 風險評估 操作手冊</h1>
+<ul>
+<li>系統：EA 安環績效管理系統</li>
+<li>依據：CVS 最新版程式</li>
+<li>編寫日期：2026/10/16</li>
+</ul>
+<hr />
+<h2 id="_1">一、作業概要</h2>
+<p>風險評估以「部門」為單位建立，每次評估產生一個版次，依序完成下列作業：</p>
+<table>
+<thead>
+<tr>
+<th>順序</th>
+<th>作業</th>
+<th>簽核文件</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>【風險評估】(EAJJRE00N，本作業)</td>
+<td>風險評估</td>
+<td>建立流程作業表、A 表、B 表，確認版次後送簽</td>
+</tr>
+<tr>
+<td>2</td>
+<td>【風險與機會評估】(EAJJRE10N)</td>
+<td>風險與機會評估</td>
+<td>風險評估簽核完成後，針對 B 表各項目評估機會（消除／取代）並送簽</td>
+</tr>
+<tr>
+<td>3</td>
+<td>【高風險改善追蹤】(EAJJRE20N)</td>
+<td>每個高風險項目一份文件</td>
+<td>風險等級 1、2 的項目，執行預估評估、完工、結果評估及簽核</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【風險與機會評估】簽核完成，該版次才算完成</strong>，也才能作為下一版「新版複製」的來源。</p>
+<h3 id="11">1.1 整體流程</h3>
+<pre><code>新增（或新版複製／複製）
+  → 建立流程作業表 → 職務及作業清查表（A表） → 風險評估（B表）
+  → 【確認】（產生版次）
+  → 【送簽】 → 主管【核准】／【退回】
+  → 風險評估簽核完成（新版複製的 HC 項目自動移轉高風險追蹤）
+  → 【風險與機會評估】(EAJJRE10N) 送簽、簽核完成
+  → 本版完成，部門才可新增下一版
+</code></pre>
+<hr />
+<h2 id="_2">二、畫面說明</h2>
+<h3 id="21">2.1 查詢列</h3>
+<table>
+<thead>
+<tr>
+<th>欄位／按鈕</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>部門代號</td>
+<td>輸入部門代號後按【查詢】，顯示該部門最近一次編輯的風險評估</td>
+</tr>
+<tr>
+<td>進階查詢</td>
+<td>依條件查詢歷次版本，點選後帶回</td>
+</tr>
+<tr>
+<td>說明文件</td>
+<td>系統管理者上傳的作業說明檔，可下載參考</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 頁籤</h3>
+<table>
+<thead>
+<tr>
+<th>頁籤</th>
+<th>內容</th>
+<th>可否維護</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>風險評估版次資料</td>
+<td>表頭：文件編號、部門、評估原因、版次、評估備註、匯入匯出、簽核按鈕</td>
+<td>是</td>
+</tr>
+<tr>
+<td>流程作業表</td>
+<td>製程（第一層）與作業（第二層）</td>
+<td>未確認前可維護</td>
+</tr>
+<tr>
+<td>職務及作業清查表</td>
+<td>A 表：各作業的狀態、性質、職務、環境、設備、物料、危害特性、作業資格</td>
+<td>未確認前可維護</td>
+</tr>
+<tr>
+<td>風險評估</td>
+<td>B 表：步驟、可能發生原因、後果影響、事故類型、控制措施、暴露頻率、發生機率、嚴重度、風險等級</td>
+<td>未確認前可維護</td>
+</tr>
+<tr>
+<td>高風險追蹤改善</td>
+<td>風險等級 1、2 項目的改善措施、進度與歷程</td>
+<td><strong>僅供查詢</strong>，維護請至 EAJJRE20N</td>
+</tr>
+<tr>
+<td>簽核主管</td>
+<td>送簽前設定各關簽核主管</td>
+<td>是</td>
+</tr>
+<tr>
+<td>流程紀錄</td>
+<td>簽核歷程</td>
+<td>查詢</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 表頭欄位（風險評估版次資料）</h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件編號</td>
+<td>新增時自動產生（評估原因代碼＋部門＋年＋日序＋時分）</td>
+</tr>
+<tr>
+<td>部門（必填）</td>
+<td>可按放大鏡選擇；需先選評估原因</td>
+</tr>
+<tr>
+<td>評估原因（必填）</td>
+<td>下拉選單只列出目前有效期間內的評估原因；第 4 碼 Y＝年度評估、S＝偶發評估</td>
+</tr>
+<tr>
+<td>評估版次－日期</td>
+<td><strong>新增時空白，按【確認】後才產生</strong>（版次＝前一版＋1，日期＝確認日）</td>
+</tr>
+<tr>
+<td>評估人</td>
+<td>建立人工號、姓名及最後更新日</td>
+</tr>
+<tr>
+<td>狀態</td>
+<td>文件狀態（發文者暫存階段、簽核中、簽核完成等）</td>
+</tr>
+<tr>
+<td>評估備註說明（必填）</td>
+<td>本次評估原因或改版說明</td>
+</tr>
+<tr>
+<td>加註意見</td>
+<td>送簽、退回、核准前可輸入，記入流程紀錄</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">三、按鈕功能一覽</h2>
+<table>
+<thead>
+<tr>
+<th>按鈕</th>
+<th>何時出現</th>
+<th>限制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增</td>
+<td>一律</td>
+<td>版次管控（見 4.1）</td>
+<td>建立新的風險評估表頭，狀態為發文者暫存</td>
+</tr>
+<tr>
+<td>修改</td>
+<td>發文者暫存</td>
+<td>限建立人；部門、評估原因不可改</td>
+<td>修改評估備註等表頭資料</td>
+</tr>
+<tr>
+<td>刪除</td>
+<td>發文者暫存</td>
+<td>限建立人；<strong>未確認</strong>（版次空白）；流程作業表須先清空</td>
+<td>刪除本筆風險評估</td>
+</tr>
+<tr>
+<td>確認</td>
+<td>發文者暫存</td>
+<td>版次空白</td>
+<td>檢查資料完整性並產生版次（見 4.5）</td>
+</tr>
+<tr>
+<td>取消確認</td>
+<td>發文者暫存</td>
+<td>已確認</td>
+<td>清除版次，回到可編輯狀態</td>
+</tr>
+<tr>
+<td>複製</td>
+<td>發文者暫存</td>
+<td><strong>未確認</strong></td>
+<td>從挑選的歷史版次原樣複製流程、A 表、B 表（見 4.3）</td>
+</tr>
+<tr>
+<td>新版複製</td>
+<td>發文者暫存</td>
+<td><strong>未確認</strong>、限建立人</td>
+<td>從部門最新完成版複製，B 表依高風險完工及機會評估結果更新（見 4.2）</td>
+</tr>
+<tr>
+<td>送簽</td>
+<td>發文者暫存</td>
+<td>限發文者；<strong>須已確認</strong></td>
+<td>送出風險評估簽核</td>
+</tr>
+<tr>
+<td>核准／退回</td>
+<td>簽核中</td>
+<td>目前簽核主管</td>
+<td>核准送下一關或簽核完成；退回給發文者</td>
+</tr>
+<tr>
+<td>強制取回</td>
+<td>簽核中</td>
+<td>限發文者；簽核完成不可取回</td>
+<td>收回簽核中的文件</td>
+</tr>
+<tr>
+<td>轉WD</td>
+<td>—</td>
+<td>限系統管理者</td>
+<td>系統維護用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">四、操作步驟</h2>
+<h3 id="41">4.1 新增風險評估</h3>
+<ol>
+<li>在查詢列輸入部門代號，按【查詢】。</li>
+<li>選擇【評估原因】，輸入【部門】（可按放大鏡挑選）與【評估備註說明】。</li>
+<li>按【新增】。成功後顯示「新增成功!共1筆」，版次、版次日期為空白。</li>
+</ol>
+<p><strong>版次管控</strong></p>
+<ul>
+<li>系統參數 EA0013 <code>REVerCtlDate</code>（版次管控生效日）設定後，自生效日起，同部門<strong>前一版</strong>（最近建立的一版，年度 Y 與偶發 S 一起計算）必須【風險與機會評估】簽核完成，才可新增下一版。</li>
+<li>查詢時若前一版未完成，【新增】鈕旁會顯示紅字「(前一版尚未完成【風險與機會評估】簽核，暫不可新增)」，滑鼠移到紅字上可看到完整原因。</li>
+<li>按【新增】時若被擋，會跳出訊息，例如：<ul>
+<li>「部門 M462 前一版風險評估(…)風險評估尚未簽核完成，需【風險與機會評估】簽核完成才可新增【風險評估】!」</li>
+<li>「…風險評估已簽核完成但尚未進入【風險與機會評估】…」</li>
+<li>「…【風險與機會評估】尚未簽核完成…」</li>
+</ul>
+</li>
+<li>高風險追蹤文件的簽核不在管控範圍內。</li>
+</ul>
+<h3 id="42">4.2 新版複製（建議的改版方式）</h3>
+<p>適用：以部門最新完成版為基礎建立新版本。</p>
+<ol>
+<li>先【新增】一筆空白的風險評估（版次空白）。</li>
+<li>按【新版複製】（按鈕旁標示「(最新A、B表，含高風險、機會資料)」），確認提示後執行。</li>
+<li>系統動作：<ul>
+<li>來源：本部門【風險與機會評估】簽核完成的最新一版（年度 Y、偶發 S 一起比）。</li>
+<li><strong>先刪除本版已輸入的流程作業表、A 表、B 表</strong>，再複製。</li>
+<li>流程作業表、A 表：原樣複製。</li>
+<li>B 表：控制措施及風險值（工程控制、管理控制、個人防護具、暴露頻率、發生機率、嚴重度、風險等級）依下列原始依據取值，並記錄於每一列：</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>原始依據</th>
+<th>條件</th>
+<th>控制措施及風險值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA－評估文號</td>
+<td>一般項目</td>
+<td>維持原風險評估內容</td>
+</tr>
+<tr>
+<td>HR－高風險文號</td>
+<td>風險等級 1、2，已完工評估且簽核完成</td>
+<td>取改善後結果</td>
+</tr>
+<tr>
+<td>HC－高風險文號</td>
+<td>風險等級 1、2，尚未完工評估或未簽核完成</td>
+<td>維持原內容；<strong>本版風險評估簽核完成時自動移轉</strong>（見 4.8）</td>
+</tr>
+<tr>
+<td>RO－評估文號</td>
+<td>風險等級 3 以上，具機會（消除／取代）改善</td>
+<td>取機會評估內容</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>完成訊息範例：「新版複製完成!來源文號…；流程 16 筆、A表 12 筆、B表 1371 筆(RA …、RO …、HR …、HC …)」，並視情況附註：<ul>
+<li>「HC n 筆將於本版風險評估核准後，自動移轉高風險追蹤並執行【預估評估】」</li>
+<li>「風險等級1、2但無高風險追蹤資料 n 筆，請於核准後至【高風險改善追蹤】自行預估評估」</li>
+</ul>
+</li>
+<li>複製後仍可自行修改各頁籤資料。</li>
+<li>錯誤訊息：<ul>
+<li>「已建立版次不可新版複製，複製會將原資料全部刪除!」→ 先【取消確認】。</li>
+<li>「非建立人不可新版複製!」</li>
+<li>「部門 xxx 查無【風險與機會評估】簽核完成之風險評估，無法新版複製!」→ 改用【複製】或手動建立。</li>
+</ul>
+</li>
+</ol>
+<h3 id="43">4.3 複製（挑選版次）</h3>
+<ol>
+<li>先【新增】一筆空白的風險評估。</li>
+<li>按【複製】，在彈出的清單中挑選來源版次（可換頁）。</li>
+<li>系統先刪除本版的流程作業表、A 表、B 表，再從來源<strong>原樣複製</strong>；不含高風險追蹤及機會評估結果，也不記錄原始依據。</li>
+<li>已確認（有版次）時不可複製：「已建立版次不可複製，複製會將原資料全部刪除!」</li>
+</ol>
+<h3 id="44-a-b">4.4 維護流程作業表、A 表、B 表</h3>
+<p><strong>流程作業表</strong></p>
+<ul>
+<li>第一層為「製程」，點【作業明細】進入第二層「作業」；代碼 2 碼、名稱、順序。</li>
+<li>【插入】可在序號中間插入；【回上層】回到製程層。</li>
+<li>每列的【刪除明細】可刪除該製程或作業底下的「作業明細」、「職務及作業清查表」、「風險評估」資料（兩次確認，刪除後無法復原）。</li>
+</ul>
+<p><strong>職務及作業清查表（A 表）</strong></p>
+<ul>
+<li>依製程、作業輸入：狀態（正常／保養／異常處理）、性質（例行／非例行）、職務、作業環境、機械設備工具、物料化學品、危害特性、作業資格。</li>
+<li>【風險】可直接切到該作業的 B 表；【回流程作業表第一層】回到流程作業表。</li>
+</ul>
+<p><strong>風險評估（B 表）</strong></p>
+<ul>
+<li>每列輸入作業流程、步驟、可能發生原因、後果影響、事故類型、暴露頻率、發生機率、嚴重度、工程控制、管理控制、個人防護具。</li>
+<li><strong>風險等級由系統依暴露頻率、發生機率、嚴重度自動計算</strong>；點欄位標題按鈕可查看評分標準。</li>
+<li>風險等級 1、2 會出現【簽】（開啟高風險改善追蹤簽核畫面）及高風險追蹤圖示。</li>
+<li>同一製程＋作業的第一列以紅底顯示，其餘以藍綠底顯示。</li>
+<li><strong>原始依據</strong>：新版複製產生的列，在作業流程名稱下方顯示藍字「原始依據：類型－文號」；HC 尚未移轉時加註紅字「（核准後移轉）」，已移轉時加註「（已移轉）」。</li>
+<li>資料超過 1000 筆時，請用製程＋作業查詢。</li>
+</ul>
+<blockquote>
+<p>確認後（已有版次）流程作業表、A 表、B 表都不能異動，會顯示「已建立版本資料不可做任何資料異動!」；需修改請先【取消確認】。</p>
+</blockquote>
+<h3 id="45">4.5 確認（產生版次）</h3>
+<p>按【確認】時系統依序檢查，任一項不通過即列出所有問題，不產生版次：</p>
+<ol>
+<li>至少有一筆製程資料（「查無任何製程資料，請填寫"流程作業表"摺頁」）。</li>
+<li>每個製程底下至少有一筆作業。</li>
+<li>每個作業至少有一筆職務及作業清查資料。</li>
+<li>每筆清查資料的每個危害特性，在 B 表都有對應事故類型的風險評估。</li>
+</ol>
+<p>通過後：版次＝同部門同評估原因前一版＋1（第一版為 01），版次日期＝今天，舊版改為非現行版，顯示「版本確認成功!最新版次:xx」。</p>
+<p><strong>注意</strong></p>
+<ul>
+<li><strong>送簽前必須先按【確認】</strong>，未確認直接送簽會顯示「-&gt;送簽失敗，請先執行【確認】產生版次」。</li>
+<li>已確認的版次不可刪除、複製、新版複製，也不可修改流程、A 表、B 表；需要時先【取消確認】。</li>
+</ul>
+<h3 id="46">4.6 送簽</h3>
+<ol>
+<li>至【簽核主管】頁籤設定各關簽核主管。</li>
+<li>回【風險評估版次資料】，可在【加註意見】輸入說明。</li>
+<li>按【送簽】，成功顯示「-&gt;已送簽成功,…」，文件進入簽核中。</li>
+<li>部門對應關係未設定時會顯示「查無該部門(xxx)對應關係，請將問題反映給工安課。」，請洽工安課。</li>
+</ol>
+<h3 id="47">4.7 主管核准、退回、強制取回</h3>
+<ul>
+<li>主管在待辦點入後，可輸入【加註意見】，按【核准】或【退回】。</li>
+<li>本單若有新版複製的 HC 項目，【核准】鈕旁會顯示紅字「(簽核完成後將自動移轉高風險追蹤 n 筆並執行【預估評估】)」，按【核准】時會再跳出確認視窗。</li>
+<li>發文者可在簽核中按【強制取回】收回文件；簽核完成的文件不能取回。</li>
+</ul>
+<h3 id="48-hc">4.8 風險評估簽核完成：HC 項目自動移轉</h3>
+<p>最後一關核准、風險評估簽核完成時，系統在同一交易內對 B 表 HC 列逐筆處理：</p>
+<ol>
+<li>重新讀取原高風險文號的最新狀態；下列情況跳過不移轉：本版已改成風險等級 3 以上、原高風險文號不存在、原文件最新改善版已完工評估且簽核完成、本版該項目已有高風險資料。</li>
+<li>複製原高風險文件的異動歷程，改以核准日為版次日期，執行【預估評估】，產生<strong>新的高風險文號</strong>（發文者暫存，發文者為本版評估人）。</li>
+<li>歷程備註記載「由高風險文號 ○○ 移轉」；預估完工日已過期時沿用原日期並註記逾期，請評估人到 EAJJRE20N 修改。</li>
+<li><strong>原高風險文號鎖定</strong>，在 EAJJRE20N 會提示「此高風險項目已於新版風險評估(○○)核准時移轉，請至新版處理，本項目不可再異動!」。</li>
+<li>移轉成功時，系統發 DW 待辦訊息通知評估人（連結可開啟本單）；通知失敗不影響核准。</li>
+<li>單筆移轉失敗只跳過並列入核准訊息，不會擋住核准。</li>
+</ol>
+<p>評估人收到通知後，請至【高風險改善追蹤】(EAJJRE20N) 確認新文件內容並送簽。</p>
+<h3 id="49-eajjre10n">4.9 風險與機會評估（EAJJRE10N）</h3>
+<p>風險評估簽核完成後，至【風險與機會評估】作業對 B 表各項目評估機會並送簽。</p>
+<ul>
+<li><strong>原風險等級 1、2（高風險）的項目不可在風險與機會評估中輸入</strong>，勾選框停用並以紅字說明，須改至【高風險改善追蹤】處理。</li>
+<li>【風險與機會評估】簽核完成後，本版次完成。</li>
+</ul>
+<hr />
+<h2 id="_5">五、匯入與匯出</h2>
+<p>表頭有資料（已新增）後才出現匯入、匯出功能。</p>
+<h3 id="51">5.1 匯出</h3>
+<table>
+<thead>
+<tr>
+<th>選項</th>
+<th>內容</th>
+<th>可否再匯入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>流程圖</td>
+<td>每列一個製程：第 1 欄「製程代碼_名稱」，其後各欄「製程代碼-作業代碼_名稱」</td>
+<td>可，用「流程圖」匯入</td>
+</tr>
+<tr>
+<td>A表</td>
+<td>本單職務及作業清查表</td>
+<td>可</td>
+</tr>
+<tr>
+<td>B表</td>
+<td>本單風險評估</td>
+<td>可</td>
+</tr>
+<tr>
+<td>高風險</td>
+<td>本單風險等級 1、2 項目</td>
+<td>否</td>
+</tr>
+<tr>
+<td>最新A表</td>
+<td>本部門【風險與機會評估】簽核完成最新版的 A 表，格式同 A 表</td>
+<td>可，用「A表」匯入</td>
+</tr>
+<tr>
+<td>最新B表</td>
+<td>同上最新版的 B 表，末欄「關聯文件編號」標示控制措施及風險值來源（RA／HR／HC／RO，定義同 4.2）</td>
+<td>否（參考用）</td>
+</tr>
+</tbody>
+</table>
+<p>按【匯出】後出現「下載連結」並自動開啟下載。匯出檔為 MS950（Big5）編碼的 CSV，內容含逗號、換行時會自動加雙引號，「銹」等擴充字會轉為標準字，Excel 可直接開啟。</p>
+<h3 id="52">5.2 匯入</h3>
+<ol>
+<li>按【選擇資料檔案】上傳 CSV。</li>
+<li>選擇匯入類型（A表、B表、流程圖），按【匯入】。</li>
+</ol>
+<p>規則：</p>
+<ul>
+<li>只接受 CSV 檔；可用 MS950（Big5）或 UTF-8（含 BOM）編碼。內容含逗號或換行時須以雙引號包覆，建議直接用 Excel 另存 CSV。</li>
+<li>檔案中的標點符號請用全形。</li>
+<li><strong>匯入順序：流程圖 → A表 → B表</strong>。</li>
+<li><strong>流程圖</strong>只能匯入尚無流程作業資料的表單；檢查格式、製程代碼一致、代碼不超過 3 碼、名稱不超過 50 個中文字、代碼不重複；順序依檔案先後編號。</li>
+<li><strong>A表、B表匯入時會檢查流程作業表</strong>，任一列的流程不存在就整批不匯入。</li>
+<li>編號的部門須與本單相同。</li>
+<li>任一列有錯，整批回復，不會只匯入一部分。</li>
+</ul>
+<p>常見錯誤訊息：</p>
+<table>
+<thead>
+<tr>
+<th>訊息</th>
+<th>原因／處理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>請先取得上傳檔案，再執行 匯入 功能..</td>
+<td>尚未選擇檔案</td>
+</tr>
+<tr>
+<td>第 N 列(…)有誤!處理第 N 項資料：流程 xx-xx 不存在，請先建立流程作業表(或以「流程圖」匯入)!</td>
+<td>先建立流程作業表或匯入流程圖</td>
+</tr>
+<tr>
+<td>…上傳資料部門與表單內容不符!(檔案部門/本單部門)</td>
+<td>檔案是其他部門的資料</td>
+</tr>
+<tr>
+<td>第 N 列…有誤!處理第 N 項資料(本筆 n 欄，超過 m 欄；內容含逗號時請以雙引號包覆或用Excel存檔)…</td>
+<td>內容含逗號但未加雙引號</td>
+</tr>
+<tr>
+<td>本表單已有流程作業資料，流程圖只能匯入尚無流程作業資料的表單!</td>
+<td>流程圖只能匯入空白單</td>
+</tr>
+<tr>
+<td>流程圖第 N 列有誤!第 n 欄「…」格式應為…</td>
+<td>流程圖格式不符</td>
+</tr>
+<tr>
+<td>鍵值已存在</td>
+<td>本單已有相同資料（例如重複匯入）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">六、高風險未完成通知（排程）</h2>
+<p>系統排程定期寄送「高風險追蹤改善未完成案件清單」給相關部門的股長、課長、廠處長及工安負責人（附 CSV 檔），清單規則：</p>
+<ul>
+<li>每個部門只列最新一版風險評估的高風險項目，同一項目只列最新改善版。</li>
+<li>已完工評估且高風險文件簽核完成的項目不列入。</li>
+<li>狀態欄顯示：待預估評估、已預估評估待完工、完工延期中、已完工評估簽核中、退回待重新評估、風險評估核准後移轉、尚無資料等；並新增「高風險文號」欄。</li>
+</ul>
+<hr />
+<h2 id="_7">七、常見問題</h2>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按【新增】被擋</td>
+<td>前一版【風險與機會評估】尚未簽核完成（4.1），請先完成前一版</td>
+</tr>
+<tr>
+<td>送簽失敗「請先執行【確認】產生版次」</td>
+<td>先按【確認】</td>
+</tr>
+<tr>
+<td>流程、A 表、B 表不能改</td>
+<td>已確認，先【取消確認】</td>
+</tr>
+<tr>
+<td>刪除失敗「已建立版次不可刪除!」</td>
+<td>先【取消確認】</td>
+</tr>
+<tr>
+<td>刪除失敗「尚有 n 筆製程資料，不可刪除!」</td>
+<td>先刪除流程作業表資料</td>
+</tr>
+<tr>
+<td>新版複製找不到來源</td>
+<td>部門沒有【風險與機會評估】簽核完成的版本，改用【複製】</td>
+</tr>
+<tr>
+<td>高風險追蹤頁籤不能修改</td>
+<td>本作業僅供查詢，請至【高風險改善追蹤】(EAJJRE20N)</td>
+</tr>
+</tbody>
+</table></main></div><a class="top" href="#top" title="回到頂端">↑</a></body></html>

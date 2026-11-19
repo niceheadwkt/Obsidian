@@ -11,3 +11,7 @@ node_modules/
 desktop.ini
 
 __pycache__/
+
+# 大型壓縮檔與 Windows 縮圖快取
+*.zip
+Thumbs.db

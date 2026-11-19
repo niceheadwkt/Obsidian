@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>車籍管理教育訓練</title>
+<meta name="description" content="ZPJJ0032 車籍維護作業、ZPJJ0036 車籍申請作業與 QC（EC 車行端）車籍申請的新進人員教育訓練教材">
+<style>
+:root{
+  --bg:#f7f7f5; --surface:#ffffff; --surface-2:#f0f0ec; --text:#1f2328; --muted:#5b6370;
+  --border:#d9d9d3; --accent:#1f5fa8; --accent-soft:#e6eef8; --ok:#1d7a46; --ok-soft:#e3f3ea;
+  --warn:#9a6200; --warn-soft:#fbf0dc; --bad:#b42318; --bad-soft:#fbe7e5; --code:#f2f2ee;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181c; --surface:#1e2126; --surface-2:#262a30; --text:#e6e8eb; --muted:#9aa3ae;
+    --border:#353a42; --accent:#79a9e6; --accent-soft:#1f2c3d; --ok:#5fc48c; --ok-soft:#1b2e24;
+    --warn:#e0a84a; --warn-soft:#33281a; --bad:#f08a7e; --bad-soft:#3a201e; --code:#262a30;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181c; --surface:#1e2126; --surface-2:#262a30; --text:#e6e8eb; --muted:#9aa3ae;
+  --border:#353a42; --accent:#79a9e6; --accent-soft:#1f2c3d; --ok:#5fc48c; --ok-soft:#1b2e24;
+  --warn:#e0a84a; --warn-soft:#33281a; --bad:#f08a7e; --bad-soft:#3a201e; --code:#262a30;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;
+  font-size:16px;line-height:1.75}
+a{color:var(--accent)}
+code,kbd{font-family:Consolas,"Cascadia Mono",monospace;font-size:.88em;background:var(--code);
+  padding:.1em .35em;border-radius:4px;border:1px solid var(--border)}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1280px;margin:0 auto}
+nav.toc{position:sticky;top:0;height:100vh;overflow:auto;padding:24px 16px 24px 20px;
+  border-right:1px solid var(--border);font-size:14px}
+nav.toc h2{font-size:13px;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+nav.toc ol{list-style:none;padding:0;margin:0}
+nav.toc li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--text)}
+nav.toc li a:hover{background:var(--surface-2)}
+nav.toc li.sub a{padding-left:22px;color:var(--muted);font-size:13px}
+main{padding:32px 40px 80px;min-width:0}
+header.hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin-bottom:28px}
+header.hero h1{margin:0 0 6px;font-size:28px;line-height:1.35}
+header.hero p{margin:4px 0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-size:13px;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--border)}
+section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 32px;margin-bottom:24px}
+section h2{margin:0 0 14px;font-size:22px;padding-bottom:8px;border-bottom:2px solid var(--accent-soft)}
+section h3{font-size:18px;margin:26px 0 10px}
+section h4{font-size:16px;margin:18px 0 6px}
+.num{display:inline-block;min-width:2em;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:14.5px}
+th,td{border:1px solid var(--border);padding:7px 10px;vertical-align:top;text-align:left}
+th{background:var(--surface-2);font-weight:600;white-space:nowrap}
+.tbl{overflow-x:auto}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+.callout.bad{border-color:var(--bad);background:var(--bad-soft)}
+.callout.ok{border-color:var(--ok);background:var(--ok-soft)}
+.callout strong:first-child{display:block;margin-bottom:2px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+.card{border:1px solid var(--border);border-radius:10px;padding:14px 16px;background:var(--surface-2)}
+.card h4{margin:0 0 6px}
+.card p{margin:4px 0;font-size:14.5px}
+.tag{display:inline-block;font-size:12px;padding:0 8px;border-radius:999px;border:1px solid var(--border);margin-right:4px;white-space:nowrap}
+.tag.y{background:var(--ok-soft);color:var(--ok)}
+.tag.n{background:var(--warn-soft);color:var(--warn)}
+.tag.x{background:var(--bad-soft);color:var(--bad)}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:8px 0 8px 42px;border-bottom:1px dashed var(--border)}
+ol.steps>li:last-child{border-bottom:0}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:8px;width:28px;height:28px;border-radius:50%;
+  background:var(--accent);color:var(--surface);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.diagram{overflow-x:auto;margin:12px 0;padding:8px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2)}
+.diagram svg{display:block;min-width:760px;width:100%;height:auto}
+svg .box{fill:var(--surface);stroke:var(--border);stroke-width:1.5}
+svg .box.a{stroke:var(--accent);stroke-width:2}
+svg .box.ok{fill:var(--ok-soft);stroke:var(--ok)}
+svg .box.bad{fill:var(--bad-soft);stroke:var(--bad)}
+svg .box.warn{fill:var(--warn-soft);stroke:var(--warn)}
+svg .t{fill:var(--text);font-size:14px;font-family:inherit}
+svg .ts{fill:var(--muted);font-size:12px;font-family:inherit}
+svg .tb{fill:var(--text);font-size:15px;font-weight:700;font-family:inherit}
+svg .ln{stroke:var(--muted);stroke-width:1.6;fill:none}
+svg .ln.a{stroke:var(--accent)}
+svg .ln.ok{stroke:var(--ok)}
+svg .ln.bad{stroke:var(--bad)}
+svg .lbl{fill:var(--accent);font-size:12.5px;font-family:inherit}
+svg .zone{fill:none;stroke:var(--border);stroke-dasharray:6 5}
+details{border:1px solid var(--border);border-radius:8px;padding:8px 14px;margin:8px 0;background:var(--surface-2)}
+details summary{cursor:pointer;font-weight:600}
+details[open] summary{margin-bottom:6px}
+.muted{color:var(--muted)}
+.small{font-size:13.5px}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:10px}
+.toolbar{position:fixed;right:16px;bottom:16px;display:flex;gap:8px}
+.toolbar button{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-size:13px}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;height:auto;border-right:0;border-bottom:1px solid var(--border)}
+  main{padding:16px}
+  section,header.hero{padding:18px 16px}
+  .grid3,.grid2{grid-template-columns:1fr}
+}
+@media print{
+  nav.toc,.toolbar{display:none}
+  .layout{display:block}
+  section{break-inside:avoid-page;border:0;padding:0 0 12px}
+  details{display:block}
+  details>*{display:block}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" aria-label="目錄">
+  <h2>目錄</h2>
+  <ol>
+    <li><a href="#s1">1. 課程目標與學習地圖</a></li>
+    <li><a href="#s2">2. 系統全貌：三個角色、兩條路</a></li>
+    <li><a href="#s3">3. 代碼與權限設定</a></li>
+    <li><a href="#s4">4. 資料表結構</a></li>
+    <li><a href="#s5">5. 證照有效期檢核規則</a></li>
+    <li><a href="#s6">6. ZPJJ0032 車籍維護作業</a></li>
+    <li class="sub"><a href="#s6-2">新增</a></li>
+    <li class="sub"><a href="#s6-3">更新</a></li>
+    <li class="sub"><a href="#s6-4">刪除</a></li>
+    <li><a href="#s7">7. QC 系統：EC 車行端申請</a></li>
+    <li><a href="#s8">8. ZPJJ0036 車籍申請作業（承辦審查）</a></li>
+    <li><a href="#s9">9. 申請單生命週期</a></li>
+    <li><a href="#s10">10. 自動化批次與通知</a></li>
+    <li><a href="#s11">11. 下游影響：交運單</a></li>
+    <li><a href="#s12">12. 常見情境 SOP</a></li>
+    <li><a href="#s13">13. 錯誤訊息排解</a></li>
+    <li><a href="#s14">14. 易踩的坑</a></li>
+    <li><a href="#s15">15. 自我測驗</a></li>
+    <li><a href="#s16">附錄：程式與檔案清單</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <h1>車籍管理系統 新進人員教育訓練</h1>
+  <p>涵蓋：<strong>(ZPJJ0032) 車籍維護作業</strong>、<strong>(ZPJJ0036) 車籍申請作業</strong>、<strong>QC 系統（EC 車行端 QCJJ0036 車籍申請）</strong></p>
+  <p class="small">內容依 ZP、QC 模組現行程式碼整理（zpjc0032 v1.7、zpjc0036 v1.15、zpjc0030Bp v1.16、qcjc0036 v1.5），日後程式異動時請同步更新本文件。</p>
+  <div class="chips">
+    <span class="chip">適用：C52 車籍承辦、ERP 維運人員</span>
+    <span class="chip">主檔 DB.TBZP0030</span>
+    <span class="chip">異動／申請檔 DB.TBZP0036</span>
+    <span class="chip">建議研讀時間：90 分鐘</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="s1">
+  <h2><span class="num">1.</span>課程目標與學習地圖</h2>
+  <p>每一輛進出廠區載運鋼品、副產品或鋼管的車，都必須先在 ERP 有一筆「車籍資料」。車籍記錄車牌、所屬車行、駕駛人、駕照、行照、吊掛證等資訊，並有一個<strong>狀態碼</strong>（可運、禁運、除籍）。交運單開立時會檢查這個狀態碼，禁運或除籍的車開不了交運單。</p>
+  <p>上完本課程，你應該能夠：</p>
+  <ol>
+    <li>說明車行、C52 承辦人、系統批次三方在車籍管理中各自負責什麼。</li>
+    <li>在 ZPJJ0032 正確新增、更新、刪除車籍，並看懂畫面上的紅字警示。</li>
+    <li>在 ZPJJ0036 審查車行送來的申請單，正確執行「確認」或「退回」。</li>
+    <li>理解 QC（EC 車行端）申請單從新增到送簽、撤回的完整流程，能協助車行排除問題。</li>
+    <li>說出證照有效期的檢核規則（六十八歲、三十天、六十天）與狀態碼的變化邏輯。</li>
+    <li>遇到錯誤訊息時，知道原因與處理方式。</li>
+  </ol>
+  <div class="grid3">
+    <div class="card"><h4>第一階段：觀念</h4><p>第 2～5 章：角色分工、代碼、資料表、檢核規則。</p></div>
+    <div class="card"><h4>第二階段：操作</h4><p>第 6～9 章：三支作業逐一說明，最後串起申請單生命週期。</p></div>
+    <div class="card"><h4>第三階段：實務</h4><p>第 10～15 章：批次、下游影響、SOP、錯誤排解與測驗。</p></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <h2><span class="num">2.</span>系統全貌：三個角色、兩條路</h2>
+  <p>車籍資料可以從<strong>兩條路</strong>寫進主檔 <code>TBZP0030</code>：</p>
+  <div class="grid2">
+    <div class="card">
+      <h4>路線 A：C52 承辦直接維護</h4>
+      <p>承辦人在 ERP 的 <strong>ZPJJ0032 車籍維護作業</strong>直接新增、更新、刪除主檔。每次動作都會在 <code>TBZP0036</code> 留一筆異動紀錄（操作動作 A／R／D）。</p>
+    </div>
+    <div class="card">
+      <h4>路線 B：車行線上申請、承辦審核</h4>
+      <p>車行在 EC 電子商務網站登入 <strong>QC 車籍申請（QCJJ0036）</strong>，填申請單並送簽；承辦人收到工作訊息，在 <strong>ZPJJ0036</strong> 確認後，資料才寫入主檔。</p>
+    </div>
+  </div>
+
+  <div class="diagram" role="img" aria-label="車籍管理系統架構圖">
+  <svg viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor" style="color:var(--muted)"/></marker>
+    </defs>
+    <rect class="zone" x="10" y="10" width="270" height="250" rx="12"/>
+    <text class="ts" x="24" y="32">EC 電子商務（車行使用）</text>
+    <rect class="zone" x="300" y="10" width="670" height="410" rx="12"/>
+    <text class="ts" x="314" y="32">ERP（中鴻內部）</text>
+
+    <rect class="box a" x="30" y="50" width="230" height="64" rx="10"/>
+    <text class="tb" x="145" y="76" text-anchor="middle">車行</text>
+    <text class="ts" x="145" y="98" text-anchor="middle">以 EC 帳號登入，帳號綁車行統編</text>
+
+    <rect class="box" x="30" y="160" width="230" height="78" rx="10"/>
+    <text class="tb" x="145" y="186" text-anchor="middle">QC 車籍申請</text>
+    <text class="ts" x="145" y="206" text-anchor="middle">qcjj0036Main / qcjj0036.jsp</text>
+    <text class="ts" x="145" y="224" text-anchor="middle">controller：qcjc0036</text>
+
+    <rect class="box a" x="330" y="50" width="250" height="64" rx="10"/>
+    <text class="tb" x="455" y="76" text-anchor="middle">C52 車籍承辦人</text>
+    <text class="ts" x="455" y="98" text-anchor="middle">須列在簡易共用表格 ZP0030</text>
+
+    <rect class="box" x="330" y="160" width="250" height="78" rx="10"/>
+    <text class="tb" x="455" y="186" text-anchor="middle">ZPJJ0036 車籍申請作業</text>
+    <text class="ts" x="455" y="206" text-anchor="middle">審查：確認／退回</text>
+    <text class="ts" x="455" y="224" text-anchor="middle">controller：zpjc0036</text>
+
+    <rect class="box" x="640" y="50" width="310" height="64" rx="10"/>
+    <text class="tb" x="795" y="76" text-anchor="middle">ZPJJ0032 車籍維護作業</text>
+    <text class="ts" x="795" y="98" text-anchor="middle">新增／更新／刪除，controller：zpjc0032</text>
+
+    <rect class="box ok" x="330" y="300" width="250" height="100" rx="10"/>
+    <text class="tb" x="455" y="328" text-anchor="middle">DB.TBZP0036</text>
+    <text class="t" x="455" y="350" text-anchor="middle">車籍申請／異動檔</text>
+    <text class="ts" x="455" y="372" text-anchor="middle">主鍵：申請單號 applyId</text>
+    <text class="ts" x="455" y="388" text-anchor="middle">（yyyyMMddHHmmssSSS）</text>
+
+    <rect class="box ok" x="640" y="300" width="310" height="100" rx="10"/>
+    <text class="tb" x="795" y="328" text-anchor="middle">DB.TBZP0030</text>
+    <text class="t" x="795" y="350" text-anchor="middle">車籍主檔</text>
+    <text class="ts" x="795" y="372" text-anchor="middle">主鍵：公司別 + 車牌號碼</text>
+    <text class="ts" x="795" y="388" text-anchor="middle">狀態碼 Y 可運／N 禁運／X 除籍</text>
+
+    <rect class="box warn" x="30" y="300" width="250" height="100" rx="10"/>
+    <text class="tb" x="155" y="328" text-anchor="middle">排程批次</text>
+    <text class="ts" x="155" y="350" text-anchor="middle">zpjc0030Batch：證照過期轉禁運</text>
+    <text class="ts" x="155" y="370" text-anchor="middle">zpjcCarExpiredEmail：</text>
+    <text class="ts" x="155" y="386" text-anchor="middle">每月寄到期清單給車行</text>
+
+    <path class="ln" d="M145 114 V160" marker-end="url(#ar)"/>
+    <path class="ln a" d="M260 199 H330" marker-end="url(#ar)"/>
+    <text class="lbl" x="268" y="190">送簽→工作訊息</text>
+    <path class="ln" d="M455 114 V160" marker-end="url(#ar)"/>
+    <path class="ln" d="M580 82 H640" marker-end="url(#ar)"/>
+    <path class="ln" d="M455 238 V300" marker-end="url(#ar)"/>
+    <text class="lbl" x="462" y="275">申請單狀態</text>
+    <path class="ln ok" d="M580 210 C640 210 700 240 760 300" marker-end="url(#ar)"/>
+    <text class="lbl" x="625" y="236">確認後寫入主檔</text>
+    <path class="ln" d="M795 114 V300" marker-end="url(#ar)"/>
+    <path class="ln" d="M760 114 C700 200 620 280 580 330" marker-end="url(#ar)"/>
+    <text class="lbl" x="680" y="200">留異動紀錄 A/R/D</text>
+    <path class="ln" d="M280 350 H330" marker-end="url(#ar)"/>
+    <path class="ln" d="M280 380 C450 420 600 420 640 380" marker-end="url(#ar)"/>
+  </svg>
+  </div>
+
+  <h3>三個角色的責任</h3>
+  <div class="tbl"><table>
+    <tr><th>角色</th><th>使用作業</th><th>可以做的事</th><th>不能做的事</th></tr>
+    <tr><td>車行（EC 帳號）</td><td>QC 車籍申請 QCJJ0036</td><td>對自家車輛提出「正常新增」（含資料增修）或「除籍新增」申請；更新、刪除、送簽、撤回自己的申請單；上傳駕照、行照、吊掛證附件。</td><td>直接改主檔；查看或修改其他車行的車籍與申請單；修改「所屬車行統編」。</td></tr>
+    <tr><td>C52 車籍承辦人</td><td>ZPJJ0032、ZPJJ0036</td><td>直接維護主檔；審查車行申請單（確認／退回）；將可運車輛手動改為禁運；設定「載廢品無須吊掛證」。</td><td>在車行申請單未處理完前，直接維護同一車牌的主檔。</td></tr>
+    <tr><td>系統排程</td><td>zpjc0030Batch、zpjcCarExpiredEmail</td><td>把證照過期的可運車輛自動改成禁運；每月寄送到期與已過期清單給指定車行。</td><td>自動把禁運恢復成可運（恢復須人工更新或經申請確認）。</td></tr>
+  </table></div>
+
+  <div class="callout">
+    <strong>QC 系統是什麼？</strong>
+    QC 是 EC 電子商務端的「入口與包裝層」。車行在 EC 操作 <code>qcjj0036.jsp</code>，控制器 <code>com.icsc.qc.qcjc0036</code> 不自己處理商業邏輯，而是透過 <code>zpjcWebServiceUtil.callJavaBeanService</code> 遠端呼叫 ERP 的 <code>com.icsc.zp.zpjc0036</code>（<code>createEC</code>、<code>eraseEC</code>、<code>updateEC</code>、<code>deleteEC</code>、<code>doProcess</code> 等）。所以<strong>車行端與承辦端最終跑的是同一套檢核邏輯</strong>，查問題時看 ZP 的程式就對了。
+  </div>
+  <div class="callout">
+    <strong>系統如何分辨「是車行還是承辦人」在操作？</strong>
+    從 EC 呼叫進來時，<code>dsCom.appId</code> 會以 <code>wsEC_</code> 開頭，<code>zpjcFileUpload.isECForERP()</code> 判斷為真；此時 <code>dsCom.user.englishName</code> 存放的就是車行統編（<code>getECCustNoForERP()</code>）。程式會用這個統編限制車行只能看、只能改自己的資料。
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <h2><span class="num">3.</span>代碼與權限設定</h2>
+  <p>車籍系統的代碼都放在簡易共用表格（<code>DB.TBDE23</code>，在 (DEJJ322) 簡易共用表格維護作業維護）。</p>
+
+  <h3>3.1 車籍狀態 ZP0030STATUS</h3>
+  <div class="tbl"><table>
+    <tr><th>代碼</th><th>意義</th><th>對交運單的影響</th><th>怎麼變成這個狀態</th></tr>
+    <tr><td><span class="tag y">Y</span></td><td>可運</td><td>可以開交運單（仍可能出現「再 N 天自動轉禁運」提示）</td><td>新增或更新時，所有證照檢核都通過；或車行「正常新增」申請經承辦確認。</td></tr>
+    <tr><td><span class="tag n">N</span></td><td>禁運</td><td>開不了交運單，出現「為禁運或除籍狀態」錯誤</td><td>任一證照檢核不通過（系統強制）；承辦人手動改為禁運；排程批次自動轉禁運。</td></tr>
+    <tr><td><span class="tag x">X</span></td><td>除籍</td><td>開不了交運單</td><td>承辦人在 ZPJJ0032 更新為除籍；或車行「除籍新增」申請經承辦確認。</td></tr>
+  </table></div>
+
+  <h3>3.2 操作動作 ZP0036FUNCODE（記在 TBZP0036.funCode）</h3>
+  <div class="tbl"><table>
+    <tr><th>代碼</th><th>意義</th><th>產生來源</th><th>是否需要審查</th></tr>
+    <tr><td><code>I</code></td><td>EC 增修（正常新增）</td><td>車行在 QC 按「正常新增」</td><td>需要：送簽 → 承辦確認／退回</td></tr>
+    <tr><td><code>X</code></td><td>EC 除籍（除籍新增）</td><td>車行在 QC 按「除籍新增」</td><td>需要：送簽 → 承辦確認／退回</td></tr>
+    <tr><td><code>A</code></td><td>C5 新增</td><td>承辦在 ZPJJ0032 按「新增」</td><td>不需要，只是異動紀錄</td></tr>
+    <tr><td><code>R</code></td><td>C5 更新</td><td>承辦在 ZPJJ0032 按「更新」</td><td>不需要，只是異動紀錄</td></tr>
+    <tr><td><code>D</code></td><td>C5 刪除</td><td>承辦在 ZPJJ0032 按「刪除」（紀錄刪除前的資料）</td><td>不需要，只是異動紀錄</td></tr>
+    <tr><td><code>B</code></td><td>批次更新</td><td>排程 zpjc0030Batch 自動轉禁運</td><td>不需要，修改人員記為 <code>ICSC01</code></td></tr>
+  </table></div>
+  <p class="small muted">提醒：TBZP0036 同時扮演「車行申請單」與「主檔異動歷史」兩種角色。只有 funCode 為 <code>I</code>、<code>X</code> 的資料才是需要審查的申請單。</p>
+
+  <h3>3.3 執行狀態 ZP0036EXESTAT（記在 TBZP0036.exeStat）</h3>
+  <div class="tbl"><table>
+    <tr><th>代碼</th><th>意義</th><th>誰造成</th><th>車行可否再編輯</th></tr>
+    <tr><td><code>I</code></td><td>車行增修中</td><td>車行新增或更新申請單</td><td>可以更新、刪除、送簽</td></tr>
+    <tr><td><code>S</code></td><td>送簽（待審）</td><td>車行按「送簽」</td><td>不可更新或刪除，只能「撤回」</td></tr>
+    <tr><td><code>RV</code></td><td>撤回</td><td>車行按「撤回」</td><td>可以更新（更新後回到 I）、刪除、重新送簽</td></tr>
+    <tr><td><code>Y</code></td><td>C5 確認</td><td>承辦在 ZPJJ0036 按「確認」</td><td>結案，不可再動</td></tr>
+    <tr><td><code>R</code></td><td>C5 退回</td><td>承辦在 ZPJJ0036 按「退回」</td><td>可以更新（更新後回到 I 並清除承辦資訊）或刪除</td></tr>
+  </table></div>
+
+  <h3>3.4 維護權限：簡易共用表格 ZP0030</h3>
+  <p>2023/02 起，車籍維護權限<strong>不再用角色授權</strong>，改由簡易共用表格代碼 <code>ZP0030</code> 的人員名單控制（程式以 <code>dejc323.getDejc323(dsCom, "ZP0030", 工號)</code> 檢查）。</p>
+  <div class="tbl"><table>
+    <tr><th>欄位</th><th>用途</th></tr>
+    <tr><td>field1</td><td>承辦人工號。不在名單內的人，按新增、更新、刪除、確認、退回時都會被擋。</td></tr>
+    <tr><td>field3</td><td>此人負責的車行（所屬車行簡稱）。車行送簽時，系統只發工作訊息給 field3 <strong>包含</strong>該車行簡稱的人。</td></tr>
+  </table></div>
+  <div class="callout warn">
+    <strong>新進人員報到時要做的事</strong>
+    請 C52 課長到 (DEJJ322) 簡易共用表格維護作業 → 代碼 <code>ZP0030</code>，建立你的工號，並在 field3 填入你負責的車行簡稱。沒有這筆設定，你會看到「你不是車籍資料可維護人員…」的錯誤，也收不到車行送簽的工作訊息。<br>
+    此外，若名單中有已離職或留職停薪的工號，車行送簽時會因 <code>eajcSQ.getLeavedata</code> 檢查失敗而整筆送簽失敗，人員異動時務必同步清理名單。
+  </div>
+
+  <h3>3.5 每月到期通知設定：ZAF 系統組態 1902</h3>
+  <p>表格 <code>DB.TBZAFRD</code>，<code>leafId='1902'</code>：</p>
+  <div class="tbl"><table>
+    <tr><th>欄位</th><th>內容</th></tr>
+    <tr><td>itemA</td><td>所屬車行簡稱（要寄給哪一家車行）</td></tr>
+    <tr><td>itemB</td><td><code>FROM</code>／<code>TO</code>／<code>CC</code>／<code>BCC</code></td></tr>
+    <tr><td>dataA</td><td>Email 地址，同類多筆會以分號串接</td></tr>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <h2><span class="num">4.</span>資料表結構</h2>
+  <h3>4.1 DB.TBZP0030 車籍主檔</h3>
+  <p>主鍵：<code>compId</code>（公司別）＋ <code>carIdentiNo</code>（車牌號碼）。</p>
+  <div class="tbl"><table>
+    <tr><th>欄位</th><th>中文</th><th>說明</th></tr>
+    <tr><td>carIdentiNo</td><td>車牌號碼</td><td>新增時自動轉大寫，不可空白</td></tr>
+    <tr><td>transportID</td><td>所屬車行統編</td><td>須存在於 GP 廠商主檔，可用放大鏡挑選</td></tr>
+    <tr><td>transportComp</td><td>所屬車行</td><td>= GP 廠商<strong>簡稱</strong>，系統以此對應承辦人與 Email 名單</td></tr>
+    <tr><td>transportName／transportAddrName</td><td>車行名稱／車行簡稱</td><td>交運單上顯示的承運車行取自 transportAddrName</td></tr>
+    <tr><td>driverName、birthDate</td><td>駕駛人、駕駛人生日</td><td>生日用來檢核年齡上限</td></tr>
+    <tr><td>idNo</td><td>身分證號碼</td><td>系統檢查碼驗證</td></tr>
+    <tr><td>motiveNo、telephoneNo</td><td>行動電話、聯絡電話</td><td></td></tr>
+    <tr><td>limitWeight</td><td>限載重（噸）</td><td>小數 8,3</td></tr>
+    <tr><td>cartNo</td><td>板台號碼</td><td></td></tr>
+    <tr><td>driverLice</td><td>駕照有效日期</td><td>西元 yyyyMMdd</td></tr>
+    <tr><td>driverNo</td><td>行照指定檢驗日期</td><td>西元 yyyyMMdd</td></tr>
+    <tr><td>craneLiscno、craneValidDate</td><td>吊掛證書號碼、有效日期</td><td></td></tr>
+    <tr><td>noNdLice4TranWs</td><td>載廢品無須吊掛證</td><td><code>Y</code> 表示不檢查吊掛證（RQ11311012）</td></tr>
+    <tr><td>leaveFactoryDate</td><td>出廠年月</td><td></td></tr>
+    <tr><td>drvLiceAttach、drvNoAttach、craneLiceAttach</td><td>駕照、行照、吊掛證附件</td><td>存 agentNo，實體檔案記錄在 <code>DB.TBZP0100</code></td></tr>
+    <tr><td>statusCode</td><td>狀態碼</td><td>Y／N／X，見 3.1</td></tr>
+    <tr><td>vendSendTS、undertaker、confirmTS</td><td>車行送簽時間、承辦人、確認時間</td><td>最後一次經申請確認寫入時帶入</td></tr>
+    <tr><td>userLastMaint、dateLastMaint、timeLastMaint</td><td>建立人員、日期、時間</td><td></td></tr>
+    <tr><td>modifyEmpNo、modifyDate、modifyTime、progLastMaint</td><td>最後修改人員、日期、時間、程式</td><td>批次修改時人員為 <code>ICSC01</code></td></tr>
+  </table></div>
+
+  <h3>4.2 DB.TBZP0036 車籍申請／異動檔</h3>
+  <p>主鍵：<code>applyId</code>（申請單號，以時間序產生，精確到千分之一秒，格式 <code>yyyyMMddHHmmssSSS</code>）。欄位幾乎與主檔相同，另多出：</p>
+  <div class="tbl"><table>
+    <tr><th>欄位</th><th>中文</th><th>說明</th></tr>
+    <tr><td>funCode</td><td>操作動作</td><td>見 3.2</td></tr>
+    <tr><td>exeStat</td><td>執行狀態</td><td>見 3.3</td></tr>
+    <tr><td>addModTS、addModUserNo</td><td>新增修改時間、新增修改者</td><td>車行操作時為 EC 帳號</td></tr>
+    <tr><td>vendSendTS</td><td>車行送簽時間</td><td>同時作為工作訊息的共用時間戳，確認或退回時用它把所有人的工作訊息一起結案</td></tr>
+    <tr><td>undertaker、confirmTS</td><td>承辦人、確認（退回）時間</td><td>承辦按確認或退回時寫入</td></tr>
+  </table></div>
+
+  <h3>4.3 附件 DB.TBZP0100</h3>
+  <p>三種證照附件各有一個 <code>agentNo</code>（格式 <code>A + 毫秒時間 + _ + 亂數</code>）。新增車籍或新增申請單時，系統會把來源資料的附件<strong>複製一份並產生新的 agentNo</strong>（2024/10/21 起），避免不同車牌共用同一組附件，也省去下載再上傳的工夫。</p>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <h2><span class="num">5.</span>證照有效期檢核規則</h2>
+  <p>這是整個系統最核心的商業規則，由 <code>zpjc0030Bp.chkvalidDate()</code>（主檔）與 <code>zpjc0036Bp.chkvalidDate()</code>（申請單）實作，兩者邏輯相同。<strong>自 RQ11308022 起，所有車行一律檢核</strong>（過去只檢核特定幾家車行）。</p>
+
+  <div class="tbl"><table>
+    <tr><th>檢核項目</th><th>規則</th><th>判定為不通過（→ 禁運）</th><th>畫面紅字提示</th></tr>
+    <tr><td>身分證號碼</td><td>檢查碼驗證（dejc313）</td><td>格式或檢查碼錯誤</td><td>「資料有問題」</td></tr>
+    <tr><td>駕駛人生日</td><td>年齡上限 <strong>68 歲</strong>（RQ11308047，原 65 歲）</td><td>生日 + 68 年 ≦ 今天，或日期格式錯誤</td><td>「已超過68歲」／「資料有問題」</td></tr>
+    <tr><td>駕照有效日期</td><td>寬限 <strong>30 天</strong></td><td>駕照日 + 30 天 ≦ 今天，或日期錯誤</td><td>「駕照有效日期已過期再 N 天自動轉禁運」／「已過最後期限」</td></tr>
+    <tr><td>行照指定檢驗日期</td><td>寬限 <strong>30 天</strong></td><td>行照日 + 30 天 ≦ 今天，或日期錯誤</td><td>「行照指定檢驗日期已過期再 N 天自動轉禁運」／「已過最後期限」</td></tr>
+    <tr><td>吊掛證有效日期</td><td>寬限 <strong>60 天</strong>；勾選「載廢品無須吊掛證」則不檢查</td><td>吊掛證日 + 60 天 ≦ 今天，或日期錯誤</td><td>「吊掛證有效日期已過期再 N 天自動轉禁運」／「已過最後期限」</td></tr>
+  </table></div>
+
+  <div class="callout">
+    <strong>舉例說明寬限期</strong>
+    某車駕照有效日期為 2026/09/20，今天是 2026/10/02。駕照雖已過期 12 天，但 09/20 + 30 天 = 10/20，尚未到期，所以檢核仍通過，狀態維持可運，畫面顯示紅字「駕照有效日期已過期再 18 天自動轉禁運」。到了 10/20 當天，排程批次就會把它改成禁運。
+  </div>
+  <div class="callout warn">
+    <strong>空白日期也會被判定不通過</strong>
+    駕照、行照、吊掛證日期留空時，日期檢查會失敗，檢核結果為禁運。只有勾選「載廢品無須吊掛證」才能讓吊掛證欄位空白而不影響狀態。
+  </div>
+
+  <h3>檢核結果如何影響狀態碼</h3>
+  <div class="tbl"><table>
+    <tr><th>情境</th><th>結果</th></tr>
+    <tr><td>ZPJJ0032 新增</td><td>完全依檢核結果：全部通過為 Y，任一不通過為 N（畫面選的狀態不採用）。</td></tr>
+    <tr><td>ZPJJ0032 更新，畫面狀態選 X（除籍）</td><td>不做檢核，直接存 X。</td></tr>
+    <tr><td>ZPJJ0032 更新，檢核全部通過</td><td>採用畫面上選的狀態（所以承辦可以把合格車輛手動改成 N 禁運）。</td></tr>
+    <tr><td>ZPJJ0032 更新，檢核不通過</td><td>強制為 N，不論畫面選什麼。</td></tr>
+    <tr><td>車行送簽「正常新增」、承辦「確認」正常新增</td><td>檢核必須全部通過，否則擋下：「驗證身份證號碼、生日、駕照、行照、吊掛證有效日期 有異常，無法做…」。</td></tr>
+    <tr><td>承辦「確認」除籍新增</td><td>狀態直接設為 X，寫入主檔。</td></tr>
+    <tr><td>排程批次</td><td>只掃描狀態為 Y 的車，不通過者改為 N。</td></tr>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <h2><span class="num">6.</span>ZPJJ0032 車籍維護作業</h2>
+  <p>承辦人直接維護車籍主檔的作業。程式：<code>zpjj0032Main.jsp</code>（查詢外框）→ iframe <code>zpjj0032.jsp</code>（明細）→ 控制器 <code>com.icsc.zp.zpjc0032</code>。Action 對照：<code>I</code>＝query、<code>N</code>＝create、<code>R</code>＝update、<code>D</code>＝delete。</p>
+
+  <h3 id="s6-1">6.1 畫面與查詢</h3>
+  <ol class="steps">
+    <li>上方輸入「車牌號碼」（離開欄位自動轉大寫）後按「查詢」，或按「進階查詢」開啟 <code>zpjjCarSelect.jsp</code>，可依車牌、車行簡稱、駕駛員、狀態碼、所屬車行模糊查詢後點選帶回。</li>
+    <li>查詢時系統會順便執行一次證照檢核，在生日、身分證、駕照、行照、吊掛證欄位旁以<strong>紅字</strong>顯示問題，但<strong>查詢不會改變資料庫中的狀態</strong>。</li>
+    <li>功能列按鈕：新增、更新、刪除、清空、附件瀏覽（開啟 <code>zpjj0031FD.jsp</code> 看該車的附件）。按新增、更新、刪除前都會跳出確認視窗。</li>
+    <li>「所屬車行統編」旁的放大鏡呼叫 GP 廠商查詢，選定後自動帶入廠商中文名稱與「所屬車行」（簡稱）。</li>
+  </ol>
+
+  <h3 id="s6-2">6.2 新增：檢核順序</h3>
+  <p>系統依下列順序檢查，任一步失敗就整筆回滾並顯示訊息：</p>
+  <ol class="steps">
+    <li>車牌號碼不可空白。</li>
+    <li>公司別＋車牌不可已存在（「已存在，不可再新增」）。</li>
+    <li>該車牌不可有<strong>未處理完的車行申請單</strong>（funCode I／X 且 exeStat 不是 Y）。</li>
+    <li>操作者必須在 ZP0030 名單中。</li>
+    <li>「所屬車行」不可空白。</li>
+    <li>執行證照檢核決定狀態碼（Y 或 N）；強制清空車行送簽時間、承辦人、確認時間。</li>
+    <li>複製三種附件並產生新的 agentNo。</li>
+    <li>若有填所屬車行統編：必須存在於 GP，且 GP 簡稱不可空白；系統會<strong>強制以 GP 簡稱覆蓋</strong>「所屬車行」。</li>
+    <li>寫入 TBZP0030，並在 TBZP0036 新增一筆 funCode = <code>A</code> 的異動紀錄。</li>
+  </ol>
+  <div class="callout ok">
+    <strong>實用技巧：用現有車輛當範本</strong>
+    先查出一台同車行、同駕駛的車，改掉車牌號碼後按「新增」。三種附件會自動複製一份給新車牌，不必重新上傳。
+  </div>
+
+  <h3 id="s6-3">6.3 更新：檢核順序</h3>
+  <ol class="steps">
+    <li>車牌必須存在。</li>
+    <li>該車牌不可有未處理完的車行申請單。</li>
+    <li>操作者必須在 ZP0030 名單中。</li>
+    <li>若畫面狀態不是 X：所屬車行不可空白，並依第 5 章規則決定最終狀態碼。</li>
+    <li>若有所屬車行統編：GP 簡稱不可空白，且<strong>必須與畫面「所屬車行」完全相同</strong>，否則擋下並顯示兩者的值。</li>
+    <li>更新 TBZP0030（記錄修改人員、日期、時間），並在 TBZP0036 新增一筆 funCode = <code>R</code> 的異動紀錄。</li>
+  </ol>
+  <div class="callout warn">
+    <strong>新增與更新對「所屬車行」的處理不同</strong>
+    新增時系統會自動用 GP 簡稱覆蓋；更新時則只比對，不一致就報錯。更新遇到這個錯誤時，重新用放大鏡選一次統編即可帶入正確簡稱。
+  </div>
+  <p><strong>「載廢品無須吊掛證」勾選框</strong>只能在 ZPJJ0032 修改；車行端與 ZPJJ0036 皆為唯讀。勾選後，吊掛證到期不會造成禁運，也不會出現在每月到期清單。</p>
+
+  <h3 id="s6-4">6.4 刪除：檢核順序</h3>
+  <ol class="steps">
+    <li>車牌必須存在；不可有未處理完的車行申請單；操作者必須在 ZP0030 名單中。</li>
+    <li><strong>已有交運單的車不可刪除</strong>（RQ10906033）：系統查詢熱冷軋交運單 <code>TBILYL0040</code>、副產品交運單 <code>TBILYL0030</code>、鋼管交運單 <code>TBWL0020</code>，只要有一筆就擋下，訊息提示「可更新為除籍」。</li>
+    <li>刪除主檔，並在 TBZP0036 新增一筆 funCode = <code>D</code> 的紀錄（保存刪除前的完整資料）。</li>
+  </ol>
+  <div class="callout">
+    <strong>原則：不再使用的車，用「除籍」而不是「刪除」</strong>
+    刪除會影響歷史交運單的列印。實務上只有「剛建錯、從未開過交運單」的車才刪除。
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <h2><span class="num">7.</span>QC 系統：EC 車行端申請（QCJJ0036）</h2>
+  <p>車行在 EC 網站操作的畫面。雖然承辦人平常不會操作它，但必須熟悉，才能在車行來電詢問時給出正確指引。程式：<code>qc/jsp/qcjj0036Main.jsp</code>、<code>qcjj0036.jsp</code>，控制器 <code>com.icsc.qc.qcjc0036</code>，設定在 <code>qc/config/yl/qc/qcStructs.xml</code>。</p>
+
+  <h3>7.1 功能按鈕</h3>
+  <div class="tbl"><table>
+    <tr><th>按鈕</th><th>Action</th><th>ERP 端方法</th><th>做什麼</th></tr>
+    <tr><td>查詢（申請單號）</td><td><code>I</code></td><td>queryEC</td><td>查自己車行的申請單；查到別家的會被清空並報錯，防止資料外洩。</td></tr>
+    <tr><td>進階查詢（車牌）</td><td><code>carInq</code></td><td>carInqEC</td><td>以車牌把主檔資料帶進申請畫面當草稿（不會產生申請單）。</td></tr>
+    <tr><td>正常新增</td><td><code>N</code></td><td>createEC</td><td>建立 funCode = I、exeStat = I 的申請單。新車或既有車輛資料異動都用這個。</td></tr>
+    <tr><td>除籍新增</td><td><code>erase</code></td><td>eraseEC</td><td>建立 funCode = X 的除籍申請。內容以主檔資料覆蓋，車行畫面上的修改不採用。</td></tr>
+    <tr><td>更新</td><td><code>R</code></td><td>updateEC</td><td>修改尚未送簽的申請單，exeStat 強制回到 I。</td></tr>
+    <tr><td>刪除</td><td><code>D</code></td><td>deleteEC</td><td>刪除尚未送簽或已退回、已撤回的申請單。</td></tr>
+    <tr><td>送簽</td><td><code>S</code></td><td>doProcess(opt=S)</td><td>送給承辦審查，並發 ERP 工作訊息。</td></tr>
+    <tr><td>撤回</td><td><code>revoke</code></td><td>doProcess(opt=RV)</td><td>撤回已送簽但尚未審查的申請單，刪除工作訊息。</td></tr>
+  </table></div>
+
+  <h3>7.2 車行端的關鍵檢核</h3>
+  <h4>正常新增（createEC）</h4>
+  <ul>
+    <li>車牌不可空白；同一車牌不可有未處理完的申請單（一車同時只能有一張進行中的申請）。</li>
+    <li>若車牌已存在主檔，主檔的所屬車行統編必須等於車行帳號的統編，否則「非您的帳號之所屬車行統編，無法正常新增」。</li>
+    <li>所屬車行統編<strong>強制設為 EC 帳號的統編</strong>，所屬車行強制取 GP 簡稱。</li>
+    <li>附件複製並產生新的 agentNo；新增時就執行證照檢核，把結果放進申請單的狀態碼（只是預覽，送簽時會再驗一次）。</li>
+  </ul>
+  <h4>除籍新增（eraseEC）</h4>
+  <ul>
+    <li>車牌必須已存在主檔（「無此車牌號碼，無法除籍新增」），且必須屬於自家車行。</li>
+    <li>主檔已是 X 時，不需再申請（「已除籍了，無須再除籍新增」）。</li>
+    <li>主檔的所屬車行必須與 GP 簡稱一致。</li>
+  </ul>
+  <h4>更新、刪除（updateEC／deleteEC）</h4>
+  <ul>
+    <li>只能處理 funCode 為 I 或 X 的單（承辦端產生的 A／R／D 異動紀錄不能動）。</li>
+    <li>exeStat 為 Y（已確認）或 S（送簽待審中）時不可更新、刪除。</li>
+  </ul>
+  <h4>送簽（doProcess，opt = S）</h4>
+  <ul>
+    <li>申請單不可已確認、已退回（退回的單要先「更新」才能再送），也不可已在送簽中。</li>
+    <li>若主檔已有此車牌，申請單的所屬車行統編與所屬車行必須與主檔相同（<strong>車行不能透過申請把車改掛到別家</strong>）。</li>
+    <li>正常新增的送簽，證照檢核必須全部通過；不通過就無法送簽，請車行先修正資料或補附件。</li>
+    <li>除籍送簽時，若主檔已是 X 則擋下。</li>
+    <li>成功後寫入 vendSendTS，並對 ZP0030 名單中 field3 包含該車行簡稱的每位承辦人發送工作訊息「請審查車籍正常送簽（除籍送簽）資料（車牌號碼：…）」，點連結直接開啟 ZPJJ0036。</li>
+  </ul>
+
+  <h3>7.3 畫面唯讀規則</h3>
+  <p>只有在「funCode 為空白、I 或 X」<strong>且</strong>「尚未送簽（vendSendTS 為空白）」時，車行畫面才可編輯；其餘情況整個畫面轉為唯讀。所屬車行統編、所屬車行、狀態碼、載廢品無須吊掛證永遠唯讀。</p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <h2><span class="num">8.</span>ZPJJ0036 車籍申請作業（承辦審查）</h2>
+  <p>承辦人審查車行申請單的作業。程式：<code>zpjj0036Main.jsp</code> → iframe <code>zpjj0036.jsp</code> → 控制器 <code>com.icsc.zp.zpjc0036</code>。Action：<code>I</code>＝query、<code>cfm</code>＝confirm、<code>back</code>＝back、<code>F</code>＝justForward（工作訊息連結進入時使用）。</p>
+  <p>ERP 端畫面<strong>只有「確認」、「退回」、「附件瀏覽」三個按鈕</strong>，所有欄位唯讀。承辦人不能在這裡修改車行填的內容；資料有誤就退回請車行改。</p>
+
+  <h3>8.1 進入方式</h3>
+  <ol class="steps">
+    <li><strong>從工作訊息進入（建議）</strong>：車行送簽後，ERP 工作訊息會出現「請審查車籍…資料」，點選即開啟並帶入申請單號。</li>
+    <li><strong>手動查詢</strong>：在 ZPJJ0036 輸入申請單號查詢，或按「進階查詢」開啟 <code>zpjjCarApplySel.jsp</code>，可依申請單號、車牌、車行簡稱、駕駛員、所屬車行、新增修改日期區間、狀態碼查詢（依申請單號由新到舊排列）。</li>
+  </ol>
+
+  <h3>8.2 審查檢查清單</h3>
+  <ol class="steps">
+    <li>看畫面上方「操作動作」：是正常新增（I）還是除籍新增（X）？</li>
+    <li>看「執行狀態」是否為送簽（S）。不是送簽狀態的單無法確認或退回。</li>
+    <li>按「附件瀏覽」（<code>zpjj0036FD.jsp</code>）核對駕照、行照、吊掛證影像與畫面上的號碼、日期是否一致。</li>
+    <li>檢查駕駛人生日、身分證旁是否有紅字提示。</li>
+    <li>正常新增：資料與附件都正確 → 確認；有誤 → 退回，並主動告知車行原因（系統不會記錄退回理由）。</li>
+    <li>除籍新增：確認車行確實要停用此車 → 確認。</li>
+  </ol>
+
+  <h3>8.3 按下「確認」或「退回」時系統做的事</h3>
+  <div class="tbl"><table>
+    <tr><th>步驟</th><th>確認（Y）</th><th>退回（R）</th></tr>
+    <tr><td>前置檢查</td><td colspan="2">申請單必須存在、funCode 為 I 或 X、已送簽、尚未被確認或退回；操作者在 ZP0030 名單；主檔已有此車牌時，統編與所屬車行必須一致；所屬車行不可空白；統編必須存在於 GP。</td></tr>
+    <tr><td>證照檢核</td><td>正常新增必須全部通過；除籍新增將狀態設為 X</td><td>不影響狀態</td></tr>
+    <tr><td>工作訊息</td><td colspan="2">以 vendSendTS 為鍵，<strong>一次結案所有承辦人</strong>的該筆工作訊息（所以多人負責同一車行時，一人處理即可）</td></tr>
+    <tr><td>申請單</td><td colspan="2">exeStat 改為 Y 或 R，寫入承辦人工號與確認（退回）時間</td></tr>
+    <tr><td>主檔</td><td><strong>以申請單內容更新主檔；主檔沒有此車則新增</strong>（progLastMaint、修改人員、日期、時間一併更新）</td><td>不動</td></tr>
+  </table></div>
+  <div class="callout warn">
+    <strong>確認是「整筆覆蓋」</strong>
+    確認時是把申請單的所有欄位寫回主檔（<code>zp0036To30</code>）。因此如果承辦人在車行申請期間曾經直接改過主檔（理論上系統會擋，見 14 章），那些修改會被申請單內容覆蓋。
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <h2><span class="num">9.</span>申請單生命週期</h2>
+  <p>把第 7、8 章串起來，車行申請單（funCode I 或 X）的執行狀態變化如下：</p>
+  <div class="diagram" role="img" aria-label="申請單執行狀態變化圖">
+  <svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor" style="color:var(--muted)"/></marker>
+    </defs>
+    <rect class="box" x="20" y="140" width="130" height="60" rx="30"/>
+    <text class="t" x="85" y="166" text-anchor="middle">車行</text>
+    <text class="ts" x="85" y="185" text-anchor="middle">正常／除籍新增</text>
+
+    <rect class="box a" x="220" y="135" width="150" height="70" rx="10"/>
+    <text class="tb" x="295" y="165" text-anchor="middle">I 車行增修</text>
+    <text class="ts" x="295" y="186" text-anchor="middle">可更新、刪除</text>
+
+    <rect class="box warn" x="460" y="135" width="150" height="70" rx="10"/>
+    <text class="tb" x="535" y="165" text-anchor="middle">S 送簽</text>
+    <text class="ts" x="535" y="186" text-anchor="middle">待承辦審查</text>
+
+    <rect class="box ok" x="750" y="40" width="200" height="74" rx="10"/>
+    <text class="tb" x="850" y="70" text-anchor="middle">Y 確認（結案）</text>
+    <text class="ts" x="850" y="92" text-anchor="middle">寫入主檔 TBZP0030</text>
+
+    <rect class="box bad" x="750" y="230" width="200" height="74" rx="10"/>
+    <text class="tb" x="850" y="260" text-anchor="middle">R 退回</text>
+    <text class="ts" x="850" y="282" text-anchor="middle">主檔不動</text>
+
+    <rect class="box" x="460" y="270" width="150" height="64" rx="10"/>
+    <text class="tb" x="535" y="298" text-anchor="middle">RV 撤回</text>
+    <text class="ts" x="535" y="318" text-anchor="middle">車行自行取消送簽</text>
+
+    <rect class="box" x="220" y="20" width="150" height="56" rx="10"/>
+    <text class="t" x="295" y="53" text-anchor="middle">申請單刪除</text>
+
+    <path class="ln" d="M150 170 H220" marker-end="url(#ar2)"/>
+    <path class="ln a" d="M370 170 H460" marker-end="url(#ar2)"/>
+    <text class="lbl" x="380" y="160">送簽（證照須合格）</text>
+    <path class="ln ok" d="M610 155 C680 130 700 90 750 80" marker-end="url(#ar2)"/>
+    <text class="lbl" x="640" y="110">承辦確認</text>
+    <path class="ln bad" d="M610 190 C680 215 700 255 750 262" marker-end="url(#ar2)"/>
+    <text class="lbl" x="640" y="232">承辦退回</text>
+    <path class="ln" d="M535 205 V270" marker-end="url(#ar2)"/>
+    <text class="lbl" x="542" y="242">車行撤回</text>
+    <path class="ln" d="M460 300 C380 300 320 260 300 205" marker-end="url(#ar2)"/>
+    <text class="lbl" x="318" y="276">更新 → I／或直接再送簽</text>
+    <path class="ln" d="M850 304 C850 350 300 360 280 205" marker-end="url(#ar2)"/>
+    <text class="lbl" x="560" y="352">車行更新後回到 I</text>
+    <path class="ln" d="M295 135 V76" marker-end="url(#ar2)"/>
+    <text class="lbl" x="302" y="110">刪除（I／R／RV 皆可）</text>
+  </svg>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>目前狀態</th><th>車行可做</th><th>承辦可做</th><th>此車牌是否被鎖定</th></tr>
+    <tr><td>I 車行增修</td><td>更新、刪除、送簽</td><td>無（不能確認或退回）</td><td>是</td></tr>
+    <tr><td>S 送簽</td><td>撤回</td><td>確認、退回</td><td>是</td></tr>
+    <tr><td>RV 撤回</td><td>更新、刪除、再送簽</td><td>無</td><td>是</td></tr>
+    <tr><td>R 退回</td><td>更新（回到 I）、刪除</td><td>無</td><td><strong>是</strong></td></tr>
+    <tr><td>Y 確認</td><td>無</td><td>無</td><td>否（結案）</td></tr>
+  </table></div>
+  <div class="callout bad">
+    <strong>「鎖定」是什麼意思？</strong>
+    系統以 <code>zpjc0036DAO.queryNonProcess()</code> 判斷：同一車牌只要有 funCode 為 I 或 X、且 exeStat 不是 Y 的申請單，就視為「尚未處理」。此時承辦人在 ZPJJ0032 的新增、更新、刪除都會被擋，車行也不能再開新的申請單。<br>
+    <strong>注意：退回（R）仍然算尚未處理。</strong>退回後車行若不理會，這台車就一直被鎖住；必須請車行刪除該申請單，或更新後重新送簽。
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <h2><span class="num">10.</span>自動化批次與通知</h2>
+  <h3>10.1 證照到期自動轉禁運：zpjc0030Batch</h3>
+  <ul>
+    <li>實作排程介面 <code>diji234</code>，AppId <code>ZPJC0030BATCH</code>，由排程框架定期執行（實際排程頻率請以排程設定為準）。</li>
+    <li>讀取所有狀態為 <strong>Y</strong> 的車籍，逐筆執行第 5 章的證照檢核。</li>
+    <li>不通過者：狀態改為 N，修改人員記為 <code>ICSC01</code>，並在 TBZP0036 新增 funCode = <code>B</code> 的異動紀錄。</li>
+    <li>逐筆提交，一筆失敗只回滾該筆，不影響其他車輛；執行紀錄寫在 log（「共更新 N 筆」）。</li>
+    <li>批次<strong>只會把 Y 改成 N，不會把 N 改回 Y</strong>。車行補件後，必須經由申請確認或承辦更新，車輛才會恢復可運。</li>
+  </ul>
+
+  <h3>10.2 每月到期清單 Email：zpjcCarExpiredEmail</h3>
+  <ul>
+    <li>RQ11312002，依程式註解設定為<strong>每月一日 06:00</strong> 執行。</li>
+    <li>從 ZAF 組態 1902 取得要寄送的車行清單，針對每家車行查詢狀態為 Y 或 N 的車籍，篩出身分證、年齡、駕照、行照、吊掛證任一有問題的車輛。</li>
+    <li>產出 CSV 附件，主旨「<em>車行簡稱</em>本月已過期或即將過期車籍資料」，依 1902 設定的 FROM／TO／CC／BCC 寄出。</li>
+    <li>檢核欄位會標示：空白、格式錯誤、過期、N 天自動轉禁運、當月到期、已超過 68 歲、檢查碼錯誤等；日期為「免定換」者另外標註。</li>
+    <li>執行失敗時，會發工作訊息給 ZP 系統負責人。</li>
+  </ul>
+  <div class="callout">
+    <strong>要讓某家車行也收到每月清單</strong>
+    在 ZAF 組態 1902 新增 itemA = 該車行簡稱（必須與主檔「所屬車行」完全一致）、itemB = TO（以及需要的 CC），dataA = Email。FROM 也要設定。
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <h2><span class="num">11.</span>下游影響：交運單</h2>
+  <p>車籍資料最主要的使用者是出貨端的交運單作業。開單時會以車牌呼叫 <code>zpjc0030Com.getTransportAddrName()</code>（IL 模組透過 <code>iljcylmZp.getCarCompany()</code> 呼叫）：</p>
+  <ul>
+    <li>查無車籍 → 錯誤「無此車籍資料」。</li>
+    <li>狀態為 N 或 X → 錯誤「車號：… 為禁運或除籍狀態」，並附上駕照、行照、吊掛證的到期提示。</li>
+    <li>狀態為 Y 但進入寬限期 → 可以開單，同時帶出「再 N 天自動轉禁運」提示。</li>
+    <li>交運單上的「承運車行」取自主檔的車行簡稱（transportAddrName）。</li>
+  </ul>
+  <div class="tbl"><table>
+    <tr><th>使用模組</th><th>程式</th><th>用途</th></tr>
+    <tr><td>IL 熱冷軋／副產品交運</td><td>iljcylmZp、iljcylmPrtShipOrd、iljcyla1</td><td>檢查禁運、取承運車行名稱</td></tr>
+    <tr><td>WL 鋼管交運</td><td>wljcUnit、wljcOtherUnit</td><td>檢查車籍存在與禁運</td></tr>
+    <tr><td>IH</td><td>ihjc0010 等</td><td>取車行簡稱</td></tr>
+  </table></div>
+  <div class="callout warn">
+    <strong>現場來電「開不了交運單」時</strong>
+    先到 ZPJJ0032 查該車牌：看狀態碼、看紅字提示是哪一張證照過期。再看是否有進行中的申請單（ZPJJ0036 進階查詢以車牌查）。
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <h2><span class="num">12.</span>常見情境 SOP</h2>
+
+  <details open>
+    <summary>情境一：車行要新增一台新車</summary>
+    <ol>
+      <li>請車行在 EC 的車籍申請按「正常新增」，填齊資料並上傳駕照、行照、吊掛證附件。</li>
+      <li>車行按「送簽」。若證照檢核不通過會無法送簽，請車行先修正。</li>
+      <li>你收到工作訊息，點開 ZPJJ0036，核對附件與資料後按「確認」。</li>
+      <li>系統自動在主檔新增車籍，狀態為 Y。到 ZPJJ0032 查詢可確認。</li>
+    </ol>
+    <p class="small muted">例外：車行無法使用 EC 時，承辦人可直接在 ZPJJ0032 新增（funCode 記為 A）。</p>
+  </details>
+
+  <details>
+    <summary>情境二：車輛因駕照過期被轉禁運，車行已換新駕照</summary>
+    <ol>
+      <li>請車行在 EC 以車牌「進階查詢」帶出資料，修改駕照有效日期、上傳新駕照，按「正常新增」，再「送簽」。</li>
+      <li>你審查附件無誤後「確認」，主檔即更新，狀態恢復為 Y。</li>
+      <li>急件替代做法：直接在 ZPJJ0032 更新駕照日期並上傳附件，狀態選 Y 後按「更新」。前提是此車牌沒有進行中的申請單。</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>情境三：車行要停用某台車</summary>
+    <ol>
+      <li>請車行按「除籍新增」並「送簽」。</li>
+      <li>你在 ZPJJ0036 按「確認」，主檔狀態改為 X。</li>
+      <li>或由承辦在 ZPJJ0032 把狀態改為 X 後「更新」（除籍時不做證照檢核）。</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>情境四：車行說「我要改資料，但系統說有申請單尚未處理」</summary>
+    <ol>
+      <li>用 ZPJJ0036 進階查詢，以車牌找出進行中的申請單，看執行狀態。</li>
+      <li>I 或 RV：請車行直接更新該單後送簽，或刪除後重開。</li>
+      <li>S：請車行撤回後再修改，或由你先確認或退回。</li>
+      <li>R：請車行更新該單（會回到 I）後再送簽，或刪除。</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>情境五：合格車輛但因違規等原因要暫停載運</summary>
+    <ol>
+      <li>在 ZPJJ0032 查出該車，狀態選 N（禁運），按「更新」。</li>
+      <li>因檢核通過，系統會採用畫面上的 N。</li>
+      <li>恢復時同樣在 ZPJJ0032 改回 Y 並更新。</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>情境六：專門載運廢品、沒有吊掛證的車</summary>
+    <ol>
+      <li>在 ZPJJ0032 勾選「載廢品無須吊掛證」後「更新」。</li>
+      <li>之後吊掛證日期空白或過期都不會造成禁運，也不會出現在每月到期清單。</li>
+      <li>車行端無法自行勾選，必須由承辦人處理。</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>情境七：新進承辦人接手某家車行</summary>
+    <ol>
+      <li>請 C52 課長在簡易共用表格 ZP0030 新增你的工號，field3 填入負責車行簡稱（可多家）。</li>
+      <li>交接期間可請前任承辦一起留在名單，任何一人確認或退回後，所有人的工作訊息會一起結案。</li>
+      <li>前任人員離職或調離後，務必從名單移除，否則該車行送簽會失敗。</li>
+    </ol>
+  </details>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <h2><span class="num">13.</span>錯誤訊息排解</h2>
+  <div class="tbl"><table>
+    <tr><th>錯誤訊息（關鍵字）</th><th>原因</th><th>處理方式</th></tr>
+    <tr><td>你不是車籍資料可維護人員…</td><td>工號不在簡易共用表格 ZP0030</td><td>請 C52 課長於 (DEJJ322) 加入</td></tr>
+    <tr><td>上有申請單（…）尚未處理</td><td>同車牌有 I／S／R／RV 狀態的車行申請單</td><td>依情境四處理</td></tr>
+    <tr><td>車牌號碼：… 已存在，不可再新增</td><td>主檔已有此車</td><td>改用「更新」</td></tr>
+    <tr><td>所屬車行資料空白</td><td>「所屬車行」欄位空白</td><td>用放大鏡重選所屬車行統編</td></tr>
+    <tr><td>於 GP 系統中取得其簡稱為（A）與畫面所打（B）不同</td><td>更新時所屬車行與 GP 簡稱不一致（GP 簡稱可能已改過）</td><td>重新選取統編帶入正確簡稱；若 GP 簡稱改過，連帶確認 ZP0030 field3 與 ZAF 1902 是否也要改</td></tr>
+    <tr><td>所屬車行統編：… 不存在</td><td>統編不在 GP 廠商主檔</td><td>請相關單位先建立 GP 廠商資料</td></tr>
+    <tr><td>於 GP 系統中取得其簡稱為空白</td><td>GP 廠商主檔缺簡稱</td><td>請 GP 維護單位補簡稱</td></tr>
+    <tr><td>已有交運單資料不可刪除…可更新為除籍</td><td>該車已開過交運單</td><td>改為更新狀態 X</td></tr>
+    <tr><td>驗證身份證號碼、生日、駕照、行照、吊掛證有效日期 有異常</td><td>正常新增送簽或確認時證照檢核不通過</td><td>看紅字找出哪一項，請車行修正後再送</td></tr>
+    <tr><td>車行尚未送簽，不可承辦人確認</td><td>申請單仍在 I 或 RV</td><td>等車行送簽</td></tr>
+    <tr><td>已經承辦人確認（退回），不可…</td><td>重複操作，或別的承辦人已處理</td><td>重新查詢確認目前狀態</td></tr>
+    <tr><td>所屬車行統編，新（…）、舊（…）值不同</td><td>申請單與主檔掛在不同車行</td><td>車行不能透過申請換車行；請確認車輛歸屬後由承辦在 ZPJJ0032 處理</td></tr>
+    <tr><td>共用表格 ZP0030 中工號 … （離職等）</td><td>名單內有已離職或停職人員，送簽發訊息失敗</td><td>從 ZP0030 名單移除該工號</td></tr>
+    <tr><td>非您的帳號之所屬車行統編</td><td>車行查詢或操作他家車輛</td><td>屬正常的資料隔離保護；若車輛確實換車行，需由承辦處理主檔</td></tr>
+  </table></div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <h2><span class="num">14.</span>易踩的坑</h2>
+  <ol>
+    <li><strong>查詢出現紅字，不代表資料庫狀態已改。</strong>查詢只會即時計算提示，要等更新或批次執行，狀態才會真的變。</li>
+    <li><strong>退回的申請單會一直鎖住車牌。</strong>退回後要追蹤車行是否處理，否則你自己在 ZPJJ0032 也動不了這台車。</li>
+    <li><strong>ZPJJ0032 更新時選了 Y，結果存成 N。</strong>這是正常的，代表有證照不合格，系統強制禁運。看紅字找原因。</li>
+    <li><strong>「所屬車行」等於 GP 簡稱，是串連工作訊息與 Email 名單的鍵。</strong>GP 簡稱若改名，ZP0030 field3 與 ZAF 1902 的 itemA 也要跟著改，否則承辦收不到訊息、車行收不到月報。</li>
+    <li><strong>系統不記錄退回理由。</strong>退回後務必以電話或 Email 告知車行原因。</li>
+    <li><strong>不要用刪除代替除籍。</strong>開過交運單的車系統會擋；沒開過的車刪除後歷史就只剩 TBZP0036 的 D 紀錄。</li>
+    <li><strong>批次不會自動恢復可運。</strong>車行補件後若沒有走申請確認或承辦更新，車輛會一直停在禁運。</li>
+    <li><strong>空白日期等於不合格。</strong>新增時三種證照日期都要填；廢品車請勾「載廢品無須吊掛證」。</li>
+    <li><strong>日期一律用西元 yyyyMMdd。</strong>格式錯誤會被判為「資料有問題」而禁運。</li>
+  </ol>
+</section>
+
+<!-- 15 -->
+<section id="s15">
+  <h2><span class="num">15.</span>自我測驗</h2>
+  <p class="muted small">先自己作答，再展開看答案。</p>
+  <details><summary>Q1. 某車駕照有效日期是今天往前推 25 天，其他證照都正常。在 ZPJJ0032 更新時狀態會是什麼？畫面會看到什麼？</summary>
+    <p>狀態可為 Y（採用畫面選擇），因為仍在 30 天寬限內。畫面紅字顯示「駕照有效日期已過期再 5 天自動轉禁運」。5 天後排程批次會將它改為 N。</p></details>
+  <details><summary>Q2. 車行申請單被退回後，承辦人想先在 ZPJJ0032 直接修正資料，可以嗎？</summary>
+    <p>不行。退回（R）的單仍屬「尚未處理」，車牌被鎖定。要先請車行刪除或更新該申請單後再送簽確認。</p></details>
+  <details><summary>Q3. 為什麼某位新承辦人收不到車行的送簽工作訊息？列出兩個可能原因。</summary>
+    <p>(1) 工號不在簡易共用表格 ZP0030；(2) ZP0030 的 field3 沒有包含該車行簡稱（或與主檔「所屬車行」寫法不一致）。</p></details>
+  <details><summary>Q4. 一台已開過交運單、不再使用的車該怎麼處理？</summary>
+    <p>在 ZPJJ0032 將狀態改為 X（除籍）後更新，或請車行提出除籍新增申請再確認。不能刪除。</p></details>
+  <details><summary>Q5. 承辦人在 ZPJJ0036 按「確認」正常新增申請單時，主檔沒有這台車會怎樣？</summary>
+    <p>系統會以申請單內容新增一筆主檔（先嘗試更新，更新筆數為 0 就改為新增）。</p></details>
+  <details><summary>Q6. 吊掛證有效日期與駕照有效日期的寬限天數分別是多少？什麼情況下吊掛證完全不檢查？</summary>
+    <p>吊掛證 60 天、駕照 30 天（行照也是 30 天）。勾選「載廢品無須吊掛證」時不檢查吊掛證。</p></details>
+  <details><summary>Q7. QC 系統（EC 車行端）的檢核邏輯寫在哪裡？</summary>
+    <p>寫在 ERP 的 <code>com.icsc.zp.zpjc0036</code>。QC 的 <code>qcjc0036</code> 只透過 Web Service 呼叫它（createEC、eraseEC、updateEC、deleteEC、doProcess 等）。</p></details>
+  <details><summary>Q8. 同一家車行有三位承辦人，其中一人確認了申請單，另外兩人的工作訊息會怎樣？</summary>
+    <p>會一起結案。工作訊息以車行送簽時間 vendSendTS 為共用時間戳，確認或退回時一次刪除。</p></details>
+</section>
+
+<!-- 16 -->
+<section id="s16">
+  <h2>附錄：程式與檔案清單</h2>
+  <p class="small muted">路徑以 <code>D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/</code> 為根目錄。原始碼為 Big5 編碼。</p>
+  <div class="tbl"><table>
+    <tr><th>分類</th><th>檔案</th><th>說明</th></tr>
+    <tr><td rowspan="5">ZPJJ0032</td><td>zp/jsp/zpjj0032Main.jsp</td><td>查詢外框、頁籤</td></tr>
+    <tr><td>zp/jsp/zpjj0032.jsp</td><td>車籍明細畫面</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjc0032.java</td><td>控制器：query／create／update／delete、getVendName、zp0030To36</td></tr>
+    <tr><td>zp/jsp/zpjjCarSelect.jsp</td><td>車籍進階查詢</td></tr>
+    <tr><td>zp/jsp/zpjj0031FD.jsp</td><td>車籍附件瀏覽</td></tr>
+    <tr><td rowspan="4">ZPJJ0036</td><td>zp/jsp/zpjj0036Main.jsp</td><td>查詢外框</td></tr>
+    <tr><td>zp/jsp/zpjj0036.jsp</td><td>申請單審查畫面（確認／退回）</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjc0036.java</td><td>申請單核心邏輯：createEC、eraseEC、queryEC、carInqEC、updateEC、deleteEC、doProcess、confirm、back</td></tr>
+    <tr><td>zp/jsp/zpjjCarApplySel.jsp、zpjj0036FD.jsp</td><td>申請單進階查詢、附件瀏覽</td></tr>
+    <tr><td rowspan="3">QC（EC 端）</td><td>qc/jsp/qcjj0036Main.jsp、qcjj0036.jsp</td><td>車行申請畫面</td></tr>
+    <tr><td>qc/src/com/icsc/qc/qcjc0036.java</td><td>以 Web Service 呼叫 zpjc0036</td></tr>
+    <tr><td>qc/config/yl/qc/qcStructs.xml</td><td>Action 對照</td></tr>
+    <tr><td rowspan="4">共用邏輯</td><td>zp/src/com/icsc/zp/zpjc0030Bp.java、zpjc0036Bp.java</td><td>證照有效期檢核</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjc0030DelChk.java</td><td>刪除前檢查交運單</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjc0030Com.java</td><td>提供交運單檢查禁運、取車行名稱</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjcFileUpload.java、zpjcFileUploadApi.java</td><td>附件上傳、EC 身分判斷</td></tr>
+    <tr><td rowspan="2">批次</td><td>zp/src/com/icsc/zp/zpjc0030Batch.java</td><td>證照到期自動轉禁運</td></tr>
+    <tr><td>zp/src/com/icsc/zp/zpjcCarExpiredEmail.java</td><td>每月到期清單 Email</td></tr>
+    <tr><td rowspan="3">設定與資料</td><td>zp/config/yl/zp/zpStructs.xml</td><td>ZPJJ0032／ZPJJ0036 Action 對照</td></tr>
+    <tr><td>zp/dao/tbzp0030.dao、tbzp0036.dao</td><td>資料表定義</td></tr>
+    <tr><td>zp/src/com/icsc/zp/dao/zpjc0030MDAO.java、zpjc0036DAO.java</td><td>DAO（queryNonProcess 為鎖定判斷）</td></tr>
+  </table></div>
+  <h3>相關需求單沿革</h3>
+  <div class="tbl"><table>
+    <tr><th>需求單</th><th>內容</th></tr>
+    <tr><td>RQ10903014</td><td>交運單顯示車籍證照有效日期檢查訊息</td></tr>
+    <tr><td>RQ10906033</td><td>已有交運單的車籍不可刪除</td></tr>
+    <tr><td>RQ10906059</td><td>狀態為除籍時更新不做證照檢查</td></tr>
+    <tr><td>（2023/02）</td><td>維護權限改由簡易共用表格 ZP0030 控制</td></tr>
+    <tr><td>RQ11308022</td><td>所有車籍一律檢核行照、駕照、吊掛證有效日期</td></tr>
+    <tr><td>RQ11308047</td><td>司機年齡上限由 65 歲改為 68 歲</td></tr>
+    <tr><td>（2024/10/21）</td><td>新增時附件改為自動複製並產生新 agentNo</td></tr>
+    <tr><td>RQ11311012</td><td>新增「載廢品無須吊掛證」</td></tr>
+    <tr><td>RQ11312002</td><td>每月 Email 已過期或即將過期車籍資料給車行</td></tr>
+  </table></div>
+</section>
+
+<footer>車籍管理系統 新進人員教育訓練 · 依程式碼盤點整理 · 2026/10/02</footer>
+</main>
+</div>
+<div class="toolbar">
+  <button type="button" onclick="toggleTheme()">切換深淺色</button>
+  <button type="button" onclick="window.print()">列印</button>
+</div>
+<script>
+function toggleTheme(){
+  var r=document.documentElement;
+  var dark=r.getAttribute('data-theme')==='dark' ||
+    (!r.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  r.setAttribute('data-theme', dark ? 'light' : 'dark');
+}
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true;});});
+</script>
+</body>
+</html>

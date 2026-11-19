@@ -1,0 +1,447 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>(EAJJRE10N) 風險與機會評估 操作手冊</title><style>
+:root{--fg:#222;--bg:#fff;--accent:#2b5797;--line:#b8c4d6;--th:#dde6f3;--code:#f3f5f8;--toc:#f7f9fc}
+@media (prefers-color-scheme:dark){:root{--fg:#ddd;--bg:#1e1f22;--accent:#7fa7e0;--line:#4a5568;--th:#2c3a50;--code:#2a2c31;--toc:#25272b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Microsoft JhengHei","PingFang TC",sans-serif;font-size:15px;line-height:1.75}
+.wrap{display:flex;max-width:1280px;margin:0 auto}
+nav{position:sticky;top:0;align-self:flex-start;width:270px;max-height:100vh;overflow:auto;padding:20px 14px;background:var(--toc);border-right:1px solid var(--line);font-size:13.5px}
+nav .t{font-weight:bold;color:var(--accent);margin-bottom:6px}
+nav ul{list-style:none;margin:0;padding-left:12px}nav>div>ul{padding-left:0}
+nav a{color:var(--fg);text-decoration:none;display:block;padding:2px 0}nav a:hover{color:var(--accent)}
+main{flex:1;min-width:0;padding:24px 36px 60px}
+h1{color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:6px;font-size:26px}
+h2{color:var(--accent);border-left:5px solid var(--accent);padding-left:10px;margin-top:36px;font-size:21px}
+h3{font-size:17px;margin-top:24px;border-bottom:1px dashed var(--line);padding-bottom:3px}
+table{border-collapse:collapse;width:100%;margin:10px 0;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;vertical-align:top}th{background:var(--th);white-space:nowrap}
+code{background:var(--code);padding:1px 5px;border-radius:3px;font-family:Consolas,"Microsoft JhengHei",monospace;font-size:.92em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto;line-height:1.55}pre code{padding:0;background:none}
+blockquote{margin:10px 0;padding:6px 14px;border-left:4px solid #e0a020;background:var(--code)}
+img{max-width:100%;border:1px solid var(--line);border-radius:4px}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+a.top{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;border-radius:50%;width:40px;height:40px;text-align:center;line-height:40px;text-decoration:none}
+@media (max-width:900px){.wrap{display:block}nav{position:static;width:auto;max-height:none;border-right:0;border-bottom:1px solid var(--line)}main{padding:16px}}
+@media print{nav,a.top{display:none}main{padding:0}h2{page-break-after:avoid}tr,pre{page-break-inside:avoid}}
+</style></head><body><div class="wrap">
+<nav><div class="t">目錄</div><div><div class="toc">
+<ul>
+<li><a href="#_1">一、作業概要</a><ul>
+<li><a href="#11">1.1 整體流程</a></li>
+</ul>
+</li>
+<li><a href="#_2">二、畫面說明</a><ul>
+<li><a href="#21">2.1 查詢列</a></li>
+<li><a href="#22">2.2 頁籤</a></li>
+<li><a href="#23">2.3 基本資料欄位</a></li>
+</ul>
+</li>
+<li><a href="#_3">三、按鈕功能一覽</a><ul>
+<li><a href="#31">3.1 基本資料頁籤</a></li>
+<li><a href="#32">3.2 明細資料頁籤</a></li>
+</ul>
+</li>
+<li><a href="#_4">四、明細資料畫面</a></li>
+<li><a href="#_5">五、操作步驟</a><ul>
+<li><a href="#51">5.1 開始風險與機會評估</a></li>
+<li><a href="#52">5.2 輸入機會評估（增修）</a></li>
+<li><a href="#53">5.3 確認高風險項目已完成預估評估</a></li>
+<li><a href="#54">5.4 送簽</a></li>
+<li><a href="#55">5.5 主管核准、退回、強制取回</a></li>
+</ul>
+</li>
+<li><a href="#_6">六、匯入與匯出</a><ul>
+<li><a href="#61">6.1 匯出</a></li>
+<li><a href="#62">6.2 匯入</a></li>
+</ul>
+</li>
+<li><a href="#_7">七、機會評估結果的用途</a></li>
+<li><a href="#_8">八、常見問題</a></li>
+</ul>
+</div>
+</div></nav><main id="top"><h1 id="eajjre10n">(EAJJRE10N) 風險與機會評估 操作手冊</h1>
+<ul>
+<li>系統：EA 安環績效管理系統</li>
+<li>依據：CVS 最新版程式</li>
+<li>編寫日期：2026/10/16</li>
+<li>修訂日期：2026/10/21</li>
+</ul>
+<hr />
+<h2 id="_1">一、作業概要</h2>
+<p>【風險評估】(EAJJRE00N) 簽核完成後，由評估人在本作業針對 B 表各項目評估是否有「機會」，也就是以<strong>消除</strong>或<strong>取代</strong>的方式進一步降低風險，並送主管簽核。本作業簽核完成，該版風險評估才算完成。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前提</td>
+<td>該風險評估必須已<strong>簽核完成</strong></td>
+</tr>
+<tr>
+<td>操作人員</td>
+<td>該風險評估的發文者（評估人）；其他人只能查詢</td>
+</tr>
+<tr>
+<td>評估對象</td>
+<td>B 表中<strong>風險等級 3 以上</strong>的項目；原風險等級 1、2（高風險）的項目改由【高風險改善追蹤】(EAJJRE20N) 處理</td>
+</tr>
+<tr>
+<td>送簽條件</td>
+<td>所有高風險項目都已在【高風險改善追蹤】完成預估評估</td>
+</tr>
+<tr>
+<td>完成結果</td>
+<td>簽核完成後，該版風險評估成為部門最新完成版，下一版才可新增，也才能作為【新版複製】的來源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11">1.1 整體流程</h3>
+<pre><code>風險評估簽核完成
+  → 【新增機會】或在【明細資料】頁籤直接【增修】
+  → 逐項輸入改善方法、機會、改善後控制措施及風險值
+  → 確認所有高風險項目都已完成預估評估（EAJJRE20N）
+  → 【送簽】 → 主管【核准】／【退回】
+  → 簽核完成，本版風險評估完成
+</code></pre>
+<hr />
+<h2 id="_2">二、畫面說明</h2>
+<h3 id="21">2.1 查詢列</h3>
+<table>
+<thead>
+<tr>
+<th>欄位／按鈕</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件編號</td>
+<td>輸入風險評估文件編號後按【查詢】</td>
+</tr>
+<tr>
+<td>進階查詢</td>
+<td>依條件查詢，點選結果帶回</td>
+</tr>
+<tr>
+<td>說明文件</td>
+<td>系統管理者上傳的作業說明檔，可下載參考</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 頁籤</h3>
+<table>
+<thead>
+<tr>
+<th>頁籤</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本資料</td>
+<td>風險評估表頭（唯讀）、按鈕、匯入匯出、加註意見</td>
+</tr>
+<tr>
+<td>明細資料</td>
+<td>B 表各項目的原始風險與機會評估輸入</td>
+</tr>
+<tr>
+<td>簽核主管</td>
+<td>送簽前設定各關簽核主管</td>
+</tr>
+<tr>
+<td>流程紀錄</td>
+<td>簽核歷程</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23">2.3 基本資料欄位</h3>
+<p>文件編號、部門、評估原因、評估版次、評估人、狀態、評估備註說明，都帶自風險評估，本作業<strong>不可修改</strong>。</p>
+<hr />
+<h2 id="_3">三、按鈕功能一覽</h2>
+<h3 id="31">3.1 基本資料頁籤</h3>
+<table>
+<thead>
+<tr>
+<th>按鈕</th>
+<th>何時出現</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增機會</td>
+<td>風險評估已簽核完成、尚未開始風險與機會評估；限發文者</td>
+<td>開始風險與機會評估，並依 B 表建立機會評估明細</td>
+</tr>
+<tr>
+<td>送簽</td>
+<td>風險與機會評估為發文者暫存；限發文者</td>
+<td>送出風險與機會評估簽核（見 5.4）</td>
+</tr>
+<tr>
+<td>核准／退回</td>
+<td>簽核中；簽核主管</td>
+<td>核准送下一關或簽核完成；退回給發文者</td>
+</tr>
+<tr>
+<td>強制取回</td>
+<td>簽核中；限發文者</td>
+<td>收回簽核中的文件；簽核完成不能取回</td>
+</tr>
+<tr>
+<td>匯入</td>
+<td>風險與機會評估為發文者暫存；限發文者</td>
+<td>以 CSV 匯入機會評估內容（見第六節）</td>
+</tr>
+<tr>
+<td>匯出</td>
+<td>有文件即可</td>
+<td>匯出 B 表及機會評估內容（見第六節）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 明細資料頁籤</h3>
+<table>
+<thead>
+<tr>
+<th>按鈕</th>
+<th>何時出現</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增修</td>
+<td>風險評估已簽核完成，或風險與機會評估為發文者暫存；限發文者</td>
+<td>儲存勾選列的機會評估內容（見 5.2）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">四、明細資料畫面</h2>
+<p>每個 B 表項目佔三列：</p>
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>內容</th>
+<th>可否輸入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第 1 列</td>
+<td>勾選框、作業流程名稱、步驟、可能發生原因、後果影響、事故類型</td>
+<td>唯讀（勾選框除外）</td>
+</tr>
+<tr>
+<td>第 2 列</td>
+<td>序號、<strong>原始</strong>暴露頻率、發生機率、嚴重度、風險等級、工程控制、管理控制、個人防護具</td>
+<td>唯讀</td>
+</tr>
+<tr>
+<td>第 3 列</td>
+<td><strong>改善方法</strong>、<strong>機會</strong>、改善後暴露頻率、發生機率、嚴重度、風險等級、工程控制、管理控制、個人防護具</td>
+<td>可輸入</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>改善方法</td>
+<td>下拉選單：<strong>消除</strong>、<strong>取代</strong></td>
+</tr>
+<tr>
+<td>機會</td>
+<td>勾選表示本項目有機會改善</td>
+</tr>
+<tr>
+<td>暴露頻率、發生機率、嚴重度</td>
+<td>改善後的評分；點標題按鈕可查看評分標準</td>
+</tr>
+<tr>
+<td>風險等級</td>
+<td>由系統依改善後的暴露頻率、發生機率、嚴重度自動計算；三項有任一未填時為 0</td>
+</tr>
+<tr>
+<td>工程控制、管理控制、個人防護具</td>
+<td>改善後的控制措施</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>同一製程＋作業的第一列以紅底顯示，其餘以藍綠底顯示。</li>
+<li>變更第 3 列任一欄位，系統會自動勾選該項目，按【增修】時一併儲存。</li>
+<li><strong>原風險等級 1、2（高風險）的項目，勾選框停用</strong>，畫面上方以紅字提示「※原風險等級1、2(高風險)之項目，請至【高風險改善追蹤】輸入，本畫面不可勾選增修。」，滑鼠移到勾選框可看到說明。</li>
+</ul>
+<hr />
+<h2 id="_5">五、操作步驟</h2>
+<h3 id="51">5.1 開始風險與機會評估</h3>
+<ol>
+<li>在查詢列輸入風險評估文件編號，按【查詢】。</li>
+<li>確認狀態為風險評估簽核完成。</li>
+<li>按【新增機會】，系統依 B 表建立機會評估明細，文件狀態改為發文者暫存，顯示「新增成功」。</li>
+</ol>
+<blockquote>
+<p>也可以直接到【明細資料】頁籤輸入後按【增修】，系統會自動開始風險與機會評估。</p>
+</blockquote>
+<h3 id="52">5.2 輸入機會評估（增修）</h3>
+<ol>
+<li>切到【明細資料】頁籤。</li>
+<li>對有機會改善的項目，在第 3 列選擇<strong>改善方法</strong>（消除／取代）、勾選<strong>機會</strong>，輸入改善後的暴露頻率、發生機率、嚴重度及控制措施。</li>
+<li>確認要儲存的項目已勾選（變更欄位時會自動勾選）。</li>
+<li>按【增修】，成功顯示「增修成功!共 n 筆」。</li>
+</ol>
+<p>錯誤訊息：</p>
+<table>
+<thead>
+<tr>
+<th>訊息</th>
+<th>原因／處理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-&gt;沒有勾選要修改的項目,無法增修..</td>
+<td>請勾選要儲存的項目</td>
+</tr>
+<tr>
+<td>-&gt;製程xx作業xx序號n為高風險(原等級1、2)，請至【高風險改善追蹤】輸入，不可於【風險與機會評估】輸入!</td>
+<td>高風險項目請在 EAJJRE20N 處理</td>
+</tr>
+<tr>
+<td>-&gt;此文件編號的風險評估資料還沒簽核完成,無法增修..</td>
+<td>請先完成風險評估簽核</td>
+</tr>
+<tr>
+<td>-&gt;此文件編號的風險與機會評估資料已簽核完成,無法增修..</td>
+<td>已簽核完成，不可再修改</td>
+</tr>
+<tr>
+<td>-&gt;文件狀態不是發文者暫存,無法增修..</td>
+<td>簽核中不可修改；需修改請先【強制取回】或請主管退回</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53">5.3 確認高風險項目已完成預估評估</h3>
+<p>B 表中風險等級 1、2 的項目，必須都已在【高風險改善追蹤】(EAJJRE20N) 完成【預估評估】，才可送簽。</p>
+<p>若有高風險項目尚未預估評估，【基本資料】按鈕旁會出現紅底大字「<strong>高風險無改善追蹤措施</strong>」，滑鼠移到紅字上可看到缺少的項目，例如：</p>
+<pre><code>作業10-01序號3
+作業20-05序號12
+高風險無改善追蹤措施!
+</code></pre>
+<p>請至 EAJJRE20N 逐項完成預估評估（可由風險評估 B 表的【簽】按鈕進入）。</p>
+<h3 id="54">5.4 送簽</h3>
+<ol>
+<li>至【簽核主管】頁籤設定簽核主管。</li>
+<li>回【基本資料】頁籤，可在【加註意見】輸入說明。</li>
+<li>按【送簽】，成功顯示「-&gt;已送簽成功,…」。</li>
+<li>若仍有高風險項目未完成預估評估，送簽會被擋下，並列出缺少的項目。</li>
+</ol>
+<h3 id="55">5.5 主管核准、退回、強制取回</h3>
+<ul>
+<li>簽核主管開啟文件後，可輸入【加註意見】，按【核准】或【退回】。</li>
+<li>退回後回到發文者暫存，發文者可修改後再送簽。</li>
+<li>發文者可在簽核中按【強制取回】收回文件。</li>
+<li>最後一關核准後簽核完成，本版風險評估完成。</li>
+</ul>
+<hr />
+<h2 id="_6">六、匯入與匯出</h2>
+<h3 id="61">6.1 匯出</h3>
+<p>在【基本資料】按【匯出】，訊息欄出現「產製完成!點我下載」，點連結下載 CSV。內容共 24 欄：</p>
+<table>
+<thead>
+<tr>
+<th>欄位群組</th>
+<th>欄位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>項目資料</td>
+<td>項次、風險評估編號（部門-製程-作業-序號）、作業流程/名稱、狀態、步驟、可能發生原因、後果影響、事故類型</td>
+</tr>
+<tr>
+<td>原始風險</td>
+<td>工程控制、管理控制、個人防護具、暴露頻率、發生機率、嚴重度、風險等級</td>
+</tr>
+<tr>
+<td>機會評估</td>
+<td>改善方法、工程控制、管理控制、個人防護具、機會、暴露頻率、發生機率、嚴重度、風險等級</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2 匯入</h3>
+<ol>
+<li>按【選擇資料檔案】上傳 CSV。</li>
+<li>按【匯入】，成功顯示上傳筆數。</li>
+</ol>
+<p>規則：</p>
+<ul>
+<li>只接受 CSV 檔，建議用匯出的檔案修改後匯入；檔案中的標點符號請用全形。內容含逗號或換行時須以雙引號包覆，建議直接用 Excel 另存 CSV。</li>
+<li>每列以「風險評估編號」（部門-製程-作業-序號）對應項目；部門須與本單相同。</li>
+<li>支援 24 欄（匯出格式）與 17 欄兩種格式；欄數不符會顯示「上傳檔案表單內容，第 n 欄的欄位數太少／太多」。</li>
+<li>匯入的改善後風險等級由系統計算；暴露頻率、發生機率、嚴重度有任一空白時為 0。</li>
+<li>機會欄填 <code>V</code> 表示有機會改善。</li>
+<li><strong>原風險等級 1、2（高風險）的項目不可匯入機會資料</strong>：<ul>
+<li>該列機會評估各欄（改善方法～嚴重度）全部空白時，系統略過該列，不匯入、不計入上傳筆數。</li>
+<li>該列有填任何機會評估欄位時，整批不匯入，並顯示「第 n 列有誤!…-&gt;製程xx作業xx序號n為高風險(原等級1、2)，請至【高風險改善追蹤】輸入，不可於【風險與機會評估】匯入機會資料!」；請清空該列機會評估欄位後重新匯入，高風險項目改至【高風險改善追蹤】(EAJJRE20N) 處理。</li>
+<li>原等級以系統中 B 表的風險等級為準，不是 CSV 中的「風險等級」欄。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="_7">七、機會評估結果的用途</h2>
+<p>改善方法為<strong>消除</strong>或<strong>取代</strong>的項目，在部門下一版風險評估執行【新版複製】、或匯出「最新B表」時，會以機會評估的控制措施及風險值取代原值，原始依據標示為「RO-風險評估文號」。</p>
+<hr />
+<h2 id="_8">八、常見問題</h2>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>看不到【新增機會】</td>
+<td>風險評估尚未簽核完成、已開始風險與機會評估，或您不是發文者</td>
+</tr>
+<tr>
+<td>高風險項目不能勾選</td>
+<td>原等級 1、2 須在【高風險改善追蹤】(EAJJRE20N) 處理</td>
+</tr>
+<tr>
+<td>匯入時出現「為高風險(原等級1、2)…不可於【風險與機會評估】匯入機會資料」</td>
+<td>CSV 中高風險項目填了機會資料，請清空該列機會評估欄位後重新匯入（見 6.2）</td>
+</tr>
+<tr>
+<td>出現「高風險無改善追蹤措施」</td>
+<td>有高風險項目尚未預估評估，請至 EAJJRE20N 完成後再送簽</td>
+</tr>
+<tr>
+<td>簽核中想修改</td>
+<td>先【強制取回】，或請主管退回</td>
+</tr>
+<tr>
+<td>簽核完成後還能修改嗎</td>
+<td>不可以；請在部門下一版風險評估處理</td>
+</tr>
+<tr>
+<td>部門無法新增下一版風險評估</td>
+<td>本作業尚未簽核完成；完成後才可新增下一版</td>
+</tr>
+</tbody>
+</table></main></div><a class="top" href="#top" title="回到頂端">↑</a></body></html>

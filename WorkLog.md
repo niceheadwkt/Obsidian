@@ -3,6 +3,7 @@
 **更新日期**：2026-11-19
 
 ## 上次做到哪
+- **2026-11-19 收工：`AI/ERP/` 資料夾整理**：38 份 `(chatGPT)XX功能規格手冊.md` 與 `ERP功能規格手冊PROMPT.md` 移到 `AI/ERP/ERP功能規格手冊/`（去掉 `(chatGPT)` 前綴，內容不變），新增 `SS功能規格手冊.md`（銷售結算管理）；EA 三版只留 chatGPT 版（刪 `EA功能規格手冊.md` 67 KB、`(Antigravity)EA功能規格手冊.md` 35 KB）；`(chatGPT)TM功能規格手冊.md`（冶金規範）也移入新資料夾為 `TM功能規格手冊.md`。另新增 `AI/ERP/ERP操作手冊/EA系統操作手冊/`（EAJJBATCHJOB、EAJJLICENSEBAT、EAJJRE00N／10N／20N 操作手冊 md／docx／html／pdf）與 `AI/ERP/新進人員教育訓練/`（EA、HG／QG、MT、車籍教育訓練 HTML ；兩個語音 zip 共約 66 MB 已加入 `.gitignore`，只存在 Google Drive）。舊版檔案都還在 git 歷史可取回。`AI/raw/` 新增 1 篇 11/19 素材（Google AI Pro 8 種隱藏工具），尚未入庫。
 - **2026-11-19 EA 系統新進人員旁白教學影片**：參考 `hg/HG門禁管理系統_新進人員旁白教學.html`，把 `ea/EA系統新進人員深入教育訓練手冊.html`（89 支作業）濃縮成 28 頁投影片＋台灣華語旁白（Edge-TTS `zh-TW-YunJheNeural`）。產出放在 `ea/`：`EA系統新進人員教育訓練(語音).mp4`（16 分 34 秒、1080p、內建中文軟字幕與 28 個章節）、`.srt`、`EA系統_新進人員旁白教學.html`（內嵌語音，不靠瀏覽器 TTS；語速 0.75～1.5 倍六檔、可中途切換；章節下拉），三檔打包為 `EA系統新進人員教育訓練(語音).zip`（UTF-8 檔名）。製作腳本（slides.py 旁白稿、render.py、tts.py、build.py、player.html）在當次 Claude scratchpad `ea_video/`，會被清除。
   - 踩坑：公司 SSL 檢查需把 `edge_tts.communicate._SSL_CTX` 換成 `truststore.SSLContext`；Edge-TTS 伺服器會長時間限流（回 `NoAudioReceived`，連續 30～60 分鐘），**改接手機熱點一樣失敗**，判斷是微軟服務端限制、與公司出口 IP 無關。28 頁合成共花約 3 小時。
   - 中途帳號到期，由 session ea-6e 接手跑完語音與組裝並複製到 `ea/`。未提交 CVS（影音成品不入 CVS）。
@@ -321,6 +322,7 @@
 - RQ11510012 全部文件（11/02 整理）：`D:/0.翁國烔_中鴻專案/RQ115/RQ11510012(風險評估系統優化(115107與A3翁國烔工程師溝通))/`——規劃設計 v0.5（定版）、v0.4（設計理由）、程式修改清單、DDL `db.tbeaRE03_RQ11510012.sql`、`操作手冊/`（三本 md／docx／html／pdf＋manual_img）、D1 資料修正 SQL／ODT／PDF／MD 與備份 CSV。v0.2、v0.3、替代方案、10/13 修改紀錄、待確認事項 Q11/Q13/Q14 已刪除（Google Drive 垃圾桶）。
 
 ## 下一步
+- **Wiki 入庫**：`AI/raw/2026-11-19T143623+0800-買了Google AI Pro只會用Gemini聊天？…` 一篇待匯入。
 - **EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。
 - **Wiki 待使用者決定**：(1) 動畫技能用的是 Breeze TTS 2（不可商用）還是 BreezyVoice（可商用），確認後改 [[claude-motion-explainer 科普解說動畫技能]] 的警示框；(2) `Alt+Space` 能否當語音輸入熱鍵（SogaType 紀錄 vs NoType 建議書）；(3) 重新剪輯 4 篇空殼素材：Gmail 技巧大全、AI 生成影片直播、不用本地顯卡、ChatGPT 做 LINE 貼圖。
 - ~~**115 年度內控自評 EA 版（G447-2，11/30 前交）**：開 Outlook 草稿檢查簽名檔、補課長／廠處長欄位後寄給楊硯媚；視需要於內文加一句「14 張明細詳附件清單」。14 張逾期證照（重點：PEM60170 逾期最久、PTM60008、W10195、輻安證書 M412／M4 重複登錄與通知期間設定）由業務單位確認處置。若要改善程式（通知展延日與通知人員必填、已過期訊息改依有效期間迄判斷）需另開需求。~~ **已寄給楊硯媚（2026-11-12 筆記確認），由對方自行決定後續，結案不再追蹤**。

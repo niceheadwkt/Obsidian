@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>門禁系統教育訓練</title>
+<meta name="description" content="中鴻 ERP 門禁與承攬商安全衛生管理系統（HG）與承攬商電子商務入口（QG）新進人員教育訓練教材">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --surface-2:#f0eee8; --ink:#1d1f23; --ink-2:#4a4f57; --muted:#7a808a;
+  --line:#dedbd2; --accent:#1f5f8b; --accent-soft:#e3eef6; --ok:#2e7d4f; --ok-soft:#e4f3ea;
+  --warn:#9a5b00; --warn-soft:#fbf0dc; --bad:#a83232; --bad-soft:#f8e3e3; --code-bg:#f3f1ec;
+  --radius:10px; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171a; --surface:#1d2024; --surface-2:#252930; --ink:#e8e6e1; --ink-2:#b9bcc2; --muted:#8b9099;
+    --line:#343941; --accent:#6fb0de; --accent-soft:#1d3346; --ok:#6cc596; --ok-soft:#1b3326;
+    --warn:#e2ac55; --warn-soft:#3a2e17; --bad:#ec8080; --bad-soft:#3d2121; --code-bg:#23272d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171a; --surface:#1d2024; --surface-2:#252930; --ink:#e8e6e1; --ink-2:#b9bcc2; --muted:#8b9099;
+  --line:#343941; --accent:#6fb0de; --accent-soft:#1d3346; --ok:#6cc596; --ok-soft:#1b3326;
+  --warn:#e2ac55; --warn-soft:#3a2e17; --bad:#ec8080; --bad-soft:#3d2121; --code-bg:#23272d;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;font-size:16px;line-height:1.75}
+a{color:var(--accent)}
+code,kbd,pre{font-family:"Cascadia Mono",Consolas,"Courier New",monospace;font-size:.88em}
+code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;word-break:break-all}
+pre{background:var(--code-bg);padding:14px 16px;border-radius:8px;overflow-x:auto;line-height:1.55;border:1px solid var(--line)}
+pre code{background:none;padding:0;word-break:normal}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1280px;margin:0 auto}
+nav.toc{position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 18px 28px 24px;border-right:1px solid var(--line)}
+nav.toc .brand{font-weight:700;font-size:15px;margin-bottom:4px}
+nav.toc .sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+nav.toc ol{list-style:none;padding:0;margin:0;counter-reset:t}
+nav.toc li{counter-increment:t}
+nav.toc a{display:block;padding:5px 10px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:14px}
+nav.toc a::before{content:counter(t,decimal-leading-zero) "  ";color:var(--muted);font-variant-numeric:tabular-nums}
+nav.toc a:hover,nav.toc a.active{background:var(--accent-soft);color:var(--accent)}
+.theme-btn{margin-top:20px;font:inherit;font-size:13px;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+main{padding:36px 48px 80px;min-width:0}
+header.hero{padding:8px 0 28px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.eyebrow{font-size:13px;letter-spacing:.08em;color:var(--accent);font-weight:600}
+h1{font-size:32px;line-height:1.3;margin:6px 0 10px}
+.lead{color:var(--ink-2);font-size:17px;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:13px;color:var(--muted)}
+section{padding-top:36px}
+h2{font-size:24px;margin:0 0 6px;display:flex;align-items:baseline;gap:10px}
+h2 .no{font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600}
+h2+p.intro{color:var(--ink-2);margin-top:2px}
+h3{font-size:18px;margin:26px 0 8px}
+h4{font-size:15.5px;margin:18px 0 6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card h4{margin-top:0}
+.card p{margin:.3em 0}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line);margin-right:4px;white-space:nowrap}
+.tag.a{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.tag.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.tag.w{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.tag.b{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.note.warn{border-color:var(--warn);background:var(--warn-soft)}
+.note.bad{border-color:var(--bad);background:var(--bad-soft)}
+.note.ok{border-color:var(--ok);background:var(--ok-soft)}
+.note strong:first-child{display:block;margin-bottom:2px}
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface-2);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td code{white-space:nowrap}
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 14px 44px}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--accent);color:var(--surface);display:grid;place-items:center;font-weight:700;font-size:14px}
+.steps>li::after{content:"";position:absolute;left:14px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.steps>li:last-child::after{display:none}
+.steps b{display:block}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:14px 0;overflow-x:auto}
+.diagram svg{display:block;width:100%;height:auto;min-width:640px}
+.diagram .cap{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+svg .box{fill:var(--surface-2);stroke:var(--line);stroke-width:1.5}
+svg .box.acc{fill:var(--accent-soft);stroke:var(--accent)}
+svg .box.ok{fill:var(--ok-soft);stroke:var(--ok)}
+svg .box.warn{fill:var(--warn-soft);stroke:var(--warn)}
+svg text{fill:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:13px}
+svg text.s{font-size:11.5px;fill:var(--ink-2)}
+svg text.t{font-weight:700;font-size:14px}
+svg .ln{stroke:var(--ink-2);stroke-width:1.5;fill:none}
+svg .ln.d{stroke-dasharray:5 4}
+svg .ln.acc{stroke:var(--accent)}
+svg .ah{fill:var(--ink-2)}
+svg .ah.acc{fill:var(--accent)}
+details.q{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:8px 0;padding:0 16px}
+details.q summary{cursor:pointer;padding:12px 0;font-weight:600;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::before{content:"Q  ";color:var(--accent)}
+details.q[open] summary{border-bottom:1px dashed var(--line)}
+details.q .a{padding:10px 0 14px;color:var(--ink-2)}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:6px 0 6px 30px;position:relative;border-bottom:1px dashed var(--line)}
+.checklist input{position:absolute;left:4px;top:11px;width:16px;height:16px;accent-color:var(--accent)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14.5px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media (max-width:1000px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:16px}
+  nav.toc ol{display:flex;flex-wrap:wrap;gap:4px}
+  nav.toc a{font-size:13px;padding:4px 8px;background:var(--surface);border:1px solid var(--line)}
+  main{padding:24px 16px 60px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  h1{font-size:26px}
+}
+@media print{
+  nav.toc{display:none}.layout{display:block}main{padding:0}
+  details.q{break-inside:avoid}details.q .a{display:block}
+  section{break-inside:auto}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" aria-label="目錄">
+  <div class="brand">HG／QG 門禁系統</div>
+  <div class="sub">新進人員教育訓練教材</div>
+  <ol id="tocList">
+    <li><a href="#s1">課程導覽</a></li>
+    <li><a href="#s2">系統全貌</a></li>
+    <li><a href="#s3">業務流程與狀態碼</a></li>
+    <li><a href="#s4">HG 功能地圖</a></li>
+    <li><a href="#s5">QG 承攬商入口</a></li>
+    <li><a href="#s6">資料表與設定</a></li>
+    <li><a href="#s7">程式架構</a></li>
+    <li><a href="#s8">刷卡機與通訊</a></li>
+    <li><a href="#s9">MQ 資料同步</a></li>
+    <li><a href="#s10">定時排程</a></li>
+    <li><a href="#s11">異常處理手冊</a></li>
+    <li><a href="#s12">開發與上線須知</a></li>
+    <li><a href="#s13">學習路徑與自我測驗</a></li>
+    <li><a href="#s14">參考文件</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">切換深色／淺色</button>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">中鴻鋼鐵 ERP ・ 行政處資訊課</div>
+  <h1>門禁與承攬商安全衛生管理系統<br>新進人員教育訓練</h1>
+  <p class="lead">本教材帶你從業務面、系統架構、資料表、刷卡硬體到維運排障，完整認識 HG 門禁系統與 QG 承攬商入口。讀完後，你應該能獨立回答使用者的常見問題，並知道遇到異常時從哪裡查起。</p>
+  <div class="meta">
+    <span>適用對象：資訊課新進同仁、HG 系統接手維護人員</span>
+    <span>建議時數：三天（含實機操作）</span>
+    <span>整理日期：2026-10-02</span>
+  </div>
+</header>
+
+<!-- ============ 1 ============ -->
+<section id="s1">
+  <h2><span class="no">01</span>課程導覽</h2>
+  <p class="intro">先掌握學習目標與這套系統「為什麼存在」。</p>
+
+  <div class="grid g3">
+    <div class="card"><h4>為什麼要有這套系統</h4><p>承攬商人員進入廠區施工，必須確認身分、證件效期、保險、工安訓練與當日派工。系統在門口刷卡的瞬間，用畫面、聲音、燈號即時告訴警衛「這個人可不可以進廠」。</p></div>
+    <div class="card"><h4>它影響誰</h4><p>刷卡資料會提供給「計價系統」與「採購系統」做承攬商計價與扣款，也是勞檢報表、保險勾稽的依據。<b>刷卡資料正確是首要之務。</b></p></div>
+    <div class="card"><h4>你要學會的事</h4><p>1. 說出證件申請到刷卡入廠的完整流程。<br>2. 看懂申請單狀態碼與主要資料表。<br>3. 理解刷卡機、門禁主機、ERP、製卡機之間的資料流。<br>4. 依異常訊息判斷問題落在哪一段。</p></div>
+  </div>
+
+  <h3>名詞速查</h3>
+  <div class="tbl"><table>
+    <tr><th>名詞</th><th>說明</th></tr>
+    <tr><td><b>HG</b></td><td>ERP 內部的「門禁管理與承攬商安全衛生管理系統」，給公司同仁（承辦人、主管、行政處、工安、警衛）使用。程式位於 <code>erp.war/hg</code>。</td></tr>
+    <tr><td><b>QG</b></td><td>承攬商電子商務（EC）入口端模組，給承攬商自行維護基本資料與提出申請。程式位於 <code>erp.war/qg</code>，後端大量呼叫 HG 的 API。</td></tr>
+    <tr><td><b>門禁主機（hgserver）</b></td><td>獨立的門禁 ERP 主機（<code>hgserver.chsteel.com.tw</code>），接收各廠刷卡並即時判斷，執行 <code>hgjsC05</code> servlet。</td></tr>
+    <tr><td><b>控制主機（IPC）</b></td><td>各廠門口的電腦，執行「門禁程式 .exe」，接收卡鐘卡號、轉送門禁主機、控制螢幕／聲音／紅綠燈。</td></tr>
+    <tr><td><b>卡鐘</b></td><td>門口的刷卡感應機，分入廠與出廠兩台。</td></tr>
+    <tr><td><b>製卡機</b></td><td>行政處製作工作證卡片的設備，資料庫 schema 為 <code>HGCARDUSER</code>。</td></tr>
+    <tr><td><b>MQ</b></td><td>2022 年起取代舊 DI 的資料傳輸中介軟體，負責 ERP、門禁主機、製卡機三方資料同步。</td></tr>
+    <tr><td><b>派工</b></td><td>承攬商每日提報當天要進廠的人員名單；沒有派工，即使有工作證也可能無法入廠。</td></tr>
+  </table></div>
+
+  <h3>程式命名慣例</h3>
+  <div class="tbl"><table>
+    <tr><th>前綴</th><th>意義</th><th>範例</th></tr>
+    <tr><td><code>hgjj</code>／<code>qgjj</code></td><td>JSP 畫面</td><td><code>hgjjb02.jsp</code>（長期工作證申請）</td></tr>
+    <tr><td><code>hgjc</code>／<code>qgjc</code></td><td>Java 類別（controller、Bs、DAO、批次）</td><td><code>hgjcb02Apply.java</code></td></tr>
+    <tr><td><code>hgjs</code></td><td>Servlet</td><td><code>hgjsC05</code>（刷卡判斷）</td></tr>
+    <tr><td><code>hgjctbNNN</code></td><td>對應資料表 <code>TBHGNNN</code> 的 VO／DAO</td><td><code>hgjctb201VO</code> ↔ <code>DB.TBHG201</code></td></tr>
+    <tr><td><code>IHGxx</code></td><td>ERP 選單作業代碼</td><td><code>IHGCD</code> 人員出入廠記錄查詢、<code>IHGBJ</code> 出入證基本資料維護</td></tr>
+  </table></div>
+  <p>畫面代碼中的英文字母代表功能群組，例如 <code>b</code> 是證件申請、<code>c</code> 是派工與門哨、<code>g</code> 是工安稽查，詳見第四章。</p>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="s2">
+  <h2><span class="no">02</span>系統全貌</h2>
+  <p class="intro">四個角色、三台主機、一條資料流。</p>
+
+  <div class="diagram" role="img" aria-label="HG 與 QG 系統架構圖">
+  <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0,0L10,5L0,10z"/></marker>
+      <marker id="ara" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah acc" d="M0,0L10,5L0,10z"/></marker>
+    </defs>
+    <!-- users -->
+    <rect class="box" x="20" y="30" width="170" height="64" rx="8"/>
+    <text class="t" x="105" y="57" text-anchor="middle">承攬商</text>
+    <text class="s" x="105" y="78" text-anchor="middle">電子商務 ec01</text>
+    <rect class="box" x="20" y="130" width="170" height="64" rx="8"/>
+    <text class="t" x="105" y="157" text-anchor="middle">公司同仁</text>
+    <text class="s" x="105" y="178" text-anchor="middle">承辦人／主管／工安／行政處</text>
+    <!-- QG/HG on ERP -->
+    <rect class="box acc" x="250" y="20" width="250" height="190" rx="10"/>
+    <text class="t" x="375" y="44" text-anchor="middle">ERP 正式機（DB2）</text>
+    <rect class="box" x="270" y="58" width="210" height="44" rx="6"/>
+    <text x="375" y="85" text-anchor="middle">QG 承攬商入口（畫面層）</text>
+    <rect class="box" x="270" y="140" width="210" height="52" rx="6"/>
+    <text x="375" y="162" text-anchor="middle">HG 門禁管理系統</text>
+    <text class="s" x="375" y="181" text-anchor="middle">API／Bs／DAO／批次／報表</text>
+    <path class="ln" d="M375,102 V138" marker-end="url(#ar)"/>
+    <text class="s" x="383" y="125">呼叫 HG API</text>
+    <path class="ln" d="M190,62 H268" marker-end="url(#ar)"/>
+    <path class="ln" d="M190,162 H268" marker-end="url(#ar)"/>
+    <!-- hgserver -->
+    <rect class="box ok" x="600" y="20" width="270" height="110" rx="10"/>
+    <text class="t" x="735" y="46" text-anchor="middle">門禁主機 hgserver</text>
+    <text class="s" x="735" y="70" text-anchor="middle">hgjsC05 刷卡判斷 servlet</text>
+    <text class="s" x="735" y="90" text-anchor="middle">門禁 DB（TBHG 系列鏡像）</text>
+    <text class="s" x="735" y="110" text-anchor="middle">門哨放行畫面（警衛）</text>
+    <!-- card printer -->
+    <rect class="box warn" x="664" y="165" width="206" height="60" rx="10"/>
+    <text class="t" x="771" y="190" text-anchor="middle">製卡機 DB</text>
+    <text class="s" x="771" y="210" text-anchor="middle">HGCARDUSER.PERSON／BLACKLIST</text>
+    <!-- MQ arrows -->
+    <path class="ln acc" d="M500,60 H598" marker-end="url(#ara)"/>
+    <text class="s" x="512" y="52">MQ HG001</text>
+    <path class="ln acc" d="M598,100 H500" marker-end="url(#ara)"/>
+    <text class="s" x="512" y="116">MQ HG002S</text>
+    <path class="ln acc" d="M500,175 C560,175 600,232 670,210" marker-end="url(#ara)"/>
+    <text class="s" x="512" y="168">MQ HG003</text>
+    <!-- plant -->
+    <rect class="box" x="250" y="270" width="620" height="110" rx="10"/>
+    <text class="t" x="270" y="294">各廠門口</text><text class="s" x="340" y="294">行政大樓、冷軋、熱軋、鋼管、鹿港、酸鍍</text>
+    <rect class="box" x="275" y="310" width="130" height="54" rx="6"/>
+    <text x="340" y="334" text-anchor="middle">入廠卡鐘 .1</text>
+    <text class="s" x="340" y="352" text-anchor="middle">port 4660</text>
+    <rect class="box" x="420" y="310" width="130" height="54" rx="6"/>
+    <text x="485" y="334" text-anchor="middle">出廠卡鐘 .2</text>
+    <text class="s" x="485" y="352" text-anchor="middle">port 4661</text>
+    <rect class="box ok" x="580" y="310" width="150" height="54" rx="6"/>
+    <text x="655" y="334" text-anchor="middle">控制主機 .4</text>
+    <text class="s" x="655" y="352" text-anchor="middle">門禁程式 .exe</text>
+    <rect class="box" x="750" y="310" width="100" height="54" rx="6"/>
+    <text x="800" y="334" text-anchor="middle">燈號 .5</text>
+    <text class="s" x="800" y="352" text-anchor="middle">警衛畫面 .3</text>
+    <path class="ln" d="M405,337 H418"/>
+    <path class="ln" d="M550,337 H578" marker-end="url(#ar)"/>
+    <path class="ln" d="M730,337 H748" marker-end="url(#ar)"/>
+    <path class="ln" d="M615,308 V132" marker-end="url(#ar)"/>
+    <path class="ln d" d="M645,132 V308" marker-end="url(#ar)"/>
+    <text class="s" x="608" y="258" text-anchor="end">HTTP 送卡號</text>
+    <text class="s" x="652" y="258">回傳結果</text>
+  </svg>
+  <div class="cap">圖 2-1　系統架構與資料流（IP 結尾數字以各廠第一台刷卡機為例）</div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>HG 與 QG 的分工</h4>
+      <p><span class="tag a">QG</span>承攬商的入口：維護自家廠商、人員、車輛資料，提出人力需求、工作證、臨時工作證、車輛通行證申請，查詢與列印。</p>
+      <p><span class="tag a">HG</span>公司內部的完整系統：所有 QG 功能的後端邏輯，加上簽核、製證、派工、門哨放行、高風險作業、工安稽查、罰單、證照、教育訓練、報表與排程。</p>
+      <p>簡單說：<b>QG 是畫面，HG 是大腦。</b>改 QG 的功能，常常要一起看 HG 的 API。</p>
+    </div>
+    <div class="card">
+      <h4>三個網址要記得</h4>
+      <dl class="kv">
+        <dt>ERP 正式機</dt><dd>公司同仁使用 HG 作業</dd>
+        <dt>電子商務</dt><dd><code>https://ec01.chsteel.com.tw/erp/ds/jsp/dsjjeip.jsp</code>（承攬商使用 QG）</dd>
+        <dt>門禁主機</dt><dd><code>http://hgserver.chsteel.com.tw/erp/ds/jsp/dsjjeip.jsp</code>（警衛門哨放行）</dd>
+        <dt>MQ 管理</dt><dd><code>http://10.125.248.21:8999/ezomq/login</code></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="note warn"><strong>關於帳號密碼</strong>交接資料夾中記有部分主機、FTP、VNC 的帳號密碼。本教材刻意不列出，請向主管或系統負責人索取，並妥善保管，不要寫入任何會分享出去的文件。</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="s3">
+  <h2><span class="no">03</span>業務流程與狀態碼</h2>
+  <p class="intro">承攬商人員從「還沒進過廠」到「每天刷卡上工」的完整路徑。</p>
+
+  <ol class="steps">
+    <li><b>建立基本資料</b>承攬商在 QG（或同仁在 HG）建立廠商（TBHG101）、人員（TBHG102，含照片）、車輛（TBHG103）資料。人員照片須為 .jpg、檔名為身分證號。</li>
+    <li><b>人力需求申請（B01）</b>依合約或訂購單提報需求人數與工作期間，主管線上核准、退回或擬准。</li>
+    <li><b>工作證申請（B02 長期／B03 臨時／B04 車輛／B05 臨時通行證／B11 承租）</b>建立申請主檔 TBHG201 與明細 TBHG202（人員）或 TBHG203（車輛），送出後進入主管簽核。</li>
+    <li><b>簽核與繳費</b>主管審批後狀態轉為已核准，審核通過自動通知行政處（群組 <code>HGA1GROUP</code>）製證。</li>
+    <li><b>製卡發證</b>行政處以製卡機製卡，出入證資料寫入 TBHG206，狀態為 D01（發證）。</li>
+    <li><b>每日派工（C01）</b>承攬商填寫當日派工名單（TBHG204／205），派工地點必須與刷卡地點一致。</li>
+    <li><b>刷卡入廠</b>門口卡鐘刷卡，門禁主機即時判斷可否入廠，並寫入出入紀錄 TBHG301。臨時人員由警衛在「門哨放行作業」換證放行。</li>
+    <li><b>後續應用</b>刷卡紀錄經排程配對（TBHG402）、保險勾稽，提供計價、採購與各類報表。</li>
+  </ol>
+
+  <h3>申請單狀態（TBHG201.status）</h3>
+  <div class="tbl"><table>
+    <tr><th>代碼</th><th>常數</th><th>意義</th></tr>
+    <tr><td><code>A00</code></td><td>STATUS_VENDADD</td><td><span class="tag">廠商建立中</span>承攬商在 QG 建立，尚未提交</td></tr>
+    <tr><td><code>A01</code></td><td>STATUS_INITIAL</td><td><span class="tag">承辦人尚未送出</span></td></tr>
+    <tr><td><code>B01</code></td><td>STATUS_BOSS</td><td><span class="tag a">主管審批中</span></td></tr>
+    <tr><td><code>B02</code></td><td>STATUS_APPR</td><td><span class="tag ok">已核准</span></td></tr>
+    <tr><td><code>C01</code></td><td>STATUS_FEE</td><td><span class="tag w">繳費中</span></td></tr>
+    <tr><td><code>D01</code></td><td>STATUS_CARD</td><td><span class="tag ok">發證</span></td></tr>
+    <tr><td><code>X01</code></td><td>STATUS_REJECT</td><td><span class="tag b">不核准</span></td></tr>
+    <tr><td><code>X02</code></td><td>STATUS_NOCARD</td><td><span class="tag b">不製證</span></td></tr>
+  </table></div>
+
+  <h3>出入證狀態（TBHG206.status）</h3>
+  <div class="tbl"><table>
+    <tr><th>代碼</th><th>意義</th><th>由誰改變</th></tr>
+    <tr><td><code>D01</code></td><td>發證（製卡完成）</td><td>製證流程</td></tr>
+    <tr><td><code>E01</code></td><td>繳回</td><td rowspan="4">證件狀態管制（hgjjb06）或出入證基本資料維護（IHGBJ）</td></tr>
+    <tr><td><code>E02</code></td><td>遺失</td></tr>
+    <tr><td><code>E03</code></td><td>毀損</td></tr>
+    <tr><td><code>E04</code></td><td>註銷</td></tr>
+    <tr><td><code>E05</code></td><td>過期</td><td>排程 <code>HGCARDPASSCK</code> 每日 6:00 自動更新</td></tr>
+  </table></div>
+  <p>卡別（TBHG206.cardType）：<code>02</code> 長期工作證、<code>03</code> 臨時工作證。卡片完整碼規則為 <code>cardSrl = cardId || '0' || year</code>。</p>
+
+  <h3>各類申請會更新哪些資料表</h3>
+  <div class="tbl"><table>
+    <tr><th>申請類別</th><th>主檔</th><th>明細</th><th>基本資料</th></tr>
+    <tr><td>長期工作證</td><td>TBHG201</td><td>TBHG202</td><td>TBHG102</td></tr>
+    <tr><td>臨時工作證</td><td>TBHG201</td><td>TBHG202</td><td>TBHG102</td></tr>
+    <tr><td>車輛通行證</td><td>TBHG201</td><td>TBHG203</td><td>TBHG103</td></tr>
+    <tr><td>臨時入廠</td><td>TBHG201</td><td>TBHG202</td><td>TBHG102</td></tr>
+    <tr><td>派工</td><td>TBHG201</td><td>TBHG204</td><td>TBHG205</td></tr>
+  </table></div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="s4">
+  <h2><span class="no">04</span>HG 功能地圖</h2>
+  <p class="intro">HG 依英文字母分成九大功能群組。所有畫面位於 <code>erp.war/hg/jsp/</code>。</p>
+
+  <div class="grid g3">
+    <div class="card"><h4><span class="tag a">A</span>基本資料</h4><p><code>hgjja01</code> 廠商基本資料<br><code>hgjja02</code> 承攬商人員（含辦證紀錄、停權黑名單）<br><code>hgjja03</code> 進廠車輛<br><code>hgjja04</code> 關懷信<br><code>hgjja05</code> 課長工作內容清單</p></div>
+    <div class="card"><h4><span class="tag a">B</span>證件申請與審核</h4><p><code>hgjjb01</code> 人力需求申請<br><code>hgjjb02</code> 長期工作證<br><code>hgjjb03</code> 人員臨時工作證<br><code>hgjjb04</code> 車輛通行證<br><code>hgjjb05</code> 臨時通行證<br><code>hgjjb06</code> 證件繳回／遺失／毀損／註銷<br><code>hgjjb07～09</code> 查詢<br><code>hgjjb10</code> 出入證基本資料維護<br><code>hgjjb11</code> 承租工作證</p></div>
+    <div class="card"><h4><span class="tag a">C</span>派工與門哨放行</h4><p><code>hgjjc01</code> 派工申請（可 Excel 匯入）<br><code>hgjjc02</code> 派工臨時通行證查詢<br><code>hgjjc03</code> 門哨放行（派工放行、換證、繳證）<br><code>hgjjc06</code> 臨時通行證維護查詢<br><code>hgjjc07</code> 出入放行歷史查詢</p></div>
+    <div class="card"><h4><span class="tag a">F</span>高風險作業</h4><p><code>hgjjf01</code> 高風險工作設定<br><code>hgjjf02</code> 每日提報與簽核，可產製高雄市勞動檢查處、中區職安中心報表<br><code>hgjjf03</code> 稽查與安全照護<br><code>hgjjf04</code> 每日維護</p></div>
+    <div class="card"><h4><span class="tag a">G／N</span>工安稽查與罰單</h4><p><code>hgjjg01</code> 稽查登錄與缺失送簽<br><code>hgjjg02</code> 水平展開追溯<br><code>hgjjg04</code> 矯正措施登錄結案<br><code>hgjjg05</code> 違規罰單與扣款（連動計價）<br><code>hgjjg06</code> 改善照片上傳<br><code>hgjjn01／n02</code> 承攬商稽查矯正</p></div>
+    <div class="card"><h4><span class="tag a">K</span>證照與 SOP</h4><p><code>hgjjk01</code> 安全工作程序（SJP）<br><code>hgjjk02</code> 特殊作業證照（堆高機、天車、缺氧作業主管等），效期追蹤與過期預警</p></div>
+    <div class="card"><h4><span class="tag a">S</span>刷卡與保險</h4><p><code>hgjjs01</code> 刷卡資料匯入、補登，比對每日進廠人員投保狀態<br><code>hgjjs00</code> 系統簡易代碼維護</p></div>
+    <div class="card"><h4><span class="tag a">T</span>教育訓練</h4><p><code>hgjjt001</code> 課程基本資料<br><code>hgjjt002</code> 訓練名冊匯入、證書字號、複訓通知</p></div>
+    <div class="card"><h4><span class="tag a">R</span>報表</h4><p><code>HGR00010</code> 車證過期<br><code>HGR00020</code> 承攬商駕照到期<br><code>HGR00050</code> 罰單查詢<br><code>HGR00060</code> 臨時工作證統計<br><code>HGR00070</code> 稽核核准逾七天未送矯正單</p></div>
+  </div>
+
+  <div class="note"><strong>Excel 整批上傳格式</strong>各申請畫面的上傳範本放在 <code>HG交接/HG/所有申請畫面之EXCEL上傳格式/</code>（HG001 人力需求、HG002 車證、HG003 長期工作證、HG004 允許入廠時間、HG005 臨時工作證、HG006 臨時通行證）。.odt 檔無法上傳，會出現 <code>Invalid header signature</code>，請另存為 Excel。</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="s5">
+  <h2><span class="no">05</span>QG 承攬商入口</h2>
+  <p class="intro">QG 是承攬商看到的畫面，資料範圍以登入者的承攬商編號為限。</p>
+
+  <div class="tbl"><table>
+    <tr><th>功能群組</th><th>主要頁面</th><th>後端服務（HG）</th></tr>
+    <tr><td>廠商基本資料</td><td><code>qgjja01Company.jsp</code></td><td><code>hgjca01CompanyEC</code></td></tr>
+    <tr><td>人員基本資料</td><td><code>qgjja02List／Staff.jsp</code></td><td><code>hgjca02StaffEC</code>（照片轉 Base64 上傳）</td></tr>
+    <tr><td>車輛基本資料</td><td><code>qgjja03List／Vehicle.jsp</code></td><td><code>hgjca03VehicleEC</code></td></tr>
+    <tr><td>人力需求申請</td><td><code>qgjjb01Apply.jsp</code></td><td><code>hgjcb01ApplyEC</code>、<code>hgjctb201DAO</code></td></tr>
+    <tr><td>工作證申請</td><td><code>qgjjb02Apply／Staff.jsp</code></td><td><code>hgjcb02ApplyEC</code>、<code>hgjcb02StaffEC</code></td></tr>
+    <tr><td>臨時工作證申請</td><td><code>qgjjb03Apply／Staff.jsp</code></td><td><code>hgjcb03ApplyEC</code>、<code>hgjcb03StaffEC</code></td></tr>
+    <tr><td>車輛通行證申請</td><td><code>qgjjb04Apply／Vehicle.jsp</code></td><td><code>hgjcb04Apply</code>、<code>hgjcb04Vehicle</code></td></tr>
+    <tr><td>查詢與列印</td><td><code>qgjjb07List</code>、<code>qgjjb08List</code></td><td><code>hgjcb07Rpt</code>、<code>hgjcb08Rpt</code></td></tr>
+    <tr><td>SJP 與證照</td><td><code>qgjjk01*</code>、<code>qgjjk02*</code></td><td><code>hgjctb109DAO</code>、<code>hgjctb110DAO</code></td></tr>
+    <tr><td>稽查與矯正</td><td><code>qgjjn01List／Detail.jsp</code></td><td><code>hgjctb209DAO</code>、<code>hgjcn01Rpt</code></td></tr>
+  </table></div>
+
+  <h3>QG 的 action flag</h3>
+  <p>JSP 送出的 action 由 <code>config/yl/qg/qgStructs.xml</code> 對應到 controller method；若設定了 validate method，會先檢核再執行。</p>
+  <div class="tbl"><table>
+    <tr><th>Flag</th><th>Method</th><th>說明</th><th>Flag</th><th>Method</th><th>說明</th></tr>
+    <tr><td><code>I</code></td><td>query</td><td>查詢</td><td><code>S</code></td><td>sent</td><td>送出申請</td></tr>
+    <tr><td><code>C</code></td><td>clean</td><td>清空</td><td><code>P</code></td><td>print</td><td>列印報表</td></tr>
+    <tr><td><code>N</code></td><td>insert／create</td><td>新增</td><td><code>U</code></td><td>upload</td><td>上傳照片／附件</td></tr>
+    <tr><td><code>R</code></td><td>update／recall</td><td>修改或撤回（依功能）</td><td><code>CNF</code></td><td>confirm</td><td>稽查矯正確認</td></tr>
+    <tr><td><code>M</code></td><td>modify</td><td>修改申請</td><td><code>CNL</code></td><td>cancel</td><td>取消確認</td></tr>
+    <tr><td><code>D</code></td><td>delete</td><td>刪除</td><td><code>CA</code></td><td>clearAll</td><td>清除批次選取</td></tr>
+  </table></div>
+  <div class="note warn"><strong>已知待確認事項：三個未實作的頁面設定</strong><code>qgStructs.xml</code> 中的 <code>qgjjb02Copy</code>、<code>qgjjb03Copy</code>、<code>qgjjb01B</code>（Approve）沒有對應的 JSP 或 controller。查 CVS 紀錄（2026-10-02）的結果如下：
+    <ul>
+      <li><code>qgjjb02Copy</code> 在 1.4 版（2024/03/27）加入，<code>qgjjb03Copy</code>、<code>qgjjb01B</code> 在 1.6 版（2024/05/08）加入，提交說明都是空白。</li>
+      <li>對應的六個 QG 檔案（三支 JSP、三支 controller），在 CVS 的 <code>qg</code> 與 <code>hg</code> 模組裡都沒有任何紀錄，連已刪除檔案的存放區（Attic）也沒有，代表從來沒有提交過，不是被刪掉。</li>
+      <li>HG 有名稱對應、而且仍在使用的檔案：<code>hgjjb01Approve</code>、<code>hgjjb02Copy</code>、<code>hgjjb03Copy</code>，以及 <code>hgjcb01Approve</code>、<code>hgjcb02Copy</code>、<code>hgjcb03Copy</code>。其中兩筆 QG 設定的 controller 寫的是 <code>com.icsc.hg.controller</code> 這個 package，類別名稱卻用 <code>qg</code> 開頭。</li>
+    </ul>
+    推斷：這是 2024 年做 QG 時，從 HG 的設定複製過來、只改了名稱，而 QG 版的「複製申請」與「人力需求核准」功能沒有實作完成。建議先確認 QG 選單有沒有連到這三個頁面，如果沒有，就可以移除這些設定。另外，<code>qgjcb02Apply</code> 也沒有 XML 設定的 <code>all</code> method。</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="s6">
+  <h2><span class="no">06</span>資料表與系統設定</h2>
+  <p class="intro">記住這十幾張表，就能看懂八成的問題。</p>
+
+  <div class="tbl"><table>
+    <tr><th>資料表</th><th>名稱</th><th>重點</th></tr>
+    <tr><td><code>TBHG001</code></td><td>評核批示資料檔</td><td>簽核紀錄，<code>forKey</code> = 申請單號</td></tr>
+    <tr><td><code>TBHG101</code></td><td>廠商基本資料檔</td><td>QG 端為 <code>TBQG101</code></td></tr>
+    <tr><td><code>TBHG102</code></td><td>人員基本資料檔</td><td>身分證號為主鍵；<code>isOk</code> 在此表是「是否禁止進入」</td></tr>
+    <tr><td><code>TBHG103</code></td><td>車輛基本資料檔</td><td><code>compNo</code> 為所屬廠商</td></tr>
+    <tr><td><code>TBHG104</code></td><td>廠商工程協調人</td><td>廠商明細</td></tr>
+    <tr><td><code>TBHG201</code></td><td>申請資料主檔</td><td><code>applyId</code>、<code>status</code>、<code>nextOp</code>、<code>dwMsg</code></td></tr>
+    <tr><td><code>TBHG202</code></td><td>申請人員明細檔</td><td><code>isOk</code> 為「是否核准」，由系統規則重算（見第十二章）</td></tr>
+    <tr><td><code>TBHG203</code></td><td>申請車輛明細檔</td><td></td></tr>
+    <tr><td><code>TBHG204／205</code></td><td>派工申請人員／派工人員</td><td>刷卡判斷「有無派工」依據</td></tr>
+    <tr><td><code>TBHG206</code></td><td>出入證基本資料檔</td><td>卡號 <code>cardId</code>、卡別 <code>cardType</code>、狀態、使用範圍 <code>userange</code></td></tr>
+    <tr><td><code>TBHG301</code></td><td>人員車輛出入紀錄檔</td><td><b>刷卡紀錄</b>，由 hgjsC05 寫入</td></tr>
+    <tr><td><code>TBHG302</code></td><td>臨時證件換發紀錄</td><td>門哨換證（hgjcc03A／B）</td></tr>
+    <tr><td><code>TBHG303</code></td><td>人員停權紀錄檔</td><td>申請時檢核停權期間</td></tr>
+    <tr><td><code>TBHG402</code></td><td>人員車輛出入配對檔</td><td>排程把 301 的進出配對</td></tr>
+    <tr><td><code>TBHG109／110／209</code></td><td>SJP／證照／稽查矯正</td><td>schema 為 <code>HG</code></td></tr>
+    <tr><td><code>HGCARDUSER.PERSON</code></td><td>製卡機人員資料</td><td>經 MQ HG003 同步，含照片路徑與版次 <code>ver</code></td></tr>
+  </table></div>
+
+  <h3>簡易表格（DB.TBDE23）重要設定</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>HGSETTING</h4>
+      <div class="tbl"><table>
+        <tr><th>欄位</th><th>正式機 ERP</th><th>門禁主機</th></tr>
+        <tr><td>DiQueue</td><td><code>HG001</code></td><td><code>HG002S</code></td></tr>
+        <tr><td>isDI</td><td>Y</td><td>Y</td></tr>
+        <tr><td>URL（照片位置）</td><td><code>images/hg/</code></td><td><code>images\hg\</code></td></tr>
+        <tr><td>fromURL（整批上傳來源）</td><td colspan="2"><code>Z:\photo\</code></td></tr>
+      </table></div>
+    </div>
+    <div class="card">
+      <h4>HG004 入廠地點</h4>
+      <p>每一個刷卡地點在簡易代碼 <code>HG004</code> 都有一筆代碼，控制主機 <code>setup.txt</code> 第八行就是這個代碼。</p>
+      <p><b>新增刷卡地點時，正式機 ERP 與門禁主機的 HG004 都要加上相同代碼。</b></p>
+      <p>通知行政處製證的人員名單在群組 <code>HGA1GROUP</code>（<code>DB.TBDSGF</code>／<code>DB.TBDSG1</code>）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="s7">
+  <h2><span class="no">07</span>程式架構</h2>
+  <p class="intro">HG 採用中鴻 ERP 標準框架，並多了一層 Entity 放共用商業規則。</p>
+
+  <div class="diagram" role="img" aria-label="HG 程式分層架構">
+  <svg viewBox="0 0 900 170" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0,0L10,5L0,10z"/></marker></defs>
+    <g>
+      <rect class="box" x="10" y="40" width="120" height="70" rx="8"/><text class="t" x="70" y="70" text-anchor="middle">JSP</text><text class="s" x="70" y="92" text-anchor="middle">hgjj*.jsp</text>
+      <rect class="box" x="160" y="40" width="130" height="70" rx="8"/><text class="t" x="225" y="70" text-anchor="middle">Structs XML</text><text class="s" x="225" y="92" text-anchor="middle">pageID→action</text>
+      <rect class="box acc" x="320" y="40" width="130" height="70" rx="8"/><text class="t" x="385" y="70" text-anchor="middle">Controller</text><text class="s" x="385" y="92" text-anchor="middle">dejcFunctionalController</text>
+      <rect class="box" x="480" y="40" width="120" height="70" rx="8"/><text class="t" x="540" y="70" text-anchor="middle">Bs</text><text class="s" x="540" y="92" text-anchor="middle">交易與流程</text>
+      <rect class="box ok" x="630" y="40" width="120" height="70" rx="8"/><text class="t" x="690" y="70" text-anchor="middle">Entity</text><text class="s" x="690" y="92" text-anchor="middle">共用檢核規則</text>
+      <rect class="box" x="780" y="40" width="110" height="70" rx="8"/><text class="t" x="835" y="70" text-anchor="middle">DAO／VO</text><text class="s" x="835" y="92" text-anchor="middle">DB2 TBHG*</text>
+      <path class="ln" d="M130,75 H158" marker-end="url(#ar2)"/><path class="ln" d="M290,75 H318" marker-end="url(#ar2)"/>
+      <path class="ln" d="M450,75 H478" marker-end="url(#ar2)"/><path class="ln" d="M600,75 H628" marker-end="url(#ar2)"/>
+      <path class="ln" d="M750,75 H778" marker-end="url(#ar2)"/>
+      <text class="s" x="385" y="140" text-anchor="middle">QG controller 透過 zpjcWebServiceUtil.callJavaBeanService 呼叫 HG api（*EC）</text>
+    </g>
+  </svg>
+  <div class="cap">圖 7-1　請求處理分層</div>
+  </div>
+
+  <h3>原始碼目錄</h3>
+  <div class="tbl"><table>
+    <tr><th>路徑（<code>erp.war/hg/src/com/icsc/hg/</code>）</th><th>內容</th></tr>
+    <tr><td><code>controller/</code></td><td>畫面 controller，例如 <code>hgjcb02Apply</code></td></tr>
+    <tr><td><code>bs/</code></td><td>Business Service，處理交易，例如 <code>hgjcb02ApplyBs</code></td></tr>
+    <tr><td><code>entity/</code></td><td>共用規則，例如 <code>hgjcb02StaffEntity.checkValidDate()</code></td></tr>
+    <tr><td><code>api/</code></td><td>給 QG／電子商務呼叫的服務，類別名以 <code>EC</code> 結尾</td></tr>
+    <tr><td><code>dao/</code></td><td><code>hgjctbNNNVO</code>／<code>DAO</code>，狀態常數定義在 VO 內</td></tr>
+    <tr><td><code>di/</code></td><td>資料拋送（Publish）與接收（ShiftBatch）</td></tr>
+    <tr><td><code>rpt/</code>、<code>report/</code></td><td>報表產製</td></tr>
+    <tr><td><code>upload/</code></td><td>Excel 整批上傳</td></tr>
+    <tr><td>根目錄 <code>hgjc*.java</code></td><td>定時排程批次（見第十章）</td></tr>
+  </table></div>
+  <p>其他相關目錄：設定檔 <code>erp.war/config/yl/hg</code>、靜態資源 <code>erp.war/html/hg</code>、照片 <code>erp.war/images/hg</code>、報表 SQL <code>erp.war/hg/sql</code>、門禁程式原始碼 <code>erp.war/hg/ipc</code>。</p>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="s8">
+  <h2><span class="no">08</span>刷卡機與通訊</h2>
+  <p class="intro">門口那一刷，背後經過了五個步驟。</p>
+
+  <ol class="steps">
+    <li><b>卡鐘送出卡號</b>卡鐘以 TCP 連到控制主機的 <code>SocketServer</code>，入廠用 port 4660、出廠用 port 4661。</li>
+    <li><b>控制主機轉送</b><code>CommWithServ</code> 以 HTTP 將〔卡鐘 IP、卡號、HG004 代碼〕送到 <code>http://{setup 第一行}/erp/hg/hgjsC05</code>。</li>
+    <li><b>門禁主機判斷</b><code>hgjsC05</code> 檢查卡片、證件效期、派工、允許入廠時間等，寫入 TBHG301。卡鐘 IP 奇數判定為入廠、偶數為出廠。</li>
+    <li><b>回傳結果</b>回傳陣列：[0] 身分證號、[1] 姓名、[2] 廠商編號、[3] 廠商名稱、[4] 結果、[5] 結果說明、[6] 異常訊息。</li>
+    <li><b>畫面、聲音、燈號</b>控制主機重繪警衛畫面（含照片），播放 OK.wav／ERROR.wav，並透過 <code>Led.java</code> 控制紅綠燈。</li>
+  </ol>
+
+  <h3>IP 配置規則</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>各廠第一台（結尾 1～5）</h4>
+      <p><code>.1</code> 入廠卡鐘　<code>.2</code> 出廠卡鐘<br><code>.3</code> 警衛畫面　<code>.4</code> 控制主機<br><code>.5</code> 燈號（以腳位區分紅綠燈）</p>
+    </div>
+    <div class="card">
+      <h4>各廠第二台（結尾 6～10）</h4>
+      <p><code>.6</code> 出廠卡鐘　<code>.7</code> 入廠卡鐘<br><code>.8</code> 綠燈　<code>.9</code> 控制主機<br><code>.10</code> 紅燈（紅綠燈各一個 IP）</p>
+    </div>
+  </div>
+  <div class="note"><strong>奇入偶出</strong>卡鐘 IP 一定要「奇數＝入廠、偶數＝出廠」，hgjsC05 才能判斷方向。IP 由網路管理單位（A32）配發。</div>
+
+  <h3>各廠控制主機一覽</h3>
+  <div class="tbl"><table>
+    <tr><th>廠區</th><th>網段</th><th>控制主機</th><th>維護單位</th><th>備註</th></tr>
+    <tr><td>行政大樓</td><td>10.125.7.x</td><td>10.125.7.4</td><td>A32</td><td>VNC 連各廠時從此處連線</td></tr>
+    <tr><td>冷軋廠</td><td>10.125.15.x</td><td>.4／第二台 .9</td><td>M55</td><td>第二台需改 Led.java</td></tr>
+    <tr><td>熱軋廠</td><td>10.125.23.x</td><td>.4／第二台 .9</td><td>M45</td><td>更新第二台程式需先 FTP 到 .4 再轉過去</td></tr>
+    <tr><td>鋼管廠（大發）</td><td>10.125.31.x</td><td>10.125.31.4</td><td>MP8</td><td></td></tr>
+    <tr><td>鋼管廠（鹿港）</td><td>10.125.39.x</td><td>10.125.39.4</td><td>MPM</td><td>Led.java 的 setUnitID 須為 1</td></tr>
+    <tr><td>酸鍍廠</td><td>10.125.47.x</td><td>10.125.47.3（IPC A）</td><td>M65</td><td>.4 為 IPC B，.5 為紅綠燈控制器</td></tr>
+  </table></div>
+  <p>2017 年起，刷卡機前端硬體設定已分工給各廠儀電課，資訊課負責程式與 ERP 端。</p>
+
+  <h3>控制主機檔案配置（<code>D:\ftproot</code>）</h3>
+  <div class="grid g2">
+    <div>
+      <ul>
+        <li><b>門禁程式 .exe</b>：如 <code>行政大樓門禁程式7.exe</code>，桌面放捷徑。</li>
+        <li><b>setup.txt</b>：八行參數檔（右側說明）。</li>
+        <li><b>OK.wav／ERROR.wav</b>：可替換聲音，檔名不可改。</li>
+        <li><b>pic</b>：人員照片（檔名為身分證號）。</li>
+        <li><b>時間設定\trt.exe、pbml.ini</b>：卡鐘校時工具。</li>
+        <li><b>Restart_GateSystem.bat</b>：強制關閉並重新啟動門禁程式。</li>
+      </ul>
+      <p>控制主機需安裝 JRE、TightVNC、FTP Server；時間須與 <code>stdtime.chsteel.com.tw</code> 同步。</p>
+    </div>
+<pre><code>hgserver.chsteel.com.tw   ← 1 門禁主機位址
+10                        ← 2～5 燈號 IP 四段
+125
+7
+5
+D:\\ftproot\\OK.wav       ← 6 成功音效
+D:\\ftproot\\ERROR.wav    ← 7 失敗音效
+01                        ← 8 HG004 地點代碼</code></pre>
+  </div>
+
+  <h3>門禁程式改版與打包</h3>
+  <ol>
+    <li>原始碼在 <code>erp.war/hg/ipc</code>（<code>Main</code>、<code>SocketServer</code>、<code>CommWithServ</code>、<code>Led</code>、<code>IPCPanel</code>、<code>Sound</code>）。</li>
+    <li>將 <code>ipc</code>、<code>net</code> 兩個目錄的 class 編成 jar（燈號控制使用 <code>jamod</code> 函式庫）。</li>
+    <li>以 JSmooth 打包成 exe：skeleton 選 console wrapper → application 指定 embedded jar 與 main class → executable 設定圖示與檔名 → compile。</li>
+    <li>FTP 上傳到控制主機 <code>D:\ftproot</code>，以 VNC 連線重啟程式並實際刷卡測試。</li>
+  </ol>
+  <div class="note warn"><strong>每一廠的 exe 版本不同</strong>熱軋、冷軋第二台的紅綠燈是不同 IP，鹿港的 UnitID 特殊，所以各廠 exe 不能互相覆蓋。改版前先確認該廠目前使用的版本。</div>
+
+  <h3>卡鐘校時</h3>
+  <p>刷卡時間以<b>控制主機時間為準</b>，卡鐘上的時間只供參考。若需校時：VNC 連到控制主機 → 關閉門禁程式 → 編輯 <code>pbml.ini</code>（port 4660、IP 改為 .1）→ 執行 <code>trt.exe</code>；出廠卡鐘（.2）需先在卡鐘網頁把 TCP Server 改為 TCP Client，校時後再改回 → 重啟門禁程式。校時期間請該廠暫停刷卡。</p>
+</section>
+
+<!-- ============ 9 ============ -->
+<section id="s9">
+  <h2><span class="no">09</span>MQ 資料同步</h2>
+  <p class="intro">2022 年起以 MQ 取代 DI。三組佇列維持 ERP、門禁主機、製卡機資料一致。</p>
+
+  <div class="tbl"><table>
+    <tr><th>組別</th><th>發行端</th><th>訂閱端</th><th>傳送內容</th><th>主要程式</th></tr>
+    <tr><td>1</td><td>hgserver <code>HG002S</code></td><td>ERP 正式機 <code>HG002SS</code></td><td>刷卡紀錄 TBHG301</td><td><code>hgjsC05</code> → <code>hgjcPublish301</code> → <code>hgjcShiftBatch</code></td></tr>
+    <tr><td>2</td><td>ERP 正式機 <code>HG001</code></td><td>hgserver <code>HG001SB</code></td><td>TBHG001、101～104、201～206、302、303</td><td>各 Apply／Staff 程式 → <code>hgjcPublish*</code> → <code>hgjcShiftBatch</code></td></tr>
+    <tr><td>3</td><td>ERP 正式機 <code>HG003</code></td><td>hgserver <code>HG003S</code></td><td>出入證資料到製卡機 PERSON、BLACKLIST</td><td><code>hgjcCardUserPublish</code> → <code>hgjcShiftBatchCardUser</code></td></tr>
+  </table></div>
+  <p>資料格式：<code>資料表$異動動作$VO 資料</code>（第一組另附 <code>$刷卡結果</code>；第三組人員資料以逗號分隔）。</p>
+
+  <h3>佇列卡住怎麼辦</h3>
+  <p>同仁反應「刷卡資料沒進來」或「門口刷不過」，常是 ERP 與門禁主機資料不同步。MQ 遇到格式錯誤的資料會一直重試，導致後面資料全部卡住。</p>
+  <ol class="steps">
+    <li><b>登入 MQ 管理介面</b>找到消化數停住的佇列，點進去查看錯誤資料內容與卡住時間。</li>
+    <li><b>跳過錯誤資料</b>先「停用」佇列 → 重新整理（消化端由 1 變 0）→ 輸入要跳過的筆數，按「跳過」→ 按「啟用」。</li>
+    <li><b>比對兩邊筆數</b>依卡住時間，比對正式機與門禁 DB：<code>tbhg102</code>、<code>tbhg201</code>、<code>tbhg202</code>、<code>tbhg204</code>、<code>tbhg205</code>、<code>tbhg301</code>。</li>
+    <li><b>補齊資料</b>將筆數多的一方資料倒入筆數少的一方，並記錄處理過程。</li>
+  </ol>
+<pre><code>-- 兩邊各執行一次，比較筆數（日期取卡住前一天）
+SELECT COUNT(*) FROM DB.TBHG201 WHERE UPDATEDATE &gt; '20220705';</code></pre>
+</section>
+
+<!-- ============ 10 ============ -->
+<section id="s10">
+  <h2><span class="no">10</span>定時排程</h2>
+  <p class="intro">HG 有二十多支排程，通知信、狀態更新、資料配對都靠它們。</p>
+  <div class="tbl"><table>
+    <tr><th>工作代碼</th><th>程式</th><th>說明</th><th>週期</th></tr>
+    <tr><td>HGAPPLYDATA／2</td><td>hgjcUploadApplyData(2)</td><td>本日更新 TBHG201、202、206、205</td><td>每三小時</td></tr>
+    <tr><td>HGCARDPASSCK</td><td>hgjcCheckCardPassOrNot</td><td>長期工作證過期者更新為 E05</td><td>每日 6:00</td></tr>
+    <tr><td>HGOVERDUE</td><td>hgjcOverDue</td><td>30 天內證件將到期通知</td><td>每日 5:15</td></tr>
+    <tr><td>HGDOCOUPLE</td><td>hgjcCoupleSet</td><td>前十天 TBHG301 進出配對產生 TBHG402</td><td>每三小時</td></tr>
+    <tr><td>HGINSUCOUPLESET</td><td>hgjcInsuCoupleSet</td><td>產製承攬商保險資料（一人一天一筆）</td><td>每三小時</td></tr>
+    <tr><td>HGINSUEMAIL</td><td>hgjcInsuEmail</td><td>寄送保險通知給承攬商</td><td>每日 23:59</td></tr>
+    <tr><td>HGTran301ToCSS</td><td>hgjcTran301ToCSS</td><td>拋送前一天鋼保人員刷卡紀錄給鋼保</td><td>每日 1:15</td></tr>
+    <tr><td>HGJCHIGHRISKNOTIFY</td><td>hgjcHighRiskNotify</td><td>高風險作業每日提報提醒</td><td>每日 3:45</td></tr>
+    <tr><td>HGRISKUPDATECHECKNO</td><td>hgjcHighRiskVsCheckNo</td><td>更新高風險畫面稽查號碼</td><td>每日 10:40</td></tr>
+    <tr><td>HGREVISEREM</td><td>hgjcReviseRemind</td><td>矯正單七日後到期通知</td><td>每日 5:00</td></tr>
+    <tr><td>HGREVISEOVERDAY</td><td>hgjcReviseNotify</td><td>矯正過期通知</td><td>每日 8:20</td></tr>
+    <tr><td>HGCHECKOVER7</td><td>hgjcCheckOver7NoRevise</td><td>稽核核准逾七天未登錄矯正單</td><td>週一 8:15</td></tr>
+    <tr><td>HGNOTREVISE</td><td>hgjcNotYetReviseReturn</td><td>稽核單尚未矯正回覆清單</td><td>週一 6:00</td></tr>
+    <tr><td>HGRENOFINISH</td><td>hgjcReviseNotFinish</td><td>矯正單一週內送出未核准</td><td>週二 8:30</td></tr>
+    <tr><td>HGWEEKFINISH</td><td>hgjcThisWeekFinishRevise</td><td>七天內矯正核准結案資料</td><td>週一 4:00</td></tr>
+    <tr><td>HGCARDAPPLY</td><td>hgjcWeekCardApplyList</td><td>工作證一週內申請清單</td><td>週一、三、五、日 8:40</td></tr>
+    <tr><td>HGCOUNTOVER15</td><td>hgjcCountIdentifyApplyOver15</td><td>本年度臨時工作證申請次數過多統計</td><td>週一 7:00</td></tr>
+    <tr><td>HGERRPASS／2</td><td>hgjcCheckErrNotify(2)</td><td>刷卡異常資料做成 PDF 通知主管、廠處長</td><td>依設定</td></tr>
+  </table></div>
+  <p class="note">排程的實際設定請以 ERP 定時排程（DF 框架）上的資料為準，上表整理自交接文件 <code>hg定時啟動設定.ods</code>，收件人名單可能已過時。</p>
+</section>
+
+<!-- ============ 11 ============ -->
+<section id="s11">
+  <h2><span class="no">11</span>異常處理手冊</h2>
+  <p class="intro">先分類，再處理。異常分三種：</p>
+
+  <div class="grid g3">
+    <div class="card"><h4><span class="tag w">a</span>刷卡機端</h4><p>警衛執行了錯誤的 exe、執行檔或參數檔被移動、音效檔被改名、控制主機當機。</p><p><b>處理：</b>VNC 連線檢查 <code>D:\ftproot</code>，執行 <code>Restart_GateSystem.bat</code>。</p></div>
+    <div class="card"><h4><span class="tag w">b</span>刷卡機與正式機之間</h4><p>網路阻塞、hgjsC05 回傳 HTTP 500、MQ 佇列卡住。</p><p><b>處理：</b>查控制主機 log、檢查門禁主機服務、處理 MQ（第九章）。</p></div>
+    <div class="card"><h4><span class="tag w">c</span>申請資料異常</h4><p>證件過期、卡號不是最新、沒有派工、派工地點不符、停權。</p><p><b>處理：</b>依刷卡畫面訊息，倒推檢核順序。</p></div>
+  </div>
+
+  <h3>由刷卡訊息倒推檢查順序</h3>
+  <p>例：畫面顯示「本日非入廠日期」，對應到「有無派工」，處理順序為：<b>查詢派工 → 確認刷卡時間正常 → 工作證申請確認 → 出入證基本資料維護</b>。</p>
+
+  <h3>常見問題</h3>
+  <details class="q"><summary>承攬商刷卡失敗，需要補登刷卡資料</summary><div class="a">到（IHGCD）《人員出入廠記錄查詢》點選新增補登。若涉及保險或計價，注意排程順序：補登後要等配對排程跑過，下游系統才抓得到。計價需要的資料，不可只補到「外包投保」那一段。</div></details>
+  <details class="q"><summary>刷卡後畫面訊息空白、燈號顯示錯誤</summary><div class="a">1. 等五秒後再刷一次（網路可能暫時阻塞）。<br>2. 確認卡號是最新的：《人員基本資料》的【人員辦證紀錄】頁籤。<br>3. 確認資料有沒有進正式機，再依刷卡檢核流程逐項檢查。<br>4. 查看控制主機 log，若出現 <code>Server returned HTTP response code: 500 for URL: .../hgjsC05</code>，代表門禁主機端程式出錯，需查伺服器。</div></details>
+  <details class="q"><summary>刷卡正常，但正式機查不到刷卡紀錄</summary><div class="a">先請對方等五秒重刷。若持續發生，檢查 MQ 第一組（HG002S → HG002SS）是否卡住；並可在 SQL 命令中心直接查 <code>TBHG301</code>。臨時工作證則要確認警衛是否在《臨時工作證門哨放行作業》確實「發證」，以及當日是否有派工。</div></details>
+  <details class="q"><summary>當日明明有派工，卻顯示無派工資料</summary><div class="a">確認派工地點與刷卡地點（HG004 代碼）一致，並確認派工資料已透過 MQ 同步到門禁主機（TBHG204／205 兩邊筆數）。</div></details>
+  <details class="q"><summary>有發卡也有派工，卻出現「查無卡片資料」</summary><div class="a">確認卡號是最新的；必要時請該廠到製卡機「過卡」。也可以查製卡機資料：<code>SELECT * FROM HGCARDUSER.PERSON WHERE empNo = '卡號'</code>。</div></details>
+  <details class="q"><summary>某些人刷卡反應特別慢</summary><div class="a">除了網路因素，常見原因是照片檔案太大。請將照片縮小後重新上傳。</div></details>
+  <details class="q"><summary>人員照片一直上傳失敗</summary><div class="a">三個條件缺一不可：真正的 .jpg 格式（只改副檔名不行）、檔名為身分證號、尺寸符合畫面指示。可用小畫家另存為 JPG。</div></details>
+  <details class="q"><summary>承攬商人員離職或卡片毀損</summary><div class="a">請各廠授權人員到（IHGBJ）《出入證基本資料維護》修改卡片狀態，或用 hgjjb06 辦理繳回、遺失、毀損、註銷。</div></details>
+  <details class="q"><summary>卡鐘時間與實際時間不同</summary><div class="a">刷卡時間以控制主機為準。確認控制主機有與 <code>stdtime.chsteel.com.tw</code> 同步；卡鐘本身時間差太多時，依第八章「卡鐘校時」步驟處理。</div></details>
+  <details class="q"><summary>工作證申請送錯，要退回「尚未送出」</summary><div class="a">需同時處理三張表：將 TBHG201 的 <code>status</code> 改回 <code>A01</code> 並清空 <code>nextOp</code>、<code>dwMsg</code>；刪除 TBHG001 中 <code>forKey</code> 為該單號的核准資料；刪除 TBDW11 中對應的待辦訊息。<b>這是正式機資料修改，必須先取得主管同意並留下紀錄。</b></div></details>
+
+  <h3>年度例行作業</h3>
+  <div class="note warn"><strong>每年年底：臨時工作證</strong>確認 TBHG206 中 <code>cardType = '03'</code> 的臨時工作證資料，必要時以 <code>HG交接/HG/每年作業/匯資料至tbhg206.csv</code> 匯入。<code>userange</code> 為空白代表任何一廠都可使用。系統以「年」為單位設計，年初第一個上班日刷卡量大，要提前確認長期工作證換證狀況。</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section id="s12">
+  <h2><span class="no">12</span>開發與上線須知</h2>
+  <p class="intro">這些是前人踩過的坑。</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4>編碼：Big5／CP950</h4>
+      <p>HG、QG 的 .java、.jsp、.sql 多為 Big5 編碼，用 UTF-8 開啟會亂碼，存檔時也會毀損中文。請使用支援 CP950 的編輯方式，修改後檢查編碼。</p>
+    </div>
+    <div class="card">
+      <h4>版本控管：CVS</h4>
+      <p>程式以 CVS 管理（目錄中的 <code>CVS/</code> 資料夾）。修改前先比對 CVS 最新版本，避免覆蓋他人修改。</p>
+    </div>
+    <div class="card">
+      <h4>門禁主機沒有 DA 上線機制</h4>
+      <p>ERP 正式機走 DAJJU1 上線申請，但門禁主機（hgserver）沒有，修改 <code>hgjsC05</code> 等程式後，要請網管單位（A32）人工把 class 放上去。</p>
+      <p>若只需替換 jar 中的 class：<code>jar uvf ./bin/hg.jar -C classes /</code></p>
+    </div>
+    <div class="card">
+      <h4>新增刷卡地點要改很多支程式</h4>
+      <p>除了 HG004 兩邊加代碼、hgjsC05 支援新卡鐘外，以下查詢需把同廠多台刷卡機合併顯示：HGJJC02、HGJJC03A／B／C、HGJJC06、HGJJC07、hgjcMagDR001～003。</p>
+    </div>
+  </div>
+
+  <h3>案例：工作證明細的「核准」下拉其實沒有作用</h3>
+  <p>在 hgjjb02 長期工作證申請的明細中，畫面有「核准／不核准」下拉（<code>cardOk</code>），但寫入資料庫前，<code>hgjcb02StaffEntity.create()／update()</code> 會呼叫 <code>checkValidDate()</code> 重新判斷並<b>強制覆寫</b> <code>TBHG202.isOk</code>：</p>
+  <div class="tbl"><table>
+    <tr><th>規則</th><th>內容</th><th>性質</th><th>結果</th></tr>
+    <tr><td>0</td><td>起日為空（上傳資料）直接跳過</td><td>前置</td><td>不檢查</td></tr>
+    <tr><td>1</td><td>明細期限超出申請單期限</td><td>軟性</td><td>isOk = N</td></tr>
+    <tr><td>2</td><td>TBHG102 查無此人</td><td><span class="tag b">硬性</span></td><td>丟例外，整筆交易回復</td></tr>
+    <tr><td>3</td><td>停權期間（TBHG303）重疊</td><td>軟性</td><td>isOk = N</td></tr>
+    <tr><td>4</td><td>同一人在其他申請單已有重疊的有效證件</td><td>軟性</td><td>isOk = N</td></tr>
+  </table></div>
+  <p>軟性檢核的原因只寫在 log，畫面看不到。使用者問「為什麼被判不核准」時，要從這四條規則去查。B02、B11、QG 的 EC 申請與上傳都共用這個 Entity；B03、B04、C01 則各有自己的 <code>checkValidDate()</code>。詳見 <code>erp.war/hg/HGJJB02_cardOk核准判斷分析.md</code>。</p>
+
+  <div class="note bad"><strong>正式機資料修改原則</strong>查詢可以在 SQL 命令中心進行；任何 UPDATE／DELETE 都要先備份原資料、取得主管同意，並記錄申請單號、修改原因與時間。</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section id="s13">
+  <h2><span class="no">13</span>學習路徑與自我測驗</h2>
+  <p class="intro">建議三天的學習安排，勾選會記錄在你自己的瀏覽器中。</p>
+
+  <div class="grid g3">
+    <div class="card"><h4>第一天：業務與畫面</h4>
+      <ul class="checklist" data-key="d1">
+        <li><input type="checkbox">閱讀本教材第一至五章</li>
+        <li><input type="checkbox">在測試機走一次長期工作證申請到核准</li>
+        <li><input type="checkbox">用 QG 以承攬商身分建立人員並上傳照片</li>
+        <li><input type="checkbox">操作一次派工申請與門哨放行畫面</li>
+      </ul></div>
+    <div class="card"><h4>第二天：資料與程式</h4>
+      <ul class="checklist" data-key="d2">
+        <li><input type="checkbox">在 SQL 命令中心查 TBHG201／202／206／301</li>
+        <li><input type="checkbox">追蹤 hgjjb02 從 JSP 到 Entity 的程式</li>
+        <li><input type="checkbox">讀 qgStructs.xml，找出一個 action 的對應</li>
+        <li><input type="checkbox">讀 ipc 原始碼的 SocketServer 與 CommWithServ</li>
+      </ul></div>
+    <div class="card"><h4>第三天：維運實務</h4>
+      <ul class="checklist" data-key="d3">
+        <li><input type="checkbox">在帶領下以 VNC 連線一台控制主機</li>
+        <li><input type="checkbox">登入 MQ 管理介面認識三組佇列</li>
+        <li><input type="checkbox">閱讀 KM 異常處理要領與 MQ 處理文件</li>
+        <li><input type="checkbox">完成下方自我測驗</li>
+      </ul></div>
+  </div>
+
+  <h3>自我測驗</h3>
+  <details class="q"><summary>QG 與 HG 的關係是什麼？</summary><div class="a">QG 是承攬商電子商務入口的畫面層，後端透過 <code>zpjcWebServiceUtil</code> 呼叫 HG 的 api（*EC 類別）與 DAO 完成業務處理。</div></details>
+  <details class="q"><summary>申請單狀態 B01、B02、D01 分別代表什麼？</summary><div class="a">B01 主管審批中、B02 已核准、D01 發證。</div></details>
+  <details class="q"><summary>刷卡紀錄存在哪張表？由哪支程式寫入？</summary><div class="a">TBHG301 人員車輛出入紀錄檔，由門禁主機上的 <code>hgjsC05</code> 寫入，再經 MQ HG002S 同步回 ERP 正式機。</div></details>
+  <details class="q"><summary>卡鐘 IP 10.125.15.7 是入廠還是出廠？屬於第幾台？</summary><div class="a">冷軋廠第二台的入廠卡鐘（奇數為入廠；結尾 6～10 為第二台）。</div></details>
+  <details class="q"><summary>新增一個刷卡地點，ERP 端至少要做哪兩件事？</summary><div class="a">正式機與門禁主機的簡易代碼 HG004 都要加相同代碼；控制主機 setup.txt 第八行填入該代碼。另需修改 hgjsC05 與相關查詢程式的合併顯示。</div></details>
+  <details class="q"><summary>MQ 佇列卡住，跳過錯誤資料後還要做什麼？</summary><div class="a">依卡住時間比對正式機與門禁 DB 的 tbhg102、201、202、204、205、301 筆數，把缺少的資料補齊。</div></details>
+  <details class="q"><summary>使用者說 hgjjb02 明細明明選了「核准」，存檔後卻變成不核准，為什麼？</summary><div class="a">Entity 的 <code>checkValidDate()</code> 會重算並覆寫 isOk，畫面選項不影響結果。可能是期限超出申請單、停權期間重疊，或已有其他有效證件。</div></details>
+  <details class="q"><summary>為什麼修改 hgjsC05 後不能用 DAJJU1 上線？</summary><div class="a">hgjsC05 在門禁主機上執行，門禁主機沒有 DA 上線機制，需請 A32 人工上線。</div></details>
+</section>
+
+<!-- ============ 14 ============ -->
+<section id="s14">
+  <h2><span class="no">14</span>參考文件</h2>
+  <p class="intro">深入學習時請參考以下原始文件。</p>
+  <div class="tbl"><table>
+    <tr><th>文件</th><th>位置</th></tr>
+    <tr><td>HG 功能規格手冊</td><td><a href="file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/hg/system_features.md">erp.war/hg/system_features.md</a></td></tr>
+    <tr><td>QG 功能規格手冊</td><td><a href="file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/qg/">erp.war/qg/(chatGPT)QG功能規格手冊.md</a></td></tr>
+    <tr><td>HGJJB02 cardOk 核准判斷分析</td><td><a href="file:///D:/CHSBrowser_erp/erpHome/yl.ear/erp.war/hg/HGJJB02_cardOk核准判斷分析.md">erp.war/hg/HGJJB02_cardOk核准判斷分析.md</a></td></tr>
+    <tr><td>門禁系統異常處理要領</td><td><a href="file:///D:/專業知識/HG/KM/">KM/資訊維護_門禁管理(HG)_門禁系統異常處理要領.pdf</a></td></tr>
+    <tr><td>刷卡機設定要領</td><td><a href="file:///D:/專業知識/HG/KM/">KM/資訊維護_門禁管理(HG)_刷卡機設定要領.odt</a></td></tr>
+    <tr><td>MQ 資料錯誤處理</td><td><a href="file:///D:/專業知識/HG/KM/">KM/資訊維護_門禁系統(HG)_MQ資料錯誤處理.pdf</a></td></tr>
+    <tr><td>過卡操作要領</td><td><a href="file:///D:/專業知識/HG/KM/">KM/資訊維護_HG門禁管理系統過卡操作要領.ppt</a></td></tr>
+    <tr><td>門禁管理系統（2013）</td><td><a href="file:///D:/專業知識/HG/HG交接/HG/">HG交接/HG/門禁管理系統201304.pdf</a></td></tr>
+    <tr><td>資料表欄位清單</td><td><a href="file:///D:/專業知識/HG/HG交接/HG/">HG交接/HG/HG_Table.xls</a></td></tr>
+    <tr><td>承攬商保險、勞檢報表使用手冊</td><td><a href="file:///D:/專業知識/HG/HG交接/HG/CMMI/">HG交接/HG/CMMI/</a></td></tr>
+    <tr><td>MQ 佇列對應、排程、HGSETTING</td><td><a href="file:///D:/專業知識/HG/">HG_DiQueue.ods、hg定時啟動設定.ods、HGSETTING.ods</a></td></tr>
+    <tr><td>各廠門禁控制主機與負責單位</td><td><a href="file:///D:/專業知識/HG/">承攬商出入廠門禁控制主機.ods</a></td></tr>
+    <tr><td>硬體設備教育訓練（2018）</td><td><a href="file:///D:/專業知識/HG/">鴻立鋼鐵門禁系統管理硬體設備教育訓練20180523.pdf</a></td></tr>
+  </table></div>
+
+  <footer>
+    本教材整理自 <code>D:\專業知識\HG</code> 交接資料、KM 知識文件，以及 ERP 原始碼 <code>erp.war/hg</code>、<code>erp.war/qg</code>。主機 IP、負責單位與排程設定可能隨時間異動，請以現行系統為準。帳號密碼未收錄於本文件。
+  </footer>
+</section>
+</main>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{var t=localStorage.getItem('hg-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('hg-theme',next);}catch(e){}
+  });
+  // 學習清單勾選記憶
+  document.querySelectorAll('.checklist').forEach(function(ul){
+    var key='hg-check-'+ul.dataset.key, boxes=ul.querySelectorAll('input');
+    var saved=[]; try{saved=JSON.parse(localStorage.getItem(key)||'[]');}catch(e){}
+    boxes.forEach(function(b,i){ b.checked=!!saved[i];
+      b.addEventListener('change',function(){
+        var v=Array.prototype.map.call(boxes,function(x){return x.checked;});
+        try{localStorage.setItem(key,JSON.stringify(v));}catch(e){}
+      });
+    });
+  });
+  // 目錄高亮
+  var links=document.querySelectorAll('#tocList a');
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ links.forEach(function(a){a.classList.remove('active');}); var a=map[e.target.id]; if(a) a.classList.add('active'); } });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('main section').forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>門禁管理系統教育訓練</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 版面：左側固定章節目錄（依資訊窗口選單），右側為作業卡；管制與限制以琥珀色「安全標示」區塊呈現 */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#e9edf1; --fg:#1b2430; --muted:#5a6675; --line:#d3dae2;
+  --accent:#1f4e79; --accent-soft:#dde8f3; --warn:#9a5b00; --warn-bg:#fff5e0; --warn-line:#e7b34f;
+  --danger:#a3242b; --ok:#2d6a3e;
+  --f-display:"Noto Serif TC","Source Han Serif TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+  --f-mono:"IBM Plex Mono",Consolas,"Courier New",monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12171d; --surface:#1a2129; --surface-2:#222b35; --fg:#e3e8ee; --muted:#9aa6b4; --line:#323d4a;
+  --accent:#8ab8e6; --accent-soft:#1f3347; --warn:#f0bd5e; --warn-bg:#2b2416; --warn-line:#7a5a1e;
+  --danger:#f08a8f; --ok:#7fc794; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#12171d; --surface:#1a2129; --surface-2:#222b35; --fg:#e3e8ee; --muted:#9aa6b4; --line:#323d4a;
+  --accent:#8ab8e6; --accent-soft:#1f3347; --warn:#f0bd5e; --warn-bg:#2b2416; --warn-line:#7a5a1e;
+  --danger:#f08a8f; --ok:#7fc794; color-scheme:dark; }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.75}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code,.mono{font-family:var(--f-mono);font-size:.9em}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;max-width:1280px;margin:0 auto;padding-inline:24px;padding-block:24px 80px}
+
+/* 側邊目錄 */
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);align-self:start;max-height:calc(100vh - 32px);overflow:auto;font-size:14px;padding-right:4px}
+.toc .brand{font-family:var(--f-display);font-size:18px;font-weight:700;line-height:1.4;margin-bottom:4px}
+.toc .path{color:var(--muted);font-size:12px;margin-bottom:12px}
+.toc input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg);font:inherit;margin-bottom:12px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc > ol > li{margin-bottom:10px}
+.toc .ch{display:block;font-weight:700;text-decoration:none;color:var(--fg)}
+.toc .ch small{color:var(--muted);font-weight:400;font-family:var(--f-mono)}
+.toc ol ol{border-left:2px solid var(--line);margin:4px 0 0 4px;padding-left:10px}
+.toc ol ol a{display:block;text-decoration:none;color:var(--muted);padding:1px 0;line-height:1.5}
+.toc ol ol a:hover{color:var(--accent)}
+.toc ol ol a.on{color:var(--accent);font-weight:500}
+.toc .code{font-family:var(--f-mono);font-size:11px;margin-right:4px}
+
+/* 主文 */
+main{min-width:0}
+.hero{border-bottom:3px solid var(--fg);padding-bottom:20px;margin-bottom:28px}
+.hero .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.hero h1{font-family:var(--f-display);font-size:clamp(28px,4vw,40px);line-height:1.3;margin:6px 0 10px;text-wrap:balance}
+.hero p{max-width:68ch;margin:0 0 8px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:12px}
+.meta b{color:var(--fg);font-weight:500}
+
+h2{font-family:var(--f-display);font-size:26px;line-height:1.35;margin:56px 0 6px;text-wrap:balance;scroll-margin-top:16px}
+h2 .no{font-family:var(--f-mono);font-size:14px;color:var(--accent);display:block;letter-spacing:.08em;font-weight:500}
+.lead{max-width:72ch;color:var(--muted);margin:0 0 20px}
+h3{font-size:18px;margin:0;line-height:1.4}
+h4{font-size:13px;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;font-weight:700}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px}
+.tablebox{overflow-x:auto;margin-bottom:16px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--surface-2);font-weight:700;white-space:nowrap}
+td.c{font-family:var(--f-mono);white-space:nowrap}
+
+/* 選單樹 */
+.tree{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.tree .node{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.tree .node h3{font-size:16px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.tree .node h3 small{font-family:var(--f-mono);color:var(--muted);font-weight:400;font-size:12px}
+.tree ul{margin:8px 0 0;padding:0;list-style:none;font-size:14px}
+.tree li{display:flex;gap:8px;padding:2px 0;border-top:1px dashed var(--line)}
+.tree li:first-child{border-top:0}
+.tree li span{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:9.5em;padding-top:2px}
+
+/* 流程 */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:10px 0 4px}
+.flow .step{background:var(--accent-soft);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:14px;line-height:1.5}
+.flow .step b{display:block;font-family:var(--f-mono);font-size:12px;color:var(--accent)}
+.flow .arr{align-self:center;color:var(--muted)}
+
+/* 作業卡 */
+.op{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:0 0 18px;scroll-margin-top:16px}
+.op > header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.op .code{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--surface);background:var(--accent);padding:1px 8px;border-radius:4px}
+.op .prog{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.op .who{font-size:13px;color:var(--muted);flex-basis:100%}
+.op .body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0}
+.op .body > div{padding:14px 20px;min-width:0}
+.op .ctrl{background:var(--warn-bg);border-left:1px solid var(--warn-line)}
+.op .ctrl h4{color:var(--warn)}
+.op ul{margin:0;padding-left:1.2em}
+.op li{margin:2px 0}
+.op p{margin:0 0 10px}
+.op .body > div > h4 + p, .op .body > div > h4 + ul{margin-bottom:12px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:0 6px;border-radius:3px;margin-right:4px;border:1px solid currentColor;line-height:1.6;vertical-align:1px}
+.t-chk{color:var(--accent)} .t-st{color:var(--warn)} .t-auth{color:var(--danger)} .t-link{color:var(--ok)} .t-date{color:var(--muted)}
+.op footer{padding:10px 20px 14px;border-top:1px solid var(--line);font-size:13px;display:grid;gap:6px}
+.op footer .row{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.op footer .lbl{color:var(--muted);font-weight:700;min-width:5em}
+.msg{display:inline-block;background:var(--surface-2);border-radius:4px;padding:0 6px;margin:2px 2px;font-size:13px}
+.note{margin:0;padding:10px 20px 14px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line)}
+.note b{color:var(--fg)}
+.sub{margin:12px 0 0;padding:10px 12px;background:var(--surface-2);border-radius:6px;font-size:14px}
+.sub h4{margin-bottom:4px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--muted);margin:8px 0 18px}
+.hidden-by-filter{display:none}
+.empty{display:none;color:var(--muted);padding:20px 0}
+.pri{display:inline-block;font-size:12px;font-weight:700;padding:0 8px;border-radius:10px;white-space:nowrap;border:1px solid currentColor}
+.pri.h{color:var(--danger)} .pri.m{color:var(--warn)} .pri.l{color:var(--muted)} .pri.ok{color:var(--ok)}
+table.iss td:first-child{font-family:var(--f-mono);white-space:nowrap;font-size:13px}
+table.iss td:last-child{text-align:center}
+table.iss th:nth-child(2){min-width:16em} table.iss th:nth-child(4){min-width:16em}
+.kicker{font-size:13px;color:var(--muted);margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
+
+@media (max-width: 900px){
+  .wrap{grid-template-columns:minmax(0,1fr);padding-inline:16px}
+  nav.toc{position:static;max-height:none;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .toc ol ol{display:none}
+  .op .body{grid-template-columns:minmax(0,1fr)}
+  .op .ctrl{border-left:0;border-top:1px solid var(--warn-line)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="toc" aria-label="章節目錄">
+  <div class="brand">HG 門禁管理系統</div>
+  <div class="path">資訊窗口 › 門禁管理系統</div>
+  <label for="q" class="path" style="display:block;margin-bottom:4px">搜尋作業代碼、名稱或關鍵字</label>
+  <input id="q" type="search" placeholder="例如：B02、停權、撤回">
+  <ol>
+    <li><a class="ch" href="#overview">總覽與共通規則</a></li>
+    <li><a class="ch" href="#sub1">一、基本資料 <small>HGSUB1</small></a>
+      <ol>
+        <li><a href="#HGJJA01"><span class="code">A01</span>廠商基本資料</a></li>
+        <li><a href="#HGJJA02"><span class="code">A02</span>人員基本資料</a></li>
+        <li><a href="#HGJJA03"><span class="code">A03</span>車輛基本資料</a></li>
+        <li><a href="#HGJJS01"><span class="code">S01</span>刷卡承保查詢</a></li>
+        <li><a href="#HGJJS00"><span class="code">S00</span>簡易代碼作業</a></li>
+        <li><a href="#HGJJMAGREPORT"><span class="code">MAG</span>管理性報表</a></li>
+        <li><a href="#HGJJA04"><span class="code">A04</span>關懷信</a></li>
+        <li><a href="#HGJJA05"><span class="code">A05</span>關懷信（主管）</a></li>
+      </ol></li>
+    <li><a class="ch" href="#sub2">二、出入證資料 <small>HGSUB2</small></a>
+      <ol>
+        <li><a href="#HGJJB01"><span class="code">B01</span>人力需求申請</a></li>
+        <li><a href="#HGJJB02"><span class="code">B02</span>工作證申請（長期）</a></li>
+        <li><a href="#HGJJB03"><span class="code">B03</span>臨時工作證申請</a></li>
+        <li><a href="#HGJJB04"><span class="code">B04</span>車輛通行證申請</a></li>
+        <li><a href="#HGJJB05"><span class="code">B05</span>臨時通行證申請</a></li>
+        <li><a href="#HGJJB06"><span class="code">B06</span>出入證查詢及繳銷</a></li>
+        <li><a href="#HGJJB07"><span class="code">B07</span>工作證查詢</a></li>
+        <li><a href="#HGJJB08"><span class="code">B08</span>車輛通行證查詢</a></li>
+        <li><a href="#HGJJB09"><span class="code">B09</span>臨時通行證查詢</a></li>
+        <li><a href="#HGJJB10"><span class="code">B10</span>出入證基本資料維護</a></li>
+        <li><a href="#HGJJB11"><span class="code">B11</span>承租工作證申請</a></li>
+      </ol></li>
+    <li><a class="ch" href="#sub3">三、出入管制 <small>HGSUB3</small></a>
+      <ol>
+        <li><a href="#HGJJC01"><span class="code">C01</span>允許入廠時間申請</a></li>
+        <li><a href="#HGJJC02"><span class="code">C02</span>允許入廠時間查詢</a></li>
+        <li><a href="#HGJJC03"><span class="code">C03</span>門哨放行作業</a></li>
+        <li><a href="#HGJJC06"><span class="code">C06</span>人員出入廠記錄查詢</a></li>
+        <li><a href="#HGJJC07"><span class="code">C07</span>工作證出入及派工查詢</a></li>
+      </ol></li>
+    <li><a class="ch" href="#sub4">四、風險違規 <small>HGSUB4</small></a>
+      <ol>
+        <li><a href="#HGJJF01"><span class="code">F01</span>工作設定</a></li>
+        <li><a href="#HGJJF02"><span class="code">F02</span>高風險每日提報</a></li>
+        <li><a href="#HGJJF03"><span class="code">F03</span>高風險提報查詢</a></li>
+        <li><a href="#HGJJG01"><span class="code">G01</span>稽查登錄維護</a></li>
+        <li><a href="#HGJJG02"><span class="code">G02</span>水平展開回覆</a></li>
+        <li><a href="#HGJJG04"><span class="code">G04</span>矯正措施作業</a></li>
+        <li><a href="#HGJJG05"><span class="code">G05</span>協力違約扣款</a></li>
+        <li><a href="#HGJJG06"><span class="code">G06</span>矯正措施補文件</a></li>
+        <li><a href="#HGJJF04"><span class="code">F04</span>高風險每日維護</a></li>
+      </ol></li>
+    <li><a class="ch" href="#sub5">五、教育訓練 <small>HGSUB5</small></a>
+      <ol>
+        <li><a href="#HGJJT001"><span class="code">T001</span>課程代號維護</a></li>
+        <li><a href="#HGJJT002"><span class="code">T002</span>課程記錄維護</a></li>
+      </ol></li>
+    <li><a class="ch" href="#sub6">六、承攬商管理系統 <small>HGSUB6</small></a>
+      <ol>
+        <li><a href="#HGJJK01"><span class="code">K01</span>安全工作程序</a></li>
+        <li><a href="#HGJJK02"><span class="code">K02</span>證照管理</a></li>
+        <li><a href="#HGJJN01"><span class="code">N01</span>承攬商稽查與矯正</a></li>
+        <li><a href="#HGJJN02"><span class="code">N02</span>安衛活動補助審查</a></li>
+      </ol></li>
+    <li><a class="ch" href="#issues">不妥之處／建議調整</a></li>
+    <li><a class="ch" href="#appendix">附錄：批次、門禁資料流</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">新進人員教育訓練 · HG 系統</div>
+  <h1>門禁管理系統：各作業用途與管制說明</h1>
+  <p>本手冊依 ERP「資訊窗口」中「門禁管理系統」的選單分類編排，共六大類、三十九支作業。每支作業說明它的用途、主要操作，以及系統會擋下或自動處理的管制規則。</p>
+  <p>內容依程式碼整理；標示「推測」者為從程式行為推論、尚未實機驗證的部分，教學時請以實機操作確認。</p>
+  <div class="meta">
+    <span>選單來源：<b>正式機 TBDSDF / TBDSMF</b></span>
+    <span>程式路徑：<b class="mono">erp.war/hg</b></span>
+    <span>整理日期：<b>2026-10-05</b></span>
+  </div>
+</header>
+
+<!-- ============ 總覽 ============ -->
+<section id="overview">
+  <h2><span class="no">OVERVIEW</span>總覽與共通規則</h2>
+  <p class="lead">先看懂選單架構、主要業務流程與共用的狀態碼和權限群組，後面各作業的限制就容易理解。</p>
+
+  <h4>資訊窗口選單架構</h4>
+  <div class="tree">
+    <div class="node"><h3>一、基本資料 <small>HGSUB1 · 8 支</small></h3>
+      <ul><li><span>HGJJA01</span>廠商基本資料</li><li><span>HGJJA02</span>人員基本資料</li><li><span>HGJJA03</span>車輛基本資料</li><li><span>HGJJS01</span>刷卡承保查詢</li><li><span>HGJJS00</span>簡易代碼作業</li><li><span>HGJJMAGREPORT</span>管理性報表</li><li><span>HGJJA04</span>關懷信</li><li><span>HGJJA05</span>關懷信（主管）</li></ul></div>
+    <div class="node"><h3>二、出入證資料 <small>HGSUB2 · 11 支</small></h3>
+      <ul><li><span>HGJJB01</span>承攬商人力需求申請作業</li><li><span>HGJJB02</span>承攬商工作證申請作業</li><li><span>HGJJB03</span>臨時工作證申請作業</li><li><span>HGJJB04</span>車輛通行證申請作業</li><li><span>HGJJB05</span>臨時通行證申請作業</li><li><span>HGJJB06</span>出入證查詢及繳銷作業</li><li><span>HGJJB07</span>承攬商工作證查詢作業</li><li><span>HGJJB08</span>車輛通行證查詢作業</li><li><span>HGJJB09</span>臨時通行證查詢作業</li><li><span>HGJJB10</span>出入證基本資料維護作業</li><li><span>HGJJB11</span>承租工作證申請作業</li></ul></div>
+    <div class="node"><h3>三、出入管制 <small>HGSUB3 · 5 支</small></h3>
+      <ul><li><span>HGJJC01</span>承攬商允許入廠時間申請作業</li><li><span>HGJJC02</span>允許入廠時間資料查詢作業</li><li><span>HGJJC03</span>臨時工作證門哨放行作業</li><li><span>HGJJC06</span>人員出入廠記錄查詢</li><li><span>HGJJC07</span>工作證出入及派工查詢</li></ul></div>
+    <div class="node"><h3>四、風險違規 <small>HGSUB4 · 9 支</small></h3>
+      <ul><li><span>HGJJF01</span>工作設定</li><li><span>HGJJF02</span>高風險及高危害作業每日提報</li><li><span>HGJJF03</span>高風險及高危害作業提報查詢</li><li><span>HGJJG01</span>稽查登錄維護</li><li><span>HGJJG02</span>水平展開回覆</li><li><span>HGJJG04</span>矯正措施作業</li><li><span>HGJJG05</span>協力違約扣款作業</li><li><span>HGJJG06</span>矯正措施作業－補文件</li><li><span>HGJJF04</span>高風險及高危害作業每日維護</li></ul></div>
+    <div class="node"><h3>五、教育訓練 <small>HGSUB5 · 2 支</small></h3>
+      <ul><li><span>HGJJT001</span>課程代號維護</li><li><span>HGJJT002</span>課程記錄維護</li></ul></div>
+    <div class="node"><h3>六、承攬商管理系統 <small>HGSUB6 · 4 支</small></h3>
+      <ul><li><span>HGJJK01</span>安全工作程序作業</li><li><span>HGJJK02</span>證照管理作業</li><li><span>HGJJN01</span>承攬商稽查與矯正作業</li><li><span>HGJJN02</span>承攬商安全衛生活動補助後續審查作業</li></ul></div>
+  </div>
+
+  <h4 style="margin-top:24px">三條主要業務流程</h4>
+  <div class="panel">
+    <strong>承攬商人員入廠</strong>
+    <div class="flow">
+      <div class="step"><b>A01/A02</b>廠商、人員建檔</div><span class="arr">→</span>
+      <div class="step"><b>B01</b>人力需求核准</div><span class="arr">→</span>
+      <div class="step"><b>B02 / B03</b>長期或臨時工作證核准</div><span class="arr">→</span>
+      <div class="step"><b>C01</b>允許入廠時間（派工）核准</div><span class="arr">→</span>
+      <div class="step"><b>C03 / 刷卡</b>門哨換證、卡鐘驗證放行</div>
+    </div>
+    <strong style="display:block;margin-top:12px">高風險作業</strong>
+    <div class="flow">
+      <div class="step"><b>F01</b>設定合約</div><span class="arr">→</span>
+      <div class="step"><b>F02</b>提報、主管擬准、工安（MX9）核准</div><span class="arr">→</span>
+      <div class="step"><b>批次</b>逐日提醒工程協調人</div><span class="arr">→</span>
+      <div class="step"><b>F04</b>每日維護、電子簽核</div><span class="arr">→</span>
+      <div class="step"><b>F03</b>查詢與稽查關聯</div>
+    </div>
+    <strong style="display:block;margin-top:12px">稽查到扣款</strong>
+    <div class="flow">
+      <div class="step"><b>G01</b>稽查登錄、主管核准</div><span class="arr">→</span>
+      <div class="step"><b>G02</b>水平展開（選用）</div><span class="arr">→</span>
+      <div class="step"><b>G04</b>矯正措施、開單單位核准結案</div><span class="arr">→</span>
+      <div class="step"><b>G05</b>罰單核准</div><span class="arr">→</span>
+      <div class="step"><b>採購驗收</b>扣款並回寫狀態</div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:24px">申請單狀態碼（tbhg201.status）</h4>
+  <div class="tablebox"><table>
+    <tr><th>代碼</th><th>意義</th><th>可做的動作</th></tr>
+    <tr><td class="c">A00</td><td>廠商建立中（廠商從外部入口網 EC 建單）</td><td>廠商送給承辦人後變成 A01</td></tr>
+    <tr><td class="c">A01</td><td>承辦人尚未送出</td><td>修改、刪除、送出、上傳</td></tr>
+    <tr><td class="c">B01</td><td>主管審批中</td><td>撤回（主管尚未批示時）、主管核准／擬准／退回</td></tr>
+    <tr><td class="c">B02</td><td>已核准</td><td>列印、通知行政處</td></tr>
+    <tr><td class="c">C01 / D01</td><td>繳費中 / 發證</td><td>—</td></tr>
+    <tr><td class="c">X01</td><td>不核准（退回）</td><td>可直接再送出；畫面上修改、刪除按鈕可按，但後端多半只允許 A01，會出現「非尚未送出狀態」</td></tr>
+    <tr><td class="c">X02</td><td>不製證</td><td>—</td></tr>
+  </table></div>
+  <p class="lead">申請類別：01 人力需求、02 長期工作證、03 臨時工作證、04 車輛證、05 臨時通行證、06 派工（允許入廠）、91 承租工作證。申請單號格式為「年度＋類別＋四碼流水號」。</p>
+
+  <h4>出入證（卡片）狀態（tbhg206）</h4>
+  <div class="tablebox"><table>
+    <tr><th>代碼</th><th>意義</th><th>由哪裡產生</th></tr>
+    <tr><td class="c">空白 / D01</td><td>有效</td><td>B02、B04、B11 核准時建立</td></tr>
+    <tr><td class="c">E01</td><td>繳回</td><td>B06 繳銷</td></tr>
+    <tr><td class="c">E02</td><td>遺失</td><td>B06 繳銷</td></tr>
+    <tr><td class="c">E03</td><td>毀損</td><td>B06 繳銷</td></tr>
+    <tr><td class="c">E04</td><td>註銷</td><td>B06 繳銷</td></tr>
+    <tr><td class="c">E05</td><td>過期</td><td>B06 手動，或每日排程將使用迄日已過的長期證改為過期</td></tr>
+  </table></div>
+
+  <h4>主管簽核的共通規則（B01～B04、B11）</h4>
+  <div class="panel">
+    <ul style="margin:0;padding-left:1.2em">
+      <li>只有被指定的下一位審核人看得到批示按鈕。</li>
+      <li><b>核准</b>：職稱代碼 ≤ 19（課長以上，含兼任職稱）才能直接核准；其他人只能擬准轉呈或退回。</li>
+      <li><b>擬准</b>：轉呈對象必須存在、不能是自己，而且要是上層主管。</li>
+      <li><b>退回</b>：必須填批示意見；單據改為 X01，所有人員明細改為不核准。</li>
+      <li><b>撤回</b>：申請人只能在 B01、而且主管還沒有批示時撤回。</li>
+      <li>B05 臨時通行證、C01 允許入廠時間改走 EZoMe 公用簽核；F04、N02 走 ZP 電子簽核；G 系列稽查以 DW 工作訊息加簽核紀錄表運作。</li>
+    </ul>
+  </div>
+
+  <h4 style="margin-top:24px">權限群組一覽</h4>
+  <div class="tablebox"><table>
+    <tr><th>群組</th><th>用途</th></tr>
+    <tr><td class="c">HG</td><td>HG 管理群組：稽查單取消結案、水平展開送出、矯正與罰單的管理修改、課程代號維護</td></tr>
+    <tr><td class="c">HW</td><td>部分作業的管理群組（C01、F01、F02、T002 程式引用 hwjcParam.ManagerGroup）</td></tr>
+    <tr><td class="c">HGB10</td><td>B02、B11 申請單管理權，以及 B06 繳銷按鈕</td></tr>
+    <tr><td class="c">HGB10SUPERMG</td><td>B10 出入證新增、刪除</td></tr>
+    <tr><td class="c">HGA1GROUP</td><td>行政處：B02「通知完成工作證製作」</td></tr>
+    <tr><td class="c">HGINSU</td><td>S01 承保名單的下載、手動抓取、上傳；承保批次異常通知</td></tr>
+    <tr><td class="c">MX8 / MX9</td><td>環保課、工安課；高風險提報核准、水平展開簽核關卡</td></tr>
+    <tr><td class="c">HGSYSMGR</td><td>系統管理者：照片 FTP、電子簽核回呼、通知找不到收件人時的備援收件群組</td></tr>
+  </table></div>
+  <p class="lead">細部授權（程式授權碼）由 <code>hgjcAuthorize</code> 判斷，常見的有 ACTION、INSERT、UPDATE、DELETE、DOMAKEREPORT、UPLOAD。沒有寫細部授權的作業，能不能使用就看選單授權。</p>
+
+  <h4>拋轉門禁（DI）</h4>
+  <p class="lead">共用設定 <code>HGSETTING.isDI=Y</code> 時，人員、車輛、申請明細、出入證、換證紀錄的異動，會透過訊息佇列同步到門禁主機。核准後要等佇列同步完，刷卡才會生效。</p>
+</section>
+
+<div class="legend" aria-label="標籤說明">
+  <span><span class="tag t-chk">檢核</span>輸入與資格檢查</span>
+  <span><span class="tag t-st">狀態</span>單據狀態限制</span>
+  <span><span class="tag t-auth">權限</span>誰可以操作</span>
+  <span><span class="tag t-date">期限</span>日期與效期規則</span>
+  <span><span class="tag t-link">連動</span>影響其他作業或系統</span>
+</div>
+
+<!-- ============ 一、基本資料 ============ -->
+<section id="sub1">
+  <h2><span class="no">HGSUB1</span>一、基本資料</h2>
+  <p class="lead">承攬商、人員、車輛的主檔，以及承保名單、系統代碼、管理報表與關懷信。這些主檔是所有申請作業的資料來源。</p>
+
+  <article class="op" id="HGJJA01" data-k="廠商 承攬商 email 工程協調人 tbhg101 tbhg104">
+    <header><span class="code">HGJJA01</span><h3>廠商基本資料</h3><span class="prog">hgjja01.jsp</span><span class="who">使用者：門禁或行政管理單位（推測）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>維護承攬商主檔，以及各入廠地點的廠商與工程協調人 Email。人員、車輛和各類申請單選廠商時，都從這裡取資料。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>「廠商資料清單」頁籤：用編號、簡稱模糊查詢。</li>
+          <li>「廠商資料明細」頁籤：查詢、新增、修改、刪除。</li>
+          <li>廠商編號只能從採購（GP）廠商主檔挑選，選定後自動帶入名稱、電話、地址、負責人。</li>
+          <li>下方明細維護入廠地點、廠商 Email、協調人 Email，多個 Email 用「,」分隔。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>名稱、簡稱（最多 10 字）、電話、現場電話、地址、負責人與電話、代理人與電話都必填；明細的地點和兩個 Email 也必填。</li>
+          <li><span class="tag t-st">狀態</span>廠商已被人員、車輛或申請單使用時不能刪除。</li>
+          <li><span class="tag t-chk">檢核</span>刪除時有勾選明細就只刪勾選的 Email 列；沒勾選則刪除整個廠商。</li>
+          <li><span class="tag t-link">連動</span>Email 會被每日批次用來寄「進出中鴻人員清單」給廠商與協調人；有開 DI 時同步門禁主機。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg101 廠商基本資料、tbhg104 廠商工程協調人</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">廠商編號[x]資料使用中!!!</span><span class="msg">xxx該筆工程協調人不存在</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>新增時若廠商編號已存在，系統不報錯，畫面仍顯示「新增成功」，但主檔其實沒寫入。要替既有廠商加新的地點 Email，請勾選新列後按「新增」，按「修改」會出現「不存在」錯誤（推測）。</p>
+  </article>
+
+  <article class="op" id="HGJJA02" data-k="人員 身分證 照片 停權 辦證紀錄 tbhg102 tbhg303">
+    <header><span class="code">HGJJA02</span><h3>人員基本資料</h3><span class="prog">hgjja02.jsp（清單／明細／辦證紀錄／停權紀錄）</span><span class="who">使用者：門禁管理單位、申請承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>維護承攬商人員主檔（以身分證號為鍵）、門禁製卡照片與停權紀錄，並可查這個人辦過的所有證件。B02、B03 等申請都從這裡取人員資料。</p>
+        <h4>主要功能（四個頁籤）</h4>
+        <ul>
+          <li><b>人員資料清單</b>：依姓名、身分證、廠商查詢，顯示是否禁止與禁止期限。</li>
+          <li><b>人員資料明細</b>：新增、修改、刪除、上傳照片；自動計算年齡，駕照過期顯示「過期」。</li>
+          <li><b>人員辦證紀錄</b>：列出申請單號、類別、證號、有效期限、卡片狀態，點單號可開對應申請作業。</li>
+          <li><b>人員停權紀錄</b>：多筆新增、修改、刪除，可產製停權報表。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>身分證（自動轉大寫、去空白）、姓名、生日、性別、血型、國籍、電話、手機、地址、所屬廠商必填；人員不可重複。</li>
+          <li><span class="tag t-chk">檢核</span>照片只收 .jpg、125KB 以內、至少寬 200 × 高 300；bmp 改副檔名會被擋（Not a JPEG file）。</li>
+          <li><span class="tag t-st">狀態</span>已被車輛或申請明細使用的人員不能刪除。</li>
+          <li><span class="tag t-auth">權限</span>停權的「新增」只有在查詢條件輸入身分證後才開放；產製停權報表需 DOMAKEREPORT 授權。</li>
+          <li><span class="tag t-date">期限</span>停權起訖要都填或都不填；同一起日不可重複。</li>
+          <li><span class="tag t-link">連動</span>停權期間會影響工作證申請：B02 期間與停權重疊時該人判定為不核准，B03 入廠日在停權期間直接拒絕。</li>
+          <li><span class="tag t-link">連動</span>照片會 FTP 到各廠門禁主機，失敗時通知該廠課長、副課長與 HGSYSMGR；有長期證的人修改資料時同步製卡系統。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg102 人員、tbhg303 停權紀錄、tbhg202 申請人員明細、tbhg206 出入證</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">人員資料[x]已存在!!!</span><span class="msg">人員資料[x]使用中!!!</span><span class="msg">請填入日期</span><span class="msg">人員停權資料[日期]已存在!!!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>程式沒有檢查身分證檢查碼，輸入時請自行確認。</p>
+  </article>
+
+  <article class="op" id="HGJJA03" data-k="車輛 車牌 行照 保險 tbhg103">
+    <header><span class="code">HGJJA03</span><h3>車輛基本資料</h3><span class="prog">hgjja03.jsp</span><span class="who">使用者：門禁管理單位、車輛證申請承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>維護進廠車輛主檔（以車牌為鍵），提供 B04 車輛通行證申請使用。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>清單頁依車牌、廠商、人員查詢，顯示車型、所屬、行照到期日。</li>
+          <li>明細頁新增、修改、刪除；車輛序號新增時自動取號。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>車牌、車型、廠牌、顏色、保險到期日、行照到期日必填；「所屬廠商」與「所屬個人」至少填一個，有填個人時駕照到期日必填。</li>
+          <li><span class="tag t-date">期限</span>駕照、保險、行照過期只顯示紅字「過期」，<b>不會阻擋存檔</b>。</li>
+          <li><span class="tag t-st">狀態</span>車牌不可重複；已用在車輛申請明細的車輛不能刪除。</li>
+          <li><span class="tag t-link">連動</span>有開 DI 時同步門禁主機。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg103 車輛、tbhg203 申請車輛明細</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">車牌號碼[x]資料已存在!!!</span><span class="msg">車牌號碼[x]資料使用中!!!</span><span class="msg">所屬廠商或所屬個人必需擇一輸入！</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>車牌是鍵值，修改時不能改車牌，需刪除後重建（推測）。</p>
+  </article>
+
+  <article class="op" id="HGJJS01" data-k="承保 保險 刷卡 每日投保 HGINSU tbhg401">
+    <header><span class="code">HGJJS01</span><h3>刷卡承保查詢</h3><span class="prog">_pageId=hgjjs01（含 Create / Modify）</span><span class="who">使用者：承保窗口（HGINSU 群組）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>管理承攬商人員「每日入廠要投保」的名單。名單來源是門禁刷卡紀錄；每日批次在 10 點產生 Excel，Email 給保險公司與內部窗口。畫面註明「本畫面僅供承保，不供計價驗收之用」。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依刷卡日期（必填）、廠商、廠別查詢；左側列「廠商／日期／筆數」，右側列明細。</li>
+          <li>下載：依月份和廠商匯出 CSV 保險清單。</li>
+          <li>手動抓取該天資料：從刷卡紀錄抓入廠人員，排除 23 小時內已投保和重複者。</li>
+          <li>上傳 Excel、單筆新增、修改、刪除。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>下載、手動抓取、上傳只有 HGINSU 群組看得到；其他人要有 HGJJS01/UPLOAD 授權才能上傳、新增；修改他人建立的資料會出現「非授權人員，不可查詢修改」。</li>
+          <li><span class="tag t-chk">檢核</span>上傳時身分證以檢查碼驗證；人員必須已在 A02 建檔，否則整批中止。</li>
+          <li><span class="tag t-chk">檢核</span>地點代碼只能是 01～07（01 行政大樓、02 冷軋、03 熱軋、04 鋼管、05 鹿港、06 熱軋第二刷卡機、07 冷軋第二刷卡機）。</li>
+          <li><span class="tag t-date">期限</span>時間 4 或 6 碼；出廠早於入廠視為跨日，拆成兩筆。</li>
+          <li><span class="tag t-chk">檢核</span>一人一天只能有一筆。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg401 每日進出人員保險狀態、tbhg301 出入紀錄、tbhg206、tbhgt0</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">第n筆外包人員不存在</span><span class="msg">不可新增，一個人一天只能新增一筆</span><span class="msg">查無此卡號</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>畫面說明的上傳欄位順序與程式實際讀法不同。程式實際是「身分證、卡號、日期、<b>地點、入廠時間、出廠時間</b>」，請依此準備檔案。</p>
+  </article>
+
+  <article class="op" id="HGJJS00" data-k="簡易代碼 代碼表 tbhgt0 R001 0001">
+    <header><span class="code">HGJJS00</span><h3>簡易代碼作業</h3><span class="prog">hgjjs00.jsp</span><span class="who">使用者：系統管理者</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>維護 HG 系統共用代碼表。每筆代碼可帶 3 個字串值與 3 個數值，各有說明欄。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依表單號碼查詢（提示視窗列出所有表號），點選後新增、修改、刪除。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>程式內沒有權限、必填與重複檢查，全靠選單授權控管。</li>
+          <li><span class="tag t-link">連動</span><b>改錯會直接影響其他作業</b>：0001 入廠地點與刷卡機 IP（S01、報表使用）、R001 管理性報表清單、HG109 關懷信作業內容、HG110 缺失風險等級與矯正天數、HG112 違約扣款金額等。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhgt0 簡易代碼資料檔</div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJMAGREPORT" data-k="管理性報表 入廠人數 工時 刷卡異常 DR001 DR002 DR003 DR004">
+    <header><span class="code">HGJJMAGREPORT</span><h3>管理性報表</h3><span class="prog">_pageId=hgjjMagReport</span><span class="who">使用者：管理、工安或行政單位（推測）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>報表入口頁，彙整承攬商進出統計與異常報表。頁面要顯示哪些報表，由代碼表 R001 決定。各報表按「確定」產生 PDF。</p>
+        <h4>內含報表</h4>
+        <ul>
+          <li><b>DR001 承攬商入廠施工人數</b>：依廠商統計入、出廠人數與長期證、臨時證人數。</li>
+          <li><b>DR002 承攬商入出廠區工時</b>：依年度月份與入廠統計日數篩人。</li>
+          <li><b>DR003 刷卡異常通知</b>：入廠刷卡被拒、累計天數達門檻（預設 5 天）的人，並關聯派工與申請人。</li>
+          <li><b>DR004 各部門工時統計</b>：中鴻自家員工各部門男女人數、出勤與加班工時（取自人事系統）。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>程式內沒有權限控管。</li>
+          <li><span class="tag t-date">期限</span>起訖日期只填一邊會提示補齊；DR004 起止月份必填。</li>
+          <li><span class="tag t-chk">檢核</span>DR002、DR003 請一定要選「入廠地點」，沒選時會出現「報表製作失敗」（推測）。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg301、tbhg205、tbhg201、tbhgt0；人事 tbham0、tbhad1、tbhad4</div>
+    </footer>
+    <p class="note"><b>注意：</b>DR003 畫面上的「承攬商」欄位實際上沒有用在查詢條件；日數輸入 ≤1 只會提示，不會中止。</p>
+  </article>
+
+  <article class="op" id="HGJJA04" data-k="關懷信 眷屬 生效日 tbhg108">
+    <header><span class="code">HGJJA04</span><h3>關懷信</h3><span class="prog">hgjja04.jsp</span><span class="who">使用者：關懷信管理端（推測為行政或工安）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>為在職員工產生「關懷信」寄送名單（收件眷屬、地址、作業內容），並列印 PDF。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li><b>執行</b>：輸入生效日與開放期間，依人事檔產生在職員工名單（課長級以上主管排除）；眷屬優先取配偶類資料，取不到用本人。</li>
+          <li><b>刪除指定生效日</b>：整批刪除。</li>
+          <li>單筆新增、修改、刪除；依生效日與部門列印。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>執行時生效日、開放期間必填；查詢需先輸入生效日。</li>
+          <li><span class="tag t-auth">權限</span>列印需 hgjca04/QUERY 授權。</li>
+          <li><span class="tag t-link">連動</span>修改時地址一律重抓人事聯絡地址，手改會被覆蓋。</li>
+          <li><span class="tag t-link">連動</span>開放期間決定主管在 A05 能否填寫。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg108 關懷信主檔；人事 tbham0、tbhwt3</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">請輸入執行的生效日</span><span class="msg">請輸入開放期間</span><span class="msg">請輸入生效日後再按查詢</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>「執行」會<b>先刪後建</b>。對同一生效日重跑，主管已填好的作業內容會全部消失。</p>
+  </article>
+
+  <article class="op" id="HGJJA05" data-k="關懷信 主管 作業內容">
+    <header><span class="code">HGJJA05</span><h3>關懷信（主管）</h3><span class="prog">_pageId=hgjja05</span><span class="who">使用者：課級、廠處級主管</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>主管為自己部門員工填寫關懷信上的「作業內容」，並列印自己部門的關懷信。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>進入時直接帶出最新生效日、開放期間尚未結束的員工。</li>
+          <li>每列選作業內容下拉或填「其它」（限 30 字），勾選後修改；可列印。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>只有本職、代理或兼任職稱為 18、19（課長、副課長）或 08、09（廠處長級）的在職人員能看到資料，且只能看、印自己負責的部門。</li>
+          <li><span class="tag t-chk">檢核</span>下拉選項與「其它」文字只能二擇一。</li>
+          <li><span class="tag t-date">期限</span>開放期間過了，名單就從畫面消失。</li>
+          <li><span class="tag t-chk">檢核</span>列印只印已填作業內容的資料。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg108（與 A04 共用）、tbhgt0 HG109</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">非主管，沒有權限</span><span class="msg">二擇一輸入</span><span class="msg">只能列印自己負責的部門資料</span></div>
+    </footer>
+  </article>
+</section>
+
+<!-- ============ 二、出入證資料 ============ -->
+<section id="sub2">
+  <h2><span class="no">HGSUB2</span>二、出入證資料</h2>
+  <p class="lead">人力需求、各類工作證與通行證的申請、簽核、查詢與繳銷。最重要的順序是：<b>B01 人力需求核准後，才能申請 B02 長期工作證與 B03 臨時工作證</b>。B05 與 B11 不需要 B01。</p>
+
+  <article class="op" id="HGJJB01" data-k="人力需求 訂購單 核定人數 重複申請 tbhg201">
+    <header><span class="code">HGJJB01</span><h3>承攬商人力需求申請作業</h3><span class="prog">hgjjb01.jsp（申請資料／審核資料）</span><span class="who">使用者：工程承辦人；廠商可由 EC 先建單</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>針對某廠商的某張訂購單，先核定「可進廠人數」與「核發期限」。這張核准單是 B02、B03 的前提，B02 的人數上限就是這裡的「核定人數」。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依單號、承辦人、申請日期、廠商、契約執行單位查詢。</li>
+          <li>新增、修改、刪除、送出（指定呈送主管）、撤回、上傳 Excel、列印、e-mail 通知（只開啟郵件草稿）。</li>
+          <li>廠商從 EC 建單（A00）送出後轉為 A01，系統發待辦給承辦人。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>申請人數、核定人數不可為 0；核定人數不得大於申請人數。</li>
+          <li><span class="tag t-chk">檢核</span>訂購單號必須是「訂購單」，不能是請購單。</li>
+          <li><span class="tag t-date">期限</span>四個日期必填；核發期限需在申請期限內，且起訖在同一年。</li>
+          <li><span class="tag t-chk">檢核</span>同廠商、同訂購單已有未退回的單，且期限完整涵蓋本次時會被擋（部分重疊不擋，推測）。</li>
+          <li><span class="tag t-st">狀態</span>修改、刪除限 A01；送出限 A01、X01；撤回限 B01。</li>
+          <li><span class="tag t-auth">權限</span>只有申請人本人或其上層主管可操作；不可呈送給自己。</li>
+          <li><span class="tag t-link">連動</span>送出時發待辦給主管；呈送對象不是直屬主管時另通知直屬主管。核准後不製卡。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201 申請主檔、tbhg101、tbhg104、tbhg001 審核紀錄</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">核發期限必須在同一年</span><span class="msg">輸入訂購單編號有誤(請檢查是否為「請購單」編號!?)</span><span class="msg">廠商:X，訂購單號:Y，在…有重覆申請!!</span><span class="msg">不可申請給自己審核!!!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>上傳格式請到 IDR4「查詢檢索作業」的門禁管理群組下載。送出前先到 A01 確認工程協調人 Email 是否正確。</p>
+  </article>
+
+  <article class="op" id="HGJJB02" data-k="長期工作證 人力需求 健檢 安衛訓練 通識測驗 資安宣導 停權 卡號 製卡 HGB10 HGA1GROUP tbhg202 tbhg206">
+    <header><span class="code">HGJJB02</span><h3>承攬商工作證申請作業（長期工作證）</h3><span class="prog">hgjjb02.jsp（申請資料／人員資料／審核資料，含複製）</span><span class="who">使用者：工程承辦人、主管、行政處（製證）；廠商可由 EC 建單</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>在 B01 核定人數內，替承攬商人員申請長期工作證（類別 02）。核准後系統自動配發卡號，並拋轉門禁與製卡系統。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>申請資料：新增、修改、刪除、送出、撤回、上傳 Excel、列印、e-mail 通知、通知行政處、通知完成工作證製作、複製。</li>
+          <li>人員資料：基本資料與照片、勞保投保日期與附件、工作內容（鉗工、冷作、配管、電焊、電工、搭架、行政管理、其他）、高危險作業類型、各項檢核（安衛訓練、保險、通識測驗、高危險作業測驗、資安宣導、健檢、個資同意書等）；右側顯示停權紀錄。</li>
+        </ul>
+        <div class="sub">
+          <h4>健檢效期依年齡</h4>
+          未滿 40 歲：5 年內；40～65 歲：3 年內；65 歲以上：1 年內。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span><b>必須先有 B01 核准</b>：同廠商、同訂購單、期限涵蓋本次的 B02 狀態人力需求單。</li>
+          <li><span class="tag t-chk">檢核</span><b>人數上限</b>：已核准的有效證件數＋本次人數，不可超過 B01 核定人數；Excel 上傳時逐筆檢查。</li>
+          <li><span class="tag t-chk">檢核</span>同廠商、同訂購單已有未送出（A01）的單，不能再新增。</li>
+          <li><span class="tag t-date">期限</span>核發期限起訖在同一年；個人期限需在申請單期限內。</li>
+          <li><span class="tag t-date">期限</span>安衛訓練日期＋3 年需晚於核發起日；通識測驗、高危險作業測驗、資安宣導日期需早於或等於核發起日。</li>
+          <li><span class="tag t-chk">檢核</span>勞保、安衛訓練附件必傳；新辦證人員通識測驗、資安宣導日期必填（有勾高危險作業另需測驗日期）；四種附件本單沒有時會查以前的申請。</li>
+          <li><span class="tag t-chk">檢核</span>送出前每人工作內容至少一項、安衛訓練／營繕險／雇主補償險至少勾一項。</li>
+          <li><span class="tag t-chk">檢核</span><b>「是否核准」由系統判定</b>：期限超出、與停權期間重疊、或已有重疊的有效證件時，自動設為不核准、不製證；人工修改無效。</li>
+          <li><span class="tag t-st">狀態</span>修改、刪除限 A01；送出限 A01、X01；撤回限 B01；列印、通知行政處限 B02。</li>
+          <li><span class="tag t-auth">權限</span>申請資料頁限申請人、其上層主管或 HGB10；「通知完成工作證製作」限 HGA1GROUP。</li>
+          <li><span class="tag t-link">連動</span>核准後建立出入證：卡號沿用原卡號，沒有則從 70001～77999 配發；有開 DI 時拋轉門禁與製卡系統。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202 申請人員明細、tbhg102、tbhg206 出入證、tbhg303 停權、tbhg001</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">…尚未提出人力需求申請(請檢查是否日期有誤)!!</span><span class="msg">錯誤!含本次申請已超過人力需求核准人數</span><span class="msg">…工作項目未選</span><span class="msg">…檢核項目未通過</span><span class="msg">此日期加三年後應大於申請核發起日</span><span class="msg">新辦證人員，此日期不可空白!</span><span class="msg">40-65歲，日期不得超過3年</span><span class="msg">您並非為行政群組人員(HGA1GROUP)，不可通知!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>被系統判定為不核准的原因只寫在 log，畫面不顯示，詳細判斷規則可參考同目錄的《HGJJB02_cardOk核准判斷分析》。保險到期日「需大於核定止日」只是畫面紅字提示，不會擋。複製時新期限也要有 B01 核准，且起訖日不可與原單相同。單上有人員明細時，第一次刪除只刪勾選的人員，主檔要再刪一次。</p>
+  </article>
+
+  <article class="op" id="HGJJB03" data-k="臨時工作證 單日 連續申請 15次 停權 緊急請購">
+    <header><span class="code">HGJJB03</span><h3>臨時工作證申請作業</h3><span class="prog">hgjjb03.jsp（申請資料／人員資料／審核資料／說明，含複製）</span><span class="who">使用者：工程承辦人；廠商可由 EC 建單</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>替承攬商人員申請「單日、指定時段」的臨時工作證（類別 03）。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>新增、修改、刪除、送出、撤回、上傳 Excel、列印、e-mail 通知。</li>
+          <li>複製：指定新的入廠日期與時段。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>入廠日期、時段、地點、廠商、工程名稱必填。</li>
+          <li><span class="tag t-chk">檢核</span>訂購單號只有「緊急請購」可空白；類型不是「一般」時必須上傳附件；有填訂購單時必須有涵蓋入廠日的 B01 核准。</li>
+          <li><span class="tag t-date">期限</span>每人效期就是入廠當天一天。</li>
+          <li><span class="tag t-date">期限</span><b>連續申請上限</b>：同一人、同廠商、同訂購單，入廠日前 15 天內含本次達 15 次即拒絕。</li>
+          <li><span class="tag t-chk">檢核</span>入廠日在停權期間拒絕；同日已有核准的長期證，或同日同地點時段重疊的臨時證也拒絕。</li>
+          <li><span class="tag t-date">期限</span>安衛訓練日期＋3 年需晚於入廠日；新辦證者需上傳通識測驗、資安宣導、個資同意書。</li>
+          <li><span class="tag t-st">狀態</span>修改限 A01；送出限 A01、X01；撤回限 B01；列印限 B02。</li>
+          <li><span class="tag t-auth">權限</span>申請人、其上層主管、HG 管理群組。</li>
+          <li><span class="tag t-link">連動</span>核准後不建立出入證卡片，人員到門哨以 C03 換證後才能刷卡。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202、tbhg102、tbhg303、tbhg001</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">非「緊急請購」，請填入訂購單號</span><span class="msg">…已超過連續申請限制(15次,含本次)</span><span class="msg">…在停權期間!!</span><span class="msg">…已有證件,不得申請!!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>單上有人員明細時，按刪除只刪勾選的人員，主檔要再按一次刪除。護照號碼後面要加「護」。沒有年齡檢核，只顯示歲數。</p>
+  </article>
+
+  <article class="op" id="HGJJB04" data-k="車輛通行證 車輛證 行照 保險 重複發證">
+    <header><span class="code">HGJJB04</span><h3>車輛通行證申請作業</h3><span class="prog">hgjjb04.jsp（申請資料／車輛資料／審核資料）</span><span class="who">使用者：工程承辦人、行政處（製證）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>替廠商車輛申請通行證（類別 04），核准後建立出入證並通知行政處製證。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>上傳、列印、e-mail 通知、通知行政處、新增、修改、刪除、送出、撤回。</li>
+          <li>車輛資料頁維護車籍資料與核發期限。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>廠商、工程名稱、訂購單編號、核發期限必填；車輛的所屬廠商需與申請單廠商相同。</li>
+          <li><span class="tag t-date">期限</span>沒有天數上限，但起訖需同一年度，且不可超出申請單期限。</li>
+          <li><span class="tag t-chk">檢核</span>同一台車已有重疊的有效證件時不擋申請，改標為不製證（「已有證件,不重覆發證」）。</li>
+          <li><span class="tag t-date">期限</span>保險、行照、駕照過期只顯示「過期」，不阻擋。</li>
+          <li><span class="tag t-chk">檢核</span>Excel 上傳的車型需存在代碼表 HG001；EC 廠商只能上傳自己的車。</li>
+          <li><span class="tag t-st">狀態</span>修改、刪除限 A01；送出限 A01、X01 且至少一台車；撤回限 B01；列印、通知行政處限 B02。</li>
+          <li><span class="tag t-auth">權限</span>申請人本人或其上層主管。</li>
+          <li><span class="tag t-link">連動</span>核准後建立出入證（卡序＝車牌＋0＋版次），有開 DI 時拋轉門禁。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg203 申請車輛明細、tbhg103、tbhg206</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">核發期限超出申請單之核發期限</span><span class="msg">所屬廠商或所屬個人必需擇一輸入！</span><span class="msg">第n筆車型代碼有誤</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJB05" data-k="臨時通行證 來賓 訪客 被會人 EZoMe 公用簽核">
+    <header><span class="code">HGJJB05</span><h3>臨時通行證申請作業</h3><span class="prog">hgjjb05.jsp</span><span class="who">使用者：接待來賓的員工</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>替來賓申請單日入廠通行證（類別 05），記錄被會單位、被會人、分機與入廠原因。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>新增、修改、刪除、送出、撤回、上傳來賓清單（身分證、姓名、電話）。</li>
+          <li>簽核走 EZoMe 公用簽核（RQ11303037），不使用共用審核頁。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>入廠日期、地點、原因、被會單位、被會人、分機、來賓單位必填（只在畫面端檢查）。</li>
+          <li><span class="tag t-chk">檢核</span>來賓單位不存在時自動建立廠商資料；身分證結尾為「護」視為護照。</li>
+          <li><span class="tag t-chk">檢核</span>沒有連續申請、停權、證件衝突、保險、黑名單等檢查。</li>
+          <li><span class="tag t-st">狀態</span>修改、刪除限 A01；送出限 A01、X01；撤回限 B01 且公用簽核狀態為「00」（尚無人簽）。</li>
+          <li><span class="tag t-auth">權限</span>只有申請人本人能操作。</li>
+          <li><span class="tag t-link">連動</span>簽核結果回寫：退回改 X01、核准改 B02 並拋轉門禁；不製卡，來賓到門哨以 C03 換證。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202、tbhg102、tbhg101、EZoMe 簽核表</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">第N筆身份證號有錯，不可為數字，若為護照，請在其後加入「護」字</span><span class="msg">失敗，公用簽核狀態不允許撤回</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJB06" data-k="繳銷 繳回 遺失 毀損 註銷 過期 HGB10">
+    <header><span class="code">HGJJB06</span><h3>出入證查詢及繳銷作業</h3><span class="prog">hgjjb06.jsp（清單／人員／車輛）</span><span class="who">使用者：出入證管理人員（HGB10 群組）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢已核准的長期工作證（02）與車輛證（04），並處理繳回、遺失、毀損、註銷、過期。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依單號、日期、類別、申請人查詢；只列 B02、C01、D01 的申請單。</li>
+          <li>勾選後按：繳回（E01）、遺失（E02）、毀損（E03）、註銷（E04）、過期（E05）。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>只有 HGB10 群組成員的繳銷按鈕會開放。</li>
+          <li><span class="tag t-st">狀態</span><b>不檢查原狀態</b>，已繳回的證可再改成其他狀態，且沒有確認對話框，操作前請確認。</li>
+          <li><span class="tag t-link">連動</span>狀態回寫申請明細，有開 DI 時拋轉門禁；繳銷後同一人或車可重新申請。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202、tbhg203、tbhg206</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">修改狀態成功!!!</span><span class="msg">查詢成功!!!(限前二千筆)</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>每個動作成功後都只顯示同一句「修改狀態成功!!!」，看不出做了哪個動作，請自行核對清單。</p>
+  </article>
+
+  <article class="op" id="HGJJB07" data-k="工作證查詢 下載 CSV">
+    <header><span class="code">HGJJB07</span><h3>承攬商工作證查詢作業</h3><span class="prog">hgjjb07.jsp</span><span class="who">使用者：承辦人、管理單位</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢已核准的長期工作證，可下載 CSV。</p>
+        <h4>主要功能</h4>
+        <ul><li>依申請單號、申請日期、訂購單號查詢，每頁 15 筆。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>畫面只顯示核准、有製證、主檔為 B02 的資料。</li>
+          <li><span class="tag t-link">連動</span>下載的 CSV 沒有套用相同篩選，筆數可能比畫面多；身分證只留前 6 碼，其餘遮罩；單位與廠商為代碼。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202、tbhg102</div></footer>
+  </article>
+
+  <article class="op" id="HGJJB08" data-k="車輛通行證查詢 車牌">
+    <header><span class="code">HGJJB08</span><h3>車輛通行證查詢作業</h3><span class="prog">hgjjb08.jsp</span><span class="who">使用者：承辦人、管理單位</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢車輛通行證明細，可下載 CSV。</p>
+        <h4>主要功能</h4>
+        <ul><li>依單號、日期、車牌區間、申請狀態（B02／X01）查詢。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>畫面會濾掉不核准、不製證、非 B02 的資料，所以選「X01 退回」一定查不到。</li>
+          <li><span class="tag t-link">連動</span>CSV 不套用此過濾，且沒有標題列。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg201、tbhg203、tbhg103</div></footer>
+  </article>
+
+  <article class="op" id="HGJJB09" data-k="臨時通行證查詢 換證 繳證">
+    <header><span class="code">HGJJB09</span><h3>臨時通行證查詢作業</h3><span class="prog">hgjjb09.jsp</span><span class="who">使用者：接待單位、門禁管理</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢已核准的臨時通行證，以及門哨換證、繳證的時間。</p>
+        <h4>主要功能</h4>
+        <ul><li>依單號、入廠日期、入廠地點、被會單位查詢，可下載。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>沒有權限控制，身分證完整顯示不遮罩，請注意個資。</li>
+          <li><span class="tag t-chk">檢核</span>畫面只顯示核准且主檔為 B02 的資料，下載檔不套用。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg201、tbhg202、tbhg102、tbhg302 換證紀錄</div></footer>
+    <p class="note"><b>注意：</b>畫面與下載檔讀取換證紀錄的鍵值不同，換證、繳證時間可能對不上（推測）。</p>
+  </article>
+
+  <article class="op" id="HGJJB10" data-k="出入證基本資料 卡號 版次 卡序 HGB10SUPERMG">
+    <header><span class="code">HGJJB10</span><h3>出入證基本資料維護作業</h3><span class="prog">hgjjb10.jsp</span><span class="who">使用者：出入證管理者</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>直接維護出入證主檔（證號、類別、版次、卡序、使用期間、卡片狀態），修改後同步申請明細並拋轉門禁。</p>
+        <h4>主要功能</h4>
+        <ul><li>依證號、身分證、類別、單號查詢（至少一個條件，只選類別不算），最多 200 筆；勾選後新增、修改、刪除。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>新增、刪除限 HGB10SUPERMG；修改不限角色。</li>
+          <li><span class="tag t-chk">檢核</span>不能在此新增 04 車輛證；長期證卡號 70001～77999、承租證 91001～91999；02、91 身分證必填。</li>
+          <li><span class="tag t-date">期限</span>起訖需同一年度（91 承租證除外）。</li>
+          <li><span class="tag t-chk">檢核</span>版次 01～99，卡序必須等於「證號＋0＋版次」；新增時版次自動取最大＋1。</li>
+          <li><span class="tag t-st">狀態</span>只有卡片狀態空白、且非 04 類才能刪除；刪除不回頭處理申請明細。</li>
+          <li><span class="tag t-link">連動</span><b>改版次或證號會多出一張新卡資料，舊資料不會被改掉</b>。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg206、tbhg202、tbhg203、tbhg102</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">出入證類別為04-車輛證，不得由此作業新增</span><span class="msg">長期工作證之卡號應為70001~77999</span><span class="msg">卡片號碼須等於出入証號+'0'+版次</span><span class="msg">第N筆資料狀態不得刪除</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJB11" data-k="承租工作證 承租廠商 91 酸鍍廠 RQ11408014">
+    <header><span class="code">HGJJB11</span><h3>承租工作證申請作業</h3><span class="prog">hgjjb11.jsp（2025/08 新增，RQ11408014）</span><span class="who">使用者：承租廠商的對口承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>替承租廠商人員申請長期性質的承租工作證（類別 91）。由 B02 複製而來，畫面與流程幾乎相同。</p>
+        <h4>與 B02 的差異</h4>
+        <ul>
+          <li>不需要訂購單、不需要 B01 人力需求，也沒有人數上限。</li>
+          <li>效期可跨年，核發訖日預設到 2099/12/31。</li>
+          <li>送出前不檢查工作內容與檢核項目；人員頁不檢查教育訓練、附件、健檢。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-date">期限</span>個人效期仍不可超出申請單期限。</li>
+          <li><span class="tag t-chk">檢核</span>仍會依停權重疊、已有有效證件自動判定不核准。</li>
+          <li><span class="tag t-chk">檢核</span>同廠商已有未送出（A01）的 91 單時不能再新增。</li>
+          <li><span class="tag t-st">狀態</span>狀態與權限規則同 B02（HGB10 群組；A01／X01／B01／B02）。</li>
+          <li><span class="tag t-link">連動</span>核准後卡號從 91001～91999 配發，拋轉門禁與製卡；申請單位為 M6 開頭時，使用範圍設為只限酸鍍廠。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>同 B02</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">有以下承租工作證申請單未送出…</span><span class="msg">您所輸入的申請單號不是承租工作證的單號</span><span class="msg">日期沒有落在申請核發期限內</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>本作業系統檢核比 B02 寬鬆很多，教育訓練、保險等書面資料要靠承辦人自行把關。「M6 開頭只限酸鍍廠」原本誤依核准者部門判斷，已於 2026/10/05 修正為依申請單位判斷（hgjcb01ApplyBs CVS 1.14）。</p>
+  </article>
+</section>
+
+<!-- ============ 三、出入管制 ============ -->
+<section id="sub3">
+  <h2><span class="no">HGSUB3</span>三、出入管制</h2>
+  <p class="lead">有工作證還不夠，人員要有核准的「允許入廠時間」（派工）才能在指定日期、時段刷卡進廠。臨時證件則要先在門哨換證。</p>
+
+  <article class="op" id="HGJJC01" data-k="允許入廠時間 派工 06 時段 2400 35天 EZoMe">
+    <header><span class="code">HGJJC01</span><h3>承攬商允許入廠時間申請作業</h3><span class="prog">hgjjc01.jsp（含複製）</span><span class="who">使用者：工程承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>替已有長期或臨時工作證的人員，申請哪幾天、哪個時段、哪個廠區可以入廠（程式內稱「派工申請」，類別 06）。核准後逐日展開派工明細，門禁刷卡就是靠這份明細判斷能否進廠。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>填寫廠商、工程名稱、請購工程類型（一般／緊急請購／訂購單展延）、訂購單、附件、入廠起迄日與地點。</li>
+          <li>人員明細：身分證、單位、類型、工作內容、入廠起迄日、開始與結束時段；可 Excel 整批上傳。</li>
+          <li>送出走 EZoMe 公用簽核；可撤回；退回後可修改再送。</li>
+          <li>複製：輸入舊單號、新地點與起迄日產生新單。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>非「緊急請購」必填訂購單；「一般」類型的入廠迄日不可超過合約交貨期限；非「一般」類型需上傳附件。</li>
+          <li><span class="tag t-date">期限</span>入廠起迄需同一年，<b>最多 35 天</b>；人員入廠期間需落在單頭期間內。</li>
+          <li><span class="tag t-date">期限</span>每日入廠不可超過 23 小時；結束時段需大於開始時段，<b>到午夜請輸入 2400，不要輸入 0000</b>。</li>
+          <li><span class="tag t-chk">檢核</span><b>申請期間必須被已核准的長期或臨時工作證完整涵蓋</b>，未涵蓋的日子會列出。</li>
+          <li><span class="tag t-chk">檢核</span>同單身分證不可重複；與已核准派工地點相同且時段完全相同時擋下。</li>
+          <li><span class="tag t-chk">檢核</span>類型選「其他」需填工作內容；Excel 工作類型只接受 01～07 與 XX。</li>
+          <li><span class="tag t-st">狀態</span>修改、刪除、送出按鈕只在 A01、X01 開放；撤回只在公用簽核狀態為「00」時允許。</li>
+          <li><span class="tag t-auth">權限</span>申請人、其上級或管理群組。</li>
+          <li><span class="tag t-link">連動</span>核准時逐日展開派工明細並拋轉門禁。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg201、tbhg204 人員申請明細、tbhg205 逐日派工（核准後產生）、tbhg202</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">入廠日期上限以一個月為限(申請日期至截止日最多35天)</span><span class="msg">入廠時間不可超過23小時整</span><span class="msg">XXX[未申請長期或臨時工作證無法申請允許入廠]</span><span class="msg">…已有申請派工資料(單號：…)</span><span class="msg">失敗，公用簽核狀態不允許撤回</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>複製成功後必須逐一維護每個人的入廠期限才能送出。複製的新起迄日不可與原單相同，且同訂購單、廠商、年度、承辦人已有未送出的單時不能複製。</p>
+  </article>
+
+  <article class="op" id="HGJJC02" data-k="允許入廠時間查詢 派工查詢">
+    <header><span class="code">HGJJC02</span><h3>允許入廠時間資料查詢作業</h3><span class="prog">hgjjc02.jsp</span><span class="who">使用者：承辦人、門禁管理</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢已核准、已逐日展開的派工明細。</p>
+        <h4>主要功能</h4>
+        <ul><li>依單號、派工日期（預設今天）、承攬商、廠別查詢，每頁 15 筆，可下載。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-st">狀態</span>只查得到已核准的資料。</li>
+          <li><span class="tag t-auth">權限</span>沒有權限過濾。</li>
+          <li><span class="tag t-date">期限</span>「廠別」欄位民國 100 年 7 月才加入，用廠別查只能查到之後的資料；熱軋會帶出 03、06，冷軋帶出 02、07。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg205、tbhgt0</div></footer>
+  </article>
+
+  <article class="op" id="HGJJC03" data-k="門哨 放行 換證 繳證 臨時證 警衛">
+    <header><span class="code">HGJJC03</span><h3>臨時工作證門哨放行作業</h3><span class="prog">hgjjc03.jsp（A 臨時工作證／B 臨時通行證／C 派工查詢）</span><span class="who">使用者：門哨警衛</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>門哨的作業畫面。對持臨時工作證（A）或臨時通行證（B）的人登記發給的卡號與換證時間，離廠時處理繳證；C 頁籤查派工。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依入廠日期（預設今天）、廠別、單號、身分證、姓名查詢，勾選人員、輸入卡號與備註。</li>
+          <li>按「換證」「取消換證」「繳證」「取消繳證」「修改」。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>A 只列出當天有核准臨時工作證、且有派工的人；B 只列出入廠日為當天的核准臨時通行證。</li>
+          <li><span class="tag t-link">連動</span><b>換證是刷卡的前提</b>：門禁判斷臨時證時先查換證紀錄，沒換證回「尚未換證」；再查派工，不在時段內也會被拒。</li>
+          <li><span class="tag t-st">狀態</span>沒有狀態檢核，可重複換證，也可沒換證就繳證，請依現場實際操作。</li>
+          <li><span class="tag t-auth">權限</span>程式內沒有權限分級，靠選單授權。</li>
+          <li><span class="tag t-link">連動</span>每次異動拋轉門禁端。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg302 臨時證件換發紀錄、tbhg204、tbhg201、tbhg202、tbhg205</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">OK!!!</span><span class="msg">No data!!!</span><span class="msg">cancel OK!!!</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJC06" data-k="出入廠記錄 刷卡紀錄 補登 卡鐘 驗收">
+    <header><span class="code">HGJJC06</span><h3>人員出入廠記錄查詢</h3><span class="prog">hgjjc06.jsp（含新增修改視窗）</span><span class="who">使用者：門禁管理人員</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢刷卡原始紀錄，並由管理人員人工補登、修改或刪除（例如漏刷）。這份資料也供驗收使用，所以補登必須選原因。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依日期時間區間、身分證、廠商、證件種類、入廠地點（必填）查詢，最多 2000 筆，可下載 CSV。</li>
+          <li>新增、修改、刪除刷卡紀錄。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>刷卡日期、時間（6 碼）、卡鐘、進／出、原因必填；原因選「5 其它」需說明（限 25 字）。</li>
+          <li><span class="tag t-date">期限</span>不能輸入 240000，請改為隔天 000000；日期與時間是主鍵，不能修改，只能刪除重建。</li>
+          <li><span class="tag t-chk">檢核</span>無長期證者以身分證前 8 碼當卡號，並必須輸入姓名與廠商；一次完整進出要分別建「進」「出」兩筆。</li>
+          <li><span class="tag t-auth">權限</span><b>程式內沒有授權檢查</b>，能開作業就能增刪改，選單授權須嚴格控管。</li>
+          <li><span class="tag t-link">連動</span>新增記為「補」並記錄修改人；<b>刪除是實體刪除，不留紀錄</b>；每次異動重新配對當天進出；不會同步到承保名單。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg301 出入紀錄、tbhg206、tbhg102、tbhg401、tbhg402</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">請不要輸入240000, 請用新的一天，並打入000000</span><span class="msg">因為此人無長期工作證，請務必輸入姓名、廠商等資料</span><span class="msg">必須輸入原因</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJC07" data-k="工作證出入 派工查詢 刷卡 異常">
+    <header><span class="code">HGJJC07</span><h3>工作證出入及派工查詢</h3><span class="prog">_pageId=hgjjc07</span><span class="who">使用者：門禁管理、承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>把刷卡紀錄與當天派工對起來，看某人進出時屬於哪張派工單、哪個單位派的工，用來追查異常。</p>
+        <h4>主要功能</h4>
+        <ul><li>依日期時間、廠商、人員、入廠地點、證件種類查詢，每頁 30 筆，可下載 xls。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>只查長期與臨時工作證的刷卡。</li>
+          <li><span class="tag t-chk">檢核</span>同一人同一天有多張派工時會出現多筆；沒有派工的刷卡也會列出，派工欄空白。</li>
+          <li><span class="tag t-auth">權限</span>純查詢，沒有權限過濾。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg301、tbhg205、tbhg201、tbhg101</div></footer>
+    <p class="note"><b>注意：</b>畫面訊息寫「最多僅查詢100筆」，實際上限為 2000 筆；查詢後廠商條件不會回填到畫面。</p>
+  </article>
+</section>
+
+<!-- ============ 四、風險違規 ============ -->
+<section id="sub4">
+  <h2><span class="no">HGSUB4</span>四、風險違規</h2>
+  <p class="lead">選單內包含兩組功能：高風險作業（F01、F02、F03、F04）與稽查、矯正、罰單（G01、G02、G04、G05、G06）。以下依選單順序說明。</p>
+
+  <article class="op" id="HGJJF01" data-k="高風險 工作設定 訂購單 安衛人員 施工期間 tbhg107">
+    <header><span class="code">HGJJF01</span><h3>工作設定（高風險工作設定）</h3><span class="prog">hgjjf01.jsp</span><span class="who">使用者：工程承辦人</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>依訂購單號建立高風險工作的基本設定，是 F02 提報的前置資料。內容包括工程名稱、廠商、承辦人與電話、施工單位、安衛人員與電話、施工期間、狀態。</p>
+        <h4>主要功能</h4>
+        <ul><li>輸入訂購單號查詢；點選後新增、修改、刪除。用「編號提示」挑訂購單，自動帶出名稱、承辦人、施工單位。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>訂購單號、名稱、廠商、承辦人與電話、施工單位、安衛人員與電話、施工期間、狀態（1 進行中、2 結束）必填。</li>
+          <li><span class="tag t-chk">檢核</span>修改時到 MP 訂購單（TBMP40）取廠商比對，訂購單不存在或廠商不符都會擋下，訊息相同。</li>
+          <li><span class="tag t-chk">檢核</span><b>新增時不檢核</b>訂購單是否存在、廠商是否相符；訂購單欄位可手打，提示視窗不是強制。</li>
+          <li><span class="tag t-auth">權限</span>只有輸入者或 HW 管理群組可修改、刪除；已有資料不能再新增。</li>
+          <li><span class="tag t-link">連動</span><b>施工期間是 F02 提報日期的上下限</b>。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg107 高風險設定、tbhg101、tbhg102</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">修改失敗，訂購單號對應承攬商錯誤</span><span class="msg">無授權</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>狀態設為「結束」的合約在 F02 仍可提報；刪除時不檢查是否已有提報資料。</p>
+  </article>
+
+  <article class="op" id="HGJJF02" data-k="高風險 高危害 每日提報 局限空間 動火 MX9 勞檢處 職安中心 擬准 結案 tbhg207A">
+    <header><span class="code">HGJJF02</span><h3>高風險及高危害作業每日提報</h3><span class="prog">_pageId=hgjjf02（提報工作／維護／核准）</span><span class="who">使用者：工程承辦人（提報）、直屬主管、廠區工安 MX9 群組</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>針對 F01 已設定的合約，提報一段期間的高風險或特定作業，送直屬主管與廠區工安批示。核准後系統產生每日明細，供 F04 逐日維護。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>提報子視窗：填人數、起止日、施工時間、特定作業、施工機具、地點、聯絡人後「提報」，再「送出」並指定主管。</li>
+          <li>維護頁：刪除、修改、撤回、結案、EMAIL。</li>
+          <li>核准頁：退回、擬准、核准並填意見。</li>
+          <li>法規通報按鈕：開啟「提報高市勞檢處」「提報中區職安中心」外部網站，系統<b>不會自動上傳</b>。</li>
+        </ul>
+        <div class="sub">
+          <h4>簽核流程</h4>
+          送出 → 直屬主管「擬准」 → 轉給廠區工安 MX9 群組 → 群組內任一人「核准」即完成，並展開每日明細、通知提報者。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>F01 查不到合約時不能提報。</li>
+          <li><span class="tag t-date">期限</span><b>起日不可早於今天</b>；起訖需落在 F01 施工期間內；一次最多提報約 30 天（天數差超過 31 天擋下）。</li>
+          <li><span class="tag t-chk">檢核</span>人數不可為 0；施工時間、特定作業、施工機具必選，機具選「其它」需說明。</li>
+          <li><span class="tag t-chk">檢核</span>同合約、施工單位、廠商、廠別、地點的期間不可重疊。</li>
+          <li><span class="tag t-chk">檢核</span>作業地點不可只填廠區名等過於籠統的內容（代碼表 F02NALLOWP）。</li>
+          <li><span class="tag t-auth">權限</span>主管必填，且不可是提報人本人；已送出不可重送。</li>
+          <li><span class="tag t-st">狀態</span>撤回只能由提報者在第一位主管批示前；已送出或已核准不可刪除；退回後可再修改。</li>
+          <li><span class="tag t-auth">權限</span>MX9 與 HW 可修改填寫安全措施欄，但同樣受「起日 ≥ 今天」限制。</li>
+          <li><span class="tag t-date">期限</span>結案只能由提報者在施工期間內按，會把止日改為今天並刪除之後的每日明細。</li>
+          <li><span class="tag t-auth">權限</span>EMAIL 按鈕只限廠別 02、03、04 且已核准，寄給高雄勞檢單位。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg207A 提報主檔、tbhg207B 每日明細、tbhg001B 批示紀錄、tbhg107</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">在高風險設定中無資料，請先設定...</span><span class="msg">施工區間需大於等於修改日</span><span class="msg">申請日期請在施工期限內</span><span class="msg">最多只能提報三十天!</span><span class="msg">該日期區間有重疊提報</span><span class="msg">提報人和主管不可為同一人</span><span class="msg">已送出或已核准，不可刪除</span><span class="msg">施工結束日期已過，不需結案!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>程式沒有「前一天幾點前要提報」的時間截止，只檢查起日不可早於今天。特定作業選項標記：【高】勞檢處、【中】職安中心、【內控】廠區工安。核准通知目前只發 DW 工作訊息，Email 通知已停用。</p>
+  </article>
+
+  <article class="op" id="HGJJF03" data-k="高風險提報查詢 稽核清單 安全觀察">
+    <header><span class="code">HGJJF03</span><h3>高風險及高危害作業提報查詢</h3><span class="prog">_pageId=hgjjf03（含稽核清單、安全觀察清單）</span><span class="who">使用者：工安、管理者</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢各廠、各單位、各廠商的高風險提報，並看出與現場稽查、安全觀察的關聯；可下載 Excel。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依廠別、施工日期、施工單位、廠商、「全部／有稽查／有安全照護」查詢。</li>
+          <li>點稽查件數可開稽查單清單並連到稽查明細；點安全觀察件數列出案號。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>純查詢，沒有額外權限檢查。</li>
+          <li><span class="tag t-st">狀態</span>下載以每日明細為準，<b>只有已核准的提報會出現在下載檔</b>。</li>
+          <li><span class="tag t-link">連動</span>稽查與安全觀察號碼由每日清晨 4 點的批次回寫（近 30 天的提報），<b>當天的稽查要隔天才看得到</b>。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg207A、tbhg207B、tbhg208</div></footer>
+  </article>
+
+  <article class="op" id="HGJJG01" data-k="稽查 巡檢 登錄 不符合 矯正期限 缺失風險等級 水平展開 罰單 HG110 tbhg208">
+    <header><span class="code">HGJJG01</span><h3>稽查登錄維護（巡檢登錄）</h3><span class="prog">_pageId=hgjjg01（稽查登錄、批示、水平通知、矯正登錄、罰單登錄、統計）</span><span class="who">使用者：工安與稽核人員、主管、HG 管理群組</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>登錄現場稽查的優點、符合、不符合、建議事項，並送主管核准。核准的稽查單是矯正單、罰單、水平展開的起點。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>查詢：單號、發生日、受稽單位至少一個；狀態可篩已核准、未核准、未送出；只顯示最新 300 筆。</li>
+          <li>新增：單號自動產生；系統依受稽與稽核單位、稽查種類判斷流程別（1 內部、2 外部、3 行政）。</li>
+          <li>送出（填直屬長官）→ 主管核准、擬准轉下一位或退回 → 核准後通知申請人進行矯正登錄。</li>
+          <li>清單圖示可進入：矯正登錄、罰單登錄、水平通知、批示資料、統計報表。</li>
+        </ul>
+        <div class="sub">
+          <h4>矯正期限</h4>
+          天數依缺失風險等級（代碼 HG110）設定，從稽查核准日起算，畫面提示「應於稽查核准後 N 天內完成矯正」。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>沒填優點時，不符合、符合、建議三項至少填一項；有不符合時，違反規定四項（法令、管理系統條文、公司規章、承攬違約扣款）至少一項。</li>
+          <li><span class="tag t-chk">檢核</span>作業人員 5 碼視為職工編號，否則當身分證檢核；承攬商人員需填統編。</li>
+          <li><span class="tag t-date">期限</span>有不符合或建議事項時矯正期限必填，且與缺失風險等級須成對填寫。</li>
+          <li><span class="tag t-chk">檢核</span>內外部稽核人員至少一個，人員與部門成對填寫；訂購單號需有效，廠商需相符。</li>
+          <li><span class="tag t-st">狀態</span>送出後不能修改、刪除（HG 群組除外）；撤回只能在第一位主管批示前。</li>
+          <li><span class="tag t-auth">權限</span>非 HG 群組且非原登錄者，所有按鈕關閉；只有目前待批的人可批示；非課長以上職稱「退回」按鈕關閉。</li>
+          <li><span class="tag t-auth">權限</span>HG 群組可「取消結案」。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="body">
+      <div>
+        <div class="sub" style="margin-top:0">
+          <h4>子畫面：矯正登錄</h4>
+          矯正單號＝稽核單號＋A。明細分原因分析、矯正措施、預防措施三類，都要有資料才能送出；後兩類需填預定完成日。批示在 G04 進行。
+        </div>
+        <div class="sub">
+          <h4>子畫面：水平展開通知</h4>
+          只有 HG 群組可送出；選擇通知廠別（不可選受稽廠本身）與 M9 主管；各廠回覆在 G02。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>矯正登錄的管制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>負責單位必填；稽查單有廠商時，統編需一致，訂購單號與外包違規行為人必填；違規人只能填員工或外包其一。</li>
+          <li><span class="tag t-date">期限</span>預定完成日不可超過 HG110 算出的期限；<b>比核准日晚 90 天以上必須填管理方案編號</b>。</li>
+          <li><span class="tag t-auth">權限</span>已送簽過的單，非 M9 人員不能改預定完成日。</li>
+          <li><span class="tag t-chk">檢核</span>風險評估選 N 要說明，否則填風險評估編號。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg208 稽查主檔、tbhg208V／VD 矯正、tbhg208F 罰單、tbhg208T 水平展開、tbhg001B 簽核紀錄、tbhgt0（HG106、HG110、HG112）</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">單號、發生日及受稽單位請擇一選擇輸入…</span><span class="msg">缺失類別三項要擇一填入...</span><span class="msg">登錄不符合事項，則違反規定要打</span><span class="msg">有填矯正期限，則缺失風險等級不可為空</span><span class="msg">訂購單號不正確，請再重新確認...</span><span class="msg">不可撤回，已進行到第二個主管了~</span><span class="msg">非HG群組人員也非當初維護人員，不可更新</span><span class="msg">非授權主管，不可核准</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJG02" data-k="水平展開 回覆 MX8 MX9 廠處長 tbhg208T">
+    <header><span class="code">HGJJG02</span><h3>水平展開回覆</h3><span class="prog">hgjjg02.jsp（含批示）</span><span class="who">使用者：被通知廠的主管或承辦、MX8／MX9、廠處長</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>稽查缺失經 HG 群組通知其他廠處後，各廠自行盤查是否有同類作業與缺失，回覆改善結果並跑簽核。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>維護開始日期、預定完成日、單位、有無該作業、盤查結果、改善措施、完成改善。</li>
+          <li>簽核關卡（內部、外部流程）：執行單位課長 → MX8／MX9 群組 → MX 課長 → 廠處長。</li>
+          <li>行政流程：執行單位課長 → 執行單位課長 → 廠處長。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-st">狀態</span>只有在第一關時才能修改與送出；「主管」必填，畫面提示下一關是誰。</li>
+          <li><span class="tag t-auth">權限</span>非維護者、非 HG 群組、也非訊息收件人時無授權。</li>
+          <li><span class="tag t-auth">權限</span>下一關是廠處長時，指定的主管必須是廠處長職稱；下一關是 MX 群組時只能核准、不能擬准。</li>
+          <li><span class="tag t-link">連動</span>退回時通知維護者重新處理；最後一關核准後通知 MX 群組、M9 承辦等。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg208T、tbhg001B、tbhgt0</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">非維護者或非管理者，無授權</span><span class="msg">指定主管須為廠處長...</span><span class="msg">您有一張水平展開回覆單被退回</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJG04" data-k="矯正措施 結案 開單單位 實際完成日 逾期 tbhg208V">
+    <header><span class="code">HGJJG04</span><h3>矯正措施作業</h3><span class="prog">_pageId=hgjjg04（含批示、完成日、通知、報表）</span><span class="who">使用者：缺失單位承辦、主管、開單（稽核）單位</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>追蹤矯正單從送出、批示到結案的全過程。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依矯正單號、廠別、預定完成月份、缺失單位、狀態查詢（100 筆）。</li>
+          <li>可開矯正登錄、稽查資料、通知視窗；下方批示核准、擬准、退回、取消結案；匯出 Excel。</li>
+        </ul>
+        <div class="sub">
+          <h4>矯正單狀態</h4>
+          1 未處理、2 不需處理（優點或符合事項）、3 已送出未核准、4 未送出、5 已結案。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span><b>核准即結案，只能由開單單位按</b>（登入者部門需等於稽核單位前 2 碼）；其他人只能擬准，畫面提示「由開單單位人員辦理核准結案，其他相關人員請按擬准」。</li>
+          <li><span class="tag t-chk">檢核</span>擬准必須指定下一位主管。</li>
+          <li><span class="tag t-link">連動</span>核准時實際完成日＝核准日；退回時通知建立者與所有曾核准者。</li>
+          <li><span class="tag t-auth">權限</span>取消結案限 HG 群組，會清除送出日、核准日與核准者。</li>
+          <li><span class="tag t-auth">權限</span>實際完成日只有稽查申請人或矯正建立者能改；結案後只剩稽查登錄者能改。</li>
+          <li><span class="tag t-link">連動</span>預定完成日前 7 天提醒、逾期每日通知（見附錄批次）。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg208V、tbhg208VD、tbhg208、tbhg001B</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">請指定呈核主管</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>「通知」視窗送出時可能實際沒有通知任何人（推測為程式缺陷），重要通知請另行確認。</p>
+  </article>
+
+  <article class="op" id="HGJJG05" data-k="罰單 違約扣款 扣點 採購 驗收 HG112 tbhg208F">
+    <header><span class="code">HGJJG05</span><h3>協力違約扣款作業（罰單）</h3><span class="prog">_pageId=hgjjg05（含批示）</span><span class="who">使用者：開罰的工安或稽核人員、主管；採購驗收時帶入</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>對承攬商開立違約扣款罰單，核准後供採購驗收時扣款。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依稽核號、廠商名稱、送出日期查詢（200 筆）；明細連到罰單登錄、批示。</li>
+          <li>送出 → 主管核准、擬准、退回；核准後通知申請人，並把罰單號回填矯正單。</li>
+        </ul>
+        <div class="sub">
+          <h4>金額規則（代碼 HG112）</h4>
+          依稽查單的「承攬違約扣款」項目：固定額項目金額必須等於設定值；區間項目需介於上下限之間。扣點未填時自動以「金額 ÷ 1000」四捨五入。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>訂購單號必須是有效的訂購單，不能填請購單。</li>
+          <li><span class="tag t-chk">檢核</span>稽查時沒指定廠商統編、或矯正單沒有訂購單號時，不能開罰單。</li>
+          <li><span class="tag t-auth">權限</span>只有申請人或 HG 群組能操作；已送出或已核准不能刪除。</li>
+          <li><span class="tag t-st">狀態</span>撤回只能在第一位主管批示前；取消結案限 HG 群組。</li>
+          <li><span class="tag t-link">連動</span><b>採購驗收時帶入工安罰款並扣款</b>，扣款狀態（Y 已扣、N 取消）回寫 HG；罰單未走完流程時，採購端會出現「仍有稽核號：…尚未完成罰單登錄流程」。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg208F 罰單、tbhg001B、tbhgt0 HG112、採購 tbmp51C</div>
+      <div class="row"><span class="lbl">相關報表</span>HGR00050 罰單資料查詢報表</div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJG06" data-k="補文件 上傳 矯正 佐證">
+    <header><span class="code">HGJJG06</span><h3>矯正措施作業－補文件</h3><span class="prog">_pageId=hgjjg06</span><span class="who">使用者：矯正單建立者、HG 群組</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>矯正單核准後，補上傳佐證文件或照片。</p>
+        <h4>主要功能</h4>
+        <ul><li>查詢已核准矯正單，點上傳開啟檔案元件。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-st">狀態</span>只查已核准的矯正單，最多 200 筆。</li>
+          <li><span class="tag t-auth">權限</span>非 HG 群組只能看到自己建立的矯正單（「只能查自己負責矯正案」）。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg208V、ZP 附件</div></footer>
+    <p class="note"><b>注意：</b>原本沒有附件的矯正單，新上傳的附件可能不會關聯回矯正單（推測），上傳後請重新查詢確認。</p>
+  </article>
+
+  <article class="op" id="HGJJF04" data-k="高風險 每日維護 工程協調人 離廠人數 平安 電子簽核 提醒">
+    <header><span class="code">HGJJF04</span><h3>高風險及高危害作業每日維護</h3><span class="prog">hgjjf04.jsp（RQ11212037、RQ11304026）</span><span class="who">使用者：工程協調人、其上一級主管</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>F02 核准後系統逐日產生明細，工程協調人每天填寫實際施工內容、人數與離廠情形，送上一級主管電子簽核，確認每日作業結束、人員平安離廠。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依訂購單號或施工日期查詢（兩者都沒填查不到）；清單顯示施工內容是否輸入與簽核狀態。</li>
+          <li>填寫施工內容、施工人數、離廠人數、人員狀況（1 平安、Z 其他）、離廠日期時間 → 修改 → 送簽或取消送簽。</li>
+          <li>每日提醒訊息可直接連到本作業。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span><b>只有該提報的工程協調人</b>能修改、送簽，其他人只能查看；不能新增或刪除。</li>
+          <li><span class="tag t-date">期限</span>送簽需同時符合：施工內容已填、<b>當天提醒訊息已發出</b>、尚未送簽或簽核已作廢。</li>
+          <li><span class="tag t-chk">檢核</span>離廠人數 ≤ 施工人數；少於施工人數時人員狀況必須選 Z 並說明；離廠日期需在施工日當天或之後。</li>
+          <li><span class="tag t-st">狀態</span>簽核狀態在 00～19 之間才能取消送簽。</li>
+          <li><span class="tag t-link">連動</span>核准後依設定通知各廠相關單位；每週一寄送「每日維護未核准清單」給工程協調人與主管。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg207A、tbhg207B、ZP 電子簽核 tbzpesign</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">修改失敗，施工內容不可為空白，請輸入!</span><span class="msg">離廠人數須≦施工人數!!</span><span class="msg">當施工人員狀況為Z(其他)時，須說明!!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>F02 沒核准就不會產生每日明細，也收不到提醒、無法維護。送簽要等當天提醒發出後才能按。</p>
+  </article>
+
+  <div class="panel">
+    <h4>稽查到結案的狀態總表</h4>
+    <div class="tablebox" style="margin:0"><table>
+      <tr><th>簽核紀錄代碼</th><th>意義</th></tr>
+      <tr><td class="c">空白</td><td>尚未批示</td></tr>
+      <tr><td class="c">A</td><td>核准</td></tr>
+      <tr><td class="c">V</td><td>擬准（轉下一位主管）</td></tr>
+      <tr><td class="c">R</td><td>退回（清除送出日）</td></tr>
+      <tr><td class="c">C</td><td>取消結案（HG 群組）</td></tr>
+      <tr><td class="c">S</td><td>水平展開由維護者送出</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============ 五、教育訓練 ============ -->
+<section id="sub5">
+  <h2><span class="no">HGSUB5</span>五、教育訓練</h2>
+  <p class="lead">維護教育訓練課程代碼，並以 Excel 批次匯入個人的訓練紀錄、證書與回訓資料。</p>
+
+  <article class="op" id="HGJJT001" data-k="課程代號 複訓方式 訓練單位 tbhgts0">
+    <header><span class="code">HGJJT001</span><h3>課程代號維護</h3><span class="prog">hgjjt001.jsp</span><span class="who">使用者：教育訓練管理者（HG 群組）</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>建立訓練課程代碼主檔：代碼、名稱、訓練課名、作業內容、複訓方式、訓練單位。T002 上傳與報表的課程下拉都以此為準。</p>
+        <h4>主要功能</h4>
+        <ul><li>依代碼查詢，點選後新增、修改、刪除。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-chk">檢核</span>代碼、名稱、訓練課名、作業內容、複訓方式（代碼 T001）、訓練單位（代碼 T002）必填；代碼不可重複。</li>
+          <li><span class="tag t-auth">權限</span>新增、修改、刪除開放給 HG 群組。</li>
+          <li><span class="tag t-link">連動</span>刪除時不檢查課程是否仍被訓練紀錄使用。</li>
+          <li><span class="tag t-date">期限</span>「複訓方式」只是記錄，系統不會據此自動推算有效日期。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhgts0 課程代碼、tbhgt0</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">代碼重覆</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJT002" data-k="課程記錄 訓練紀錄 Excel 上傳 回訓 複訓名冊 對照表 工安護照 tbhgtm0">
+    <header><span class="code">HGJJT002</span><h3>課程記錄維護</h3><span class="prog">_pageId=hgjjt002（含明細、上傳、對照表、複訓名冊）</span><span class="who">使用者：教育訓練承辦、管理群組</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>以 Excel 批次匯入員工與承攬商人員的訓練紀錄，分為證書主檔、回訓紀錄、年度工作清單三層，並提供兩張報表。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依身分證或課程代號查詢（前 200 筆）；上傳 Excel；開啟明細維護回訓與年度工作。</li>
+          <li><b>對照表</b>：列出持長期工作證者與「工安護照登錄日期」，可依年度、承攬商、申請單位篩選。</li>
+          <li><b>複訓名冊</b>：課程必填，列出有效期限早於或等於指定日期的人，即到期需複訓名單。</li>
+        </ul>
+        <div class="sub">
+          <h4>Excel 格式重點（一個檔案代表一個人）</h4>
+          第 3 列為標題列：B 姓名（中文）、E 身分證、G 工號、K 公司統編（無工號時必填）、N 合約管理單位。第 5 列起為明細：B 課程代號、J 證書號碼（空白自動填 00）、K 訓練日期、M 有效日期，另有兩組回訓資料。數字欄位請先設為「字串」格式。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>非 HW 管理群組只能查到自己上傳或本人的資料。</li>
+          <li><span class="tag t-chk">檢核</span>只讀第一個工作表，檔案需小於 2MB（超過時只顯示「無資料可上傳!!!」）。</li>
+          <li><span class="tag t-chk">檢核</span>姓名需中文；工號需存在；統編不可填中文且需存在於廠商主檔。</li>
+          <li><span class="tag t-chk">檢核</span>以身分證＋課程＋證書號碼為鍵：存在就更新，不存在就新增；整批同一交易，出錯整批回滾。</li>
+          <li><span class="tag t-date">期限</span>主檔有效日期會被該列最近一次回訓的值覆蓋；K 或 M 欄沒填時可能清空原有效期限（推測）。</li>
+          <li><span class="tag t-link">連動</span><b>目前程式沒有「訓練有效才能申請工作證」的硬性檢核</b>，兩者的關聯只呈現在對照表上。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhgtm0 主檔、tbhgtm0A 回訓、tbhgtm0B 年度工作、tbhgts0、tbhg101、tbhg206</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">標題列姓名需輸入中文</span><span class="msg">標題列工號不存在</span><span class="msg">標題列輸入身份證(有誤)</span><span class="msg">標題列公司單位不得為空(承攬商請填公司統編)</span><span class="msg">查無該承攬商代碼，請至「廠商基本資料」新增</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>明細頁「全部刪除」只刪主檔，回訓與年度工作資料會留下。刪除回訓成功時畫面顯示「回訓清單新增成功」，是程式字樣錯誤。</p>
+  </article>
+</section>
+
+<!-- ============ 六、承攬商管理系統 ============ -->
+<section id="sub6">
+  <h2><span class="no">HGSUB6</span>六、承攬商管理系統</h2>
+  <p class="lead">K01、K02、N01 的資料由承攬商在外部入口網（EC）新增與維護，ERP 端只能查詢。N02 是補助申請的後續審查與簽核。</p>
+
+  <article class="op" id="HGJJK01" data-k="安全工作程序 SJP 5年 修訂 tbhg109">
+    <header><span class="code">HGJJK01</span><h3>安全工作程序作業（SJP）</h3><span class="prog">hgjjk01.jsp</span><span class="who">使用者：工安、承攬商管理單位（查詢）；承攬商於 EC 維護</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢承攬商提交的安全工作程序文件，並找出超過 5 年未修訂的 SJP。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>清單：依廠商、廠區、案號、SJP 編號與名稱、「超過 5 年未修訂」查詢。</li>
+          <li>維護頁：唯讀檢視與下載附件。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-st">狀態</span>ERP 端唯讀，新增、修改、刪除按鈕已關閉。</li>
+          <li><span class="tag t-date">期限</span>以修改日（沒有則用建立日）加 5 年判斷是否逾期；兩者都空時顯示「增修日空值」。</li>
+          <li><span class="tag t-chk">檢核</span>（EC 端）廠區、SJP 編號、名稱必填，同廠商編號不可重複，附件必傳，且只能以自己帳號的統編新增。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg109、tbzp0100 附件</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">案號 X 中已有此 SJP 編號(…)，不可重複!!</span><span class="msg">SJP 檔案附件須上傳!!</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJK02" data-k="證照 證照管理 逾期 有效日期 tbhg110">
+    <header><span class="code">HGJJK02</span><h3>證照管理作業</h3><span class="prog">hgjjk02.jsp</span><span class="who">使用者：工安、承攬商管理單位（查詢）；承攬商於 EC 維護</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢承攬商人員的證照（類別、原始證號、取得日、有效期間），篩選已逾期的證照。</p>
+        <h4>主要功能</h4>
+        <ul><li>依公司、身分證、證照類別（兩層下拉）、是否逾期查詢；唯讀檢視並下載附件。</li></ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-date">期限</span>今天 ≥ 有效迄日即標為逾期。</li>
+          <li><span class="tag t-chk">檢核</span>廠商、人員或證照類別任一不存在時，該筆不會出現在清單。</li>
+          <li><span class="tag t-chk">檢核</span>（EC 端）身分證、類別、證照日期、有效起迄必填，檔案必傳。</li>
+          <li><span class="tag t-link">連動</span><b>證照過期只在此標記</b>，目前程式不會自動影響工作證或其他作業。</li>
+        </ul>
+      </div>
+    </div>
+    <footer><div class="row"><span class="lbl">資料表</span>tbhg110、tbhg101、tbhg102</div></footer>
+  </article>
+
+  <article class="op" id="HGJJN01" data-k="承攬商稽查 改善 照片 確認 tbhg209">
+    <header><span class="code">HGJJN01</span><h3>承攬商稽查與矯正作業</h3><span class="prog">hgjjn01.jsp（含明細、附件瀏覽、下載）</span><span class="who">使用者：工安（查詢）；承攬商於 EC 填改善並確認</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>查詢承攬商稽查單的稽查結果、災害類型、作業類型、改善說明與改善照片。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>依稽查單號、訂購單號、廠區、廠商、發生日、稽查人員查詢；可下載 CSV。</li>
+          <li>明細唯讀；附件瀏覽合併顯示稽查與改善照片（圖片、PDF 直接顯示）。</li>
+        </ul>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>依 RQ11407005，清單不顯示稽查人員身分證號。</li>
+          <li><span class="tag t-chk">檢核</span>稽查照片必傳；結果為 N（不符合）或 S（建議）時，改善說明、改善完成日期、改善照片都必填。</li>
+          <li><span class="tag t-st">狀態</span>承攬商按確認後寫入確認時戳，已確認的單不可刪除，需先取消確認。</li>
+          <li><span class="tag t-chk">檢核</span>單一附件上限 1.25MB。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbhg209、tbzp0100 附件</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">稽查照片附件須上傳!!</span><span class="msg">改善說明須輸入!!</span><span class="msg">改善照片附件須上傳!!</span><span class="msg">刪除失敗!!已有確認時戳，請先取消確認</span></div>
+    </footer>
+  </article>
+
+  <article class="op" id="HGJJN02" data-k="安全衛生活動補助 M9001 審查 補助金額 電子簽核">
+    <header><span class="code">HGJJN02</span><h3>承攬商安全衛生活動補助後續審查作業</h3><span class="prog">hgjjn02.jsp</span><span class="who">使用者：M9 承辦人、M91／M9 主管、助總、副總</span></header>
+    <div class="body">
+      <div>
+        <h4>用途</h4>
+        <p>申請單位先以「簽核文件上傳送簽作業」提出 M9001 補助申請（A 段）。A 段核准後，由 M9 承辦人填寫審查意見與建議補助金額，送出 B 段審查簽核。</p>
+        <h4>主要功能</h4>
+        <ul>
+          <li>清單列出 M9001 補助申請單；Master 顯示 A 段資料。</li>
+          <li>輸入「M9 審核意見」（必填）與「M9 建議補助金額」，增修、刪除、送簽、取消送簽、退回申請單位。</li>
+        </ul>
+        <div class="sub">
+          <h4>B 段簽核路徑</h4>
+          M9 承辦人 → 課長 → 處長 → 助總 → 副總。送簽時保留 A 段附件供審查與會計查核（RQ11408030）。
+        </div>
+      </div>
+      <div class="ctrl">
+        <h4>管制與限制</h4>
+        <ul>
+          <li><span class="tag t-auth">權限</span>只有 M9 承辦人本人可操作，<b>第一個存檔的人即成為承辦人</b>（推測）。</li>
+          <li><span class="tag t-st">狀態</span>A 段核准（20），或 B 段被退回、作廢時，才可增修、刪除、退回申請單位；已填審核意見才可送簽。</li>
+          <li><span class="tag t-st">狀態</span>B 段簽核狀態在 00～20 之間可取消送簽。</li>
+          <li><span class="tag t-link">連動</span>退回申請單位會刪除審查資料並取消整個簽核流程。</li>
+          <li><span class="tag t-link">連動</span>A 段完成通知相關群組做後續審查；B 段完成產生合併 PDF（申請文件＋審核頁）並通知。</li>
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <div class="row"><span class="lbl">資料表</span>tbzpesign、tbzp0053、tbde23（HGMSGDPT、HGSENDER）</div>
+      <div class="row"><span class="lbl">常見訊息</span><span class="msg">M9審核意見不可為空白!!</span><span class="msg">非(A)申請階段(20)核准狀態，無法執行!</span></div>
+    </footer>
+    <p class="note"><b>注意：</b>B 段被退回後按鈕可按，但送簽會被「非(A)申請階段核准狀態」擋下（推測），遇到時請洽系統負責人。</p>
+  </article>
+</section>
+
+<!-- ============ 不妥之處／建議調整 ============ -->
+<section id="issues">
+  <h2><span class="no">ISSUES</span>不妥之處／建議調整</h2>
+  <p class="lead">整理程式分析時發現的管制漏洞、畫面與程式不一致、疑似缺陷與設計上的風險，供系統負責人評估修正。標示「推測」者尚未實機重現，修正前請先驗證。</p>
+
+  <div class="legend">
+    <span><span class="pri h">高</span>可能產生錯誤資料、繞過管制或流程卡住</span>
+    <span><span class="pri m">中</span>畫面與實際不一致、使用者容易誤操作</span>
+    <span><span class="pri l">低</span>訊息文字、說明或程式整潔度</span>
+  </div>
+
+  <h4>優先處理的十項</h4>
+  <div class="panel">
+    <ol style="margin:0;padding-left:1.3em">
+      <li><b>C06 刷卡紀錄可任意增刪改且不留紀錄</b>：程式沒有授權檢查，刪除是實體刪除。刷卡紀錄會用於驗收與承保，建議加細部授權並寫異動 log。</li>
+      <li><b>F01 新增不檢核訂購單</b>：不存在的訂購單或錯誤廠商可存檔，並一路帶進 F02 高風險提報。</li>
+      <li><b>新增時驗證失敗卻顯示成功</b>：共用 entity 在驗證不過時只回傳 0 筆，A01 等作業會顯示「新增成功」但沒寫入。</li>
+      <li><b>B10 後端沒有角色檢查</b>：新增、刪除只靠按鈕停用擋；修改版次或證號會多出新卡、舊卡仍有效。</li>
+      <li><b>C03 門哨放行沒有狀態與權限控管</b>：可重複換證、未換證即繳證；A 頁籤可能列出未核准單的人員（推測）。</li>
+      <li><b>G04 通知、G06 補文件疑似失效</b>：通知可能沒有發給任何人；補上傳的附件可能沒關聯回矯正單（推測）。</li>
+      <li><b>S00 簡易代碼沒有任何檢核</b>：入廠地點、刷卡機 IP、矯正天數、罰單金額都在這裡，改錯影響全系統。</li>
+      <li><b>教育訓練、證照與工作證沒有連動</b>：訓練過期、證照過期都不會擋工作證申請。</li>
+      <li><b>B11 核准範圍判斷對象錯誤</b> <span class="pri ok">已修正</span>：「M6 只限酸鍍廠」原本判斷核准者部門，已於 2026/10/05 改為判斷申請單位（CVS 1.14）。</li>
+      <li><b>X01 退回單的按鈕與後端不一致</b>：修改、刪除按鈕可按，後端卻報「非尚未送出狀態」，使用者常誤以為系統故障。</li>
+    </ol>
+  </div>
+
+  <h4 style="margin-top:24px">一、基本資料</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>共通</td><td>hgjcEntity 的 create／update／delete 在 <code>_validate</code> 回傳 false 時只回傳 0 筆、不丟錯誤。</td><td>畫面顯示成功，實際沒寫入；使用者無從察覺。</td><td>驗證失敗時拋出例外或設定錯誤訊息，並由 controller 依回傳筆數判斷成功與否。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJA01</td><td>新增已存在的廠商編號，靜默略過。</td><td>同上，誤以為已建檔。</td><td>重複時顯示「廠商編號已存在」。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJA01</td><td>替既有廠商新增地點 Email 列時，按「修改」會出現「不存在」，必須按「新增」。</td><td>操作不直覺。</td><td>修改時對不存在的明細列改為新增（upsert），或在畫面加說明。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJA02</td><td>身分證只轉大寫、去空白，沒有檢查碼驗證（S01 上傳卻有）。</td><td>錯誤身分證進入人員主檔，後續申請、刷卡比對失準。</td><td>新增時加入身分證檢查碼驗證；外籍與護照另設規則。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJA02</td><td>修改人員時一律拋轉門禁（不看 isDI 設定）。</td><td>測試環境可能誤拋門禁。</td><td>與其他作業一致，改為依 isDI 判斷。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJA03</td><td>保險、行照、駕照過期只顯示紅字，不阻擋存檔。</td><td>過期車輛資料仍可用於申請車輛證。</td><td>評估改為阻擋，或至少在 B04 申請時阻擋過期車輛。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJS01</td><td>畫面說明的上傳欄位順序與程式實際讀法不同（程式為：身分證、卡號、日期、地點、入廠時間、出廠時間）。</td><td>依畫面說明準備的檔案會匯錯欄位。</td><td>修正畫面說明，或調整程式讀取順序並提供範本檔。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJS00</td><td>沒有權限、必填、重複檢查；表單號碼空白會查出全部代碼。</td><td>改錯代碼會影響刷卡地點、報表、矯正天數、罰單金額。</td><td>加細部授權與必填、重複檢查；重要代碼表（0001、HG110、HG112）異動寫 log。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>MAGREPORT</td><td>DR002、DR003 未選入廠地點時組 SQL 失敗（推測）；DR003 的「承攬商」欄位沒有用在查詢；日數 ≤1 只提示不中止。</td><td>報表失敗或結果與條件不符。</td><td>地點設為必填或給預設值；補上承攬商條件；日數檢核失敗時中止。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJA04</td><td>「執行」先刪後建，重跑同一生效日會清除主管已填的作業內容，且無確認步驟。</td><td>主管填寫內容遺失。</td><td>已有主管填寫資料時阻擋或二次確認；或改為只補新進人員。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJA04</td><td>修改時地址一律重抓人事地址，手改無效。</td><td>使用者以為已更正，列印仍是舊地址。</td><td>擇一：開放手改並保留，或把地址欄設為唯讀並說明來源。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJA05</td><td>「部門查詢」欄位與按鈕需 isAuth=*，但程式沒有地方設定，永遠不顯示。</td><td>規劃中的功能無法使用。</td><td>確認需求後補上設定，或移除死碼。</td><td><span class="pri l">低</span></td></tr>
+  </table></div>
+
+  <h4>二、出入證資料</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>B01～B04、B11</td><td>X01 退回單的「修改」「刪除」按鈕可按，後端只允許 A01。</td><td>使用者誤以為系統故障。</td><td>按鈕與後端規則一致：退回後允許修改，或按鈕只在 A01 開放。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJB01</td><td>重複申請只擋「期限完整涵蓋」的情形，部分重疊不擋（推測）。</td><td>同訂購單可能重複核定人力，B02 人數上限失準。</td><td>改為期間有任何重疊即阻擋或提示。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJB02</td><td>人員被系統判定為不核准時，原因只寫在 log，畫面不顯示；「是否核准」欄位可改但無效。</td><td>承辦人不知為何不製證。</td><td>畫面顯示判定原因（停權、已有證件、期限超出）；欄位改為唯讀。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJB02</td><td>新增時「同廠商已有未送出單」的檢查，申請人與年度欄位尚為空值（推測不分申請人）。</td><td>不同承辦人可能互相卡單。</td><td>確認規則意圖後修正查詢條件。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJB02</td><td>保險到期日「需大於核定止日」的後端檢核已註解，只剩畫面紅字。</td><td>保險過期人員仍可申請。</td><td>確認是否恢復檢核。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>B02、B03</td><td>單上有人員明細時，刪除要按兩次（先刪人員，再刪主檔）。</td><td>操作不直覺。</td><td>刪除主檔時一併刪除明細並二次確認。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJB04</td><td>hgStructs 的 A1 驗證方法名為 <code>notify_validate</code>，程式為 <code>notifyA1_validate</code>（B02 設定同樣問題）；駕照到期日前端檢查寫錯欄位。</td><td>驗證未執行。</td><td>修正 hgStructs 與 JSP 欄位名稱。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJB05</td><td>後端驗證為空，必填只靠前端；沒有停權、黑名單、連續申請檢查。</td><td>停權人員可用臨時通行證入廠。</td><td>後端補必填驗證；至少加入停權檢查。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJB06</td><td>不檢查原狀態、沒有確認對話框，所有動作都顯示「修改狀態成功!!!」。</td><td>誤按難以察覺；已繳回可被改成遺失等。</td><td>加確認步驟；限制合理的狀態轉換；訊息寫明動作與筆數。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>B07、B08、B09</td><td>下載檔沒有套用畫面的篩選條件；B07 篩選在分頁後執行，一頁不到 15 筆；B08 CSV 無標題列。</td><td>畫面與下載筆數不一致，報表難以使用。</td><td>畫面與下載共用同一 SQL 條件；CSV 加標題列。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJB09</td><td>沒有權限控制，身分證完整顯示不遮罩（B07 下載有遮罩）。</td><td>個資外洩風險。</td><td>比照 B07 遮罩，或加權限控制。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJB09</td><td>畫面與下載檔讀取換證紀錄的鍵值不同（推測）。</td><td>換證、繳證時間對不上。</td><td>統一鍵值。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJB07</td><td>訂購單提示視窗回填的欄位名稱不對（推測）。</td><td>選了不會帶回查詢欄位。</td><td>修正回填欄位名稱。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJB10</td><td>新增、刪除只靠按鈕停用，後端沒有檢查 HGB10SUPERMG；修改不限角色。</td><td>可繞過按鈕直接送出請求。</td><td>後端加入角色檢查；修改也限定管理群組。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJB10</td><td>修改版次或證號會新增一筆新卡，舊卡資料不變；刪除不回頭處理申請明細。</td><td>同一人可能有兩張有效卡；明細殘留。</td><td>改版次時同步停用舊卡；刪除時同步處理 tbhg202。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJB11</td><td>「M6 開頭只限酸鍍廠」判斷的是核准者部門，註解寫「M6 所申請」。</td><td>使用範圍設錯，人員可能刷不進或越區。</td><td>已於 2026/10/05 改為判斷申請單位 applyDept（hgjcb01ApplyBs CVS 1.14）。</td><td><span class="pri ok">已修正</span></td></tr>
+    <tr><td>HGJJB11</td><td>訓練、附件、健檢、保險檢核全部拿掉；錯誤訊息仍寫「長期工作證」。</td><td>承租人員資格靠人工把關；訊息誤導。</td><td>確認承租證的最低資格要求並補檢核；修正訊息文字。</td><td><span class="pri m">中</span></td></tr>
+  </table></div>
+
+  <h4>三、出入管制</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>HGJJC01</td><td>modify_validate 的狀態檢查結果被後續日期檢查覆蓋，實際只靠按鈕控管。</td><td>非 A01 狀態可能被修改。</td><td>狀態檢查失敗時直接 return false。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJC01</td><td>工作類型 08～10 有定義，但 Excel 上傳不接受。</td><td>上傳報錯，使用者不知原因。</td><td>同步上傳檢核與代碼表。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJC01</td><td>重複派工只比對「地點相同且時段完全相同」，而且只比到已核准的單。</td><td>時段部分重疊或同時在審的單不會被擋。</td><td>改為時段重疊判斷，並納入審核中的單。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJC03</td><td>沒有狀態檢核（可重複換證、未換證即繳證）；程式內無權限分級。</td><td>放行紀錄不可靠。</td><td>加入狀態轉換檢核；限定門哨群組。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJC03</td><td>A 頁籤 SQL 沒過濾申請單核准狀態；單號提示查 03 類，查詢卻比對 06 類單號（推測）。</td><td>未核准人員可能出現在放行清單；提示無效。</td><td>加入核准狀態條件；修正提示來源。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJC06</td><td>沒有授權檢查（原本的 CREATE 檢查被註解）；刪除為實體刪除且不寫 log。</td><td>刷卡紀錄（驗收依據）可被任意增刪改，無法稽核。</td><td>恢復細部授權；刪除改為註記或寫入異動 log。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJC06</td><td>輸入姓名但人員主檔查不到時，可能新增失敗（推測）。</td><td>無長期證人員無法補登。</td><td>查無人員時以輸入的姓名、廠商建立紀錄。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJC07</td><td>訊息寫「最多 100 筆」實際 2000 筆；廠商條件查詢後不回填。</td><td>使用者誤解查詢範圍。</td><td>修正訊息；回填查詢條件。</td><td><span class="pri l">低</span></td></tr>
+  </table></div>
+
+  <h4>四、風險違規</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>HGJJF01</td><td>新增時不檢核訂購單是否存在與廠商是否相符；修改時兩種錯誤顯示同一句訊息。</td><td>錯誤訂購單進入高風險提報；之後無法修改。</td><td>新增時加入 isCorrectVendor 檢核；訊息拆成「訂購單不存在」「廠商不符」。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJF01</td><td>狀態「結束」的合約在 F02 仍可提報；刪除不檢查是否已有提報。</td><td>結束的合約仍有新提報；提報資料成為孤兒。</td><td>F02 排除已結束合約；刪除前檢查 tbhg207A。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJF02</td><td>訊息「最多只能提報三十天」，程式實際是天數差超過 31 才擋。</td><td>規則與說明不一致。</td><td>統一天數定義。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJF02</td><td>MX9 填寫安全措施仍受「起日 ≥ 今天」限制，施工開始後無法存檔。</td><td>工安無法在施工期間補填安全措施。</td><td>MX9 修改時放寬日期限制。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJF02</td><td>局限空間（02）的局限種類必填檢查已不會觸發（畫面沒有欄位、代碼已改用 HG105A2）。</td><td>局限空間作業資訊可能不完整。</td><td>確認法規需求後恢復欄位與檢核，或移除死碼。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJF02</td><td>沒有提報截止時間；核准通知 Email 已停用。</td><td>可當天臨時提報。</td><td>確認管理規定是否需要「前一日幾點前提報」。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJF03</td><td>施工日期、廠商標示必填但後端不檢查；訊息寫「只查最近 200 筆」，SQL 沒有限制。</td><td>畫面說明與實際不一致。</td><td>擇一修正。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJF04</td><td>工程協調人離職時，電子簽核回呼會丟例外（推測導致核准失敗）。</td><td>簽核卡住。</td><td>離職時改通知其主管或 HGSYSMGR，不中斷核准。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJG01</td><td>罰單登錄的「矯正或稽核尚未完成批示」只提示不擋；矯正登錄在稽查未核准時也只提示（推測）。</td><td>流程順序可被跳過。</td><td>確認規則後改為阻擋。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJG03</td><td>SQL 使用的欄位在 tbhg208 中不存在，推測已失效（不在選單內）。</td><td>無法使用。</td><td>下架，或改寫為依 G01／G04 統計。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJG04</td><td>通知視窗的 empNo 宣告成區域變數，送出可能沒有通知任何人；RS 動作 forward 到錯誤頁面；實際完成日維護的入口按鈕不存在。</td><td>使用者以為已通知，實際沒有。</td><td>修正變數宣告與 forward；恢復或移除完成日入口。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJG06</td><td>上傳 upload() 沒有入口可呼叫，表單送到 hgjjg04Mail（推測）。</td><td>原本沒附件的矯正單，補上傳的附件可能沒關聯。</td><td>修正 hgStructs 動作與表單目標，並驗證寫回 tbhg208V。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>G02、批次</td><td>通知對象寫死工號（如 26413、26562），外部流程另寫死副總等人。</td><td>人事異動後通知錯人或漏通知。</td><td>改用群組或職位範本設定。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>批次</td><td>hgjcCheckOver7NoRevise 註解寫「一年」，實際範圍 183 天；多數批次時間只寫在註解。</td><td>維護者誤判範圍。</td><td>修正註解；在文件中記錄實際 DI 排程。</td><td><span class="pri l">低</span></td></tr>
+  </table></div>
+
+  <h4>五、教育訓練</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>HGJJT001</td><td>只有「是 HG 群組時開放按鈕」，沒有寫關閉邏輯；註解中的 INRDHW 只能修改未實作；刪除不檢查課程是否被使用。</td><td>非管理者可能可以維護課程；刪除後紀錄失去對照。</td><td>補上非群組時停用按鈕；刪除前檢查 tbhgtm0。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJT002</td><td>檔案超過 2MB 時錯誤被吞，只顯示「無資料可上傳!!!」。</td><td>使用者不知是檔案太大。</td><td>顯示實際原因。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>HGJJT002</td><td>主檔有效日期被該列最近回訓覆蓋，K 或 M 欄空白時可能清空原有效期限（推測）。</td><td>有效期限遺失，複訓名冊不準。</td><td>空值時保留原值。</td><td><span class="pri h">高</span></td></tr>
+    <tr><td>HGJJT002</td><td>明細「全部刪除」只刪主檔，回訓與年度工作殘留；刪除回訓顯示「新增成功」。</td><td>孤兒資料；訊息誤導。</td><td>連同子表一併刪除；修正訊息。</td><td><span class="pri l">低</span></td></tr>
+    <tr><td>T002 ↔ B02</td><td>沒有「訓練有效才能申請工作證」的硬性檢核，關聯只呈現在對照表。</td><td>訓練過期人員仍可辦證。</td><td>評估在 B02 申請時檢查 tbhgtm0 有效期限。</td><td><span class="pri m">中</span></td></tr>
+  </table></div>
+
+  <h4>六、承攬商管理系統</h4>
+  <div class="tablebox"><table class="iss">
+    <tr><th>作業</th><th>不妥之處</th><th>影響</th><th>建議調整</th><th>優先</th></tr>
+    <tr><td>HGJJK02</td><td>證照過期只在此標記，不影響工作證、高風險提報。</td><td>證照過期人員仍可進行特殊作業。</td><td>評估在 B02 或 F02 檢查必要證照的效期。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJN01</td><td>新增時複製改善照片讀的是稽查照片的附件編號（推測誤植）；CSV 欄位為 null 時可能出錯。</td><td>改善照片錯置；下載失敗。</td><td>修正附件編號來源；下載前處理 null。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJN02</td><td>查詢時把承辦人預設為目前使用者，誰先存檔誰就是 M9 承辦人（推測）。</td><td>非指定承辦人可搶先接手。</td><td>改由指派或群組設定承辦人。</td><td><span class="pri m">中</span></td></tr>
+    <tr><td>HGJJN02</td><td>B 段退回後按鈕可按，送簽卻被「非(A)申請階段核准狀態」擋下（推測）。</td><td>退回後無法再送簽。</td><td>送簽檢核納入 B 段退回、作廢狀態。</td><td><span class="pri h">高</span></td></tr>
+  </table></div>
+
+  <h4>整體性建議</h4>
+  <div class="panel">
+    <ul style="margin:0;padding-left:1.2em">
+      <li><b>權限統一放在後端</b>：多支作業只靠按鈕停用控管（B10、C03、C06、S00），建議統一在 controller 以 hgjcAuthorize 檢查。</li>
+      <li><b>畫面與下載共用同一查詢條件</b>：B07、B08、B09 的落差容易造成報表爭議。</li>
+      <li><b>個資遮罩一致化</b>：身分證在 B07 下載有遮罩，B09、C06、C07 畫面則完整顯示。</li>
+      <li><b>資格檢核的連動</b>：停權、教育訓練、證照、保險各自分散在不同作業，建議整理成共用的「入廠資格檢核」API，供 B02、B03、B05、C01 呼叫。</li>
+      <li><b>寫死的工號與群組</b>：改由 tbde23 或群組設定維護，避免人事異動後失效。</li>
+      <li><b>異動紀錄</b>：刷卡、出入證、代碼表等關鍵資料的異動應寫入 log，以便稽核。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 附錄 ============ -->
+<section id="appendix">
+  <h2><span class="no">APPENDIX</span>附錄：自動批次與門禁資料流</h2>
+  <p class="lead">以下排程時間多取自程式註解，正式排程請以 DI 排程設定為準。</p>
+
+  <h4>自動通知與批次</h4>
+  <div class="tablebox"><table>
+    <tr><th>批次</th><th>時機</th><th>內容</th></tr>
+    <tr><td class="c">hgjcHighRiskNotify</td><td>每日約 03:45</td><td>高風險每日明細到施工日時，通知工程協調人填寫 F04，並通知主管與廠區工安做危害告知</td></tr>
+    <tr><td class="c">hgjcHighRiskVsCheckNo</td><td>每日 04:00</td><td>回寫近 30 天高風險提報對應的稽查單號與安全觀察號碼（F03 使用）</td></tr>
+    <tr><td class="c">hgjcF04UnSignBatch</td><td>每週一 01:45</td><td>寄送「每日維護未核准清單」（HGR00150）</td></tr>
+    <tr><td class="c">hgjcReviseRemind</td><td>每日（推測）</td><td>矯正預定完成日前 7 天提醒</td></tr>
+    <tr><td class="c">hgjcReviseNotify</td><td>每日；週一加跑</td><td>矯正逾期通知；週一另產超過 7 天報表並通知廠處長</td></tr>
+    <tr><td class="c">hgjcNotYetReviseReturn</td><td>—</td><td>矯正期限已過卻還沒建立矯正單的稽查單，通知主管與 MX 群組</td></tr>
+    <tr><td class="c">hgjcCheckOver7NoRevise</td><td>每月 1 日</td><td>稽查核准超過 7 天仍無矯正單（近 183 天），報表 HGR00070</td></tr>
+    <tr><td class="c">hgjcThisWeekFinishRevise</td><td>每週一</td><td>本週結案的矯正清單</td></tr>
+    <tr><td class="c">hgjcInsuSentMail</td><td>每日 10:00</td><td>每日承保名單 Excel 寄保險公司；無資料或出錯通知 HGINSU</td></tr>
+    <tr><td class="c">hgjcInsuEmail</td><td>每日</td><td>寄「進出中鴻人員清單」給廠商與工程協調人</td></tr>
+    <tr><td class="c">hgjcCheckCardPassOrNot</td><td>每日（推測）</td><td>將使用迄日已過的長期工作證改為 E05 過期並拋轉門禁</td></tr>
+  </table></div>
+
+  <h4>刷卡驗證怎麼運作</h4>
+  <div class="panel">
+    <ol style="margin:0;padding-left:1.3em">
+      <li>現場卡鐘把卡號送給門禁程式，再轉給 ERP 判斷。卡鐘 IP 末碼偶數代表入廠、奇數代表出廠。</li>
+      <li>ERP 依卡號查出入證，過期或已繳銷就拒絕。</li>
+      <li>長期工作證檢查當日派工（C01 核准產生）的時段；臨時工作證另外要先在 C03 換證。</li>
+      <li>結果代碼回傳現場亮燈、發聲，刷卡紀錄寫入出入紀錄檔（C06、C07、S01 使用）。</li>
+    </ol>
+    <div class="tablebox" style="margin:12px 0 0"><table>
+      <tr><th>結果代碼</th><th>意義</th></tr>
+      <tr><td class="c">Y01</td><td>通過</td></tr>
+      <tr><td class="c">N02</td><td>臨時證尚未換證</td></tr>
+      <tr><td class="c">N04</td><td>查無當日派工</td></tr>
+      <tr><td class="c">D03</td><td>不在允許入廠時段</td></tr>
+      <tr><td class="c">E03</td><td>證件無效（如已過期）</td></tr>
+    </table></div>
+  </div>
+
+  <h4>給新人的五個重點</h4>
+  <div class="panel">
+    <ol style="margin:0;padding-left:1.3em">
+      <li><b>順序不能跳</b>：廠商、人員建檔 → B01 人力需求 → B02／B03 工作證 → C01 允許入廠時間，缺一個環節人員就刷不進廠。</li>
+      <li><b>「是否核准」是系統判定的</b>：B02、B11 依停權、重複證件、期限自動判定，畫面上改沒有用。</li>
+      <li><b>退回單（X01）直接再送出</b>：修改按鈕雖可按，後端多半只允許 A01。</li>
+      <li><b>時段到午夜輸入 2400</b>，刷卡補登不可輸入 240000，要改隔天 000000。</li>
+      <li><b>代碼表會牽動全系統</b>：S00 簡易代碼改錯，地點、報表、矯正天數、罰單金額都會受影響。</li>
+    </ol>
+  </div>
+
+  <p class="kicker">本文件依 HG 系統程式碼與正式機選單設定整理；標示「推測」處請以實機操作驗證。如發現與實際不符，請回報系統負責人更新。</p>
+</section>
+
+<p class="empty" id="empty">找不到符合的作業，請換個關鍵字。</p>
+</main>
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var ops=[].slice.call(document.querySelectorAll('.op'));
+  var tocLinks=[].slice.call(document.querySelectorAll('.toc ol ol a'));
+  var empty=document.getElementById('empty');
+  function filter(){
+    var v=q.value.trim().toLowerCase();
+    var shown=0;
+    ops.forEach(function(op){
+      var hay=(op.id+' '+(op.dataset.k||'')+' '+op.textContent).toLowerCase();
+      var hit=!v||hay.indexOf(v)>-1;
+      op.classList.toggle('hidden-by-filter',!hit);
+      if(hit)shown++;
+    });
+    tocLinks.forEach(function(a){
+      var op=document.getElementById(a.getAttribute('href').slice(1));
+      a.parentNode.classList.toggle('hidden-by-filter',op&&op.classList.contains('hidden-by-filter'));
+    });
+    empty.style.display=shown?'none':'block';
+  }
+  q.addEventListener('input',filter);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          tocLinks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});
+        }
+      });
+    },{rootMargin:'0px 0px -70% 0px'});
+    ops.forEach(function(op){io.observe(op);});
+  }
+})();
+</script>
+</body>
+</html>
