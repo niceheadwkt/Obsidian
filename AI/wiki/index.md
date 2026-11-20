@@ -91,6 +91,8 @@
 | [[AI 音樂生成：Suno 與 YuE2]] | Suno 四要素風格提示詞與歌詞段落標籤、YuE2 先出 ABC 樂譜再渲染 48kHz 音訊與本地部署需求、兩者對照與選用建議 | 1 | 2026-11-18 |
 | [[NotebookLM 與 Napkin AI 知識管理課程]] | 臺南市 e 學補給站課程：NotebookLM 來源限制、會議錄音四步整理、ABCD 來源評分、語音摘要自訂、簡報四守則、風險燈號表與吉祥物提示詞、Napkin 五步驟與六階段 SOP | 1 | 2026-11-18 |
 
+| [[Google AI Pro 訂閱權益與八大工具選用]] | 數位時代 2026-11-18：Google AI Pro 八種工具用途與難度、各產品額度不共用、Flow 每日 50 點＋Pro 每月 1,000 點、Antigravity 配額與 AI 點數、搜尋 AI 模式 vs Gemini Notebook 選用 | 1 | 2026-11-20 |
+| [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] | 數位時代 2026-11-17（Lydia Hallie 演講）：CLAUDE.md 只留程式碼看不出來的事、/doctor prompt-audit、deny 規則與沙盒、三層驗證點（指令／hooks／CI）、Claude Code projects 派工 | 1 | 2026-11-20 |
 ---
 
 ## 實體與工具專頁 (Entities & Tools)
@@ -397,6 +399,8 @@
 | SRC-286 | mattermost_ci_cd_integration_guide.md | 技術指南 | 2026-11-18 | [[軟體架構與發布自動化]] |
 | SRC-287 | ai_music_generation_guide.md | 技術指南 | 2026-11-18 | [[AI 音樂生成：Suno 與 YuE2]] |
 | SRC-288 | 搞懂NotebookLM與Napkin AI-提升你的知識管理力.md | 課程筆記 / 臺南市 e 學補給站 | 2026-11-18 | [[NotebookLM 與 Napkin AI 知識管理課程]], [[NotebookLM 進階應用與實戰指引]] |
+| SRC-289 | 2026-11-18T162924+0800-Claude Code設定大洗牌！進入Opus 5.5時代之後，為何CLAUDE.md愈短愈好？.md | 網路文章 / 數位時代 | 2026-11-20 | [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] |
+| SRC-290 | 2026-11-19T143623+0800-買了Google AI Pro只會用Gemini聊天？這8種隱藏AI工具，幫你把訂閱費用好用滿.md | 網路文章 / 數位時代 | 2026-11-20 | [[Google AI Pro 訂閱權益與八大工具選用]] |
 ---
 
 > [!TIP]

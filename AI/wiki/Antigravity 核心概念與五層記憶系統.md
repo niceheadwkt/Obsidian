@@ -6,7 +6,7 @@ sources: [
   "[[raw/2026-06-20T143229+0800-N8N要被取代了？用Google Antigravity 10分钟聊出智能获客引擎：0代码搭建全自动金融机构抓取+同步工作流【新型n8n实战】.md]]"
 ]
 created: 2026-06-18
-updated: 2026-11-18
+updated: 2026-11-20
 ---
 
 # Antigravity 核心概念與五層記憶系統
@@ -100,3 +100,4 @@ Antigravity 原生支援 Gemini，但使用者也可以隨時切換至 Claude、
 - **知識庫規範**：[運作規範](../schema.md)
 - **專案管理工作流**：[[Claude 專案管理一桌三櫃工作流]]
 - **影片工程自動化**：[[Antigravity 與 Remotion 影片生成實務]]
+- **訂閱配額**：Google AI Pro 的 Antigravity 基本配額與 AI 點數：[[Google AI Pro 訂閱權益與八大工具選用]]

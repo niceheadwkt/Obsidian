@@ -3,7 +3,7 @@ type: source-summary
 tags: [Gemini, Google, Google Workspace, Gems, Ask Gemini, Deep Research, Canvas, Google AI Studio, YouTube, Podcast, AI工作流]
 sources: ["[[AI/raw/2026-10-08T130528+0800-Google Gemini 3 全能使用手冊！9大核心用法+17個最強功能實測 免費使用 分析Youtube 智慧體 谷歌全家桶 報告ppt 小白零基礎一個影片全學會！AI工具 AI賺錢 AI副業.md|Google Gemini 3 全能使用手冊（盈夏AI輕創業）]]"]
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-11-20
 ---
 
 # Gemini 全能使用手冊與 Google 生態工作流
@@ -97,6 +97,7 @@ YouTube / Google 搜尋
 - 同樣能把資料轉成簡報與 Podcast 的 Google 工具：[[NotebookLM 綜合指南]]。
 - 在 Google 雲端排程 Agent 與 Gemini 的分工：[[Google Spark 與 GAS 雲端自動化實務]]。
 - 用 Gemini 寫分鏡再交給 Flow 做短片：[[Google Flow AI短片製作實務]]。
+- Google AI Pro 訂閱的八種工具、額度與 AI 點數規則：[[Google AI Pro 訂閱權益與八大工具選用]]。
 - 影片中「2026 銀髮經濟」研究範例的實際追問紀錄：[[2026 銀髮經濟認知地圖與樂齡數位課程商機]]。
 
 > [!NOTE]

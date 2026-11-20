@@ -3,7 +3,7 @@ type: concept
 tags: [Google Flow, Gemini, AI短片, Veo, MyEdit, Canva, 分鏡腳本]
 sources: ["[[raw/2026-09-16T080458+0800-Google Flow｜零門檻AI短片製造工具：  搭配Gemini從腳本到畫面一次搞定 (需要字幕請開CC).md]]", "[[AI/raw/2026-11-01T200728+0800-【下集】AI 影片原理全公開：MiniMax-H3 本機實測，踩過的坑全部告訴你.md|【下集】AI 影片原理全公開：MiniMax-H3 本機實測（三師爸）]]"]
 created: 2026-09-16
-updated: 2026-11-18
+updated: 2026-11-20
 ---
 
 # Google Flow AI短片製作實務
@@ -110,3 +110,6 @@ updated: 2026-11-18
 
 > [!WARNING]
 > 模型與點數時效性：Veo 3.1 Lite／Omni Flash 扣點與每日 50 點規則為 2026-08 時點資訊，Google Labs 模型迭代快速，若介面已更換請以官方最新扣點為準。
+
+> [!NOTE]
+> 2026-11 補充：每日 50 點仍適用，Pro 會員每月另有 1,000 點訂閱點數，點數不跨日、不跨月累積，詳見 [[Google AI Pro 訂閱權益與八大工具選用]]。

@@ -1,8 +1,16 @@
 # 工作筆記
 
-**更新日期**：2026-11-19
+**更新日期**：2026-11-20
 
 ## 上次做到哪
+- **2026-11-20 筆電 ADM-189 卡死詳查**：
+  - 現象：11/18 起非正常關機 6 次（11/18 07:26；11/19 14:57、15:27、15:35、15:47；11/20 10:21），另 9/18、9/30、10/5 各 1 次。Kernel-Power 41 皆 BugcheckCode=0、有電源鍵時間，無 dump，是系統凍結後強制關機，非藍屏。WHEA 事件嚴重度 3（資訊），非硬體錯誤。
+  - 原因：**9 次卡死當下 Google Drive（DriveFS／Dokan 虛擬磁碟 G:）都有大量讀取逾時**（`Logs/drive_fs_*.txt` 的 `LogSlowOperation`，單筆卡 1～5 分鐘，回應執行緒約 15 個塞滿），沒卡死的日子為 0。觸發點：11/18 07:25、11/19 15:39、16:00、11/20 10:27 四次都是 **Claude 對 `G:/我的雲端硬碟/Obsidian` 根目錄 Grep**（開工找「上次做到哪」、找 Web Clipper）後 20～40 秒；11/19 15:00、15:33 兩次是大量刪檔進 `G:\$RECYCLE.BIN` 後。9～10 月三次觸發不明。11/18 07:17～07:21 公司推送 CrowdStrike Falcon 8.11，與 Trend Micro Apex One 並存（`fltmc` 有 CSAgent、TmPreFilter、tmevtmgr），每次開檔多一次掃描，可能加重。
+  - 更正：Obsidian 資料夾**原本就已設「離線使用」**（DriveFS `metadata_sqlite_db` 的 `explicitly-pinned-folder`，1,214 檔皆有本機內容），問題在虛擬磁碟同時處理大量讀取，不是下載。
+  - 處理：`G:` 資源回收筒已清空（42 項皆 11/19 刪的 ERP 舊檔，已確認新資料夾有對應檔）；三份全域規範（chezmoi `dot_claude/rules/global-rules.md.tmpl`、`dot_codex/AGENTS.md.tmpl`、`dot_gemini/config/AGENTS.md.tmpl`）開工第 2 步改為直接讀 `WorkLog.md`，並禁止對 `G:` 雲端硬碟／保管庫根目錄遞迴搜尋；Claude 記憶也已加入。
+  - 給資訊單位林進源（yuan）：原信（附事件彙整 txt＋System／Application evtx zip）、補充信一（Google Drive 讀取逾時統計表）、補充信二（觸發原因時間對照）皆已寄出；**更正信（原本已是離線使用）草稿在 Outlook，待使用者寄出**。附件原始檔在當次 scratchpad，會被清除。
+  - 另：Web Clipper（Chrome Default 設定檔）存檔路徑為 `AI/raw`（6 月早期為 `raw`），Vault 欄空白＝最後開啟的保管庫。
+- **2026-11-20 Wiki 入庫兩篇＋更正舊頁**：`pending` 清到 0 篇。新增 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]]（SRC-289，Lydia Hallie 演講：CLAUDE.md 只留程式碼看不出來的事、deny 規則與沙盒、三層驗證點）、[[Google AI Pro 訂閱權益與八大工具選用]]（SRC-290，八工具、額度與 AI 點數）；回連 6 篇舊頁。查證時發現 [[Claude 系統優化與 Token 節省指南]] 第 4 節「12 條精華」三條與自我審查提示第 5 條在原文查無出處，依使用者同意改寫為：4.1 前提、4.2 原文 12 條、4.3 依新原則的刪／搬家／改寫對照（註明為 Claude Code 推論）、4.4 原文自我審查提示＋收到報告後五步驟＋每週一 setup-audit 排程；衝突警示改為「12 條實測（Opus 4.x）vs Opus 5.5 少叮嚀」。log 記兩筆 fix。
 - **2026-11-19 收工：`AI/ERP/` 資料夾整理**：38 份 `(chatGPT)XX功能規格手冊.md` 與 `ERP功能規格手冊PROMPT.md` 移到 `AI/ERP/ERP功能規格手冊/`（去掉 `(chatGPT)` 前綴，內容不變），新增 `SS功能規格手冊.md`（銷售結算管理）；EA 三版只留 chatGPT 版（刪 `EA功能規格手冊.md` 67 KB、`(Antigravity)EA功能規格手冊.md` 35 KB）；`(chatGPT)TM功能規格手冊.md`（冶金規範）也移入新資料夾為 `TM功能規格手冊.md`。另新增 `AI/ERP/ERP操作手冊/EA系統操作手冊/`（EAJJBATCHJOB、EAJJLICENSEBAT、EAJJRE00N／10N／20N 操作手冊 md／docx／html／pdf）與 `AI/ERP/新進人員教育訓練/`（EA、HG／QG、MT、車籍教育訓練 HTML ；兩個語音 zip 共約 66 MB 已加入 `.gitignore`，只存在 Google Drive）。舊版檔案都還在 git 歷史可取回。`AI/raw/` 新增 1 篇 11/19 素材（Google AI Pro 8 種隱藏工具），尚未入庫。
 - **2026-11-19 EA 系統新進人員旁白教學影片**：參考 `hg/HG門禁管理系統_新進人員旁白教學.html`，把 `ea/EA系統新進人員深入教育訓練手冊.html`（89 支作業）濃縮成 28 頁投影片＋台灣華語旁白（Edge-TTS `zh-TW-YunJheNeural`）。產出放在 `ea/`：`EA系統新進人員教育訓練(語音).mp4`（16 分 34 秒、1080p、內建中文軟字幕與 28 個章節）、`.srt`、`EA系統_新進人員旁白教學.html`（內嵌語音，不靠瀏覽器 TTS；語速 0.75～1.5 倍六檔、可中途切換；章節下拉），三檔打包為 `EA系統新進人員教育訓練(語音).zip`（UTF-8 檔名）。製作腳本（slides.py 旁白稿、render.py、tts.py、build.py、player.html）在當次 Claude scratchpad `ea_video/`，會被清除。
   - 踩坑：公司 SSL 檢查需把 `edge_tts.communicate._SSL_CTX` 換成 `truststore.SSLContext`；Edge-TTS 伺服器會長時間限流（回 `NoAudioReceived`，連續 30～60 分鐘），**改接手機熱點一樣失敗**，判斷是微軟服務端限制、與公司出口 IP 無關。28 頁合成共花約 3 小時。
@@ -322,7 +330,9 @@
 - RQ11510012 全部文件（11/02 整理）：`D:/0.翁國烔_中鴻專案/RQ115/RQ11510012(風險評估系統優化(115107與A3翁國烔工程師溝通))/`——規劃設計 v0.5（定版）、v0.4（設計理由）、程式修改清單、DDL `db.tbeaRE03_RQ11510012.sql`、`操作手冊/`（三本 md／docx／html／pdf＋manual_img）、D1 資料修正 SQL／ODT／PDF／MD 與備份 CSV。v0.2、v0.3、替代方案、10/13 修改紀錄、待確認事項 Q11/Q13/Q14 已刪除（Google Drive 垃圾桶）。
 
 ## 下一步
-- **Wiki 入庫**：`AI/raw/2026-11-19T143623+0800-買了Google AI Pro只會用Gemini聊天？…` 一篇待匯入。
+- **筆電卡死觀察**：寄出 Outlook 更正信草稿；之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；等資訊單位回覆防毒排除。仍常卡再考慮改鏡像模式（路徑改 `C:/Users/ch26788/我的雲端硬碟/`，規範、git、Obsidian 都要調整）。
+- **全域規範瘦身（構想，待使用者決定）**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
+- **chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序（Claude Code 重寫造成），可 `chezmoi re-add` 清除或不理。
 - **EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。
 - **Wiki 待使用者決定**：(1) 動畫技能用的是 Breeze TTS 2（不可商用）還是 BreezyVoice（可商用），確認後改 [[claude-motion-explainer 科普解說動畫技能]] 的警示框；(2) `Alt+Space` 能否當語音輸入熱鍵（SogaType 紀錄 vs NoType 建議書）；(3) 重新剪輯 4 篇空殼素材：Gmail 技巧大全、AI 生成影片直播、不用本地顯卡、ChatGPT 做 LINE 貼圖。
 - ~~**115 年度內控自評 EA 版（G447-2，11/30 前交）**：開 Outlook 草稿檢查簽名檔、補課長／廠處長欄位後寄給楊硯媚；視需要於內文加一句「14 張明細詳附件清單」。14 張逾期證照（重點：PEM60170 逾期最久、PTM60008、W10195、輻安證書 M412／M4 重複登錄與通知期間設定）由業務單位確認處置。若要改善程式（通知展延日與通知人員必填、已過期訊息改依有效期間迄判斷）需另開需求。~~ **已寄給楊硯媚（2026-11-12 筆記確認），由對方自行決定後續，結案不再追蹤**。

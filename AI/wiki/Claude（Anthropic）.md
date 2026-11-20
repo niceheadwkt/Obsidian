@@ -14,7 +14,7 @@ sources: [
   "[[AI/raw/2026-09-17T132941+0800-ChatGPT、Claude對話會被拿去訓練嗎？9個隱私關卡＋關閉AI訓練設定.md|ChatGPT、Claude對話會被拿去訓練嗎？9個隱私關卡（數位時代）]]"
 ]
 created: 2026-06-11
-updated: 2026-11-18
+updated: 2026-11-20
 ---
 
 # Claude (Anthropic AI 家族)
@@ -87,6 +87,9 @@ Claude 的使用介面可依您的工作場景進行選擇：
 > 曾有假冒 Claude Code 的網站排在搜尋結果第一名，下載的安裝檔夾帶竊密木馬，使用者的雲端帳號因此被盜刷。安裝指令請從 Anthropic 官方文件複製，並核對網域是 `claude.ai` 或 `anthropic.com`，見 [[假冒 Claude Code 官網木馬與雲端帳單盜刷事件]]。
 
 ---
+
+> [!NOTE]
+> Opus 5.5 時代的 Claude Code 用法（CLAUDE.md 精簡、auto mode、deny 規則、hooks 驗證點、projects 派工）見 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]]。
 
 ## 4. 模型版本對比
 
