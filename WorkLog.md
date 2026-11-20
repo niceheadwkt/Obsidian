@@ -3,6 +3,11 @@
 **更新日期**：2026-11-20
 
 ## 上次做到哪
+- **2026-11-20 下午收尾**：
+  - 新增 Wiki [[Google 雲端硬碟串流、鏡像與離線存取設定指南]]（三種方式觀念、本次卡死教訓；家裡 `weng` 維持鏡像，公司先維持串流＋離線＋規範，仍卡再改鏡像，改前要先確認家裡使用者目錄名稱、處理 C 槽孤立複本）；[[Git GUI 與 GitHub 雙向同步實務]] 的「專案放 G: 槽」建議已加警示，回連跨 Agent 頁，index、log 已更新。
+  - MP 工程勞務驗收單 115C008668（25711 鐘文振）無法簽核：物料 11/20 月關帳啟動暫關（`INJJMCBATCH`，`TBSMPB02` 暫關日 20261123），11/23 自動解除後到「本次驗收項次資料」頁簽簽核；說明已整理給 25711（另一個 Claude session 處理）。
+  - ZPJJB01 工作報告 11/20 已用 CDP 自動新增 4 筆（001～004，共 5.0 小時，zpq 驗證）；09:00～10:30 未報，AI 知識整理不報。
+  - `AI/raw/` 新增 1 篇 14:40 素材（MIT：AI 直接修改另一個 AI），尚未入庫。
 - **2026-11-20 筆電 ADM-189 卡死詳查**：
   - 現象：11/18 起非正常關機 6 次（11/18 07:26；11/19 14:57、15:27、15:35、15:47；11/20 10:21），另 9/18、9/30、10/5 各 1 次。Kernel-Power 41 皆 BugcheckCode=0、有電源鍵時間，無 dump，是系統凍結後強制關機，非藍屏。WHEA 事件嚴重度 3（資訊），非硬體錯誤。
   - 原因：**9 次卡死當下 Google Drive（DriveFS／Dokan 虛擬磁碟 G:）都有大量讀取逾時**（`Logs/drive_fs_*.txt` 的 `LogSlowOperation`，單筆卡 1～5 分鐘，回應執行緒約 15 個塞滿），沒卡死的日子為 0。觸發點：11/18 07:25、11/19 15:39、16:00、11/20 10:27 四次都是 **Claude 對 `G:/我的雲端硬碟/Obsidian` 根目錄 Grep**（開工找「上次做到哪」、找 Web Clipper）後 20～40 秒；11/19 15:00、15:33 兩次是大量刪檔進 `G:\$RECYCLE.BIN` 後。9～10 月三次觸發不明。11/18 07:17～07:21 公司推送 CrowdStrike Falcon 8.11，與 Trend Micro Apex One 並存（`fltmc` 有 CSAgent、TmPreFilter、tmevtmgr），每次開檔多一次掃描，可能加重。
@@ -330,7 +335,8 @@
 - RQ11510012 全部文件（11/02 整理）：`D:/0.翁國烔_中鴻專案/RQ115/RQ11510012(風險評估系統優化(115107與A3翁國烔工程師溝通))/`——規劃設計 v0.5（定版）、v0.4（設計理由）、程式修改清單、DDL `db.tbeaRE03_RQ11510012.sql`、`操作手冊/`（三本 md／docx／html／pdf＋manual_img）、D1 資料修正 SQL／ODT／PDF／MD 與備份 CSV。v0.2、v0.3、替代方案、10/13 修改紀錄、待確認事項 Q11/Q13/Q14 已刪除（Google Drive 垃圾桶）。
 
 ## 下一步
-- **筆電卡死觀察**：寄出 Outlook 更正信草稿；之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；等資訊單位回覆防毒排除。仍常卡再考慮改鏡像模式（路徑改 `C:/Users/ch26788/我的雲端硬碟/`，規範、git、Obsidian 都要調整）。
+- **筆電卡死觀察**：寄出 Outlook 更正信草稿；之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；等資訊單位回覆防毒排除。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
+- **Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材（MIT：AI 直接修改另一個 AI）待入庫。
 - **全域規範瘦身（構想，待使用者決定）**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
 - **chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序（Claude Code 重寫造成），可 `chezmoi re-add` 清除或不理。
 - **EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。

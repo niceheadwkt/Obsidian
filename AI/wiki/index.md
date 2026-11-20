@@ -93,6 +93,7 @@
 
 | [[Google AI Pro 訂閱權益與八大工具選用]] | 數位時代 2026-11-18：Google AI Pro 八種工具用途與難度、各產品額度不共用、Flow 每日 50 點＋Pro 每月 1,000 點、Antigravity 配額與 AI 點數、搜尋 AI 模式 vs Gemini Notebook 選用 | 1 | 2026-11-20 |
 | [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] | 數位時代 2026-11-17（Lydia Hallie 演講）：CLAUDE.md 只留程式碼看不出來的事、/doctor prompt-audit、deny 規則與沙盒、三層驗證點（指令／hooks／CI）、Claude Code projects 派工 | 1 | 2026-11-20 |
+| `[[Google 雲端硬碟串流、鏡像與離線存取設定指南]]` | Google 雲端硬碟串流、離線存取、鏡像三種模式原理比較；以 ADM-189 卡死調查說明離線存取仍經虛擬磁碟、大量讀取會卡死；公司分兩階段（先避開遞迴搜尋，必要時改鏡像）、家裡維持鏡像 | 1 | 2026-11-20 |
 ---
 
 ## 實體與工具專頁 (Entities & Tools)

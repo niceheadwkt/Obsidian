@@ -3,7 +3,7 @@ type: analysis
 tags: [AgentSkills, 跨Agent, NTFS-Junction, Git, PowerShell, Claude-Code, Codex, Antigravity, OpenCode, 單一真相來源]
 sources: ["[[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN.md|跨 Agent 技能共用整合實施規劃書（2026-10-06 更新）]]", "[[AI/raw/如何看四大工具的目錄連接點（NTFS Junction）.md|如何看四大工具的目錄連接點（NTFS Junction）]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-20
 ---
 
 # 跨 Agent 技能共用：中央倉庫與 NTFS Junction
@@ -102,6 +102,7 @@ flowchart TD
 
 ## 關聯頁面
 - [[AI Agent 實戰與 MCP 伺服器整合]]（chezmoi 管理全域規則）
+- [[Google 雲端硬碟串流、鏡像與離線存取設定指南]]（串流 G: 與鏡像路徑差異、禁止對 G: 根目錄遞迴搜尋）
 - [[AI Agent 基本功系列實踐指南 (EP01-EP07)]]（跨裝置、跨 Agent 協作觀念）
 - [[Claude 與 ChatGPT 雙向搬家：記憶、對話紀錄與 Skills]]（跨平台搬 Skill）
 - [[Claude Cowork 與 Agent Skill 實務]]
