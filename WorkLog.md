@@ -1,8 +1,11 @@
 # 工作筆記
 
-**更新日期**：2026-11-20
+**更新日期**：2026-11-21
 
 ## 上次做到哪
+- **2026-11-21 家裡筆電 `weng`：Chrome 開機重複開視窗、chezmoi 同步**：
+  - Chrome 問題：開機後點工作列 Chrome 又多開一個視窗。原因是 Chrome「登入時自動啟動」（`Local State` 的 `launch_on_login.foreground.enabled`、`infobar_accepted` 皆為 True，曾在提示列按同意），`HKCU\...\Run` 有 `GoogleChromeAutoLaunch_492427C3…`（`--startup-foreground-launch`）；開機啟動項目多，該項延遲約 3.5 分鐘（12:07:33 開機、12:08:29 手動點、12:11:09 自動啟動）才執行。已在 `StartupApproved\Run` 標記停用（等同「設定 → 應用程式 → 啟動」關閉），可隨時改回；Chrome 自己的設定未改。尚待下次開機確認。
+  - chezmoi：來源本機有未推送的 10/27 Commit（agy 狀態列腳本）而與遠端分岔；捨棄 `modify_settings.json` 未提交修改（只加引號，已被上游「自動選用 Python 路徑」取代；備份 `%TEMP%/chezmoi_local_settings_backup.diff`），rebase 到遠端後 `chezmoi apply`（三份全域規範、`statusline.py`、`settings.json`、`~/erp_web_client.py` 10/06 舊版換新），statusline 實測正常；`f0657c2` 已推送，`chezmoi status` 乾淨。
 - **2026-11-20 下午收尾**：
   - 新增 Wiki [[Google 雲端硬碟串流、鏡像與離線存取設定指南]]（三種方式觀念、本次卡死教訓；家裡 `weng` 維持鏡像，公司先維持串流＋離線＋規範，仍卡再改鏡像，改前要先確認家裡使用者目錄名稱、處理 C 槽孤立複本）；[[Git GUI 與 GitHub 雙向同步實務]] 的「專案放 G: 槽」建議已加警示，回連跨 Agent 頁，index、log 已更新。
   - MP 工程勞務驗收單 115C008668（25711 鐘文振）無法簽核：物料 11/20 月關帳啟動暫關（`INJJMCBATCH`，`TBSMPB02` 暫關日 20261123），11/23 自動解除後到「本次驗收項次資料」頁簽簽核；說明已整理給 25711（另一個 Claude session 處理）。
@@ -338,7 +341,8 @@
 - **筆電卡死觀察**：之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；等資訊單位回覆防毒排除。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
 - ~~**Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材待入庫~~ **11/20 已入庫**為 [[權重空間編程：LLM 直接讀寫神經網路權重]]（SRC-291），pending 0 篇。
 - **全域規範瘦身（構想，待使用者決定）**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
-- **chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序（Claude Code 重寫造成），可 `chezmoi re-add` 清除或不理。
+- ~~**chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序~~ **11/21 `weng` 已同步，`chezmoi status` 乾淨**。
+- **Chrome 開機自動啟動（`weng`）**：下次開機確認不再多開視窗；若又出現，檢查 Chrome 是否重寫啟動項目。
 - **EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。
 - **Wiki 待使用者決定**：(1) 動畫技能用的是 Breeze TTS 2（不可商用）還是 BreezyVoice（可商用），確認後改 [[claude-motion-explainer 科普解說動畫技能]] 的警示框；(2) `Alt+Space` 能否當語音輸入熱鍵（SogaType 紀錄 vs NoType 建議書）；(3) 重新剪輯 4 篇空殼素材：Gmail 技巧大全、AI 生成影片直播、不用本地顯卡、ChatGPT 做 LINE 貼圖。
 - ~~**115 年度內控自評 EA 版（G447-2，11/30 前交）**：開 Outlook 草稿檢查簽名檔、補課長／廠處長欄位後寄給楊硯媚；視需要於內文加一句「14 張明細詳附件清單」。14 張逾期證照（重點：PEM60170 逾期最久、PTM60008、W10195、輻安證書 M412／M4 重複登錄與通知期間設定）由業務單位確認處置。若要改善程式（通知展延日與通知人員必填、已過期訊息改依有效期間迄判斷）需另開需求。~~ **已寄給楊硯媚（2026-11-12 筆記確認），由對方自行決定後續，結案不再追蹤**。
