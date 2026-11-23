@@ -3,7 +3,7 @@ type: source-summary
 tags: [Google AI Pro, Gemini, Gemini Notebook, NotebookLM, Google Flow, Antigravity, Google AI Studio, Colab, AI點數, 訂閱方案]
 sources: ["[[AI/raw/2026-11-19T143623+0800-買了Google AI Pro只會用Gemini聊天？這8種隱藏AI工具，幫你把訂閱費用好用滿.md|買了 Google AI Pro 只會用 Gemini 聊天？（數位時代）]]"]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-23
 ---
 
 # Google AI Pro 訂閱權益與八大工具選用
@@ -71,8 +71,10 @@ updated: 2026-11-20
 ## 關聯頁面
 
 - [[Gemini 全能使用手冊與 Google 生態工作流]]：Gemini App 九大用法與 Google 全家桶整合。
+- [[Gmail 139 技巧：收件匣整理、搜尋指令與 Gemini 寫信]]：Gmail 內 Gemini 的使用前提與台灣尚未開放的 AI 功能。
 - [[NotebookLM 綜合指南]]、[[NotebookLM 進階應用與實戰指引]]：Gemini Notebook（原 NotebookLM）的完整功能。
 - [[Google Flow AI短片製作實務]]：Flow 分鏡、扣點與實操。
+- [[不用本機顯卡的 AI 影片工作流：Colab 與 Seedance]]：用 AI Pro 每月附的 200 個 Colab 單元租雲端主機跑 MiniMax H3。
 - [[Antigravity 核心概念與五層記憶系統]]：Antigravity 介面、權限與記憶機制。
 - [[三大 AI 付費版選用與效能橫向對比]]：Gemini、ChatGPT、Claude 付費版比較。
 

@@ -3,7 +3,7 @@ type: concept
 tags: [LoRA, QLoRA, 微調, Fine-tuning, LLM, 擴散模型, Unsloth, Kohya_ss, 角色一致性]
 sources: ["[[AI/raw/全方位 LoRA 訓練完整指南 (擴散模型與大型語言模型).md|全方位 LoRA 訓練完整指南（擴散模型與大型語言模型）]]"]
 created: 2026-11-18
-updated: 2026-11-20
+updated: 2026-11-23
 ---
 
 # LoRA 微調訓練指南
@@ -103,3 +103,4 @@ updated: 2026-11-20
 - [[主權 AI 與 token 帳單三層陷阱]]（蒸餾小模型）
 - [[ChatGPT 影像生成提示詞指南]]
 - [[權重空間編程：LLM 直接讀寫神經網路權重]]（不靠梯度、由 LLM 直接改權重的研究方向，對照 LoRA）
+- [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]]（本機千問生圖要訓練人物 LoRA 才像本人；人物 LoRA 與動作 LoRA）

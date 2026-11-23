@@ -3,7 +3,7 @@ type: analysis
 tags: [NoType, 語音輸入, Electron, Whisper, Groq, 台灣詞庫, 技術選型, UIPI, SogaType]
 sources: ["[[AI/raw/NoType 專案深度分析與演進建議書.md|NoType 專案深度分析與演進建議書]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-23
 ---
 
 # NoType 語音輸入專案分析與演進建議
@@ -73,8 +73,8 @@ updated: 2026-11-18
 | 二：情境與多模式 | 前景視窗標題感知；中文潤飾 ⇄ 英／日翻譯切換；Toggle 觸發模式 |
 | 三：效能與權限 | 記憶體直傳；UIPI 提示；內建兩岸用語本地取代辭典 |
 
-> [!WARNING] 內容衝突
-> 根據本頁（NoType 建議書），`Alt+Space` 是 Windows 系統選單，會讓模擬的 Ctrl+V 貼空，不建議當熱鍵；但 [[SogaType 語音輸入 Windows 排錯紀錄]] 的最佳實務建議 SogaType 改用 `Alt+Space`。兩邊的觸發方式不同（NoType 長按、SogaType 按一下開關），是否都會受影響待使用者確認。
+> [!NOTE] 衝突已解決（2026-11-23）
+> [[SogaType 語音輸入 Windows 排錯紀錄]] 原本把 `Alt+Space` 列為可選熱鍵。使用者決定兩個工具統一採 **`Ctrl+Shift+Space`**，`Alt+Space` 一律標為不建議（會觸發 Windows 系統選單，模擬 Ctrl+V 可能貼空）。
 
 ## 我可以怎麼用
 

@@ -21,7 +21,7 @@
 | `[[網路系統基礎]]` | 本地 ARP 協定（IP 轉 MAC）、外網識別邊界，以及 GKB 監視器 RTSP 影音串流（OpenCV/VLC）調試與企業級 DPMS 框架 | 3 | 2026-07-09 |
 | `[[AI 工具與框架概覽]]` | 原生 AI 程式碼編輯器 Cursor 快捷鍵、Dify Canvas BaaS 平台、Grok 與 Groq 對比，LM Studio、vLLM 本地推理，OpenCode 研習與 ChatGPT APP (SOL/Terra/Luna)，「問問 Gemini」40 組 Prompt 與 Go Live 語音，全球 6 大免費 AI 課程與證書，以及 Google AI Studio 開發平台與 TTS 語音生成 | 17 | 2026-10-08 |
 | `[[AI 第二大腦與 Claude Cowork 自動化]]` | Obsidian + Claude Code 搭建 AI 第二大腦，Claude Desktop Cowork 結合 Gmail 自動發日報排程與防坑指南 | 3 | 2026-11-18 |
-| `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，已更新為 120 組品牌社群、工作、生活、靈感與風格轉換範本 | 2 | 2026-09-17 |
+| `[[ChatGPT 影像生成提示詞指南]]` | ChatGPT Image 2.0 (DALL-E 3) 影像生成提示詞黃金結構，已更新為 120 組品牌社群、工作、生活、靈感與風格轉換範本；2026-11 補生活生圖 30 組新增用途（月曆、時間圖、家電保養、幼兒作息、食譜步驟、寵物頭像貼圖、Podcast 封面等）、提示詞四種類型與防錯原則 | 4 | 2026-11-23 |
 | `[[Git GUI 與 GitHub 雙向同步實務]]` | Git GUI 上傳與下載流程、常見同步衝突（如 workspace.json）排除與一勞永逸的 .gitignore 設定，以及多 PC 設定下 Google Drive 工作空間路徑統一與同步模式排障 | 6 | 2026-08-07 |
 | `[[商業案例與投資思維專題]]` | 芒格、納瓦爾、老謝、施昇輝、陳重銘與孫宇晨等人物思維，Computex 跨境出海數據驅動品牌案例，通膨對個人資產傳導，買 ETF 必懂九大術語（含收益平準金），以及藥華藥（6446）利多出盡、自建通路營運槓桿與六大風險個股案例 | 11 | 2026-11-18 |
 | `[[Claude 專案管理一桌三櫃工作流]]` | 三師爸「專案駕駛艙」工作流，使用 Google Drive 工作桌配合 GitHub、Firebase 與 Obsidian 管理專案與 AI 上下文記憶 | 1 | 2026-07-09 |
@@ -61,6 +61,7 @@
 | [[Google Spark 與 GAS 雲端自動化實務]] | Google Spark 雲端 24/7 常駐 Agent 與 Gemini 角色分工、Google Workspace 深度排程與試算表輪詢、本機 Agent 搭配 clasp 部署 GAS 閉環，以及零成本 LINE AI 待辦機器人（GAS ＋ Gemini API）實戰 | 2 | 2026-09-17 |
 | [[a16z 第七版生成式 AI 應用榜與變現趨勢]] | a16z 第 7 版 Top 100 生成式 AI 消費應用榜六大洞察：首度納入支出數據、4.5% 訂閱率與前 1% 重度用戶經濟、29 家流量榜外的隱形贏家、個人助理 Agent（Instinct 對 Muse）、訂閱轉向廣告與交易抽成、新創四大破口 | 1 | 2026-10-07 |
 | [[Gemini 全能使用手冊與 Google 生態工作流]] | Gemini 9 大用法實測：一鍵分析 YouTube（Canvas 互動學習指南＋時間戳）、Gems 自訂智慧體與分享、Chrome Ask Gemini 與 Go Live 語音、Gmail／雲端硬碟／Docs／Sheets／Slides 整合、長文件精準定位、Deep Research 先審計畫、資訊圖／PPT 轉換、AI Studio TTS 製作 Podcast | 1 | 2026-10-08 |
+| [[Gmail 139 技巧：收件匣整理、搜尋指令與 Gemini 寫信]] | 數位時代 Gmail 139 技巧：封存／略過／延後、搜尋運算子速查、鍵盤快速鍵啟用與常用鍵、篩選器與巢狀標籤、取消傳送與排程寄信、機密模式、手機版設定、Gmail 內 Gemini 前提與台灣未開放功能、2027/1 終止 Gmailify 預告 | 1 | 2026-11-23 |
 | [[2026 銀髮經濟認知地圖與樂齡數位課程商機]] | 2026 銀髮經濟全景（三大結構轉變、新銀髮族輪廓、四大商業模式與黃金賽道），智慧照護三條技術路徑與成功關鍵，樂齡社群 OMO 營運與子女經濟，線上興趣課程「輕、趣、慢」與 LINE 主陣地，數位科技應用四大課程模組與教長輩學科技三心法，以及 2026 老人健保費補助 22 縣市資格（免申請、826 元上限、排富看子女所得）與敬老卡 22 縣市額度、10 月五縣市調整、月底歸零規則 | 3 | 2026-11-18 |
 | [[AVA_ERP MCP 工具建立標準流程]] | 公司內部 AVA-GPT 的 AVA_ERP 四個會議室 MCP 工具（查詢、可用清單、時段檢查、預訂）與強制禁用政策，「後端開發 → 工具整合」標準流程，並修正 MCP 定義與工具宣告方式、附 FastMCP 最小範例 | 1 | 2026-10-08 |
 | [[AI 工具應用內容趨勢與選題地圖]] | AI 工具應用內容賽道三大主流方向（Agent 自動化、開發生產力、本地隱私部署）、紅海與藍海選題、10 個 YouTube 新選題與本庫素材對照，以及知識缺口 | 1 | 2026-10-08 |
@@ -86,6 +87,8 @@
 | [[NoType 語音輸入專案分析與演進建議]] | 自製語音輸入工具 NoType 與 SogaType 八面向對比（WASAPI 收音優勢、兩段呼叫延遲、缺詞庫）、熱鍵／UIPI／前景視窗感知／記憶體直傳改善、Whisper prompt＋LLM 兩層台灣詞庫、JSON vs SQLite vs 向量庫選型、三階段藍圖 | 1 | 2026-11-18 |
 | [[claude-motion-explainer 科普解說動畫技能]] | 三師爸 2026-10-18 直播：把 Claude Code 做解說動畫的能力打包成跨 Agent 公開技能、特斯拉 Roadster 國中理化解說實例、三色主題／加圖片影片／Breeze 與 Edge TTS、兩台 Colab＋本機四倍速生成、對話即介面 | 1 | 2026-11-18 |
 | [[MiniMax-H3 本機 AI 短片製作原理與踩坑]] | 三師爸 2026-10-10 影片下集：角色一致性三層、首幀生圖三家十題實測（Image 2.5 最佳）、Blender 排空間、BreezyVoice 抽八版挑聲調再交 H3 對嘴、DMAD 四步加速與 768p→1080p 放大比較、十項試過的做法、音效配樂混音、Agent 審五遍、商用授權 | 1 | 2026-11-18 |
+| [[不用本機顯卡的 AI 影片工作流：Colab 與 Seedance]] | 三師爸 2026-10-23 直播：Colab 雲端主機跑 MiniMax H3（AI Pro 每月 200 單元、90 秒片只用 1.43 單元）對比 Kie.ai＋Seedance 2.5（每秒約 10 元）、Colab CLI 接 Agent、雙 ComfyUI 1.5 倍速、編劇技能→角色資產→16 宮格試映→首幀→先聲音再影片、混搭 Seedance 2.0 Mini | 1 | 2026-11-23 |
+| [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]] | 三師爸 2026-10-10 直播：真人角色 7 張照片與 15 秒錄音、取得本人同意、OpenAI Image 2.5 與本機千問 Image 2.1 比較（千問要 40 步與人物 LoRA）、Breeze TTS／VoxCPM2／BreezyVoice 取捨（平常 BreezyVoice、特殊語氣 VoxCPM2）、先聲音再影片、5～10 秒尾幀接續、16GB VRAM 門檻 | 1 | 2026-11-23 |
 | [[LoRA 微調訓練指南]] | LoRA 原理（凍結 W₀、訓練低秩矩陣 A×B）、LLM 微調資料格式／Unsloth・LLaMA-Factory・Axolotl／QLoRA 參數、擴散模型角色與畫風資料集／觸發詞／Kohya_ss 參數、過擬合與欠擬合診斷 | 1 | 2026-11-18 |
 | [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]] | 使用者的四工具（Claude Code／Codex／Antigravity／OpenCode）技能共用架構：~/.agents/skills 中央倉庫＋NTFS Junction＋私人 Git repo（技能不用 chezmoi）、setup-junctions 與 bootstrap 腳本行為、PowerShell 5.1 BOM 與 %USERPROFILE% 陷阱、連接點檢視三法與驗證清單 | 2 | 2026-11-18 |
 | [[AI 音樂生成：Suno 與 YuE2]] | Suno 四要素風格提示詞與歌詞段落標籤、YuE2 先出 ABC 樂譜再渲染 48kHz 音訊與本地部署需求、兩者對照與選用建議 | 1 | 2026-11-18 |
@@ -404,6 +407,10 @@
 | SRC-289 | 2026-11-18T162924+0800-Claude Code設定大洗牌！進入Opus 5.5時代之後，為何CLAUDE.md愈短愈好？.md | 網路文章 / 數位時代 | 2026-11-20 | [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] |
 | SRC-290 | 2026-11-19T143623+0800-買了Google AI Pro只會用Gemini聊天？這8種隱藏AI工具，幫你把訂閱費用好用滿.md | 網路文章 / 數位時代 | 2026-11-20 | [[Google AI Pro 訂閱權益與八大工具選用]] |
 | SRC-291 | 2026-11-20T144041+0800-AI界重大突破！MIT研究新發現：AI能直接修改另一個AI，不用重新訓練就能變強.md | 網路文章 / 數位時代（T客邦） | 2026-11-20 | [[權重空間編程：LLM 直接讀寫神經網路權重]] |
+| SRC-292 | 2026-09-17T132524+0800-Gmail技巧大全：139個收件匣整理、排程寄信與自動分類設定.md | 網路文章 / 數位時代（raw 剪輯不完整，依原文網頁補齊） | 2026-11-23 | [[Gmail 139 技巧：收件匣整理、搜尋指令與 Gemini 寫信]] |
+| SRC-293 | 2026-11-04T084754+0800-ChatGPT做LINE貼圖、月曆、菜單怎麼下指令？30組生活生圖提示詞一次看.md | 網路文章 / 數位時代（raw 剪輯不完整，依原文網頁補齊） | 2026-11-23 | [[ChatGPT 影像生成提示詞指南]] |
+| SRC-294 | 2026-10-23T205650+0800-不用 本地顯卡_付費生成 AI 的兩種方式_全攻略附 Repo.md | 影片 / 三師爸（YouTube 字幕補入） | 2026-11-23 | [[不用本機顯卡的 AI 影片工作流：Colab 與 Seedance]] |
+| SRC-295 | 2026-10-23T213411+0800-AI 生成影片，直播創造新角色人物資產.md | 影片 / 三師爸（Whisper 自動轉錄） | 2026-11-23 | [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]] |
 ---
 
 > [!TIP]

@@ -3,7 +3,7 @@ type: source-summary
 tags: [AI影片, MiniMax-H3, 角色一致性, 首幀, 配音, BreezyVoice, VoxCPM2, 超解析, 混音, 授權, 三師爸]
 sources: ["[[AI/raw/2026-11-01T200728+0800-【下集】AI 影片原理全公開：MiniMax-H3 本機實測，踩過的坑全部告訴你.md|【下集】AI 影片原理全公開：MiniMax-H3 本機實測（三師爸，2026-10-10）]]", "[[AI/raw/2026-11-05T131048+0800-Open Pose & Costume 收錄超過 5,800 張參考圖，人物、姿勢、服裝都有，讓你 AI 生圖更容易.md|Open Pose & Costume 收錄超過 5,800 張參考圖（電腦王阿達）]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-23
 ---
 
 # MiniMax-H3 本機 AI 短片製作原理與踩坑
@@ -112,7 +112,7 @@ updated: 2026-11-18
 | 項目 | 限制 | 替代 |
 |------|------|------|
 | Qwen-Image 2.1 | 只能非商業使用 | 首幀改用 Image 2.5 等雲端模型，依其條款 |
-| Breeze TTS 2 | 自己架起來生的聲音也不能營利 | 角色參考音改用 VoxCPM2 設計，或自己錄 |
+| Breeze TTS 2（BreezeBlue 開發，非聯發科） | 權重非商用授權，自己架起來生的聲音也不能營利；只有官方平台付費訂閱的產出可商用 | 角色參考音改用 VoxCPM2 設計，或自己錄 |
 | MiniMax H3 | 授權排除美國、歐盟、英國、南韓；公開影片要標示 AI 生成 | — |
 | MiniMax Music 3 | 商用要標示「MiniMax-Music3」 | — |
 | 人聲分離模型、部分動作 LoRA | 作者未標授權，需自行評估 | — |
@@ -130,6 +130,8 @@ updated: 2026-11-18
 
 ## 關聯頁面
 - [[Google Flow AI短片製作實務]]（雲端零門檻的 AI 短片做法）
+- [[不用本機顯卡的 AI 影片工作流：Colab 與 Seedance]]（同一套 H3 改到 Colab 雲端主機跑，並與 Seedance 2.5 實測比較）
+- [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]]（真人角色資產、千問與 Image 2.5 比較、三種語音模型取捨）
 - [[AI 語音複製與 VoxCPM2 本地部署]]（配音與聲音複製）
 - [[claude-motion-explainer 科普解說動畫技能]]（同講者的解說動畫與 Colab 加速）
 - [[ChatGPT 影像生成提示詞指南]]（首幀生圖）

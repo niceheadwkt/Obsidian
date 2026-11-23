@@ -3,7 +3,7 @@ type: source-summary
 tags: [動畫, 科普影片, 教學影片, AgentSkills, HyperFrames, TTS, Colab, Claude-Code, 三師爸直播]
 sources: ["[[AI/raw/2026-10-27T220731+0800-超強做動畫技能_全agent通用_說明欄附上github repo.md|超強做動畫技能：全 Agent 通用（三師爸直播，2026-10-18）]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-23
 ---
 
 # claude-motion-explainer 科普解說動畫技能
@@ -37,10 +37,10 @@ updated: 2026-11-18
 2. **三色主題**：原本只有藍色太單調，改成像簡報設計一樣讓使用者指定**主色、背景色、強調色**；講者自己的習慣是黑底白字、橘色重點。
 3. **可加圖片**：純程式碼動畫之外，可接生圖 API 或 Codex CLI 的 Image Gen，讓部分畫面用圖片。
 4. **可嵌影片**：在解說過程中嵌入實際影片（例如 Roadster 起飛畫面）。
-5. **語音合成選項**：講者本機用 **Breeze TTS**（開源、台灣腔、可合成自己的聲音，筆電 4080 12G 也要跑一下）；電腦跑不動的人改用 **Edge TTS**（效能需求最低），已寫進 repo 說明。也可以改接 Gemini 等雲端 TTS，但需要 API Key。
+5. **語音合成選項**：講者本機用 **BreezyVoice**（聯發科研究團隊＋台大，開源、台灣腔、可用參考音合成自己的聲音、可商用；筆電 4080 12G 也要跑一下）；電腦跑不動的人改用 **Edge TTS**（效能需求最低），已寫進 repo 說明。也可以改接 Gemini 等雲端 TTS，但需要 API Key。
 
-   > [!WARNING] 授權待確認
-   > 依 [[MiniMax-H3 本機 AI 短片製作原理與踩坑]]，**Breeze TTS 2 不可商用**（自己架起來生的聲音也不能營利），**BreezyVoice** 才可商用。本頁直播口述為「Breeze TTS」，實際使用哪一個待使用者確認；頻道有廣告或業配時請改用 BreezyVoice、Edge TTS 或自己錄音。
+   > [!NOTE] 已確認（2026-11-23）
+   > 直播口述為「Breeze TTS」，經使用者確認實際使用的是 **BreezyVoice**（Hugging Face 標示 Apache-2.0，可商用）。注意不要和名稱相近的 **Breeze TTS 2** 混淆：後者由另一家公司 BreezeBlue 開發，權重為非商用授權，自己架起來生成的聲音也不能營利（見 [[MiniMax-H3 本機 AI 短片製作原理與踩坑]]）。BreezyVoice 部分程式衍生自 CosyVoice，正式營利前仍建議再看一次 GitHub `mtkresearch/BreezyVoice` 的完整授權。
 6. 命名刻意用 `claude-motion-explainer` 方便被搜尋。
 
 應用想像：數學老師做「畢氏定理」解說（連同故事與由來）；物理、數學原理特別適合；英文、國文等文組科目則多加圖片與影片讓畫面豐富。
@@ -62,7 +62,7 @@ updated: 2026-11-18
 ## 我可以怎麼用
 
 - **ERP 教學動畫**：新功能上線說明、簽核流程、批次排程的運作原理，都可以用這個技能做 1～2 分鐘解說動畫，給使用者看比文字說明好懂；腳本先請 Agent 依規格書寫，人審過再生成。
-- **配音沿用現有設定**：全域規則已用 Edge TTS（`zh-TW-YunJheNeural`）做語音回覆，動畫旁白可直接用同一套；要用自己的聲音再考慮 Breeze TTS 或 [[AI 語音複製與 VoxCPM2 本地部署]]。
+- **配音沿用現有設定**：全域規則已用 Edge TTS（`zh-TW-YunJheNeural`）做語音回覆，動畫旁白可直接用同一套；要用自己的聲音再考慮 BreezyVoice 或 [[AI 語音複製與 VoxCPM2 本地部署]]。
 - **三色主題統一視覺**：和 [[HTML 簡報：AI Agent 時代的教學簡報完全體]] 共用同一組主色、背景色、強調色，簡報與動畫風格一致。
 - **算力不夠時用 Colab**：Google One 附的 Colab 單位可以拿來跑重的生成工作；ERP 或公司資料不要送進 Colab 或雲端 Agent。
 - **「先做順再打包」的另一個實例**：先手動做一支、確認品質，再請 Agent 打包成技能並推上 GitHub（呼應 [[Claude Cowork 與 Agent Skill 實務]]）。

@@ -3,7 +3,7 @@ type: source-summary
 tags: [SogaType, 語音輸入, Windows排錯, UIPI, CoreAudio, 熱鍵, ASUS-ROG]
 sources: ["[[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄.md|SogaType 語音輸入操作踩坑與排錯實戰全紀錄（2026-09-20）]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-23
 ---
 
 # SogaType 語音輸入 Windows 排錯紀錄
@@ -66,10 +66,10 @@ F9 在「AI 校正（預設，修錯字、加標點、去贅詞）→ 中翻英 
 
 ## 四、最佳實務
 
-1. **熱鍵**：避開 `Ctrl+Space`，改用 `Alt+Space`、`Ctrl+Shift+Space` 或搭配 Fn 的功能鍵。
+1. **熱鍵**：避開 `Ctrl+Space`，改用 **`Ctrl+Shift+Space`** 或搭配 Fn 的功能鍵。**不建議 `Alt+Space`**：它是 Windows 視窗系統選單，放開後焦點可能跑到選單，模擬的 Ctrl+V 會貼空（見 [[NoType 語音輸入專案分析與演進建議]]）。
 
-> [!WARNING] 內容衝突
-> 本頁（依原紀錄）建議可改用 `Alt+Space`；但 [[NoType 語音輸入專案分析與演進建議]] 指出 `Alt+Space` 是 Windows 視窗系統選單，放開後焦點易跑到選單、模擬 Ctrl+V 貼空。待使用者確認；在確認前，`Ctrl+Shift+Space` 是兩份文件都認可的選項。
+> [!NOTE] 衝突已解決（2026-11-23）
+> 原紀錄曾把 `Alt+Space` 列為可選熱鍵，與 NoType 建議書衝突。使用者決定統一採 `Ctrl+Shift+Space`，`Alt+Space` 標為不建議（未實測 SogaType 按一下開關模式是否也會貼空）。
 
 2. **權限**：常在管理員終端機、PowerShell 或高權限 IDE 用語音輸入，就讓 SogaType 也以管理員執行。
 3. **輸入節奏**：先點目標輸入框、確認游標在閃 → 按熱鍵（聆聽中）→ 說話 → 再按熱鍵（辨識中）→ 等約 1 秒自動貼上。

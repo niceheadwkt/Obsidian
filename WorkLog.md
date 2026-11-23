@@ -1,8 +1,16 @@
 # 工作筆記
 
-**更新日期**：2026-11-21
+**更新日期**：2026-11-23
 
 ## 上次做到哪
+- **2026-11-23 公司筆電 ADM-189**：
+  - **Trend Micro Apex One 已移除**（使用者告知；查核服務與安裝清單已無 Trend／Tm 項目），防毒只剩 CrowdStrike Falcon 8.11（`CSFalconService` 執行中）。之後觀察是否還會卡死。
+  - `weng` Chrome 開機重複開視窗：使用者確認已不再多開，結案。
+  - EA 系統新進人員旁白教學影片：使用者看過確認 OK，結案。
+  - Wiki：`Alt+Space` 衝突結案（統一 `Ctrl+Shift+Space`）；數位時代兩篇空殼素材依原文網頁補齊——新增 [[Gmail 139 技巧：收件匣整理、搜尋指令與 Gemini 寫信]]（SRC-292），擴充 [[ChatGPT 影像生成提示詞指南]] 第 6 節（SRC-293）；`wiki_tool.py check` 6 頁 FAIL 0。兩個 raw 空殼檔經使用者同意補寫內文（改寫摘要，檔首加補齊說明）。動畫技能 TTS 確認為 BreezyVoice（Breeze TTS 2 為 BreezeBlue 開發、權重非商用），更新三頁。YouTube 兩篇：lneWkkZrg70 用 youtube-transcript-api 取人工字幕，新增 [[不用本機顯卡的 AI 影片工作流：Colab 與 Seedance]]（SRC-294）；lIX4UeOMQLI 字幕停用，yt-dlp＋faster-whisper 轉錄，新增 [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]]（SRC-295）。
+  - 本機工具踩坑：yt-dlp 在公司 SSL 檢查下要包 `truststore.inject_into_ssl()` 再呼叫 `yt_dlp.main`；faster-whisper GPU 缺 `cublas64_12.dll`，`pip install nvidia-cublas-cu12 nvidia-cudnn-cu12==9.*` 後以 `os.add_dll_directory` 加入兩套件的 `bin` 即可（81 分鐘音訊在 RTX 4060 Laptop 約 6 分鐘）。
+  - chezmoi `update` 套用 `f0657c2`（agy 狀態列腳本），`chezmoi status` 乾淨。
+  - MP 驗收單 115C008668：物料關帳日期 `TBSMPB02 IN/00068/CrCLSDate`＝20261123，`injcdi008.checkCrCLSDateStus()` 判斷「關帳日 > 今天」才擋，**今天已解除**。簽核狀態：`TBMP90` MP07 STATUS 20（SIGNING 簽核中），停第 1 站 25711 鐘文振（副課長代理課長），尚未簽；`TBMP92` 11/20 13:59 由 25959 確認並送出簽核。
 - **2026-11-21 家裡筆電 `weng`：Chrome 開機重複開視窗、chezmoi 同步**：
   - Chrome 問題：開機後點工作列 Chrome 又多開一個視窗。原因是 Chrome「登入時自動啟動」（`Local State` 的 `launch_on_login.foreground.enabled`、`infobar_accepted` 皆為 True，曾在提示列按同意），`HKCU\...\Run` 有 `GoogleChromeAutoLaunch_492427C3…`（`--startup-foreground-launch`）；開機啟動項目多，該項延遲約 3.5 分鐘（12:07:33 開機、12:08:29 手動點、12:11:09 自動啟動）才執行。已在 `StartupApproved\Run` 標記停用（等同「設定 → 應用程式 → 啟動」關閉），可隨時改回；Chrome 自己的設定未改。尚待下次開機確認。
   - chezmoi：來源本機有未推送的 10/27 Commit（agy 狀態列腳本）而與遠端分岔；捨棄 `modify_settings.json` 未提交修改（只加引號，已被上游「自動選用 Python 路徑」取代；備份 `%TEMP%/chezmoi_local_settings_backup.diff`），rebase 到遠端後 `chezmoi apply`（三份全域規範、`statusline.py`、`settings.json`、`~/erp_web_client.py` 10/06 舊版換新），statusline 實測正常；`f0657c2` 已推送，`chezmoi status` 乾淨。
@@ -338,13 +346,13 @@
 - RQ11510012 全部文件（11/02 整理）：`D:/0.翁國烔_中鴻專案/RQ115/RQ11510012(風險評估系統優化(115107與A3翁國烔工程師溝通))/`——規劃設計 v0.5（定版）、v0.4（設計理由）、程式修改清單、DDL `db.tbeaRE03_RQ11510012.sql`、`操作手冊/`（三本 md／docx／html／pdf＋manual_img）、D1 資料修正 SQL／ODT／PDF／MD 與備份 CSV。v0.2、v0.3、替代方案、10/13 修改紀錄、待確認事項 Q11/Q13/Q14 已刪除（Google Drive 垃圾桶）。
 
 ## 下一步
-- **筆電卡死觀察**：之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；等資訊單位回覆防毒排除。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
+- **筆電卡死觀察**：之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；~~等資訊單位回覆防毒排除~~ **11/23 Apex One 已移除，只剩 CrowdStrike**，觀察是否改善。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
 - ~~**Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材待入庫~~ **11/20 已入庫**為 [[權重空間編程：LLM 直接讀寫神經網路權重]]（SRC-291），pending 0 篇。
-- **全域規範瘦身（構想，待使用者決定）**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
+- ~~**全域規範瘦身（構想，待使用者決定）**~~ **11/23 使用者決定不瘦身，結案**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
 - ~~**chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序~~ **11/21 `weng` 已同步，`chezmoi status` 乾淨**。
-- **Chrome 開機自動啟動（`weng`）**：下次開機確認不再多開視窗；若又出現，檢查 Chrome 是否重寫啟動項目。
-- **EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。
-- **Wiki 待使用者決定**：(1) 動畫技能用的是 Breeze TTS 2（不可商用）還是 BreezyVoice（可商用），確認後改 [[claude-motion-explainer 科普解說動畫技能]] 的警示框；(2) `Alt+Space` 能否當語音輸入熱鍵（SogaType 紀錄 vs NoType 建議書）；(3) 重新剪輯 4 篇空殼素材：Gmail 技巧大全、AI 生成影片直播、不用本地顯卡、ChatGPT 做 LINE 貼圖。
+- ~~**Chrome 開機自動啟動（`weng`）**：下次開機確認不再多開視窗；若又出現，檢查 Chrome 是否重寫啟動項目。~~ **11/23 使用者確認開機已不再多開 Chrome 視窗，結案**（若日後復發，檢查 Chrome 是否重寫 `HKCU\...\Run` 啟動項目）。
+- ~~**EA 旁白教學影片**：使用者從頭看一遍，確認英文代碼發音（M9、EAKILLER、EA3000 等）與內容；要改某頁時改旁白稿後只重合成該頁再重組（scratchpad 已清時需重建腳本）。~~ **11/23 使用者確認影片 OK，結案**。
+- **Wiki 待使用者決定**：~~(1) 動畫技能用的是 Breeze TTS 2（不可商用）還是 BreezyVoice（可商用）~~ **11/23 確認為 BreezyVoice，三頁已更新**；~~(2) `Alt+Space` 能否當語音輸入熱鍵~~ **11/23 選 B：統一 `Ctrl+Shift+Space`，兩頁警示改為已解決**；(3) 空殼素材：~~Gmail 技巧大全、ChatGPT 做 LINE 貼圖~~ **11/23 已依原文網頁補齊入庫（SRC-292、293）**；~~不用本地顯卡 lneWkkZrg70~~ **11/23 已抓 YouTube 字幕補進 raw 並入庫（SRC-294）**；~~AI 生成影片直播 lIX4UeOMQLI~~ **11/23 字幕停用，改 yt-dlp 下載音訊＋faster-whisper large-v3（GPU）轉錄後入庫（SRC-295）**。空殼素材全部處理完，pending 0。
 - ~~**115 年度內控自評 EA 版（G447-2，11/30 前交）**：開 Outlook 草稿檢查簽名檔、補課長／廠處長欄位後寄給楊硯媚；視需要於內文加一句「14 張明細詳附件清單」。14 張逾期證照（重點：PEM60170 逾期最久、PTM60008、W10195、輻安證書 M412／M4 重複登錄與通知期間設定）由業務單位確認處置。若要改善程式（通知展延日與通知人員必填、已過期訊息改依有效期間迄判斷）需另開需求。~~ **已寄給楊硯媚（2026-11-12 筆記確認），由對方自行決定後續，結案不再追蹤**。
 - ~~**EAJJRE00N／EAJJRE10N 進階查詢文件階段（11/09）**：查 `DB.TBDAU1` 確認 11/09 正式機申請已核准（A、12:17 生效）；正式機兩支進階查詢畫面抽查（8 欄、文件階段、排序），通過後結案。~~ **11/10 已核准、正式機抽查通過，結案**。
 - HGJJC01 造字姓名（2026061862）：~~等邱世平回覆 11/04 試刷結果~~ **11/04 回覆 OK**。~~劉明峰資料異動單執行後查核~~ **11/04 下午已執行並查核**：TBHG204 18 筆、TBHG205 365 筆、主檔姓名皆為 `AA4CFEB2A86A`，錯誤 0 筆，資料修正結案。~~剩 1862、1890～1892 舊單是否作廢~~ **11/05 使用者決定不用作廢，HGJJC01 全案結案**。
