@@ -3,6 +3,12 @@
 **更新日期**：2026-11-23
 
 ## 上次做到哪
+- **2026-11-23 RP 報表 K0R00340 虛驚事件合格件數統計報表內容空白（呂年成 11:51 來信）**：
+  - 原因：產製 PDF 日期搜尋區間 20260101～20210802，迄日早於起日致查無資料。正式機 `DB.TBRP0020` 的 `date_e`（序號 1，DW）參數值寫死為 **20210802**，DEFAULTTYPE＝1（系統日）；`rpjcDFBatch.java:142` 只有參數值空白時才依預設型態算日期，不寫回，所以從此固定。`date_b` 參數值空、無預設型態。
+  - 寫入時間查不到確切值（TBRP0020 無維護欄位、`TBRP0030` 只留 10 版，最早 2026/09/21）。推估 2021/08/01～08/02：`TBRP0010` 最後維護 2021/08/01 06:30 由 25024 張燦錤；舊流程 `rpjcAutoGenRpt` → `rpjcRptUtil.DoRptDefault()` 會把系統日寫回參數值，可能是 2021/08/02（週一 03:00 排程）最後一次走舊流程寫入。全系統只有這筆值是 20210802。
+  - 修正方式：清空 date_e 參數值（DEFAULTTYPE 維持 1），`UPDATE DB.TBRP0020 SET RPTPARAVALUE='' WHERE RPTCODE='K0R00340' AND RPTPARASEQ=1`（未代為執行）。使用者已回覆呂年成。
+  - 另：啟用報表中日期型參數有預設型態但參數值寫死的共 83 筆，未處理。
+  - ZPJJB01 11/23 001（1300–1500，RP，2.0，無需求單）已用 CDP 新增並查 `DB.TBZP0050` 確認（附件代號 `26788_20261123_001`）。
 - **2026-11-23 公司筆電 ADM-189**：
   - **Trend Micro Apex One 已移除**（使用者告知；查核服務與安裝清單已無 Trend／Tm 項目），防毒只剩 CrowdStrike Falcon 8.11（`CSFalconService` 執行中）。之後觀察是否還會卡死。
   - `weng` Chrome 開機重複開視窗：使用者確認已不再多開，結案。
@@ -346,6 +352,7 @@
 - RQ11510012 全部文件（11/02 整理）：`D:/0.翁國烔_中鴻專案/RQ115/RQ11510012(風險評估系統優化(115107與A3翁國烔工程師溝通))/`——規劃設計 v0.5（定版）、v0.4（設計理由）、程式修改清單、DDL `db.tbeaRE03_RQ11510012.sql`、`操作手冊/`（三本 md／docx／html／pdf＋manual_img）、D1 資料修正 SQL／ODT／PDF／MD 與備份 CSV。v0.2、v0.3、替代方案、10/13 修改紀錄、待確認事項 Q11/Q13/Q14 已刪除（Google Drive 垃圾桶）。
 
 ## 下一步
+- **K0R00340 參數修正確認**：確認 `DB.TBRP0020` K0R00340 date_e 參數值已清空；11/30（週一）03:00 排程後查 `TBRP0030` 新版與 PDF 是否有資料。視需要列出 83 筆日期參數寫死的報表，挑出日期已過舊者。
 - **筆電卡死觀察**：之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；~~等資訊單位回覆防毒排除~~ **11/23 Apex One 已移除，只剩 CrowdStrike**，觀察是否改善。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
 - ~~**Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材待入庫~~ **11/20 已入庫**為 [[權重空間編程：LLM 直接讀寫神經網路權重]]（SRC-291），pending 0 篇。
 - ~~**全域規範瘦身（構想，待使用者決定）**~~ **11/23 使用者決定不瘦身，結案**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
