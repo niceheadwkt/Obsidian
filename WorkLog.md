@@ -3,6 +3,7 @@
 **更新日期**：2026-11-24
 
 ## 上次做到哪
+- **2026-11-24 Wiki 入庫兩篇**：pending 清到 0 篇。新增 [[Gemini 筆記本打造 AI 學習教練：考照與孩子複習]]（SRC-296，數位時代一天一 AI：反問式產生提示詞、限定教材出題、筆記本使用說明＋錯題紀錄、Canvas 闖關遊戲；回連圍棋陪練、Wordwall、Google AI Pro、Gemini 手冊四頁）、[[RAG 實作全流程與答錯排查]]（SRC-297，Gary Chen YouTube：兩階段清洗、依結構切塊、Metadata、混合搜尋、Re-ranking、四步答錯排查；擴充 [[RAG 與 DeepSearch 概念綜述]]，回連 Agent 術語、個人知識管理兩頁）。長上下文 vs 切塊衝突已依使用者判斷結案：單份長文件完整審閱用長上下文、大量文件反覆問答用 RAG，可組合使用。`wiki_tool.py check` 全部 FAIL 0。
 - **2026-11-24 公司筆電 ADM-189 停用 ChatGPT 開機自動啟動**：原因是兩個 Store（MSIX）版程式的開機啟動設定都是開著的（`StartupTask`，登錄 `HKCU\Software\Classes\Local Settings\...\AppModel\SystemAppData\<PFN>\<TaskId>` 的 `State`＝2）——`OpenAI.Codex`（開機啟動清單名稱「ChatGPT」，預設關閉，判斷是程式自己開啟的）和 `OpenAI.ChatGPT-Desktop`（「ChatGPT Classic」，預設開啟）。兩者 `State` 已改為 1（使用者停用，等同「設定 → 應用程式 → 啟動」關閉），可隨時改回。下次開機確認；若 Codex 版又自己打開，檢查 App 內是否有開機啟動選項。
 - **2026-11-23 RP 報表 K0R00340 虛驚事件合格件數統計報表內容空白（呂年成 11:51 來信）**：
   - 原因：產製 PDF 日期搜尋區間 20260101～20210802，迄日早於起日致查無資料。正式機 `DB.TBRP0020` 的 `date_e`（序號 1，DW）參數值寫死為 **20210802**，DEFAULTTYPE＝1（系統日）；`rpjcDFBatch.java:142` 只有參數值空白時才依預設型態算日期，不寫回，所以從此固定。`date_b` 參數值空、無預設型態。
@@ -355,7 +356,8 @@
 ## 下一步
 - ~~**K0R00340 參數修正確認**~~（**11/24 結案，不再追蹤**）：~~確認 `DB.TBRP0020` K0R00340 date_e 參數值已清空~~ **11/24 已查：date_e 參數值為空字串、DEFAULTTYPE＝1**；11/30（週一）03:00 排程後查 `TBRP0030` 新版與 PDF 是否有資料。~~視需要列出 83 筆日期參數寫死的報表~~ **11/24 已列出（K0R00340 清空後剩 82 筆）**：39 筆值為近期日期（會隨產製更新）、10 筆為 29991231／99999999 等刻意開放區間、**33 筆／19 支為舊日期寫死**；其中近一個月仍有產製的 6 支（00R00060、B0R00020、CNR00170、CNR00200、GHR00230、J0R00120）待確認 PDF 是否也是空白或區間錯誤，再決定是否請權責單位清空。**11/24 已查 `TBRP0030` 與程式**：DF 排程內容固定為 `rpjcDFBatch.runRpt(dscom,"代碼")`（`rpjja01.jsp:275`，不帶參數），參數值非空就直接用；手動產製畫面（`rpjjb01Search.jsp:128`）也是參數值空白才帶預設，否則帶出寫死值讓使用者改。→ **真正受影響 2 支**：B0R00020（最近 10 版有 5 版 DF 批次，最新 11/24 清晨，用 20051122～20051122 產出）、J0R00120（10 版全為 DF 每月批次「產製上個月…」，最新 11/05，實際產 201505）。其餘 4 支（00R00060、CNR00170、CNR00200、GHR00230）全是使用者手動產製，畫面預帶舊日期需每次手改，忘了改才會錯。檔案在伺服器 `rptdoc`，本機看不到內容。**11/24 使用者決定報表寫死日期問題暫不處理，K0R00340 的 11/30 排程確認也不追蹤，全項結案**。
 - **筆電卡死觀察**：之後若再卡死，對照 `%LOCALAPPDATA%\Google\DriveFS\Logs\drive_fs_*.txt` 的 `LogSlowOperation` 時間與 Claude／Codex 對話紀錄找觸發點；~~等資訊單位回覆防毒排除~~ **11/23 Apex One 已移除，只剩 CrowdStrike**，觀察是否改善。仍常卡再考慮改鏡像模式（步驟見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]] 第三節）。
-- ~~**Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材待入庫~~ **11/20 已入庫**為 [[權重空間編程：LLM 直接讀寫神經網路權重]]（SRC-291），pending 0 篇。
+- ~~**Wiki 入庫**：`AI/raw/` 有 1 篇 11/20 素材待入庫~~ **11/20 已入庫**為 [[權重空間編程：LLM 直接讀寫神經網路權重]]（SRC-291），pending 0 篇。**11/24 再入庫 2 篇（SRC-296、297），pending 0 篇**。
+- **ChatGPT 開機自動啟動（ADM-189）**：下次開機確認 ChatGPT／ChatGPT Classic 不再自動開；若 Codex 版又自己打開，檢查 App 內開機啟動選項。
 - ~~**全域規範瘦身（構想，待使用者決定）**~~ **11/23 使用者決定不瘦身，結案**：依 [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]] 跑 `/doctor prompt-audit` 或 4.4 節自我審查提示檢查 `~/.claude/CLAUDE.md` 與 `rules/`；zpq token 檔可改用 `permissions.deny` 擋；`wiki_tool.py check`、Big5 驗證可考慮綁 Stop hook（失敗回 exit code 2）。
 - ~~**chezmoi**：`~/.claude/settings.json` 與來源只差 key 順序~~ **11/21 `weng` 已同步，`chezmoi status` 乾淨**。
 - ~~**Chrome 開機自動啟動（`weng`）**：下次開機確認不再多開視窗；若又出現，檢查 Chrome 是否重寫啟動項目。~~ **11/23 使用者確認開機已不再多開 Chrome 視窗，結案**（若日後復發，檢查 Chrome 是否重寫 `HKCU\...\Run` 啟動項目）。
