@@ -7,7 +7,7 @@ sources: [
   "[[AI/raw/2026-11-10T141555+0800-最新世代 AI Agent bot，一次搞懂基本原理.md|最新世代 AI Agent bot，一次搞懂基本原理（同場直播）]]"
 ]
 created: 2026-10-18
-updated: 2026-11-18
+updated: 2026-11-25
 ---
 
 # AI 越聰明，你越省力：直播總結與精選學習卡
@@ -40,8 +40,9 @@ updated: 2026-11-18
 > [!NOTE]
 > 若不想每月支付額外高額月費（如 30 美金）訂閱雲端 Agent Bot，善用 **Remote Control** 遠端連線家中常駐開啟的桌機（如 Mac mini），其工作流與效益幾乎與 Agent Bot 無異。
 
-> [!WARNING] 內容衝突
+> [!NOTE] 已更正（2026-11-25 結案）
 > **Remote Control 能否取代 Agent Bot**：本場直播（2026-10-18）指出用 Remote Control 連家中常駐主機，效益「幾乎與 Agent Bot 無異」；但同一講者 2026-11-02 直播（[[Agent Bot 基本原理與分層指揮架構]]）指出 Remote Control 需事先開啟、無法新開對話或做複雜設定，彈性比 Agent Bot 低。
+> **結論（以較新的 11/02 說法為準，依用途分工）**：Remote Control 適合在外接續家中**已開好的工作階段**；要隨時**新開任務**、改設定或做分層指揮時，用 Agent Bot。兩者不是互相取代。
 
 Agent Bot 的定義、三家產品比較與「人類 → Agent Bot → 本機 Agent」分層架構，詳見 [[Agent Bot 基本原理與分層指揮架構]]。
 

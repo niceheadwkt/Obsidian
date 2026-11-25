@@ -826,3 +826,12 @@ aw/ 唯讀目錄下）。
   - 4 處已有結論的衝突改為 `[!NOTE] 已更正`：[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]、[[AI Agent 實戰與 MCP 伺服器整合]]（技能改由 `~/.agents/skills` Git repo 同步）、[[AI Token用量比較_Desktop與CLI深度分析]]（訂閱登入 CLI 共用訂閱額度）、[[AVA_ERP MCP 工具建立標準流程]]（MCP 為 Model Context Protocol）。
 - **待決定**：衝突 3 處（Remote Control 與 Agent Bot、規則多寡與 Opus 5.5 少叮嚀、扮演專家提示詞）；a16z 數據來源差異維持標註；4 篇 Claude／Chrome／Git 相關舊頁待抽查時效；raw 根目錄 6 個非 Markdown 檔是否移至附件資料夾。
 - **執行人**：Claude Code
+
+## [2026-11-25] fix | 健檢待決定衝突 3 處結案
+
+- **依使用者決定結案**（`[!WARNING] 內容衝突` 改為 `[!NOTE] 已更正` 並寫入結論）：
+  - [[AI 越聰明，你越省力_直播總結與學習卡]]：Remote Control 與 Agent Bot 依用途分工——接續已開的工作階段用 Remote Control，新開任務與分層指揮用 Agent Bot（以 11/02 較新說法為準）。
+  - [[Claude 系統優化與 Token 節省指南]]：規則多寡依模型世代——Opus 5.5 以後以少叮嚀為原則，12 條實測保留為 Opus 4.x 歷史紀錄；註記全域規範 11/23 決定不瘦身的理由。
+  - [[Claude 高階提示詞與應用場景]]：扮演專家兩者合併——角色可保留定語氣，紅隊範例補上「列出資料、方法與外部驗證方式」。
+- **仍待決定**：4 篇 Claude／Chrome／Git 相關舊頁抽查時效；`AI/raw/` 根目錄 6 個非 Markdown 檔是否移至附件資料夾。
+- **執行人**：Claude Code
