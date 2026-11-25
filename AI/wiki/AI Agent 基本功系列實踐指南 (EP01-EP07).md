@@ -11,7 +11,7 @@ sources:
   - "[[raw/2026-07-28T084017+0800-AI Agent 基本功EP07需求探索四象限法，釐清專案需求的最後一塊拼圖.md]]"
   - "[[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN.md|跨 Agent 技能共用整合實施規劃書]]"
 created: 2026-08-07
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 # AI Agent 基本功系列實踐指南 (EP01-EP07)
@@ -58,8 +58,8 @@ updated: 2026-11-18
 - **設定檔與技能同步**：
   - 使用 `chezmoi` 管理工具在多台 PC 之間同步全域 dotfiles（如 `chezmoi.md` 指南）與 Agent Skills，確保多台機器上的 Agent 表現一致。
 
-> [!WARNING] 內容衝突（技能同步方式已改變）
-> 本段寫「技能也用 chezmoi 同步」；但依 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]（使用者 2026-10-06 規劃書），**技能已改由 `~/.agents/skills` 私人 Git repo 同步，不用 chezmoi**，chezmoi 只管理 `~/.claude/rules` 等全域設定。以下原文保留供參考。
+> [!NOTE] 已更正（2026-11-24 結案）：技能同步方式已改變
+> 本段原寫「技能也用 chezmoi 同步」；但依 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]（使用者 2026-10-06 規劃書），**技能已改由 `~/.agents/skills` 私人 Git repo 同步，不用 chezmoi**，chezmoi 只管理 `~/.claude/rules` 等全域設定。以下原文保留供參考。
 
 
 ## EP07：需求探索四象限法 (RDQ)

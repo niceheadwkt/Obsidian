@@ -817,3 +817,12 @@ aw/ 唯讀目錄下）。
 
 - **更新頁面**：[[RAG 與 DeepSearch 概念綜述]]：衝突警示改為「衝突已解決」，寫入使用者判斷的結論——單份長文件完整審閱用長上下文、大量文件反覆問答用 RAG，兩者可組合（先 RAG 找文件再以長上下文完整讀入）；[[RAG 實作全流程與答錯排查]] 關聯頁面描述同步更新。
 - **執行人**：Claude Code
+
+## [2026-11-24] lint | 例行健檢：反引號連結與已結論衝突結案
+
+- **發現**：斷鏈 0、孤立頁 0、未列 index 0、frontmatter 問題 0、反引號連結 17（其中 13 處為連結語法示範）、衝突標記 8、超過 120 天未更新 8 頁、未匯入素材 0、raw 根目錄非 Markdown 檔 6。
+- **已修復**：
+  - [[AI Token用量比較_Desktop與CLI深度分析]]「關聯頁面」4 條反引號連結改為正式連結。
+  - 4 處已有結論的衝突改為 `[!NOTE] 已更正`：[[AI Agent 基本功系列實踐指南 (EP01-EP07)]]、[[AI Agent 實戰與 MCP 伺服器整合]]（技能改由 `~/.agents/skills` Git repo 同步）、[[AI Token用量比較_Desktop與CLI深度分析]]（訂閱登入 CLI 共用訂閱額度）、[[AVA_ERP MCP 工具建立標準流程]]（MCP 為 Model Context Protocol）。
+- **待決定**：衝突 3 處（Remote Control 與 Agent Bot、規則多寡與 Opus 5.5 少叮嚀、扮演專家提示詞）；a16z 數據來源差異維持標註；4 篇 Claude／Chrome／Git 相關舊頁待抽查時效；raw 根目錄 6 個非 Markdown 檔是否移至附件資料夾。
+- **執行人**：Claude Code

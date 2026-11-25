@@ -3,7 +3,7 @@ type: source-summary
 tags: [MCP, AVA-GPT, AVA_ERP, ERP, 會議室, 工具定義, FastMCP, AI-Agent, 企業內部系統]
 sources: ["[[AI/raw/2026-10-08T140253+0800-AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程.md|AVA-GPT 對話：AVA_ERP MCP 工具建立標準流程]]"]
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-11-24
 ---
 
 # AVA_ERP MCP 工具建立標準流程
@@ -64,8 +64,8 @@ AVA-GPT 的比喻：AI 是**駕駛**，開發者是**汽車工程師**（製造�
 
 ## 3. 修正與補充
 
-> [!WARNING]
-> **內容衝突**：AVA-GPT 在第 6 輪把 MCP 解釋為「Model-Controller-Policy」，這是錯的。MCP 是 **Model Context Protocol**，由 Anthropic 提出的開放協定，與本知識庫 [[AI Agent 實戰與 MCP 伺服器整合]] 的說法一致。
+> [!NOTE] 已更正（2026-11-24 結案）
+> AVA-GPT 在第 6 輪把 MCP 解釋為「Model-Controller-Policy」，這是錯的。MCP 是 **Model Context Protocol**，由 Anthropic 提出的開放協定，與本知識庫 [[AI Agent 實戰與 MCP 伺服器整合]] 的說法一致。
 
 > [!WARNING]
 > **流程描述不精確**：AVA-GPT 說管理員要在 AI 系統設定裡另外「加入一段工具定義」，再由系統轉呼叫後端 API。在 MCP 架構下，**工具定義是 MCP 伺服器自己宣告的**：用戶端（AVA-GPT）連上伺服器後，透過 `tools/list` 取得每個工具的名稱、說明與參數 JSON Schema，呼叫時送出 `tools/call`。管理員要做的是**註冊 MCP 伺服器、設定權限政策**，不必另外手寫函式簽名。對話中的 `https://api.mycompany.com/erp/query_rooms` 只是示意網址。

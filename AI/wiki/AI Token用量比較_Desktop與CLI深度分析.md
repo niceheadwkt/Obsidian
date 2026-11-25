@@ -11,7 +11,7 @@ sources: [
   "[[sources/01_AI_Tools/Claude 操作模式與功能介紹.md]]"
 ]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 # AI Token 用量比較：Desktop 與 CLI 深度分析
@@ -157,8 +157,8 @@ flowchart TD
 
 ## 3. 計費模式與心理衝擊比較
 
-> [!WARNING]
-> 內容衝突：本節將 CLI 歸為「API 計費為主」；但依 [[raw/2026-06-15T153635+0800-Claude 2026最新訂閱方案｜Claude ai免費版功能有什麼？Agent SDK費用怎麼算？.md|Claude 2026 訂閱方案]] 與 [[raw/2026-06-15T160222+0800-Claude Code安裝教學｜Desktop App、終端機2種方式怎麼裝？不懂程式也能秒上手.md|Claude Code 安裝教學]]，以訂閱帳號登入的 Claude Code CLI，互動使用與 Desktop 共用同一份訂閱額度，只有 API Key 登入才按量計費、`claude -p` 等程式化使用才另計月額度（見第 1.2 節）。下表「CLI」欄僅適用於 API Key 登入情境。
+> [!NOTE] 已更正（2026-11-24 結案）
+> 本節原將 CLI 歸為「API 計費為主」；但依 [[raw/2026-06-15T153635+0800-Claude 2026最新訂閱方案｜Claude ai免費版功能有什麼？Agent SDK費用怎麼算？.md|Claude 2026 訂閱方案]] 與 [[raw/2026-06-15T160222+0800-Claude Code安裝教學｜Desktop App、終端機2種方式怎麼裝？不懂程式也能秒上手.md|Claude Code 安裝教學]]，以訂閱帳號登入的 Claude Code CLI，互動使用與 Desktop 共用同一份訂閱額度，只有 API Key 登入才按量計費、`claude -p` 等程式化使用才另計月額度（見第 1.2 節）。下表「CLI」欄僅適用於 API Key 登入情境。
 
 | 項目 | Desktop 桌面應用（訂閱制為主） | CLI 終端工具（API 計費為主） |
 | :--- | :--- | :--- |
@@ -229,7 +229,7 @@ flowchart LR
 
 ## 相關參考頁面
 - [[Claude（Anthropic）]]：Claude 產品線、方案與 Claude Code 實體頁。
-- `[[Claude 系統優化與 Token 節省指南]]`：詳細記錄了官方 4 條節流指引、PDF 縮減 22 倍技巧與 `CLAUDE.md` 優化規範。
-- `[[AI CLI 工具比較與選擇_摘要]]`：橫向對比各家 CLI 終端工具特性。
-- `[[LLM 到 Agent 的工程解析]]`：深入探討 MCP 協議標準與 Agent 工具呼叫機制。
-- `[[生成式 AI 企業應用與成本經濟學]]`：解析企業落地時的 Token 經濟學與 KV Cache 快取機制。
+- [[Claude 系統優化與 Token 節省指南]]：詳細記錄了官方 4 條節流指引、PDF 縮減 22 倍技巧與 `CLAUDE.md` 優化規範。
+- [[AI CLI 工具比較與選擇_摘要]]：橫向對比各家 CLI 終端工具特性。
+- [[LLM 到 Agent 的工程解析]]：深入探討 MCP 協議標準與 Agent 工具呼叫機制。
+- [[生成式 AI 企業應用與成本經濟學]]：解析企業落地時的 Token 經濟學與 KV Cache 快取機制。
