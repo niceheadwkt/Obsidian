@@ -5,7 +5,7 @@ sources: [
   "[[raw/2026-07-20T150840+0800-Claude基本功EP10新手從零開始你的專案-使用Claude code來寫教學應用程式_從小白到高手的進階分水嶺：掌握專案管理的「一桌三櫃」法.md]]"
 ]
 created: 2026-06-13
-updated: 2026-07-09
+updated: 2026-11-25
 ---
 
 # Claude 專案管理一桌三櫃工作流
@@ -34,6 +34,9 @@ graph TD
 *   **🚨 注意事項**：
     1.  若要將網頁打包成原生電腦 App，雲端磁碟的同步鎖定機制可能導致打包失敗，此時應改用本機實體硬碟（如 C 槽或 D 槽）。
     2.  切勿同時開啟兩台電腦在同一個雲端專案目錄下執行 Claude Code，否則同步延遲會導致嚴重的檔案衝突與飄移。
+
+> [!NOTE] 補充（2026-11-25 抽查）
+> Google Drive 用「串流檔案」模式時，`G:` 是虛擬磁碟，AI 對專案根目錄做遞迴搜尋（Grep、Glob `**`）會造成大量讀取逾時，2026-11 曾讓筆電卡死多次。工作桌放雲端硬碟時，要避免對大資料夾做遞迴搜尋，或改用鏡像模式，見 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]]。
 
 ### 🗄️ 三櫃 (Three Cabinets) — 雲端儲存與備份
 1.  **櫃一：GitHub (程式櫃)**
@@ -73,6 +76,8 @@ AI 的上下文視窗（Context Window）是有上限的。當對話拉長，或
 
 *   **金鑰保護 (API Key Safety)**：Claude Code 具備自動把關機制，在提交上傳至 GitHub 時，若偵測到代碼中夾帶有敏感的 API Key，會主動警告並攔截。API 金鑰應安全地保存在本地環境變數或被 `.gitignore` 排除的配置檔中。
 *   **chezmoi 跨裝置同步**：若在多台電腦間切換，Claude Code 的「自訂技能 (Skills)」預設不會隨雲端同步。可以使用 `chezmoi` 命令列工具，將不同裝置間的 CLI Settings 與 Skills 進行同步備份。
+    *   > [!NOTE] 已更正（2026-11-25 抽查）
+        > chezmoi 適合同步設定檔；Skills 後來改成用私人 Git repo 搭配 NTFS Junction 共用，見 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]。
 *   **Claude Design 前端優化**：在專案開發尾聲，可調用 Claude 桌面版的 Claude Design 功能，對生成的 UI/UX 進行視覺美化與樣式修飾（注意：此功能 token 消耗量較高，建議在主要功能開發完成後再行調用）。
 
 *(相關概念延伸閱讀：[[AI 第二大腦與 Claude Cowork 自動化]]、[[Claude 基本功與個人 AI 工作流實戰]])*

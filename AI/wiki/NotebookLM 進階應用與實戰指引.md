@@ -24,9 +24,9 @@ sources: [
   "[[raw/2026-06-15T151438+0800-NotebookLM筆記術！5步驟整理1 on 1筆記，免費帳號就能用.md]]",
   "[[raw/2026-06-15T151831+0800-高雄國稅局推「AI稅務知識包」！整包匯入NotebookLM，綜所稅一問就懂.md]]",
   "[[raw/2026-06-15T160354+0800-NotebookLM簡報教學：怎麼去AI味？3步驟學YAML指令，附3款商務模板.md]]",
-  "[[raw/deep_blue_blueprint_style.yaml]]",
-  "[[raw/presentation_design_spec_minimal_silk.yaml]]",
-  "[[raw/presentation_design_spec_retro_collage.yaml]]",
+  "[[raw/_attachments/deep_blue_blueprint_style.yaml]]",
+  "[[raw/_attachments/presentation_design_spec_minimal_silk.yaml]]",
+  "[[raw/_attachments/presentation_design_spec_retro_collage.yaml]]",
   "[[raw/Lovart.md]]",
   "[[raw/2026-06-23T203833+0800-超狂示範！用Gemini + NotebookLM打造專屬簡報風格_AI極速視覺化簡報 notebookLM.md]]",
   "[[raw/2026-07-02T155713+0800-GoogleAI基本功EP06_使用Notebook LM的五大場景_Gemini 還是 Notebook LM？你其實一直選錯了.md]]",
@@ -36,7 +36,7 @@ sources: [
   "[[AI/raw/搞懂NotebookLM與Napkin AI-提升你的知識管理力.md|搞懂 NotebookLM 與 Napkin AI（課程筆記）]]"
 ]
 created: 2026-06-15
-updated: 2026-11-18
+updated: 2026-11-25
 ---
 
 # NotebookLM 進階應用與實戰指引

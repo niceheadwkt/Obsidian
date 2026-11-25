@@ -3,7 +3,7 @@ type: concept
 tags: [Git, 文件管理, 專案規範]
 sources: ["[[raw/多專案共通規範與文件管理結構指南.md]]"]
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-11-25
 ---
 
 # 多專案文件管理與 Git 子模組規範 (Multi-Project Docs & Git Submodule)

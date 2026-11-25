@@ -6,10 +6,13 @@ sources: [
   "[[raw/2026-06-15T155933+0800-Anthropic推Claude for Word！AI直接住進側邊欄，幫你改稿、檢查文件.md]]"
 ]
 created: 2026-06-18
-updated: 2026-07-09
+updated: 2026-11-25
 ---
 
 # Claude 辦公自動化 (Excel & Word)
+
+> [!NOTE] 時效提醒（2026-11-25 抽查）
+> 本頁的安裝步驟、支援方案、快捷鍵和「Claude for Word 為 Beta 版」都是 2026-06 的資訊，之後沒有重新查證。實際使用前請以 Microsoft Marketplace 與 Anthropic 官方說明為準；提示詞範例不受影響。
 
 **Claude 辦公自動化** 是指將 Anthropic 的大語言模型（LLM）Claude 以官方增益集（Add-ins）的形式，深度整合進 Microsoft Office 辦公軟體（Excel 與 Word）的原生介面中。這項技術讓使用者能夠使用自然語言直接指揮 AI 進行數據清理、公式偵錯、動態財務預測以及跨文件校對，實現辦公流程的全面智慧代理化。
 
@@ -81,3 +84,11 @@ Claude 能掃描表單中的項目，自動加總並計算各項費用比例，�
 
 - **Skills 流程固化**：團隊可將針對特定合約審查、狀態備忘錄或研究大綱的工作流，保存為自訂的 **Skills**。此後團隊全體成員皆可重覆調用相同的 Skills，以確保多人口語化產出的文件風格、查核點完全一致。
 - **企業級安全保護**：外掛程式整合了現有的企業級雲端 Single Sign-On (SSO) 登入方式，所有傳輸的數據完全運行在企業原有的資安與合規框架內，保護敏感數據不外流。
+
+---
+
+## 4. 相關頁面
+
+- [[Claude（Anthropic）]]：Claude 產品線、方案與各平台整合總覽。
+- [[Claude Cowork 與 Agent Skill 實務]]：Skills 的建立與團隊共用做法，可對照本頁第 3 節的流程固化。
+- [[Claude 高階提示詞與應用場景]]：更多可直接套用的提示詞範本。

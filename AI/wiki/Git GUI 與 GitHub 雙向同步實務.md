@@ -4,13 +4,13 @@ tags: [Git, GitGUI, GitHub, 版本控制, 同步, 衝突解決]
 sources: [
   - "[[raw/Google_Drive_Cross_PC_Setup_Guide.md]]"
   "[[raw/Git GUI 與 GitHub 雙向同步全面操作指南.md]]",
-  "[[raw/Git_GUI_GitHub_Comprehensive_Guide.pdf]]",
+  "[[raw/_attachments/Git_GUI_GitHub_Comprehensive_Guide.pdf]]",
   "[[raw/Git GUI 與 GitHub 雙向同步全面指南(整合實戰衝突、底層邏輯與問答精華之技術對談紀錄).md]]",
   "[[raw/Google 雲端硬碟偏好設定調整與 Git Gui 遠端綁定故障排除指南.md]]",
   "[[raw/VS_Code與GitHub雙向同步之環境衝突、防範配置與推送錯誤排除指南.md]]"
 ]
 created: 2026-06-13
-updated: 2026-11-20
+updated: 2026-11-25
 ---
 
 # Git GUI 與 GitHub 雙向同步實務

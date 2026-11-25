@@ -835,3 +835,14 @@ aw/ 唯讀目錄下）。
   - [[Claude 高階提示詞與應用場景]]：扮演專家兩者合併——角色可保留定語氣，紅隊範例補上「列出資料、方法與外部驗證方式」。
 - **仍待決定**：4 篇 Claude／Chrome／Git 相關舊頁抽查時效；`AI/raw/` 根目錄 6 個非 Markdown 檔是否移至附件資料夾。
 - **執行人**：Claude Code
+
+## [2026-11-25] lint | 健檢剩餘兩項：舊頁時效抽查、raw 附件歸檔
+
+- **舊頁抽查**（超過 120 天未更新的 Claude／Chrome／Git 相關 4 篇）：
+  - [[Claude 專案管理一桌三櫃工作流]]：補 Google Drive 串流模式遞迴搜尋會卡死的提醒（連 [[Google 雲端硬碟串流、鏡像與離線存取設定指南]]）；「chezmoi 同步 Skills」加註已改為私人 Git repo＋Junction（連 [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]）。
+  - [[Claude 辦公自動化 (Excel & Word)]]：加時效提醒（安裝步驟、支援方案、快捷鍵、Word Beta 狀態為 2026-06 資訊，未重新查證）。
+  - [[Chrome Skills 與瀏覽器自動化實務]]：加時效提醒（`chrome://flags`、側邊欄網址等實驗功能開啟方式為 2026-07 說法，可能已變動）。
+  - [[多專案文件管理與 Git 子模組規範]]：內容為通用 Git 子模組做法，未過時，不修改內容。
+- **raw 附件歸檔**（依使用者決定）：`AI/raw/` 根目錄 6 個非 Markdown 檔移到 `AI/raw/_attachments/`（Git 指南 PDF、NotebookLM 課程 PDF、3 個 NotebookLM 簡報樣式 YAML、1 張貼上截圖）；[[Git GUI 與 GitHub 雙向同步實務]]、[[NotebookLM 進階應用與實戰指引]] 共 4 條 `sources` 路徑改為 `raw/_attachments/`。raw 筆記以檔名引用（`![[...]]`），Obsidian 仍可解析，未修改 raw 內容。
+- **補連結**：[[Claude 辦公自動化 (Excel & Word)]]、[[Chrome Skills 與瀏覽器自動化實務]] 原本沒有連到其他 Wiki 頁，各補「相關頁面」一節。
+- **執行人**：Claude Code

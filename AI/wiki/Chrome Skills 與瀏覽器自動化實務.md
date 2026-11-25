@@ -7,7 +7,7 @@ sources:
   - "[[raw/2026-07-03T135051+0800-別再手動貼 Prompt 了！2026 Chrome 隱藏神功能「Skills」全攻略，一鍵 AI 自動化.md]]"
   - "[[raw/上網功能,Playwright 是什麼功能，它可以做什麼.md]]"
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-11-25
 ---
 
 # Chrome Skills 與瀏覽器自動化實務
@@ -19,6 +19,9 @@ updated: 2026-07-20
 ## 1. 2026 Chrome Skills 原生自動化技能
 
 **Chrome Skills** 是 Google 在 Chrome 瀏覽器右上角「問問 Gemini」側邊欄中釋出的原生自動化功能。它允許使用者將繁雜的 Prompt 封裝為瀏覽器的「原生快捷按鈕」，大幅降低上班族的無效複製貼上操作。
+
+> [!WARNING] 時效提醒（2026-11-25 抽查）
+> 以下開啟方式（`chrome://flags` 實驗開關、`chrome://layout-sidebar.gps`、`chrome://skills/`）是 2026-07 素材的說法，其中側邊欄網址原文就標註「依版本而定」，之後沒有重新查證。實驗功能常在改版時更名、轉正或移除，找不到時以目前 Chrome 版本實際的選單為準。第 1.2 節的提示詞封裝範例不受影響。
 
 ### 1.1 環境開啟與暴力解法 (Setup)
 *   **第一步：開啟「問問 Gemini」側邊欄**
@@ -71,3 +74,10 @@ updated: 2026-07-20
 ## 4. 總結
 *   **Chrome Skills** 適合非技術人員或日常辦公中，針對目前頁面資料進行「快速分析、摘要與內容加工」。
 *   **Playwright** 則是工程師在進行「爬蟲開發、自動化測試與 RPA 流程重塑」時的首選武器。
+
+---
+
+## 5. 相關頁面
+
+- [[Gemini 全能使用手冊與 Google 生態工作流]]：Chrome 側邊欄「問問 Gemini」所屬的 Gemini 生態與其他工具。
+- [[AI Agent 實戰與 MCP 伺服器整合]]：讓 AI Agent 透過 MCP 工具操作瀏覽器等外部系統，介於本頁兩種做法之間。
