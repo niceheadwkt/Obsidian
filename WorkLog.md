@@ -1,8 +1,9 @@
 # 工作筆記
 
-**更新日期**：2026-11-24
+**更新日期**：2026-11-26
 
 ## 上次做到哪
+- **2026-11-26 Wiki 入庫兩篇＋Ollama 硬體節改寫**（`90ba99d`，已 push）：pending 清到 0 篇。新增 [[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]]（SRC-302，數位時代一天一 AI：Google Cloud OAuth＋Claude 自訂連接器、不支援 PDF、測試模式授權 7 天到期、Gemini 扮演財務主管挑毛病；個人帳號不送 ERP 機密）、[[本地 AI 硬體分級與 Ollama 設定五大坑]]（SRC-303，AI懶人報 EP460：4-bit ≈ 參數量×0.6 GB、Mac 只算 3/4、16～128 GB 分級、MoE、Ollama 預設 4k context 等五坑與安全清單）。[[Ollama]] 新增 3.5 節（context 預設值與安全設定），第 3 節硬體配置經使用者決定依新分級改寫，衝突結案。`wiki_tool.py check` 7 頁 FAIL 0。
 - **2026-11-25 Wiki 健檢全部結案**：①11/24 lint 修改已提交（`6f630fa`）。②待決定衝突 3 處依使用者決定結案（`71c3860`）：Remote Control 與 Agent Bot 依用途分工（接續已開工作階段 vs 新開任務）、規則多寡依模型世代（Opus 5.5 少叮嚀，12 條實測為 Opus 4.x 紀錄）、扮演專家提示詞合併（紅隊範例補「列出資料、方法與外部驗證方式」）。③舊頁抽查 4 篇與 raw 附件歸檔（`52dbcaa`）：一桌三櫃補串流卡死提醒與 Skills 改 Git repo＋Junction 更正；Excel／Word、Chrome Skills 加時效提醒（未上網重新查證）並補相關頁面；Git 子模組未過時。`AI/raw/` 根目錄 6 個非 Markdown 檔移到 `AI/raw/_attachments/`，Wiki 4 條 sources 路徑同步更新。lint：斷鏈 0、raw 根目錄非 Markdown 0；剩 a16z 數據差異警示與非技術舊頁，刻意保留。
 - **2026-11-25 ADM-189 ChatGPT（Codex 版）開機仍自動開啟，原因查明**：兩個 `StartupTask` 仍為 State＝1（停用），不是又被打開。今天 07:16:34 登入、07:16:39 Codex 版 `ChatGPT.exe` 被帶起（AppModel-Runtime 事件 201），ChatGPT Classic 沒啟動。原因是 Windows「自動儲存可重新啟動的應用程式，並在重新登入時重新啟動」開著（`HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\RestartApps`＝1），11/24 16:26 從開始功能表關機時 Codex 還開著，登入後被還原。**經使用者同意已改為 0**（全部程式都不再還原，可隨時改回 1）。另 `CodexSandboxService.OpenAI.Codex` 為自動啟動服務（07:08 開機即執行），不開視窗，不處理。
 - **2026-11-24 Wiki 入庫兩篇**：pending 清到 0 篇。新增 [[Gemini 筆記本打造 AI 學習教練：考照與孩子複習]]（SRC-296，數位時代一天一 AI：反問式產生提示詞、限定教材出題、筆記本使用說明＋錯題紀錄、Canvas 闖關遊戲；回連圍棋陪練、Wordwall、Google AI Pro、Gemini 手冊四頁）、[[RAG 實作全流程與答錯排查]]（SRC-297，Gary Chen YouTube：兩階段清洗、依結構切塊、Metadata、混合搜尋、Re-ranking、四步答錯排查；擴充 [[RAG 與 DeepSearch 概念綜述]]，回連 Agent 術語、個人知識管理兩頁）。長上下文 vs 切塊衝突已依使用者判斷結案：單份長文件完整審閱用長上下文、大量文件反覆問答用 RAG，可組合使用。`wiki_tool.py check` 全部 FAIL 0。
