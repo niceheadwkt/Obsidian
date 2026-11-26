@@ -103,6 +103,7 @@
 | [[Gemini 筆記本打造 AI 學習教練：考照與孩子複習]] | 數位時代 2026-11-23（一天一 AI）：先讓 AI 用選擇題反問需求再產生學習教練提示詞、限定只依教材出題並標章節、Gemini 筆記本使用說明＋來源＋錯題紀錄、改寫孩子版溫和提示、Canvas 互動闖關遊戲 | 1 | 2026-11-24 |
 | [[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]] | 數位時代 2026-11-25（一天一 AI）：Gemini Notebook 官方 MCP 的 Google Cloud OAuth 與 Claude 自訂連接器設定、只管理筆記本與來源（不支援 PDF）、Claude 定稿→Gemini 做網站／語音→扮演財務主管挑毛病 | 1 | 2026-11-26 |
 | [[本地 AI 硬體分級與 Ollama 設定五大坑]] | AI懶人報 EP460：4-bit ≈ 參數量×0.6 GB、Mac 只算 3/4、16～128 GB 分級、MoE 快但不省記憶體、LM Studio／Ollama／llama.cpp、Ollama 預設 4k context 等五個坑與安全清單 | 1 | 2026-11-26 |
+| [[Rust：AI 時代的記憶體安全語言與 AI 改寫程式]] | P & H 影片：ownership／borrow 記憶體安全、Rust 在 AI 中間層（Codex CLI、uv、Ruff、safetensors）、Android 漏洞密度低千倍、Copilot／Bun／giflib 用 AI 改寫成 Rust、編譯器是 AI 不會累的審稿員 | 1 | 2026-11-27 |
 | [[RAG 實作全流程與答錯排查]] | Gary Chen YouTube 2026-10-28（巴菲特分身例）：整包塞上下文又慢又貴、兩階段清洗與代名詞還原、固定字數 vs 自然結構切塊、Metadata 條件與權限過濾、關鍵字＋語意混合搜尋、Re-ranking 組小抄、調低 Temperature、R→A→G 四步答錯排查、Context Engineering | 1 | 2026-11-24 |
 | [[AI 開發的 CI-CD 品管防線與兩層驗證]] | Gary Chen YouTube 2026-11-18：開分支→PR→CI→Merge→CD 五步、ci.yml 三關（Lint/Typecheck、Test、Build）、GitHub Actions 空白環境隔離、Playwright 核心路徑與 LLM as a judge 裁判測試、CI 綠燈＋獨立 AI 實機驗證兩層防線 | 1 | 2026-11-25 |
 | [[企業 AI 應用策略：Deploy、Reshape、Invent 與 10-20-70 法則]] | BCG 薛廷 JT 天下學習 2026-11-23：傳統 AI vs 生成式 AI、Deploy／Reshape／Invent 三階模式、Reshape 五大陷阱與速贏／燈塔／射月用例、People／Policy／Platform 3P 配套、10-20-70 組織變革法則 | 1 | 2026-11-25 |
@@ -427,6 +428,7 @@
 | SRC-301 | 2026-11-26T080600+0800-Claude 瘋了！15分鐘學完四大更新，保證退訂一堆 AI 產品.md | 影片 / 漢克蔡｜Ai 集（YouTube 逐字稿） | 2026-11-26 | [[Claude 四大新功能：白板、表格、儀表板、會議與模型選用]] |
 | SRC-302 | 2026-11-26T134523+0800-Claude分析完，還能交給Gemini挑毛病！官方MCP設定教學，免費方案也能用.md | 網路文章 / 數位時代 | 2026-11-26 | [[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]] |
 | SRC-303 | 2026-11-26T151837+0800-EP460 - 你的電腦能跑什麼 AI？16GB 到 128GB 一次講完｜Ollama、LM Studio 怎麼設定，新手五個坑.md | 影片 / AI懶人報（YouTube 說明欄與逐字稿） | 2026-11-26 | [[本地 AI 硬體分級與 Ollama 設定五大坑]] |
+| SRC-304 | 2026-11-26T215451+0800-AI 時代，只能靠 Rust 了？.md | 影片 / P & H（YouTube 說明欄與逐字稿） | 2026-11-27 | [[Rust：AI 時代的記憶體安全語言與 AI 改寫程式]] |
 ---
 
 > [!TIP]

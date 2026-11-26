@@ -904,3 +904,12 @@ aw/ 唯讀目錄下）。
 - **更新頁面**：[[Ollama]] 第 3 節「本地硬體配置推薦」，改用 [[本地 AI 硬體分級與 Ollama 設定五大坑]] 的「參數量 × 0.6 GB」估算規則與 16～128 GB 分級表，顯示卡建議改成依 VRAM 估算；移除衝突警示，改用 NOTE 註明舊版內容。
 - **衝突結案**：32 GB 跑 8B／14B 與 27B 甜蜜點的衝突，依使用者決定採用新分級。
 - **執行人**：Claude Code
+
+## [2026-11-27] ingest | AI 時代，只能靠 Rust 了？
+
+- **來源**：`raw/2026-11-26T215451+0800-AI 時代，只能靠 Rust 了？.md`（YouTube uG8WDSGB4pU，P & H，2026-10-20，附逐字稿與參考資料清單）。無夾帶無關文章。
+- **新增頁面**：[[Rust：AI 時代的記憶體安全語言與 AI 改寫程式]]（source-summary）：ownership／borrow 記憶體安全、Rust 在 AI 技術堆疊的中間層、四語言比較、Android 與 Linux 成效、Codex CLI／Copilot／Bun／giflib／Gemini 4 Argon 用 AI 改寫成 Rust、可快速驗證論點、名稱與 Ferris 趣聞。
+- **更新頁面**：[[AI 開發的 CI-CD 品管防線與兩層驗證]]（關聯頁面回連）。
+- **衝突檢查**：Wiki 原無 Rust 相關內容，無衝突。
+- **更新索引**：核心概念新增一列，新增 `SRC-304`。
+- **執行人**：Claude Code

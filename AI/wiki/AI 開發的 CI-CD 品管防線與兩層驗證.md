@@ -3,7 +3,7 @@ type: source-summary
 tags: [CI-CD, GitHub-Actions, Playwright, LLM-as-a-judge, VibeCoding, 品管, 自動化測試]
 sources: ["[[AI/raw/2026-11-25T132408+0800-用 AI 寫程式你得懂的 CICD？新手一支影片看懂.md|用 AI 寫程式你得懂的 CI/CD？新手一支影片看懂（Gary Chen，YouTube，2026-11-18）]]"]
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-27
 ---
 
 # AI 開發的 CI/CD 品管防線與兩層驗證
@@ -84,3 +84,4 @@ CI 本質上是一份可客製化的自動化檢查清單（通常放在 `.githu
 - [[Git GUI 與 GitHub 雙向同步實務]]：Git 分支、PR 與 GitHub 雙向同步基本操作。
 - [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]]：指令、Hooks 與 CI 三層驗證點的設計理念。
 - [[Chrome Skills 與瀏覽器自動化實務]]：Playwright 自動化操作與瀏覽器測試工具比較。
+- [[Rust：AI 時代的記憶體安全語言與 AI 改寫程式]]：編譯器是 CI 之前的第一道驗證；AI 時代選語言看「寫出來的程式能不能被快速驗證」。
