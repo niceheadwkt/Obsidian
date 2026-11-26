@@ -8,7 +8,7 @@ sources: [
   "[[sources/02_NotebookLM_Special/NotebookLM用法大全：集結22篇精華實測，YouTube匯入、簡報製作、財報解讀全打包.md]]"
 ]
 created: 2026-06-11
-updated: 2026-11-20
+updated: 2026-11-26
 ---
 
 # NotebookLM 知識庫與應用綜合指南
@@ -72,5 +72,6 @@ NotebookLM 介面分為三大區塊：
 - **課程筆記**：NotebookLM 來源限制、會議錄音四步整理、ABCD 來源評分與 Napkin AI 文字轉圖，見 [[NotebookLM 與 Napkin AI 知識管理課程]]。
 - **進階操作實戰**：關於 NotebookLM 的 Deep Research（深度研究）、Grabbit 影片匯入、簡報 YAML 樣式美化與 Lovart 圖層拆解等實務操作，請參閱 [[NotebookLM 進階應用與實戰指引]]。
 - **改名與訂閱額度**：2026-11 起介面名稱為 Gemini Notebook（原 NotebookLM），Pro 方案的資料來源數與生成額度見 [[Google AI Pro 訂閱權益與八大工具選用]]。
+- **官方 MCP 與 Claude 串接**：Claude 電腦版可透過 Gemini Notebook 官方 MCP 建立筆記本、新增來源（文字、網址、YouTube，不支援直接上傳 PDF），再讓 Gemini 反向挑毛病，設定步驟見 [[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]]。
 - **付費版橫向評估**：有關 NotebookLM 底層的 Gemini 與其他主力大模型（ChatGPT、Claude）付費訂閱版的橫向效能對比，請參閱 [[三大 AI 付費版選用與效能橫向對比]]。
 

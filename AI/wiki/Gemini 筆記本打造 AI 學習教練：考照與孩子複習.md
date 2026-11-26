@@ -3,7 +3,7 @@ type: source-summary
 tags: [Gemini, Gemini Notebook, NotebookLM, Canvas, 提示詞, 學習教練, 考照, 親子教育, 教育科技, 一天一AI]
 sources: ["[[AI/raw/2026-11-24T095314+0800-怎麼利用Gemini準備考試？6步驟打造AI學習教練，從考照到孩子期中考都適用.md|怎麼利用Gemini準備考試？6步驟打造AI學習教練（數位時代，2026-11-23）]]"]
 created: 2026-11-24
-updated: 2026-11-24
+updated: 2026-11-26
 ---
 
 # Gemini 筆記本打造 AI 學習教練：考照與孩子複習
@@ -96,3 +96,4 @@ Gemini 筆記本會與 NotebookLM 同步，同一份教材還能做學習卡、�
 - [[Gemini 全能使用手冊與 Google 生態工作流]]：Gemini 其他用法與 Canvas 互動學習指南。
 - [[NotebookLM 綜合指南]]：Gemini 筆記本同步的 NotebookLM 功能（學習卡、測驗、心智圖）。
 - [[Claude 高階提示詞與應用場景]]：提示詞撰寫心法。
+- [[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]]：同專欄，用官方 MCP 讓 Claude 直接寫入 Gemini 筆記本。

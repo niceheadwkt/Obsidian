@@ -6,10 +6,11 @@ sources: [
   "[[sources/01_AI_Tools/Ollama 可以針對LOCAL設專案目錄來運作？.md]]",
   "[[sources/01_AI_Tools/在 Ollama 中使用 Qwen 是完全免費的.md]]",
   "[[sources/01_AI_Tools/目前LLM模組有哪些可以在LOCAL執行引用，列出其優缺點.md]]",
-  "[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md]]"
+  "[[sources/01_AI_Tools/OPENCODE如何加QWEN3？.md]]",
+  "[[AI/raw/2026-11-26T151837+0800-EP460 - 你的電腦能跑什麼 AI？16GB 到 128GB 一次講完｜Ollama、LM Studio 怎麼設定，新手五個坑.md|EP460 你的電腦能跑什麼 AI？（AI懶人報，2026-11-04）]]"
 ]
 created: 2026-06-11
-updated: 2026-11-18
+updated: 2026-11-26
 ---
 
 # Ollama (本地 AI 模型執行引擎)
@@ -52,10 +53,29 @@ ollama run qwen2.5-coder:7b
 
 ## 3. 本地硬體配置推薦
 
-- **16GB RAM**：適合跑 Qwen 2.5 (3B/7B)、Gemma 3 (4B)。
-- **32GB RAM**：適合跑 Qwen 2.5 (8B/14B)、DeepSeek-R1 Distill (8B)。適合個人本地知識庫。
-- **12GB VRAM 顯卡 (RTX 4070 等)**：適合跑 Qwen 2.5 (14B Q4)、DeepSeek-R1 (14B)，推理速度極佳。
-- **24GB+ VRAM 顯卡 (RTX 4090 等)**：適合跑 Qwen 2.5 (32B)、DeepSeek-R1 (32B)，可流暢執行本地 RAG 與 Agent。
+依 [[本地 AI 硬體分級與 Ollama 設定五大坑]]（2026-11）的分級改寫。速度為社群實測，僅供參考。
+
+**估算規則**：4-bit 量化模型大約需要「參數量 × 0.6 GB」（9B ≈ 5.7 GB、27B ≈ 17.6 GB、35B ≈ 22.4 GB），還要另外留空間給 context。Mac 的統一記憶體預設大約只有 3/4 能給 GPU 用（16 GB 約 12 GB、32 GB 約 24 GB）。
+
+| 記憶體 | 能跑的模型 | 適合做什麼 |
+|---|---|---|
+| 8–16 GB | Gemma 4 E4B（約 5 GB）、Qwen3.5 9B（約 5.7 GB）；gpt-oss-20b（約 12 GB，16 GB Mac 上很緊） | 改寫、翻譯、摘要、整理成表格；當 agent 容易出錯 |
+| 24–32 GB（甜蜜點） | Qwen3.8 27B、Gemma 4 26B（MoE，較快）、Qwen3.6 35B-A3B（MoE） | 私人文件問答、批次分類、範圍清楚的 coding agent 小任務；24 GB 偏緊，32 GB 較穩 |
+| 64 GB | 最強的還是 27B 等級，但可換 8-bit（約 29 GB）提升品質 | 開長 context（Ollama 在 ≥ 48 GB 時預設 256k）、跑長時間的 agent 任務 |
+| 128 GB | gpt-oss-120b（約 63 GB）、Qwen3.8 Flash Next（125B） | 100B 以上的大模型，大約是一年前頂級雲端模型的水準；macOS 可用大約 96–107 GB |
+
+**獨立顯示卡（看 VRAM）**：用同一條規則估算。12 GB VRAM（RTX 4070 等）適合 9B～14B 的 4-bit 模型；24 GB 以上 VRAM（RTX 4090 等）可以放下 27B 等級的 4-bit 模型，再加上中等長度的 context。放得下之後，還要留空間給 context，不要把記憶體吃到滿（有人在 16 GB 顯示卡硬塞 27B 導致當機）。
+
+> [!NOTE]
+> 本節原本以 Qwen 2.5、DeepSeek-R1 Distill、Gemma 3 等舊世代模型為例（32 GB 跑 8B／14B）。2026-11-26 依新來源改寫，舊模型的 `ollama run` 指令仍保留在第 2 節。
+
+---
+
+## 3.5 Context 預設值與安全設定（2026-11 補充）
+
+- **預設 context 依顯示記憶體而定**：< 24 GB 為 4k、24～48 GB 為 32k、≥ 48 GB 為 256k。接 OpenClaw、Claude Code 這類 agent 時至少要拉到 **64k**，否則系統說明一放進去就爆，模型看起來會像「很笨」。
+- **保持只聽本機**：Ollama 預設只綁本機；2026 年有 17.5 萬台被改成對外開放、沒有密碼的 Ollama 伺服器。需要遠端連線時改用 Tailscale 這類私人網路，並保持最新版。
+- 硬體分級、MoE、chat template／KV cache 等坑，詳見 [[本地 AI 硬體分級與 Ollama 設定五大坑]]。
 
 ---
 

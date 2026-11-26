@@ -24,7 +24,7 @@ sources:
   - "[[AI/raw/2026-09-20T174500+0800-SogaType語音輸入操作踩坑與排錯實戰全紀錄.md|SogaType 語音輸入操作踩坑與排錯實戰全紀錄]]"
   - "[[AI/raw/CROSS_AGENT_SKILLS_SHARING_PLAN.md|跨 Agent 技能共用整合實施規劃書]]"
 created: 2026-07-20
-updated: 2026-11-24
+updated: 2026-11-26
 ---
 
 # AI Agent 實戰與 MCP 伺服器整合
@@ -144,3 +144,4 @@ AI Agent 運作遵循 **技能 (Skills) — 全域 (Global) — 專案 (Project)
 ## 實戰開發案例
 - 關於 FastMCP 與前端 PWA 直連 Firestore 的雲端點餐整合實踐，請參閱：[[一沐日雲端點餐與 MCP 系統開發實務]]。
 - 關於公司內部 AVA-GPT 的 AVA_ERP 會議室 MCP 工具、強制禁用政策與工具建立標準流程，請參閱：[[AVA_ERP MCP 工具建立標準流程]]。
+- 關於 Gemini Notebook（原 NotebookLM）官方 MCP 的 OAuth 設定與 Claude→Gemini 交叉檢查工作流，請參閱：[[Claude 分析交 Gemini Notebook 挑毛病：官方 MCP 設定]]。
