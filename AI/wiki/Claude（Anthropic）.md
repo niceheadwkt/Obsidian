@@ -14,7 +14,7 @@ sources: [
   "[[AI/raw/2026-09-17T132941+0800-ChatGPT、Claude對話會被拿去訓練嗎？9個隱私關卡＋關閉AI訓練設定.md|ChatGPT、Claude對話會被拿去訓練嗎？9個隱私關卡（數位時代）]]"
 ]
 created: 2026-06-11
-updated: 2026-11-20
+updated: 2026-11-26
 ---
 
 # Claude (Anthropic AI 家族)
@@ -96,6 +96,9 @@ Claude 的使用介面可依您的工作場景進行選擇：
 - **Claude 3.5 Sonnet**：最推薦的黃金平衡版本，推理速度快，代碼能力最強。
 - **Claude 3 Opus**：最強推理，適合邏輯極度複雜之任務，但速度慢、成本高。
 - **Claude 3 Haiku**：極速輕量，適用於翻譯、簡單歸類與低延遲對話。
+
+> [!NOTE] 2026-11 現況
+> 上列為早期版本。2026-11 一般人可用的主力是 Opus 5.5 與 Fable 5.2（規劃用 Fable、執行用 Opus 的混用策略），以及 Artifacts 新增的白板、表格、儀表板與 Claude Meetings，見 [[Claude 四大新功能：白板、表格、儀表板、會議與模型選用]]。
 
 ---
 

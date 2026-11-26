@@ -47,8 +47,8 @@
 | `[[AI Agent 實戰與 MCP 伺服器整合]]` | Google Tasks MCP、Obsidian MCP 安裝與驗收指南、跨電腦/跨 Agent 同步與 chezmoi 實務，以及安全沙箱 ava_sandbox 預裝套件與 chezmoi 全域配置備份，以及 AVA_ERP 會議室 MCP 工具與建立流程 | 14 | 2026-10-08 |
 | `[[Chrome Skills 與瀏覽器自動化實務]]` | Chrome Skills 原生自動化管理、flags 實驗開關、指令封裝，與微軟 Playwright 自動化爬蟲對比 | 4 | 2026-07-20 |
 | `[[Claude Code 與 Workspace Pro 實戰]]` | Claude Code CLI 官方 52 組 Prompt 庫、專案管理「一桌三櫃」EP10 實戰、Workspace 增量修改原則與 Software Architect Pro 模組化架構 | 6 | 2026-07-20 |
-| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成），以及 Jev 決策模型擔任路由器 | 8 | 2026-11-18 |
-| `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-07-20 |
+| `[[生成式 AI 企業應用與成本經濟學]]` | 2026 年企業 AI 落地趨勢、Token 經濟學與成本控制、語意路由器 Python 實作，與 No-Code 代理平台 Creao AI 剖析，以及 KV Cache 顯存快取控管機制、消費端 AI 變現模式（訂閱／用量／廣告／抽成），以及 Jev 決策模型擔任路由器 | 8 | 2026-11-25 |
+| `[[軟體架構與發布自動化]]` | CI/CD 自動化發布管線與工具、Netlify 靜態託管、PinClipboard 跨裝置剪貼簿局域網直連，與記憶體爆滿 Ramageddon 防護 | 4 | 2026-11-25 |
 | `[[智慧裝置與日常應用技巧]]` | YouTube 無原生字幕自動生成方案、Padlet 線上視覺牆協作、iOS 設備（iPhone）常用手勢與導航技巧，以及台電 App「住宅用電分析」AI 家電耗電推估（NILM 技術） | 4 | 2026-09-17 |
 | `[[Claude 基本功與個人 AI 工作流實戰]]` | 三師爸 Claude 基本功 EP01-EP10，包含四大操作模式、五層擴充機制、NotebookLM/GitHub/Supabase 串接與專案一桌三櫃管理，以及 Matt Pocock Skills 本地 Python 客製化評估 | 12 | 2026-07-23 |
 
@@ -74,10 +74,12 @@
 | [[AI 工作流程自動化實作_n8n 課程總結]] | 產發署線上課程（講師李迦恩）：Docker 本機架設 n8n、節點與工作流觀念、RSS 抓氣象資料轉 JSON 後用 LINE Messaging API 推播，再加 Gemini 分支依提示詞產生穿著建議，並用主幹與分支互相對照驗證 AI 輸出 | 1 | 2026-11-12 |
 | [[Document AI 大規模資料擷取_課程總結]] | Google Skills 技能徽章課程：Form Parser 鍵/值與可信度擷取、同步與非同步 API、Cloud Storage → Cloud Run → Document AI → BigQuery／Pub/Sub 事件驅動管道，挑戰實驗室 GSP367 任務與排錯，以及 ERP 單據擷取應用聯想 | 1 | 2026-11-16 |
 | [[AI 圍棋陪練：專案指示與成品小遊戲]] | 不會下圍棋的家長把 AI 設定成圍棋家教：專案指示（角色、孩子進度、檢查作業／引導訂正／出題／家長模式／練習紀錄觸發詞），再用 Claude 成品做數鼻孔、提吃、逃走、叫吃、雙叫吃 5 關手指點棋盤遊戲；強調程式驗證題目＋家長核對 | 2 | 2026-11-17 |
-| [[Claude 成品製作旅遊行程網站]] | Claude 免費版成品實測做手機版旅遊網站：免費版與 Pro 差異（連結分享、官方資料儲存）、提示詞 6 欄位、先出規格再生成的 4 步驟、福岡六天五夜範例提示詞結構、天氣／字型／虛構資料等限制 | 1 | 2026-11-17 |
+| [[Claude 成品製作旅遊行程網站]] | Claude 免費版成品實測做手機版旅遊網站：免費版與 Pro 差異（連結分享、官方資料儲存）、提示詞 6 欄位、先出規格再生成的 4 步驟、福岡六天五夜範例提示詞結構、天氣／字型／虛構資料等限制 | 1 | 2026-11-26 |
+| [[Claude 四大新功能：白板、表格、儀表板、會議與模型選用]] | 漢克蔡示範 Claude Artifacts 四項新功能：白板（流程圖、註記、分享）、表格（記憶整理、Quick Chart）、儀表板（連接器、公式來源、History）、Claude Meetings（Google Meet 即時逐字稿與摘要），Opus 5.5／Fable 5.2 混用策略與 AI 重塑辦公室軟體三觀察 | 1 | 2026-11-26 |
 | [[Claude＋Obsidian 第二大腦七步法]] | Fanko AI 範式七步法：路由表（讓 Claude 反過來訪問你）、資料夾與 Web Clipper 入口、入庫 Skill＋評分標準、Artifacts 看板、三種筆記模板、每晚排程整理收集箱、Claude Code 客製與 /insights | 1 | 2026-11-18 |
 | [[Agent Bot 基本原理與分層指揮架構]] | 三師爸 2026-11-02 直播：Agent Bot＝有自己雲端電腦的 Agent，Muse／Grok Bot／Dart 比較、AI 三階段、人類→Agent Bot→本機 Agent 分層指揮、影片上架與多 Agent 投票等應用、建置前提 | 2 | 2026-11-18 |
-| [[Anthropic 野心提示詞：高度、深度、廣度三招]] | Anthropic 工程主管 Felix Rieseberg 的速度／高度／深度／廣度框架：交代結果而非任務、「更深而不是更大」四問提示詞與五技巧、名詞換動詞與跨領域紅隊，以及 AI 需有自己電腦與原始資料的前提 | 1 | 2026-11-18 |
+| [[Anthropic 野心提示詞：高度、深度、廣度三招]] | Anthropic 工程主管 Felix Rieseberg 的速度／高度／深度／廣度框架：交代結果而非任務、「更深而不是更大」四問提示詞與五技巧、名詞換動詞與跨領域紅隊，以及 AI 需有自己電腦與原始資料的前提 | 1 | 2026-11-26 |
+| [[Felix Rieseberg 訪談：把 AI 用大、對抗式審查與並排跑]] | Felix Rieseberg 在 Silicon Valley Girl Podcast 的訪談導讀：輸送帶比喻與把題目放大、自動化 vs 增強、看過程判斷好壞、對抗式審查＋評審與兩類任務、別再扮演專家與 Skills 半衰期、模型體驗、並排跑與回饋原則化、執行變便宜後注意力與同理心最稀缺 | 1 | 2026-11-26 |
 | [[主權 AI 與 token 帳單三層陷阱]] | APMIC 吳柏翰談主權 AI：國家／產業／企業同心圓、token 帳單三層陷阱（長文本懲罰、輸出貴、推理隱形稅）與三種控制權、蒸餾小模型與知識分層成本分流、FinLLM 避免 RAG 切塊漏讀、企業導入三步驟 | 1 | 2026-11-18 |
 | [[假冒 Claude Code 官網木馬與雲端帳單盜刷事件]] | 醫師林佑儒親身經歷：誤入假冒 Claude Code 官網、Mac 被植入 AMOS 類竊密木馬，8 個月後瀏覽器憑證被用來建立 Service Account，Vertex AI 一小時盜刷約 3 萬元；四種可能原因排查、預算提醒不停機與 Hard Cap 限制、四個資安教訓 | 1 | 2026-11-18 |
 | [[ChatGPT 與 Claude 對話隱私與關閉訓練設定]] | ChatGPT、Claude 對話會不會被拿去訓練：取決於方案、模型改善設定與讚／倒讚回饋；關閉訓練、暫停記憶、刪除對話三者差異；上傳前去識別化、關閉模型改善、記憶與無痕對話、檔案與分享連結清理四個設定 | 1 | 2026-11-18 |
@@ -100,6 +102,8 @@
 | [[權重空間編程：LLM 直接讀寫神經網路權重]] | 數位時代／T客邦 2026-11-19：MIT CSAIL 讓 GPT-6 Astra 不靠梯度直接讀、改、寫神經網路權重；Qwen3.5-0.8B 改 0.016% 參數 MATH-500 7.9%→48.1%、MinAtar 一次寫權重贏 PPO 1 億步；限於小模型與特定缺陷 | 1 | 2026-11-20 |
 | [[Gemini 筆記本打造 AI 學習教練：考照與孩子複習]] | 數位時代 2026-11-23（一天一 AI）：先讓 AI 用選擇題反問需求再產生學習教練提示詞、限定只依教材出題並標章節、Gemini 筆記本使用說明＋來源＋錯題紀錄、改寫孩子版溫和提示、Canvas 互動闖關遊戲 | 1 | 2026-11-24 |
 | [[RAG 實作全流程與答錯排查]] | Gary Chen YouTube 2026-10-28（巴菲特分身例）：整包塞上下文又慢又貴、兩階段清洗與代名詞還原、固定字數 vs 自然結構切塊、Metadata 條件與權限過濾、關鍵字＋語意混合搜尋、Re-ranking 組小抄、調低 Temperature、R→A→G 四步答錯排查、Context Engineering | 1 | 2026-11-24 |
+| [[AI 開發的 CI-CD 品管防線與兩層驗證]] | Gary Chen YouTube 2026-11-18：開分支→PR→CI→Merge→CD 五步、ci.yml 三關（Lint/Typecheck、Test、Build）、GitHub Actions 空白環境隔離、Playwright 核心路徑與 LLM as a judge 裁判測試、CI 綠燈＋獨立 AI 實機驗證兩層防線 | 1 | 2026-11-25 |
+| [[企業 AI 應用策略：Deploy、Reshape、Invent 與 10-20-70 法則]] | BCG 薛廷 JT 天下學習 2026-11-23：傳統 AI vs 生成式 AI、Deploy／Reshape／Invent 三階模式、Reshape 五大陷阱與速贏／燈塔／射月用例、People／Policy／Platform 3P 配套、10-20-70 組織變革法則 | 1 | 2026-11-25 |
 ---
 
 ## 實體與工具專頁 (Entities & Tools)
@@ -415,6 +419,10 @@
 | SRC-295 | 2026-10-23T213411+0800-AI 生成影片，直播創造新角色人物資產.md | 影片 / 三師爸（Whisper 自動轉錄） | 2026-11-23 | [[AI 影片角色資產製作：照片、聲音與生圖模型選擇]] |
 | SRC-296 | 2026-11-24T095314+0800-怎麼利用Gemini準備考試？6步驟打造AI學習教練，從考照到孩子期中考都適用.md | 網路文章 / 數位時代 | 2026-11-24 | [[Gemini 筆記本打造 AI 學習教練：考照與孩子複習]] |
 | SRC-297 | 2026-11-24T153919+0800-從零搞懂 RAG，要搭個人或企業知識庫必學！.md | 影片 / Gary Chen（YouTube 逐字稿） | 2026-11-24 | [[RAG 實作全流程與答錯排查]] |
+| SRC-298 | 2026-11-25T132408+0800-用 AI 寫程式你得懂的 CICD？新手一支影片看懂.md | 影片 / Gary Chen（YouTube 逐字稿） | 2026-11-25 | [[AI 開發的 CI-CD 品管防線與兩層驗證]] |
+| SRC-299 | 2026-11-25T135029+0800-CH1：掌握AI的應用策略，提高效率、破除盲點.md | 影片 / 天下學習 薛廷 JT（Whisper 轉錄） | 2026-11-25 | [[企業 AI 應用策略：Deploy、Reshape、Invent 與 10-20-70 法則]] |
+| SRC-300 | 2026-11-26T074943+0800-你把 AI 用得太小了｜Claude 工程負責人：別再像 2024 年那樣用 AI.md | 影片 / ADAM LIL（Whisper 轉錄） | 2026-11-26 | [[Felix Rieseberg 訪談：把 AI 用大、對抗式審查與並排跑]] |
+| SRC-301 | 2026-11-26T080600+0800-Claude 瘋了！15分鐘學完四大更新，保證退訂一堆 AI 產品.md | 影片 / 漢克蔡｜Ai 集（YouTube 逐字稿） | 2026-11-26 | [[Claude 四大新功能：白板、表格、儀表板、會議與模型選用]] |
 ---
 
 > [!TIP]

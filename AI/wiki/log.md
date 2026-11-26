@@ -846,3 +846,37 @@ aw/ 唯讀目錄下）。
 - **raw 附件歸檔**（依使用者決定）：`AI/raw/` 根目錄 6 個非 Markdown 檔移到 `AI/raw/_attachments/`（Git 指南 PDF、NotebookLM 課程 PDF、3 個 NotebookLM 簡報樣式 YAML、1 張貼上截圖）；[[Git GUI 與 GitHub 雙向同步實務]]、[[NotebookLM 進階應用與實戰指引]] 共 4 條 `sources` 路徑改為 `raw/_attachments/`。raw 筆記以檔名引用（`![[...]]`），Obsidian 仍可解析，未修改 raw 內容。
 - **補連結**：[[Claude 辦公自動化 (Excel & Word)]]、[[Chrome Skills 與瀏覽器自動化實務]] 原本沒有連到其他 Wiki 頁，各補「相關頁面」一節。
 - **執行人**：Claude Code
+
+
+## [2026-11-25] ingest | 用 AI 寫程式你得懂的 CI/CD？新手一支影片看懂
+
+- **來源**：`raw/2026-11-25T132408+0800-用 AI 寫程式你得懂的 CICD？新手一支影片看懂.md`（YouTube aCvEYczBVSY，Gary Chen，2026-11-18，約 14 分鐘）。略過片尾社群與實戰營宣傳。
+- **新增頁面**：[[AI 開發的 CI-CD 品管防線與兩層驗證]]（source-summary）：開發五步流程、CI 三關（Lint & Typecheck、Test、Build）、GitHub Actions 雲端隔離環境、Playwright 與 LLM as a judge 進階關卡、CI 底線＋獨立 AI 實機驗證兩層防線；我可以怎麼用（個人工具測試、知識庫 `wiki_tool.py`、ERP 驗證分離）。
+- **更新頁面**：[[軟體架構與發布自動化]]（關聯頁面回連並更新日期）。
+- **更新索引**：核心概念新增一列、更新相關概念列日期，新增 `SRC-298`。
+- **執行人**：Antigravity Agent
+
+## [2026-11-25] ingest | CH1：掌握AI的應用策略，提高效率、破除盲點
+
+- **來源**：`raw/2026-11-25T135029+0800-CH1：掌握AI的應用策略，提高效率、破除盲點.md`（YouTube CGR1D0z1qh4，天下學習／BCG 薛廷 JT，2026-11-23，約 19 分鐘；以 `faster-whisper large-v3` 轉錄並校對）。
+- **新增頁面**：[[企業 AI 應用策略：Deploy、Reshape、Invent 與 10-20-70 法則]]（source-summary）：傳統 AI vs. 生成式 AI、Deploy／Reshape／Invent 三階段、Reshape 五大陷阱與速贏／燈塔／射月用例、3P 配套（People／Policy／Platform）、大膽願景・資源聚焦・10-20-70 組織變革法則；我可以怎麼用（ERP 流程評估、跨部門燈塔用例、3P 資安合規）。
+- **更新頁面**：[[生成式 AI 企業應用與成本經濟學]]（延伸閱讀回連並更新日期）。
+- **更新索引**：核心概念新增一列、更新相關概念列日期，新增 `SRC-299`。
+- **執行人**：Antigravity Agent
+## [2026-11-26] ingest | 你把 AI 用得太小了｜Claude 工程負責人：別再像 2024 年那樣用 AI
+
+- **來源**：`raw/2026-11-26T074943+0800-你把 AI 用得太小了｜Claude 工程負責人：別再像 2024 年那樣用 AI.md`（YouTube qMccUXYIpQ0，ADAM LIL，2026-11-11，約 20 分鐘；導讀 Silicon Valley Girl Podcast 對 Felix Rieseberg 的訪談）。影片無字幕，以 `faster-whisper large-v3` 轉錄並校正後補入原始檔；略過片尾頻道宣傳。「兩種看法」為製作方觀點，頁面已註明。
+- **新增頁面**：[[Felix Rieseberg 訪談：把 AI 用大、對抗式審查與並排跑]]（source-summary）：輸送帶比喻、自動化 vs 增強、看過程判斷好壞、對抗式審查四步驟與兩類任務、別再扮演專家／不切資料給代理／Skills 半衰期／模型體驗、並排跑與回饋原則化三步驟、執行變便宜後的稀缺資源與工程師職涯；我可以怎麼用（ERP 對抗式審查、zpq 當外部證據、退件意見原則化、並排跑、Skills 定期檢查）。
+- **更新頁面**：[[Anthropic 野心提示詞：高度、深度、廣度三招]]（加 Podcast 延伸提示與回連）、[[Claude 高階提示詞與應用場景]]（扮演專家已更正段落補新來源佐證，結論不變）。
+- **衝突檢查**：「扮演專家已過時」「Skills 半衰期短」與既有結案結論（扮演專家合併、規則多寡依模型世代）方向一致，未新增衝突。
+- **更新索引**：核心概念新增一列、更新野心提示詞列日期，新增 `SRC-300`。
+- **執行人**：Claude Code
+
+## [2026-11-26] ingest | Claude 瘋了！15分鐘學完四大更新，保證退訂一堆 AI 產品
+
+- **來源**：`raw/2026-11-26T080600+0800-Claude 瘋了！15分鐘學完四大更新，保證退訂一堆 AI 產品.md`（YouTube IqXHkEF3oTc，漢克蔡｜Ai 集，2026-11-22，約 19 分鐘，附 YouTube 逐字稿）。略過說明欄課程與諮詢廣告、片尾業務宣傳。
+- **新增頁面**：[[Claude 四大新功能：白板、表格、儀表板、會議與模型選用]]（source-summary）：白板、表格、儀表板、Claude Meetings 四項功能與操作、Opus 5.5／Fable 5.2 混用表、Mythos 與防護機制（標為講者說法未查證）、AI 重塑辦公室軟體三觀察；我可以怎麼用（會議記錄、白板畫流程、儀表板不接 ERP 機密資料、模型分工）。
+- **更新頁面**：[[Claude（Anthropic）]]（模型版本段落加 2026-11 現況提示與連結）、[[Claude 成品製作旅遊行程網站]]（關聯頁面回連）。
+- **衝突檢查**：實體頁模型版本段落停留在 Claude 3 系列，已加註現況，未標衝突。
+- **更新索引**：核心概念新增一列、更新相關列日期，新增 `SRC-301`。
+- **執行人**：Claude Code
