@@ -23,7 +23,7 @@ sources: [
   "[[AI/raw/2026-09-29T114755+0800-換AI不用重教一次！Claude⇄ChatGPT雙向搬家，記憶、對話紀錄、Skills轉移教學一次看.md|換AI不用重教一次！Claude⇄ChatGPT雙向搬家（數位時代）]]"
 ]
 created: 2026-06-15
-updated: 2026-11-18
+updated: 2026-11-27
 ---
 
 # Claude Cowork 與 Agent Skill 實務
@@ -125,3 +125,4 @@ updated: 2026-11-18
   - **Google Tasks 任務整合技能**：自動管理 Google Tasks 任務清單（建立、搜尋、更新、刪除）。
   - **Obsidian 知識管理技能**：進行雙向連結自動關聯與 Lint 健康檢查。
 - **跨平台搬 Skill**（2026-11 補充）：Codex 與 Claude 的 Skill 都是「資料夾＋說明檔」結構，可沿用；上傳到 Claude 網頁版時每個 Skill 資料夾各自壓成 ZIP、最外層是資料夾，再到 Customize → Skills 上傳。ChatGPT 桌面版「匯入」與 Codex CLI 的 `/import` 也能帶入 Claude Code／Cowork 的 Skills 與設定。主檔名維持大寫 `SKILL.md`，不需改名（媒體報導稱要改小寫有誤），詳見 [[Claude 與 ChatGPT 雙向搬家：記憶、對話紀錄與 Skills]]。
+- **非工程師的 Skill 觸發示範**（2026-11 補充）：把回信步驟寫成文件請 Claude 建 Skill，可用 `/` 叫出或用白話自動觸發，再搭配排程任務每天定時執行，見 [[Claude 新手全功能導覽：非工程師的工作流]]。

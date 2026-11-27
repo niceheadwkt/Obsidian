@@ -3,7 +3,7 @@ type: analysis
 tags: [Google雲端硬碟, Drive for desktop, 串流模式, 鏡像模式, 離線存取, 系統卡死, Obsidian, Git]
 sources: ["[[WorkLog]]"]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-27
 ---
 
 # Google 雲端硬碟串流、鏡像與離線存取設定指南
@@ -103,3 +103,4 @@ updated: 2026-11-20
 - [[Git GUI 與 GitHub 雙向同步實務]]（Google Drive＋Obsidian＋Git 分工、跨電腦路徑統一）
 - [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]（chezmoi 管理跨 Agent 全域規範）
 - [[AI Agent 實戰與 MCP 伺服器整合]]
+- [[手機唯讀瀏覽 Obsidian 知識庫設定指南]]（手機版 Obsidian 不能開 Google 雲端硬碟資料夾，改從 GitHub 唯讀拉取）

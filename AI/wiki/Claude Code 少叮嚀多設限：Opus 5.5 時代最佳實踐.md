@@ -3,7 +3,7 @@ type: source-summary
 tags: [Claude Code, CLAUDE.md, Opus 5.5, auto mode, deny規則, hooks, 沙盒, 驗證點, CI, Claude Code projects, 最佳實踐]
 sources: ["[[AI/raw/2026-11-18T162924+0800-Claude Code設定大洗牌！進入Opus 5.5時代之後，為何CLAUDE.md愈短愈好？.md|Claude Code 設定大洗牌（數位時代）]]"]
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-27
 ---
 
 # Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐
@@ -74,3 +74,4 @@ updated: 2026-11-20
 - [[Claude（Anthropic）]]：Claude Code CLI 與模型版本。
 - [[跨 Agent 技能共用：中央倉庫與 NTFS Junction]]：全域規則與技能的跨電腦同步方式。
 - [[假冒 Claude Code 官網木馬與雲端帳單盜刷事件]]：憑證外洩的實際案例，對照 deny 規則與沙盒的必要性。
+- [[Claude 新手全功能導覽：非工程師的工作流]]：新手教學也把 CLAUDE.md 定位為「柔性提醒」、Hook 為強制機制，示範用 Hook 擋下修改原始資料。

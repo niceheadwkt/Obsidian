@@ -3,7 +3,7 @@ type: source-summary
 tags: [資安, 木馬, 網路釣魚, AMOS, Google-Cloud, Vertex-AI, Service-Account, 雲端帳單, Claude-Code, 數位時代]
 sources: ["[[AI/raw/2026-11-05T134617+0800-我被駭了，差點一夕破產！Google Cloud遭盜刷3萬元，追查才發現Mac早被植入木馬.md|我被駭了，差點一夕破產！Google Cloud遭盜刷3萬元（數位時代，2026-11-04）]]"]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-27
 ---
 
 # 假冒 Claude Code 官網木馬與雲端帳單盜刷事件
@@ -77,3 +77,4 @@ updated: 2026-11-18
 - [[AI CLI 工具比較與選擇_摘要]]
 - [[GCP 雲端排程與現代化數據工程實戰]]
 - [[ChatGPT 與 Claude 對話隱私與關閉訓練設定]]（瀏覽器擴充套件與分享連結的隱私風險）
+- [[簡訊驗證碼風險與 passkey 帳號防護設定]]（驗證碼本身被拿走的 3 種方式與 passkey；本篇則是 2FA 擋不住偷 Session）

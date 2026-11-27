@@ -3,7 +3,7 @@ type: source-summary
 tags: [Claude, Artifacts, 白板, 試算表, 儀表板, Claude Meetings, 連接器, 模型選用, Opus, Fable]
 sources: ["[[AI/raw/2026-11-26T080600+0800-Claude 瘋了！15分鐘學完四大更新，保證退訂一堆 AI 產品.md|Claude 瘋了！15分鐘學完四大更新（漢克蔡｜Ai 集，2026-11-22）]]"]
 created: 2026-11-26
-updated: 2026-11-26
+updated: 2026-11-27
 ---
 
 # Claude 四大新功能：白板、表格、儀表板、會議與模型選用
@@ -89,3 +89,4 @@ YouTube 頻道「漢克蔡｜Ai 集」（2026-11-22，約 19 分鐘），講者�
 - [[AI 工具與任務場景橫向評比]]
 - [[Claude Code 少叮嚀多設限：Opus 5.5 時代最佳實踐]]
 - [[Felix Rieseberg 訪談：把 AI 用大、對抗式審查與並排跑]]
+- [[Claude 新手全功能導覽：非工程師的工作流]]：PAPAYA 電腦教室以非工程師情境串起白板、試算表、文件、簡報、儀表板與 Code 模式的完整流程。
